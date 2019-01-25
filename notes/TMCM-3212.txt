@@ -1,0 +1,2 @@
+Dinge, die vom TMCM-3212 noch in die API können
+- Temporäre Shadows (z.B. SaveA1...)

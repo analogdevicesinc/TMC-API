@@ -1,0 +1,165 @@
+/*
+ * TMC5062.h
+ *
+ *  Created on: 07.07.2017
+ *      Author: LK
+ *    Based on: TMC562-MKL.h (26.01.2012 OK)
+ */
+
+#ifndef TMC_IC_TMC5062_H_
+#define TMC_IC_TMC5062_H_
+
+#include "../../helpers/API_Header.h"
+#include "TMC5062_Register.h"
+#include "TMC5062_Constants.h"
+#include "TMC5062_Fields.h"
+
+#define TMC5062_FIELD_READ(tmc5062_ptr, channel, address, mask, shift) \
+	FIELD_GET(tmc5062_readInt(tmc5062_ptr, channel, address), (mask), (shift))
+
+#define TMC5062_FIELD_WRITE(tmc5062_ptr, channel, address, mask, shift, value) \
+	tmc5062_writeInt((tmc5062_ptr), (channel), (address), FIELD_SET(tmc5062_readInt((tmc5062_ptr), (channel), (address)), (mask), (shift), (value)))
+
+// Usage note: use one TypeDef per IC
+typedef struct {
+	ConfigurationTypeDef *config;
+	uint8 motors[TMC5062_MOTORS];
+
+	// External frequency supplied to the IC (or 16MHz for internal frequency)
+	uint32 chipFrequency;
+
+	// Velocity estimation (for dcStep)
+	uint32 measurementInterval;
+	uint32 oldTick;
+	int oldXActual[TMC5062_MOTORS];
+	int velocity[TMC5062_MOTORS];
+
+	int32 registerResetState[TMC5062_REGISTER_COUNT];
+	uint8 registerAccess[TMC5062_REGISTER_COUNT];
+} TMC5062TypeDef;
+
+typedef void (*tmc5062_callback)(TMC5062TypeDef*, ConfigState);
+
+// Default Register Values
+#define R30 0x00071703  // IHOLD_IRUN
+#define R32 0x00FFFFFF  // VHIGH
+#define R3A 0x00010000  // ENC_CONST
+#define R50 R30
+#define R52 R32
+#define R5A R3A
+#define R6C 0x000101D5  // CHOPCONF
+#define R7C R6C
+
+static const s32 tmc5062_defaultRegisterResetState[TMC5062_REGISTER_COUNT] = {
+//	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
+	R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x30 - 0x3F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
+	R50, 0,   R52, 0,   0,   0,   0,   0,   0,   0,   R5A, 0,   0,   0,   0,   0, // 0x50 - 0x5F
+	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
+	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R7C, 0,   0,   0  // 0x70 - 0x7F
+};
+
+#undef R50
+#undef R52
+#undef R5A
+#undef R7C
+#undef R30
+#undef R32
+#undef R3A
+#undef R6C
+
+static const u8 tmc5062_defaultRegisterAccess[TMC5062_REGISTER_COUNT] = {
+//	0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
+	0x03, 0x01, 0x01, 0x02, 0x07, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
+	0x02, 0x01, ____, ____, ____, ____, ____, ____, 0x02, 0x01, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
+	0x03, 0x03, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x03, ____, ____, // 0x20 - 0x2F
+	0x02, 0x02, 0x02, 0x02, 0x03, 0x01, 0x01, ____, 0x03, 0x03, 0x02, 0x01, 0x01, ____, ____, ____, // 0x30 - 0x3F
+	0x03, 0x03, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x03, ____, ____, // 0x40 - 0x4F
+	0x02, 0x02, 0x02, 0x02, 0x03, 0x01, 0x01, ____, 0x03, 0x03, 0x02, 0x01, 0x01, ____, ____, ____, // 0x50 - 0x5F
+	0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01, // 0x60 - 0x6F
+	0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01  // 0x70 - 0x7F
+};
+
+static const TMCRegisterConstant tmc5062_RegisterConstants[] =
+{		// Use ascending addresses!
+		{ 0x60, 0xAAAAB554 }, // MSLUT[0]_M1
+		{ 0x61, 0x4A9554AA }, // MSLUT[1]_M1
+		{ 0x62, 0x24492929 }, // MSLUT[2]_M1
+		{ 0x63, 0x10104222 }, // MSLUT[3]_M1
+		{ 0x64, 0xFBFFFFFF }, // MSLUT[4]_M1
+		{ 0x65, 0xB5BB777D }, // MSLUT[5]_M1
+		{ 0x66, 0x49295556 }, // MSLUT[6]_M1
+		{ 0x67, 0x00404222 }, // MSLUT[7]_M1
+		{ 0x68, 0xFFFF8056 }, // MSLUTSEL_M1
+		{ 0x69, 0x00F70000 }, // MSLUTSTART_M1
+		{ 0x70, 0xAAAAB554 }, // MSLUT[0]_M2
+		{ 0x71, 0x4A9554AA }, // MSLUT[1]_M2
+		{ 0x72, 0x24492929 }, // MSLUT[2]_M2
+		{ 0x73, 0x10104222 }, // MSLUT[3]_M2
+		{ 0x74, 0xFBFFFFFF }, // MSLUT[4]_M2
+		{ 0x75, 0xB5BB777D }, // MSLUT[5]_M2
+		{ 0x76, 0x49295556 }, // MSLUT[6]_M2
+		{ 0x77, 0x00404222 }, // MSLUT[7]_M2
+		{ 0x78, 0xFFFF8056 }, // MSLUTSEL_M2
+		{ 0x79, 0x00F70000 }  // MSLUTSTART_M2
+};
+
+void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8 channel, uint8 address, int value);
+int tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8 channel, uint8 address);
+
+void tmc5062_init(TMC5062TypeDef *tmc5062, ConfigurationTypeDef *tmc5062_config, const int32 *registerResetState, uint8 motorIndex0, uint8 motorIndex1, uint32 chipFrequency);
+void tmc5062_fillShadowRegisters(TMC5062TypeDef *tmc5062);
+void tmc5062_setRegisterResetState(TMC5062TypeDef *tmc5062, const int32 *resetState);
+void tmc5062_setCallback(TMC5062TypeDef *tmc5062, tmc5062_callback callback);
+void tmc5062_periodicJob(TMC5062TypeDef *tmc5072, uint32 tick);
+uint8 tmc5062_reset(TMC5062TypeDef *tmc5062);
+uint8 tmc5062_restore(TMC5062TypeDef *tmc5062);
+
+void tmc5062_rotate(TMC5062TypeDef *tmc5062, uint8 motor, int32 velocity);
+void tmc5062_right(TMC5062TypeDef *tmc5062, uint8 motor, int32 velocity);
+void tmc5062_left(TMC5062TypeDef *tmc5062, uint8 motor, int32 velocity);
+void tmc5062_stop(TMC5062TypeDef *tmc5062, uint8 motor);
+void tmc5062_moveTo(TMC5062TypeDef *tmc5062, uint8 motor, int32 position, uint32 velocityMax);
+void tmc5062_moveBy(TMC5062TypeDef *tmc5062, uint8 motor, uint32 velocityMax, int32 *ticks);
+
+// Chopper settings
+uint8 calculateTOFF(uint32 chopFreq, uint32 clkFreq);
+// Diagnostics
+
+// Stallguard
+// Coolstep
+// dcStep
+uint8 dcStepActive(TMC5062TypeDef *tmc5062, uint8 channel);
+// MSLUT
+typedef struct {
+	uint32 LUT_0;  // Bits   0 -  31
+	uint32 LUT_1;  // Bits  32 -  63
+	uint32 LUT_2;  // Bits  64 -  95
+	uint32 LUT_3;  // Bits  96 - 127
+	uint32 LUT_4;  // Bits 128 - 159
+	uint32 LUT_5;  // Bits 160 - 191
+	uint32 LUT_6;  // Bits 192 - 223
+	uint32 LUT_7;  // Bits 224 - 255
+
+	uint8 X1;     // Segment 1
+	uint8 X2;     // Segment 2
+	uint8 X3;     // Segment 3
+	// Segment width. Determines bit meaning (Actual bit value = (Wn - 1) + bit)
+	uint8 W0 : 2; // Segment [ 0 : X1-1]
+	uint8 W1 : 2; // Segment [X1 : X2-1]
+	uint8 W2 : 2; // Segment [X2 : X3-1]
+	uint8 W3 : 2; // Segment [X3 :  255]
+
+	uint8  START_SIN;    // Absolute current at MSLUT[0]
+	uint8  START_SIN90;  // Absolute current at MSLUT[256]
+} TMC5062_MicroStepTable;
+
+uint8 setMicroStepTable(TMC5062TypeDef *tmc5062, uint8 channel, TMC5062_MicroStepTable *table);
+
+// Encoder
+uint32 setEncoderFactor(TMC5062TypeDef *tmc5062, uint8 channel, uint32 motorFullSteps, uint32 microSteps, uint32 encoderResolution);
+
+#endif /* TMC_IC_TMC5062_H_ */
