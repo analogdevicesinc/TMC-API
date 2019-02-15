@@ -15,7 +15,7 @@ void tmc_ramp_linear_init(TMC_LinearRamp *linearRamp)
 	linearRamp->rampVelocity        = 0;
 	linearRamp->rampPosition        = 0;
 	linearRamp->acceleration        = 0;
-	linearRamp->rampEnabled         = TRUE;
+	linearRamp->rampEnabled         = true;
 	linearRamp->accumulatorVelocity = 0;
 	linearRamp->accumulatorPosition = 0;
 	linearRamp->rampMode            = TMC_RAMP_LINEAR_MODE_VELOCITY;

@@ -51,11 +51,11 @@ int32 tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8 address)
 
 //void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4)
 //{
-//	tmc5072_readWrite(tmc5072->channel, address | TMC5072_WRITE_BIT, FALSE);
-//	tmc5072_readWrite(tmc5072->channel, x1, FALSE);
-//	tmc5072_readWrite(tmc5072->channel, x2, FALSE);
-//	tmc5072_readWrite(tmc5072->channel, x3, FALSE);
-//	tmc5072_readWrite(tmc5072->channel, x4, TRUE);
+//	tmc5072_readWrite(tmc5072->channel, address | TMC5072_WRITE_BIT, false);
+//	tmc5072_readWrite(tmc5072->channel, x1, false);
+//	tmc5072_readWrite(tmc5072->channel, x2, false);
+//	tmc5072_readWrite(tmc5072->channel, x3, false);
+//	tmc5072_readWrite(tmc5072->channel, x4, true);
 //
 //	int value = x1;
 //	value <<= 8;
@@ -81,20 +81,20 @@ int32 tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8 address)
 //	if(!TMC_IS_READABLE(tmc5072->registerAccess[address]))
 //		return tmc5072->shadowRegister[address];
 //
-//	tmc5072_readWrite(tmc5072->channel, address, FALSE);
-//	tmc5072_readWrite(tmc5072->channel, 0, FALSE);
-//	tmc5072_readWrite(tmc5072->channel, 0, FALSE);
-//	tmc5072_readWrite(tmc5072->channel ,0, FALSE);
-//	tmc5072_readWrite(tmc5072->channel, 0, TRUE);
+//	tmc5072_readWrite(tmc5072->channel, address, false);
+//	tmc5072_readWrite(tmc5072->channel, 0, false);
+//	tmc5072_readWrite(tmc5072->channel, 0, false);
+//	tmc5072_readWrite(tmc5072->channel ,0, false);
+//	tmc5072_readWrite(tmc5072->channel, 0, true);
 //
-//	tmc5072_readWrite(tmc5072->channel, address, FALSE);
-//	int value = tmc5072_readWrite(tmc5072->channel, 0, FALSE);
+//	tmc5072_readWrite(tmc5072->channel, address, false);
+//	int value = tmc5072_readWrite(tmc5072->channel, 0, false);
 //	value <<= 8;
-//	value |= tmc5072_readWrite(tmc5072->channel, 0, FALSE);
+//	value |= tmc5072_readWrite(tmc5072->channel, 0, false);
 //	value <<= 8;
-//	value |= tmc5072_readWrite(tmc5072->channel, 0, FALSE);
+//	value |= tmc5072_readWrite(tmc5072->channel, 0, false);
 //	value <<= 8;
-//	value |= tmc5072_readWrite(tmc5072->channel, 0, TRUE);
+//	value |= tmc5072_readWrite(tmc5072->channel, 0, true);
 //
 //	return value;
 //}
@@ -137,8 +137,8 @@ void tmc5072_init(TMC5072TypeDef *tmc5072, uint8 channel, ConfigurationTypeDef *
 //	tmc5072->oldTick          = 0;
 //	tmc5072->oldX[0]          = 0;
 //	tmc5072->oldX[1]          = 0;
-//	tmc5072->vMaxModified[0]  = FALSE;
-//	tmc5072->vMaxModified[1]  = FALSE;
+//	tmc5072->vMaxModified[0]  = false;
+//	tmc5072->vMaxModified[1]  = false;
 //
 //	int i;
 //	for(i=0; i < TMC5072_REGISTER_COUNT; i++)
@@ -292,7 +292,7 @@ void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32 tick)
 uint8 tmc5072_reset(TMC5072TypeDef *tmc5072)
 {
 	if(tmc5072->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	// Reset the dirty bits and wipe the shadow registers
 	for(size_t i = 0; i < TMC5072_REGISTER_COUNT; i++)
@@ -304,7 +304,7 @@ uint8 tmc5072_reset(TMC5072TypeDef *tmc5072)
 	tmc5072->config->state        = CONFIG_RESET;
 	tmc5072->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 //uint8 tmc5072_reset(ConfigurationTypeDef *TMC5072_config)

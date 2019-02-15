@@ -103,7 +103,7 @@ void tmc2209_setCallback(TMC2209TypeDef *tmc2209, tmc2209_callback callback)
 uint8 tmc2209_reset(TMC2209TypeDef *tmc2209)
 {
 	if(tmc2209->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	// Reset the dirty bits and wipe the shadow registers
 	for(size_t i = 0; i < TMC2209_REGISTER_COUNT; i++)
@@ -115,18 +115,18 @@ uint8 tmc2209_reset(TMC2209TypeDef *tmc2209)
 	tmc2209->config->state        = CONFIG_RESET;
 	tmc2209->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 uint8 tmc2209_restore(TMC2209TypeDef *tmc2209)
 {
 	if(tmc2209->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	tmc2209->config->state        = CONFIG_RESTORE;
 	tmc2209->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 uint8 tmc2209_get_slave(TMC2209TypeDef *tmc2209)

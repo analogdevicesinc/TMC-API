@@ -94,7 +94,7 @@ void tmc2160_fillShadowRegisters(TMC2160TypeDef *tmc2160)
 uint8 tmc2160_reset(TMC2160TypeDef *tmc2160)
 {
 	if(tmc2160->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	int i;
 
@@ -105,18 +105,18 @@ uint8 tmc2160_reset(TMC2160TypeDef *tmc2160)
 	tmc2160->config->state        = CONFIG_RESET;
 	tmc2160->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 uint8 tmc2160_restore(TMC2160TypeDef *tmc2160)
 {
 	if(tmc2160->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	tmc2160->config->state        = CONFIG_RESTORE;
 	tmc2160->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 void tmc2160_setRegisterResetState(TMC2160TypeDef *tmc2160, const int32 *resetState)

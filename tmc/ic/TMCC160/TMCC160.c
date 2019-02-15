@@ -38,11 +38,11 @@ void tmcc160_default_spi_delay()
 
 void tmcc160_writeInt(uint8 address, int value)
 {
-	tmcc160_spi_readwriteByte(address | 0x80, FALSE);
-	tmcc160_spi_readwriteByte(0xFF & (value>>24), FALSE);
-	tmcc160_spi_readwriteByte(0xFF & (value>>16), FALSE);
-	tmcc160_spi_readwriteByte(0xFF & (value>>8), FALSE);
-	tmcc160_spi_readwriteByte(0xFF & (value>>0), TRUE);
+	tmcc160_spi_readwriteByte(address | 0x80, false);
+	tmcc160_spi_readwriteByte(0xFF & (value>>24), false);
+	tmcc160_spi_readwriteByte(0xFF & (value>>16), false);
+	tmcc160_spi_readwriteByte(0xFF & (value>>8), false);
+	tmcc160_spi_readwriteByte(0xFF & (value>>0), true);
 }
 
 int tmcc160_readInt(uint8 address)
@@ -50,24 +50,24 @@ int tmcc160_readInt(uint8 address)
 	// clear write bit
 	address &= 0x7F;
 
-	tmcc160_spi_readwriteByte(address, FALSE);
-	tmcc160_spi_readwriteByte(0, FALSE);
-	tmcc160_spi_readwriteByte(0, FALSE);
-	tmcc160_spi_readwriteByte(0, FALSE);
-	tmcc160_spi_readwriteByte(0, TRUE);
+	tmcc160_spi_readwriteByte(address, false);
+	tmcc160_spi_readwriteByte(0, false);
+	tmcc160_spi_readwriteByte(0, false);
+	tmcc160_spi_readwriteByte(0, false);
+	tmcc160_spi_readwriteByte(0, true);
 
 	// delay needed!
 	tmcc160_default_spi_delay();
 
-	tmcc160_spi_readwriteByte(address, FALSE);
+	tmcc160_spi_readwriteByte(address, false);
 
-	int value = tmcc160_spi_readwriteByte(0, FALSE);
+	int value = tmcc160_spi_readwriteByte(0, false);
 	value <<= 8;
-	value |= tmcc160_spi_readwriteByte(0, FALSE);
+	value |= tmcc160_spi_readwriteByte(0, false);
 	value <<= 8;
-	value |= tmcc160_spi_readwriteByte(0, FALSE);
+	value |= tmcc160_spi_readwriteByte(0, false);
 	value <<= 8;
-	value |= tmcc160_spi_readwriteByte(0, TRUE);
+	value |= tmcc160_spi_readwriteByte(0, true);
 
 	return value;
 }

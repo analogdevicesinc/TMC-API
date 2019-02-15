@@ -20,11 +20,11 @@ void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8 channel, uint8 address, int
 	if(channel >= TMC5062_MOTORS)
 		return;
 
-	tmc5062_readWrite(tmc5062->motors[channel], address | TMC5062_WRITE_BIT, FALSE);
-	tmc5062_readWrite(tmc5062->motors[channel], value >> 24, FALSE);
-	tmc5062_readWrite(tmc5062->motors[channel], value >> 16, FALSE);
-	tmc5062_readWrite(tmc5062->motors[channel], value >>  8, FALSE);
-	tmc5062_readWrite(tmc5062->motors[channel], value,       TRUE);
+	tmc5062_readWrite(tmc5062->motors[channel], address | TMC5062_WRITE_BIT, false);
+	tmc5062_readWrite(tmc5062->motors[channel], value >> 24, false);
+	tmc5062_readWrite(tmc5062->motors[channel], value >> 16, false);
+	tmc5062_readWrite(tmc5062->motors[channel], value >>  8, false);
+	tmc5062_readWrite(tmc5062->motors[channel], value,       true);
 
 	tmc5062->config->shadowRegister[TMC_ADDRESS(address)] = value;
 }
@@ -37,22 +37,22 @@ int tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8 channel, uint8 address)
 	if(!TMC_IS_READABLE(tmc5062->registerAccess[TMC_ADDRESS(address)]))
 		return tmc5062->config->shadowRegister[TMC_ADDRESS(address)];
 
-	tmc5062_readWrite(tmc5062->motors[channel], address, FALSE);
-	tmc5062_readWrite(tmc5062->motors[channel], 0, FALSE);
-	tmc5062_readWrite(tmc5062->motors[channel], 0, FALSE);
-	tmc5062_readWrite(tmc5062->motors[channel], 0, FALSE);
-	tmc5062_readWrite(tmc5062->motors[channel], 0, TRUE);
+	tmc5062_readWrite(tmc5062->motors[channel], address, false);
+	tmc5062_readWrite(tmc5062->motors[channel], 0, false);
+	tmc5062_readWrite(tmc5062->motors[channel], 0, false);
+	tmc5062_readWrite(tmc5062->motors[channel], 0, false);
+	tmc5062_readWrite(tmc5062->motors[channel], 0, true);
 
 	int value = 0;
 
-	tmc5062_readWrite(tmc5062->motors[channel], address, FALSE);
-	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, FALSE);
+	tmc5062_readWrite(tmc5062->motors[channel], address, false);
+	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, false);
 	value <<= 8;
-	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, FALSE);
+	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, false);
 	value <<= 8;
-	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, FALSE);
+	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, false);
 	value <<= 8;
-	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, TRUE);
+	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, true);
 
 	return value;
 }
@@ -179,7 +179,7 @@ void tmc5062_periodicJob(TMC5062TypeDef *tmc5062, uint32 tick)
 uint8 tmc5062_reset(TMC5062TypeDef *tmc5062)
 {
 	if(tmc5062->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	// Reset the dirty bits and wipe the shadow registers
 	for(size_t i = 0; i < TMC5062_REGISTER_COUNT; i++)
@@ -191,7 +191,7 @@ uint8 tmc5062_reset(TMC5062TypeDef *tmc5062)
 	tmc5062->config->state        = CONFIG_RESET;
 	tmc5062->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 uint8 tmc5062_restore(TMC5062TypeDef *tmc5062)
@@ -339,7 +339,7 @@ uint32 setEncoderFactor(TMC5062TypeDef *tmc5062, uint8 channel, uint32 motorFull
 {
 	int numerator, denominator, remainder;
 	int binaryError, decimalError;
-	uint8 useDecimal, binaryRounded = FALSE, decimalRounded = FALSE;
+	uint8 useDecimal, binaryRounded = false, decimalRounded = false;
 
 	// Check for divisor 0
 	// Return value here is inaccurate, this is just a protection against runtime/usage error.
@@ -369,13 +369,13 @@ uint32 setEncoderFactor(TMC5062TypeDef *tmc5062, uint8 channel, uint32 motorFull
 		if((uint32) binaryError > (encoderResolution/2))
 		{
 			binaryError -= encoderResolution;
-			binaryRounded = TRUE;
+			binaryRounded = true;
 		}
 
 		if((uint32) decimalError > (encoderResolution/2))
 		{
 			decimalError -= encoderResolution;
-			decimalRounded = TRUE;
+			decimalRounded = true;
 		}
 
 		if((abs(binaryError) * 10000) <= (abs(decimalError) << 16))

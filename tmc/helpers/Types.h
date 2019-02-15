@@ -57,13 +57,6 @@ typedef double f64;
 #define s32_MAX  (s32)  2147483647
 #define s32_MIN  (s32)  -2147483648
 
-#ifndef FALSE
-#define FALSE  0
-#endif
-#ifndef TRUE
-#define TRUE   1
-#endif
-
 // NULL pointer
 #ifndef NULL
 	#define NULL ((void *) 0)

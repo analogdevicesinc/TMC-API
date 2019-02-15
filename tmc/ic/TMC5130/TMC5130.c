@@ -108,7 +108,7 @@ void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130)
 uint8 tmc5130_reset(TMC5130TypeDef *tmc5130)
 {
 	if(tmc5130->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	// Reset the dirty bits and wipe the shadow registers
 	for(size_t i = 0; i < TMC5130_REGISTER_COUNT; i++)
@@ -120,18 +120,18 @@ uint8 tmc5130_reset(TMC5130TypeDef *tmc5130)
 	tmc5130->config->state        = CONFIG_RESET;
 	tmc5130->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 uint8 tmc5130_restore(TMC5130TypeDef *tmc5130)
 {
 	if(tmc5130->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	tmc5130->config->state        = CONFIG_RESTORE;
 	tmc5130->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 void tmc5130_setRegisterResetState(TMC5130TypeDef *tmc5130, const int32 *resetState)

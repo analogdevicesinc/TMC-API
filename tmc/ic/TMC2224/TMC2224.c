@@ -56,7 +56,7 @@ void tmc2224_initConfig(TMC2224TypeDef *tmc2224)
 	tmc2224->velocity      = 0;
 	tmc2224->oldTick       = 0;
 	tmc2224->oldX          = 0;
-	tmc2224->vMaxModified  = FALSE;
+	tmc2224->vMaxModified  = false;
 
 	int i;
 	for(i = 0; i < TMC2224_REGISTER_COUNT; i++)

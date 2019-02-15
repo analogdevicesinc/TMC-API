@@ -11,32 +11,32 @@ extern u8 tmc8461_readWrite(u8 channel, u8 data, u8 lastTransfer);
 
 void tmc8461_esc_read(TMC8461TypeDef *tmc8461, u16 address)
 {
-	tmc8461_readWrite(tmc8461->config_esc->channel, address >> 5, FALSE);
-	tmc8461_readWrite(tmc8461->config_esc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, FALSE);
-	tmc8461_readWrite(tmc8461->config_esc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_READ_WAIT << 2), FALSE);
-	tmc8461_readWrite(tmc8461->config_esc->channel, 0xFF, FALSE);
+	tmc8461_readWrite(tmc8461->config_esc->channel, address >> 5, false);
+	tmc8461_readWrite(tmc8461->config_esc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, false);
+	tmc8461_readWrite(tmc8461->config_esc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_READ_WAIT << 2), false);
+	tmc8461_readWrite(tmc8461->config_esc->channel, 0xFF, false);
 }
 
 void tmc8461_esc_write(TMC8461TypeDef *tmc8461, u16 address)
 {
-	tmc8461_readWrite(tmc8461->config_esc->channel, address >> 5, FALSE);
-	tmc8461_readWrite(tmc8461->config_esc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, FALSE);
-	tmc8461_readWrite(tmc8461->config_esc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_WRITE << 2), FALSE);
+	tmc8461_readWrite(tmc8461->config_esc->channel, address >> 5, false);
+	tmc8461_readWrite(tmc8461->config_esc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, false);
+	tmc8461_readWrite(tmc8461->config_esc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_WRITE << 2), false);
 }
 
 void tmc8461_mfc_read(TMC8461TypeDef *tmc8461, u16 address)
 {
-	tmc8461_readWrite(tmc8461->config_mfc->channel, address >> 5, FALSE);
-	tmc8461_readWrite(tmc8461->config_mfc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, FALSE);
-	tmc8461_readWrite(tmc8461->config_mfc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_READ_WAIT << 2), FALSE);
-	tmc8461_readWrite(tmc8461->config_mfc->channel, 0xFF, FALSE);
+	tmc8461_readWrite(tmc8461->config_mfc->channel, address >> 5, false);
+	tmc8461_readWrite(tmc8461->config_mfc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, false);
+	tmc8461_readWrite(tmc8461->config_mfc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_READ_WAIT << 2), false);
+	tmc8461_readWrite(tmc8461->config_mfc->channel, 0xFF, false);
 }
 
 void tmc8461_mfc_write(TMC8461TypeDef *tmc8461, u16 address)
 {
-	tmc8461_readWrite(tmc8461->config_mfc->channel, address >> 5, FALSE);
-	tmc8461_readWrite(tmc8461->config_mfc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, FALSE);
-	tmc8461_readWrite(tmc8461->config_mfc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_WRITE << 2), FALSE);
+	tmc8461_readWrite(tmc8461->config_mfc->channel, address >> 5, false);
+	tmc8461_readWrite(tmc8461->config_mfc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, false);
+	tmc8461_readWrite(tmc8461->config_mfc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_WRITE << 2), false);
 }
 
 void tmc8461_esc_read_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, u16 len)
@@ -44,7 +44,7 @@ void tmc8461_esc_read_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, u
 	tmc8461_esc_read(tmc8461, address);
 
 	for (u16 i = 0; i < len; i++)
-		data_ptr[i] = tmc8461_readWrite(tmc8461->config_esc->channel, (i < len - 1) ? 0x00 : 0xFF, (i < len - 1) ? FALSE : TRUE);
+		data_ptr[i] = tmc8461_readWrite(tmc8461->config_esc->channel, (i < len - 1) ? 0x00 : 0xFF, (i < len - 1) ? false : true);
 }
 
 u8 tmc8461_esc_read_8(TMC8461TypeDef *tmc8461, u16 address)
@@ -79,7 +79,7 @@ void tmc8461_esc_write_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, 
 	tmc8461_esc_write(tmc8461, address);
 
 	for(u16 i = 0; i < len; i++)
-		tmc8461_readWrite(tmc8461->config_esc->channel, data_ptr[i], (i < len - 1) ? FALSE : TRUE);
+		tmc8461_readWrite(tmc8461->config_esc->channel, data_ptr[i], (i < len - 1) ? false : true);
 }
 
 void tmc8461_esc_write_8(TMC8461TypeDef *tmc8461, u16 address, u8 value)
@@ -112,7 +112,7 @@ void tmc8461_mfc_read_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, u
 	tmc8461_mfc_read(tmc8461, address);
 
 	for (u16 i = 0; i < len; i++)
-		data_ptr[i] = tmc8461_readWrite(tmc8461->config_mfc->channel, (i < len - 1) ? 0x00 : 0xFF, (i < len - 1) ? FALSE : TRUE);
+		data_ptr[i] = tmc8461_readWrite(tmc8461->config_mfc->channel, (i < len - 1) ? 0x00 : 0xFF, (i < len - 1) ? false : true);
 }
 
 void tmc8461_mfc_read_32(TMC8461TypeDef *tmc8461, u16 address, u32 *value)
@@ -149,7 +149,7 @@ void tmc8461_mfc_write_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, 
 	tmc8461_mfc_write(tmc8461, address);
 
 	for (u16 i = 0; i < len; i++)
-		tmc8461_readWrite(tmc8461->config_mfc->channel, data_ptr[i], (i < len - 1) ? FALSE : TRUE);
+		tmc8461_readWrite(tmc8461->config_mfc->channel, data_ptr[i], (i < len - 1) ? false : true);
 }
 
 void tmc8461_mfc_write_32(TMC8461TypeDef *tmc8461, u16 address, u32 value)
@@ -197,7 +197,7 @@ void tmc8461_initConfig(TMC8461TypeDef *tmc8461, ConfigurationTypeDef *tmc8461_c
 	tmc8461->config_mfc = tmc8461_config_mfc;
 
 	while(TMC8461_FIELD_READ(tmc8461, tmc8461_esc_read_16, TMC8461_ESC_PDI_CTRL, TMC8461_ESC_PDI_MODE_MASK, TMC8461_ESC_PDI_MODE_SHIFT) != TMC8461_PDI_SPI_SLAVE);
-	tmc8461_esc_write_16(tmc8461, TMC8461_ESC_AL_STATUS, FIELD_SET(TMC8461_EC_STATE_INIT, TMC8461_ESC_AL_ERROR_MASK, TMC8461_ESC_AL_ERROR_SHIFT, TRUE));
+	tmc8461_esc_write_16(tmc8461, TMC8461_ESC_AL_STATUS, FIELD_SET(TMC8461_EC_STATE_INIT, TMC8461_ESC_AL_ERROR_MASK, TMC8461_ESC_AL_ERROR_SHIFT, true));
 	tmc8461_esc_write_16(tmc8461, TMC8461_ESC_AL_CODE, 0x0000);
 	tmc8461_esc_write_16(tmc8461, TMC8461_ESC_AL_EVENT_MASK_LO, 0xFF0E);
 }

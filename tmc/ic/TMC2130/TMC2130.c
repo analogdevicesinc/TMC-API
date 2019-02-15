@@ -69,7 +69,7 @@ void tmc2130_init(TMC2130TypeDef *tmc2130, uint8 channel, ConfigurationTypeDef *
 uint8 tmc2130_reset(TMC2130TypeDef *tmc2130)
 {
 	if(tmc2130->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	int i;
 
@@ -80,18 +80,18 @@ uint8 tmc2130_reset(TMC2130TypeDef *tmc2130)
 	tmc2130->config->state        = CONFIG_RESET;
 	tmc2130->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 uint8 tmc2130_restore(TMC2130TypeDef *tmc2130)
 {
 	if(tmc2130->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	tmc2130->config->state        = CONFIG_RESTORE;
 	tmc2130->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 void tmc2130_setRegisterResetState(TMC2130TypeDef *tmc2130, const int32 *resetState)

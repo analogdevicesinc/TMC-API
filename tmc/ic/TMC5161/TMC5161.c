@@ -134,7 +134,7 @@ void tmc5161_periodicJob(TMC5161TypeDef *tmc5161, uint32 tick)
 uint8 tmc5161_reset(TMC5161TypeDef *tmc5161)
 {
 	if(tmc5161->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	// Reset the dirty bits
 	for(size_t i = 0; i < TMC5161_REGISTER_COUNT; i++)
@@ -143,18 +143,18 @@ uint8 tmc5161_reset(TMC5161TypeDef *tmc5161)
 	tmc5161->config->state        = CONFIG_RESET;
 	tmc5161->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 uint8 tmc5161_restore(TMC5161TypeDef *tmc5161)
 {
 	if(tmc5161->config->state != CONFIG_READY)
-		return FALSE;
+		return false;
 
 	tmc5161->config->state        = CONFIG_RESTORE;
 	tmc5161->config->configIndex  = 0;
 
-	return TRUE;
+	return true;
 }
 
 void tmc5161_setRegisterResetState(TMC5161TypeDef *tmc5161, const int32 *resetState)
