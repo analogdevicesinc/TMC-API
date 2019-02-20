@@ -129,7 +129,7 @@ void tmc4361_init(TMC4361TypeDef *tmc4361, uint8 channel, ConfigurationTypeDef *
 	tmc4361->config->configIndex  = 0;
 	tmc4361->config->state        = CONFIG_READY;
 
-	tmc4361->cover_hold = FALSE;
+	tmc4361->cover_hold = false;
 
 	int i;
 	for(i = 0; i < TMC4361_REGISTER_COUNT; i++)

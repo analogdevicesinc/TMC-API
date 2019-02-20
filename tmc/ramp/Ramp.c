@@ -51,7 +51,7 @@ int32 tmc_ramp_get_rampPosition(void *ramp, TMC_RampType type)
 
 bool tmc_ramp_get_enabled(void *ramp, TMC_RampType type)
 {
-	bool enabled = FALSE;
+	bool enabled = false;
 	switch(type) {
 	case TMC_RAMP_TYPE_LINEAR:
 		enabled = tmc_ramp_linear_get_enabled((TMC_LinearRamp *)ramp);

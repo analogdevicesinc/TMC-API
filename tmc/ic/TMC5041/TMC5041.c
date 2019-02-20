@@ -71,8 +71,8 @@ void tmc5041_initConfig(TMC5041TypeDef *tmc5041)
 	tmc5041->oldTick          = 0;
 	tmc5041->oldX[0]          = 0;
 	tmc5041->oldX[1]          = 0;
-	tmc5041->vMaxModified[0]  = FALSE;
-	tmc5041->vMaxModified[1]  = FALSE;
+	tmc5041->vMaxModified[0]  = false;
+	tmc5041->vMaxModified[1]  = false;
 
 	int i;
 	for(i = 0; i < TMC5041_REGISTER_COUNT; i++)
