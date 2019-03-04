@@ -10,6 +10,7 @@
 
 	#include <stdint.h>
 	#include <stddef.h>
+	#include <stdbool.h>
 
 	// unsigned types
 	typedef uint8_t  u8;
@@ -55,9 +56,6 @@
 	#define s24_MIN  (s32)  -8388608
 	#define s32_MAX  (s32)  2147483647
 	#define s32_MIN  (s32)  -2147483648
-
-	// bool type
-	typedef unsigned char  bool;
 
 #ifndef FALSE
 	#define FALSE  0

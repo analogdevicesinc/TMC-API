@@ -13,6 +13,7 @@
 	#define TMC2160_GCONF       0x00
 	#define TMC2160_GSTAT       0x01
 	#define TMC2160_IOIN        0x04
+	#define TMC2160_DRV_CONF	0x0A
 	#define TMC2160_IHOLD_IRUN  0x10
 	#define TMC2160_TPOWERDOWN  0x11
 	#define TMC2160_TSTEP       0x12
