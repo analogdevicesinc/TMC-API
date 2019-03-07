@@ -19,4 +19,4 @@
 	#define TMC6200_SHORT_CONF     0x09
 	#define TMC6200_DRV_CONF       0x0A
 
-#endif /* TMCTMC6200_REGISTER_H */
+#endif /* TMC6200_REGISTER_H */
