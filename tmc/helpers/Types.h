@@ -8,11 +8,23 @@
 #ifndef TMC_TYPES_H_
 #define TMC_TYPES_H_
 
-#include <stdint.h>
 #include <stddef.h>
+
+#ifndef TMC_TYPES_BOOL
+#define TMC_TYPES_BOOL
+
 #include <stdbool.h>
 
-// unsigned types
+#endif
+
+#ifndef TMC_TYPES_INTEGERS
+#define TMC_TYPES_INTEGERS
+
+#include <stdint.h>
+
+#ifndef TMC_TYPES_INTEGERS_UNSIGNED
+#define TMC_TYPES_INTEGERS_UNSIGNED
+
 typedef uint8_t  u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
@@ -34,7 +46,11 @@ typedef u64      uint64;
 #define u24_MAX  (u32)  16777215uL
 #define u32_MAX  (u32)  4294967295uL
 
-// signed types
+#endif
+
+#ifndef TMC_TYPES_INTEGERS_SIGNED
+#define TMC_TYPES_INTEGERS_SIGNED
+
 typedef int8_t   s8;
 typedef int16_t  s16;
 typedef int32_t  s32;
@@ -45,9 +61,6 @@ typedef s16      int16;
 typedef s32      int32;
 typedef s64      int64;
 
-typedef float f32;
-typedef double f64;
-
 #define s8_MAX   (s8)   127
 #define s8_MIN   (s8)   -128
 #define s16_MAX  (s16)  32767
@@ -57,9 +70,25 @@ typedef double f64;
 #define s32_MAX  (s32)  2147483647
 #define s32_MIN  (s32)  -2147483648
 
-// NULL pointer
+#endif
+
+#endif
+
+#ifndef TMC_TYPES_FLOATS
+#define TMC_TYPES_FLOATS
+
+typedef float f32;
+typedef double f64;
+
+#endif
+
+#ifndef TMC_TYPES_NULL
+#define TMC_TYPES_NULL
+
 #ifndef NULL
-	#define NULL ((void *) 0)
+#define NULL ((void *) 0)
+#endif
+
 #endif
 
 #endif /* TMC_TYPES_H_ */
