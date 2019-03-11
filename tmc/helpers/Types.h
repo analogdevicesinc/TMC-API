@@ -15,6 +15,19 @@
 
 #include <stdbool.h>
 
+#ifndef TMC_TYPES_BOOL_TRUE_FALSE
+#define TMC_TYPES_BOOL_TRUE_FALSE
+
+#ifndef FALSE
+#define FALSE 0
+#endif
+
+#ifndef TRUE
+#define TRUE (!(FALSE))
+#endif
+
+#endif
+
 #endif
 
 #ifndef TMC_TYPES_INTEGERS
