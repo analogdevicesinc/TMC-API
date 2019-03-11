@@ -20,7 +20,7 @@ void tmc_linearRamp_init(TMC_LinearRamp *linearRamp)
 	linearRamp->acceleration    = 0;
 	linearRamp->lastdVRest      = 0;
 	linearRamp->lastdXRest      = 0;
-	linearRamp->rampEnabled     = true;
+	linearRamp->rampEnabled     = false;
 }
 
 void tmc_linearRamp_computeRampVelocity(TMC_LinearRamp *linearRamp)
