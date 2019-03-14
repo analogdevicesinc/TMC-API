@@ -23,8 +23,9 @@
 #define TMC4671_FIELD_UPDATE(tdef, address, mask, shift, value) \
 	(tmc4671_writeInt(tdef, address, FIELD_SET(tmc4671_readInt(tdef, address), mask, shift, value)))
 
-int tmc4671_readInt(uint8_t motor, uint8 address);
-void tmc4671_writeInt(uint8_t motor, uint8 address, int value);
+void tmc4671_writeDatagram(uint8_t motor, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
+int32_t tmc4671_readInt(uint8_t motor, uint8 address);
+void tmc4671_writeInt(uint8_t motor, uint8 address, int32_t value);
 u16 tmc4671_readRegister16BitValue(uint8_t motor, uint8_t address, uint8_t channel);
 void tmc4671_writeRegister16BitValue(uint8_t motor, uint8_t address, uint8_t channel, u16 value);
 

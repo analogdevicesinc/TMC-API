@@ -20,48 +20,42 @@
 	extern int tmc4671_readIntExt(uint8_t motor, uint8 address);
 	extern void tmc4671_writeIntExt(uint8_t motor, uint8 address, int value);
 #else
-	extern uint8_t tmc4671_readwriteByte(uint8_t motor, uint8_t data, uint8_t lastTransfer);
+	extern void tmc4671_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
 #endif
 // <= SPI wrapper
 
+void tmc4671_writeDatagram(uint8_t motor, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4)
+{
+	uint8 data[5] = { address | 0x80, x1, x2, x3, x4 };
+	tmc4671_readWriteArray(motor, &data[0], 5);
+}
+
 // spi access
-int tmc4671_readInt(uint8_t motor, uint8 address)
+int32_t tmc4671_readInt(uint8_t motor, uint8 address)
 {
 #ifdef USE_EXTERN_32BIT_ACCESS
 	return tmc4671_readIntExt(motor, address);
 #else
-	// clear write bit
-	address &= 0x7F;
+	address = TMC_ADDRESS(address);
 
-	// write address
-	tmc4671_readwriteByte(motor, address, false);
+	uint8 data[5] = { 0, 0, 0, 0, 0 };
 
-	// read data
-	int value = tmc4671_readwriteByte(motor, 0, false);
-	value <<= 8;
-	value |= tmc4671_readwriteByte(motor, 0, false);
-	value <<= 8;
-	value |= tmc4671_readwriteByte(motor, 0, false);
-	value <<= 8;
-	value |= tmc4671_readwriteByte(motor, 0, true);
+	data[0] = address;
+	tmc4671_readWriteArray(motor, &data[0], 5);
 
-	return value;
+	data[0] = address;
+	tmc4671_readWriteArray(motor, &data[0], 5);
+
+	return (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
 #endif
 }
 
-void tmc4671_writeInt(uint8_t motor, uint8 address, int value)
+void tmc4671_writeInt(uint8_t motor, uint8 address, int32_t value)
 {
 #ifdef USE_EXTERN_32BIT_ACCESS
 	tmc4671_writeIntExt(motor, address, value);
 #else
-	// write address
-	tmc4671_readwriteByte(motor, address|0x80, false);
-
-	// write value
-	tmc4671_readwriteByte(motor, 0xFF & (value>>24), false);
-	tmc4671_readwriteByte(motor, 0xFF & (value>>16), false);
-	tmc4671_readwriteByte(motor, 0xFF & (value>>8), false);
-	tmc4671_readwriteByte(motor, 0xFF & (value>>0), true);
+	tmc4671_writeDatagram(motor, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
 #endif
 }
 
