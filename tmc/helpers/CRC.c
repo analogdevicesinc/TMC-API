@@ -172,7 +172,7 @@ uint8 tmc_tableGetPolynomial(uint8 index)
 bool tmc_tableIsReflected(uint8 index)
 {
 	if(index >= CRC_TABLE_COUNT)
-		return FALSE;
+		return false;
 
 	return CRCTables[index].isReflected;
 }

@@ -8,6 +8,8 @@
 #ifndef TMC_IC_TMC2208_TMC2208_CONSTANTS_H_
 #define TMC_IC_TMC2208_TMC2208_CONSTANTS_H_
 
+#include "../../helpers/Constants.h"
+
 #define TMC2208_MOTORS           1
 #define TMC2208_REGISTER_COUNT   TMC_REGISTER_COUNT
 #define TMC2208_WRITE_BIT        TMC_WRITE_BIT

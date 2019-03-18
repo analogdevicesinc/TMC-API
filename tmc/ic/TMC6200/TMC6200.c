@@ -18,16 +18,16 @@ int tmc6200_readInt(u8 motor, uint8 address)
 	address = TMC_ADDRESS(address);
 
 	// write address
-	tmc6200_readwriteByte(motor, address, FALSE);
+	tmc6200_readwriteByte(motor, address, false);
 
 	// read data
-	int value = tmc6200_readwriteByte(motor, 0, FALSE);
+	int value = tmc6200_readwriteByte(motor, 0, false);
 	value <<= 8;
-	value |= tmc6200_readwriteByte(motor, 0, FALSE);
+	value |= tmc6200_readwriteByte(motor, 0, false);
 	value <<= 8;
-	value |= tmc6200_readwriteByte(motor, 0, FALSE);
+	value |= tmc6200_readwriteByte(motor, 0, false);
 	value <<= 8;
-	value |= tmc6200_readwriteByte(motor, 0, TRUE);
+	value |= tmc6200_readwriteByte(motor, 0, true);
 
 	return value;
 }
@@ -35,11 +35,11 @@ int tmc6200_readInt(u8 motor, uint8 address)
 void tmc6200_writeInt(u8 motor, uint8 address, int value)
 {
 	// write address
-	tmc6200_readwriteByte(motor, address | TMC6200_WRITE_BIT, FALSE);
+	tmc6200_readwriteByte(motor, address | TMC6200_WRITE_BIT, false);
 
 	// write value
-	tmc6200_readwriteByte(motor, 0xFF & (value>>24), FALSE);
-	tmc6200_readwriteByte(motor, 0xFF & (value>>16), FALSE);
-	tmc6200_readwriteByte(motor, 0xFF & (value>>8), FALSE);
-	tmc6200_readwriteByte(motor, 0xFF & (value>>0), TRUE);
+	tmc6200_readwriteByte(motor, 0xFF & (value>>24), false);
+	tmc6200_readwriteByte(motor, 0xFF & (value>>16), false);
+	tmc6200_readwriteByte(motor, 0xFF & (value>>8), false);
+	tmc6200_readwriteByte(motor, 0xFF & (value>>0), true);
 }

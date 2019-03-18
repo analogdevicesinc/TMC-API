@@ -9,15 +9,9 @@
 #define TMC_IC_TMC2160_H_
 
 #include "../../helpers/API_Header.h"
+#include "TMC2160_Constants.h"
 #include "TMC2160_Mask_Shift.h"
 #include "TMC2160_Register.h"
-
-#define TMC2160_REGISTER_COUNT   TMC_REGISTER_COUNT
-#define TMC2160_MOTORS           1
-#define TMC2160_WRITE_BIT        TMC_WRITE_BIT
-#define TMC2160_ADDRESS_MASK     TMC_ADDRESS_MASK
-#define TMC2160_MAX_VELOCITY     s32_MAX
-#define TMC2160_MAX_ACCELERATION u24_MAX
 
 // Helper macros
 #define TMC2160_FIELD_READ(tdef, address, mask, shift) \
@@ -35,7 +29,7 @@ typedef struct
 typedef void (*tmc2160_callback)(TMC2160TypeDef*, ConfigState);
 
 // Default Register values
-#define R10 0x00070100  // IHOLD_IRUN
+#define R10 0x00070A03  // IHOLD_IRUN
 #define R6C 0x10410153  // CHOPCONF
 #define R70 0xC40C001E  // PWMCONF
 
