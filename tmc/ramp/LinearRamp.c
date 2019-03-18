@@ -72,7 +72,7 @@ void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp)
 		s32 targetPositionsDifference = linearRamp->targetPosition-linearRamp->rampPosition;
 
 		// limit the sqrti value in case of high position differences
-		s64 sqrtiValue = tmc_limitS64(((s64)120 * (s64)linearRamp->acceleration * (s64)(abs(targetPositionsDifference))) / (s64) u16_MAX, 0, (s64)0x0FFFFFFF);
+		int64_t sqrtiValue = tmc_limitS64(((int64_t)120 * (int64_t)linearRamp->acceleration * (int64_t)(abs(targetPositionsDifference))) / (int64_t) u16_MAX, 0, (int64_t)0x0FFFFFFF);
 
 		// compute max allowed ramp velocity to ramp down to target
 		s32 maxRampStop = tmc_sqrti(sqrtiValue);
@@ -116,10 +116,10 @@ void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp)
 		linearRamp->rampVelocity = tmc_limitInt(linearRamp->rampVelocity, -abs(maxRampTargetVelocity), abs(maxRampTargetVelocity));
 
 		// do position ramping using actual ramp velocity to update dX
-		s64 dX = ((s64)linearRamp->rampVelocity * (s64)u16_MAX) / ((s64)60) + linearRamp->lastdXRest;
+		int64_t dX = ((int64_t)linearRamp->rampVelocity * (int64_t)u16_MAX) / ((int64_t)60) + linearRamp->lastdXRest;
 
 		// scale actual target position
-		s64 tempActualTargetPosition = (s64)linearRamp->rampPosition * 1000;
+		int64_t tempActualTargetPosition = (int64_t)linearRamp->rampPosition * 1000;
 
 		// update actual target position
 		tempActualTargetPosition += dX;

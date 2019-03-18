@@ -25,7 +25,7 @@ int32_t tmc4670_readInt(uint8_t motor, uint8_t address)
 	tmc4670_readwriteByte(motor, address, false);
 
 	// read data
-	int32_t value = tmc4670_readwriteByte(motor, 0, FALSE);
+	int32_t value = tmc4670_readwriteByte(motor, 0, false);
 	value <<= 8;
 	value |= tmc4670_readwriteByte(motor, 0, false);
 	value <<= 8;

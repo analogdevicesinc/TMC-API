@@ -124,7 +124,7 @@ void tmc5161_periodicJob(TMC5161TypeDef *tmc5161, uint32 tick)
 	if((tickDiff = tick-tmc5161->oldTick) >= 5) // measured speed dx/dt
 	{
 		XActual = tmc5161_readInt(tmc5161, TMC5161_XACTUAL);
-		tmc5161->velocity = (int) ((f32) ((XActual-tmc5161->oldX) / (f32) tickDiff) * (f32) 1048.576);
+		tmc5161->velocity = (int) ((float32_t) ((XActual-tmc5161->oldX) / (float32_t) tickDiff) * (float32_t) 1048.576);
 
 		tmc5161->oldX     = XActual;
 		tmc5161->oldTick  = tick;

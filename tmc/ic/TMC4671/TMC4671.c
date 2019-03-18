@@ -22,16 +22,16 @@ int32_t tmc4671_readInt(uint8_t motor, uint8_t address)
 	address &= 0x7F;
 
 	// write address
-	tmc4671_readwriteByte(motor, address, FALSE);
+	tmc4671_readwriteByte(motor, address, false);
 
 	// read data
-	int32_t value = tmc4671_readwriteByte(motor, 0, FALSE);
+	int32_t value = tmc4671_readwriteByte(motor, 0, false);
 	value <<= 8;
-	value |= tmc4671_readwriteByte(motor, 0, FALSE);
+	value |= tmc4671_readwriteByte(motor, 0, false);
 	value <<= 8;
-	value |= tmc4671_readwriteByte(motor, 0, FALSE);
+	value |= tmc4671_readwriteByte(motor, 0, false);
 	value <<= 8;
-	value |= tmc4671_readwriteByte(motor, 0, TRUE);
+	value |= tmc4671_readwriteByte(motor, 0, true);
 
 	return value;
 }
@@ -39,13 +39,13 @@ int32_t tmc4671_readInt(uint8_t motor, uint8_t address)
 void tmc4671_writeInt(uint8_t motor, uint8_t address, int32_t value)
 {
 	// write address
-	tmc4671_readwriteByte(motor, address|0x80, FALSE);
+	tmc4671_readwriteByte(motor, address|0x80, false);
 
 	// write value
-	tmc4671_readwriteByte(motor, 0xFF & (value>>24), FALSE);
-	tmc4671_readwriteByte(motor, 0xFF & (value>>16), FALSE);
-	tmc4671_readwriteByte(motor, 0xFF & (value>>8), FALSE);
-	tmc4671_readwriteByte(motor, 0xFF & (value>>0), TRUE);
+	tmc4671_readwriteByte(motor, 0xFF & (value>>24), false);
+	tmc4671_readwriteByte(motor, 0xFF & (value>>16), false);
+	tmc4671_readwriteByte(motor, 0xFF & (value>>8), false);
+	tmc4671_readwriteByte(motor, 0xFF & (value>>0), true);
 }
 
 uint16_t tmc4671_readRegister16BitValue(uint8_t motor, uint8_t address, uint8_t channel)

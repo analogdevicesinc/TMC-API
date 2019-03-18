@@ -42,11 +42,11 @@ void tmc8461_esc_write_32(TMC8461TypeDef *tmc8461, u16 address, u32 value);
 
 void tmc8461_mfc_read_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, u16 len);
 void tmc8461_mfc_read_32(TMC8461TypeDef *tmc8461, u16 address, u32 *value);
-void tmc8461_mfc_read_64(TMC8461TypeDef *tmc8461, u16 address, u64 *value);
+void tmc8461_mfc_read_64(TMC8461TypeDef *tmc8461, u16 address, uint64_t *value);
 void tmc8461_mfc_read_auto(TMC8461TypeDef *tmc8461, u16 address, u8 *value);
 void tmc8461_mfc_write_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, u16 len);
 void tmc8461_mfc_write_32(TMC8461TypeDef *tmc8461, u16 address, u32 value);
-void tmc8461_mfc_write_64(TMC8461TypeDef *tmc8461, u16 address, u64 value);
+void tmc8461_mfc_write_64(TMC8461TypeDef *tmc8461, u16 address, uint64_t value);
 void tmc8461_mfc_write_auto(TMC8461TypeDef *tmc8461, u16 address, u8 *value);
 
 /**

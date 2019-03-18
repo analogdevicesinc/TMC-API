@@ -9,31 +9,23 @@
 #define TMC_TYPES_H_
 
 #include <stddef.h>
-
-#ifndef TMC_TYPES_BOOL
-#define TMC_TYPES_BOOL
-
 #include <stdbool.h>
-
-#ifndef TMC_TYPES_BOOL_TRUE_FALSE
-#define TMC_TYPES_BOOL_TRUE_FALSE
-
-#ifndef FALSE
-#define FALSE 0
-#endif
-
-#ifndef TRUE
-#define TRUE (!(FALSE))
-#endif
-
-#endif
-
-#endif
+#include <stdint.h>
 
 #ifndef TMC_TYPES_INTEGERS
 #define TMC_TYPES_INTEGERS
 
-#include <stdint.h>
+// todo: change to standard ISO C99 types (ED)
+
+// www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf
+// ISO C99: 7.18 Integer types 8, 16, 32, or 64 bits
+// intN_t = two’s complement signed integer type with width N, no padding bits.
+// uintN_t = an unsigned integer type with width N.
+// floatN_t = N bit IEE 754 float.
+// INT8_MIN, INT8_MAX, INT16_MIN, INT16_MAX, INT32_MIN, INT32_MAX, .... UINT32_MAX
+
+typedef float float32_t;
+typedef double float64_t;
 
 #ifndef TMC_TYPES_INTEGERS_UNSIGNED
 #define TMC_TYPES_INTEGERS_UNSIGNED
@@ -41,23 +33,21 @@
 typedef uint8_t  u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
-typedef uint64_t u64;
 
 typedef u8       uint8;
 typedef u16      uint16;
 typedef u32      uint32;
-typedef u64      uint64;
 
-#define u8_MAX   (u8)   255
-#define u10_MAX  (u16)  1023
-#define u12_MAX  (u16)  4095
-#define u15_MAX  (u16)  32767
-#define u16_MAX  (u16)  65535
-#define u18_MAX  (u32)  262143uL
-#define u20_MAX  (u32)  1048575uL
-#define u22_MAX  (u32)  4194303uL
-#define u24_MAX  (u32)  16777215uL
-#define u32_MAX  (u32)  4294967295uL
+#define u8_MAX   (uint8_t)   255
+#define u10_MAX  (uint16_t)  1023
+#define u12_MAX  (uint16_t)  4095
+#define u15_MAX  (uint16_t)  32767
+#define u16_MAX  (uint16_t)  65535
+#define u18_MAX  (uint32_t)  262143uL
+#define u20_MAX  (uint32_t)  1048575uL
+#define u22_MAX  (uint32_t)  4194303uL
+#define u24_MAX  (uint32_t)  16777215uL
+#define u32_MAX  (uint32_t)  4294967295uL
 
 #endif
 
@@ -67,31 +57,21 @@ typedef u64      uint64;
 typedef int8_t   s8;
 typedef int16_t  s16;
 typedef int32_t  s32;
-typedef int64_t  s64;
 
 typedef s8       int8;
 typedef s16      int16;
 typedef s32      int32;
-typedef s64      int64;
 
-#define s8_MAX   (s8)   127
-#define s8_MIN   (s8)   -128
-#define s16_MAX  (s16)  32767
-#define s16_MIN  (s16)  -32768
-#define s24_MAX  (s32)  8388607
-#define s24_MIN  (s32)  -8388608
-#define s32_MAX  (s32)  2147483647
-#define s32_MIN  (s32)  -2147483648
-
-#endif
+#define s8_MAX   (int8_t)   127
+#define s8_MIN   (int8_t)   -128
+#define s16_MAX  (int16_t)  32767
+#define s16_MIN  (int16_t)  -32768
+#define s24_MAX  (int32_t)  8388607
+#define s24_MIN  (int32_t)  -8388608
+#define s32_MAX  (int32_t)  2147483647
+#define s32_MIN  (int32_t)  -2147483648
 
 #endif
-
-#ifndef TMC_TYPES_FLOATS
-#define TMC_TYPES_FLOATS
-
-typedef float f32;
-typedef double f64;
 
 #endif
 

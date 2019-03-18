@@ -6,7 +6,7 @@
  */
 #include "Functions.h"
 
-int tmc_limitInt(int value, int min, int max)
+int32_t tmc_limitInt(int32_t value, int32_t min, int32_t max)
 {
 	if (value > max)
 		return max;
@@ -16,7 +16,7 @@ int tmc_limitInt(int value, int min, int max)
 		return value;
 }
 
-s64 tmc_limitS64(s64 value, s64 min, s64 max)
+int64_t tmc_limitS64(int64_t value, int64_t min, int64_t max)
 {
 	if (value > max)
 		return max;
@@ -50,9 +50,9 @@ static const unsigned char sqrttable[] =
   253, 254, 254, 255
 };
 
-int tmc_sqrti(int x)
+int32_t tmc_sqrti(int32_t x)
 {
-	int xn;
+	int32_t xn;
 
 	if (x >= 0x10000)
 	{
