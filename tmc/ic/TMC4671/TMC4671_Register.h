@@ -146,9 +146,6 @@
 	#define TMC4671_STATUS_FLAGS                       0x7C
 	#define TMC4671_STATUS_MASK                        0x7D
 
-//	#define TMC4671_STATUS_FLAGS_REF_MASK   0x00700000
-//	#define TMC4671_STATUS_FLAGS_REF_SHIFT  20
-
 	// motion modes
 	#define TMC4671_MOTION_MODE_STOPPED    0
 	#define TMC4671_MOTION_MODE_TORQUE     1

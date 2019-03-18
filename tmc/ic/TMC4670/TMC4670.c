@@ -6,32 +6,17 @@
  */
 #include "TMC4670.h"
 
-// motion modes
-#define MOTION_MODE_STOPPED    0
-#define MOTION_MODE_TORQUE     1
-#define MOTION_MODE_VELOCITY   2
-#define MOTION_MODE_POSITION   3
-#define MOTION_MODE_UQ_UD_EXT  8
-
-// PHI_E selections
-#define PHI_E_EXTERNAL   1
-#define PHI_E_OPEN_LOOP  2
-#define PHI_E_ABN        3
-#define PHI_E_HALL       5
-#define PHI_E_AENC       6
-#define PHI_A_AENC       7
-
 #define STATE_NOTHING_TO_DO    0
 #define STATE_START_INIT       1
 #define STATE_WAIT_INIT_TIME   2
 #define STATE_ESTIMATE_OFFSET  3
 
-// => SPI/APB wrapper
-extern u8 tmc4670_readwriteByte(u8 motor, u8 data, u8 lastTransfer);
-// <= SPI/APB wrapper
+// => SPI wrapper
+extern uint8_t tmc4670_readwriteByte(uint8_t motor, uint8_t data, uint8_t lastTransfer);
+// <= SPI wrapper
 
 // spi access
-int tmc4670_readInt(u8 motor, uint8 address)
+int32_t tmc4670_readInt(uint8_t motor, uint8_t address)
 {
 	// clear write bit
 	address &= 0x7F;
@@ -40,7 +25,7 @@ int tmc4670_readInt(u8 motor, uint8 address)
 	tmc4670_readwriteByte(motor, address, FALSE);
 
 	// read data
-	int value = tmc4670_readwriteByte(motor, 0, FALSE);
+	int32_t value = tmc4670_readwriteByte(motor, 0, FALSE);
 	value <<= 8;
 	value |= tmc4670_readwriteByte(motor, 0, FALSE);
 	value <<= 8;
@@ -51,7 +36,7 @@ int tmc4670_readInt(u8 motor, uint8 address)
 	return value;
 }
 
-void tmc4670_writeInt(u8 motor, uint8 address, int value)
+void tmc4670_writeInt(uint8_t motor, uint8_t address, int32_t value)
 {
 	// write address
 	tmc4670_readwriteByte(motor, address|0x80, FALSE);
@@ -63,15 +48,15 @@ void tmc4670_writeInt(u8 motor, uint8 address, int value)
 	tmc4670_readwriteByte(motor, 0xFF & (value>>0), TRUE);
 }
 
-u16 tmc4670_readRegister16BitValue(u8 motor, u8 address, u8 channel)
+uint16_t tmc4670_readRegister16BitValue(uint8_t motor, uint8_t address, uint8_t channel)
 {
-	int32 registerValue = tmc4670_readInt(motor, address);
+	int32_t registerValue = tmc4670_readInt(motor, address);
 
 	// read one channel
 	switch(channel)
 	{
 	case BIT_0_TO_15:
-		return (registerValue& 0xFFFF);
+		return (registerValue & 0xFFFF);
 		break;
 	case BIT_16_TO_31:
 		return ((registerValue >> 16) & 0xFFFF);
@@ -80,10 +65,10 @@ u16 tmc4670_readRegister16BitValue(u8 motor, u8 address, u8 channel)
 	return 0;
 }
 
-void tmc4670_writeRegister16BitValue(u8 motor, u8 address, u8 channel, u16 value)
+void tmc4670_writeRegister16BitValue(uint8_t motor, uint8_t address, uint8_t channel, uint16_t value)
 {
 	// read actual register content
-	int32 registerValue = tmc4670_readInt(motor, address);
+	int32_t registerValue = tmc4670_readInt(motor, address);
 
 	// update one channel
 	switch(channel)
@@ -101,56 +86,56 @@ void tmc4670_writeRegister16BitValue(u8 motor, u8 address, u8 channel, u16 value
 	tmc4670_writeInt(motor, address, registerValue);
 }
 
-void tmc4670_switchToMotionMode(u8 motor, u8 mode)
+void tmc4670_switchToMotionMode(uint8_t motor, uint8_t mode)
 {
 	// switch motion mode
-	u32 actualModeRegister = tmc4670_readInt(motor, TMC4670_MODE_RAMP_MODE_MOTION);
+	uint32_t actualModeRegister = tmc4670_readInt(motor, TMC4670_MODE_RAMP_MODE_MOTION);
 	actualModeRegister &= 0xFFFFFF00;
 	actualModeRegister |= mode;
 	tmc4670_writeInt(motor, TMC4670_MODE_RAMP_MODE_MOTION, actualModeRegister);
 }
 
-void tmc4670_setTargetTorque_raw(u8 motor, s32 targetTorque)
+void tmc4670_setTargetTorque_raw(uint8_t motor, int32_t targetTorque)
 {
-	tmc4670_switchToMotionMode(motor, MOTION_MODE_TORQUE);
+	tmc4670_switchToMotionMode(motor, TMC4670_MOTION_MODE_TORQUE);
 	tmc4670_writeRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_TARGET, BIT_16_TO_31, targetTorque);
 }
 
-s32 tmc4670_getTargetTorque_raw(u8 motor)
+int32_t tmc4670_getTargetTorque_raw(uint8_t motor)
 {
 	tmc4670_writeInt(motor, TMC4670_INTERIM_ADDR, 0);
-	return (s32) tmc4670_readInt(motor, TMC4670_INTERIM_DATA);
+	return (int32_t) tmc4670_readInt(motor, TMC4670_INTERIM_DATA);
 }
 
-s32 tmc4670_getActualTorque_raw(u8 motor)
+int32_t tmc4670_getActualTorque_raw(uint8_t motor)
 {
-	return (s16) tmc4670_readRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_ACTUAL, BIT_16_TO_31);
+	return (int16_t) tmc4670_readRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_ACTUAL, BIT_16_TO_31);
 }
 
-s32 tmc4670_getActualRampTorque_raw(u8 motor)
+int32_t tmc4670_getActualRampTorque_raw(uint8_t motor)
 {
 	// no ramp implemented
 	UNUSED(motor);
 	return 0;
 }
 
-void tmc4670_setTargetTorque_mA(u8 motor, u16 torqueMeasurementFactor, s32 targetTorque)
+void tmc4670_setTargetTorque_mA(uint8_t motor, uint16_t torqueMeasurementFactor, int32_t targetTorque)
 {
-	tmc4670_switchToMotionMode(motor, MOTION_MODE_TORQUE);
-	tmc4670_writeRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_TARGET, BIT_16_TO_31, (targetTorque * 256) / (s32) torqueMeasurementFactor);
+	tmc4670_switchToMotionMode(motor, TMC4670_MOTION_MODE_TORQUE);
+	tmc4670_writeRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_TARGET, BIT_16_TO_31, (targetTorque * 256) / (int32_t) torqueMeasurementFactor);
 }
 
-s32 tmc4670_getTargetTorque_mA(u8 motor, u16 torqueMeasurementFactor)
+int32_t tmc4670_getTargetTorque_mA(uint8_t motor, uint16_t torqueMeasurementFactor)
 {
-	return (tmc4670_getTargetTorque_raw(motor) * (s32) torqueMeasurementFactor) / 256;
+	return (tmc4670_getTargetTorque_raw(motor) * (int32_t) torqueMeasurementFactor) / 256;
 }
 
-s32 tmc4670_getActualTorque_mA(u8 motor, u16 torqueMeasurementFactor)
+int32_t tmc4670_getActualTorque_mA(uint8_t motor, uint16_t torqueMeasurementFactor)
 {
-	return (tmc4670_getActualTorque_raw(motor) * (s32) torqueMeasurementFactor) / 256;
+	return (tmc4670_getActualTorque_raw(motor) * (int32_t) torqueMeasurementFactor) / 256;
 }
 
-s32 tmc4670_getActualRampTorque_mA(u8 motor, u16 torqueMeasurementFactor)
+int32_t tmc4670_getActualRampTorque_mA(uint8_t motor, uint16_t torqueMeasurementFactor)
 {
 	// no ramp implemented
 	UNUSED(motor);
@@ -158,128 +143,126 @@ s32 tmc4670_getActualRampTorque_mA(u8 motor, u16 torqueMeasurementFactor)
 	return 0;
 }
 
-void tmc4670_setTargetFlux_raw(u8 motor, s32 targetFlux)
+void tmc4670_setTargetFlux_raw(uint8_t motor, int32_t targetFlux)
 {
 	// do not change the MOTION_MODE here! target flux can also be used during velocity and position modes
 	tmc4670_writeRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_TARGET, BIT_0_TO_15, targetFlux);
 }
 
-s32 tmc4670_getTargetFlux_raw(u8 motor)
+int32_t tmc4670_getTargetFlux_raw(uint8_t motor)
 {
 	tmc4670_writeInt(motor, TMC4670_INTERIM_ADDR, 1);
-	return (s32) tmc4670_readInt(motor, TMC4670_INTERIM_DATA);
+	return (int32_t) tmc4670_readInt(motor, TMC4670_INTERIM_DATA);
 }
 
-s32 tmc4670_getActualFlux_raw(u8 motor)
+int32_t tmc4670_getActualFlux_raw(uint8_t motor)
 {
-	return (s16) tmc4670_readRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_ACTUAL, BIT_0_TO_15);
+	return (int16_t) tmc4670_readRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_ACTUAL, BIT_0_TO_15);
 }
 
-void tmc4670_setTargetFlux_mA(u8 motor, u16 torqueMeasurementFactor, s32 targetFlux)
+void tmc4670_setTargetFlux_mA(uint8_t motor, uint16_t torqueMeasurementFactor, int32_t targetFlux)
 {
 	// do not change the MOTION_MODE here! target flux can also be used during velocity and position modes
-	tmc4670_writeRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_TARGET, BIT_0_TO_15, (targetFlux * 256) / (s32)torqueMeasurementFactor);
+	tmc4670_writeRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_TARGET, BIT_0_TO_15, (targetFlux * 256) / (int32_t) torqueMeasurementFactor);
 }
 
-s32 tmc4670_getTargetFlux_mA(u8 motor, u16 torqueMeasurementFactor)
+int32_t tmc4670_getTargetFlux_mA(uint8_t motor, uint16_t torqueMeasurementFactor)
 {
-	return (tmc4670_getTargetFlux_raw(motor) * (s32) torqueMeasurementFactor) / 256;
+	return (tmc4670_getTargetFlux_raw(motor) * (int32_t) torqueMeasurementFactor) / 256;
 }
 
-s32 tmc4670_getActualFlux_mA(u8 motor, u16 torqueMeasurementFactor)
+int32_t tmc4670_getActualFlux_mA(uint8_t motor, uint16_t torqueMeasurementFactor)
 {
-	return (tmc4670_getActualFlux_raw(motor) * (s32) torqueMeasurementFactor) / 256;
+	return (tmc4670_getActualFlux_raw(motor) * (int32_t) torqueMeasurementFactor) / 256;
 }
 
-void tmc4670_setTorqueFluxLimit_mA(u8 motor, u16 torqueMeasurementFactor, s32 max)
+void tmc4670_setTorqueFluxLimit_mA(uint8_t motor, uint16_t torqueMeasurementFactor, int32_t max)
 {
-	tmc4670_writeRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_LIMITS, BIT_0_TO_15, (max * 256) / (s32) torqueMeasurementFactor);
+	tmc4670_writeRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_LIMITS, BIT_0_TO_15, (max * 256) / (int32_t) torqueMeasurementFactor);
 }
 
-s32 tmc4670_getTorqueFluxLimit_mA(u8 motor, u16 torqueMeasurementFactor)
+int32_t tmc4670_getTorqueFluxLimit_mA(uint8_t motor, uint16_t torqueMeasurementFactor)
 {
-	return ((s32) tmc4670_readRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_LIMITS, BIT_0_TO_15) * (s32) torqueMeasurementFactor) / 256;
+	return ((int32_t) tmc4670_readRegister16BitValue(motor, TMC4670_PID_TORQUE_FLUX_LIMITS, BIT_0_TO_15) * (int32_t) torqueMeasurementFactor) / 256;
 }
 
-void tmc4670_setTargetVelocity(u8 motor, s32 targetVelocity)
+void tmc4670_setTargetVelocity(uint8_t motor, int32_t targetVelocity)
 {
-	tmc4670_switchToMotionMode(motor, MOTION_MODE_VELOCITY);
+	tmc4670_switchToMotionMode(motor, TMC4670_MOTION_MODE_VELOCITY);
 	tmc4670_writeInt(motor, TMC4670_PID_VELOCITY_TARGET, targetVelocity);
 }
 
-s32 tmc4670_getTargetVelocity(u8 motor)
+int32_t tmc4670_getTargetVelocity(uint8_t motor)
 {
-	//return (s32) tmc4670_spi_readInt(PID_VELOCITY_TARGET);
-
 	tmc4670_writeInt(motor, TMC4670_INTERIM_ADDR, 2);
-	return (s32) tmc4670_readInt(motor, TMC4670_INTERIM_DATA);
+	return (int32_t) tmc4670_readInt(motor, TMC4670_INTERIM_DATA);
 }
 
-s32 tmc4670_getActualVelocity(u8 motor)
+int32_t tmc4670_getActualVelocity(uint8_t motor)
 {
-	return (s32) tmc4670_readInt(motor, TMC4670_PID_VELOCITY_ACTUAL);
+	return (int32_t) tmc4670_readInt(motor, TMC4670_PID_VELOCITY_ACTUAL);
 }
 
-s32 tmc4670_getActualRampVelocity(u8 motor)
+int32_t tmc4670_getActualRampVelocity(uint8_t motor)
 {
-	// no ramp implemented
 	UNUSED(motor);
+	// no ramp implemented
 	return 0;
 }
 
-void tmc4670_setAbsolutTargetPosition(u8 motor, s32 targetPosition)
+void tmc4670_setAbsolutTargetPosition(uint8_t motor, int32_t targetPosition)
 {
-	tmc4670_switchToMotionMode(motor, MOTION_MODE_POSITION);
+	tmc4670_switchToMotionMode(motor, TMC4670_MOTION_MODE_POSITION);
 	tmc4670_writeInt(motor, TMC4670_PID_POSITION_TARGET, targetPosition);
 }
 
-void tmc4670_setRelativeTargetPosition(u8 motor, s32 relativePosition)
+void tmc4670_setRelativeTargetPosition(uint8_t motor, int32_t relativePosition)
 {
-	tmc4670_switchToMotionMode(motor, MOTION_MODE_POSITION);
+	tmc4670_switchToMotionMode(motor, TMC4670_MOTION_MODE_POSITION);
 	// determine actual position and add relative position ticks
-	tmc4670_writeInt(motor, TMC4670_PID_POSITION_TARGET, (s32) tmc4670_readInt(motor, TMC4670_PID_POSITION_ACTUAL) + relativePosition);
+	tmc4670_writeInt(motor, TMC4670_PID_POSITION_TARGET, (int32_t) tmc4670_readInt(motor, TMC4670_PID_POSITION_ACTUAL) + relativePosition);
 }
 
-s32 tmc4670_getTargetPosition(u8 motor)
+int32_t tmc4670_getTargetPosition(uint8_t motor)
 {
-	return (s32) tmc4670_readInt(motor, TMC4670_PID_POSITION_TARGET);
+	return (int32_t) tmc4670_readInt(motor, TMC4670_PID_POSITION_TARGET);
 }
 
-void tmc4670_setActualPosition(u8 motor, s32 actualPosition)
+void tmc4670_setActualPosition(uint8_t motor, int32_t actualPosition)
 {
 	tmc4670_writeInt(motor, TMC4670_PID_POSITION_ACTUAL, actualPosition);
 }
 
-s32 tmc4670_getActualPosition(u8 motor)
+int32_t tmc4670_getActualPosition(uint8_t motor)
 {
-	return (s32) tmc4670_readInt(motor, TMC4670_PID_POSITION_ACTUAL);
+	return (int32_t) tmc4670_readInt(motor, TMC4670_PID_POSITION_ACTUAL);
 }
 
-s32 tmc4670_getActualRampPosition(u8 motor)
+int32_t tmc4670_getActualRampPosition(uint8_t motor)
 {
-	// no ramp implemented
 	UNUSED(motor);
+	// no ramp implemented
 	return 0;
 }
 
 // encoder initialization
-void tmc4670_doEncoderInitializationMode0(u8 motor, u8 *initState, u16 initWaitTime, u16 *actualInitWaitTime, u16 startVoltage)
+void tmc4670_doEncoderInitializationMode0(uint8_t motor, uint8_t *initState, uint16_t initWaitTime, uint16_t *actualInitWaitTime, uint16_t startVoltage)
 {
 	static uint16 last_Phi_E_Selection = 0;
 	static uint32 last_UQ_UD_EXT = 0;
-	static s16 last_PHI_E_EXT = 0;
+	static int16_t last_PHI_E_EXT = 0;
 
 	switch (*initState)
 	{
 	case STATE_NOTHING_TO_DO:
-		*actualInitWaitTime =  0;
+		*actualInitWaitTime = 0;
 		break;
 	case STATE_START_INIT: // started by writing 1 to initState
 
 		// save actual set values for PHI_E_SELECTION, UQ_UD_EXT, and PHI_E_EXT
-		last_Phi_E_Selection = (u16) tmc4670_readRegister16BitValue(motor, TMC4670_PHI_E_SELECTION, BIT_0_TO_15);
-		last_UQ_UD_EXT = (u32) tmc4670_readInt(motor, TMC4670_UQ_UD_EXT);
-		last_PHI_E_EXT = (s16) tmc4670_readRegister16BitValue(motor, TMC4670_PHI_E_EXT, BIT_0_TO_15);
+		last_Phi_E_Selection = (uint16_t) tmc4670_readRegister16BitValue(motor, TMC4670_PHI_E_SELECTION, BIT_0_TO_15);
+		last_UQ_UD_EXT = (uint32_t) tmc4670_readInt(motor, TMC4670_UQ_UD_EXT);
+		last_PHI_E_EXT = (int16_t) tmc4670_readRegister16BitValue(motor, TMC4670_PHI_E_EXT, BIT_0_TO_15);
 
 		// set ABN_DECODER_PHI_E_OFFSET to zero
 		tmc4670_writeRegister16BitValue(motor, TMC4670_ABN_DECODER_PHI_E_PHI_M_OFFSET, BIT_16_TO_31, 0);
@@ -329,21 +312,21 @@ void tmc4670_doEncoderInitializationMode0(u8 motor, u8 *initState, u16 initWaitT
 	}
 }
 
-s16 tmc4670_getS16CircleDifference(s16 newValue, s16 oldValue)
+int16_t tmc4670_getS16CircleDifference(int16_t newValue, int16_t oldValue)
 {
 	return (newValue - oldValue);
 }
 
-void tmc4670_doEncoderInitializationMode2(u8 motor, u8 *initState, u16 *actualInitWaitTime)
+void tmc4670_doEncoderInitializationMode2(uint8_t motor, uint8_t *initState, uint16_t *actualInitWaitTime)
 {
-	static s16 hall_phi_e_old = 0;
-	static s16 hall_phi_e_new = 0;
-	static s16 actual_coarse_offset = 0;
+	static int16_t hall_phi_e_old = 0;
+	static int16_t hall_phi_e_new = 0;
+	static int16_t actual_coarse_offset = 0;
 
 	switch (*initState)
 	{
 	case STATE_NOTHING_TO_DO:
-		*actualInitWaitTime =  0;
+		*actualInitWaitTime = 0;
 		break;
 	case STATE_START_INIT: // started by writing 1 to initState
 		// turn hall_mode interpolation off (read, clear bit 8, write back)
@@ -353,10 +336,10 @@ void tmc4670_doEncoderInitializationMode2(u8 motor, u8 *initState, u16 *actualIn
 		tmc4670_writeRegister16BitValue(motor, TMC4670_ABN_DECODER_PHI_E_PHI_M_OFFSET, BIT_16_TO_31, 0);
 
 		// read actual hall angle
-		hall_phi_e_old = (s16) tmc4670_readRegister16BitValue(motor, TMC4670_HALL_PHI_E_INTERPOLATED_PHI_E, BIT_0_TO_15);
+		hall_phi_e_old = (int16_t) tmc4670_readRegister16BitValue(motor, TMC4670_HALL_PHI_E_INTERPOLATED_PHI_E, BIT_0_TO_15);
 
 		// read actual abn_decoder angle and compute difference to actual hall angle
-		actual_coarse_offset = tmc4670_getS16CircleDifference(hall_phi_e_old, (s16) tmc4670_readRegister16BitValue(motor, TMC4670_ABN_DECODER_PHI_E_PHI_M, BIT_16_TO_31));
+		actual_coarse_offset = tmc4670_getS16CircleDifference(hall_phi_e_old, (int16_t) tmc4670_readRegister16BitValue(motor, TMC4670_ABN_DECODER_PHI_E_PHI_M, BIT_16_TO_31));
 
 		// set ABN_DECODER_PHI_E_OFFSET to actual hall-abn-difference, to use the actual hall angle for coarse initialization
 		tmc4670_writeRegister16BitValue(motor, TMC4670_ABN_DECODER_PHI_E_PHI_M_OFFSET, BIT_16_TO_31, actual_coarse_offset);
@@ -365,16 +348,16 @@ void tmc4670_doEncoderInitializationMode2(u8 motor, u8 *initState, u16 *actualIn
 		break;
 	case STATE_WAIT_INIT_TIME:
 		// read actual hall angle
-		hall_phi_e_new = (s16) tmc4670_readRegister16BitValue(motor, TMC4670_HALL_PHI_E_INTERPOLATED_PHI_E, BIT_0_TO_15);
+		hall_phi_e_new = (int16_t) tmc4670_readRegister16BitValue(motor, TMC4670_HALL_PHI_E_INTERPOLATED_PHI_E, BIT_0_TO_15);
 
 		// wait until hall angle changed
 		if(hall_phi_e_old != hall_phi_e_new)
 		{
-			// estimated value = old value + diff between old and new (handle s16 overrun)
-			s16 hall_phi_e_estimated = hall_phi_e_old + tmc4670_getS16CircleDifference(hall_phi_e_new, hall_phi_e_old)/2;
+			// estimated value = old value + diff between old and new (handle int16_t overrun)
+			int16_t hall_phi_e_estimated = hall_phi_e_old + tmc4670_getS16CircleDifference(hall_phi_e_new, hall_phi_e_old)/2;
 
 			// read actual abn_decoder angle and consider last set abn_decoder_offset
-			s16 abn_phi_e_actual = (s16) tmc4670_readRegister16BitValue(motor, TMC4670_ABN_DECODER_PHI_E_PHI_M, BIT_16_TO_31) - actual_coarse_offset;
+			int16_t abn_phi_e_actual = (int16_t) tmc4670_readRegister16BitValue(motor, TMC4670_ABN_DECODER_PHI_E_PHI_M, BIT_16_TO_31) - actual_coarse_offset;
 
 			// set ABN_DECODER_PHI_E_OFFSET to actual estimated angle - abn_phi_e_actual difference
 			tmc4670_writeRegister16BitValue(motor, TMC4670_ABN_DECODER_PHI_E_PHI_M_OFFSET, BIT_16_TO_31, tmc4670_getS16CircleDifference(hall_phi_e_estimated, abn_phi_e_actual));
@@ -389,7 +372,7 @@ void tmc4670_doEncoderInitializationMode2(u8 motor, u8 *initState, u16 *actualIn
 	}
 }
 
-void tmc4670_checkEncderInitialization(u8 motor, u32 actualSystick, u8 initMode, u8 *initState, u16 initWaitTime, u16 *actualInitWaitTime, u16 startVoltage)
+void tmc4670_checkEncderInitialization(uint8_t motor, uint32_t actualSystick, uint8_t initMode, uint8_t *initState, uint16_t initWaitTime, uint16_t *actualInitWaitTime, uint16_t startVoltage)
 {
 	// use the systick as 1ms timer for encoder initialization
 	static uint32 lastSystick = 0;
@@ -410,12 +393,12 @@ void tmc4670_checkEncderInitialization(u8 motor, u32 actualSystick, u8 initMode,
 	}
 }
 
-void tmc4670_periodicJob(u8 motor, u32 actualSystick, u8 initMode, u8 *initState, u16 initWaitTime, u16 *actualInitWaitTime, u16 startVoltage)
+void tmc4670_periodicJob(uint8_t motor, uint32_t actualSystick, uint8_t initMode, uint8_t *initState, uint16_t initWaitTime, uint16_t *actualInitWaitTime, uint16_t startVoltage)
 {
 	tmc4670_checkEncderInitialization(motor, actualSystick, initMode, initState, initWaitTime, actualInitWaitTime, startVoltage);
 }
 
-void tmc4670_startEncoderInitialization(u8 mode, u8 *initMode, u8 *initState)
+void tmc4670_startEncoderInitialization(uint8_t mode, uint8_t *initMode, uint8_t *initState)
 {
 	// allow only a new initialization if no actual initialization is running
 	if(*initState == STATE_NOTHING_TO_DO)
@@ -439,7 +422,7 @@ void tmc4670_startEncoderInitialization(u8 mode, u8 *initMode, u8 *initState)
 	}
 }
 
-void tmc4670_disablePWM(u8 motor)
+void tmc4670_disablePWM(uint8_t motor)
 {
 	tmc4670_writeInt(motor, TMC4670_PWM_SV_CHOP, 0);
 }
