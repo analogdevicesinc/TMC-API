@@ -17,7 +17,7 @@
 	#define TMC389_DRVCONF_MASK        (0xFFFFF & ~((0x0F<<0) | (0x01<<11)))
 
 	// makro function to determine register address out of write datagram
-	#define TMC389_GET_ADDRESS(X) ((uint8) ((((X) >> 18) ? ((X)>>17) : 0) & 0x07))
+	#define TMC389_GET_ADDRESS(X) ((uint8_t) ((((X) >> 18) ? ((X)>>17) : 0) & 0x07))
 
 	// Write-Bit
 	#define TMC389_WRITE 0x08

@@ -22,7 +22,7 @@
 
 // Sine table for initializing the TMC457: sin(2*pi*i/8192)*10000 with i=0..4095
 // Instead of the table also a function could be used.
-static const u16 IntSinTable[4096]={
+static const uint16_t IntSinTable[4096]={
 		0,    7,   15,   23,   30,   38,   46,   53,   61,   69,   76,   84,   92,   99,  107,  115,
 	  122,  130,  138,  145,  153,  161,  168,  176,  184,  191,  199,  207,  214,  222,  230,  237,
 	  245,  253,  260,  268,  276,  283,  291,  299,  306,  314,  322,  329,  337,  345,  352,  360,
@@ -290,7 +290,7 @@ static const u16 IntSinTable[4096]={
  * 7: read^write (seperate functions/values)
  */
 // Table that shows if a TMC475 register can also be read (1)
-static const u8 TMC457RegisterReadable[128]=
+static const uint8_t TMC457RegisterReadable[128]=
 {
 //	0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
 	1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0,    // 00 - 0F
@@ -303,11 +303,11 @@ static const u8 TMC457RegisterReadable[128]=
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1     // 70 - 7F
 };
 
-static s32 TMC457SoftwareCopy[128];  // Software copies of all TMC457 registers
+static int32_t TMC457SoftwareCopy[128];  // Software copies of all TMC457 registers
 
 
 /***************************************************************//**
-	 \fn ReadWrite429(u8 *Read, u8 *Write)
+	 \fn ReadWrite429(uint8_t *Read, uint8_t *Write)
 	 \brief 40 bit SPI communication with TMC457
 	 \param Read   five byte array holding the data read from the TMC457
 	 \param Write  five byte array holding the data to write to the TMC457
@@ -316,7 +316,7 @@ static s32 TMC457SoftwareCopy[128];  // Software copies of all TMC457 registers
 	 the TMC457. It sends a 40 bit SPI telegramme to the TMC457 and
 	 receives the 40 bit answer telegramme from the TMC457.
 ********************************************************************/
-static void ReadWrite457(u8 *Read, u8 *Write)
+static void ReadWrite457(uint8_t *Read, uint8_t *Write)
 {
 	Read[0] = ReadWriteSPI(SPI_DEV_TMC457, Write[0], FALSE);
 	Read[1] = ReadWriteSPI(SPI_DEV_TMC457, Write[1], FALSE);
@@ -327,15 +327,15 @@ static void ReadWrite457(u8 *Read, u8 *Write)
 
 
 /***************************************************************//**
-	 \fn Write457Zero(u8 Address)
+	 \fn Write457Zero(uint8_t Address)
 	 \brief Clear a TMC457 register
 	 \param Address Address of the register
 
 	  Write zero to a TMC457 register (and to its software copy).
 ********************************************************************/
-void Write457Zero(u8 Address)
+void Write457Zero(uint8_t Address)
 {
-	u8 Write[5], Read[5];
+	uint8_t Write[5], Read[5];
 
 	Write[0] = Address | TMC457_WRITE;
 	Write[1] = 0;
@@ -354,16 +354,16 @@ void Write457Zero(u8 Address)
 
 
 /***************************************************************//**
-	 \fn Write457Int(u8 Address, s32 Value)
+	 \fn Write457Int(uint8_t Address, int32_t Value)
 	 \brief Write integer to a TMC457 register
 	 \param Address   TMC457 register address
 	 \param Value     Value to be written to the TMC457 register
 
 	 Write a value to a TMC457 register (and to its software copy).
 ********************************************************************/
-void Write457Int(u8 Address, s32 Value)
+void Write457Int(uint8_t Address, int32_t Value)
 {
-	u8 Write[5], Read[5];
+	uint8_t Write[5], Read[5];
 
 	Write[0] = Address | TMC457_WRITE;
 	Write[1] = Value >> 24;
@@ -382,7 +382,7 @@ void Write457Int(u8 Address, s32 Value)
 
 
 /***************************************************************//**
-	 \fn Write457Wavetable(u16 RAMAddress, u16 Value)
+	 \fn Write457Wavetable(uint16_t RAMAddress, uint16_t Value)
 	 \brief Write to the TMC457 wavetable RAM
 	 \param RAMAddress   Address into TMC457 wavetable RAM
 	 \param Value        16 bit value to be written
@@ -390,9 +390,9 @@ void Write457Int(u8 Address, s32 Value)
 	 Write a 16 bit value to the given location of the wavetable RAM
 	 of the TMC457.
 ********************************************************************/
-void Write457Wavetable(u16 RAMAddress, u16 Value)
+void Write457Wavetable(uint16_t RAMAddress, uint16_t Value)
 {
-	u8 Write[5], Read[5];
+	uint8_t Write[5], Read[5];
 
 	Write[0] = TMC457_WAVETAB | TMC457_WRITE;
 	Write[1] = RAMAddress >> 8;
@@ -405,7 +405,7 @@ void Write457Wavetable(u16 RAMAddress, u16 Value)
 
 
 /***************************************************************//**
-	 \fn Read457Int(u8 Address)
+	 \fn Read457Int(uint8_t Address)
 	 \brief Read TMC457 register
 	 \param Address   register to be read from
 	 \return contents of that register
@@ -414,9 +414,9 @@ void Write457Wavetable(u16 RAMAddress, u16 Value)
 	 write-only register then the contents will be taken from the
 	 software copy.
 ********************************************************************/
-s32 Read457Int(u8 Address)
+int32_t Read457Int(uint8_t Address)
 {
-	u8 Write[5], Read[5];
+	uint8_t Write[5], Read[5];
 
 	if(TMC457RegisterReadable[Address])
 	{
@@ -438,16 +438,16 @@ s32 Read457Int(u8 Address)
 
 
 /***************************************************************//**
-	 \fn Read457Wavetable(u16 RAMAddress)
+	 \fn Read457Wavetable(uint16_t RAMAddress)
 	 \brief Read a value from the TMC457 wavetable RAM
 	 \param RAMAddress   Address in wavetable RAM
 	 \return Value read from the wavetable RAM
 
 	 This function reads a 16 bit value from the TMC457 wavetable RAM.
 ********************************************************************/
-u16 Read457Wavetable(u16 RAMAddress)
+uint16_t Read457Wavetable(uint16_t RAMAddress)
 {
-	u8 Write[5], Read[5];
+	uint8_t Write[5], Read[5];
 
 	Write[0] = TMC457_WAVETAB;
 	Write[1] = RAMAddress >> 8;
@@ -465,16 +465,16 @@ u16 Read457Wavetable(u16 RAMAddress)
 
 
 /***************************************************************//**
-	 \fn Set457RampMode(u32 RampMode)
+	 \fn Set457RampMode(uint32_t RampMode)
 	 \brief Set ramp mode of the TMC457
 	 \param RampMode   Ramp mode to be set
 
 	 Change the ramp mode of the TMC457. To be used with the
 	 TMC457_RM_xxx constants.
 ********************************************************************/
-void Set457RampMode(u32 RampMode)
+void Set457RampMode(uint32_t RampMode)
 {
-	u32 ModeReg;
+	uint32_t ModeReg;
 
 	ModeReg = Read457Int(TMC457_MODE) & 0xFFFFFFFC;
 	ModeReg |= (RampMode & 0x00000003);
@@ -483,7 +483,7 @@ void Set457RampMode(u32 RampMode)
 
 
 /***************************************************************//**
-	 \fn Init457Wavetable(u32 Resolution, s32 Offset)
+	 \fn Init457Wavetable(uint32_t Resolution, int32_t Offset)
 	 \brief Initialize wavetable for the given microstep resolution
 	 \param Resolution   Microstep resolution (0..11, 0=2048, 1=1024, ...)
 	 \param Offset  Wavetable offset (mostly 0)
@@ -492,13 +492,13 @@ void Set457RampMode(u32 RampMode)
 	 microstep resolution. An offset can also be given (depending on
 	 the motor this optimizes the zero crossing).
 ********************************************************************/
-void Init457Wavetable(u32 Resolution, s32 Offset)
+void Init457Wavetable(uint32_t Resolution, int32_t Offset)
 {
-	u32 Address = 0;
+	uint32_t Address = 0;
 
-	for(u32 i = 0; i < 8192; i += (1<<Resolution))
+	for(uint32_t i = 0; i < 8192; i += (1<<Resolution))
 	{
-		//Write457Wavetable(Address++, Offset+abs((s32) ((4095.0-Offset)*sin(6.28318530718*((double) i/8192.0)))));
+		//Write457Wavetable(Address++, Offset+abs((int32_t) ((4095.0-Offset)*sin(6.28318530718*((double) i/8192.0)))));
 		Write457Wavetable(Address++, Offset+((4095-Offset)*IntSinTable[MIRROR(i)])/10000);
 	}
 }
@@ -540,7 +540,7 @@ void Init457(void)
 ********************************************************************/
 void HardStop()
 {
-	u8 Flags;
+	uint8_t Flags;
 
 	Flags = Read457Int(TMC457_MODE) & 0xFFFFFFFC;
 	Write457Int(TMC457_MODE, TMC457_RM_HOLD | Flags);

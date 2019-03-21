@@ -24,15 +24,15 @@
 typedef struct
 {
 	int velocity, oldX;
-	uint32 oldTick;
-	int32 registerResetState[TMC5160_REGISTER_COUNT];
-	uint8 registerAccess[TMC5160_REGISTER_COUNT];
-	u8 channels[TMC5160_MOTORS];
+	uint32_t oldTick;
+	int32_t registerResetState[TMC5160_REGISTER_COUNT];
+	uint8_t registerAccess[TMC5160_REGISTER_COUNT];
+	uint8_t channels[TMC5160_MOTORS];
 } TMC5160TypeDef;
 
 void tmc5160_initConfig(TMC5160TypeDef *tmc5160);
-void tmc5160_periodicJob(u8 motor, uint32 tick, TMC5160TypeDef *tmc5160, ConfigurationTypeDef *TMC5160_config);
-u8 tmc5160_reset(ConfigurationTypeDef *TMC5160_config);
-u8 tmc5160_restore(ConfigurationTypeDef *TMC5160_config);
+void tmc5160_periodicJob(uint8_t motor, uint32_t tick, TMC5160TypeDef *tmc5160, ConfigurationTypeDef *TMC5160_config);
+uint8_t tmc5160_reset(ConfigurationTypeDef *TMC5160_config);
+uint8_t tmc5160_restore(ConfigurationTypeDef *TMC5160_config);
 
 #endif /* TMC_IC_TMC5160_H_ */

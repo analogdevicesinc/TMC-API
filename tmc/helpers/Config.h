@@ -28,12 +28,12 @@ typedef enum {
 typedef struct
 {
 	ConfigState          state;
-	uint8                configIndex;
-	int32                shadowRegister[TMC_REGISTER_COUNT];
-	uint8 (*reset)       (void);
-	uint8 (*restore)     (void);
+	uint8_t                configIndex;
+	int32_t                shadowRegister[TMC_REGISTER_COUNT];
+	uint8_t (*reset)       (void);
+	uint8_t (*restore)     (void);
 	tmc_callback_config  callback;
-	u8                   channel;
+	uint8_t                   channel;
 } ConfigurationTypeDef;
 
 #endif /* TMC_HELPERS_CONFIG_H_ */

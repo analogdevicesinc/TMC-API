@@ -25,12 +25,12 @@ typedef struct
 	ConfigurationTypeDef *config;
 	int velocity;
 	int oldX;
-	uint32 oldTick;
-	int32 registerResetState[TMC4361A_REGISTER_COUNT];
-	uint8 registerAccess[TMC4361A_REGISTER_COUNT];
+	uint32_t oldTick;
+	int32_t registerResetState[TMC4361A_REGISTER_COUNT];
+	uint8_t registerAccess[TMC4361A_REGISTER_COUNT];
 	//TMotorConfig motorConfig;
 	//TClosedLoopConfig closedLoopConfig;
-	uint8 status;
+	uint8_t status;
 	ConfigurationTypeDef *cover;
 } TMC4361ATypeDef;
 
@@ -40,7 +40,7 @@ typedef void (*tmc4361A_callback)(TMC4361ATypeDef*, ConfigState);
 #define R10 0x00040001  // STP_LENGTH_ADD
 #define R20 0x00000001  // RAMPMODE
 
-static const int32 tmc4361A_defaultRegisterResetState[TMC4361A_REGISTER_COUNT] =
+static const int32_t tmc4361A_defaultRegisterResetState[TMC4361A_REGISTER_COUNT] =
 {
 //	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
 	N_A, 0,   0,   0,   0,   0,   N_A, N_A, 0,   0,   N_A, N_A, 0,   0,   0,   0,   // 0x00 - 0x0F
@@ -66,7 +66,7 @@ static const int32 tmc4361A_defaultRegisterResetState[TMC4361A_REGISTER_COUNT] =
 //     0x42: write, has hardware presets on reset
 //     0x43: read/write, has hardware presets on reset
 //     0x53: read/write, has hardware presets on reset, seperate functions/values for reading or writing
-static const uint8 tmc4361A_defaultRegisterAccess[TMC4361A_REGISTER_COUNT] =
+static const uint8_t tmc4361A_defaultRegisterAccess[TMC4361A_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x43, 0x03, 0x03, 0x03, 0x03, 0x03, 0x43, 0x43, 0x03, 0x03, 0x43, 0x43, 0x03, 0x03, 0x23, 0x01, // 0x00 - 0x0F
@@ -106,30 +106,30 @@ static const TMCRegisterConstant tmc4361A_RegisterConstants[] =
 // All functions act on one IC given by the TMC4361ATypeDef struct
 
 // SPI Communication
-void tmc4361A_writeDatagram(TMC4361ATypeDef *tmc4361A, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
-void tmc4361A_writeInt(TMC4361ATypeDef *tmc4361A, uint8 address, int32 value);
-int32 tmc4361A_readInt(TMC4361ATypeDef *tmc4361A, uint8 address);
-void tmc4361A_readWriteCover(TMC4361ATypeDef *tmc4361A, uint8 *data, size_t length);
+void tmc4361A_writeDatagram(TMC4361ATypeDef *tmc4361A, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+void tmc4361A_writeInt(TMC4361ATypeDef *tmc4361A, uint8_t address, int32_t value);
+int32_t tmc4361A_readInt(TMC4361ATypeDef *tmc4361A, uint8_t address);
+void tmc4361A_readWriteCover(TMC4361ATypeDef *tmc4361A, uint8_t *data, size_t length);
 
 // Configuration
-void tmc4361A_init(TMC4361ATypeDef *tmc4361A, uint8 channel, ConfigurationTypeDef *config, const int32 *registerResetState);
+void tmc4361A_init(TMC4361ATypeDef *tmc4361A, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc4361A_fillShadowRegisters(TMC4361ATypeDef *tmc4361A);
-uint8 tmc4361A_reset(TMC4361ATypeDef *tmc4361A);
-uint8 tmc4361A_restore(TMC4361ATypeDef *tmc4361A);
-void tmc4361A_setRegisterResetState(TMC4361ATypeDef *tmc4361A, const int32 *resetState);
+uint8_t tmc4361A_reset(TMC4361ATypeDef *tmc4361A);
+uint8_t tmc4361A_restore(TMC4361ATypeDef *tmc4361A);
+void tmc4361A_setRegisterResetState(TMC4361ATypeDef *tmc4361A, const int32_t *resetState);
 void tmc4361A_setCallback(TMC4361ATypeDef *tmc4361A, tmc4361A_callback callback);
-void tmc4361A_periodicJob(TMC4361ATypeDef *tmc4361A, uint32 tick);
+void tmc4361A_periodicJob(TMC4361ATypeDef *tmc4361A, uint32_t tick);
 
 // Motion
-void tmc4361A_rotate(TMC4361ATypeDef *tmc4361A, int32 velocity);
-void tmc4361A_right(TMC4361ATypeDef *tmc4361A, int32 velocity);
-void tmc4361A_left(TMC4361ATypeDef *tmc4361A, int32 velocity);
+void tmc4361A_rotate(TMC4361ATypeDef *tmc4361A, int32_t velocity);
+void tmc4361A_right(TMC4361ATypeDef *tmc4361A, int32_t velocity);
+void tmc4361A_left(TMC4361ATypeDef *tmc4361A, int32_t velocity);
 void tmc4361A_stop(TMC4361ATypeDef *tmc4361A);
-void tmc4361A_moveTo(TMC4361ATypeDef *tmc4361A, int32 position, uint32 velocityMax);
-void tmc4361A_moveBy(TMC4361ATypeDef *tmc4361A, int32 *ticks, uint32 velocityMax);
+void tmc4361A_moveTo(TMC4361ATypeDef *tmc4361A, int32_t position, uint32_t velocityMax);
+void tmc4361A_moveBy(TMC4361ATypeDef *tmc4361A, int32_t *ticks, uint32_t velocityMax);
 
 // Helper functions
-int32 tmc4361A_discardVelocityDecimals(int32 value);
-uint8 tmc4361A_calibrateClosedLoop(TMC4361ATypeDef *tmc4361A, uint8 worker0master1);
+int32_t tmc4361A_discardVelocityDecimals(int32_t value);
+uint8_t tmc4361A_calibrateClosedLoop(TMC4361ATypeDef *tmc4361A, uint8_t worker0master1);
 
 #endif /* TMC_IC_TMC4361A_H_ */

@@ -25,9 +25,9 @@ typedef struct
 {
 	ConfigurationTypeDef *config;
 	int velocity, oldX;
-	uint32 oldTick;
-	int32 registerResetState[TMC5130_REGISTER_COUNT];
-	uint8 registerAccess[TMC5130_REGISTER_COUNT];
+	uint32_t oldTick;
+	int32_t registerResetState[TMC5130_REGISTER_COUNT];
+	uint8_t registerAccess[TMC5130_REGISTER_COUNT];
 } TMC5130TypeDef;
 
 typedef void (*tmc5130_callback)(TMC5130TypeDef*, ConfigState);
@@ -37,7 +37,7 @@ typedef void (*tmc5130_callback)(TMC5130TypeDef*, ConfigState);
 #define R3A 0x00010000  // ENC_CONST
 #define R6C 0x000101D5  // CHOPCONF
 
-static const int32 tmc5130_defaultRegisterResetState[TMC5130_REGISTER_COUNT] =
+static const int32_t tmc5130_defaultRegisterResetState[TMC5130_REGISTER_COUNT] =
 {
 //	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -62,7 +62,7 @@ static const int32 tmc5130_defaultRegisterResetState[TMC5130_REGISTER_COUNT] =
 //   0x13: read/write, seperate functions/values for reading or writing
 //   0x21: read, flag register (read to clear)
 //   0x42: write, has hardware presets on reset
-static const uint8 tmc5130_defaultRegisterAccess[TMC5130_REGISTER_COUNT] =
+static const uint8_t tmc5130_defaultRegisterAccess[TMC5130_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x21, 0x01, 0x02, 0x13, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
@@ -96,23 +96,23 @@ static const TMCRegisterConstant tmc5130_RegisterConstants[] =
 // API Functions
 // All functions act on one IC given by the TMC5130TypeDef struct
 
-void tmc5130_writeDatagram(TMC5130TypeDef *tmc5130, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
-void tmc5130_writeInt(TMC5130TypeDef *tmc5130, uint8 address, int32 value);
-int32 tmc5130_readInt(TMC5130TypeDef *tmc5130, uint8 address);
+void tmc5130_writeDatagram(TMC5130TypeDef *tmc5130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+void tmc5130_writeInt(TMC5130TypeDef *tmc5130, uint8_t address, int32_t value);
+int32_t tmc5130_readInt(TMC5130TypeDef *tmc5130, uint8_t address);
 
-void tmc5130_init(TMC5130TypeDef *tmc5130, uint8 channel, ConfigurationTypeDef *tmc5130_config, const int32 *registerResetState);
+void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef *tmc5130_config, const int32_t *registerResetState);
 void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130); // For constant registers with hardware preset we cant determine actual value
-uint8 tmc5130_reset(TMC5130TypeDef *tmc5130);
-uint8 tmc5130_restore(TMC5130TypeDef *tmc5130);
-void tmc5130_setRegisterResetState(TMC5130TypeDef *tmc5130, const int32 *resetState);
+uint8_t tmc5130_reset(TMC5130TypeDef *tmc5130);
+uint8_t tmc5130_restore(TMC5130TypeDef *tmc5130);
+void tmc5130_setRegisterResetState(TMC5130TypeDef *tmc5130, const int32_t *resetState);
 void tmc5130_setCallback(TMC5130TypeDef *tmc5130, tmc5130_callback callback);
-void tmc5130_periodicJob(TMC5130TypeDef *tmc5130, uint32 tick);
+void tmc5130_periodicJob(TMC5130TypeDef *tmc5130, uint32_t tick);
 
-void tmc5130_rotate(TMC5130TypeDef *tmc5130, int32 velocity);
-void tmc5130_right(TMC5130TypeDef *tmc5130, uint32 velocity);
-void tmc5130_left(TMC5130TypeDef *tmc5130, uint32 velocity);
+void tmc5130_rotate(TMC5130TypeDef *tmc5130, int32_t velocity);
+void tmc5130_right(TMC5130TypeDef *tmc5130, uint32_t velocity);
+void tmc5130_left(TMC5130TypeDef *tmc5130, uint32_t velocity);
 void tmc5130_stop(TMC5130TypeDef *tmc5130);
-void tmc5130_moveTo(TMC5130TypeDef *tmc5130, int32 position, uint32 velocityMax);
-void tmc5130_moveBy(TMC5130TypeDef *tmc5130, int32 *ticks, uint32 velocityMax);
+void tmc5130_moveTo(TMC5130TypeDef *tmc5130, int32_t position, uint32_t velocityMax);
+void tmc5130_moveBy(TMC5130TypeDef *tmc5130, int32_t *ticks, uint32_t velocityMax);
 
 #endif /* TMC_IC_TMC5130_H_ */

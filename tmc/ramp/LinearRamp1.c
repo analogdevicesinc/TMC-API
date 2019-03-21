@@ -30,32 +30,32 @@ void tmc_ramp_linear_set_enabled(TMC_LinearRamp *linearRamp, bool enabled)
 	linearRamp->rampEnabled = enabled;
 }
 
-void tmc_ramp_linear_set_maxVelocity(TMC_LinearRamp *linearRamp, uint32 maxVelocity)
+void tmc_ramp_linear_set_maxVelocity(TMC_LinearRamp *linearRamp, uint32_t maxVelocity)
 {
 	linearRamp->maxVelocity = maxVelocity;
 }
 
-void tmc_ramp_linear_set_targetPosition(TMC_LinearRamp *linearRamp, int32 targetPosition)
+void tmc_ramp_linear_set_targetPosition(TMC_LinearRamp *linearRamp, int32_t targetPosition)
 {
 	linearRamp->targetPosition = targetPosition;
 }
 
-void tmc_ramp_linear_set_rampPosition(TMC_LinearRamp *linearRamp, int32 rampPosition)
+void tmc_ramp_linear_set_rampPosition(TMC_LinearRamp *linearRamp, int32_t rampPosition)
 {
 	linearRamp->rampPosition = rampPosition;
 }
 
-void tmc_ramp_linear_set_targetVelocity(TMC_LinearRamp *linearRamp, int32 targetVelocity)
+void tmc_ramp_linear_set_targetVelocity(TMC_LinearRamp *linearRamp, int32_t targetVelocity)
 {
 	linearRamp->targetVelocity = targetVelocity;
 }
 
-void tmc_ramp_linear_set_rampVelocity(TMC_LinearRamp *linearRamp, int32 rampVelocity)
+void tmc_ramp_linear_set_rampVelocity(TMC_LinearRamp *linearRamp, int32_t rampVelocity)
 {
 	linearRamp->rampVelocity = rampVelocity;
 }
 
-void tmc_ramp_linear_set_acceleration(TMC_LinearRamp *linearRamp, int32 acceleration)
+void tmc_ramp_linear_set_acceleration(TMC_LinearRamp *linearRamp, int32_t acceleration)
 {
 	linearRamp->acceleration = acceleration;
 }
@@ -65,12 +65,12 @@ void tmc_ramp_linear_set_mode(TMC_LinearRamp *linearRamp, TMC_LinearRamp_Mode mo
 	linearRamp->rampMode = mode;
 }
 
-void tmc_ramp_linear_set_homingDistance(TMC_LinearRamp *linearRamp, uint32 homingDistance)
+void tmc_ramp_linear_set_homingDistance(TMC_LinearRamp *linearRamp, uint32_t homingDistance)
 {
 	linearRamp->homingDistance = homingDistance;
 }
 
-void tmc_ramp_linear_set_stopVelocity(TMC_LinearRamp *linearRamp, uint32 stopVelocity)
+void tmc_ramp_linear_set_stopVelocity(TMC_LinearRamp *linearRamp, uint32_t stopVelocity)
 {
 	linearRamp->stopVelocity = stopVelocity;
 }
@@ -80,37 +80,37 @@ bool tmc_ramp_linear_get_enabled(TMC_LinearRamp *linearRamp)
 	return linearRamp->rampEnabled;
 }
 
-uint32 tmc_ramp_linear_get_maxVelocity(TMC_LinearRamp *linearRamp)
+uint32_t tmc_ramp_linear_get_maxVelocity(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->maxVelocity;
 }
 
-int32 tmc_ramp_linear_get_targetPosition(TMC_LinearRamp *linearRamp)
+int32_t tmc_ramp_linear_get_targetPosition(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->targetPosition;
 }
 
-int32 tmc_ramp_linear_get_rampPosition(TMC_LinearRamp *linearRamp)
+int32_t tmc_ramp_linear_get_rampPosition(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->rampPosition;
 }
 
-int32 tmc_ramp_linear_get_targetVelocity(TMC_LinearRamp *linearRamp)
+int32_t tmc_ramp_linear_get_targetVelocity(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->targetVelocity;
 }
 
-int32 tmc_ramp_linear_get_rampVelocity(TMC_LinearRamp *linearRamp)
+int32_t tmc_ramp_linear_get_rampVelocity(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->rampVelocity;
 }
 
-int32 tmc_ramp_linear_get_acceleration(TMC_LinearRamp *linearRamp)
+int32_t tmc_ramp_linear_get_acceleration(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->acceleration;
 }
 
-int32 tmc_ramp_linear_get_dx(TMC_LinearRamp *linearRamp)
+int32_t tmc_ramp_linear_get_dx(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->dx;
 }
@@ -125,12 +125,12 @@ TMC_LinearRamp_Mode tmc_ramp_linear_get_mode(TMC_LinearRamp *linearRamp)
 	return linearRamp->rampMode;
 }
 
-uint32 tmc_ramp_linear_get_homingDistance(TMC_LinearRamp *linearRamp)
+uint32_t tmc_ramp_linear_get_homingDistance(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->homingDistance;
 }
 
-uint32 tmc_ramp_linear_get_stopVelocity(TMC_LinearRamp *linearRamp)
+uint32_t tmc_ramp_linear_get_stopVelocity(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->stopVelocity;
 }
@@ -140,13 +140,13 @@ void tmc_ramp_linear_reset_dx(TMC_LinearRamp *linearRamp)
 	linearRamp->dx = 0;
 }
 
-void tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32 delta)
+void tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32_t delta)
 {
 	tmc_ramp_linear_compute_velocity(linearRamp, delta);
 	tmc_ramp_linear_compute_position(linearRamp, delta);
 }
 
-void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32 delta)
+void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta)
 {
 	bool accelerating = linearRamp->rampVelocity != linearRamp->targetVelocity;
 	if (linearRamp->rampEnabled)
@@ -155,7 +155,7 @@ void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32 delta)
 		linearRamp->accumulatorVelocity += (linearRamp->acceleration * delta);
 
 		// Emit the TMC_RAMP_LINEAR_ACCUMULATOR_DECIMALS decimal places and use the integer as dv
-		s32 dv = linearRamp->accumulatorVelocity >> TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS;
+		int32_t dv = linearRamp->accumulatorVelocity >> TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS;
 
 		// Reset accumulator
 		linearRamp->accumulatorVelocity -= dv << TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS;
@@ -190,12 +190,12 @@ void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32 delta)
 	linearRamp->accelerationSteps += (abs(linearRamp->rampVelocity) < abs(linearRamp->targetVelocity)) ? accelerating : -accelerating;
 }
 
-void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32 delta)
+void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta)
 {
 	UNUSED(delta);
 	if(linearRamp->rampEnabled && linearRamp->rampMode == TMC_RAMP_LINEAR_MODE_POSITION) {
 		// Calculate steps needed to target
-		int32 diffx = 0;
+		int32_t diffx = 0;
 
 		switch(linearRamp->state) {
 		case TMC_RAMP_LINEAR_STATE_IDLE:

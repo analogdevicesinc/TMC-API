@@ -69,23 +69,23 @@ void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp)
 		// (scaling pre-factor of 1000 used for 1ms position ramp handling)
 
 		// limit position difference for further computations
-		s32 targetPositionsDifference = linearRamp->targetPosition-linearRamp->rampPosition;
+		int32_t targetPositionsDifference = linearRamp->targetPosition-linearRamp->rampPosition;
 
 		// limit the sqrti value in case of high position differences
 		int64_t sqrtiValue = tmc_limitS64(((int64_t)120 * (int64_t)linearRamp->acceleration * (int64_t)(abs(targetPositionsDifference))) / (int64_t) u16_MAX, 0, (int64_t)0x0FFFFFFF);
 
 		// compute max allowed ramp velocity to ramp down to target
-		s32 maxRampStop = tmc_sqrti(sqrtiValue);
+		int32_t maxRampStop = tmc_sqrti(sqrtiValue);
 
 		// compute max allowed ramp velocity
-		s32 maxRampTargetVelocity = 0;
+		int32_t maxRampTargetVelocity = 0;
 		if (targetPositionsDifference > 0)
 		{
-			maxRampTargetVelocity = tmc_limitInt(maxRampStop, 0, (s32)linearRamp->maxVelocity);
+			maxRampTargetVelocity = tmc_limitInt(maxRampStop, 0, (int32_t)linearRamp->maxVelocity);
 		}
 		else if (targetPositionsDifference < 0)
 		{
-			maxRampTargetVelocity = tmc_limitInt(-maxRampStop, -(s32)linearRamp->maxVelocity, 0);
+			maxRampTargetVelocity = tmc_limitInt(-maxRampStop, -(int32_t)linearRamp->maxVelocity, 0);
 		}
 		else
 		{

@@ -28,66 +28,66 @@
 
 // Access functions for TMC262
 void tmc262_initMotorDrivers(void);
-void tmc262_setStepDirMStepRes(uint8 MicrostepResolution);
-void tmc262_setStepDirInterpolation(uint8 Interpolation);
-void tmc262_setStepDirDoubleEdge(uint8 DoubleEdge);
-uint8 tmc262_getStepDirMStepRes();
-uint8 tmc262_getStepDirInterpolation();
-uint8 tmc262_getStepDirDoubleEdge();
+void tmc262_setStepDirMStepRes(uint8_t MicrostepResolution);
+void tmc262_setStepDirInterpolation(uint8_t Interpolation);
+void tmc262_setStepDirDoubleEdge(uint8_t DoubleEdge);
+uint8_t tmc262_getStepDirMStepRes();
+uint8_t tmc262_getStepDirInterpolation();
+uint8_t tmc262_getStepDirDoubleEdge();
 
-void tmc262_setChopperBlankTime(uint8 BlankTime);
-void tmc262_setChopperMode(uint8 Mode);
-void tmc262_setChopperRandomTOff(uint8 RandomTOff);
-void tmc262_setChopperHysteresisDecay(uint8 HysteresisDecay);
-void tmc262_setChopperHysteresisEnd(uint8 HysteresisEnd);
-void tmc262_setChopperHysteresisStart(uint8 HysteresisStart);
-void tmc262_setChopperTOff(uint8 TOff);
-uint8 tmc262_getChopperBlankTime();
-uint8 tmc262_getChopperMode();
-uint8 tmc262_getChopperRandomTOff();
-uint8 tmc262_getChopperHysteresisDecay();
-uint8 tmc262_getChopperHysteresisEnd();
-uint8 tmc262_getChopperHysteresisStart();
-uint8 tmc262_getChopperTOff();
+void tmc262_setChopperBlankTime(uint8_t BlankTime);
+void tmc262_setChopperMode(uint8_t Mode);
+void tmc262_setChopperRandomTOff(uint8_t RandomTOff);
+void tmc262_setChopperHysteresisDecay(uint8_t HysteresisDecay);
+void tmc262_setChopperHysteresisEnd(uint8_t HysteresisEnd);
+void tmc262_setChopperHysteresisStart(uint8_t HysteresisStart);
+void tmc262_setChopperTOff(uint8_t TOff);
+uint8_t tmc262_getChopperBlankTime();
+uint8_t tmc262_getChopperMode();
+uint8_t tmc262_getChopperRandomTOff();
+uint8_t tmc262_getChopperHysteresisDecay();
+uint8_t tmc262_getChopperHysteresisEnd();
+uint8_t tmc262_getChopperHysteresisStart();
+uint8_t tmc262_getChopperTOff();
 
-void tmc262_setSmartEnergyIMin(uint8 SmartIMin);
-void tmc262_setSmartEnergyDownStep(uint8 SmartDownStep);
-void tmc262_setSmartEnergyStallLevelMax(uint8 StallLevelMax);
-void tmc262_setSmartEnergyUpStep(uint8 SmartUpStep);
-void tmc262_setSmartEnergyStallLevelMin(uint8 StallLevelMin);
-uint8 tmc262_getSmartEnergyIMin();
-uint8 tmc262_getSmartEnergyDownStep();
-uint8 tmc262_getSmartEnergyStallLevelMax();
-uint8 tmc262_getSmartEnergyUpStep();
-uint8 tmc262_getSmartEnergyStallLevelMin();
+void tmc262_setSmartEnergyIMin(uint8_t SmartIMin);
+void tmc262_setSmartEnergyDownStep(uint8_t SmartDownStep);
+void tmc262_setSmartEnergyStallLevelMax(uint8_t StallLevelMax);
+void tmc262_setSmartEnergyUpStep(uint8_t SmartUpStep);
+void tmc262_setSmartEnergyStallLevelMin(uint8_t StallLevelMin);
+uint8_t tmc262_getSmartEnergyIMin();
+uint8_t tmc262_getSmartEnergyDownStep();
+uint8_t tmc262_getSmartEnergyStallLevelMax();
+uint8_t tmc262_getSmartEnergyUpStep();
+uint8_t tmc262_getSmartEnergyStallLevelMin();
 
-void tmc262_setStallGuardFilter(uint8 Enable);
+void tmc262_setStallGuardFilter(uint8_t Enable);
 void tmc262_setStallGuardThreshold(signed char Threshold);
-void tmc262_setStallGuardCurrentScale(uint8 CurrentScale);
-uint8 tmc262_getStallGuardFilter();
+void tmc262_setStallGuardCurrentScale(uint8_t CurrentScale);
+uint8_t tmc262_getStallGuardFilter();
 signed char tmc262_getStallGuardThreshold();
-uint8 tmc262_getStallGuardCurrentScale();
+uint8_t tmc262_getStallGuardCurrentScale();
 
-void tmc262_setDriverSlopeHighSide(uint8 SlopeHighSide);
-void tmc262_setDriverSlopeLowSide(uint8 SlopeLowSide);
-void tmc262_setDriverDisableProtection(uint8 DisableProtection);
-void tmc262_setDriverProtectionTimer(uint8 ProtectionTimer);
-void tmc262_setDriverStepDirectionOff(uint8 SDOff);
-void tmc262_setDriverVSenseScale(uint8 Scale);
-void tmc262_setDriverReadSelect(uint8 ReadSelect);
-uint8 tmc262_getDriverSlopeHighSide();
-uint8 tmc262_getDriverSlopeLowSide();
-uint8 tmc262_getDriverDisableProtection();
-uint8 tmc262_getDriverProtectionTimer();
-uint8 tmc262_getDriverStepDirectionOff();
-uint8 tmc262_getDriverVSenseScale();
-uint8 tmc262_getDriverReadSelect();
+void tmc262_setDriverSlopeHighSide(uint8_t SlopeHighSide);
+void tmc262_setDriverSlopeLowSide(uint8_t SlopeLowSide);
+void tmc262_setDriverDisableProtection(uint8_t DisableProtection);
+void tmc262_setDriverProtectionTimer(uint8_t ProtectionTimer);
+void tmc262_setDriverStepDirectionOff(uint8_t SDOff);
+void tmc262_setDriverVSenseScale(uint8_t Scale);
+void tmc262_setDriverReadSelect(uint8_t ReadSelect);
+uint8_t tmc262_getDriverSlopeHighSide();
+uint8_t tmc262_getDriverSlopeLowSide();
+uint8_t tmc262_getDriverDisableProtection();
+uint8_t tmc262_getDriverProtectionTimer();
+uint8_t tmc262_getDriverStepDirectionOff();
+uint8_t tmc262_getDriverVSenseScale();
+uint8_t tmc262_getDriverReadSelect();
 
 void tmc262_disable();
 void tmc262_enable();
 
-void tmc262_readState(uint8 *Phases, uint8 *MStep, uint32 *StallGuard, uint8 *SmartEnergy, uint8 *Flags);
+void tmc262_readState(uint8_t *Phases, uint8_t *MStep, uint32_t *StallGuard, uint8_t *SmartEnergy, uint8_t *Flags);
 
-void tmc262_getSPIData(uint8 Index, int *Data);
+void tmc262_getSPIData(uint8_t Index, int *Data);
 
 #endif /* TMC_IC_TMC262_H_ */

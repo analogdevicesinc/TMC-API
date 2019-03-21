@@ -8,20 +8,20 @@
 #include "../TMC262_1420/TMC262_1420.h"
 
 // => SPI wrapper
-extern void tmc262_1420_readWriteArray(uint8 channel, uint8 *data, size_t length);
-//extern void tmc262_1420_writeInt(uint8 motor, uint8 address, int value);
-//extern uint32 tmc262_1420_readInt(uint8 motor, uint8 address);
-//extern void tmc262_1420_readWrite(uint8 motor, uint32 value);
-//extern void tmc262_1420_setField(uint8 motor, uint8 address, uint32 clearMask, uint32 field);
+extern void tmc262_1420_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
+//extern void tmc262_1420_writeInt(uint8_t motor, uint8_t address, int value);
+//extern uint32_t tmc262_1420_readInt(uint8_t motor, uint8_t address);
+//extern void tmc262_1420_readWrite(uint8_t motor, uint32_t value);
+//extern void tmc262_1420_setField(uint8_t motor, uint8_t address, uint32_t clearMask, uint32_t field);
 // <= SPI wrapper
 
 static void continousSync(TMC262_1420TypeDef *tmc262_1420);
-static void readWrite(TMC262_1420TypeDef *tmc262_1420, uint32 value);
-static void readImmediately(TMC262_1420TypeDef *tmc262_1420, uint8 rdsel);
+static void readWrite(TMC262_1420TypeDef *tmc262_1420, uint32_t value);
+static void readImmediately(TMC262_1420TypeDef *tmc262_1420, uint8_t rdsel);
 
 static void standStillCurrentLimitation(TMC262_1420TypeDef *TMC262_1420)
 { // mark if current should be reduced in stand still if too high
-	static uint32 errorTimer = 0;
+	static uint32_t errorTimer = 0;
 
 	// check the standstill flag
 	if(TMC262_1420_GET_STST(tmc262_1420_readInt(0, TMC262_1420_RESPONSE_LATEST)))
@@ -50,12 +50,12 @@ static void standStillCurrentLimitation(TMC262_1420TypeDef *TMC262_1420)
 
 static void continousSync(TMC262_1420TypeDef *tmc262_1420)
 { // refreshes settings to prevent chip from loosing settings on brownout
-	static uint8 write  = 0;
-	static uint8 read   = 0;
-	static uint8 rdsel  = 0;
+	static uint8_t write  = 0;
+	static uint8_t read   = 0;
+	static uint8_t rdsel  = 0;
 
 	// rotational reading all replys to keep values up to date
-	uint32 value, drvConf;
+	uint32_t value, drvConf;
 
 	// additional reading to keep all replies up to date
 	value = drvConf = tmc262_1420_readInt(0, TMC262_1420_WRITE_BIT | TMC262_1420_DRVCONF);  // buffer value amd  drvConf to write back later
@@ -75,11 +75,11 @@ static void continousSync(TMC262_1420TypeDef *tmc262_1420)
 	write = (write == TMC262_1420_DRVCTRL) ? TMC262_1420_CHOPCONF : ((write + 1) % TMC262_1420_REGISTER_COUNT);
 }
 
-static void readWrite(TMC262_1420TypeDef *tmc262_1420, uint32 value)
+static void readWrite(TMC262_1420TypeDef *tmc262_1420, uint32_t value)
 {	// sending data (value) via spi to TMC262, coping written and received data to shadow register
-	static uint8 rdsel = 0; // number of expected read response
+	static uint8_t rdsel = 0; // number of expected read response
 
-	uint8 data[] = { BYTE(value, 2), BYTE(value, 1), BYTE(value, 0) };
+	uint8_t data[] = { BYTE(value, 2), BYTE(value, 1), BYTE(value, 0) };
 
 	tmc262_1420_readWriteArray(tmc262_1420->config->channel, &data[0], 3);
 
@@ -94,9 +94,9 @@ static void readWrite(TMC262_1420TypeDef *tmc262_1420, uint32 value)
 	tmc262_1420->config->shadowRegister[TMC262_1420_GET_ADDRESS(value)] = value;
 }
 
-static void readImmediately(TMC262_1420TypeDef *tmc262_1420, uint8 rdsel)
+static void readImmediately(TMC262_1420TypeDef *tmc262_1420, uint8_t rdsel)
 { // sets desired reply in DRVCONF register, resets it to previous settings whilst reading desired reply
-	uint32 value, drvConf;
+	uint32_t value, drvConf;
 
 // additional reading to keep all replies up to date
 
@@ -108,7 +108,7 @@ static void readImmediately(TMC262_1420TypeDef *tmc262_1420, uint8 rdsel)
 	readWrite(tmc262_1420, drvConf);
 }
 
-void tmc262_1420_writeInt(TMC262_1420TypeDef *tmc262_1420, uint8 address, int32 value)
+void tmc262_1420_writeInt(TMC262_1420TypeDef *tmc262_1420, uint8_t address, int32_t value)
 {
 	value = TMC262_1420_VALUE(value);
 	tmc262_1420->config->shadowRegister[TMC_ADDRESS(address) | TMC262_1420_WRITE_BIT] = value;
@@ -116,7 +116,7 @@ void tmc262_1420_writeInt(TMC262_1420TypeDef *tmc262_1420, uint8 address, int32 
 		readWrite(tmc262_1420, value);
 }
 
-uint32 tmc262_1420_readInt(TMC262_1420TypeDef *tmc262_1420, uint8 address)
+uint32_t tmc262_1420_readInt(TMC262_1420TypeDef *tmc262_1420, uint8_t address)
 {
 	if(!tmc262_1420->continuousModeEnable && !(address & TMC262_1420_WRITE_BIT))
 		readImmediately(tmc262_1420, address);
@@ -124,7 +124,7 @@ uint32 tmc262_1420_readInt(TMC262_1420TypeDef *tmc262_1420, uint8 address)
 	return tmc262_1420->config->shadowRegister[TMC_ADDRESS(address)];
 }
 
-void tmc262_1420_init(TMC262_1420TypeDef *tmc262_1420, uint8 channel, ConfigurationTypeDef *tmc262_1420_config, const int32 *registerResetState)
+void tmc262_1420_init(TMC262_1420TypeDef *tmc262_1420, uint8_t channel, ConfigurationTypeDef *tmc262_1420_config, const int32_t *registerResetState)
 {
 	tmc262_1420->config                    = tmc262_1420_config;
 	tmc262_1420->velocity                  = 0;
@@ -152,7 +152,7 @@ void tmc262_1420_init(TMC262_1420TypeDef *tmc262_1420, uint8 channel, Configurat
 	}
 }
 
-void tmc262_1420_periodicJob(TMC262_1420TypeDef *tmc262_1420, uint32 tick)
+void tmc262_1420_periodicJob(TMC262_1420TypeDef *tmc262_1420, uint32_t tick)
 {
 	if(tmc262_1420->continuousModeEnable)
 	{ // continuously write settings to chip and rotate through all reply types to keep data up to date
@@ -172,8 +172,8 @@ void tmc262_1420_writeConfiguration(TMC262_1420TypeDef *tmc262_1420, Configurati
 	UNUSED(tmc262_1420);
 	UNUSED(TMC262_1420_config);
 
-	//uint8 *ptr = &TMC262_1420_config->configIndex;
-	//const int32 *settings = (TMC262_1420_config->state == CONFIG_RESTORE) ? TMC262_1420_config->shadowRegister : tmc262_1420->registerResetState;
+	//uint8_t *ptr = &TMC262_1420_config->configIndex;
+	//const int32_t *settings = (TMC262_1420_config->state == CONFIG_RESTORE) ? TMC262_1420_config->shadowRegister : tmc262_1420->registerResetState;
 
 	//while((*ptr >= 0) && !IS_WRITEABLE(tmc262_1420->registerAccess[*ptr]))
 		//(*ptr)--;
@@ -189,7 +189,7 @@ void tmc262_1420_writeConfiguration(TMC262_1420TypeDef *tmc262_1420, Configurati
 	//}
 }
 
-uint8 tmc262_1420_reset(TMC262_1420TypeDef *tmc262_1420)
+uint8_t tmc262_1420_reset(TMC262_1420TypeDef *tmc262_1420)
 {
 	tmc262_1420_writeInt(tmc262_1420, TMC262_1420_DRVCONF,  tmc262_1420->registerResetState[TMC262_1420_DRVCONF]);
 	tmc262_1420_writeInt(tmc262_1420, TMC262_1420_DRVCTRL,  tmc262_1420->registerResetState[TMC262_1420_DRVCTRL]);
@@ -200,7 +200,7 @@ uint8 tmc262_1420_reset(TMC262_1420TypeDef *tmc262_1420)
 	return 1;
 }
 
-uint8 tmc262_1420_restore(TMC262_1420TypeDef *tmc262_1420)
+uint8_t tmc262_1420_restore(TMC262_1420TypeDef *tmc262_1420)
 {
 	tmc262_1420_writeInt(tmc262_1420, TMC262_1420_DRVCONF,  tmc262_1420->config->shadowRegister[TMC262_1420_DRVCONF | TMC262_1420_WRITE_BIT]);
 	tmc262_1420_writeInt(tmc262_1420, TMC262_1420_DRVCTRL,  tmc262_1420->config->shadowRegister[TMC262_1420_DRVCTRL | TMC262_1420_WRITE_BIT]);

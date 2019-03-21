@@ -20,6 +20,6 @@
 		(tmc8690_writeInt(address, FIELD_SET(tmc8690_readInt(address), mask, shift, value)))
 
 	//void tmc8690_init();
-	//void tmc8690_periodicJob(u32 actualSystick);
+	//void tmc8690_periodicJob(uint32_t actualSystick);
 
 #endif /* TMC_IC_TMC8690_H_ */

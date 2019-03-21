@@ -26,28 +26,28 @@ typedef struct {
 } TMC8462TypeDef;
 
 // Preparation functions to prepare r/w access on specific registers
-void tmc8462_esc_read(TMC8462TypeDef *tmc8462, u16 address);
-void tmc8462_esc_write(TMC8462TypeDef *tmc8462, u16 address);
-void tmc8462_mfc_read(TMC8462TypeDef *tmc8462, u16 address);
-void tmc8462_mfc_write(TMC8462TypeDef *tmc8462, u16 address);
+void tmc8462_esc_read(TMC8462TypeDef *tmc8462, uint16_t address);
+void tmc8462_esc_write(TMC8462TypeDef *tmc8462, uint16_t address);
+void tmc8462_mfc_read(TMC8462TypeDef *tmc8462, uint16_t address);
+void tmc8462_mfc_write(TMC8462TypeDef *tmc8462, uint16_t address);
 
-void tmc8462_esc_read_data(TMC8462TypeDef *tmc8462, u8 *data_ptr, u16 address, u16 len);
-u8 tmc8462_esc_read_8(TMC8462TypeDef *tmc8462, u16 address);
-u16 tmc8462_esc_read_16(TMC8462TypeDef *tmc8462, u16 address);
-u32 tmc8462_esc_read_32(TMC8462TypeDef *tmc8462, u16 address);
-void tmc8462_esc_write_data(TMC8462TypeDef *tmc8462, u8 *data_ptr, u16 address, u16 len);
-void tmc8462_esc_write_8(TMC8462TypeDef *tmc8462, u16 address, u8 value);
-void tmc8462_esc_write_16(TMC8462TypeDef *tmc8462, u16 address, u16 value);
-void tmc8462_esc_write_32(TMC8462TypeDef *tmc8462, u16 address, u32 value);
+void tmc8462_esc_read_data(TMC8462TypeDef *tmc8462, uint8_t *data_ptr, uint16_t address, uint16_t len);
+uint8_t tmc8462_esc_read_8(TMC8462TypeDef *tmc8462, uint16_t address);
+uint16_t tmc8462_esc_read_16(TMC8462TypeDef *tmc8462, uint16_t address);
+uint32_t tmc8462_esc_read_32(TMC8462TypeDef *tmc8462, uint16_t address);
+void tmc8462_esc_write_data(TMC8462TypeDef *tmc8462, uint8_t *data_ptr, uint16_t address, uint16_t len);
+void tmc8462_esc_write_8(TMC8462TypeDef *tmc8462, uint16_t address, uint8_t value);
+void tmc8462_esc_write_16(TMC8462TypeDef *tmc8462, uint16_t address, uint16_t value);
+void tmc8462_esc_write_32(TMC8462TypeDef *tmc8462, uint16_t address, uint32_t value);
 
-void tmc8462_mfc_read_data(TMC8462TypeDef *tmc8462, u8 *data_ptr, u16 address, u16 len);
-void tmc8462_mfc_read_32(TMC8462TypeDef *tmc8462, u16 address, u32 *value);
-void tmc8462_mfc_read_64(TMC8462TypeDef *tmc8462, u16 address, uint64_t *value);
-void tmc8462_mfc_read_auto(TMC8462TypeDef *tmc8462, u16 address, u8 *value);
-void tmc8462_mfc_write_data(TMC8462TypeDef *tmc8462, u8 *data_ptr, u16 address, u16 len);
-void tmc8462_mfc_write_32(TMC8462TypeDef *tmc8462, u16 address, u32 value);
-void tmc8462_mfc_write_64(TMC8462TypeDef *tmc8462, u16 address, uint64_t value);
-void tmc8462_mfc_write_auto(TMC8462TypeDef *tmc8462, u16 address, u8 *value);
+void tmc8462_mfc_read_data(TMC8462TypeDef *tmc8462, uint8_t *data_ptr, uint16_t address, uint16_t len);
+void tmc8462_mfc_read_32(TMC8462TypeDef *tmc8462, uint16_t address, uint32_t *value);
+void tmc8462_mfc_read_64(TMC8462TypeDef *tmc8462, uint16_t address, uint64_t *value);
+void tmc8462_mfc_read_auto(TMC8462TypeDef *tmc8462, uint16_t address, uint8_t *value);
+void tmc8462_mfc_write_data(TMC8462TypeDef *tmc8462, uint8_t *data_ptr, uint16_t address, uint16_t len);
+void tmc8462_mfc_write_32(TMC8462TypeDef *tmc8462, uint16_t address, uint32_t value);
+void tmc8462_mfc_write_64(TMC8462TypeDef *tmc8462, uint16_t address, uint64_t value);
+void tmc8462_mfc_write_auto(TMC8462TypeDef *tmc8462, uint16_t address, uint8_t *value);
 
 /**
  * Initializes configurations for both, ESC and MFC block

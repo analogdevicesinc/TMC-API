@@ -22,8 +22,8 @@
 typedef struct
 {
 	ConfigurationTypeDef *config;
-	int32 registerResetState[TMC2160_REGISTER_COUNT];
-	uint8 registerAccess[TMC2160_REGISTER_COUNT];
+	int32_t registerResetState[TMC2160_REGISTER_COUNT];
+	uint8_t registerAccess[TMC2160_REGISTER_COUNT];
 } TMC2160TypeDef;
 
 typedef void (*tmc2160_callback)(TMC2160TypeDef*, ConfigState);
@@ -40,7 +40,7 @@ typedef void (*tmc2160_callback)(TMC2160TypeDef*, ConfigState);
 // 0x03: read/write
 // 0x11: read to clear
 // 0x42: write, has hardware presets on reset
-//static const uint8 tmc2160_defaultRegisterAccess[TMC2160_REGISTER_COUNT] = {
+//static const uint8_t tmc2160_defaultRegisterAccess[TMC2160_REGISTER_COUNT] = {
 ////  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 //	0x03, 0x23, ____, ____, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
 //	0x02, 0x02, 0x01, 0x02, 0x02, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
@@ -59,7 +59,7 @@ typedef void (*tmc2160_callback)(TMC2160TypeDef*, ConfigState);
 // 0x03: read/write
 // 0x11: read to clear
 // 0x42: write, has hardware presets on reset
-static const uint8 tmc2160_defaultRegisterAccess[TMC2160_REGISTER_COUNT] =
+static const uint8_t tmc2160_defaultRegisterAccess[TMC2160_REGISTER_COUNT] =
 {
 //	0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x23, 0x01, 0x02, 0x23, 0x02, 0x02, 0x01, 0x42, 0x42, 0x42, 0x02, 0x01, ____, ____, ____, // 0x00 - 0x0F
@@ -72,7 +72,7 @@ static const uint8 tmc2160_defaultRegisterAccess[TMC2160_REGISTER_COUNT] =
 	0x02, 0x01, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-static const int32 tmc2160_defaultRegisterResetState[TMC2160_REGISTER_COUNT] =
+static const int32_t tmc2160_defaultRegisterResetState[TMC2160_REGISTER_COUNT] =
 {
 //	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -110,16 +110,16 @@ static const TMCRegisterConstant tmc2160_RegisterConstants[] =
 		{ 0x69, 0x00F70000 }  // MSLUTSTART
 };
 
-void tmc2160_writeDatagram(TMC2160TypeDef *tmc2160, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
-void tmc2160_writeInt(TMC2160TypeDef *tmc2160, uint8 address, int32 value);
-int32 tmc2160_readInt(TMC2160TypeDef *tmc2160, uint8 address);
+void tmc2160_writeDatagram(TMC2160TypeDef *tmc2160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+void tmc2160_writeInt(TMC2160TypeDef *tmc2160, uint8_t address, int32_t value);
+int32_t tmc2160_readInt(TMC2160TypeDef *tmc2160, uint8_t address);
 
-void tmc2160_init(TMC2160TypeDef *tmc2160, uint8 channel, ConfigurationTypeDef *config, const int32 *registerResetState);
+void tmc2160_init(TMC2160TypeDef *tmc2160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc2160_fillShadowRegisters(TMC2160TypeDef *tmc2160);
-uint8 tmc2160_reset(TMC2160TypeDef *tmc2160);
-uint8 tmc2160_restore(TMC2160TypeDef *tmc2160);
-void tmc2160_setRegisterResetState(TMC2160TypeDef *tmc2160, const int32 *resetState);
+uint8_t tmc2160_reset(TMC2160TypeDef *tmc2160);
+uint8_t tmc2160_restore(TMC2160TypeDef *tmc2160);
+void tmc2160_setRegisterResetState(TMC2160TypeDef *tmc2160, const int32_t *resetState);
 void tmc2160_setCallback(TMC2160TypeDef *tmc2160, tmc2160_callback callback);
-void tmc2160_periodicJob(TMC2160TypeDef *tmc2160, uint32 tick);
+void tmc2160_periodicJob(TMC2160TypeDef *tmc2160, uint32_t tick);
 
 #endif /* TMC_IC_TMC2160_H_ */

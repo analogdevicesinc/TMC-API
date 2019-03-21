@@ -19,7 +19,7 @@
 
 
 /***************************************************************//**
-	 \fn ReadWrite424(u8 *Read, u8 *Write)
+	 \fn ReadWrite424(uint8_t *Read, uint8_t *Write)
 	 \brief 32 bit SPI communication with TMC424
 	 \param Read   four byte array holding the data read from the TMC424
 	 \param Write  four byte array holding the data to write to the TMC424
@@ -28,7 +28,7 @@
 	 the TMC424. It sends a 32 bit SPI telegramme to the TMC424 and
 	 receives the 32 bit answer telegramme from the TMC424.
 ********************************************************************/
-static void ReadWrite424(u8 *Read, u8 *Write)
+static void ReadWrite424(uint8_t *Read, uint8_t *Write)
 {
 	Read[0] = ReadWriteSPI(SPI_DEV_ENCODER, Write[0], FALSE);
 	Read[1] = ReadWriteSPI(SPI_DEV_ENCODER, Write[1], FALSE);
@@ -38,7 +38,7 @@ static void ReadWrite424(u8 *Read, u8 *Write)
 
 
 /***************************************************************//**
-	 \fn Write424Bytes(u8 Address, u8 HiByte, u8 MidByte, u8 LoByte)
+	 \fn Write424Bytes(uint8_t Address, uint8_t HiByte, uint8_t MidByte, uint8_t LoByte)
 	 \brief Write to TMC424 register
 	 \param Address   TMC424 register address
 	 \param HiByte    MSB to be written
@@ -47,7 +47,7 @@ static void ReadWrite424(u8 *Read, u8 *Write)
 
 	 Write to the three single bytes of a TMC424 register.
 ********************************************************************/
-static void Write424Bytes(u8 Address, u8 HiByte, u8 MidByte, u8 LoByte)
+static void Write424Bytes(uint8_t Address, uint8_t HiByte, uint8_t MidByte, uint8_t LoByte)
 {
 	ReadWriteSPI(SPI_DEV_ENCODER, Address|TMC424_WRITE, FALSE);
 	ReadWriteSPI(SPI_DEV_ENCODER, HiByte, FALSE);
@@ -57,7 +57,7 @@ static void Write424Bytes(u8 Address, u8 HiByte, u8 MidByte, u8 LoByte)
 
 
 /***************************************************************//**
-	 \fn SetEncoderPrescaler(u8 Index, u32 Prescaler, u8 SpecialFunctionBits)
+	 \fn SetEncoderPrescaler(uint8_t Index, uint32_t Prescaler, uint8_t SpecialFunctionBits)
 	 \brief Index  TMC424 encoder channel (0, 1 or 2)
 	 \param Prescaler   Encooder pre-scaler (see TMC424 data sheet)
 	 \param SpecialFunctionBits  special encoder functions (see TMC424 data sheet)
@@ -65,11 +65,11 @@ static void Write424Bytes(u8 Address, u8 HiByte, u8 MidByte, u8 LoByte)
 	 This function sets the pre-scaler and the special functions of an encoder
 	 channel.
 ********************************************************************/
-void SetEncoderPrescaler(u8 Index, u32 Prescaler, u8 SpecialFunctionBits)
+void SetEncoderPrescaler(uint8_t Index, uint32_t Prescaler, uint8_t SpecialFunctionBits)
 {
-	u8 RegAddr;
-	u32 ps;
-	u32 sf;
+	uint8_t RegAddr;
+	uint32_t ps;
+	uint32_t sf;
 
 	switch(Index)
 	{
@@ -90,12 +90,12 @@ void SetEncoderPrescaler(u8 Index, u32 Prescaler, u8 SpecialFunctionBits)
 	sf = SpecialFunctionBits;
 	sf <<= 7;
 	ps |= sf;
-	Write423Bytes(RegAddr, 0, ps >> 16, ps >> 8, (u8) ps);
+	Write423Bytes(RegAddr, 0, ps >> 16, ps >> 8, (uint8_t) ps);
 }
 
 
 /***************************************************************//**
-	 \fn ReadEncoder(u8 Index)
+	 \fn ReadEncoder(uint8_t Index)
 	 \brief  Read encoder counter
 	 \param Index  Specifies the encoder (0, 1 or 2)
 	 \return Encoder positon counter value
@@ -103,10 +103,10 @@ void SetEncoderPrescaler(u8 Index, u32 Prescaler, u8 SpecialFunctionBits)
 	 This function reads an encoder counter and returns its value
 	 as a 32 bit signed value.
 ********************************************************************/
-s32 ReadEncoder(u8 Index)
+int32_t ReadEncoder(uint8_t Index)
 {
-	u8 Read424[5], Write424[5];
-	u32 Position;
+	uint8_t Read424[5], Write424[5];
+	uint32_t Position;
 
 	switch(Index)
 	{
@@ -137,16 +137,16 @@ s32 ReadEncoder(u8 Index)
 
 
 /***************************************************************//**
-	 \fn WriteEncoder(u8 Index, s32 Value)
+	 \fn WriteEncoder(uint8_t Index, int32_t Value)
 	 \brief Change encoder counter
 	 \param Index  specifies the encoder (0, 1 or 2)
 	 \param Value  value to be written
 
 	 Change an encoder counter register to the given value.
 ********************************************************************/
-void WriteEncoder(u8 Index, s32 Value)
+void WriteEncoder(uint8_t Index, int32_t Value)
 {
-	u8 RegAddr;
+	uint8_t RegAddr;
 
 	switch(Index)
 	{
@@ -163,12 +163,12 @@ void WriteEncoder(u8 Index, s32 Value)
 		return;
 	}
 
-	Write424Bytes(RegAddr, Value >> 16, Value >> 8, (u8) Value);
+	Write424Bytes(RegAddr, Value >> 16, Value >> 8, (uint8_t) Value);
 }
 
 
 /***************************************************************//**
-	 \fn ReadEncoderNullChannel(u8 Index)
+	 \fn ReadEncoderNullChannel(uint8_t Index)
 	 \brief Check null channel of an encoder
 	 \param Index  specifies the encoer (0, 1 or 2)
 	 \return State of the N input for the given encoder
@@ -176,9 +176,9 @@ void WriteEncoder(u8 Index, s32 Value)
 	 This function reads the state of the null channel input for an
 	 encoder.
 ********************************************************************/
-u8 ReadEncoderNullChannel(u8 Index)
+uint8_t ReadEncoderNullChannel(uint8_t Index)
 {
-	u8 Read424[4], Write424[4];
+	uint8_t Read424[4], Write424[4];
 
 	Write424[0] = 0x12;
 	Write424[1] = 0;

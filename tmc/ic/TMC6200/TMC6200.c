@@ -8,11 +8,11 @@
 #include "TMC6200.h"
 
 // => SPI wrapper
-extern u8 tmc6200_readwriteByte(u8 motor, u8 data, u8 lastTransfer);
+extern uint8_t tmc6200_readwriteByte(uint8_t motor, uint8_t data, uint8_t lastTransfer);
 // <= SPI wrapper
 
 // spi access
-int tmc6200_readInt(u8 motor, uint8 address)
+int tmc6200_readInt(uint8_t motor, uint8_t address)
 {
 	// clear write bit
 	address = TMC_ADDRESS(address);
@@ -32,7 +32,7 @@ int tmc6200_readInt(u8 motor, uint8 address)
 	return value;
 }
 
-void tmc6200_writeInt(u8 motor, uint8 address, int value)
+void tmc6200_writeInt(uint8_t motor, uint8_t address, int value)
 {
 	// write address
 	tmc6200_readwriteByte(motor, address | TMC6200_WRITE_BIT, false);

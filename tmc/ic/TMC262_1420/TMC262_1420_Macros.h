@@ -13,7 +13,7 @@
 #define TMC262_1420_VALUE(x) ((x) & 0x000FFFFF)
 
 // makro function to determine register address out of write datagram
-#define TMC262_1420_GET_ADDRESS(X) ((uint8) ((((X) >> (TMC262_1420_ADDRESS_SHIFT + 1)) ? ((X) >> TMC262_1420_ADDRESS_SHIFT) : 0) & TMC262_1420_ADDRESS_MASK))
+#define TMC262_1420_GET_ADDRESS(X) ((uint8_t) ((((X) >> (TMC262_1420_ADDRESS_SHIFT + 1)) ? ((X) >> TMC262_1420_ADDRESS_SHIFT) : 0) & TMC262_1420_ADDRESS_MASK))
 
 // makro function to shift register data fields to correct position with masking to add them to a write datagram like :
 // write &= ~TMC262_1420_SET_CB(-1); // clearing CB field of write datagram to DRVCTRL register

@@ -9,15 +9,15 @@
 #include "TMC5072.h"
 
 // => SPI wrapper
-extern void tmc5072_readWriteArray(uint8 channel, uint8 *data, size_t length);
+extern void tmc5072_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
 // <= SPI wrapper
 
-void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4)
+void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
 {
-	uint8 data[5] = { address | TMC5072_WRITE_BIT, x1, x2, x3, x4 };
+	uint8_t data[5] = { address | TMC5072_WRITE_BIT, x1, x2, x3, x4 };
 	tmc5072_readWriteArray(tmc5072->config->channel, &data[0], 5);
 
-	int32 value = (x1 << 24) | (x2 << 16) | (x3 << 8) | x4;
+	int32_t value = (x1 << 24) | (x2 << 16) | (x3 << 8) | x4;
 
 	// Write to the shadow register and mark the register dirty
 	address = TMC_ADDRESS(address);
@@ -25,12 +25,12 @@ void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8 address, uint8 x1, uin
 	tmc5072->registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
-void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8 address, int32 value)
+void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8_t address, int32_t value)
 {
 	tmc5072_writeDatagram(tmc5072, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
 }
 
-int32 tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8 address)
+int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address)
 {
 	address = TMC_ADDRESS(address);
 
@@ -38,7 +38,7 @@ int32 tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8 address)
 	if(!TMC_IS_READABLE(tmc5072->registerAccess[address]))
 		return tmc5072->config->shadowRegister[address];
 
-	uint8 data[5] = { 0, 0, 0, 0, 0 };
+	uint8_t data[5] = { 0, 0, 0, 0, 0 };
 
 	data[0] = address;
 	tmc5072_readWriteArray(tmc5072->config->channel, &data[0], 5);
@@ -49,7 +49,7 @@ int32 tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8 address)
 	return (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
 }
 
-//void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4)
+//void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
 //{
 //	tmc5072_readWrite(tmc5072->channel, address | TMC5072_WRITE_BIT, false);
 //	tmc5072_readWrite(tmc5072->channel, x1, false);
@@ -68,12 +68,12 @@ int32 tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8 address)
 //	tmc5072->shadowRegister[address & 0x7F] = value;
 //}
 //
-//void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8 address, int32 value)
+//void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8_t address, int32_t value)
 //{
 //	tmc5072_writeDatagram(tmc5072,  address, 0xFF & (value>>24), 0xFF & (value>>16), 0xFF & (value>>8), 0xFF & (value>>0));
 //}
 //
-//int32 tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8 address)
+//int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address)
 //{
 //	address &= 0x7F;
 //
@@ -100,10 +100,10 @@ int32 tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8 address)
 //}
 
 // Provide the init function with a channel index (sent back in the SPI callback), a pointer to a ConfigurationTypeDef struct
-// and a pointer to a int32 array (size 128) holding the reset values that shall be used.
-void tmc5072_init(TMC5072TypeDef *tmc5072, uint8 channel, ConfigurationTypeDef *tmc5072_config, const int32 *registerResetState)
+// and a pointer to a int32_t array (size 128) holding the reset values that shall be used.
+void tmc5072_init(TMC5072TypeDef *tmc5072, uint8_t channel, ConfigurationTypeDef *tmc5072_config, const int32_t *registerResetState)
 {
-	for(u8 motor = 0; motor < TMC5072_MOTORS; motor++)
+	for(uint8_t motor = 0; motor < TMC5072_MOTORS; motor++)
 	{
 		tmc5072->velocity[motor] = 0;
 		tmc5072->oldX[motor] = 0;
@@ -122,7 +122,7 @@ void tmc5072_init(TMC5072TypeDef *tmc5072, uint8 channel, ConfigurationTypeDef *
 	tmc5072->config->configIndex  = 0;
 	tmc5072->config->state        = CONFIG_READY;
 
-	uint32 i;
+	uint32_t i;
 	for(i = 0; i < TMC5072_REGISTER_COUNT; i++)
 	{
 		tmc5072->registerAccess[i]      = tmc5072_defaultRegisterAccess[i];
@@ -175,8 +175,8 @@ void tmc5072_fillShadowRegisters(TMC5072TypeDef *tmc5072)
 
 static void writeConfiguration(TMC5072TypeDef *tmc5072)
 {
-	uint8 *ptr = &tmc5072->config->configIndex;
-	const int32 *settings;
+	uint8_t *ptr = &tmc5072->config->configIndex;
+	const int32_t *settings;
 
 	if(tmc5072->config->state == CONFIG_RESTORE)
 	{
@@ -212,8 +212,8 @@ static void writeConfiguration(TMC5072TypeDef *tmc5072)
 
 //void tmc5072_writeConfiguration(TMC5072TypeDef *tmc5072, ConfigurationTypeDef *TMC5072_config)
 //{
-//	uint8 *ptr = &TMC5072_config->configIndex;
-//	const int32 *settings = (TMC5072_config->state == CONFIG_RESTORE) ? TMC5072_config->shadowRegister : tmc5072->registerResetState;
+//	uint8_t *ptr = &TMC5072_config->configIndex;
+//	const int32_t *settings = (TMC5072_config->state == CONFIG_RESTORE) ? TMC5072_config->shadowRegister : tmc5072->registerResetState;
 //	tmc5072->shadowRegister = TMC5072_config->shadowRegister; // TODO API 2: Find better position (LK)
 //
 //	while((*ptr < TMC5072_REGISTER_COUNT) && !TMC_IS_WRITABLE(tmc5072->registerAccess[*ptr]))
@@ -230,9 +230,9 @@ static void writeConfiguration(TMC5072TypeDef *tmc5072)
 //	}
 //}
 
-void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32 tick)
+void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32_t tick)
 {
-	uint32 tickDiff;
+	uint32_t tickDiff;
 
 	if(tmc5072->config->state != CONFIG_READY)
 	{
@@ -240,25 +240,25 @@ void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32 tick)
 		return;
 	}
 
-	int32 x;
+	int32_t x;
 
 	// Calculate velocity v = dx/dt
 	if((tickDiff = tick - tmc5072->oldTick) >= 5)
 	{
-		for(u8 motor = 0; motor < TMC5072_MOTORS; motor++)
+		for(uint8_t motor = 0; motor < TMC5072_MOTORS; motor++)
 		{
 			x = tmc5072_readInt(tmc5072, TMC5072_XACTUAL(motor));
-			tmc5072->velocity[motor] = (uint32) ((float32_t) (abs(x - tmc5072->oldX[motor]) / (float32_t) tickDiff) * (float32_t) 1048.576);
+			tmc5072->velocity[motor] = (uint32_t) ((float32_t) (abs(x - tmc5072->oldX[motor]) / (float32_t) tickDiff) * (float32_t) 1048.576);
 			tmc5072->oldX[motor] = x;
 		}
 		tmc5072->oldTick  = tick;
 	}
 }
 
-//void tmc5072_periodicJob(u8 motor, uint32 tick, TMC5072TypeDef *tmc5072, ConfigurationTypeDef *TMC5072_config)
+//void tmc5072_periodicJob(uint8_t motor, uint32_t tick, TMC5072TypeDef *tmc5072, ConfigurationTypeDef *TMC5072_config)
 //{
 //	int xActual;
-//	uint32 tickDiff;
+//	uint32_t tickDiff;
 //
 //	if(TMC5072_config->state != CONFIG_READY)
 //	{
@@ -289,7 +289,7 @@ void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32 tick)
 //	}
 //}
 
-uint8 tmc5072_reset(TMC5072TypeDef *tmc5072)
+uint8_t tmc5072_reset(TMC5072TypeDef *tmc5072)
 {
 	if(tmc5072->config->state != CONFIG_READY)
 		return false;
@@ -307,7 +307,7 @@ uint8 tmc5072_reset(TMC5072TypeDef *tmc5072)
 	return true;
 }
 
-//uint8 tmc5072_reset(ConfigurationTypeDef *TMC5072_config)
+//uint8_t tmc5072_reset(ConfigurationTypeDef *TMC5072_config)
 //{
 //	if(TMC5072_config->state != CONFIG_READY)
 //		return 0;
@@ -318,7 +318,7 @@ uint8 tmc5072_reset(TMC5072TypeDef *tmc5072)
 //	return 1;
 //}
 
-uint8 tmc5072_restore(TMC5072TypeDef *tmc5072)
+uint8_t tmc5072_restore(TMC5072TypeDef *tmc5072)
 {
 	if(tmc5072->config->state != CONFIG_READY)
 		return 0;
@@ -329,7 +329,7 @@ uint8 tmc5072_restore(TMC5072TypeDef *tmc5072)
 	return 1;
 }
 
-void tmc5072_setRegisterResetState(TMC5072TypeDef *tmc5072, const int32 *resetState)
+void tmc5072_setRegisterResetState(TMC5072TypeDef *tmc5072, const int32_t *resetState)
 {
 	for(size_t i = 0; i < TMC5072_REGISTER_COUNT; i++)
 		tmc5072->registerResetState[i] = resetState[i];
@@ -340,7 +340,7 @@ void tmc5072_setCallback(TMC5072TypeDef *tmc5072, tmc5072_callback callback)
 	tmc5072->config->callback = (tmc_callback_config) callback;
 }
 
-void tmc5072_rotate(TMC5072TypeDef *tmc5072, uint8 motor, int32 velocity)
+void tmc5072_rotate(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity)
 {
 	if(motor >= TMC5072_MOTORS)
 		return;
@@ -349,22 +349,22 @@ void tmc5072_rotate(TMC5072TypeDef *tmc5072, uint8 motor, int32 velocity)
 	tmc5072_writeDatagram(tmc5072, TMC5072_RAMPMODE(motor), 0, 0, 0, (velocity >= 0) ? TMC5072_MODE_VELPOS : TMC5072_MODE_VELNEG);
 }
 
-void tmc5072_right(TMC5072TypeDef *tmc5072, uint8 motor, int32 velocity)
+void tmc5072_right(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity)
 {
 	return tmc5072_rotate(tmc5072, motor, velocity);
 }
 
-void tmc5072_left(TMC5072TypeDef *tmc5072, uint8 motor, int32 velocity)
+void tmc5072_left(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity)
 {
 	return tmc5072_rotate(tmc5072, motor, -velocity);
 }
 
-void tmc5072_stop(TMC5072TypeDef *tmc5072, uint8 motor)
+void tmc5072_stop(TMC5072TypeDef *tmc5072, uint8_t motor)
 {
 	return tmc5072_rotate(tmc5072, motor, 0);
 }
 
-void tmc5072_moveTo(TMC5072TypeDef *tmc5072, uint8 motor, int32 position, uint32 velocityMax)
+void tmc5072_moveTo(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t position, uint32_t velocityMax)
 {
 	if(motor >= TMC5072_MOTORS)
 		return;
@@ -374,7 +374,7 @@ void tmc5072_moveTo(TMC5072TypeDef *tmc5072, uint8 motor, int32 position, uint32
 	tmc5072_writeInt(tmc5072, TMC5072_XTARGET(motor), position);
 }
 
-void tmc5072_moveBy(TMC5072TypeDef *tmc5072, uint8 motor, uint32 velocityMax, int32 *ticks)
+void tmc5072_moveBy(TMC5072TypeDef *tmc5072, uint8_t motor, uint32_t velocityMax, int32_t *ticks)
 {
 	// determine actual position and add numbers of ticks to move
 	*ticks += tmc5072_readInt(tmc5072, TMC5072_XACTUAL(motor));

@@ -7,7 +7,7 @@
 
 #include "TMC2660.h"
 
-const u8 tmc2660_defaultRegisterAccess[TMC2660_REGISTER_COUNT] =
+const uint8_t tmc2660_defaultRegisterAccess[TMC2660_REGISTER_COUNT] =
 {
 	TMC_ACCESS_WRITE,  // 0: DRVCTRL
 	TMC_ACCESS_NONE,   // 1: UNUSED
@@ -19,7 +19,7 @@ const u8 tmc2660_defaultRegisterAccess[TMC2660_REGISTER_COUNT] =
 	TMC_ACCESS_WRITE   // 7: DRVCONF
 };
 
-const s32 tmc2660_defaultRegisterResetState[TMC2660_REGISTER_COUNT] =
+const int32_t tmc2660_defaultRegisterResetState[TMC2660_REGISTER_COUNT] =
 {
 	0x00000000,  // 0: DRVCTRL
 	0x00000000,  // 1: UNUSED
@@ -32,15 +32,15 @@ const s32 tmc2660_defaultRegisterResetState[TMC2660_REGISTER_COUNT] =
 };
 
 // => SPI wrapper
-extern void tmc2660_writeInt(uint8 motor, uint8 address, int value);
-extern uint32 tmc2660_readInt(uint8 motor, uint8 address);
-extern void tmc2660_readWrite(uint8 motor, uint32 value);
-//extern void tmc2660_setField(uint8 motor, uint8 address, uint32 clearMask, uint32 field);
+extern void tmc2660_writeInt(uint8_t motor, uint8_t address, int value);
+extern uint32_t tmc2660_readInt(uint8_t motor, uint8_t address);
+extern void tmc2660_readWrite(uint8_t motor, uint32_t value);
+//extern void tmc2660_setField(uint8_t motor, uint8_t address, uint32_t clearMask, uint32_t field);
 // <= SPI wrapper
 
 static void standStillCurrentLimitation(TMC2660TypeDef *TMC2660)
 { // mark if current should be reduced in stand still if too high
-	static uint32 errorTimer = 0;
+	static uint32_t errorTimer = 0;
 
 	// check the standstill flag
 	if(TMC2660_GET_STST(tmc2660_readInt(0, TMC2660_RESPONSE_LATEST)))
@@ -69,12 +69,12 @@ static void standStillCurrentLimitation(TMC2660TypeDef *TMC2660)
 
 static void continousSync(ConfigurationTypeDef *TMC2660_config)
 { // refreshes settings to prevent chip from loosing settings on brownout
-	static uint8 write  = 0;
-	static uint8 read   = 0;
-	static uint8 rdsel  = 0;
+	static uint8_t write  = 0;
+	static uint8_t read   = 0;
+	static uint8_t rdsel  = 0;
 
 	// rotational reading all replys to keep values up to date
-	uint32 value, drvConf;
+	uint32_t value, drvConf;
 
 	// additional reading to keep all replies up to date
 	value = drvConf = tmc2660_readInt(0, TMC2660_WRITE_BIT | TMC2660_DRVCONF);  // buffer value amd  drvConf to write back later
@@ -124,8 +124,8 @@ void tmc2660_writeConfiguration(TMC2660TypeDef *tmc2660, ConfigurationTypeDef *T
 	UNUSED(tmc2660);
 	UNUSED(TMC2660_config);
 
-	//uint8 *ptr = &TMC2660_config->configIndex;
-	//const int32 *settings = (TMC2660_config->state == CONFIG_RESTORE) ? TMC2660_config->shadowRegister : tmc2660->registerResetState;
+	//uint8_t *ptr = &TMC2660_config->configIndex;
+	//const int32_t *settings = (TMC2660_config->state == CONFIG_RESTORE) ? TMC2660_config->shadowRegister : tmc2660->registerResetState;
 
 	//while((*ptr >= 0) && !IS_WRITEABLE(tmc2660->registerAccess[*ptr]))
 		//(*ptr)--;
@@ -141,7 +141,7 @@ void tmc2660_writeConfiguration(TMC2660TypeDef *tmc2660, ConfigurationTypeDef *T
 	//}
 }
 
-void tmc2660_periodicJob(u8 motor, uint32 tick, TMC2660TypeDef *tmc2660, ConfigurationTypeDef *TMC2660_config)
+void tmc2660_periodicJob(uint8_t motor, uint32_t tick, TMC2660TypeDef *tmc2660, ConfigurationTypeDef *TMC2660_config)
 {
 	UNUSED(motor);
 
@@ -157,7 +157,7 @@ void tmc2660_periodicJob(u8 motor, uint32 tick, TMC2660TypeDef *tmc2660, Configu
 	}
 }
 
-uint8 tmc2660_reset(TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config)
+uint8_t tmc2660_reset(TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config)
 {
 	UNUSED(TMC2660_config);
 
@@ -170,7 +170,7 @@ uint8 tmc2660_reset(TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_confi
 	return 1;
 }
 
-uint8 tmc2660_restore(ConfigurationTypeDef *TMC2660_config)
+uint8_t tmc2660_restore(ConfigurationTypeDef *TMC2660_config)
 {
 	tmc2660_writeInt(0, TMC2660_DRVCONF,  TMC2660_config->shadowRegister[TMC2660_DRVCONF | TMC2660_WRITE_BIT]);
 	tmc2660_writeInt(0, TMC2660_DRVCTRL,  TMC2660_config->shadowRegister[TMC2660_DRVCTRL | TMC2660_WRITE_BIT]);

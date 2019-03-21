@@ -10,14 +10,14 @@
 // => SPI wrapper
 // Send [length] bytes stored in the [data] array over SPI and overwrite [data]
 // with the replies. data[0] is the first byte sent and received.
-extern void tmc4331_readWriteArray(uint8 channel, uint8 *data, size_t length);
+extern void tmc4331_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
 // <= SPI wrapper
 
 // Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc4331_writeDatagram(TMC4331TypeDef *tmc4331, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4)
+void tmc4331_writeDatagram(TMC4331TypeDef *tmc4331, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
 {
 	int value;
-	uint8 data[5] = { address | TMC4331_WRITE_BIT, x1, x2, x3, x4 };
+	uint8_t data[5] = { address | TMC4331_WRITE_BIT, x1, x2, x3, x4 };
 
 	tmc4331_readWriteArray(tmc4331->config->channel, &data[0], 5);
 
@@ -31,15 +31,15 @@ void tmc4331_writeDatagram(TMC4331TypeDef *tmc4331, uint8 address, uint8 x1, uin
 	tmc4331->registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
-void tmc4331_writeInt(TMC4331TypeDef *tmc4331, uint8 address, int32 value)
+void tmc4331_writeInt(TMC4331TypeDef *tmc4331, uint8_t address, int32_t value)
 {
 	tmc4331_writeDatagram(tmc4331, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
 }
 
-int32 tmc4331_readInt(TMC4331TypeDef *tmc4331, uint8 address)
+int32_t tmc4331_readInt(TMC4331TypeDef *tmc4331, uint8_t address)
 {
 	int value;
-	uint8 data[5];
+	uint8_t data[5];
 
 	address = TMC_ADDRESS(address);
 
@@ -60,18 +60,18 @@ int32 tmc4331_readInt(TMC4331TypeDef *tmc4331, uint8 address)
 
 // Send [length] bytes stored in the [data] array to a driver attached to the TMC4331
 // and overwrite [data] with the replies. data[0] is the first byte sent and received.
-void tmc4331_readWriteCover(TMC4331TypeDef *tmc4331, uint8 *data, size_t length)
+void tmc4331_readWriteCover(TMC4331TypeDef *tmc4331, uint8_t *data, size_t length)
 {
 	// Buffering old values to not interrupt manual covering
-	int32 old_high = tmc4331->config->shadowRegister[TMC4331_COVER_HIGH_WR];
-	int32 old_low = tmc4331->config->shadowRegister[TMC4331_COVER_LOW_WR];
+	int32_t old_high = tmc4331->config->shadowRegister[TMC4331_COVER_HIGH_WR];
+	int32_t old_low = tmc4331->config->shadowRegister[TMC4331_COVER_LOW_WR];
 
 	// Check if datagram length is valid
 	if(length == 0 || length > 8)
 		return;
 
-	uint8 bytes[8] = { 0 };
-	uint32 tmp;
+	uint8_t bytes[8] = { 0 };
+	uint32_t tmp;
 	size_t i;
 
 	// Copy data into buffer of maximum cover datagram length (8 bytes)
@@ -116,8 +116,8 @@ void tmc4331_readWriteCover(TMC4331TypeDef *tmc4331, uint8 *data, size_t length)
 }
 
 // Provide the init function with a channel index (sent back in the SPI callback), a pointer to a ConfigurationTypeDef struct
-// and a pointer to a int32 array (size 128) holding the reset values that shall be used.
-void tmc4331_init(TMC4331TypeDef *tmc4331, uint8 channel, ConfigurationTypeDef *config, const int32 *registerResetState)
+// and a pointer to a int32_t array (size 128) holding the reset values that shall be used.
+void tmc4331_init(TMC4331TypeDef *tmc4331, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
 {
 	tmc4331->velocity  = 0;
 	tmc4331->oldTick   = 0;
@@ -137,7 +137,7 @@ void tmc4331_init(TMC4331TypeDef *tmc4331, uint8 channel, ConfigurationTypeDef *
 	}
 }
 
-uint8 tmc4331_reset(TMC4331TypeDef *tmc4331)
+uint8_t tmc4331_reset(TMC4331TypeDef *tmc4331)
 {
 	if(tmc4331->config->state != CONFIG_READY)
 		return 0;
@@ -154,7 +154,7 @@ uint8 tmc4331_reset(TMC4331TypeDef *tmc4331)
 	return 1;
 }
 
-uint8 tmc4331_restore(TMC4331TypeDef *tmc4331)
+uint8_t tmc4331_restore(TMC4331TypeDef *tmc4331)
 {
 	if(tmc4331->config->state != CONFIG_READY)
 		return 0;
@@ -165,9 +165,9 @@ uint8 tmc4331_restore(TMC4331TypeDef *tmc4331)
 	return 1;
 }
 
-void tmc4331_setRegisterResetState(TMC4331TypeDef *tmc4331, const int32 *resetState)
+void tmc4331_setRegisterResetState(TMC4331TypeDef *tmc4331, const int32_t *resetState)
 {
-	uint32 i;
+	uint32_t i;
 	for(i = 0; i < TMC4331_REGISTER_COUNT; i++)
 		tmc4331->registerResetState[i] = resetState[i];
 }
@@ -179,8 +179,8 @@ void tmc4331_setCallback(TMC4331TypeDef *tmc4331, tmc4331_callback callback)
 
 static void tmc4331_writeConfiguration(TMC4331TypeDef *tmc4331)
 {
-	uint8 *ptr = &tmc4331->config->configIndex;
-	const int32 *settings;
+	uint8_t *ptr = &tmc4331->config->configIndex;
+	const int32_t *settings;
 
 	if(tmc4331->config->state == CONFIG_RESTORE)
 	{
@@ -212,7 +212,7 @@ static void tmc4331_writeConfiguration(TMC4331TypeDef *tmc4331)
 	}
 }
 
-void tmc4331_periodicJob(TMC4331TypeDef *tmc4331, uint32 tick)
+void tmc4331_periodicJob(TMC4331TypeDef *tmc4331, uint32_t tick)
 {
 	if(tmc4331->config->state != CONFIG_READY)
 	{
@@ -226,7 +226,7 @@ void tmc4331_periodicJob(TMC4331TypeDef *tmc4331, uint32 tick)
 	}
 }
 
-void tmc4331_rotate(TMC4331TypeDef *tmc4331, int32 velocity)
+void tmc4331_rotate(TMC4331TypeDef *tmc4331, int32_t velocity)
 {
 	// Disable Position Mode
 	TMC4331_FIELD_UPDATE(tmc4331, TMC4331_RAMPMODE, TMC4331_OPERATION_MODE_MASK, TMC4331_OPERATION_MODE_SHIFT, 0);
@@ -234,12 +234,12 @@ void tmc4331_rotate(TMC4331TypeDef *tmc4331, int32 velocity)
 	tmc4331_writeInt(tmc4331, TMC4331_VMAX, tmc4331_discardVelocityDecimals(velocity));
 }
 
-void tmc4331_right(TMC4331TypeDef *tmc4331, int32 velocity)
+void tmc4331_right(TMC4331TypeDef *tmc4331, int32_t velocity)
 {
 	tmc4331_rotate(tmc4331, velocity);
 }
 
-void tmc4331_left(TMC4331TypeDef *tmc4331, int32 velocity)
+void tmc4331_left(TMC4331TypeDef *tmc4331, int32_t velocity)
 {
 	tmc4331_rotate(tmc4331, -velocity);
 }
@@ -249,7 +249,7 @@ void tmc4331_stop(TMC4331TypeDef *tmc4331)
 	tmc4331_rotate(tmc4331, 0);
 }
 
-void tmc4331_moveTo(TMC4331TypeDef *tmc4331, int32 position, uint32 velocityMax)
+void tmc4331_moveTo(TMC4331TypeDef *tmc4331, int32_t position, uint32_t velocityMax)
 {
 	// Enable Position Mode
 	TMC4331_FIELD_UPDATE(tmc4331, TMC4331_RAMPMODE, TMC4331_OPERATION_MODE_MASK, TMC4331_OPERATION_MODE_SHIFT, 1);
@@ -260,7 +260,7 @@ void tmc4331_moveTo(TMC4331TypeDef *tmc4331, int32 position, uint32 velocityMax)
 }
 
 // The function will write the absolute target position to *ticks
-void tmc4331_moveBy(TMC4331TypeDef *tmc4331, int32 *ticks, uint32 velocityMax)
+void tmc4331_moveBy(TMC4331TypeDef *tmc4331, int32_t *ticks, uint32_t velocityMax)
 {
 	// determine actual position and add numbers of ticks to move
 	*ticks += tmc4331_readInt(tmc4331, TMC4331_XACTUAL);
@@ -268,7 +268,7 @@ void tmc4331_moveBy(TMC4331TypeDef *tmc4331, int32 *ticks, uint32 velocityMax)
 	tmc4331_moveTo(tmc4331, *ticks, velocityMax);
 }
 
-int32 tmc4331_discardVelocityDecimals(int32 value)
+int32_t tmc4331_discardVelocityDecimals(int32_t value)
 {
 	if(abs(value) > 8000000)
 	{

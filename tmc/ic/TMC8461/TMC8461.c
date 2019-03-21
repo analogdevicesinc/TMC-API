@@ -7,9 +7,9 @@
 
 #include "TMC8461.h"
 
-extern u8 tmc8461_readWrite(u8 channel, u8 data, u8 lastTransfer);
+extern uint8_t tmc8461_readWrite(uint8_t channel, uint8_t data, uint8_t lastTransfer);
 
-void tmc8461_esc_read(TMC8461TypeDef *tmc8461, u16 address)
+void tmc8461_esc_read(TMC8461TypeDef *tmc8461, uint16_t address)
 {
 	tmc8461_readWrite(tmc8461->config_esc->channel, address >> 5, false);
 	tmc8461_readWrite(tmc8461->config_esc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, false);
@@ -17,14 +17,14 @@ void tmc8461_esc_read(TMC8461TypeDef *tmc8461, u16 address)
 	tmc8461_readWrite(tmc8461->config_esc->channel, 0xFF, false);
 }
 
-void tmc8461_esc_write(TMC8461TypeDef *tmc8461, u16 address)
+void tmc8461_esc_write(TMC8461TypeDef *tmc8461, uint16_t address)
 {
 	tmc8461_readWrite(tmc8461->config_esc->channel, address >> 5, false);
 	tmc8461_readWrite(tmc8461->config_esc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, false);
 	tmc8461_readWrite(tmc8461->config_esc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_WRITE << 2), false);
 }
 
-void tmc8461_mfc_read(TMC8461TypeDef *tmc8461, u16 address)
+void tmc8461_mfc_read(TMC8461TypeDef *tmc8461, uint16_t address)
 {
 	tmc8461_readWrite(tmc8461->config_mfc->channel, address >> 5, false);
 	tmc8461_readWrite(tmc8461->config_mfc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, false);
@@ -32,73 +32,73 @@ void tmc8461_mfc_read(TMC8461TypeDef *tmc8461, u16 address)
 	tmc8461_readWrite(tmc8461->config_mfc->channel, 0xFF, false);
 }
 
-void tmc8461_mfc_write(TMC8461TypeDef *tmc8461, u16 address)
+void tmc8461_mfc_write(TMC8461TypeDef *tmc8461, uint16_t address)
 {
 	tmc8461_readWrite(tmc8461->config_mfc->channel, address >> 5, false);
 	tmc8461_readWrite(tmc8461->config_mfc->channel, (address << 3) | TMC8461_CMD_ADDR_EXT, false);
 	tmc8461_readWrite(tmc8461->config_mfc->channel, ((address >> 8) & 0xE0) | (TMC8461_CMD_WRITE << 2), false);
 }
 
-void tmc8461_esc_read_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, u16 len)
+void tmc8461_esc_read_data(TMC8461TypeDef *tmc8461, uint8_t *data_ptr, uint16_t address, uint16_t len)
 {
 	tmc8461_esc_read(tmc8461, address);
 
-	for (u16 i = 0; i < len; i++)
+	for (uint16_t i = 0; i < len; i++)
 		data_ptr[i] = tmc8461_readWrite(tmc8461->config_esc->channel, (i < len - 1) ? 0x00 : 0xFF, (i < len - 1) ? false : true);
 }
 
-u8 tmc8461_esc_read_8(TMC8461TypeDef *tmc8461, u16 address)
+uint8_t tmc8461_esc_read_8(TMC8461TypeDef *tmc8461, uint16_t address)
 {
-	u8 buffer = 0;
+	uint8_t buffer = 0;
 
 	tmc8461_esc_read_data(tmc8461, &buffer, address, 1);
 
 	return buffer;
 }
 
-u16 tmc8461_esc_read_16(TMC8461TypeDef *tmc8461, u16 address)
+uint16_t tmc8461_esc_read_16(TMC8461TypeDef *tmc8461, uint16_t address)
 {
-	u8 data[2];
+	uint8_t data[2];
 
 	tmc8461_esc_read_data(tmc8461, data, address, 2);
 
 	return _8_16(data[1], data[0]);
 }
 
-u32 tmc8461_esc_read_32(TMC8461TypeDef *tmc8461, u16 address)
+uint32_t tmc8461_esc_read_32(TMC8461TypeDef *tmc8461, uint16_t address)
 {
-	u8 data[4];
+	uint8_t data[4];
 
 	tmc8461_esc_read_data(tmc8461, data, address, 4);
 
 	return _8_32(data[3], data[2], data[1], data[0]);
 }
 
-void tmc8461_esc_write_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, u16 len)
+void tmc8461_esc_write_data(TMC8461TypeDef *tmc8461, uint8_t *data_ptr, uint16_t address, uint16_t len)
 {
 	tmc8461_esc_write(tmc8461, address);
 
-	for(u16 i = 0; i < len; i++)
+	for(uint16_t i = 0; i < len; i++)
 		tmc8461_readWrite(tmc8461->config_esc->channel, data_ptr[i], (i < len - 1) ? false : true);
 }
 
-void tmc8461_esc_write_8(TMC8461TypeDef *tmc8461, u16 address, u8 value)
+void tmc8461_esc_write_8(TMC8461TypeDef *tmc8461, uint16_t address, uint8_t value)
 {
 	tmc8461_esc_write_data(tmc8461, &value, address, 1);
 }
 
-void tmc8461_esc_write_16(TMC8461TypeDef *tmc8461, u16 address, u16 value)
+void tmc8461_esc_write_16(TMC8461TypeDef *tmc8461, uint16_t address, uint16_t value)
 {
-	uint8 data[2];
+	uint8_t data[2];
 
 	data[0] = BYTE(value, 0);
 	data[1] = BYTE(value, 1);
 	tmc8461_esc_write_data(tmc8461, data, address, 2);
 }
 
-void tmc8461_esc_write_32(TMC8461TypeDef *tmc8461, u16 address, u32 value)
+void tmc8461_esc_write_32(TMC8461TypeDef *tmc8461, uint16_t address, uint32_t value)
 {
-	uint8 data[4];
+	uint8_t data[4];
 
 	data[0] = BYTE(value, 0);
 	data[1] = BYTE(value, 1);
@@ -107,33 +107,33 @@ void tmc8461_esc_write_32(TMC8461TypeDef *tmc8461, u16 address, u32 value)
 	tmc8461_esc_write_data(tmc8461, data, address, 4);
 }
 
-void tmc8461_mfc_read_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, u16 len)
+void tmc8461_mfc_read_data(TMC8461TypeDef *tmc8461, uint8_t *data_ptr, uint16_t address, uint16_t len)
 {
 	tmc8461_mfc_read(tmc8461, address);
 
-	for (u16 i = 0; i < len; i++)
+	for (uint16_t i = 0; i < len; i++)
 		data_ptr[i] = tmc8461_readWrite(tmc8461->config_mfc->channel, (i < len - 1) ? 0x00 : 0xFF, (i < len - 1) ? false : true);
 }
 
-void tmc8461_mfc_read_32(TMC8461TypeDef *tmc8461, u16 address, u32 *value)
+void tmc8461_mfc_read_32(TMC8461TypeDef *tmc8461, uint16_t address, uint32_t *value)
 {
-	uint8 data[4];
+	uint8_t data[4];
 
 	tmc8461_mfc_read_data(tmc8461, data, address, 4);
 
 	*value = _8_32(data[3], data[2], data[1], data[0]);
 }
 
-void tmc8461_mfc_read_64(TMC8461TypeDef *tmc8461, u16 address, uint64_t *value)
+void tmc8461_mfc_read_64(TMC8461TypeDef *tmc8461, uint16_t address, uint64_t *value)
 {
-	uint8 data[8];
+	uint8_t data[8];
 
 	tmc8461_mfc_read_data(tmc8461, data, address, 8);
 
 	*value = _8_64((uint64_t)data[7], (uint64_t)data[6], (uint64_t)data[5], (uint64_t)data[4], (uint64_t)data[3], (uint64_t)data[2], (uint64_t)data[1], (uint64_t)data[0]);
 }
 
-void tmc8461_mfc_read_auto(TMC8461TypeDef *tmc8461, u16 address, u8 *value)
+void tmc8461_mfc_read_auto(TMC8461TypeDef *tmc8461, uint16_t address, uint8_t *value)
 {
 	if(address == TMC8461_MFC_SPI_RX_DATA || address == TMC8461_MFC_SPI_TX_DATA || address == TMC8461_MFC_PWM4) {
 		// 64 bit
@@ -144,17 +144,17 @@ void tmc8461_mfc_read_auto(TMC8461TypeDef *tmc8461, u16 address, u8 *value)
 	}
 }
 
-void tmc8461_mfc_write_data(TMC8461TypeDef *tmc8461, u8 *data_ptr, u16 address, u16 len)
+void tmc8461_mfc_write_data(TMC8461TypeDef *tmc8461, uint8_t *data_ptr, uint16_t address, uint16_t len)
 {
 	tmc8461_mfc_write(tmc8461, address);
 
-	for (u16 i = 0; i < len; i++)
+	for (uint16_t i = 0; i < len; i++)
 		tmc8461_readWrite(tmc8461->config_mfc->channel, data_ptr[i], (i < len - 1) ? false : true);
 }
 
-void tmc8461_mfc_write_32(TMC8461TypeDef *tmc8461, u16 address, u32 value)
+void tmc8461_mfc_write_32(TMC8461TypeDef *tmc8461, uint16_t address, uint32_t value)
 {
-	uint8 data[4];
+	uint8_t data[4];
 
 	data[0] = BYTE(value, 0);
 	data[1] = BYTE(value, 1);
@@ -164,9 +164,9 @@ void tmc8461_mfc_write_32(TMC8461TypeDef *tmc8461, u16 address, u32 value)
 	tmc8461_mfc_write_data(tmc8461, data, address, 4);
 }
 
-void tmc8461_mfc_write_64(TMC8461TypeDef *tmc8461, u16 address, uint64_t value)
+void tmc8461_mfc_write_64(TMC8461TypeDef *tmc8461, uint16_t address, uint64_t value)
 {
-	uint8 data[8];
+	uint8_t data[8];
 
 	data[0] = BYTE(value, 0);
 	data[1] = BYTE(value, 1);
@@ -180,7 +180,7 @@ void tmc8461_mfc_write_64(TMC8461TypeDef *tmc8461, u16 address, uint64_t value)
 	tmc8461_mfc_write_data(tmc8461, data, address, 8);
 }
 
-void tmc8461_mfc_write_auto(TMC8461TypeDef *tmc8461, u16 address, u8 *value)
+void tmc8461_mfc_write_auto(TMC8461TypeDef *tmc8461, uint16_t address, uint8_t *value)
 {
 	if(address == TMC8461_MFC_SPI_RX_DATA || address == TMC8461_MFC_SPI_TX_DATA || address == TMC8461_MFC_PWM4) {
 		// 64 bit

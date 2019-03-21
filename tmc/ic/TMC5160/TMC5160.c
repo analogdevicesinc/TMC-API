@@ -36,7 +36,7 @@
  * 3: read/write
  * 7: read^write (seperate functions/values)
  */
-const u8 tmc5160_defaultRegisterAccess[TMC5160_REGISTER_COUNT] =
+const uint8_t tmc5160_defaultRegisterAccess[TMC5160_REGISTER_COUNT] =
 {
 //	0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
 	3, 7, 1, 2, 7, 2, 2, 1, 1, 2, 2, 2, 1, 0, 0, 0, // 0x00 - 0x0F
@@ -49,7 +49,7 @@ const u8 tmc5160_defaultRegisterAccess[TMC5160_REGISTER_COUNT] =
 	2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0  // 0x70 - 0x7F
 };
 
-const s32 tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
+const int32_t tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
 {
 //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 	R00, 0,   0,   0,   0,   0,   0,   0,   0,   R09, R0A, 0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -63,9 +63,9 @@ const s32 tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
 };
 
 // => SPI wrapper
-extern void tmc5160_writeDatagram(uint8 motor, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
-extern void tmc5160_writeInt(uint8 motor, uint8 address, int value);
-extern int tmc5160_readInt(u8 motor, uint8 address);
+extern void tmc5160_writeDatagram(uint8_t motor, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+extern void tmc5160_writeInt(uint8_t motor, uint8_t address, int value);
+extern int tmc5160_readInt(uint8_t motor, uint8_t address);
 // <= SPI wrapper
 
 void tmc5160_initConfig(TMC5160TypeDef *tmc5160)
@@ -82,10 +82,10 @@ void tmc5160_initConfig(TMC5160TypeDef *tmc5160)
 	}
 }
 
-void tmc5160_writeConfiguration(u8 motor, TMC5160TypeDef *tmc5160, ConfigurationTypeDef *TMC5160_config)
+void tmc5160_writeConfiguration(uint8_t motor, TMC5160TypeDef *tmc5160, ConfigurationTypeDef *TMC5160_config)
 {
-	uint8 *ptr = &TMC5160_config->configIndex;
-	const int32 *settings = (TMC5160_config->state == CONFIG_RESTORE) ? TMC5160_config->shadowRegister : tmc5160->registerResetState;
+	uint8_t *ptr = &TMC5160_config->configIndex;
+	const int32_t *settings = (TMC5160_config->state == CONFIG_RESTORE) ? TMC5160_config->shadowRegister : tmc5160->registerResetState;
 
 	while((*ptr < TMC5160_REGISTER_COUNT) && !TMC_IS_WRITABLE(tmc5160->registerAccess[*ptr]))
 		(*ptr)++;
@@ -101,7 +101,7 @@ void tmc5160_writeConfiguration(u8 motor, TMC5160TypeDef *tmc5160, Configuration
 	}
 }
 
-void tmc5160_periodicJob(u8 motor, uint32 tick, TMC5160TypeDef *tmc5160, ConfigurationTypeDef *TMC5160_config)
+void tmc5160_periodicJob(uint8_t motor, uint32_t tick, TMC5160TypeDef *tmc5160, ConfigurationTypeDef *TMC5160_config)
 {
 	if(TMC5160_config->state != CONFIG_READY)
 	{
@@ -110,7 +110,7 @@ void tmc5160_periodicJob(u8 motor, uint32 tick, TMC5160TypeDef *tmc5160, Configu
 	}
 
 	int XActual;
-	uint32 tickDiff;
+	uint32_t tickDiff;
 
 	if((tickDiff = tick-tmc5160->oldTick) >= 5) // measured speed dx/dt
 	{
@@ -123,7 +123,7 @@ void tmc5160_periodicJob(u8 motor, uint32 tick, TMC5160TypeDef *tmc5160, Configu
 	}
 }
 
-uint8 tmc5160_reset(ConfigurationTypeDef *TMC5160_config)
+uint8_t tmc5160_reset(ConfigurationTypeDef *TMC5160_config)
 {
 	if(TMC5160_config->state != CONFIG_READY)
 		return 0;
@@ -134,7 +134,7 @@ uint8 tmc5160_reset(ConfigurationTypeDef *TMC5160_config)
 	return 1;
 }
 
-uint8 tmc5160_restore(ConfigurationTypeDef *TMC5160_config)
+uint8_t tmc5160_restore(ConfigurationTypeDef *TMC5160_config)
 {
 	if(TMC5160_config->state != CONFIG_READY)
 		return 0;

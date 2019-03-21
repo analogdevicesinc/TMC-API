@@ -16,7 +16,7 @@
 #define TMC2660_DRVCONF_MASK        (0xFFFFF & ~((0x0F<<0) | (0x01<<11)))
 
 // Helper macro to determine register address out of write datagram
-#define TMC2660_GET_ADDRESS(datagram)  ((uint8) ((((datagram) >> 18) ? ((datagram)>>17) : 0) & 0x07))
+#define TMC2660_GET_ADDRESS(datagram)  ((uint8_t) ((((datagram) >> 18) ? ((datagram)>>17) : 0) & 0x07))
 // Helper macro to construct the datagram out of the address and the value
 #define TMC2660_DATAGRAM(addr, value)  (((addr) << 17) | (value))
 

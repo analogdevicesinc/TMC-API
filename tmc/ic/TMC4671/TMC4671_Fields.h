@@ -241,17 +241,17 @@
 #define TMC4671_DIRECTION_SHIFT                              12 // min.: 0, max.: 1, default: 0
 #define TMC4671_HALL_BLANK_MASK                              0x0FFF0000 // HALL_MODE // tBLANK = 10ns * HALL_BLANK
 #define TMC4671_HALL_BLANK_SHIFT                             16 // min.: 0, max.: 4095, default: 0
-#define TMC4671_HALL_POSITION_000_MASK                       0xFFFF // HALL_POSITION_060_000 // s16 hall sensor position at 0\xc2\xb0
+#define TMC4671_HALL_POSITION_000_MASK                       0xFFFF // HALL_POSITION_060_000 // int16_t hall sensor position at 0\xc2\xb0
 #define TMC4671_HALL_POSITION_000_SHIFT                      0 // min.: -32768, max.: 32767, default: 0
-#define TMC4671_HALL_POSITION_060_MASK                       0xFFFF0000 // HALL_POSITION_060_000 // s16 hall sensor position at 60\xc2\xb0.
+#define TMC4671_HALL_POSITION_060_MASK                       0xFFFF0000 // HALL_POSITION_060_000 // int16_t hall sensor position at 60\xc2\xb0.
 #define TMC4671_HALL_POSITION_060_SHIFT                      16 // min.: -32768, max.: 32767, default: 0
-#define TMC4671_HALL_POSITION_120_MASK                       0xFFFF // HALL_POSITION_180_120 // s16 hall sensor position at 120\xc2\xb0.
+#define TMC4671_HALL_POSITION_120_MASK                       0xFFFF // HALL_POSITION_180_120 // int16_t hall sensor position at 120\xc2\xb0.
 #define TMC4671_HALL_POSITION_120_SHIFT                      0 // min.: -32768, max.: 32767, default: 0
-#define TMC4671_HALL_POSITION_180_MASK                       0xFFFF0000 // HALL_POSITION_180_120 // s16 hall sensor position at 180\xc2\xb0.
+#define TMC4671_HALL_POSITION_180_MASK                       0xFFFF0000 // HALL_POSITION_180_120 // int16_t hall sensor position at 180\xc2\xb0.
 #define TMC4671_HALL_POSITION_180_SHIFT                      16 // min.: -32768, max.: 32767, default: 0
-#define TMC4671_HALL_POSITION_240_MASK                       0xFFFF // HALL_POSITION_300_240 // s16 hall sensor position at 240\xc2\xb0.
+#define TMC4671_HALL_POSITION_240_MASK                       0xFFFF // HALL_POSITION_300_240 // int16_t hall sensor position at 240\xc2\xb0.
 #define TMC4671_HALL_POSITION_240_SHIFT                      0 // min.: -32768, max.: 32767, default: 0
-#define TMC4671_HALL_POSITION_300_MASK                       0xFFFF0000 // HALL_POSITION_300_240 // s16 hall sensor position at 300\xc2\xb0.
+#define TMC4671_HALL_POSITION_300_MASK                       0xFFFF0000 // HALL_POSITION_300_240 // int16_t hall sensor position at 300\xc2\xb0.
 #define TMC4671_HALL_POSITION_300_SHIFT                      16 // min.: -32768, max.: 32767, default: 0
 #define TMC4671_HALL_PHI_M_OFFSET_MASK                       0xFFFF // HALL_PHI_E_PHI_M_OFFSET // Offset of mechanical angle hall_phi_m of hall decoder.
 #define TMC4671_HALL_PHI_M_OFFSET_SHIFT                      0 // min.: -32768, max.: 32767, default: 0

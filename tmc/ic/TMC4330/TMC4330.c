@@ -10,14 +10,14 @@
 // => SPI wrapper
 // Send [length] bytes stored in the [data] array over SPI and overwrite [data]
 // with the replies. data[0] is the first byte sent and received.
-extern void tmc4330_readWriteArray(uint8 channel, uint8 *data, size_t length);
+extern void tmc4330_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
 // <= SPI wrapper
 
 // Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc4330_writeDatagram(TMC4330TypeDef *tmc4330, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4)
+void tmc4330_writeDatagram(TMC4330TypeDef *tmc4330, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
 {
 	int value;
-	uint8 data[5] = { address | TMC4330_WRITE_BIT, x1, x2, x3, x4 };
+	uint8_t data[5] = { address | TMC4330_WRITE_BIT, x1, x2, x3, x4 };
 
 	tmc4330_readWriteArray(tmc4330->config->channel, &data[0], 5);
 
@@ -31,15 +31,15 @@ void tmc4330_writeDatagram(TMC4330TypeDef *tmc4330, uint8 address, uint8 x1, uin
 	tmc4330->registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
-void tmc4330_writeInt(TMC4330TypeDef *tmc4330, uint8 address, int32 value)
+void tmc4330_writeInt(TMC4330TypeDef *tmc4330, uint8_t address, int32_t value)
 {
 	tmc4330_writeDatagram(tmc4330, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
 }
 
-int32 tmc4330_readInt(TMC4330TypeDef *tmc4330, uint8 address)
+int32_t tmc4330_readInt(TMC4330TypeDef *tmc4330, uint8_t address)
 {
 	int value;
-	uint8 data[5];
+	uint8_t data[5];
 
 	address = TMC_ADDRESS(address);
 
@@ -59,8 +59,8 @@ int32 tmc4330_readInt(TMC4330TypeDef *tmc4330, uint8 address)
 }
 
 // Provide the init function with a channel index (sent back in the SPI callback), a pointer to a ConfigurationTypeDef struct
-// and a pointer to a int32 array (size 128) holding the reset values that shall be used.
-void tmc4330_init(TMC4330TypeDef *tmc4330, uint8 channel, ConfigurationTypeDef *config, const int32 *registerResetState)
+// and a pointer to a int32_t array (size 128) holding the reset values that shall be used.
+void tmc4330_init(TMC4330TypeDef *tmc4330, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
 {
 	tmc4330->velocity  = 0;
 	tmc4330->oldTick   = 0;
@@ -80,7 +80,7 @@ void tmc4330_init(TMC4330TypeDef *tmc4330, uint8 channel, ConfigurationTypeDef *
 	}
 }
 
-uint8 tmc4330_reset(TMC4330TypeDef *tmc4330)
+uint8_t tmc4330_reset(TMC4330TypeDef *tmc4330)
 {
 	if(tmc4330->config->state != CONFIG_READY)
 		return 0;
@@ -97,7 +97,7 @@ uint8 tmc4330_reset(TMC4330TypeDef *tmc4330)
 	return 1;
 }
 
-uint8 tmc4330_restore(TMC4330TypeDef *tmc4330)
+uint8_t tmc4330_restore(TMC4330TypeDef *tmc4330)
 {
 	if(tmc4330->config->state != CONFIG_READY)
 		return 0;
@@ -108,9 +108,9 @@ uint8 tmc4330_restore(TMC4330TypeDef *tmc4330)
 	return 1;
 }
 
-void tmc4330_setRegisterResetState(TMC4330TypeDef *tmc4330, const int32 *resetState)
+void tmc4330_setRegisterResetState(TMC4330TypeDef *tmc4330, const int32_t *resetState)
 {
-	uint32 i;
+	uint32_t i;
 	for(i = 0; i < TMC4330_REGISTER_COUNT; i++)
 		tmc4330->registerResetState[i] = resetState[i];
 }
@@ -122,8 +122,8 @@ void tmc4330_setCallback(TMC4330TypeDef *tmc4330, tmc4330_callback callback)
 
 static void tmc4330_writeConfiguration(TMC4330TypeDef *tmc4330)
 {
-	uint8 *ptr = &tmc4330->config->configIndex;
-	const int32 *settings;
+	uint8_t *ptr = &tmc4330->config->configIndex;
+	const int32_t *settings;
 
 	if(tmc4330->config->state == CONFIG_RESTORE)
 	{
@@ -155,7 +155,7 @@ static void tmc4330_writeConfiguration(TMC4330TypeDef *tmc4330)
 	}
 }
 
-void tmc4330_periodicJob(TMC4330TypeDef *tmc4330, uint32 tick)
+void tmc4330_periodicJob(TMC4330TypeDef *tmc4330, uint32_t tick)
 {
 	if(tmc4330->config->state != CONFIG_READY)
 	{
@@ -170,7 +170,7 @@ void tmc4330_periodicJob(TMC4330TypeDef *tmc4330, uint32 tick)
 	}
 }
 
-void tmc4330_rotate(TMC4330TypeDef *tmc4330, int32 velocity)
+void tmc4330_rotate(TMC4330TypeDef *tmc4330, int32_t velocity)
 {
 	// Disable Position Mode
 	TMC4330_FIELD_UPDATE(tmc4330, TMC4330_RAMPMODE, TMC4330_OPERATION_MODE_MASK, TMC4330_OPERATION_MODE_SHIFT, 0);
@@ -178,12 +178,12 @@ void tmc4330_rotate(TMC4330TypeDef *tmc4330, int32 velocity)
 	tmc4330_writeInt(tmc4330, TMC4330_VMAX, tmc4330_discardVelocityDecimals(velocity));
 }
 
-void tmc4330_right(TMC4330TypeDef *tmc4330, int32 velocity)
+void tmc4330_right(TMC4330TypeDef *tmc4330, int32_t velocity)
 {
 	tmc4330_rotate(tmc4330, velocity);
 }
 
-void tmc4330_left(TMC4330TypeDef *tmc4330, int32 velocity)
+void tmc4330_left(TMC4330TypeDef *tmc4330, int32_t velocity)
 {
 	tmc4330_rotate(tmc4330, -velocity);
 }
@@ -193,7 +193,7 @@ void tmc4330_stop(TMC4330TypeDef *tmc4330)
 	tmc4330_rotate(tmc4330, 0);
 }
 
-void tmc4330_moveTo(TMC4330TypeDef *tmc4330, int32 position, uint32 velocityMax)
+void tmc4330_moveTo(TMC4330TypeDef *tmc4330, int32_t position, uint32_t velocityMax)
 {
 	// Enable Position Mode
 	TMC4330_FIELD_UPDATE(tmc4330, TMC4330_RAMPMODE, TMC4330_OPERATION_MODE_MASK, TMC4330_OPERATION_MODE_SHIFT, 1);
@@ -204,7 +204,7 @@ void tmc4330_moveTo(TMC4330TypeDef *tmc4330, int32 position, uint32 velocityMax)
 }
 
 // The function will write the absolute target position to *ticks
-void tmc4330_moveBy(TMC4330TypeDef *tmc4330, int32 *ticks, uint32 velocityMax)
+void tmc4330_moveBy(TMC4330TypeDef *tmc4330, int32_t *ticks, uint32_t velocityMax)
 {
 	// determine actual position and add numbers of ticks to move
 	*ticks += tmc4330_readInt(tmc4330, TMC4330_XACTUAL);
@@ -212,7 +212,7 @@ void tmc4330_moveBy(TMC4330TypeDef *tmc4330, int32 *ticks, uint32 velocityMax)
 	tmc4330_moveTo(tmc4330, *ticks, velocityMax);
 }
 
-int32 tmc4330_discardVelocityDecimals(int32 value)
+int32_t tmc4330_discardVelocityDecimals(int32_t value)
 {
 	if(abs(value) > 8000000)
 	{
@@ -221,9 +221,9 @@ int32 tmc4330_discardVelocityDecimals(int32 value)
 	return value << 8;
 }
 
-static uint8 tmc4330_moveToNextFullstep(TMC4330TypeDef *tmc4330)
+static uint8_t tmc4330_moveToNextFullstep(TMC4330TypeDef *tmc4330)
 {
-	int32 stepCount;
+	int32_t stepCount;
 
 	// Motor must be stopped
 	if(tmc4330_readInt(tmc4330, TMC4330_VACTUAL) != 0)
@@ -257,13 +257,13 @@ static uint8 tmc4330_moveToNextFullstep(TMC4330TypeDef *tmc4330)
 	return 0;
 }
 
-uint8 tmc4330_calibrateClosedLoop(TMC4330TypeDef *tmc4330, uint8 worker0master1)
+uint8_t tmc4330_calibrateClosedLoop(TMC4330TypeDef *tmc4330, uint8_t worker0master1)
 {
-	static uint8 state = 0;
-	static uint32 oldRamp;
+	static uint8_t state = 0;
+	static uint32_t oldRamp;
 
-	uint32 amax = 0;
-	uint32 dmax = 0;
+	uint32_t amax = 0;
+	uint32_t dmax = 0;
 
 	if(worker0master1 && state == 0)
 		state = 1;

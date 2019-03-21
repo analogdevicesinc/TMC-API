@@ -8,28 +8,28 @@
 #include "TMC6630.h"
 
 // => SPI wrapper
-extern s32 tmc6630_spi_readInt(u8 motor, u8 address);
-extern void tmc6630_spi_writeInt(u8 motor, u8 address, s32 value);
+extern int32_t tmc6630_spi_readInt(uint8_t motor, uint8_t address);
+extern void tmc6630_spi_writeInt(uint8_t motor, uint8_t address, int32_t value);
 // <= SPI wrapper
 
 #define BIT_0_TO_15		0
 #define BIT_16_TO_31	1
 
-u8 tmc6630_getMotionMode(u8 motor)
+uint8_t tmc6630_getMotionMode(uint8_t motor)
 {
 	return tmc6630_spi_readInt(motor, TMC6630_OP_MODE) & 0xFF;
 }
 
-void tmc6630_setMotionMode(u8 motor, u8 mode)
+void tmc6630_setMotionMode(uint8_t motor, uint8_t mode)
 {
 	// switch motion mode
-	u32 actualModeRegister = tmc6630_spi_readInt(motor, TMC6630_OP_MODE);
+	uint32_t actualModeRegister = tmc6630_spi_readInt(motor, TMC6630_OP_MODE);
 	actualModeRegister &= 0xFFFFFF00;
 	actualModeRegister |= mode;
 	tmc6630_spi_writeInt(motor, TMC6630_OP_MODE, actualModeRegister);
 }
 
-u16 tmc6630_spi_readRegister16BitValue(u8 motor, u8 registerAddress, u8 channel)
+uint16_t tmc6630_spi_readRegister16BitValue(uint8_t motor, uint8_t registerAddress, uint8_t channel)
 {
 	int tmp = tmc6630_spi_readInt(motor, registerAddress);
 
@@ -46,7 +46,7 @@ u16 tmc6630_spi_readRegister16BitValue(u8 motor, u8 registerAddress, u8 channel)
 	return 0;
 }
 
-void tmc6630_spi_writeRegister16BitValue(u8 motor, u8 address, u8 channel, u16 value)
+void tmc6630_spi_writeRegister16BitValue(uint8_t motor, uint8_t address, uint8_t channel, uint16_t value)
 {
 	// read actual register content
 	int tmp = tmc6630_spi_readInt(motor, address);
@@ -69,137 +69,137 @@ void tmc6630_spi_writeRegister16BitValue(u8 motor, u8 address, u8 channel, u16 v
 }
 
 // ===== pwm mode ===
-s16 tmc6630_getTargetPwmDuty(u8 motor)
+int16_t tmc6630_getTargetPwmDuty(uint8_t motor)
 {
 	return tmc6630_spi_readRegister16BitValue(motor, TMC6630_PWM_VALUE_RELATIV, BIT_0_TO_15);
 }
 
-void tmc6630_setTargetPwmDuty(u8 motor, s16 targetPWM)
+void tmc6630_setTargetPwmDuty(uint8_t motor, int16_t targetPWM)
 {
 	tmc6630_setMotionMode(motor, TMC6630_MOTION_MODE_PWM_EXT);
 	tmc6630_spi_writeRegister16BitValue(motor, TMC6630_PWM_VALUE, BIT_0_TO_15, targetPWM);
 }
 
-s16 tmc6630_getActualPwmDuty(u8 motor)
+int16_t tmc6630_getActualPwmDuty(uint8_t motor)
 {
 	return tmc6630_spi_readRegister16BitValue(motor, TMC6630_PWM_VALUE_RELATIV, BIT_0_TO_15);
 }
 
-u16 tmc6630_getMaxPwmDuty(u8 motor)
+uint16_t tmc6630_getMaxPwmDuty(uint8_t motor)
 {
 	return tmc6630_spi_readRegister16BitValue(motor, TMC6630_PWM_LIMIT_HIGH_LOW, BIT_16_TO_31);
 }
 
-void tmc6630_setMaxPwmDuty(u8 motor, u16 maxPWM)
+void tmc6630_setMaxPwmDuty(uint8_t motor, uint16_t maxPWM)
 {
 	return tmc6630_spi_writeRegister16BitValue(motor, TMC6630_PWM_LIMIT_HIGH_LOW, BIT_16_TO_31, maxPWM);
 }
 
 // ===== torque mode ===
-void tmc6630_setTargetTorque_raw(u8 motor, s32 targetTorque)
+void tmc6630_setTargetTorque_raw(uint8_t motor, int32_t targetTorque)
 {
 	tmc6630_setMotionMode(motor, TMC6630_MOTION_MODE_TORQUE);
 	tmc6630_spi_writeRegister16BitValue(motor, TMC6630_TORQUE_TARGET_LIMIT_DDT, BIT_16_TO_31, targetTorque);
 }
 
-s32 tmc6630_getTargetTorque_raw(u8 motor)
+int32_t tmc6630_getTargetTorque_raw(uint8_t motor)
 {
-	return (s16)tmc6630_spi_readRegister16BitValue(motor, TMC6630_TORQUE_TARGET_LIMIT_DDT, BIT_16_TO_31);
+	return (int16_t)tmc6630_spi_readRegister16BitValue(motor, TMC6630_TORQUE_TARGET_LIMIT_DDT, BIT_16_TO_31);
 }
 
-s32 tmc6630_getActualTorque_raw(u8 motor)
+int32_t tmc6630_getActualTorque_raw(uint8_t motor)
 {
-	return (s16)tmc6630_spi_readRegister16BitValue(motor, TMC6630_DIR_HALL_ACTUAL_ADC_IB, BIT_0_TO_15);
+	return (int16_t)tmc6630_spi_readRegister16BitValue(motor, TMC6630_DIR_HALL_ACTUAL_ADC_IB, BIT_0_TO_15);
 }
 
-void tmc6630_setTargetTorque_mA(u8 motor, s16 torqueMeasurementFactor, s32 targetTorque)
+void tmc6630_setTargetTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor, int32_t targetTorque)
 {
-	tmc6630_setTargetTorque_raw(motor, (targetTorque * 256) / (s32)torqueMeasurementFactor);
+	tmc6630_setTargetTorque_raw(motor, (targetTorque * 256) / (int32_t)torqueMeasurementFactor);
 }
 
-s32 tmc6630_getTargetTorque_mA(u8 motor, s16 torqueMeasurementFactor)
+int32_t tmc6630_getTargetTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor)
 {
-	return (tmc6630_getTargetTorque_raw(motor) * (s32)torqueMeasurementFactor) / 256;
+	return (tmc6630_getTargetTorque_raw(motor) * (int32_t)torqueMeasurementFactor) / 256;
 }
 
-s32 tmc6630_getActualTorque_mA(u8 motor, s16 torqueMeasurementFactor)
+int32_t tmc6630_getActualTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor)
 {
-	return (tmc6630_getActualTorque_raw(motor) * (s32)torqueMeasurementFactor) / 256;
+	return (tmc6630_getActualTorque_raw(motor) * (int32_t)torqueMeasurementFactor) / 256;
 }
 
-s16 tmc6630_getMaxTorque_raw(u8 motor)
+int16_t tmc6630_getMaxTorque_raw(uint8_t motor)
 {
-	return (s16)tmc6630_spi_readRegister16BitValue(motor, TMC6630_TORQUE_MAX_MIN, BIT_16_TO_31);
+	return (int16_t)tmc6630_spi_readRegister16BitValue(motor, TMC6630_TORQUE_MAX_MIN, BIT_16_TO_31);
 }
 
-void tmc6630_setMaxTorque_raw(u8 motor, s16 maxTorque)
+void tmc6630_setMaxTorque_raw(uint8_t motor, int16_t maxTorque)
 {
 	tmc6630_spi_writeRegister16BitValue(motor, TMC6630_TORQUE_MAX_MIN, BIT_16_TO_31, maxTorque);
 }
 
-s32 tmc6630_getMaxTorque_mA(u8 motor, s16 torqueMeasurementFactor)
+int32_t tmc6630_getMaxTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor)
 {
-	return (tmc6630_getMaxTorque_raw(motor) * (s32)torqueMeasurementFactor) / 256;
+	return (tmc6630_getMaxTorque_raw(motor) * (int32_t)torqueMeasurementFactor) / 256;
 }
 
-void tmc6630_setMaxTorque_mA(u8 motor, s16 torqueMeasurementFactor, s32 maxTorque)
+void tmc6630_setMaxTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor, int32_t maxTorque)
 {
-	tmc6630_setMaxTorque_raw(motor, (maxTorque * 256) / (s32)torqueMeasurementFactor);
+	tmc6630_setMaxTorque_raw(motor, (maxTorque * 256) / (int32_t)torqueMeasurementFactor);
 }
 
-s16 tmc6630_getMinTorque_raw(u8 motor)
+int16_t tmc6630_getMinTorque_raw(uint8_t motor)
 {
-	return (s16)tmc6630_spi_readRegister16BitValue(motor, TMC6630_TORQUE_MAX_MIN, BIT_0_TO_15);
+	return (int16_t)tmc6630_spi_readRegister16BitValue(motor, TMC6630_TORQUE_MAX_MIN, BIT_0_TO_15);
 }
 
-void tmc6630_setMinTorque_raw(u8 motor, s16 minTorque)
+void tmc6630_setMinTorque_raw(uint8_t motor, int16_t minTorque)
 {
 	tmc6630_spi_writeRegister16BitValue(motor, TMC6630_TORQUE_MAX_MIN, BIT_0_TO_15, minTorque);
 }
 
-s32 tmc6630_getMinTorque_mA(u8 motor, s16 torqueMeasurementFactor)
+int32_t tmc6630_getMinTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor)
 {
-	return (tmc6630_getMinTorque_raw(motor) * (s32)torqueMeasurementFactor) / 256;
+	return (tmc6630_getMinTorque_raw(motor) * (int32_t)torqueMeasurementFactor) / 256;
 }
 
-void tmc6630_setMinTorque_mA(u8 motor, s16 torqueMeasurementFactor, s32 minTorque)
+void tmc6630_setMinTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor, int32_t minTorque)
 {
-	tmc6630_setMinTorque_raw(motor, (minTorque * 256) / (s32)torqueMeasurementFactor);
+	tmc6630_setMinTorque_raw(motor, (minTorque * 256) / (int32_t)torqueMeasurementFactor);
 }
 
 // velocity mode
-void tmc6630_setTargetVelocity(u8 motor, s32 targetVelocity)
+void tmc6630_setTargetVelocity(uint8_t motor, int32_t targetVelocity)
 {
 	tmc6630_setMotionMode(motor, TMC6630_MOTION_MODE_VELOCITY);
 	tmc6630_spi_writeInt(motor, TMC6630_VELOCITY_TARGET, targetVelocity);
 }
 
-s32 tmc6630_getTargetVelocity(u8 motor)
+int32_t tmc6630_getTargetVelocity(uint8_t motor)
 {
-	return (s32)tmc6630_spi_readInt(motor, TMC6630_VELOCITY_TARGET);
+	return (int32_t)tmc6630_spi_readInt(motor, TMC6630_VELOCITY_TARGET);
 }
 
-s32 tmc6630_getActualVelocity(u8 motor)
+int32_t tmc6630_getActualVelocity(uint8_t motor)
 {
-	return (s32)tmc6630_spi_readInt(motor, TMC6630_VELOCITY_ACTUAL);
+	return (int32_t)tmc6630_spi_readInt(motor, TMC6630_VELOCITY_ACTUAL);
 }
 
-void tmc6630_setMaxVelocity(u8 motor, s32 maxVelocity)
+void tmc6630_setMaxVelocity(uint8_t motor, int32_t maxVelocity)
 {
 	tmc6630_spi_writeInt(motor, TMC6630_VELOCITY_MAX, maxVelocity);
 }
 
-s32 tmc6630_getMaxVelocity(u8 motor)
+int32_t tmc6630_getMaxVelocity(uint8_t motor)
 {
-	return (s32)tmc6630_spi_readInt(motor, TMC6630_VELOCITY_MAX);
+	return (int32_t)tmc6630_spi_readInt(motor, TMC6630_VELOCITY_MAX);
 }
 
-void tmc6630_setMinVelocity(u8 motor, s32 minVelocity)
+void tmc6630_setMinVelocity(uint8_t motor, int32_t minVelocity)
 {
 	tmc6630_spi_writeInt(motor, TMC6630_VELOCITY_MIN, minVelocity);
 }
 
-s32 tmc6630_getMinVelocity(u8 motor)
+int32_t tmc6630_getMinVelocity(uint8_t motor)
 {
-	return (s32)tmc6630_spi_readInt(motor, TMC6630_VELOCITY_MIN);
+	return (int32_t)tmc6630_spi_readInt(motor, TMC6630_VELOCITY_MIN);
 }

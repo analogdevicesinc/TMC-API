@@ -25,16 +25,16 @@
 
 // => Shared variables // todo API 2: decide if these variables go here (API) or in Evalboard/Module
 //extern int tmc43xx_VMax;
-extern u8 tmc43xx_VMaxModified;
+extern uint8_t tmc43xx_VMaxModified;
 //extern int tmc43xx_AMax;
-//extern u8 tmc43xx_AMaxModified;
+//extern uint8_t tmc43xx_AMaxModified;
 // <= Shared variables
 
 // => SPI wrapper
-extern int tmc43xx_spi_readInt(uint8 axis, uint8 address);
-extern void tmc43xx_spi_writeInt(uint8 axis, uint8 address, int32 value);
-//extern u16 tmc43xx_spi_readRegister16BitValue(uint8 axis, uint8 address, uint8 channel);
-//extern void tmc43xx_spi_writeRegister16BitValue(uint8 axis, uint8 address, uint8 channel, uint16 value);
+extern int tmc43xx_spi_readInt(uint8_t axis, uint8_t address);
+extern void tmc43xx_spi_writeInt(uint8_t axis, uint8_t address, int32_t value);
+//extern uint16_t tmc43xx_spi_readRegister16BitValue(uint8_t axis, uint8_t address, uint8_t channel);
+//extern void tmc43xx_spi_writeRegister16BitValue(uint8_t axis, uint8_t address, uint8_t channel, uint16_t value);
 // <= SPI wrapper
 
 const TMotorConfig MotorConfig=
@@ -81,9 +81,9 @@ const TClosedLoopConfig ClosedLoopConfig=
 
 	 Purpose: Write 4 bytes in a TMC43xx register
 ********************************************************************/
-void tmc43xx_writeBytes(uint8 Axis, uint8 Address, uint8 x1, uint8 x2, uint8 x3, uint8 x4)
+void tmc43xx_writeBytes(uint8_t Axis, uint8_t Address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
 {
-	uint32 Value;
+	uint32_t Value;
 
 	Value  = x1 << 24;
 	Value |= x2 << 16;
@@ -103,7 +103,7 @@ void tmc43xx_writeBytes(uint8 Axis, uint8 Address, uint8 x1, uint8 x2, uint8 x3,
 
 	 Purpose: Write a 32-Bit value in a TMC43xx register.
 ********************************************************************/
-void tmc43xx_writeInt(uint8 Axis, uint8 Address, int32 Value)
+void tmc43xx_writeInt(uint8_t Axis, uint8_t Address, int32_t Value)
 {
 	tmc43xx_spi_writeInt(Axis, Address|TMC43xx_WRITE, Value);
 }
@@ -117,16 +117,16 @@ void tmc43xx_writeInt(uint8 Axis, uint8 Address, int32 Value)
 
 	 Purpose: Read a 32-bit value from a TMC43xx register
 ********************************************************************/
-int32 tmc43xx_readInt(uint8 Axis, uint8 Address)
+int32_t tmc43xx_readInt(uint8_t Axis, uint8_t Address)
 {
 	tmc43xx_spi_readInt(Axis, Address);
 	return tmc43xx_spi_readInt(Axis, Address);
 }
 
 
-void tmc43xx_setBits(uint8 Axis, uint8 Address, uint32 BitMask)
+void tmc43xx_setBits(uint8_t Axis, uint8_t Address, uint32_t BitMask)
 {
-	uint32 Value;
+	uint32_t Value;
 
 	Value = tmc43xx_readInt(Axis, Address);
 	Value |= BitMask;
@@ -134,9 +134,9 @@ void tmc43xx_setBits(uint8 Axis, uint8 Address, uint32 BitMask)
 }
 
 
-void tmc43xx_clearBits(uint8 Axis, uint8 Address, uint32 BitMask)
+void tmc43xx_clearBits(uint8_t Axis, uint8_t Address, uint32_t BitMask)
 {
-	uint32 Value;
+	uint32_t Value;
 
 	Value = tmc43xx_readInt(Axis, Address);
 	Value &= ~BitMask;
@@ -144,15 +144,15 @@ void tmc43xx_clearBits(uint8 Axis, uint8 Address, uint32 BitMask)
 }
 
 
-void tmc43xx_writeBits(uint8 Axis, uint8 Address, uint32 Value, uint8 Start, uint8 Size)
+void tmc43xx_writeBits(uint8_t Axis, uint8_t Address, uint32_t Value, uint8_t Start, uint8_t Size)
 {
-	uint32 RegVal;
-	uint32 Mask;
+	uint32_t RegVal;
+	uint32_t Mask;
 
 	RegVal = tmc43xx_readInt(Axis, Address);
 
 	Mask = 0;
-	uint32 i;
+	uint32_t i;
 	for(i = Start; i < Start+Size; i++)
 		Mask |= (1<<i);
 	RegVal &= ~Mask;
@@ -162,14 +162,14 @@ void tmc43xx_writeBits(uint8 Axis, uint8 Address, uint32 Value, uint8 Start, uin
 }
 
 
-uint32 tmc43xx_peekEvents(uint8 Axis)
+uint32_t tmc43xx_peekEvents(uint8_t Axis)
 {
 	tmc43xx_writeInt(Axis, TMC4361A_EVENT_CLEAR_CONF, 0xFFFFFFFF);
 	return tmc43xx_readInt(Axis, TMC4361A_EVENTS);
 }
 
 
-uint32 tmc43xx_readAndClearEvents(uint8 Axis, uint32 EventMask)
+uint32_t tmc43xx_readAndClearEvents(uint8_t Axis, uint32_t EventMask)
 {
 	tmc43xx_writeInt(Axis, TMC4361A_EVENT_CLEAR_CONF, ~EventMask);
 	return tmc43xx_readInt(Axis, TMC4361A_EVENTS);
@@ -183,7 +183,7 @@ uint32 tmc43xx_readAndClearEvents(uint8 Axis, uint32 EventMask)
 
 	 Purpose: Stop the motor immediately
 ********************************************************************/
-void tmc43xx_hardStop(uint8 Axis)
+void tmc43xx_hardStop(uint8_t Axis)
 {
 	tmc43xx_VMaxModified = TRUE;
 	tmc43xx_writeInt(Axis, TMC4361A_RAMPMODE, TMC43xx_RAMPMODE_VEL_HOLD);
@@ -198,9 +198,9 @@ void tmc43xx_hardStop(uint8 Axis)
 
 	 Purpose: Initialize TMC43xx
 ********************************************************************/
-void tmc43xx_init(uint8 numberOfMotors)
+void tmc43xx_init(uint8_t numberOfMotors)
 {
-	uint8 Axis;
+	uint8_t Axis;
 	for(Axis = 0; Axis < numberOfMotors; Axis++)
 	{
 		tmc43xx_writeInt(Axis, TMC4361A_GENERAL_CONF, TMC43xx_GCONF_ENC_INC|TMC43xx_GCONF_ENC_DIFF_DIS);
@@ -277,7 +277,7 @@ void tmc43xx_init(uint8 numberOfMotors)
 	 Purpose: Polls home-input. Works only if bits 17 and 16 in
 	          REFERENCE_CONF are set and XHOME of INT_MAX as well (trick)
 ********************************************************************/
-uint8 tmc43xx_getHomeInput(uint8 Motor)
+uint8_t tmc43xx_getHomeInput(uint8_t Motor)
 {
 	if(tmc43xx_readInt(Motor, TMC4361A_STATUS) & TMC43xx_ST_HOME_ERROR)
 		return TRUE;
@@ -292,10 +292,10 @@ uint8 tmc43xx_getHomeInput(uint8 Motor)
 
 	 Purpose: Moves from the current position to the next fullstep
 ********************************************************************/
-uint8 tmc43xx_moveToNextFullstep(uint8 Axis)
+uint8_t tmc43xx_moveToNextFullstep(uint8_t Axis)
 {
-	int32 value;
-	int32 mscnt;
+	int32_t value;
+	int32_t mscnt;
 
 	if(tmc43xx_readInt(Axis, TMC4361A_VACTUAL) != 0) // motor must be stopped
 		return 0;

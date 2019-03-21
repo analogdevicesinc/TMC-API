@@ -13,15 +13,15 @@
 
 	typedef struct
 	{
-		u32 maxVelocity;
-		s32 targetPosition;
-		s32 rampPosition;
-		s32 targetVelocity;
-		s32 rampVelocity;
-		s32 acceleration;
+		uint32_t maxVelocity;
+		int32_t targetPosition;
+		int32_t rampPosition;
+		int32_t targetVelocity;
+		int32_t rampVelocity;
+		int32_t acceleration;
 		int lastdVRest;
 		int lastdXRest;
-		u8 rampEnabled;
+		uint8_t rampEnabled;
 	} TMC_LinearRamp;
 
 	void tmc_linearRamp_init(TMC_LinearRamp *linearRamp);

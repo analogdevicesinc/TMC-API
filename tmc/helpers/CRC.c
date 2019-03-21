@@ -29,22 +29,22 @@
 #include "CRC.h"
 
 typedef struct {
-	uint8 table[256];
-	uint8 polynomial;
+	uint8_t table[256];
+	uint8_t polynomial;
 	bool isReflected;
 } CRCTypeDef;
 
 CRCTypeDef CRCTables[CRC_TABLE_COUNT] = { 0 };
 
-static uint8 flipByte(uint8 value);
-static uint32 flipBitsInBytes(uint32 value);
+static uint8_t flipByte(uint8_t value);
+static uint32_t flipBitsInBytes(uint32_t value);
 
 /* This function generates the Lookup table used for CRC calculations.
  *
  * Arguments:
- *     uint8 polynomial: The CRC polynomial for which the table will be generated.
+ *     uint8_t polynomial: The CRC polynomial for which the table will be generated.
  *     bool isReflected: Indicator whether the CRC table will be reflected or not.
- *     uint8 index: The index of the table to be filled.
+ *     uint8_t index: The index of the table to be filled.
  *
  * How it works:
  *     A CRC calculation of a byte can be done by taking the byte to be CRC'd,
@@ -53,7 +53,7 @@ static uint32 flipBitsInBytes(uint32 value);
  *     CRC of the Byte.
  *
  *     The function below does this in a compact way, by using all 4 bytes of a
- *     uint32 to do 4 separate CRC bytes at once.
+ *     uint32_t to do 4 separate CRC bytes at once.
  *     For this to work without the Byte shifting interfering with adjacent bytes,
  *     the polynomial has the 8th bit (0x100) set. That way, if the shifted-out bit
  *     is 1, the following XOR-ing with the CRC polynomial will set that 1 to a 0,
@@ -62,32 +62,32 @@ static uint32 flipBitsInBytes(uint32 value);
  *     fully independent byte-wise CRC calculations. For the highest byte, the value
  *     of the shifted-out byte needs to be stored before shifting the bytes (isMSBSet).
  *
- *     The for-loop that iterates over all uint8 values starts out with the
- *     uint8 values 3 to 0 stored in one uint32: 0x03020100
- *     for each iteration each uint8 value will increase by 4..
+ *     The for-loop that iterates over all uint8_t values starts out with the
+ *     uint8_t values 3 to 0 stored in one uint32_t: 0x03020100
+ *     for each iteration each uint8_t value will increase by 4..
  *     0 -> 4 -> 8 -> C -> ...
  *     1 -> 5 -> 9 -> D -> ...
  *     2 -> 6 -> A -> E -> ...
  *     3 -> 7 -> B -> F -> ...
- *     ..resulting in an increase of the uint32 by 0x04040404:
+ *     ..resulting in an increase of the uint32_t by 0x04040404:
  *     0x03020100 -> 0x07060504 -> 0x0B0A0908 -> 0x0F0E0D0C -> ...
- *     The loop ends as soon as we have iterated over all uint8 values.
+ *     The loop ends as soon as we have iterated over all uint8_t values.
  *     We detect that by looking for the byte-wise overflow into the next byte:
- *     0xFFFEFDFC                  <- last uint32 value to be calculated
- *     0xFF,  0xFE,  0xFD,  0xFC   <- the corresponding uint8 values
- *     0x103, 0x102, 0x101, 0x100  <- incremented uint8 values (overflow into the next byte!)
- *     0x04030200                  <- uint32 value with the overflowed bytes
+ *     0xFFFEFDFC                  <- last uint32_t value to be calculated
+ *     0xFF,  0xFE,  0xFD,  0xFC   <- the corresponding uint8_t values
+ *     0x103, 0x102, 0x101, 0x100  <- incremented uint8_t values (overflow into the next byte!)
+ *     0x04030200                  <- uint32_t value with the overflowed bytes
  *
- *     We have the lower uint8 values at the lower bytes of the uint32.
- *     This allows us to simply store the lowest byte of the uint32,
- *     right-shift the uint32 by 8 and increment the table pointer.
- *     After 4 iterations of that all 4 bytes of the uint32 are stored in the table.
+ *     We have the lower uint8_t values at the lower bytes of the uint32_t.
+ *     This allows us to simply store the lowest byte of the uint32_t,
+ *     right-shift the uint32_t by 8 and increment the table pointer.
+ *     After 4 iterations of that all 4 bytes of the uint32_t are stored in the table.
  */
-uint8 tmc_fillCRC8Table(uint8 polynomial, bool isReflected, uint8 index)
+uint8_t tmc_fillCRC8Table(uint8_t polynomial, bool isReflected, uint8_t index)
 {
-	uint32 CRCdata;
+	uint32_t CRCdata;
 	// Helper pointer for traversing the result table
-	uint8 *table;
+	uint8_t *table;
 
 	if(index >= CRC_TABLE_COUNT)
 		return 0;
@@ -97,10 +97,10 @@ uint8 tmc_fillCRC8Table(uint8 polynomial, bool isReflected, uint8 index)
 	table = &CRCTables[index].table[0];
 
 	// Extend the polynomial to correct byte MSBs shifting into next bytes
-	uint32 poly = (uint32) polynomial | 0x0100;
+	uint32_t poly = (uint32_t) polynomial | 0x0100;
 
-	// Iterate over all 256 possible uint8 values, compressed into a uint32 (see detailed explanation above)
-	uint32 i;
+	// Iterate over all 256 possible uint8_t values, compressed into a uint32_t (see detailed explanation above)
+	uint32_t i;
 	for(i = 0x03020100; i != 0x04030200; i+=0x04040404)
 	{
 		// For reflected table: Flip the bits of each input byte
@@ -111,7 +111,7 @@ uint8 tmc_fillCRC8Table(uint8 polynomial, bool isReflected, uint8 index)
 		for(j = 0; j < 8; j++)
 		{
 			// Store value of soon-to-be shifted out byte
-			uint8 isMSBSet = (CRCdata & 0x80000000)? 1:0;
+			uint8_t isMSBSet = (CRCdata & 0x80000000)? 1:0;
 
 			// CRC Shift
 			CRCdata <<= 1;
@@ -126,13 +126,13 @@ uint8 tmc_fillCRC8Table(uint8 polynomial, bool isReflected, uint8 index)
 		// For reflected table: Flip the bits of each output byte
 		CRCdata = (isReflected)? flipBitsInBytes(CRCdata) : CRCdata;
 		// Store the CRC result bytes in the table array
-		*table++ = (uint8) CRCdata;
+		*table++ = (uint8_t) CRCdata;
 		CRCdata >>= 8;
-		*table++ = (uint8) CRCdata;
+		*table++ = (uint8_t) CRCdata;
 		CRCdata >>= 8;
-		*table++ = (uint8) CRCdata;
+		*table++ = (uint8_t) CRCdata;
 		CRCdata >>= 8;
-		*table++ = (uint8) CRCdata;
+		*table++ = (uint8_t) CRCdata;
 	}
 
 	return 1;
@@ -141,14 +141,14 @@ uint8 tmc_fillCRC8Table(uint8 polynomial, bool isReflected, uint8 index)
 /* This function calculates the CRC from a data buffer
  *
  * Arguments:
- *     uint8 *data: A pointer to the data that will be CRC'd.
- *     uint32 bytes: The length of the data buffer.
- *     uint8 index: The index of the CRC table to be used.
+ *     uint8_t *data: A pointer to the data that will be CRC'd.
+ *     uint32_t bytes: The length of the data buffer.
+ *     uint8_t index: The index of the CRC table to be used.
  */
-uint8 tmc_CRC8(uint8 *data, uint32 bytes, uint8 index)
+uint8_t tmc_CRC8(uint8_t *data, uint32_t bytes, uint8_t index)
 {
-	uint8 result = 0;
-	uint8 *table;
+	uint8_t result = 0;
+	uint8_t *table;
 
 	if(index >= CRC_TABLE_COUNT)
 		return 0;
@@ -161,7 +161,7 @@ uint8 tmc_CRC8(uint8 *data, uint32 bytes, uint8 index)
 	return (CRCTables[index].isReflected)? flipByte(result) : result;
 }
 
-uint8 tmc_tableGetPolynomial(uint8 index)
+uint8_t tmc_tableGetPolynomial(uint8_t index)
 {
 	if(index >= CRC_TABLE_COUNT)
 		return 0;
@@ -169,7 +169,7 @@ uint8 tmc_tableGetPolynomial(uint8 index)
 	return CRCTables[index].polynomial;
 }
 
-bool tmc_tableIsReflected(uint8 index)
+bool tmc_tableIsReflected(uint8_t index)
 {
 	if(index >= CRC_TABLE_COUNT)
 		return false;
@@ -178,7 +178,7 @@ bool tmc_tableIsReflected(uint8 index)
 }
 
 // Helper functions
-static uint8 flipByte(uint8 value)
+static uint8_t flipByte(uint8_t value)
 {
 	// swap odd and even bits
 	value = ((value >> 1) & 0x55) | ((value & 0x55) << 1);
@@ -198,7 +198,7 @@ static uint8 flipByte(uint8 value)
  *                                  \/
  * [b24 b25 b26 b27 b28 b29 b30 b31 .. b0 b1 b2 b3 b4 b5 b6 b7]
  */
-static uint32 flipBitsInBytes(uint32 value)
+static uint32_t flipBitsInBytes(uint32_t value)
 {
 	// swap odd and even bits
 	value = ((value >> 1) & 0x55555555) | ((value & 0x55555555) << 1);

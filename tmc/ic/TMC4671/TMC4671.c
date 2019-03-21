@@ -290,8 +290,8 @@ int32_t tmc4671_getActualRampPosition(uint8_t motor)
 // encoder initialization
 void tmc4671_doEncoderInitializationMode0(uint8_t motor, uint8_t *initState, uint16_t initWaitTime, uint16_t *actualInitWaitTime, uint16_t startVoltage)
 {
-	static uint16 last_Phi_E_Selection = 0;
-	static uint32 last_UQ_UD_EXT = 0;
+	static uint16_t last_Phi_E_Selection = 0;
+	static uint32_t last_UQ_UD_EXT = 0;
 	static int16_t last_PHI_E_EXT = 0;
 
 	switch (*initState)
@@ -417,7 +417,7 @@ void tmc4671_doEncoderInitializationMode2(uint8_t motor, uint8_t *initState, uin
 void tmc4671_checkEncderInitialization(uint8_t motor, uint32_t actualSystick, uint8_t initMode, uint8_t *initState, uint16_t initWaitTime, uint16_t *actualInitWaitTime, uint16_t startVoltage)
 {
 	// use the systick as 1ms timer for encoder initialization
-	static uint32 lastSystick = 0;
+	static uint32_t lastSystick = 0;
 	if(actualSystick != lastSystick)
 	{
 		// needs timer to use the wait time

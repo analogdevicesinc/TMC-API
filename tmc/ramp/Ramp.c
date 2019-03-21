@@ -17,7 +17,7 @@ void tmc_ramp_init(void *ramp, TMC_RampType type)
 	}
 }
 
-void tmc_ramp_compute(void *ramp, TMC_RampType type, uint32 delta)
+void tmc_ramp_compute(void *ramp, TMC_RampType type, uint32_t delta)
 {
 	switch(type) {
 	case TMC_RAMP_TYPE_LINEAR:
@@ -27,9 +27,9 @@ void tmc_ramp_compute(void *ramp, TMC_RampType type, uint32 delta)
 	}
 }
 
-int32 tmc_ramp_get_rampVelocity(void *ramp, TMC_RampType type)
+int32_t tmc_ramp_get_rampVelocity(void *ramp, TMC_RampType type)
 {
-	int32 v = 0;
+	int32_t v = 0;
 	switch(type) {
 	case TMC_RAMP_TYPE_LINEAR:
 		v = tmc_ramp_linear_get_rampVelocity((TMC_LinearRamp *)ramp);
@@ -38,9 +38,9 @@ int32 tmc_ramp_get_rampVelocity(void *ramp, TMC_RampType type)
 	return v;
 }
 
-int32 tmc_ramp_get_rampPosition(void *ramp, TMC_RampType type)
+int32_t tmc_ramp_get_rampPosition(void *ramp, TMC_RampType type)
 {
-	int32 x = 0;
+	int32_t x = 0;
 	switch(type) {
 	case TMC_RAMP_TYPE_LINEAR:
 		x = tmc_ramp_linear_get_rampPosition((TMC_LinearRamp *)ramp);
@@ -80,9 +80,9 @@ void tmc_ramp_toggle_enabled(void *ramp, TMC_RampType type)
 	}
 }
 
-int32 tmc_ramp_get_dx(void *ramp, TMC_RampType type)
+int32_t tmc_ramp_get_dx(void *ramp, TMC_RampType type)
 {
-	int32 dx = 0;
+	int32_t dx = 0;
 	switch(type) {
 	case TMC_RAMP_TYPE_LINEAR:
 	default:

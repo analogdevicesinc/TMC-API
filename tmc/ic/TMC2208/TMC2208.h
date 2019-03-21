@@ -17,10 +17,10 @@ typedef struct {
 	ConfigurationTypeDef *config;
 	int velocity;
 	int oldX;
-	uint32 oldTick;
-	int32 registerResetState[TMC2208_REGISTER_COUNT];
-	uint8 registerAccess[TMC2208_REGISTER_COUNT];
-	uint8 slave;
+	uint32_t oldTick;
+	int32_t registerResetState[TMC2208_REGISTER_COUNT];
+	uint8_t registerAccess[TMC2208_REGISTER_COUNT];
+	uint8_t slave;
 } TMC2208TypeDef;
 
 typedef void (*tmc2208_callback)(TMC2208TypeDef*, ConfigState);
@@ -41,7 +41,7 @@ typedef void (*tmc2208_callback)(TMC2208TypeDef*, ConfigState);
 //   0x13: read/write, seperate functions/values for reading or writing
 //   0x21: read, flag register (read to clear)
 //   0x42: write, has hardware presets on reset
-static const uint8 tmc2208_defaultRegisterAccess[TMC2208_REGISTER_COUNT] =
+static const uint8_t tmc2208_defaultRegisterAccess[TMC2208_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x23, 0x01, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
@@ -54,7 +54,7 @@ static const uint8 tmc2208_defaultRegisterAccess[TMC2208_REGISTER_COUNT] =
 	0x03, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-static const s32 tmc2208_defaultRegisterResetState[TMC2208_REGISTER_COUNT] =
+static const int32_t tmc2208_defaultRegisterResetState[TMC2208_REGISTER_COUNT] =
 {
 //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 	R00, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -73,14 +73,14 @@ static const s32 tmc2208_defaultRegisterResetState[TMC2208_REGISTER_COUNT] =
 #undef R6C
 #undef R70
 
-void tmc2208_init(TMC2208TypeDef *tmc2208, uint8 channel, ConfigurationTypeDef *tmc2208_config, const int32 *registerResetState);
-uint8 tmc2208_reset(TMC2208TypeDef *tmc2208);
-uint8 tmc2208_restore(TMC2208TypeDef *tmc2208);
-void tmc2208_setRegisterResetState(TMC2208TypeDef *tmc2208, const int32 *resetState);
+void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState);
+uint8_t tmc2208_reset(TMC2208TypeDef *tmc2208);
+uint8_t tmc2208_restore(TMC2208TypeDef *tmc2208);
+void tmc2208_setRegisterResetState(TMC2208TypeDef *tmc2208, const int32_t *resetState);
 void tmc2208_setCallback(TMC2208TypeDef *tmc2208, tmc2208_callback callback);
-void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32 tick);
+void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32_t tick);
 
-uint8 tmc2208_get_slave(TMC2208TypeDef *tmc2208);
-void tmc2208_set_slave(TMC2208TypeDef *tmc2208, uint8 slave);
+uint8_t tmc2208_get_slave(TMC2208TypeDef *tmc2208);
+void tmc2208_set_slave(TMC2208TypeDef *tmc2208, uint8_t slave);
 
 #endif /* TMC_IC_TMC2208_H_ */

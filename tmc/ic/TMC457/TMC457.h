@@ -10,13 +10,13 @@
 	#include "../../helpers/API_Header.h"
 	#include "TMC457_Register.h"
 
-	void Write457Zero(u8 Address);
-	void Write457Int(u8 Address, s32 Value);
-	void Write457Wavetable(u16 RAMAddress, u16 Value);
-	s32 Read457Int(u8 Address);
-	u16 Read457Wavetable(u16 RAMAddress);
-	void Set457RampMode(u32 RampMode);
-	void Init457Wavetable(u32 Resolution, s32 Offset);
+	void Write457Zero(uint8_t Address);
+	void Write457Int(uint8_t Address, int32_t Value);
+	void Write457Wavetable(uint16_t RAMAddress, uint16_t Value);
+	int32_t Read457Int(uint8_t Address);
+	uint16_t Read457Wavetable(uint16_t RAMAddress);
+	void Set457RampMode(uint32_t RampMode);
+	void Init457Wavetable(uint32_t Resolution, int32_t Offset);
 	void Init457(void);
 	void HardStop();
 

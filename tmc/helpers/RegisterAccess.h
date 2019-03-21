@@ -59,8 +59,8 @@
 // obtain by reading them due to the register not being read-back.
 typedef struct
 {
-	uint8 address;
-	int32 value;
+	uint8_t address;
+	int32_t value;
 } TMCRegisterConstant;
 
 // Helper define:

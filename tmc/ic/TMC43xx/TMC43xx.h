@@ -188,52 +188,52 @@
 #define TMC43xx_REFCONF_CIRCULAR_ENC_EN    0x80000000
 
 // TMC43xx access functions
-void tmc43xx_writeBytes(uint8 Axis, uint8 Address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
-void tmc43xx_writeInt(uint8 Axis, uint8 Address, int32 Value);
-int32 tmc43xx_readInt(uint8 Axis, uint8 Address);
-void tmc43xx_setBits(uint8 Axis, uint8 Address, uint32 BitMask);
-void tmc43xx_clearBits(uint8 Axis, uint8 Address, uint32 BitMask);
-void tmc43xx_writeBits(uint8 Axis, uint8 Address, uint32 Value, uint8 Start, uint8 Size);
-uint32 tmc43xx_peekEvents(uint8 Axis);
-uint32 tmc43xx_readAndClearEvents(uint8 Axis, uint32 EventMask);
-uint8 tmc43xx_getHomeInput(uint8 Motor);
-uint8 tmc43xx_moveToNextFullstep(uint8 Axis);
-void tmc43xx_hardStop(uint8 Axis);
-void tmc43xx_init(uint8 numberOfMotors);
+void tmc43xx_writeBytes(uint8_t Axis, uint8_t Address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+void tmc43xx_writeInt(uint8_t Axis, uint8_t Address, int32_t Value);
+int32_t tmc43xx_readInt(uint8_t Axis, uint8_t Address);
+void tmc43xx_setBits(uint8_t Axis, uint8_t Address, uint32_t BitMask);
+void tmc43xx_clearBits(uint8_t Axis, uint8_t Address, uint32_t BitMask);
+void tmc43xx_writeBits(uint8_t Axis, uint8_t Address, uint32_t Value, uint8_t Start, uint8_t Size);
+uint32_t tmc43xx_peekEvents(uint8_t Axis);
+uint32_t tmc43xx_readAndClearEvents(uint8_t Axis, uint32_t EventMask);
+uint8_t tmc43xx_getHomeInput(uint8_t Motor);
+uint8_t tmc43xx_moveToNextFullstep(uint8_t Axis);
+void tmc43xx_hardStop(uint8_t Axis);
+void tmc43xx_init(uint8_t numberOfMotors);
 
 typedef struct
 {
-	uint8 IRun;
-	uint8 IStandby;
-	uint16 SettingDelay;
-	uint8 BoostCurrent;
+	uint8_t IRun;
+	uint8_t IStandby;
+	uint16_t SettingDelay;
+	uint8_t BoostCurrent;
 } TMotorConfig;
 
 typedef struct
 {
-	uint8 ClosedLoopMode;
-	uint32 GammaVMin;
-	uint32 GammaVAdd;
-	uint8 Gamma;
-	uint16 Beta;
-	uint32 Offset;
-	uint8 CurrentScalerMinimum;
-	uint8 CurrentScalerMaximum;
-	uint8 CurrentScalerStartUp;
-	uint32 UpscaleDelay;
-	uint32 DownscaleDelay;
-	uint32 CorrectionVelocityP;
-	uint32 CorrectionVelocityI;
-	uint32 CorrectionVelocityIClip;
-	uint32 CorrectionVelocityDClk;
-	uint32 CorrectionVelocityDClip;
-	uint32 PositionCorrectionP;
-	uint32 PositionCorrectionTolerance;
-	uint32 PositionWindow;
-	uint8 EncVMeanWait;
-	uint8 EncVMeanFilter;
-	uint32 EncVMeanInt;
-	int8 EncoderCorrectionYOffset;
+	uint8_t ClosedLoopMode;
+	uint32_t GammaVMin;
+	uint32_t GammaVAdd;
+	uint8_t Gamma;
+	uint16_t Beta;
+	uint32_t Offset;
+	uint8_t CurrentScalerMinimum;
+	uint8_t CurrentScalerMaximum;
+	uint8_t CurrentScalerStartUp;
+	uint32_t UpscaleDelay;
+	uint32_t DownscaleDelay;
+	uint32_t CorrectionVelocityP;
+	uint32_t CorrectionVelocityI;
+	uint32_t CorrectionVelocityIClip;
+	uint32_t CorrectionVelocityDClk;
+	uint32_t CorrectionVelocityDClip;
+	uint32_t PositionCorrectionP;
+	uint32_t PositionCorrectionTolerance;
+	uint32_t PositionWindow;
+	uint8_t EncVMeanWait;
+	uint8_t EncVMeanFilter;
+	uint32_t EncVMeanInt;
+	int8_t EncoderCorrectionYOffset;
 } TClosedLoopConfig;
 
 #endif /* TMC_IC_TMC43xx_H_ */

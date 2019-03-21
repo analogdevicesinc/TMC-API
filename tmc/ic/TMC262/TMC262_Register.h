@@ -16,7 +16,7 @@
 	#define TMC262_DRVCONF_MASK        (0xFFFFF & ~((0x0F<<0) | (0x01<<11)))
 
 	// makro function to determine register address out of write datagram
-	#define TMC262_GET_ADDRESS(X)  ((uint8) ((((X) >> 18) ? ((X)>>17) : 0) & 0x07))
+	#define TMC262_GET_ADDRESS(X)  ((uint8_t) ((((X) >> 18) ? ((X)>>17) : 0) & 0x07))
 	#define TMC262_WRITE           (1<<3)
 
 

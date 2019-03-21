@@ -9,13 +9,13 @@
 #include "TMC5062.h"
 
 // => SPI wrapper
-extern uint8 tmc5062_readWrite(uint8 motor, uint8 data, uint8 lastTransfer);
+extern uint8_t tmc5062_readWrite(uint8_t motor, uint8_t data, uint8_t lastTransfer);
 // <= SPI wrapper
 
-static void measureVelocity(TMC5062TypeDef *tmc5062, uint32 tick);
+static void measureVelocity(TMC5062TypeDef *tmc5062, uint32_t tick);
 static void writeConfiguration(TMC5062TypeDef *tmc5062);
 
-void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8 channel, uint8 address, int value)
+void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address, int value)
 {
 	if(channel >= TMC5062_MOTORS)
 		return;
@@ -29,7 +29,7 @@ void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8 channel, uint8 address, int
 	tmc5062->config->shadowRegister[TMC_ADDRESS(address)] = value;
 }
 
-int tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8 channel, uint8 address)
+int tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address)
 {
 	if(channel >= TMC5062_MOTORS)
 		return 0;
@@ -57,7 +57,7 @@ int tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8 channel, uint8 address)
 	return value;
 }
 
-void tmc5062_init(TMC5062TypeDef *tmc5062, ConfigurationTypeDef *tmc5062_config, const int32 *registerResetState, uint8 motorIndex0, uint8 motorIndex1, uint32 chipFrequency)
+void tmc5062_init(TMC5062TypeDef *tmc5062, ConfigurationTypeDef *tmc5062_config, const int32_t *registerResetState, uint8_t motorIndex0, uint8_t motorIndex1, uint32_t chipFrequency)
 {
 	tmc5062->motors[0] = motorIndex0;
 	tmc5062->motors[1] = motorIndex1;
@@ -109,7 +109,7 @@ void tmc5062_fillShadowRegisters(TMC5062TypeDef *tmc5062)
 	}
 }
 
-void tmc5062_setRegisterResetState(TMC5062TypeDef *tmc5062, const int32 *resetState)
+void tmc5062_setRegisterResetState(TMC5062TypeDef *tmc5062, const int32_t *resetState)
 {
 	for(size_t i = 0; i < TMC5062_REGISTER_COUNT; i++)
 		tmc5062->registerResetState[i] = resetState[i];
@@ -122,8 +122,8 @@ void tmc5062_setCallback(TMC5062TypeDef *tmc5062, tmc5062_callback callback)
 
 static void writeConfiguration(TMC5062TypeDef *tmc5062)
 {
-	uint8 *ptr = &tmc5062->config->configIndex;
-	const int32 *settings;
+	uint8_t *ptr = &tmc5062->config->configIndex;
+	const int32_t *settings;
 
 	if(tmc5062->config->state == CONFIG_RESTORE)
 	{
@@ -157,7 +157,7 @@ static void writeConfiguration(TMC5062TypeDef *tmc5062)
 	}
 }
 
-void tmc5062_periodicJob(TMC5062TypeDef *tmc5062, uint32 tick)
+void tmc5062_periodicJob(TMC5062TypeDef *tmc5062, uint32_t tick)
 {
 	if(tmc5062->config->state != CONFIG_READY)
 	{
@@ -165,7 +165,7 @@ void tmc5062_periodicJob(TMC5062TypeDef *tmc5062, uint32 tick)
 		return;
 	}
 
-	for(uint8 channel = 0; channel < TMC5062_MOTORS; channel++)
+	for(uint8_t channel = 0; channel < TMC5062_MOTORS; channel++)
 	{
 		if(dcStepActive(tmc5062, channel))
 		{
@@ -176,7 +176,7 @@ void tmc5062_periodicJob(TMC5062TypeDef *tmc5062, uint32 tick)
 	}
 }
 
-uint8 tmc5062_reset(TMC5062TypeDef *tmc5062)
+uint8_t tmc5062_reset(TMC5062TypeDef *tmc5062)
 {
 	if(tmc5062->config->state != CONFIG_READY)
 		return false;
@@ -194,7 +194,7 @@ uint8 tmc5062_reset(TMC5062TypeDef *tmc5062)
 	return true;
 }
 
-uint8 tmc5062_restore(TMC5062TypeDef *tmc5062)
+uint8_t tmc5062_restore(TMC5062TypeDef *tmc5062)
 {
 	if(tmc5062->config->state != CONFIG_READY)
 		return 0;
@@ -205,7 +205,7 @@ uint8 tmc5062_restore(TMC5062TypeDef *tmc5062)
 	return 1;
 }
 
-void tmc5062_rotate(TMC5062TypeDef *tmc5062, uint8 motor, int32 velocity)
+void tmc5062_rotate(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t velocity)
 {
 	if(motor >= TMC5062_MOTORS)
 		return;
@@ -214,22 +214,22 @@ void tmc5062_rotate(TMC5062TypeDef *tmc5062, uint8 motor, int32 velocity)
 	tmc5062_writeInt(tmc5062, motor, TMC5062_RAMPMODE(motor), (velocity >= 0) ? TMC5062_MODE_VELPOS : TMC5062_MODE_VELNEG);
 }
 
-void tmc5062_right(TMC5062TypeDef *tmc5062, uint8 motor, int32 velocity)
+void tmc5062_right(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t velocity)
 {
 	return tmc5062_rotate(tmc5062, motor, velocity);
 }
 
-void tmc5062_left(TMC5062TypeDef *tmc5062, uint8 motor, int32 velocity)
+void tmc5062_left(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t velocity)
 {
 	return tmc5062_rotate(tmc5062, motor, -velocity);
 }
 
-void tmc5062_stop(TMC5062TypeDef *tmc5062, uint8 motor)
+void tmc5062_stop(TMC5062TypeDef *tmc5062, uint8_t motor)
 {
 	return tmc5062_rotate(tmc5062, motor, 0);
 }
 
-void tmc5062_moveTo(TMC5062TypeDef *tmc5062, uint8 motor, int32 position, uint32 velocityMax)
+void tmc5062_moveTo(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t position, uint32_t velocityMax)
 {
 	if(motor >= TMC5062_MOTORS)
 		return;
@@ -239,7 +239,7 @@ void tmc5062_moveTo(TMC5062TypeDef *tmc5062, uint8 motor, int32 position, uint32
 	tmc5062_writeInt(tmc5062, motor, TMC5062_XTARGET(motor), position);
 }
 
-void tmc5062_moveBy(TMC5062TypeDef *tmc5062, uint8 motor, uint32 velocityMax, int32 *ticks)
+void tmc5062_moveBy(TMC5062TypeDef *tmc5062, uint8_t motor, uint32_t velocityMax, int32_t *ticks)
 {
 	// determine actual position and add numbers of ticks to move
 	*ticks += tmc5062_readInt(tmc5062, motor, TMC5062_XACTUAL(motor));
@@ -248,11 +248,11 @@ void tmc5062_moveBy(TMC5062TypeDef *tmc5062, uint8 motor, uint32 velocityMax, in
 }
 
 // Chopper settings
-uint8 calculateTOFF(uint32 chopFreq, uint32 clkFreq)
+uint8_t calculateTOFF(uint32_t chopFreq, uint32_t clkFreq)
 {
 	// Calculate TOff from the clock and chopper frequencies (see documentation
 	// for details). We add 16 before dividing by 32 to have rounding instead of flooring.
-	uint8 result = (((clkFreq / chopFreq / 4) - 12) + 16) / 32;
+	uint8_t result = (((clkFreq / chopFreq / 4) - 12) + 16) / 32;
 
 	result = MIN(15, result);
 	result = MAX(1, result);
@@ -267,7 +267,7 @@ uint8 calculateTOFF(uint32 chopFreq, uint32 clkFreq)
 // Coolstep
 
 // dcStep
-uint8 dcStepActive(TMC5062TypeDef *tmc5062, uint8 channel)
+uint8_t dcStepActive(TMC5062TypeDef *tmc5062, uint8_t channel)
 {
 
 	// vhighfs and vhighchm set?
@@ -282,19 +282,19 @@ uint8 dcStepActive(TMC5062TypeDef *tmc5062, uint8 channel)
 	return vActual >= vDCMin;
 }
 
-static void measureVelocity(TMC5062TypeDef *tmc5062, uint32 tick)
+static void measureVelocity(TMC5062TypeDef *tmc5062, uint32_t tick)
 {
 	int xActual;
-	uint32 tickDiff;
+	uint32_t tickDiff;
 
 	if((tickDiff = tick - tmc5062->oldTick) >= tmc5062->measurementInterval)
 	{
-		for(uint8 channel = 0; channel < TMC5062_MOTORS; channel++)
+		for(uint8_t channel = 0; channel < TMC5062_MOTORS; channel++)
 		{
 			xActual = tmc5062_readInt(tmc5062, channel, TMC5062_XACTUAL(channel));
 
 			// Position difference gets multiplied by 1000 to compensate ticks being in milliseconds
-			int32 xDiff = (xActual - tmc5062->oldXActual[channel])* 1000;
+			int32_t xDiff = (xActual - tmc5062->oldXActual[channel])* 1000;
 			tmc5062->velocity[channel] = (xDiff) / ((float) tickDiff) * ((1<<24) / (float) tmc5062->chipFrequency);
 
 			tmc5062->oldXActual[channel] = xActual;
@@ -304,7 +304,7 @@ static void measureVelocity(TMC5062TypeDef *tmc5062, uint32 tick)
 }
 
 // MSLUT
-uint8 setMicroStepTable(TMC5062TypeDef *tmc5062, uint8 channel, TMC5062_MicroStepTable *table)
+uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t channel, TMC5062_MicroStepTable *table)
 {
 	if(channel >= TMC5062_MOTORS || table == 0 || tmc5062 == 0)
 		return 0;
@@ -318,7 +318,7 @@ uint8 setMicroStepTable(TMC5062TypeDef *tmc5062, uint8 channel, TMC5062_MicroSte
 	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT6(channel), table->LUT_6);
 	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT7(channel), table->LUT_7);
 
-	uint32 tmp =   (table->X3 << 24) | (table->X2 << 16) | (table->X1 << 8)
+	uint32_t tmp =   (table->X3 << 24) | (table->X2 << 16) | (table->X1 << 8)
 			     | (table->W3 <<  6) | (table->W2 <<  4) | (table->W1 << 2) | (table->W0);
 	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUTSEL(channel), tmp);
 
@@ -335,11 +335,11 @@ uint8 setMicroStepTable(TMC5062TypeDef *tmc5062, uint8 channel, TMC5062_MicroSte
  * Decimal:  Error = retVal / (10000 * encoderResolution)
  * (Check the enc_sel_decimal bit in the ENCMODE register to find out which mode is used)
  */
-uint32 setEncoderFactor(TMC5062TypeDef *tmc5062, uint8 channel, uint32 motorFullSteps, uint32 microSteps, uint32 encoderResolution)
+uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t channel, uint32_t motorFullSteps, uint32_t microSteps, uint32_t encoderResolution)
 {
 	int numerator, denominator, remainder;
 	int binaryError, decimalError;
-	uint8 useDecimal, binaryRounded = false, decimalRounded = false;
+	uint8_t useDecimal, binaryRounded = false, decimalRounded = false;
 
 	// Check for divisor 0
 	// Return value here is inaccurate, this is just a protection against runtime/usage error.
@@ -365,14 +365,14 @@ uint32 setEncoderFactor(TMC5062TypeDef *tmc5062, uint8 channel, uint32 motorFull
 	{
 		// The integer division/modulo calculation results in flooring.
 		// Compensate here to achieve rounding instead (smaller error)
-		// (Cast to uint32 to avoid compiler warning - variable is positive anyways)
-		if((uint32) binaryError > (encoderResolution/2))
+		// (Cast to uint32_t to avoid compiler warning - variable is positive anyways)
+		if((uint32_t) binaryError > (encoderResolution/2))
 		{
 			binaryError -= encoderResolution;
 			binaryRounded = true;
 		}
 
-		if((uint32) decimalError > (encoderResolution/2))
+		if((uint32_t) decimalError > (encoderResolution/2))
 		{
 			decimalError -= encoderResolution;
 			decimalRounded = true;
@@ -394,7 +394,7 @@ uint32 setEncoderFactor(TMC5062TypeDef *tmc5062, uint8 channel, uint32 motorFull
 		}
 	}
 
-	uint32 tmp = (numerator << 16) | (denominator & 0xFFFF);
+	uint32_t tmp = (numerator << 16) | (denominator & 0xFFFF);
 	tmc5062_writeInt(tmc5062, channel, TMC5062_ENC_CONST(channel), tmp);
 	TMC5062_FIELD_WRITE(tmc5062, channel, TMC5062_ENCMODE(channel), TMC5062_ENC_SEL_DECIMAL_MASK, TMC5062_ENC_SEL_DECIMAL_SHIFT, useDecimal);
 

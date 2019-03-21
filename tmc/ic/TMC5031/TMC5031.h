@@ -24,15 +24,15 @@
 // Usage note: use 1 TypeDef per IC
 typedef struct {
 	int velocity[2], oldX[2];
-	uint32 oldTick;
-	int32 registerResetState[TMC5031_REGISTER_COUNT];
-	uint8 registerAccess[TMC5031_REGISTER_COUNT];
+	uint32_t oldTick;
+	int32_t registerResetState[TMC5031_REGISTER_COUNT];
+	uint8_t registerAccess[TMC5031_REGISTER_COUNT];
 	bool vMaxModified[2];
 } TMC5031TypeDef;
 
 void tmc5031_initConfig(TMC5031TypeDef *TMC5031);
-void tmc5031_periodicJob(u8 motor, uint32 tick, TMC5031TypeDef *TMC5031, ConfigurationTypeDef *TMC5031_config);
-u8 tmc5031_reset(ConfigurationTypeDef *TMC5031_config);
-u8 tmc5031_restore(ConfigurationTypeDef *TMC5031_config);
+void tmc5031_periodicJob(uint8_t motor, uint32_t tick, TMC5031TypeDef *TMC5031, ConfigurationTypeDef *TMC5031_config);
+uint8_t tmc5031_reset(ConfigurationTypeDef *TMC5031_config);
+uint8_t tmc5031_restore(ConfigurationTypeDef *TMC5031_config);
 
 #endif /* TMC_IC_TMC5031_H_ */

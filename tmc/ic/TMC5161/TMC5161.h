@@ -32,7 +32,7 @@
 //   0x13: read/write, seperate functions/values for reading or writing
 //   0x21: read, flag register (read to clear)
 //   0x42: write, has hardware presets on reset
-static const uint8 tmc5161_defaultRegisterAccess[TMC5161_REGISTER_COUNT] =
+static const uint8_t tmc5161_defaultRegisterAccess[TMC5161_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x13, 0x01, 0x02, 0x13, 0x02, 0x02, 0x01, 0x01, 0x02, 0x02, 0x02, 0x01, ____, ____, ____, // 0x00 - 0x0F
@@ -57,7 +57,7 @@ static const uint8 tmc5161_defaultRegisterAccess[TMC5161_REGISTER_COUNT] =
 #define R6C 0x00410153  // CHOPCONF
 #define R70 0xC40C001E  // PWMCONF
 
-static const s32 tmc5161_defaultRegisterResetState[TMC5161_REGISTER_COUNT] =
+static const int32_t tmc5161_defaultRegisterResetState[TMC5161_REGISTER_COUNT] =
 {
 //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 	R00, 0,   0,   0,   0,   0,   0,   0,   0,   R09, R0A, 0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -84,30 +84,30 @@ typedef struct
 {
 	ConfigurationTypeDef *config;
 	int velocity, oldX;
-	uint32 oldTick;
-	int32 registerResetState[TMC5161_REGISTER_COUNT];
-	uint8 registerAccess[TMC5161_REGISTER_COUNT];
+	uint32_t oldTick;
+	int32_t registerResetState[TMC5161_REGISTER_COUNT];
+	uint8_t registerAccess[TMC5161_REGISTER_COUNT];
 } TMC5161TypeDef;
 
 typedef void (*tmc5161_callback)(TMC5161TypeDef*, ConfigState);
 
-void tmc5161_writeDatagram(TMC5161TypeDef *tmc5161, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
-void tmc5161_writeInt(TMC5161TypeDef *tmc5161, uint8 address, int32 value);
-int32 tmc5161_readInt(TMC5161TypeDef *tmc5161, uint8 address);
+void tmc5161_writeDatagram(TMC5161TypeDef *tmc5161, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+void tmc5161_writeInt(TMC5161TypeDef *tmc5161, uint8_t address, int32_t value);
+int32_t tmc5161_readInt(TMC5161TypeDef *tmc5161, uint8_t address);
 
-void tmc5161_init(TMC5161TypeDef *tmc5161, uint8 channel, ConfigurationTypeDef *config, const int32 *registerResetState);
+void tmc5161_init(TMC5161TypeDef *tmc5161, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 
-uint8 tmc5161_reset(TMC5161TypeDef *tmc5161);
-uint8 tmc5161_restore(TMC5161TypeDef *tmc5161);
+uint8_t tmc5161_reset(TMC5161TypeDef *tmc5161);
+uint8_t tmc5161_restore(TMC5161TypeDef *tmc5161);
 
-void tmc5161_setRegisterResetState(TMC5161TypeDef *tmc5161, const int32 *resetState);
+void tmc5161_setRegisterResetState(TMC5161TypeDef *tmc5161, const int32_t *resetState);
 void tmc5161_setCallback(TMC5161TypeDef *tmc5161, tmc5161_callback callback);
-void tmc5161_periodicJob(TMC5161TypeDef *tmc5161, uint32 tick);
-void tmc5161_rotate(TMC5161TypeDef *tmc5161, int32 velocity);
-void tmc5161_right(TMC5161TypeDef *tmc5161, uint32 velocity);
-void tmc5161_left(TMC5161TypeDef *tmc5161, uint32 velocity);
+void tmc5161_periodicJob(TMC5161TypeDef *tmc5161, uint32_t tick);
+void tmc5161_rotate(TMC5161TypeDef *tmc5161, int32_t velocity);
+void tmc5161_right(TMC5161TypeDef *tmc5161, uint32_t velocity);
+void tmc5161_left(TMC5161TypeDef *tmc5161, uint32_t velocity);
 void tmc5161_stop(TMC5161TypeDef *tmc5161);
-void tmc5161_moveTo(TMC5161TypeDef *tmc5161, int32 position, uint32 velocity);
-void tmc5161_moveBy(TMC5161TypeDef *tmc5161, int32 *ticks, uint32 velocity);
+void tmc5161_moveTo(TMC5161TypeDef *tmc5161, int32_t position, uint32_t velocity);
+void tmc5161_moveBy(TMC5161TypeDef *tmc5161, int32_t *ticks, uint32_t velocity);
 
 #endif /* TMC_IC_TMC5161_H_ */

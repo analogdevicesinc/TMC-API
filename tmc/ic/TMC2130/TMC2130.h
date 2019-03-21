@@ -28,8 +28,8 @@
 typedef struct
 {
 	ConfigurationTypeDef *config;
-	int32 registerResetState[TMC2130_REGISTER_COUNT];
-	uint8 registerAccess[TMC2130_REGISTER_COUNT];
+	int32_t registerResetState[TMC2130_REGISTER_COUNT];
+	uint8_t registerAccess[TMC2130_REGISTER_COUNT];
 } TMC2130TypeDef;
 
 typedef void (*tmc2130_callback)(TMC2130TypeDef*, ConfigState);
@@ -45,7 +45,7 @@ typedef void (*tmc2130_callback)(TMC2130TypeDef*, ConfigState);
 // 0x03: read/write
 // 0x21: read to clear
 // 0x42: write, has hardware presets on reset
-static const uint8 tmc2130_defaultRegisterAccess[TMC2130_REGISTER_COUNT] = {
+static const uint8_t tmc2130_defaultRegisterAccess[TMC2130_REGISTER_COUNT] = {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x21, ____, ____, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
 	0x02, 0x02, 0x01, 0x02, 0x02, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
@@ -57,7 +57,7 @@ static const uint8 tmc2130_defaultRegisterAccess[TMC2130_REGISTER_COUNT] = {
 	0x42, 0x01, 0x02, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-static const int32 tmc2130_defaultRegisterResetState[TMC2130_REGISTER_COUNT] =
+static const int32_t tmc2130_defaultRegisterResetState[TMC2130_REGISTER_COUNT] =
 {
 //	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -70,15 +70,15 @@ static const int32 tmc2130_defaultRegisterResetState[TMC2130_REGISTER_COUNT] =
 	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
 };
 
-void tmc2130_writeDatagram(TMC2130TypeDef *tmc2130, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
-void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8 address, int32 value);
-int32 tmc2130_readInt(TMC2130TypeDef *tmc2130, uint8 address);
+void tmc2130_writeDatagram(TMC2130TypeDef *tmc2130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8_t address, int32_t value);
+int32_t tmc2130_readInt(TMC2130TypeDef *tmc2130, uint8_t address);
 
-void tmc2130_init(TMC2130TypeDef *tmc2130, uint8 channel, ConfigurationTypeDef *config, const int32 *registerResetState);
-uint8 tmc2130_reset(TMC2130TypeDef *tmc2130);
-uint8 tmc2130_restore(TMC2130TypeDef *tmc2130);
-void tmc2130_setRegisterResetState(TMC2130TypeDef *tmc2130, const int32 *resetState);
+void tmc2130_init(TMC2130TypeDef *tmc2130, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
+uint8_t tmc2130_reset(TMC2130TypeDef *tmc2130);
+uint8_t tmc2130_restore(TMC2130TypeDef *tmc2130);
+void tmc2130_setRegisterResetState(TMC2130TypeDef *tmc2130, const int32_t *resetState);
 void tmc2130_setCallback(TMC2130TypeDef *tmc2130, tmc2130_callback callback);
-void tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32 tick);
+void tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32_t tick);
 
 #endif /* TMC_IC_TMC2130_H_ */

@@ -19,25 +19,25 @@
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
-	uint8 standStillCurrentScale;
-	uint32 standStillTimeout;
-	uint8 isStandStillOverCurrent;
-	uint8 isStandStillCurrentLimit;
-	uint8 continuousModeEnable;
-	uint8 runCurrentScale;
-	uint8 coolStepInactiveValue;
-	uint8 coolStepActiveValue;
-	uint32 coolStepThreshold;
+	uint8_t standStillCurrentScale;
+	uint32_t standStillTimeout;
+	uint8_t isStandStillOverCurrent;
+	uint8_t isStandStillCurrentLimit;
+	uint8_t continuousModeEnable;
+	uint8_t runCurrentScale;
+	uint8_t coolStepInactiveValue;
+	uint8_t coolStepActiveValue;
+	uint32_t coolStepThreshold;
 	int velocity;
 	int oldX;
-	uint32 oldTick;
-	u8 registerAccess[TMC2660_REGISTER_COUNT];
-	int32 registerResetState[TMC2660_REGISTER_COUNT];
+	uint32_t oldTick;
+	uint8_t registerAccess[TMC2660_REGISTER_COUNT];
+	int32_t registerResetState[TMC2660_REGISTER_COUNT];
 } TMC2660TypeDef;
 
 void tmc2660_initConfig(TMC2660TypeDef *TMC2660);
-void tmc2660_periodicJob(u8 motor, uint32 tick, TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config);
-u8 tmc2660_reset(TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config);
-u8 tmc2660_restore(ConfigurationTypeDef *TMC2660_config);
+void tmc2660_periodicJob(uint8_t motor, uint32_t tick, TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config);
+uint8_t tmc2660_reset(TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config);
+uint8_t tmc2660_restore(ConfigurationTypeDef *TMC2660_config);
 
 #endif /* TMC_IC_TMC2660_H_ */

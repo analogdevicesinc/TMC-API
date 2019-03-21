@@ -8,12 +8,12 @@
 #include "TMC2041.h"
 
 // => SPI wrapper
-extern void tmc2041_readWriteArray(uint8 channel, uint8 *data, size_t length);
+extern void tmc2041_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
 // <= SPI wrapper
 
-void tmc2041_writeDatagram(TMC2041TypeDef *tmc2041, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4)
+void tmc2041_writeDatagram(TMC2041TypeDef *tmc2041, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
 {
-	uint8 data[5] = { address | TMC2041_WRITE_BIT, x1, x2, x3, x4 };
+	uint8_t data[5] = { address | TMC2041_WRITE_BIT, x1, x2, x3, x4 };
 	tmc2041_readWriteArray(tmc2041->config->channel, &data[0], 5);
 
 	int value = (x1 << 24) | (x2 << 16) | (x3 << 8) | x4;
@@ -24,12 +24,12 @@ void tmc2041_writeDatagram(TMC2041TypeDef *tmc2041, uint8 address, uint8 x1, uin
 	tmc2041->registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
-void tmc2041_writeInt(TMC2041TypeDef *tmc2041, uint8 address, int32 value)
+void tmc2041_writeInt(TMC2041TypeDef *tmc2041, uint8_t address, int32_t value)
 {
 	tmc2041_writeDatagram(tmc2041, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
 }
 
-int32 tmc2041_readInt(TMC2041TypeDef *tmc2041, uint8 address)
+int32_t tmc2041_readInt(TMC2041TypeDef *tmc2041, uint8_t address)
 {
 	address = TMC_ADDRESS(address);
 
@@ -37,7 +37,7 @@ int32 tmc2041_readInt(TMC2041TypeDef *tmc2041, uint8 address)
 	if(!TMC_IS_READABLE(tmc2041->registerAccess[address]))
 		return tmc2041->config->shadowRegister[address];
 
-	uint8 data[5];
+	uint8_t data[5];
 
 	data[0] = address;
 	tmc2041_readWriteArray(tmc2041->config->channel, &data[0], 5);
@@ -48,7 +48,7 @@ int32 tmc2041_readInt(TMC2041TypeDef *tmc2041, uint8 address)
 	return (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
 }
 
-void tmc2041_init(TMC2041TypeDef *tmc2041, uint8 channel, ConfigurationTypeDef *config, const int32 *registerResetState)
+void tmc2041_init(TMC2041TypeDef *tmc2041, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
 {
 	tmc2041->config = config;
 
@@ -65,7 +65,7 @@ void tmc2041_init(TMC2041TypeDef *tmc2041, uint8 channel, ConfigurationTypeDef *
 	}
 }
 
-uint8 tmc2041_reset(TMC2041TypeDef *tmc2041)
+uint8_t tmc2041_reset(TMC2041TypeDef *tmc2041)
 {
 	if(tmc2041->config->state != CONFIG_READY)
 		return 0;
@@ -82,7 +82,7 @@ uint8 tmc2041_reset(TMC2041TypeDef *tmc2041)
 	return 1;
 }
 
-uint8 tmc2041_restore(TMC2041TypeDef *tmc2041)
+uint8_t tmc2041_restore(TMC2041TypeDef *tmc2041)
 {
 	if(tmc2041->config->state != CONFIG_READY)
 		return 0;
@@ -93,9 +93,9 @@ uint8 tmc2041_restore(TMC2041TypeDef *tmc2041)
 	return 1;
 }
 
-void tmc2041_setRegisterResetState(TMC2041TypeDef *tmc2041, const int32 *resetState)
+void tmc2041_setRegisterResetState(TMC2041TypeDef *tmc2041, const int32_t *resetState)
 {
-	uint32 i;
+	uint32_t i;
 	for(i = 0; i < TMC2041_REGISTER_COUNT; i++)
 		tmc2041->registerResetState[i] = resetState[i];
 }
@@ -107,8 +107,8 @@ void tmc2041_setCallback(TMC2041TypeDef *tmc2041, tmc2041_callback callback)
 
 static void writeConfiguration(TMC2041TypeDef *tmc2041)
 {
-	uint8 *ptr = &tmc2041->config->configIndex;
-	const int32 *settings;
+	uint8_t *ptr = &tmc2041->config->configIndex;
+	const int32_t *settings;
 
 	if(tmc2041->config->state == CONFIG_RESTORE)
 	{
@@ -139,7 +139,7 @@ static void writeConfiguration(TMC2041TypeDef *tmc2041)
 	}
 }
 
-void tmc2041_periodicJob(TMC2041TypeDef *tmc2041, uint32 tick)
+void tmc2041_periodicJob(TMC2041TypeDef *tmc2041, uint32_t tick)
 {
 	UNUSED(tick);
 

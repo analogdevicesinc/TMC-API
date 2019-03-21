@@ -21,7 +21,7 @@
  * 3: read/write
  * 7: read^write (seperate functions/values)
  */
-const u8 tmc2224_defaultRegisterAccess[TMC2224_REGISTER_COUNT] =
+const uint8_t tmc2224_defaultRegisterAccess[TMC2224_REGISTER_COUNT] =
 {
 //  0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
 	3, 3, 1, 2, 2, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, // 0x00 - 0x0F
@@ -34,7 +34,7 @@ const u8 tmc2224_defaultRegisterAccess[TMC2224_REGISTER_COUNT] =
 	3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0  // 0x70 - 0x7F
 };
 
-const s32 tmc2224_defaultRegisterResetState[TMC2224_REGISTER_COUNT] = {
+const int32_t tmc2224_defaultRegisterResetState[TMC2224_REGISTER_COUNT] = {
 //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 	R00, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
 	R10, R11, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
@@ -47,8 +47,8 @@ const s32 tmc2224_defaultRegisterResetState[TMC2224_REGISTER_COUNT] = {
 };
 
 // => SPI wrapper
-extern void tmc2224_writeRegister(uint8 motor, uint8 address, int32 value);
-extern void tmc2224_readRegister(uint8 motor, uint8 address, int32 *value);
+extern void tmc2224_writeRegister(uint8_t motor, uint8_t address, int32_t value);
+extern void tmc2224_readRegister(uint8_t motor, uint8_t address, int32_t *value);
 // <= SPI wrapper
 
 void tmc2224_initConfig(TMC2224TypeDef *tmc2224)
@@ -68,8 +68,8 @@ void tmc2224_initConfig(TMC2224TypeDef *tmc2224)
 
 void tmc2224_writeConfiguration(TMC2224TypeDef *tmc2224, ConfigurationTypeDef *TMC2224_config)
 {
-	uint8 *ptr = &TMC2224_config->configIndex;
-	const int32 *settings = (TMC2224_config->state == CONFIG_RESTORE) ? TMC2224_config->shadowRegister : tmc2224->registerResetState;
+	uint8_t *ptr = &TMC2224_config->configIndex;
+	const int32_t *settings = (TMC2224_config->state == CONFIG_RESTORE) ? TMC2224_config->shadowRegister : tmc2224->registerResetState;
 
 	while((*ptr < TMC2224_REGISTER_COUNT) && !TMC_IS_WRITABLE(tmc2224->registerAccess[*ptr]))
 		(*ptr)++;
@@ -85,7 +85,7 @@ void tmc2224_writeConfiguration(TMC2224TypeDef *tmc2224, ConfigurationTypeDef *T
 	}
 }
 
-void tmc2224_periodicJob(u8 motor, uint32 tick, TMC2224TypeDef *tmc2224, ConfigurationTypeDef *TMC2224_config)
+void tmc2224_periodicJob(uint8_t motor, uint32_t tick, TMC2224TypeDef *tmc2224, ConfigurationTypeDef *TMC2224_config)
 {
 	UNUSED(motor);
 
@@ -96,7 +96,7 @@ void tmc2224_periodicJob(u8 motor, uint32 tick, TMC2224TypeDef *tmc2224, Configu
 	}
 }
 
-uint8 tmc2224_reset(ConfigurationTypeDef *TMC2224_config)
+uint8_t tmc2224_reset(ConfigurationTypeDef *TMC2224_config)
 {
 	if(TMC2224_config->state != CONFIG_READY)
 		return 0;
@@ -107,7 +107,7 @@ uint8 tmc2224_reset(ConfigurationTypeDef *TMC2224_config)
 	return 1;
 }
 
-uint8 tmc2224_restore(ConfigurationTypeDef *TMC2224_config)
+uint8_t tmc2224_restore(ConfigurationTypeDef *TMC2224_config)
 {
 	if(TMC2224_config->state != CONFIG_READY)
 		return 0;
@@ -118,12 +118,12 @@ uint8 tmc2224_restore(ConfigurationTypeDef *TMC2224_config)
 	return 1;
 }
 
-uint8 tmc2224_get_slave(TMC2224TypeDef *tmc2224)
+uint8_t tmc2224_get_slave(TMC2224TypeDef *tmc2224)
 {
 	return tmc2224->slave;
 }
 
-void tmc2224_set_slave(TMC2224TypeDef *tmc2224, uint8 slave)
+void tmc2224_set_slave(TMC2224TypeDef *tmc2224, uint8_t slave)
 {
 	tmc2224->slave = slave;
 }

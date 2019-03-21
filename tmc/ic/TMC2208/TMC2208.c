@@ -8,11 +8,11 @@
 #include "TMC2208.h"
 
 // => SPI wrapper
-extern void tmc2208_writeRegister(uint8 motor, uint8 address, int32 value);
-extern void tmc2208_readRegister(uint8 motor, uint8 address, int32 *value);
+extern void tmc2208_writeRegister(uint8_t motor, uint8_t address, int32_t value);
+extern void tmc2208_readRegister(uint8_t motor, uint8_t address, int32_t *value);
 // <= SPI wrapper
 
-void tmc2208_init(TMC2208TypeDef *tmc2208, uint8 channel, ConfigurationTypeDef *tmc2208_config, const int32 *registerResetState)
+void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState)
 {
 	tmc2208->velocity  = 0;
 	tmc2208->oldTick   = 0;
@@ -39,8 +39,8 @@ void tmc2208_init(TMC2208TypeDef *tmc2208, uint8 channel, ConfigurationTypeDef *
 
 static void writeConfiguration(TMC2208TypeDef *tmc2208)
 {
-	uint8 *ptr = &tmc2208->config->configIndex;
-	const int32 *settings;
+	uint8_t *ptr = &tmc2208->config->configIndex;
+	const int32_t *settings;
 
 	if(tmc2208->config->state == CONFIG_RESTORE)
 	{
@@ -74,7 +74,7 @@ static void writeConfiguration(TMC2208TypeDef *tmc2208)
 	}
 }
 
-void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32 tick)
+void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32_t tick)
 {
 	if(tmc2208->config->state != CONFIG_READY)
 	{
@@ -90,7 +90,7 @@ void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32 tick)
 }
 
 
-void tmc2208_setRegisterResetState(TMC2208TypeDef *tmc2208, const int32 *resetState)
+void tmc2208_setRegisterResetState(TMC2208TypeDef *tmc2208, const int32_t *resetState)
 {
 	for(size_t i = 0; i < TMC2208_REGISTER_COUNT; i++)
 		tmc2208->registerResetState[i] = resetState[i];
@@ -101,7 +101,7 @@ void tmc2208_setCallback(TMC2208TypeDef *tmc2208, tmc2208_callback callback)
 	tmc2208->config->callback = (tmc_callback_config) callback;
 }
 
-uint8 tmc2208_reset(TMC2208TypeDef *tmc2208)
+uint8_t tmc2208_reset(TMC2208TypeDef *tmc2208)
 {
 	if(tmc2208->config->state != CONFIG_READY)
 		return false;
@@ -119,7 +119,7 @@ uint8 tmc2208_reset(TMC2208TypeDef *tmc2208)
 	return true;
 }
 
-uint8 tmc2208_restore(TMC2208TypeDef *tmc2208)
+uint8_t tmc2208_restore(TMC2208TypeDef *tmc2208)
 {
 	if(tmc2208->config->state != CONFIG_READY)
 		return false;
@@ -130,12 +130,12 @@ uint8 tmc2208_restore(TMC2208TypeDef *tmc2208)
 	return true;
 }
 
-uint8 tmc2208_get_slave(TMC2208TypeDef *tmc2208)
+uint8_t tmc2208_get_slave(TMC2208TypeDef *tmc2208)
 {
 	return tmc2208->slave;
 }
 
-void tmc2208_set_slave(TMC2208TypeDef *tmc2208, uint8 slave)
+void tmc2208_set_slave(TMC2208TypeDef *tmc2208, uint8_t slave)
 {
 	tmc2208->slave = slave;
 }

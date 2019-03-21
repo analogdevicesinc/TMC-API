@@ -23,11 +23,11 @@
 // Usage note: use 1 TypeDef per IC
 typedef struct {
 	ConfigurationTypeDef *config;
-	int32 oldX[TMC5072_MOTORS];
-	uint32 velocity[TMC5072_MOTORS];
-	uint32 oldTick;
-	int32 registerResetState[TMC5072_REGISTER_COUNT];
-	uint8 registerAccess[TMC5072_REGISTER_COUNT];
+	int32_t oldX[TMC5072_MOTORS];
+	uint32_t velocity[TMC5072_MOTORS];
+	uint32_t oldTick;
+	int32_t registerResetState[TMC5072_REGISTER_COUNT];
+	uint8_t registerAccess[TMC5072_REGISTER_COUNT];
 } TMC5072TypeDef;
 
 typedef void (*tmc5072_callback)(TMC5072TypeDef*, ConfigState);
@@ -50,7 +50,7 @@ typedef void (*tmc5072_callback)(TMC5072TypeDef*, ConfigState);
 //   0x13: read/write, seperate functions/values for reading or writing
 //   0x21: read, flag register (read to clear)
 //   0x42: write, has hardware presets on reset
-static const u8 tmc5072_defaultRegisterAccess[TMC5072_REGISTER_COUNT] = {
+static const uint8_t tmc5072_defaultRegisterAccess[TMC5072_REGISTER_COUNT] = {
 //	0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x01, 0x01, 0x02, 0x13, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
 	0x02, 0x01, ____, ____, ____, ____, ____, ____, 0x02, 0x01, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
@@ -62,7 +62,7 @@ static const u8 tmc5072_defaultRegisterAccess[TMC5072_REGISTER_COUNT] = {
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01  // 0x70 - 0x7F
 };
 
-static const s32 tmc5072_defaultRegisterResetState[TMC5072_REGISTER_COUNT] = {
+static const int32_t tmc5072_defaultRegisterResetState[TMC5072_REGISTER_COUNT] = {
 //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
@@ -97,23 +97,23 @@ static const TMCRegisterConstant tmc5072_RegisterConstants[] =
 #undef R6C
 #undef R7C
 
-void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
-void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8 address, int32 value);
-int32 tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8 address);
+void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8_t address, int32_t value);
+int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address);
 
-void tmc5072_init(TMC5072TypeDef *tmc5072, uint8 channel, ConfigurationTypeDef *tmc5072_config, const int32 *registerResetState);
+void tmc5072_init(TMC5072TypeDef *tmc5072, uint8_t channel, ConfigurationTypeDef *tmc5072_config, const int32_t *registerResetState);
 void tmc5072_fillShadowRegisters(TMC5072TypeDef *tmc5072); // For constant registers with hardware preset we cant determine actual value
-uint8 tmc5072_reset(TMC5072TypeDef *tmc5072);
-uint8 tmc5072_restore(TMC5072TypeDef *tmc5072);
-void tmc5072_setRegisterResetState(TMC5072TypeDef *tmc5072, const int32 *resetState);
+uint8_t tmc5072_reset(TMC5072TypeDef *tmc5072);
+uint8_t tmc5072_restore(TMC5072TypeDef *tmc5072);
+void tmc5072_setRegisterResetState(TMC5072TypeDef *tmc5072, const int32_t *resetState);
 void tmc5072_setCallback(TMC5072TypeDef *tmc5072, tmc5072_callback callback);
-void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32 tick);
+void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32_t tick);
 
-void tmc5072_rotate(TMC5072TypeDef *tmc5072, uint8 motor, int32 velocity);
-void tmc5072_right(TMC5072TypeDef *tmc5072, uint8 motor, int32 velocity);
-void tmc5072_left(TMC5072TypeDef *tmc5072, uint8 motor, int32 velocity);
-void tmc5072_stop(TMC5072TypeDef *tmc5072, uint8 motor);
-void tmc5072_moveTo(TMC5072TypeDef *tmc5072, uint8 motor, int32 position, uint32 velocityMax);
-void tmc5072_moveBy(TMC5072TypeDef *tmc5072, uint8 motor, uint32 velocityMax, int32 *ticks);
+void tmc5072_rotate(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity);
+void tmc5072_right(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity);
+void tmc5072_left(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity);
+void tmc5072_stop(TMC5072TypeDef *tmc5072, uint8_t motor);
+void tmc5072_moveTo(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t position, uint32_t velocityMax);
+void tmc5072_moveBy(TMC5072TypeDef *tmc5072, uint8_t motor, uint32_t velocityMax, int32_t *ticks);
 
 #endif /* TMC_IC_TMC5072_H_ */

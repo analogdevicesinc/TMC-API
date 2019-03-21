@@ -34,7 +34,7 @@
  * 3: read/write
  * 7: read^write (seperate functions/values)
  */
-const u8 tmc5041_defaultRegisterAccess[TMC5041_REGISTER_COUNT] = {
+const uint8_t tmc5041_defaultRegisterAccess[TMC5041_REGISTER_COUNT] = {
 //	0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
 	3, 1, 0, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 00 - 0F
 	2, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, // 10 - 1F
@@ -46,7 +46,7 @@ const u8 tmc5041_defaultRegisterAccess[TMC5041_REGISTER_COUNT] = {
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 3, 2, 0, 1  // 70 - 7F
 };
 
-const s32 tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] = {
+const int32_t tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] = {
 //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 00 - 0F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 10 - 1F
@@ -59,9 +59,9 @@ const s32 tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] = {
 };
 
 // => SPI wrapper
-extern void tmc5041_writeDatagram(u8 motor, uint8 address, uint8 x1, uint8 x2, uint8 x3, uint8 x4);
-extern void tmc5041_writeInt(u8 motor, uint8 address, int value);
-extern int tmc5041_readInt(u8 motor, uint8 address);
+extern void tmc5041_writeDatagram(uint8_t motor, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+extern void tmc5041_writeInt(uint8_t motor, uint8_t address, int value);
+extern int tmc5041_readInt(uint8_t motor, uint8_t address);
 // <= SPI wrapper
 
 void tmc5041_initConfig(TMC5041TypeDef *tmc5041)
@@ -84,8 +84,8 @@ void tmc5041_initConfig(TMC5041TypeDef *tmc5041)
 
 void tmc5041_writeConfiguration(TMC5041TypeDef *tmc5041, ConfigurationTypeDef *TMC5041_config)
 {
-	uint8 *ptr = &TMC5041_config->configIndex;
-	const int32 *settings = (TMC5041_config->state == CONFIG_RESTORE) ? TMC5041_config->shadowRegister : tmc5041->registerResetState;
+	uint8_t *ptr = &TMC5041_config->configIndex;
+	const int32_t *settings = (TMC5041_config->state == CONFIG_RESTORE) ? TMC5041_config->shadowRegister : tmc5041->registerResetState;
 
 	while((*ptr < TMC5041_REGISTER_COUNT) && !TMC_IS_WRITABLE(tmc5041->registerAccess[*ptr]))
 		(*ptr)++;
@@ -101,10 +101,10 @@ void tmc5041_writeConfiguration(TMC5041TypeDef *tmc5041, ConfigurationTypeDef *T
 	}
 }
 
-void tmc5041_periodicJob(u8 motor, uint32 tick, TMC5041TypeDef *tmc5041, ConfigurationTypeDef *TMC5041_config)
+void tmc5041_periodicJob(uint8_t motor, uint32_t tick, TMC5041TypeDef *tmc5041, ConfigurationTypeDef *TMC5041_config)
 {
 	int xActual;
-	uint32 tickDiff;
+	uint32_t tickDiff;
 
 	if(TMC5041_config->state != CONFIG_READY)
 	{
@@ -134,7 +134,7 @@ void tmc5041_periodicJob(u8 motor, uint32 tick, TMC5041TypeDef *tmc5041, Configu
 	}
 }
 
-uint8 tmc5041_reset(ConfigurationTypeDef *TMC5041_config)
+uint8_t tmc5041_reset(ConfigurationTypeDef *TMC5041_config)
 {
 	if(TMC5041_config->state != CONFIG_READY)
 		return 0;
@@ -145,7 +145,7 @@ uint8 tmc5041_reset(ConfigurationTypeDef *TMC5041_config)
 	return 1;
 }
 
-uint8 tmc5041_restore(ConfigurationTypeDef *TMC5041_config)
+uint8_t tmc5041_restore(ConfigurationTypeDef *TMC5041_config)
 {
 	if(TMC5041_config->state != CONFIG_READY)
 		return 0;

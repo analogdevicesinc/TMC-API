@@ -10,10 +10,10 @@
 	#include "../../helpers/API_Header.h"
 	#include "TMC424_Register.h"
 
-	void SetEncoderPrescaler(u8 Index, u32 Prescaler, u8 SpecialFunctionBits);
-	s32 ReadEncoder(u8 Which423, u8 Index);
-	void WriteEncoder(u8 Index, s32 Value);
-	u8 ReadEncoderNullChannel(u8 Which424, u8 Index);
+	void SetEncoderPrescaler(uint8_t Index, uint32_t Prescaler, uint8_t SpecialFunctionBits);
+	int32_t ReadEncoder(uint8_t Which423, uint8_t Index);
+	void WriteEncoder(uint8_t Index, int32_t Value);
+	uint8_t ReadEncoderNullChannel(uint8_t Which424, uint8_t Index);
 	void Init424(void);
 
 #endif /* TMC_IC_TMC424_H_ */

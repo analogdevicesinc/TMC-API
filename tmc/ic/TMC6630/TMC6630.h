@@ -13,49 +13,49 @@
 #include "TMC6630_Constants.h"
 
 // === modes of operation ===
-u8 tmc6630_getMotionMode(u8 motor);
-void tmc6630_setMotionMode(u8 motor, u8 mode);
+uint8_t tmc6630_getMotionMode(uint8_t motor);
+void tmc6630_setMotionMode(uint8_t motor, uint8_t mode);
 
 // spi access
-u16 tmc6630_spi_readRegister16BitValue(u8 motor, u8 address, u8 channel);
-void tmc6630_spi_writeRegister16BitValue(u8 motor, u8 address, u8 channel, u16 value);
+uint16_t tmc6630_spi_readRegister16BitValue(uint8_t motor, uint8_t address, uint8_t channel);
+void tmc6630_spi_writeRegister16BitValue(uint8_t motor, uint8_t address, uint8_t channel, uint16_t value);
 
 // pwm mode
-s16 tmc6630_getTargetPwmDuty(u8 motor);
-void tmc6630_setTargetPwmDuty(u8 motor, s16 targetPWM);
-s16 tmc6630_getActualPwmDuty(u8 motor);
+int16_t tmc6630_getTargetPwmDuty(uint8_t motor);
+void tmc6630_setTargetPwmDuty(uint8_t motor, int16_t targetPWM);
+int16_t tmc6630_getActualPwmDuty(uint8_t motor);
 
-u16 tmc6630_getMaxPwmDuty(u8 motor);
-void tmc6630_setMaxPwmDuty(u8 motor, u16 maxPWM);
+uint16_t tmc6630_getMaxPwmDuty(uint8_t motor);
+void tmc6630_setMaxPwmDuty(uint8_t motor, uint16_t maxPWM);
 
 // torque mode
-void tmc6630_setTargetTorque_raw(u8 motor, s32 targetTorque);
-s32 tmc6630_getTargetTorque_raw(u8 motor);
-s32 tmc6630_getActualTorque_raw(u8 motor);
+void tmc6630_setTargetTorque_raw(uint8_t motor, int32_t targetTorque);
+int32_t tmc6630_getTargetTorque_raw(uint8_t motor);
+int32_t tmc6630_getActualTorque_raw(uint8_t motor);
 
-void tmc6630_setTargetTorque_mA(u8 motor, s16 torqueMeasurementFactor, s32 targetTorque);
-s32 tmc6630_getTargetTorque_mA(u8 motor, s16 torqueMeasurementFactor);
-s32 tmc6630_getActualTorque_mA(u8 motor, s16 torqueMeasurementFactor);
+void tmc6630_setTargetTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor, int32_t targetTorque);
+int32_t tmc6630_getTargetTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor);
+int32_t tmc6630_getActualTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor);
 
-s16 tmc6630_getMaxTorque_raw(u8 motor);
-void tmc6630_setMaxTorque_raw(u8 motor, s16 maxTorque);
-s32 tmc6630_getMaxTorque_mA(u8 motor, s16 torqueMeasurementFactor);
-void tmc6630_setMaxTorque_mA(u8 motor, s16 torqueMeasurementFactor, s32 maxTorque);
+int16_t tmc6630_getMaxTorque_raw(uint8_t motor);
+void tmc6630_setMaxTorque_raw(uint8_t motor, int16_t maxTorque);
+int32_t tmc6630_getMaxTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor);
+void tmc6630_setMaxTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor, int32_t maxTorque);
 
-s16 tmc6630_getMinTorque_raw(u8 motor);
-void tmc6630_setMinTorque_raw(u8 motor, s16 minTorque);
-s32 tmc6630_getMinTorque_mA(u8 motor, s16 torqueMeasurementFactor);
-void tmc6630_setMinTorque_mA(u8 motor, s16 torqueMeasurementFactor, s32 minTorque);
+int16_t tmc6630_getMinTorque_raw(uint8_t motor);
+void tmc6630_setMinTorque_raw(uint8_t motor, int16_t minTorque);
+int32_t tmc6630_getMinTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor);
+void tmc6630_setMinTorque_mA(uint8_t motor, int16_t torqueMeasurementFactor, int32_t minTorque);
 
 // velocity mode
-void tmc6630_setTargetVelocity(u8 motor, s32 targetVelocity);
-s32 tmc6630_getTargetVelocity(u8 motor);
-s32 tmc6630_getActualVelocity(u8 motor);
+void tmc6630_setTargetVelocity(uint8_t motor, int32_t targetVelocity);
+int32_t tmc6630_getTargetVelocity(uint8_t motor);
+int32_t tmc6630_getActualVelocity(uint8_t motor);
 
-void tmc6630_setMaxVelocity(u8 motor, s32 maxVelocity);
-s32 tmc6630_getMaxVelocity(u8 motor);
+void tmc6630_setMaxVelocity(uint8_t motor, int32_t maxVelocity);
+int32_t tmc6630_getMaxVelocity(uint8_t motor);
 
-void tmc6630_setMinVelocity(u8 motor, s32 minVelocity);
-s32 tmc6630_getMinVelocity(u8 motor);
+void tmc6630_setMinVelocity(uint8_t motor, int32_t minVelocity);
+int32_t tmc6630_getMinVelocity(uint8_t motor);
 
 #endif /* TMC_IC_TMC6630_H_ */

@@ -12,7 +12,7 @@
 #include "TMC6200_Register.h"
 #include "TMC6200_Constants.h"
 
-int tmc6200_readInt(u8 motor, uint8 address);
-void tmc6200_writeInt(u8 motor, uint8 address, int value);
+int tmc6200_readInt(uint8_t motor, uint8_t address);
+void tmc6200_writeInt(uint8_t motor, uint8_t address, int value);
 
 #endif /* TMC_IC_TMC6630_H_ */
