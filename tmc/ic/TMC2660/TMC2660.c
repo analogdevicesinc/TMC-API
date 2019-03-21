@@ -102,11 +102,11 @@ void tmc2660_initConfig(TMC2660TypeDef *tmc2660)
 	tmc2660->continuousModeEnable      = 0;
 	tmc2660->isStandStillCurrentLimit  = 0;
 	tmc2660->isStandStillOverCurrent   = 0;
-	tmc2660->runCurrentScale           = 0;
+	tmc2660->runCurrentScale           = 5;
 	tmc2660->coolStepActiveValue       = 0;
 	tmc2660->coolStepInactiveValue     = 0;
 	tmc2660->coolStepThreshold         = 0;
-	tmc2660->standStillCurrentScale    = 0;
+	tmc2660->standStillCurrentScale    = 5;
 	tmc2660->standStillTimeout         = 0;
 
 	int i;

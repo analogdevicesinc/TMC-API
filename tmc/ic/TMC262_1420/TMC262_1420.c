@@ -133,11 +133,11 @@ void tmc262_1420_init(TMC262_1420TypeDef *tmc262_1420, uint8 channel, Configurat
 	tmc262_1420->continuousModeEnable      = 0;
 	tmc262_1420->isStandStillCurrentLimit  = 0;
 	tmc262_1420->isStandStillOverCurrent   = 0;
-	tmc262_1420->runCurrentScale           = 0;
+	tmc262_1420->runCurrentScale           = 5;
 	tmc262_1420->coolStepActiveValue       = 0;
 	tmc262_1420->coolStepInactiveValue     = 0;
 	tmc262_1420->coolStepThreshold         = 0;
-	tmc262_1420->standStillCurrentScale    = 0;
+	tmc262_1420->standStillCurrentScale    = 5;
 	tmc262_1420->standStillTimeout         = 0;
 
 	tmc262_1420->config->callback     = NULL;
