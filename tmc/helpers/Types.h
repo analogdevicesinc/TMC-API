@@ -34,9 +34,9 @@ typedef uint8_t  u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
 
-typedef uint8_t       uint8_t;
-typedef uint16_t      uint16_t;
-typedef uint32_t      uint32_t;
+typedef uint8_t       uint8;
+typedef uint16_t      uint16;
+typedef uint32_t      uint32;
 
 #define u8_MAX   (uint8_t)   255
 #define u10_MAX  (uint16_t)  1023
@@ -58,9 +58,9 @@ typedef int8_t   s8;
 typedef int16_t  s16;
 typedef int32_t  s32;
 
-typedef int8_t       int8_t;
-typedef int16_t      int16_t;
-typedef int32_t      int32_t;
+typedef int8_t       int8;
+typedef int16_t      int16;
+typedef int32_t      int32;
 
 #define s8_MAX   (int8_t)   127
 #define s8_MIN   (int8_t)   -128
