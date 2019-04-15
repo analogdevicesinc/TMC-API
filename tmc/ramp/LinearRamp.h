@@ -8,8 +8,8 @@
 #ifndef TMC_LINEAR_RAMP_H_
 #define TMC_LINEAR_RAMP_H_
 
-	#include "../helpers/API_Header.h"
-	#include "../helpers/Functions.h"
+	#include "tmc/helpers/API_Header.h"
+	#include "tmc/helpers/Functions.h"
 
 	typedef struct
 	{

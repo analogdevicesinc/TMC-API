@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC2160_H_
 #define TMC_IC_TMC2160_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC2160_Constants.h"
 #include "TMC2160_Mask_Shift.h"
 #include "TMC2160_Register.h"

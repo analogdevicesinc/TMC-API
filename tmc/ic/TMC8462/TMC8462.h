@@ -8,8 +8,8 @@
 #ifndef TMC_IC_TMC8462_H_
 #define TMC_IC_TMC8462_H_
 
-#include "../../helpers/Constants.h"
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/Constants.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC8462_Register.h"
 #include "TMC8462_Constants.h"
 #include "TMC8462_Fields.h"

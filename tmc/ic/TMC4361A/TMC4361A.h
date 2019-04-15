@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC4361A_H_
 #define TMC_IC_TMC4361A_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC4361A_Register.h"
 #include "TMC4361A_Constants.h"
 #include "TMC4361A_Fields.h"

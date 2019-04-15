@@ -8,8 +8,8 @@
 #ifndef TMC_IC_TMC5161_H_
 #define TMC_IC_TMC5161_H_
 
-#include "../../helpers/Constants.h"
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/Constants.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC5161_Register.h"
 #include "TMC5161_Constants.h"
 #include "TMC5161_Fields.h"

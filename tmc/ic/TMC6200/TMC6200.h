@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC6200_H_
 #define TMC_IC_TMC6200_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC6200_Register.h"
 #include "TMC6200_Constants.h"
 

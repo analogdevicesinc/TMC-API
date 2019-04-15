@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC6200_TMC6200_CONSTANTS_H_
 #define TMC_IC_TMC6200_TMC6200_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 #define TMC6200_MOTORS           1
 #define TMC6200_WRITE_BIT        TMC_WRITE_BIT

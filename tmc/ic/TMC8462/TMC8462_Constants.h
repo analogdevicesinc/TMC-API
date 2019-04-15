@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC8462_TMC8462_CONSTANTS_H_
 #define TMC_IC_TMC8462_TMC8462_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 #define TMC8462_CMD_READ      0x02
 #define TMC8462_CMD_READ_WAIT 0x03

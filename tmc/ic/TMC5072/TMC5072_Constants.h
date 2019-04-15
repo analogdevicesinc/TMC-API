@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC5072_TMC5072_CONSTANTS_H_
 #define TMC_IC_TMC5072_TMC5072_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 #define TMC5072_REGISTER_COUNT   TMC_REGISTER_COUNT
 #define TMC5072_MOTORS           2

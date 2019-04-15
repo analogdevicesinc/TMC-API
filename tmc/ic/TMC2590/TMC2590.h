@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC2590_H_
 #define TMC_IC_TMC2590_H_
 
-#include "../../../TMC-API/tmc/helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC2590_Constants.h"
 #include "TMC2590_Fields.h"
 #include "TMC2590_Macros.h"

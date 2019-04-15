@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC6630_TMC6630_CONSTANTS_H_
 #define TMC_IC_TMC6630_TMC6630_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 // pwm opts
 #define TMC6630_PWM_OPTS_USE_EXT_HALL_VALUES_MASK  0x1

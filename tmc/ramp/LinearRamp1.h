@@ -8,7 +8,7 @@
 #ifndef TMC_RAMP_LINEARRAMP_H_
 #define TMC_RAMP_LINEARRAMP_H_
 
-#include "../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "Ramp.h"
 
 // Position mode: When hitting the target position a velocity below the V_STOP threshold will be cut off to velocity 0

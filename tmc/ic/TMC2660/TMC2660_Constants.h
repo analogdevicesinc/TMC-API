@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC2660_TMC2660_CONSTANTS_H_
 #define TMC_IC_TMC2660_TMC2660_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 #define TMC2660_REGISTER_COUNT   8
 #define TMC2660_MOTORS           1

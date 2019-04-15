@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC2041_TMC2041_CONSTANTS_H_
 #define TMC_IC_TMC2041_TMC2041_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 #define TMC2041_REGISTER_COUNT   TMC_REGISTER_COUNT
 #define TMC2041_MOTORS           2

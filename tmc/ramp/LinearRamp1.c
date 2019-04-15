@@ -5,7 +5,7 @@
  *      Author: LK
  */
 #include "LinearRamp1.h"
-#include "../helpers/Functions.h"
+#include "tmc/helpers/Functions.h"
 
 void tmc_ramp_linear_init(TMC_LinearRamp *linearRamp)
 {

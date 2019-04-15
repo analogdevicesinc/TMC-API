@@ -9,7 +9,7 @@
 #ifndef TMC_IC_TMC43xx_H_
 #define TMC_IC_TMC43xx_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 
 #define TMC43xx_WRITE 0x80
 

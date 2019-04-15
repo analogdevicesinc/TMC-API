@@ -9,7 +9,7 @@
 #ifndef TMC_IC_TMC5031_H_
 #define TMC_IC_TMC5031_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC5031_Register.h"
 #include "TMC5031_Constants.h"
 #include "TMC5031_Fields.h"

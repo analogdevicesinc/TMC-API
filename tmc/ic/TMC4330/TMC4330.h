@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC4330_H_
 #define TMC_IC_TMC4330_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC4330_Register.h"
 #include "TMC4330_Constants.h"
 #include "TMC4330_Fields.h"

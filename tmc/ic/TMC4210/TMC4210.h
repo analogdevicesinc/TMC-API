@@ -7,7 +7,7 @@
 #ifndef TMC_IC_TMC4210_H_
 #define TMC_IC_TMC4210_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC4210_Registers.h"
 
 // TMC4210 library functions

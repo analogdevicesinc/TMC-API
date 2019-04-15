@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC5160_TMC5160_CONSTANTS_H_
 #define TMC_IC_TMC5160_TMC5160_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 #define TMC5160_REGISTER_COUNT   TMC_REGISTER_COUNT
 #define TMC5160_MOTORS           1

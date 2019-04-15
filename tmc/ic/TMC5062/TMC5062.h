@@ -9,7 +9,7 @@
 #ifndef TMC_IC_TMC5062_H_
 #define TMC_IC_TMC5062_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC5062_Register.h"
 #include "TMC5062_Constants.h"
 #include "TMC5062_Fields.h"

@@ -89,7 +89,7 @@ static uint32_t SPIDriverConf;
 	extern uint8_t tmc5130_spi_readWrite(uint8_t data, uint8_t lastTransfer);
 	// <= SPI wrapper
 #elif defined(DEVTYPE_TMC43xx)
-	#include "../TMC43xx/TMC4361A_Register.h"
+	#include "tmc/ic/TMC43xx/TMC4361A_Register.h"
 	// => Cover data wrapper
 	extern int32_t tmc43xx_readInt(uint8_t address);
 	extern int32_t tmc43xx_writeInt(uint8_t address, uint32_t data);

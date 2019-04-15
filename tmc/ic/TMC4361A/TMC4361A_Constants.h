@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC4361A_TMC4361A_CONSTANTS_H_
 #define TMC_IC_TMC4361A_TMC4361A_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 #define TMC4361A_REGISTER_COUNT   TMC_REGISTER_COUNT
 #define TMC4361A_MOTORS           1

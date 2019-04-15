@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC5130_TMC5130_CONSTANTS_H_
 #define TMC_IC_TMC5130_TMC5130_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 #define TMC5130_REGISTER_COUNT   TMC_REGISTER_COUNT
 #define TMC5130_MOTORS           1

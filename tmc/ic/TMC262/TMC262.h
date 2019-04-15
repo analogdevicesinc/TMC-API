@@ -9,7 +9,7 @@
 #ifndef TMC_IC_TMC262_H_
 #define TMC_IC_TMC262_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC262_Register.h"
 
 #define TMC262_RB_MSTEP         0

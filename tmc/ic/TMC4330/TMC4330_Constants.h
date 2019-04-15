@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC4330_TMC4330_CONSTANTS_H_
 #define TMC_IC_TMC4330_TMC4330_CONSTANTS_H_
 
-#include "../../helpers/Constants.h"
+#include "tmc/helpers/Constants.h"
 
 #define TMC4330_REGISTER_COUNT   TMC_REGISTER_COUNT
 #define TMC4330_MOTORS           1

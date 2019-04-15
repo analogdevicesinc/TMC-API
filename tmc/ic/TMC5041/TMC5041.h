@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC5041_H_
 #define TMC_IC_TMC5041_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC5041_Register.h"
 #include "TMC5041_Constants.h"
 #include "TMC5041_Fields.h"

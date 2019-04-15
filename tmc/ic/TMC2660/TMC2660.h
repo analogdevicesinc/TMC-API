@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC2660_H_
 #define TMC_IC_TMC2660_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC2660_Register.h"
 #include "TMC2660_Constants.h"
 #include "TMC2660_Fields.h"

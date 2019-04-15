@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC2224_H_
 #define TMC_IC_TMC2224_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC2224_Register.h"
 
 #define TMC2224_MOTORS           1

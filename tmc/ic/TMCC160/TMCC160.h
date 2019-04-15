@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMCC160_H_
 #define TMC_IC_TMCC160_H_
 
-	#include "../../helpers/API_Header.h"
+	#include "tmc/helpers/API_Header.h"
 	#include "TMCC160_Register.h"
 
 	void tmcc160_init();

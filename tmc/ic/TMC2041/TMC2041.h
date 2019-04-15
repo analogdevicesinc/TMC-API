@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC5072_H_
 #define TMC_IC_TMC5072_H_
 
-#include "../../helpers/API_Header.h"
+#include "tmc/helpers/API_Header.h"
 #include "TMC2041_Register.h"
 #include "TMC2041_Constants.h"
 #include "TMC2041_Fields.h"

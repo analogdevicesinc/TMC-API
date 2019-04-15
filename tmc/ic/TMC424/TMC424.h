@@ -7,7 +7,7 @@
 #ifndef TMC_IC_TMC424_H_
 #define TMC_IC_TMC424_H_
 
-	#include "../../helpers/API_Header.h"
+	#include "tmc/helpers/API_Header.h"
 	#include "TMC424_Register.h"
 
 	void SetEncoderPrescaler(uint8_t Index, uint32_t Prescaler, uint8_t SpecialFunctionBits);
