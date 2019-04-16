@@ -70,7 +70,8 @@ void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef
 	tmc5130->config->configIndex  = 0;
 	tmc5130->config->state        = CONFIG_READY;
 
-	for(size_t i = 0; i < TMC5130_REGISTER_COUNT; i++)
+	size_t i;
+	for(i = 0; i < TMC5130_REGISTER_COUNT; i++)
 	{
 		tmc5130->registerAccess[i]      = tmc5130_defaultRegisterAccess[i];
 		tmc5130->registerResetState[i]  = registerResetState[i];
@@ -86,7 +87,8 @@ void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130)
 	if(ARRAY_SIZE(tmc5130_RegisterConstants) == 0)
 		return;
 
-	for(size_t i = 0, j = 0; i < TMC5130_REGISTER_COUNT; i++)
+	size_t i, j;
+	for(i = 0, j = 0; i < TMC5130_REGISTER_COUNT; i++)
 	{
 		// We only need to worry about hardware preset, write-only registers
 		// that have not yet been written (no dirty bit) here.
@@ -115,7 +117,8 @@ uint8_t tmc5130_reset(TMC5130TypeDef *tmc5130)
 		return false;
 
 	// Reset the dirty bits and wipe the shadow registers
-	for(size_t i = 0; i < TMC5130_REGISTER_COUNT; i++)
+	size_t i;
+	for(i = 0; i < TMC5130_REGISTER_COUNT; i++)
 	{
 		tmc5130->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
 		tmc5130->config->shadowRegister[i] = 0;
@@ -140,8 +143,11 @@ uint8_t tmc5130_restore(TMC5130TypeDef *tmc5130)
 
 void tmc5130_setRegisterResetState(TMC5130TypeDef *tmc5130, const int32_t *resetState)
 {
-	for(size_t i = 0; i < TMC5130_REGISTER_COUNT; i++)
+	size_t i;
+	for(i = 0; i < TMC5130_REGISTER_COUNT; i++)
+	{
 		tmc5130->registerResetState[i] = resetState[i];
+	}
 }
 
 void tmc5130_setCallback(TMC5130TypeDef *tmc5130, tmc5130_callback callback)
@@ -194,7 +200,7 @@ void tmc5130_periodicJob(TMC5130TypeDef *tmc5130, uint32_t tick)
 		return;
 	}
 
-	int XActual;
+	int32_t XActual;
 	uint32_t tickDiff;
 
 	// Calculate velocity v = dx/dt
