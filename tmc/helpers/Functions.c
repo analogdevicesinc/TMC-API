@@ -62,10 +62,6 @@ int32_t tmc_sqrti(int32_t x)
 			{
 				if (x >= 0x40000000)
 				{
-					if (x >= 32767*65535)
-					{
-						return 65535;
-					}
 					xn = (int) sqrttable[x >> 24] << 8;
 				}
 				else
