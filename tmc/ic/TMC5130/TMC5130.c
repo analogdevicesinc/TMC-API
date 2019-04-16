@@ -9,7 +9,7 @@
 
 // => SPI wrapper
 // Send [length] bytes stored in the [data] array over SPI and overwrite [data]
-// with the replies. data[0] is the first byte sent and received.
+// with the reply. The first byte sent/received is data[0].
 extern void tmc5130_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
 // <= SPI wrapper
 
@@ -27,11 +27,13 @@ void tmc5130_writeDatagram(TMC5130TypeDef *tmc5130, uint8_t address, uint8_t x1,
 	tmc5130->registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
+// Write an integer to the given address
 void tmc5130_writeInt(TMC5130TypeDef *tmc5130, uint8_t address, int32_t value)
 {
 	tmc5130_writeDatagram(tmc5130, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
 }
 
+// Read an integer from the given address
 int32_t tmc5130_readInt(TMC5130TypeDef *tmc5130, uint8_t address)
 {
 	address = TMC_ADDRESS(address);
@@ -51,20 +53,19 @@ int32_t tmc5130_readInt(TMC5130TypeDef *tmc5130, uint8_t address)
 	return (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
 }
 
-// Provide the init function with a channel index (sent back in the SPI callback), a pointer to a ConfigurationTypeDef struct
-// and a pointer to a int32_t array (size 128) holding the reset values that shall be used.
+// Initialize a TMC5130 IC.
+// This function requires:
+//     - channel: The channel index, which will be sent back in the SPI callback
+//     - tmc5130_config: A ConfigurationTypeDef struct, which will be used by the IC
+//     - registerResetState: An int32_t array with 128 elements. This holds the values to be used for a reset.
 void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef *tmc5130_config, const int32_t *registerResetState)
 {
 	tmc5130->velocity  = 0;
 	tmc5130->oldTick   = 0;
 	tmc5130->oldX      = 0;
+
 	tmc5130->config    = tmc5130_config;
 
-	/*
-	 * TODO: Config initialization
-	 * We can either explicitly initialize in each IC's init respectively,
-	 * or do that with a seperate function config_init where also the channel is set.
-	 */
 	tmc5130->config->callback     = NULL;
 	tmc5130->config->channel      = channel;
 	tmc5130->config->configIndex  = 0;
@@ -79,8 +80,8 @@ void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef
 }
 
 // Fill the shadow registers of hardware preset non-readable registers
-// Only needed if you want to read out those registers to display the value
-// (e.g. for the TMCL IDE register browser)
+// Only needed if you want to 'read' those registers e.g to display the value
+// in the TMCL IDE register browser
 void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130)
 {
 	// Check if we have constants defined
@@ -107,10 +108,13 @@ void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130)
 
 		// If we have an entry for our current address, write the constant
 		if(tmc5130_RegisterConstants[j].address == i)
+		{
 			tmc5130->config->shadowRegister[i] = tmc5130_RegisterConstants[j].value;
+		}
 	}
 }
 
+// Reset the TMC5130.
 uint8_t tmc5130_reset(TMC5130TypeDef *tmc5130)
 {
 	if(tmc5130->config->state != CONFIG_READY)
@@ -130,6 +134,8 @@ uint8_t tmc5130_reset(TMC5130TypeDef *tmc5130)
 	return true;
 }
 
+// Restore the TMC5130 to the state stored in the shadow registers.
+// This can be used to recover the IC configuration after a VM power loss.
 uint8_t tmc5130_restore(TMC5130TypeDef *tmc5130)
 {
 	if(tmc5130->config->state != CONFIG_READY)
@@ -141,6 +147,7 @@ uint8_t tmc5130_restore(TMC5130TypeDef *tmc5130)
 	return true;
 }
 
+// Change the values the IC will be configured with when performing a reset.
 void tmc5130_setRegisterResetState(TMC5130TypeDef *tmc5130, const int32_t *resetState)
 {
 	size_t i;
@@ -150,11 +157,13 @@ void tmc5130_setRegisterResetState(TMC5130TypeDef *tmc5130, const int32_t *reset
 	}
 }
 
+// Register a function to be called after completion of the configuration mechanism
 void tmc5130_setCallback(TMC5130TypeDef *tmc5130, tmc5130_callback callback)
 {
 	tmc5130->config->callback = (tmc_callback_config) callback;
 }
 
+// Helper function: Configure the next register.
 static void writeConfiguration(TMC5130TypeDef *tmc5130)
 {
 	uint8_t *ptr = &tmc5130->config->configIndex;
@@ -165,15 +174,18 @@ static void writeConfiguration(TMC5130TypeDef *tmc5130)
 		settings = tmc5130->config->shadowRegister;
 		// Find the next restorable register
 		while((*ptr < TMC5130_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc5130->registerAccess[*ptr]))
+		{
 			(*ptr)++;
+		}
 	}
 	else
 	{
 		settings = tmc5130->registerResetState;
 		// Find the next resettable register
 		while((*ptr < TMC5130_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc5130->registerAccess[*ptr]))
+		{
 			(*ptr)++;
-
+		}
 	}
 
 	if(*ptr < TMC5130_REGISTER_COUNT)
@@ -192,6 +204,7 @@ static void writeConfiguration(TMC5130TypeDef *tmc5130)
 	}
 }
 
+// Call this periodically
 void tmc5130_periodicJob(TMC5130TypeDef *tmc5130, uint32_t tick)
 {
 	if(tmc5130->config->state != CONFIG_READY)
@@ -215,6 +228,7 @@ void tmc5130_periodicJob(TMC5130TypeDef *tmc5130, uint32_t tick)
 	}
 }
 
+// Rotate with a given velocity (to the right)
 void tmc5130_rotate(TMC5130TypeDef *tmc5130, int32_t velocity)
 {
 	// Set absolute velocity
@@ -223,21 +237,25 @@ void tmc5130_rotate(TMC5130TypeDef *tmc5130, int32_t velocity)
 	tmc5130_writeInt(tmc5130, TMC5130_RAMPMODE, (velocity >= 0) ? TMC5130_MODE_VELPOS : TMC5130_MODE_VELNEG);
 }
 
+// Rotate to the right
 void tmc5130_right(TMC5130TypeDef *tmc5130, uint32_t velocity)
 {
 	tmc5130_rotate(tmc5130, velocity);
 }
 
+// Rotate to the left
 void tmc5130_left(TMC5130TypeDef *tmc5130, uint32_t velocity)
 {
 	tmc5130_rotate(tmc5130, -velocity);
 }
 
+// Stop moving
 void tmc5130_stop(TMC5130TypeDef *tmc5130)
 {
 	tmc5130_rotate(tmc5130, 0);
 }
 
+// Move to a specified position with a given velocity
 void tmc5130_moveTo(TMC5130TypeDef *tmc5130, int32_t position, uint32_t velocityMax)
 {
 	tmc5130_writeInt(tmc5130, TMC5130_RAMPMODE, TMC5130_MODE_POSITION);
@@ -249,7 +267,8 @@ void tmc5130_moveTo(TMC5130TypeDef *tmc5130, int32_t position, uint32_t velocity
 	tmc5130_writeInt(tmc5130, TMC5130_XTARGET, position);
 }
 
-// The function will write the absolute target position to *ticks
+// Move by a given amount with a given velocity
+// This function will write the absolute target position to *ticks
 void tmc5130_moveBy(TMC5130TypeDef *tmc5130, int32_t *ticks, uint32_t velocityMax)
 {
 	// determine actual position and add numbers of ticks to move

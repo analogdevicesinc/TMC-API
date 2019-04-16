@@ -94,14 +94,14 @@ static const TMCRegisterConstant tmc5130_RegisterConstants[] =
 };
 
 // API Functions
-// All functions act on one IC given by the TMC5130TypeDef struct
+// All functions act on one IC identified by the TMC5130TypeDef pointer
 
 void tmc5130_writeDatagram(TMC5130TypeDef *tmc5130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5130_writeInt(TMC5130TypeDef *tmc5130, uint8_t address, int32_t value);
 int32_t tmc5130_readInt(TMC5130TypeDef *tmc5130, uint8_t address);
 
 void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef *tmc5130_config, const int32_t *registerResetState);
-void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130); // For constant registers with hardware preset we cant determine actual value
+void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130);
 uint8_t tmc5130_reset(TMC5130TypeDef *tmc5130);
 uint8_t tmc5130_restore(TMC5130TypeDef *tmc5130);
 void tmc5130_setRegisterResetState(TMC5130TypeDef *tmc5130, const int32_t *resetState);
