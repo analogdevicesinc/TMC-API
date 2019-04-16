@@ -90,7 +90,8 @@ static const TMCRegisterConstant tmc5130_RegisterConstants[] =
 		{ 0x66, 0x49295556 }, // MSLUT[6]
 		{ 0x67, 0x00404222 }, // MSLUT[7]
 		{ 0x68, 0xFFFF8056 }, // MSLUTSEL
-		{ 0x69, 0x00F70000 }  // MSLUTSTART
+		{ 0x69, 0x00F70000 }, // MSLUTSTART
+		{ 0x70, 0x00050480 }  // PWMCONF
 };
 
 // API Functions
