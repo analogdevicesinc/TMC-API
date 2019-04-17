@@ -162,3 +162,9 @@ int32_t tmc_sqrti(int32_t x)
 
 	return xn;
 }
+
+int32_t tmc_filterPT1(int64_t *akku, int32_t newValue, int32_t lastValue, uint8_t actualFilter, uint8_t maxFilter)
+{
+	*akku += (newValue-lastValue) << (maxFilter-actualFilter);
+	return *akku >> maxFilter;
+}
