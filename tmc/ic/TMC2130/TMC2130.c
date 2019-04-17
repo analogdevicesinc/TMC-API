@@ -66,6 +66,41 @@ void tmc2130_init(TMC2130TypeDef *tmc2130, uint8_t channel, ConfigurationTypeDef
 	}
 }
 
+// Fill the shadow registers of hardware preset non-readable registers
+// Only needed if you want to 'read' those registers e.g to display the value
+// in the TMCL IDE register browser
+void tmc2130_fillShadowRegisters(TMC2130TypeDef *tmc2130)
+{
+	// Check if we have constants defined
+	if(ARRAY_SIZE(tmc2130_RegisterConstants) == 0)
+		return;
+
+	size_t i, j;
+	for(i = 0, j = 0; i < TMC2130_REGISTER_COUNT; i++)
+	{
+		// We only need to worry about hardware preset, write-only registers
+		// that have not yet been written (no dirty bit) here.
+		if(tmc2130->registerAccess[i] != TMC_ACCESS_W_PRESET)
+			continue;
+
+		// Search the constant list for the current address. With the constant
+		// list being sorted in ascended order, we can walk through the list
+		// until the entry with an address equal or greater than i
+		while(j < ARRAY_SIZE(tmc2130_RegisterConstants) && (tmc2130_RegisterConstants[j].address < i))
+			j++;
+
+		// Abort when we reach the end of the constant list
+		if (j == ARRAY_SIZE(tmc2130_RegisterConstants))
+			break;
+
+		// If we have an entry for our current address, write the constant
+		if(tmc2130_RegisterConstants[j].address == i)
+		{
+			tmc2130->config->shadowRegister[i] = tmc2130_RegisterConstants[j].value;
+		}
+	}
+}
+
 uint8_t tmc2130_reset(TMC2130TypeDef *tmc2130)
 {
 	if(tmc2130->config->state != CONFIG_READY)
@@ -75,7 +110,10 @@ uint8_t tmc2130_reset(TMC2130TypeDef *tmc2130)
 
 	// Reset the dirty bits
 	for(i = 0; i < TMC2130_REGISTER_COUNT; i++)
+	{
 		tmc2130->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
+		tmc2130->config->shadowRegister[i] = 0;
+	}
 
 	tmc2130->config->state        = CONFIG_RESET;
 	tmc2130->config->configIndex  = 0;
