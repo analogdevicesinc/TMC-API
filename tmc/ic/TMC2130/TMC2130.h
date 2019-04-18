@@ -10,14 +10,8 @@
 
 #include "tmc/helpers/API_Header.h"
 #include "TMC2130_Register.h"
+#include "TMC2130_Constants.h"
 #include "TMC2130_Mask_Shift.h"
-
-#define TMC2130_REGISTER_COUNT   TMC_REGISTER_COUNT
-#define TMC2130_MOTORS           1
-#define TMC2130_WRITE_BIT        TMC_WRITE_BIT
-#define TMC2130_ADDRESS_MASK     TMC_ADDRESS_MASK
-#define TMC2130_MAX_VELOCITY     s32_MAX
-#define TMC2130_MAX_ACCELERATION u24_MAX
 
 // Helper macros
 #define TMC2130_FIELD_READ(tdef, address, mask, shift) \
@@ -25,6 +19,7 @@
 #define TMC2130_FIELD_UPDATE(tdef, address, mask, shift, value) \
 	(tmc2130_writeInt(tdef, address, FIELD_SET(tmc2130_readInt(tdef, address), mask, shift, value)))
 
+// Typedefs
 typedef struct
 {
 	ConfigurationTypeDef *config;
@@ -38,14 +33,28 @@ typedef void (*tmc2130_callback)(TMC2130TypeDef*, ConfigState);
 #define R10 0x00071703  // IHOLD_IRUN
 #define R6C 0x000101D5  // CHOPCONF
 
+static const int32_t tmc2130_defaultRegisterResetState[TMC2130_REGISTER_COUNT] =
+{
+//	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
+	R10, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x30 - 0x3F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
+	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
+	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
+};
+
 // Register access permissions:
-// 0x00: none (reserved)
-// 0x01: read
-// 0x02: write
-// 0x03: read/write
-// 0x21: read to clear
-// 0x42: write, has hardware presets on reset
-static const uint8_t tmc2130_defaultRegisterAccess[TMC2130_REGISTER_COUNT] = {
+//   0x00: none (reserved)
+//   0x01: read
+//   0x02: write
+//   0x03: read/write
+//   0x21: read, flag register (read to clear)
+//   0x42: write, has hardware presets on reset
+static const uint8_t tmc2130_defaultRegisterAccess[TMC2130_REGISTER_COUNT] =
+{
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x21, ____, ____, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
 	0x02, 0x02, 0x01, 0x02, 0x02, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
@@ -76,18 +85,8 @@ static const TMCRegisterConstant tmc2130_RegisterConstants[] =
 		{ 0x70, 0x00050480 }  // PWMCONF
 };
 
-static const int32_t tmc2130_defaultRegisterResetState[TMC2130_REGISTER_COUNT] =
-{
-//	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
-	R10, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x30 - 0x3F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
-	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
-	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
-};
+// API Functions
+// All functions act on one IC identified by the TMC2130TypeDef pointer
 
 void tmc2130_writeDatagram(TMC2130TypeDef *tmc2130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8_t address, int32_t value);
