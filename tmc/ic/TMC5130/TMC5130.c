@@ -55,17 +55,17 @@ int32_t tmc5130_readInt(TMC5130TypeDef *tmc5130, uint8_t address)
 
 // Initialize a TMC5130 IC.
 // This function requires:
+//     - tmc5130: The pointer to a TMC5130TypeDef struct, which represents one IC
 //     - channel: The channel index, which will be sent back in the SPI callback
-//     - tmc5130_config: A ConfigurationTypeDef struct, which will be used by the IC
+//     - config: A ConfigurationTypeDef struct, which will be used by the IC
 //     - registerResetState: An int32_t array with 128 elements. This holds the values to be used for a reset.
-void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef *tmc5130_config, const int32_t *registerResetState)
+void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
 {
 	tmc5130->velocity  = 0;
 	tmc5130->oldTick   = 0;
 	tmc5130->oldX      = 0;
 
-	tmc5130->config    = tmc5130_config;
-
+	tmc5130->config               = config;
 	tmc5130->config->callback     = NULL;
 	tmc5130->config->channel      = channel;
 	tmc5130->config->configIndex  = 0;

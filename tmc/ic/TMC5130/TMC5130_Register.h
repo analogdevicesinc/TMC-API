@@ -14,7 +14,7 @@
 #define TMC5130_GSTAT       0x01
 #define TMC5130_IFCNT       0x02
 #define TMC5130_SLAVECONF   0x03
-#define TMC5130_INP_OUT     0x04
+#define TMC5130_IOIN        0x04
 #define TMC5130_X_COMPARE   0x05
 
 #define TMC5130_IHOLD_IRUN  0x10

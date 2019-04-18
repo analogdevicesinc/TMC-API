@@ -8,7 +8,6 @@
 #ifndef TMC_IC_TMC5130_H_
 #define TMC_IC_TMC5130_H_
 
-#include "tmc/helpers/Constants.h"
 #include "tmc/helpers/API_Header.h"
 #include "TMC5130_Register.h"
 #include "TMC5130_Constants.h"
@@ -32,7 +31,7 @@ typedef struct
 
 typedef void (*tmc5130_callback)(TMC5130TypeDef*, ConfigState);
 
-// Default Register Values
+// Default Register values
 #define R10 0x00071703  // IHOLD_IRUN
 #define R3A 0x00010000  // ENC_CONST
 #define R6C 0x000101D5  // CHOPCONF
@@ -49,10 +48,6 @@ static const int32_t tmc5130_defaultRegisterResetState[TMC5130_REGISTER_COUNT] =
 	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
 	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
 };
-
-#undef R10
-#undef R3A
-#undef R6C
 
 // Register access permissions:
 //   0x00: none (reserved)
@@ -101,7 +96,7 @@ void tmc5130_writeDatagram(TMC5130TypeDef *tmc5130, uint8_t address, uint8_t x1,
 void tmc5130_writeInt(TMC5130TypeDef *tmc5130, uint8_t address, int32_t value);
 int32_t tmc5130_readInt(TMC5130TypeDef *tmc5130, uint8_t address);
 
-void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef *tmc5130_config, const int32_t *registerResetState);
+void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130);
 uint8_t tmc5130_reset(TMC5130TypeDef *tmc5130);
 uint8_t tmc5130_restore(TMC5130TypeDef *tmc5130);
