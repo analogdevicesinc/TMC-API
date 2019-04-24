@@ -70,6 +70,9 @@ static const int32_t tmc2130_defaultRegisterResetState[TMC2130_REGISTER_COUNT] =
 	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
 };
 
+#undef R10
+#undef R6C
+
 void tmc2130_writeDatagram(TMC2130TypeDef *tmc2130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8_t address, int32_t value);
 int32_t tmc2130_readInt(TMC2130TypeDef *tmc2130, uint8_t address);
