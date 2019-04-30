@@ -80,7 +80,7 @@ static const int32_t tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] =
 };
 
 void tmc5041_init(TMC5041TypeDef *tmc5041, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-void tmc5041_periodicJob(uint8_t motor, uint32_t tick, TMC5041TypeDef *TMC5041, ConfigurationTypeDef *TMC5041_config);
+void tmc5041_periodicJob(uint32_t tick, TMC5041TypeDef *TMC5041, ConfigurationTypeDef *TMC5041_config);
 uint8_t tmc5041_reset(ConfigurationTypeDef *TMC5041_config);
 uint8_t tmc5041_restore(ConfigurationTypeDef *TMC5041_config);
 

@@ -57,7 +57,7 @@ void tmc5041_writeConfiguration(TMC5041TypeDef *tmc5041, ConfigurationTypeDef *T
 	}
 }
 
-void tmc5041_periodicJob(uint8_t motor, uint32_t tick, TMC5041TypeDef *tmc5041, ConfigurationTypeDef *TMC5041_config)
+void tmc5041_periodicJob(uint32_t tick, TMC5041TypeDef *tmc5041, ConfigurationTypeDef *TMC5041_config)
 {
 	int xActual;
 	uint32_t tickDiff;
@@ -70,22 +70,14 @@ void tmc5041_periodicJob(uint8_t motor, uint32_t tick, TMC5041TypeDef *tmc5041, 
 
 	if((tickDiff = tick - tmc5041->oldTick) >= 5)
 	{
-		xActual = tmc5041_readInt(0, TMC5041_XACTUAL(motor));
-		TMC5041_config->shadowRegister[TMC5041_XACTUAL(motor)] = xActual;
-		tmc5041->velocity[motor] = (int) ((float) (abs(xActual-tmc5041->oldX[motor]) / (float) tickDiff) * (float) 1048.576);
-		tmc5041->oldX[motor] = xActual;
-
-		// Not per motor:
-		//xActual = tmc5041_readInt(motor, TMC5041_XACTUAL_1);
-		//TMC562v3_config->shadowRegister[TMC5041_XACTUAL_1] = xActual;
-		//TMC562V3.velocityMotor1 = (int) ((float) (abs(xActual-oldX[0]) / (float) t) * (float) 1048.576);
-		//tmc5041->oldX = xActual;
-
-		//xActual = readInt(TMC5041_XACTUAL_2);
-		//TMC562v3_config->shadowRegister[TMC5041_XACTUAL_2] = xActual;
-		//TMC562V3.velocityMotor2 = (int) ((float) (abs(xActual-oldX[1]) / (float) t) * (float) 1048.576);
-		//tmc5041->oldX = xActual;
-
+		int i;
+		for (i = 0; i < TMC5041_MOTORS; i++)
+		{
+			xActual = tmc5041_readInt(0, TMC5041_XACTUAL(i));
+			TMC5041_config->shadowRegister[TMC5041_XACTUAL(i)] = xActual;
+			tmc5041->velocity[i] = (int) ((float) (abs(xActual-tmc5041->oldX[i]) / (float) tickDiff) * (float) 1048.576);
+			tmc5041->oldX[i] = xActual;
+		}
 		tmc5041->oldTick = tick;
 	}
 }
