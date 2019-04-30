@@ -14,7 +14,7 @@ extern void tmc5041_writeInt(uint8_t motor, uint8_t address, int value);
 extern int tmc5041_readInt(uint8_t motor, uint8_t address);
 // <= SPI wrapper
 
-void tmc5041_initConfig(TMC5041TypeDef *tmc5041)
+void tmc5041_init(TMC5041TypeDef *tmc5041, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
 {
 	tmc5041->velocity[0]      = 0;
 	tmc5041->velocity[1]      = 0;
@@ -24,11 +24,17 @@ void tmc5041_initConfig(TMC5041TypeDef *tmc5041)
 	tmc5041->vMaxModified[0]  = false;
 	tmc5041->vMaxModified[1]  = false;
 
+	tmc5041->config               = config;
+	tmc5041->config->callback     = NULL;
+	tmc5041->config->channel      = channel;
+	tmc5041->config->configIndex  = 0;
+	tmc5041->config->state        = CONFIG_READY;
+
 	int i;
 	for(i = 0; i < TMC5041_REGISTER_COUNT; i++)
 	{
 		tmc5041->registerAccess[i]      = tmc5041_defaultRegisterAccess[i];
-		tmc5041->registerResetState[i]  = tmc5041_defaultRegisterResetState[i];
+		tmc5041->registerResetState[i]  = registerResetState[i];
 	}
 }
 
