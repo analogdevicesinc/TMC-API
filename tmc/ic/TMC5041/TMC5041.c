@@ -38,10 +38,10 @@ void tmc5041_init(TMC5041TypeDef *tmc5041, uint8_t channel, ConfigurationTypeDef
 	}
 }
 
-void tmc5041_writeConfiguration(TMC5041TypeDef *tmc5041, ConfigurationTypeDef *TMC5041_config)
+static void tmc5041_writeConfiguration(TMC5041TypeDef *tmc5041)
 {
-	uint8_t *ptr = &TMC5041_config->configIndex;
-	const int32_t *settings = (TMC5041_config->state == CONFIG_RESTORE) ? TMC5041_config->shadowRegister : tmc5041->registerResetState;
+	uint8_t *ptr = &tmc5041->config->configIndex;
+	const int32_t *settings = (tmc5041->config->state == CONFIG_RESTORE) ? tmc5041->config->shadowRegister : tmc5041->registerResetState;
 
 	while((*ptr < TMC5041_REGISTER_COUNT) && !TMC_IS_WRITABLE(tmc5041->registerAccess[*ptr]))
 		(*ptr)++;
@@ -53,18 +53,18 @@ void tmc5041_writeConfiguration(TMC5041TypeDef *tmc5041, ConfigurationTypeDef *T
 	}
 	else
 	{
-		TMC5041_config->state = CONFIG_READY;
+		tmc5041->config->state = CONFIG_READY;
 	}
 }
 
-void tmc5041_periodicJob(uint32_t tick, TMC5041TypeDef *tmc5041, ConfigurationTypeDef *TMC5041_config)
+void tmc5041_periodicJob(TMC5041TypeDef *tmc5041, uint32_t tick)
 {
 	int xActual;
 	uint32_t tickDiff;
 
-	if(TMC5041_config->state != CONFIG_READY)
+	if(tmc5041->config->state != CONFIG_READY)
 	{
-		tmc5041_writeConfiguration(tmc5041, TMC5041_config);
+		tmc5041_writeConfiguration(tmc5041);
 		return;
 	}
 
@@ -74,7 +74,7 @@ void tmc5041_periodicJob(uint32_t tick, TMC5041TypeDef *tmc5041, ConfigurationTy
 		for (i = 0; i < TMC5041_MOTORS; i++)
 		{
 			xActual = tmc5041_readInt(0, TMC5041_XACTUAL(i));
-			TMC5041_config->shadowRegister[TMC5041_XACTUAL(i)] = xActual;
+			tmc5041->config->shadowRegister[TMC5041_XACTUAL(i)] = xActual;
 			tmc5041->velocity[i] = (int) ((float) (abs(xActual-tmc5041->oldX[i]) / (float) tickDiff) * (float) 1048.576);
 			tmc5041->oldX[i] = xActual;
 		}
@@ -82,24 +82,24 @@ void tmc5041_periodicJob(uint32_t tick, TMC5041TypeDef *tmc5041, ConfigurationTy
 	}
 }
 
-uint8_t tmc5041_reset(ConfigurationTypeDef *TMC5041_config)
+uint8_t tmc5041_reset(TMC5041TypeDef *tmc5041)
 {
-	if(TMC5041_config->state != CONFIG_READY)
+	if(tmc5041->config->state != CONFIG_READY)
 		return 0;
 
-	TMC5041_config->state        = CONFIG_RESET;
-	TMC5041_config->configIndex  = 0;
+	tmc5041->config->state        = CONFIG_RESET;
+	tmc5041->config->configIndex  = 0;
 
 	return 1;
 }
 
-uint8_t tmc5041_restore(ConfigurationTypeDef *TMC5041_config)
+uint8_t tmc5041_restore(TMC5041TypeDef *tmc5041)
 {
-	if(TMC5041_config->state != CONFIG_READY)
+	if(tmc5041->config->state != CONFIG_READY)
 		return 0;
 
-	TMC5041_config->state        = CONFIG_RESTORE;
-	TMC5041_config->configIndex  = 0;
+	tmc5041->config->state        = CONFIG_RESTORE;
+	tmc5041->config->configIndex  = 0;
 
 	return 1;
 }
