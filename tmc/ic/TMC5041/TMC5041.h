@@ -26,6 +26,56 @@ typedef struct {
 	bool vMaxModified[2];
 } TMC5041TypeDef;
 
+#define R30 0x00071703  // IHOLD_IRUN (Motor 1)
+#define R32 0x00FFFFFF  // VHIGH      (Motor 1)
+#define R50 0x00071703  // IHOLD_IRUN (Motor 2)
+#define R52 0x00FFFFFF  // VHIGH      (Motor 2)
+
+#define R60 0xAAAAB554  // MSLUT[0]
+#define R61 0x4A9554AA  // MSLUT[1]
+#define R62 0x24492929  // MSLUT[2]
+#define R63 0x10104222  // MSLUT[3]
+#define R64 0xFBFFFFFF  // MSLUT[4]
+#define R65 0xB5BB777D  // MSLUT[5]
+#define R66 0x49295556  // MSLUT[6]
+#define R67 0x00404222  // MSLUT[7]
+#define R68 0xFFFF8056  // MSLUTSEL
+#define R69 0x00F70000  // MSLUTSTART
+
+#define R6C 0x000101D5  // CHOPCONF (Motor 1)
+#define R7C 0x000101D5  // CHOPCONF (Motor 2)
+
+/* Register access permissions:
+ * 0: none (reserved)
+ * 1: read
+ * 2: write
+ * 3: read/write
+ * 7: read^write (seperate functions/values)
+ */
+static const uint8_t tmc5041_defaultRegisterAccess[TMC5041_REGISTER_COUNT] = {
+//	0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
+	3, 1, 0, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 00 - 0F
+	2, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, // 10 - 1F
+	3, 3, 1, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 3, 0, 0, // 20 - 2F
+	2, 2, 2, 0, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 30 - 3F
+	3, 3, 1, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 3, 0, 0, // 40 - 4F
+	2, 2, 2, 0, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 50 - 5F
+	2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 0, 1, // 60 - 6F
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 3, 2, 0, 1  // 70 - 7F
+};
+
+static const int32_t tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] = {
+//	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 00 - 0F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 10 - 1F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 20 - 2F
+	R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 30 - 3F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 40 - 4F
+	R50, 0,   R52, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 50 - 5F
+	R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0, // 60 - 6F
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R7C, 0,   0,   0  // 70 - 7F
+};
+
 void tmc5041_initConfig(TMC5041TypeDef *TMC5041);
 void tmc5041_periodicJob(uint8_t motor, uint32_t tick, TMC5041TypeDef *TMC5041, ConfigurationTypeDef *TMC5041_config);
 uint8_t tmc5041_reset(ConfigurationTypeDef *TMC5041_config);
