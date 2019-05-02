@@ -13,9 +13,10 @@
 #include "TMC5041_Constants.h"
 #include "TMC5041_Fields.h"
 
-#define TMC5041_FIELD_READ(motor, address, mask, shift)           FIELD_READ(tmc5041_readInt, motor, address, mask, shift)
-#define TMC5041_FIELD_WRITE(motor, address, mask, shift, value)   FIELD_WRITE(tmc5041_writeInt, motor, address, mask, shift, value)
-#define TMC5041_FIELD_UPDATE(motor, address, mask, shift, value)  FIELD_UPDATE(tmc5041_readInt, tmc5041_writeInt, motor, address, mask, shift, value)
+#define TMC5041_FIELD_READ(tdef, address, mask, shift) \
+	FIELD_GET(tmc5041_readInt(tdef, address), mask, shift)
+#define TMC5041_FIELD_WRITE(tdef, address, mask, shift, value) \
+	(tmc5041_writeInt(tdef, address, FIELD_SET(tmc5041_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
@@ -78,6 +79,10 @@ static const int32_t tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] =
 	R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0, // 60 - 6F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R7C, 0,   0,   0  // 70 - 7F
 };
+
+void tmc5041_writeDatagram(TMC5041TypeDef *tmc5041, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
+void tmc5041_writeInt(TMC5041TypeDef *tmc5041, uint8_t address, int32_t value);
+int32_t tmc5041_readInt(TMC5041TypeDef *tmc5041, uint8_t address);
 
 void tmc5041_init(TMC5041TypeDef *tmc5041, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc5041_periodicJob(TMC5041TypeDef *tmc5041, uint32_t tick);
