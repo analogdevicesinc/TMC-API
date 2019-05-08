@@ -16,9 +16,7 @@
 // Usage note: use 1 TypeDef per IC
 typedef struct {
 	ConfigurationTypeDef *config;
-	int velocity;
-	int oldX;
-	uint32_t oldTick;
+
 	int32_t registerResetState[TMC2209_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2209_REGISTER_COUNT];
 	uint8_t slave;

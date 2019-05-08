@@ -14,16 +14,7 @@ extern void tmc2209_readRegister(uint8_t motor, uint8_t address, int32_t *value)
 
 void tmc2209_init(TMC2209TypeDef *tmc2209, uint8_t channel, ConfigurationTypeDef *tmc2209_config, const int32_t *registerResetState)
 {
-	tmc2209->velocity  = 0;
-	tmc2209->oldTick   = 0;
-	tmc2209->oldX      = 0;
-	tmc2209->config    = tmc2209_config;
-
-	/*
-	 * TODO: Config initialization
-	 * We can either explicitly initialize in each IC's init respectively,
-	 * or do that with a seperate function config_init where also the channel is set.
-	 */
+	tmc2209->config               = tmc2209_config;
 	tmc2209->config->callback     = NULL;
 	tmc2209->config->channel      = channel;
 	tmc2209->config->configIndex  = 0;
@@ -75,19 +66,14 @@ static void writeConfiguration(TMC2209TypeDef *tmc2209)
 
 void tmc2209_periodicJob(TMC2209TypeDef *tmc2209, uint32_t tick)
 {
+	UNUSED(tick);
+
 	if(tmc2209->config->state != CONFIG_READY)
 	{
 		writeConfiguration(tmc2209);
 		return;
 	}
-
-	// Calculate velocity v = dx/dt
-	if((tick - tmc2209->oldTick) >= 5)
-	{
-		tmc2209->oldTick  = tick;
-	}
 }
-
 
 void tmc2209_setRegisterResetState(TMC2209TypeDef *tmc2209, const int32_t *resetState)
 {
