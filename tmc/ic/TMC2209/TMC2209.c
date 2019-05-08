@@ -37,15 +37,18 @@ static void writeConfiguration(TMC2209TypeDef *tmc2209)
 		settings = tmc2209->config->shadowRegister;
 		// Find the next restorable register
 		while((*ptr < TMC2209_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc2209->registerAccess[*ptr]))
+		{
 			(*ptr)++;
+		}
 	}
 	else
 	{
 		settings = tmc2209->registerResetState;
 		// Find the next resettable register
 		while((*ptr < TMC2209_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc2209->registerAccess[*ptr]))
+		{
 			(*ptr)++;
-
+		}
 	}
 
 	if(*ptr < TMC2209_REGISTER_COUNT)
@@ -117,10 +120,10 @@ uint8_t tmc2209_restore(TMC2209TypeDef *tmc2209)
 
 uint8_t tmc2209_get_slave(TMC2209TypeDef *tmc2209)
 {
-	return tmc2209->slave;
+	return tmc2209->slaveAddress;
 }
 
-void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slave)
+void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slaveAddress)
 {
-	tmc2209->slave = slave;
+	tmc2209->slaveAddress = slaveAddress;
 }

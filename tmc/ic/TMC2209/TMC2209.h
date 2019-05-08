@@ -19,7 +19,8 @@ typedef struct {
 
 	int32_t registerResetState[TMC2209_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2209_REGISTER_COUNT];
-	uint8_t slave;
+
+	uint8_t slaveAddress;
 } TMC2209TypeDef;
 
 typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
@@ -38,7 +39,7 @@ typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
 //   0x02: write
 //   0x03: read/write
 //   0x13: read/write, seperate functions/values for reading or writing
-//   0x21: read, flag register (read to clear)
+//   0x23: read/write, flag register (write to clear)
 //   0x42: write, has hardware presets on reset
 static const uint8_t tmc2209_defaultRegisterAccess[TMC2209_REGISTER_COUNT] =
 {
@@ -79,7 +80,7 @@ void tmc2209_setRegisterResetState(TMC2209TypeDef *tmc2209, const int32_t *reset
 void tmc2209_setCallback(TMC2209TypeDef *tmc2209, tmc2209_callback callback);
 void tmc2209_periodicJob(TMC2209TypeDef *tmc2209, uint32_t tick);
 
-uint8_t tmc2209_get_slave(TMC2209TypeDef *tcm2209);
-void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slave);
+uint8_t tmc2209_get_slave(TMC2209TypeDef *tmc2209);
+void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slaveAddress);
 
 #endif /* TMC_IC_TMC2209_H_ */
