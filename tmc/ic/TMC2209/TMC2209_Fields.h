@@ -85,6 +85,16 @@
 #define TMC2209_TPWMTHRS_SHIFT               0 // min.: 0, max.: 1048575, default: 0
 #define TMC2209_VACTUAL_MASK                 0xFFFFFF // VACTUAL // VACTUAL allows moving the motor by UART control. It gives the motor velocity in +-(2^23)-1 [µsteps / t] 0: Normal operation. Driver reacts to STEP input. /=0:  Motor  moves  with  the  velocity  given  by  VACTUAL.  Step  pulses  can  be  monitored  via  INDEX  output.  The  motor  direction is controlled by the sign of VACTUAL.
 #define TMC2209_VACTUAL_SHIFT                0 // min.: -8388608, max.: 8388607, default: 0
+#define TMC2209_SEMIN_MASK                   0x0000000F
+#define TMC2209_SEMIN_SHIFT                  0
+#define TMC2209_SEUP_MASK                    0x00000060
+#define TMC2209_SEUP_SHIFT                   5
+#define TMC2209_SEMAX_MASK                   0x00000F00
+#define TMC2209_SEMAX_SHIFT                  8
+#define TMC2209_SEDN_MASK                    0x00006000
+#define TMC2209_SEDN_SHIFT                   13
+#define TMC2209_SEIMIN_MASK                  0x00008000
+#define TMC2209_SEIMIN_SHIFT                 15
 #define TMC2209_MSCNT_MASK                   0x03FF // MSCNT // Microstep  counter.  Indicates  actual  position in the microstep table for  CUR_A.  CUR_B  uses an  offset  of  256  into  the  table.  Reading  out MSCNT  allows  determination  of  the  motor position within the electrical wave.
 #define TMC2209_MSCNT_SHIFT                  0 // min.: 0, max.: 1023, default: 0
 #define TMC2209_CUR_A_MASK                   0x01FF // MSCURACT // (signed) Actual  microstep current for motor phase  A  as  read  from  the internal  sine  wave  table  (not scaled by current setting)

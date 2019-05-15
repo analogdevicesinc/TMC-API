@@ -12,6 +12,13 @@
 #include "tmc/helpers/API_Header.h"
 #include "TMC2209_Register.h"
 #include "TMC2209_Constants.h"
+#include "TMC2209_Fields.h"
+
+// Helper macros
+#define TMC2209_FIELD_READ(tdef, address, mask, shift) \
+	FIELD_GET(tmc2209_readInt(tdef, address), mask, shift)
+#define TMC2209_FIELD_UPDATE(tdef, address, mask, shift, value) \
+	(tmc2209_writeInt(tdef, address, FIELD_SET(tmc2209_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
