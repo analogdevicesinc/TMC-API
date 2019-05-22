@@ -19,6 +19,7 @@
 		int32_t targetVelocity;
 		int32_t rampVelocity;
 		int32_t acceleration;
+		uint16_t encoderSteps;
 		int lastdVRest;
 		int lastdXRest;
 		uint8_t rampEnabled;
