@@ -195,8 +195,8 @@
 #define TMC4671_USE_ABN_AS_N_SHIFT                           3 // min.: 0, max.: 1, default: 0
 #define TMC4671_CLN_MASK                                     0x0100 // ABN_DECODER_MODE // Clear writes ABN_DECODER_COUNT_N into decoder count at Npulse.
 #define TMC4671_CLN_SHIFT                                    8 // min.: 0, max.: 1, default: 0
-#define TMC4671_DIRECTION_MASK                               0x1000 // ABN_DECODER_MODE // Decoder count direction.
-#define TMC4671_DIRECTION_SHIFT                              12 // min.: 0, max.: 1, default: 0
+#define TMC4671_ABN_DIRECTION_MASK                           0x1000 // ABN_DECODER_MODE // Decoder count direction.
+#define TMC4671_ABN_DIRECTION_SHIFT                          12 // min.: 0, max.: 1, default: 0
 #define TMC4671_ABN_DECODER_PPR_MASK                         0xFFFFFF // ABN_DECODER_PPR // Decoder pules per mechanical revolution.
 #define TMC4671_ABN_DECODER_PPR_SHIFT                        0 // min.: 0, max.: 16777215, default: 0
 #define TMC4671_ABN_DECODER_COUNT_MASK                       0xFFFFFF // ABN_DECODER_COUNT // Raw decoder count; the digital decoder engine counts modulo (decoder_ppr).
@@ -221,8 +221,8 @@
 #define TMC4671_USE_ABN_AS_N_SHIFT                           3 // min.: 0, max.: 1, default: 0
 #define TMC4671_CLN_MASK                                     0x0100 // ABN_2_DECODER_MODE // Clear writes ABN_2_DECODER_COUNT_N into decoder count at Npulse.
 #define TMC4671_CLN_SHIFT                                    8 // min.: 0, max.: 1, default: 0
-#define TMC4671_DIRECTION_MASK                               0x1000 // ABN_2_DECODER_MODE // Decoder count direction.
-#define TMC4671_DIRECTION_SHIFT                              12 // min.: 0, max.: 1, default: 0
+#define TMC4671_ABN_2_DIRECTION_MASK                         0x1000 // ABN_2_DECODER_MODE // Decoder count direction.
+#define TMC4671_ABN_2_DIRECTION_SHIFT                        12 // min.: 0, max.: 1, default: 0
 #define TMC4671_ABN_2_DECODER_PPR_MASK                       0xFFFFFF // ABN_2_DECODER_PPR // Decoder_2 pules per mechanical revolution. This 2nd ABN encoder interface is for positioning or velocity control but NOT for motor commutation.
 #define TMC4671_ABN_2_DECODER_PPR_SHIFT                      0 // min.: 1, max.: 16777215, default: 0
 #define TMC4671_ABN_2_DECODER_COUNT_MASK                     0xFFFFFF // ABN_2_DECODER_COUNT // Raw decoder_2 count; the digital decoder engine counts modulo (decoder_2_ppr).
@@ -233,12 +233,14 @@
 #define TMC4671_ABN_2_DECODER_PHI_M_OFFSET_SHIFT             0 // min.: -32768, max.: 32767, default: 0
 #define TMC4671_ABN_2_DECODER_PHI_M_MASK                     0xFFFF // ABN_2_DECODER_PHI_M // ABN_2_DECODER_PHI_M = ABN_2_DECODER_COUNT * 2^16 / ABN_2_DECODER_PPR + ABN_2_DECODER_PHI_M_OFFSET;
 #define TMC4671_ABN_2_DECODER_PHI_M_SHIFT                    0 // min.: -32768, max.: 32767, default: 0
-#define TMC4671_POLARITY_MASK                                0x01 // HALL_MODE // polarity
-#define TMC4671_POLARITY_SHIFT                               0 // min.: 0, max.: 1, default: 0
-#define TMC4671_INTERPOLATION_MASK                           0x0100 // HALL_MODE // interpolation
-#define TMC4671_INTERPOLATION_SHIFT                          8 // min.: 0, max.: 1, default: 0
-#define TMC4671_DIRECTION_MASK                               0x1000 // HALL_MODE // direction
-#define TMC4671_DIRECTION_SHIFT                              12 // min.: 0, max.: 1, default: 0
+#define TMC4671_HALL_MODE_MASK                           	 0xFFFF // HALL_MODE
+#define TMC4671_HALL_MODE_SHIFT                              0
+#define TMC4671_HALL_POLARITY_MASK                           0x01 // HALL_MODE // polarity
+#define TMC4671_HALL_POLARITY_SHIFT                          0 // min.: 0, max.: 1, default: 0
+#define TMC4671_HALL_INTERPOLATION_MASK                      0x0100 // HALL_MODE // interpolation
+#define TMC4671_HALL_INTERPOLATION_SHIFT                     8 // min.: 0, max.: 1, default: 0
+#define TMC4671_HALL_DIRECTION_MASK                          0x1000 // HALL_MODE // direction
+#define TMC4671_HALL_DIRECTION_SHIFT                         12 // min.: 0, max.: 1, default: 0
 #define TMC4671_HALL_BLANK_MASK                              0x0FFF0000 // HALL_MODE // tBLANK = 10ns * HALL_BLANK
 #define TMC4671_HALL_BLANK_SHIFT                             16 // min.: 0, max.: 4095, default: 0
 #define TMC4671_HALL_POSITION_000_MASK                       0xFFFF // HALL_POSITION_060_000 // int16_t hall sensor position at 0\xc2\xb0
@@ -256,7 +258,7 @@
 #define TMC4671_HALL_PHI_M_OFFSET_MASK                       0xFFFF // HALL_PHI_E_PHI_M_OFFSET // Offset of mechanical angle hall_phi_m of hall decoder.
 #define TMC4671_HALL_PHI_M_OFFSET_SHIFT                      0 // min.: -32768, max.: 32767, default: 0
 #define TMC4671_HALL_PHI_E_OFFSET_MASK                       0xFFFF0000 // HALL_PHI_E_PHI_M_OFFSET // Offset for electrical angle hall_phi_e of hall decoder.
-#define TMC4671_HALL_PHI_E_OFFSET_SHIFT                      16 // min.: -32768, max.: 32767, default: 0
+#define TMC4671_HALL_PHI_E_OFFSET_SHIFT                      16
 #define TMC4671_HALL_DPHI_MAX_MASK                           0xFFFF // HALL_DPHI_MAX // Maximum dx for interpolation (default for digital hall: u16/6).
 #define TMC4671_HALL_DPHI_MAX_SHIFT                          0 // min.: 0, max.: 65535, default: 0
 #define TMC4671_HALL_PHI_E_MASK                              0xFFFF // HALL_PHI_E_INTERPOLATED_PHI_E // Raw electrical angle hall_phi_e of hall decoder, selection programmed via HALL_MODE control bit.
@@ -272,7 +274,7 @@
 #define TMC4671_AENC_DECODER_N_THRESHOLD_MASK                0xFFFF // AENC_DECODER_N_THRESHOLD // Threshold for generating of N pulse from analog AENC_N signal (only needed for analog SinCos encoders with analog N signal).
 #define TMC4671_AENC_DECODER_N_THRESHOLD_SHIFT               0 // min.: 0, max.: 65535, default: 0
 #define TMC4671_AENC_DECODER_N_MASK_MASK                     0xFFFF0000 // AENC_DECODER_N_THRESHOLD // Optional position mask (position) for the analog N pulse within phi_a period to be and-ed with the digital N pulse generated via aenc_decoder_n_threshold.
-#define TMC4671_AENC_DECODER_N_FIELDS                    16 // min.: -32768, max.: 32767, default: 0
+#define TMC4671_AENC_DECODER_N_FIELDS                    	 16 // min.: -32768, max.: 32767, default: 0
 #define TMC4671_AENC_DECODER_PHI_A_RAW_MASK                  0xFFFF // AENC_DECODER_PHI_A_RAW // Raw analog angle phi calculated from analog AENC inputs (analog hall, analog SinCos, ...).
 #define TMC4671_AENC_DECODER_PHI_A_RAW_SHIFT                 0 // min.: -32768, max.: 32767, default: 0
 #define TMC4671_AENC_DECODER_PHI_A_OFFSET_MASK               0xFFFF // AENC_DECODER_PHI_A_OFFSET // Offset for angle phi from analog decoder (analog hall, analog SinCos, ...).
