@@ -12,16 +12,22 @@
 #include "tmc/helpers/API_Header.h"
 #include "TMC2209_Register.h"
 #include "TMC2209_Constants.h"
+#include "TMC2209_Fields.h"
+
+// Helper macros
+#define TMC2209_FIELD_READ(tdef, address, mask, shift) \
+	FIELD_GET(tmc2209_readInt(tdef, address), mask, shift)
+#define TMC2209_FIELD_UPDATE(tdef, address, mask, shift, value) \
+	(tmc2209_writeInt(tdef, address, FIELD_SET(tmc2209_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
 	ConfigurationTypeDef *config;
-	int velocity;
-	int oldX;
-	uint32_t oldTick;
+
 	int32_t registerResetState[TMC2209_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2209_REGISTER_COUNT];
-	uint8_t slave;
+
+	uint8_t slaveAddress;
 } TMC2209TypeDef;
 
 typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
@@ -40,7 +46,7 @@ typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
 //   0x02: write
 //   0x03: read/write
 //   0x13: read/write, seperate functions/values for reading or writing
-//   0x21: read, flag register (read to clear)
+//   0x23: read/write, flag register (write to clear)
 //   0x42: write, has hardware presets on reset
 static const uint8_t tmc2209_defaultRegisterAccess[TMC2209_REGISTER_COUNT] =
 {
@@ -74,6 +80,10 @@ static const int32_t tmc2209_defaultRegisterResetState[TMC2209_REGISTER_COUNT] =
 #undef R6C
 #undef R70
 
+// Communication
+void tmc2209_writeInt(TMC2209TypeDef *tmc2209, uint8_t address, int32_t value);
+int32_t tmc2209_readInt(TMC2209TypeDef *tmc2209, uint8_t address);
+
 void tmc2209_init(TMC2209TypeDef *tmc2209, uint8_t channel, ConfigurationTypeDef *tmc2209_config, const int32_t *registerResetState);
 uint8_t tmc2209_reset(TMC2209TypeDef *tmc2209);
 uint8_t tmc2209_restore(TMC2209TypeDef *tmc2209);
@@ -81,7 +91,7 @@ void tmc2209_setRegisterResetState(TMC2209TypeDef *tmc2209, const int32_t *reset
 void tmc2209_setCallback(TMC2209TypeDef *tmc2209, tmc2209_callback callback);
 void tmc2209_periodicJob(TMC2209TypeDef *tmc2209, uint32_t tick);
 
-uint8_t tmc2209_get_slave(TMC2209TypeDef *tcm2209);
-void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slave);
+uint8_t tmc2209_get_slave(TMC2209TypeDef *tmc2209);
+void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slaveAddress);
 
 #endif /* TMC_IC_TMC2209_H_ */
