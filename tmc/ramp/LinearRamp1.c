@@ -149,10 +149,11 @@ void tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32_t delta)
 void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta)
 {
 	bool accelerating = linearRamp->rampVelocity != linearRamp->targetVelocity;
+
 	if (linearRamp->rampEnabled)
 	{
 		// Add current acceleration to accumulator
-		linearRamp->accumulatorVelocity += (linearRamp->acceleration * delta);
+		linearRamp->accumulatorVelocity += linearRamp->acceleration * delta;
 
 		// Emit the TMC_RAMP_LINEAR_ACCUMULATOR_DECIMALS decimal places and use the integer as dv
 		int32_t dv = linearRamp->accumulatorVelocity >> TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS;
@@ -193,91 +194,96 @@ void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta
 void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta)
 {
 	UNUSED(delta);
-	if(linearRamp->rampEnabled && linearRamp->rampMode == TMC_RAMP_LINEAR_MODE_POSITION) {
-		// Calculate steps needed to target
-		int32_t diffx = 0;
 
-		switch(linearRamp->state) {
-		case TMC_RAMP_LINEAR_STATE_IDLE:
-			if(linearRamp->rampVelocity == 0)
-				linearRamp->accelerationSteps = 0;
+	if (linearRamp->rampEnabled)
+		return;
 
-			if(linearRamp->rampPosition == linearRamp->targetPosition)
-				break;
+	if (linearRamp->rampMode != TMC_RAMP_LINEAR_MODE_POSITION)
+		return;
 
-			linearRamp->state = TMC_RAMP_LINEAR_STATE_DRIVING;
+	// Calculate steps needed to target
+	int32_t diffx = 0;
+
+	switch(linearRamp->state) {
+	case TMC_RAMP_LINEAR_STATE_IDLE:
+		if(linearRamp->rampVelocity == 0)
+			linearRamp->accelerationSteps = 0;
+
+		if(linearRamp->rampPosition == linearRamp->targetPosition)
 			break;
-		case TMC_RAMP_LINEAR_STATE_DRIVING:
-			// Calculate distance to target (positive = driving towards target)
-			if(linearRamp->rampVelocity > 0)
-				diffx = linearRamp->targetPosition - linearRamp->rampPosition;
-			else if(linearRamp->rampVelocity < 0)
-				diffx = -(linearRamp->targetPosition - linearRamp->rampPosition);
-			else
-				diffx = abs(linearRamp->targetPosition - linearRamp->rampPosition);
 
-			// Steps left required for braking?
-			// (+ 1 to compensate rounding (flooring) errors of the position accumulator)
-			if(linearRamp->accelerationSteps + 1 >= diffx)
-			{
-				linearRamp->targetVelocity = 0;
-				linearRamp->state = TMC_RAMP_LINEAR_STATE_BRAKING;
-			}
-			else
-			{	// Driving - apply VMAX (this also allows mid-ramp VMAX changes)
-				linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition) ? linearRamp->maxVelocity : -linearRamp->maxVelocity;
-			}
-			break;
-		case TMC_RAMP_LINEAR_STATE_BRAKING:
-			if(linearRamp->targetPosition == linearRamp->rampPosition)
-			{
-				if(abs(linearRamp->rampVelocity) <= linearRamp->stopVelocity)
-				{	// Position reached, velocity within cutoff threshold (or zero)
-					linearRamp->rampVelocity = 0; // actualVelocity = 0;
-					linearRamp->targetVelocity = 0; // currCh->targetVelocity = 0;
-					linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
-				}
-				else
-				{
-					// We're still too fast, we're going to miss the target position
-					// Let the decceleration continue until velocity is zero, then either
-					// home when within homing distance or start a new ramp (RAMP_DRIVING)
-					// towards the target.
-				}
-			}
-			else
-			{
-				if(linearRamp->rampVelocity != 0)
-				{	// Still deccelerating
+		linearRamp->state = TMC_RAMP_LINEAR_STATE_DRIVING;
+		break;
+	case TMC_RAMP_LINEAR_STATE_DRIVING:
+		// Calculate distance to target (positive = driving towards target)
+		if(linearRamp->rampVelocity > 0)
+			diffx = linearRamp->targetPosition - linearRamp->rampPosition;
+		else if(linearRamp->rampVelocity < 0)
+			diffx = -(linearRamp->targetPosition - linearRamp->rampPosition);
+		else
+			diffx = abs(linearRamp->targetPosition - linearRamp->rampPosition);
 
-					// Calculate distance to target (positive = driving towards target)
-					if(linearRamp->rampVelocity > 0)
-						diffx = linearRamp->targetPosition - linearRamp->rampPosition;
-					else if(linearRamp->rampVelocity < 0)
-						diffx = -(linearRamp->targetPosition - linearRamp->rampPosition);
-					else
-						diffx = abs(linearRamp->targetPosition - linearRamp->rampPosition);
-
-					// Enough space to accelerate again?
-					// (+ 1 to compensate rounding (flooring) errors of the position accumulator)
-					if(linearRamp->accelerationSteps + 1 < diffx)
-					{
-						linearRamp->state = TMC_RAMP_LINEAR_STATE_DRIVING;
-					}
-					break;
-				}
-
-				if(abs(linearRamp->targetPosition - linearRamp->rampPosition) <= linearRamp->homingDistance)
-				{	// Within homing distance - drive with V_STOP velocity
-					linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition)? linearRamp->stopVelocity : -linearRamp->stopVelocity;
-				}
-				else
-				{	// Not within homing distance - start a new motion by switching to RAMP_IDLE
-					// Since (targetPosition != actualPosition) a new ramp will be started.
-					linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
-				}
-			}
-			break;
+		// Steps left required for braking?
+		// (+ 1 to compensate rounding (flooring) errors of the position accumulator)
+		if(linearRamp->accelerationSteps + 1 >= diffx)
+		{
+			linearRamp->targetVelocity = 0;
+			linearRamp->state = TMC_RAMP_LINEAR_STATE_BRAKING;
 		}
+		else
+		{	// Driving - apply VMAX (this also allows mid-ramp VMAX changes)
+			linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition) ? linearRamp->maxVelocity : -linearRamp->maxVelocity;
+		}
+		break;
+	case TMC_RAMP_LINEAR_STATE_BRAKING:
+		if(linearRamp->targetPosition == linearRamp->rampPosition)
+		{
+			if(abs(linearRamp->rampVelocity) <= linearRamp->stopVelocity)
+			{	// Position reached, velocity within cutoff threshold (or zero)
+				linearRamp->rampVelocity = 0; // actualVelocity = 0;
+				linearRamp->targetVelocity = 0; // currCh->targetVelocity = 0;
+				linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
+			}
+			else
+			{
+				// We're still too fast, we're going to miss the target position
+				// Let the decceleration continue until velocity is zero, then either
+				// home when within homing distance or start a new ramp (RAMP_DRIVING)
+				// towards the target.
+			}
+		}
+		else
+		{
+			if(linearRamp->rampVelocity != 0)
+			{	// Still deccelerating
+
+				// Calculate distance to target (positive = driving towards target)
+				if(linearRamp->rampVelocity > 0)
+					diffx = linearRamp->targetPosition - linearRamp->rampPosition;
+				else if(linearRamp->rampVelocity < 0)
+					diffx = -(linearRamp->targetPosition - linearRamp->rampPosition);
+				else
+					diffx = abs(linearRamp->targetPosition - linearRamp->rampPosition);
+
+				// Enough space to accelerate again?
+				// (+ 1 to compensate rounding (flooring) errors of the position accumulator)
+				if(linearRamp->accelerationSteps + 1 < diffx)
+				{
+					linearRamp->state = TMC_RAMP_LINEAR_STATE_DRIVING;
+				}
+				break;
+			}
+
+			if(abs(linearRamp->targetPosition - linearRamp->rampPosition) <= linearRamp->homingDistance)
+			{	// Within homing distance - drive with V_STOP velocity
+				linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition)? linearRamp->stopVelocity : -linearRamp->stopVelocity;
+			}
+			else
+			{	// Not within homing distance - start a new motion by switching to RAMP_IDLE
+				// Since (targetPosition != actualPosition) a new ramp will be started.
+				linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
+			}
+		}
+		break;
 	}
 }
