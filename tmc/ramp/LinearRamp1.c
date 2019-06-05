@@ -279,8 +279,5 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta
 			}
 			break;
 		}
-	} else {
-		// use target position directly
-		linearRamp->rampPosition = linearRamp->targetPosition;
 	}
 }
