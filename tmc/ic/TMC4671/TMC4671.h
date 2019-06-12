@@ -81,6 +81,10 @@ int32_t tmc4671_getActualRampPosition(uint8_t motor);
 // pwm control
 void tmc4671_disablePWM(uint8_t motor);
 
+// motor settings
+uint8_t tmc4671_getMotorType(uint8_t motor);
+void tmc4671_setMotorType(uint8_t motor, uint8_t motorType);
+
 uint8_t tmc4671_getPolePairs(uint8_t motor);
 void tmc4671_setPolePairs(uint8_t motor, uint8_t polePairs);
 

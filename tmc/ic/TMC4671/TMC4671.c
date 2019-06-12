@@ -486,6 +486,16 @@ void tmc4671_disablePWM(uint8_t motor)
 	tmc4671_writeInt(motor, TMC4671_PWM_SV_CHOP, 0);
 }
 
+uint8_t tmc4671_getMotorType(uint8_t motor)
+{
+	return FIELD_GET(tmc4671_readInt(motor, TMC4671_MOTOR_TYPE_N_POLE_PAIRS), TMC4671_MOTOR_TYPE_MASK, TMC4671_MOTOR_TYPE_SHIFT);
+}
+
+void tmc4671_setMotorType(uint8_t motor, uint8_t motorType)
+{
+	TMC4671_FIELD_UPDATE(motor, TMC4671_MOTOR_TYPE_N_POLE_PAIRS, TMC4671_MOTOR_TYPE_MASK, TMC4671_MOTOR_TYPE_SHIFT, motorType);
+}
+
 uint8_t tmc4671_getPolePairs(uint8_t motor)
 {
 	return FIELD_GET(tmc4671_readInt(motor, TMC4671_MOTOR_TYPE_N_POLE_PAIRS), TMC4671_N_POLE_PAIRS_MASK, TMC4671_N_POLE_PAIRS_SHIFT);

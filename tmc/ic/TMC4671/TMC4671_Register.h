@@ -146,20 +146,26 @@
 	#define TMC4671_STATUS_FLAGS                       0x7C
 	#define TMC4671_STATUS_MASK                        0x7D
 
+	// motor types
+	#define TMC4671_NO_MOTOR					0
+	#define TMC4671_SINGLE_PHASE_DC				1
+	#define TMC4671_TWO_PHASE_STEPPER			2
+	#define TMC4671_THREE_PHASE_BLDC			3
+
 	// motion modes
-	#define TMC4671_MOTION_MODE_STOPPED    0
-	#define TMC4671_MOTION_MODE_TORQUE     1
-	#define TMC4671_MOTION_MODE_VELOCITY   2
-	#define TMC4671_MOTION_MODE_POSITION   3
-	#define TMC4671_MOTION_MODE_UQ_UD_EXT  8
+	#define TMC4671_MOTION_MODE_STOPPED    		0
+	#define TMC4671_MOTION_MODE_TORQUE     		1
+	#define TMC4671_MOTION_MODE_VELOCITY   		2
+	#define TMC4671_MOTION_MODE_POSITION   		3
+	#define TMC4671_MOTION_MODE_UQ_UD_EXT  		8
 
 	// phi_e selections
-	#define TMC4671_PHI_E_EXTERNAL   1
-	#define TMC4671_PHI_E_OPEN_LOOP  2
-	#define TMC4671_PHI_E_ABN        3
-	#define TMC4671_PHI_E_HALL       5
-	#define TMC4671_PHI_E_AENC       6
-	#define TMC4671_PHI_A_AENC       7
+	#define TMC4671_PHI_E_EXTERNAL   			1
+	#define TMC4671_PHI_E_OPEN_LOOP  			2
+	#define TMC4671_PHI_E_ABN        			3
+	#define TMC4671_PHI_E_HALL       			5
+	#define TMC4671_PHI_E_AENC      			6
+	#define TMC4671_PHI_A_AENC       			7
 
 	// velocity/position selection
     #define TMC4671_VELOCITY_PHI_E_SELECTION	0
