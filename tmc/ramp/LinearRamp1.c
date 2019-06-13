@@ -195,7 +195,7 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta
 {
 	UNUSED(delta);
 
-	if (linearRamp->rampEnabled)
+	if (!linearRamp->rampEnabled)
 		return;
 
 	if (linearRamp->rampMode != TMC_RAMP_LINEAR_MODE_POSITION)
