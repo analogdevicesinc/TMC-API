@@ -83,7 +83,7 @@ static const int32_t tmc2209_defaultRegisterResetState[TMC2209_REGISTER_COUNT] =
 void tmc2209_writeInt(TMC2209TypeDef *tmc2209, uint8_t address, int32_t value);
 int32_t tmc2209_readInt(TMC2209TypeDef *tmc2209, uint8_t address);
 
-void tmc2209_init(TMC2209TypeDef *tmc2209, uint8_t channel, ConfigurationTypeDef *tmc2209_config, const int32_t *registerResetState);
+void tmc2209_init(TMC2209TypeDef *tmc2209, uint8_t channel, uint8 slaveAddress, ConfigurationTypeDef *tmc2209_config, const int32_t *registerResetState);
 uint8_t tmc2209_reset(TMC2209TypeDef *tmc2209);
 uint8_t tmc2209_restore(TMC2209TypeDef *tmc2209);
 void tmc2209_setRegisterResetState(TMC2209TypeDef *tmc2209, const int32_t *resetState);
