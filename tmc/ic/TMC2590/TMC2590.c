@@ -15,33 +15,31 @@ static void continousSync(TMC2590TypeDef *tmc2590);
 static void readWrite(TMC2590TypeDef *tmc2590, uint32_t value);
 static void readImmediately(TMC2590TypeDef *tmc2590, uint8_t rdsel);
 
-static void standStillCurrentLimitation(TMC2590TypeDef *TMC2590)
-{ // mark if current should be reduced in stand still if too high
-	static uint32_t errorTimer = 0;
-
-	// check the standstill flag
-	if(TMC2590_GET_STST(tmc2590_readInt(0, TMC2590_RESPONSE_LATEST)))
+static void standStillCurrentLimitation(TMC2590TypeDef *tmc2590, uint32_t tick)
+{
+	// Check if the motor is in standstill
+	if (!TMC2590_GET_STST(tmc2590_readInt(tmc2590, TMC2590_RESPONSE_LATEST)))
 	{
-		// check if current reduction is neccessary
-		if(TMC2590->runCurrentScale > TMC2590->standStillCurrentScale)
-		{
-			TMC2590->isStandStillOverCurrent = 1;
-
-			// count timeout
-			if(errorTimer++ > TMC2590->standStillTimeout/10)
-			{
-				// set current limitation flag
-				TMC2590->isStandStillCurrentLimit = 1;
-				errorTimer = 0;
-			}
-			return;
-		}
+		// The standStillTick variable holds the tick counter where a standstill
+		// started.
+		// Not standing still -> standstill tick equals tick -> Time since
+		// standstill == 0
+		tmc2590->standStillTick = tick;
 	}
 
-	// No standstill or overcurrent -> reset flags & error timer
-	TMC2590->isStandStillOverCurrent  = 0;
-	TMC2590->isStandStillCurrentLimit = 0;
-	errorTimer = 0;
+	// Check if standstill timeout has been reached
+	if (tick - tmc2590->standStillTick > tmc2590->standStillTimeout)
+	{
+		tmc2590->isStandStillCurrent = 1;
+		// Change to standstill current
+		TMC2590_FIELD_UPDATE(tmc2590, TMC2590_SGCSCONF, TMC2590_CS_MASK, TMC2590_CS_SHIFT, tmc2590->standStillCurrentScale);
+	}
+	else
+	{
+		tmc2590->isStandStillCurrent = 0;
+		// Change to run current
+		TMC2590_FIELD_UPDATE(tmc2590, TMC2590_SGCSCONF, TMC2590_CS_MASK, TMC2590_CS_SHIFT, tmc2590->runCurrentScale);
+	}
 }
 
 static void continousSync(TMC2590TypeDef *tmc2590)
@@ -146,8 +144,7 @@ void tmc2590_init(TMC2590TypeDef *tmc2590, uint8_t channel, ConfigurationTypeDef
 	tmc2590->coolStepInactiveValue     = 0;
 	tmc2590->coolStepThreshold         = 0;
 
-	tmc2590->isStandStillCurrentLimit  = 0;
-	tmc2590->isStandStillOverCurrent   = 0;
+	tmc2590->isStandStillCurrent       = 0;
 	tmc2590->runCurrentScale           = 7;
 	tmc2590->standStillCurrentScale    = 3;
 	tmc2590->standStillTimeout         = 0;
@@ -161,14 +158,11 @@ void tmc2590_init(TMC2590TypeDef *tmc2590, uint8_t channel, ConfigurationTypeDef
 
 void tmc2590_periodicJob(TMC2590TypeDef *tmc2590, uint32_t tick)
 {
+	standStillCurrentLimitation(tmc2590, tick);
+
 	if(tmc2590->continuousModeEnable)
 	{ // continuously write settings to chip and rotate through all reply types to keep data up to date
 		continousSync(tmc2590);
-		if(tick - tmc2590->oldTick >= 10)
-		{
-			standStillCurrentLimitation(tmc2590);
-			tmc2590->oldTick = tick;
-		}
 	}
 }
 
