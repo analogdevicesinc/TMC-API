@@ -63,12 +63,20 @@ static void continousSync(TMC2590TypeDef *tmc2590)
 	// determine next read address
 	read = (read + 1) % 3;
 
-	// write settings from shadow register to chip.
-	//readWrite(TMC2590_config->shadowRegister[TMC2590_WRITE_BIT | write]);
+	// Write settings from shadow register to chip.
 	readWrite(tmc2590, tmc2590->config->shadowRegister[TMC2590_WRITE_BIT | write]);
 
-	// determine next write address - skip unused addresses
-	write = (write == TMC2590_DRVCTRL) ? TMC2590_CHOPCONF : ((write + 1) % TMC2590_REGISTER_COUNT);
+	// Determine next write address while skipping unused addresses
+	if (write == TMC2590_DRVCTRL)
+	{
+		// Skip over the unused addresses between DRVCTRL and CHOPCONF
+		write = TMC2590_CHOPCONF;
+	}
+	else
+	{
+		// Increase the address
+		write = (write + 1) & TMC2590_REGISTER_COUNT;
+	}
 }
 
 static void readWrite(TMC2590TypeDef *tmc2590, uint32_t value)
@@ -122,24 +130,27 @@ uint32_t tmc2590_readInt(TMC2590TypeDef *tmc2590, uint8_t address)
 
 void tmc2590_init(TMC2590TypeDef *tmc2590, uint8_t channel, ConfigurationTypeDef *tmc2590_config, const int32_t *registerResetState)
 {
-	tmc2590->config                    = tmc2590_config;
-	tmc2590->velocity                  = 0;
-	tmc2590->oldTick                   = 0;
-	tmc2590->oldX                      = 0;
-	tmc2590->continuousModeEnable      = 0;
-	tmc2590->isStandStillCurrentLimit  = 0;
-	tmc2590->isStandStillOverCurrent   = 0;
-	tmc2590->runCurrentScale           = 7;
-	tmc2590->coolStepActiveValue       = 0;
-	tmc2590->coolStepInactiveValue     = 0;
-	tmc2590->coolStepThreshold         = 0;
-	tmc2590->standStillCurrentScale    = 3;
-	tmc2590->standStillTimeout         = 0;
-
+	tmc2590->config               = tmc2590_config;
 	tmc2590->config->callback     = NULL;
 	tmc2590->config->channel      = channel;
 	tmc2590->config->configIndex  = 0;
 	tmc2590->config->state        = CONFIG_READY;
+
+	tmc2590->velocity                  = 0;
+	tmc2590->oldTick                   = 0;
+	tmc2590->oldX                      = 0;
+
+	tmc2590->continuousModeEnable      = 0;
+
+	tmc2590->coolStepActiveValue       = 0;
+	tmc2590->coolStepInactiveValue     = 0;
+	tmc2590->coolStepThreshold         = 0;
+
+	tmc2590->isStandStillCurrentLimit  = 0;
+	tmc2590->isStandStillOverCurrent   = 0;
+	tmc2590->runCurrentScale           = 7;
+	tmc2590->standStillCurrentScale    = 3;
+	tmc2590->standStillTimeout         = 0;
 
 	for(size_t i = 0; i < TMC2590_REGISTER_COUNT; i++)
 	{
@@ -159,30 +170,6 @@ void tmc2590_periodicJob(TMC2590TypeDef *tmc2590, uint32_t tick)
 			tmc2590->oldTick = tick;
 		}
 	}
-}
-
-// Currently unused, we write the whole configuration as part of the reset/restore functions
-void tmc2590_writeConfiguration(TMC2590TypeDef *tmc2590, ConfigurationTypeDef *TMC2590_config)
-{
-	// write one writeable register at a time - backwards to hit DRVCONF before DRVCTRL
-	UNUSED(tmc2590);
-	UNUSED(TMC2590_config);
-
-	//uint8_t *ptr = &TMC2590_config->configIndex;
-	//const int32_t *settings = (TMC2590_config->state == CONFIG_RESTORE) ? TMC2590_config->shadowRegister : tmc2590->registerResetState;
-
-	//while((*ptr >= 0) && !IS_WRITEABLE(tmc2590->registerAccess[*ptr]))
-		//(*ptr)--;
-
-	//if(*ptr >= 0)
-	//{
-		//tmc2590_writeInt(0, *ptr, settings[*ptr]);
-		//(*ptr)--;
-	//}
-	//else
-	//{
-		//TMC2590_config->state = CONFIG_READY;
-	//}
 }
 
 uint8_t tmc2590_reset(TMC2590TypeDef *tmc2590)
