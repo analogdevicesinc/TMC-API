@@ -19,7 +19,6 @@ void tmc_ramp_linear_init(TMC_LinearRamp *linearRamp)
 	linearRamp->accumulatorVelocity = 0;
 	linearRamp->accumulatorPosition = 0;
 	linearRamp->rampMode            = TMC_RAMP_LINEAR_MODE_VELOCITY;
-	linearRamp->dx                  = 0;
 	linearRamp->state               = TMC_RAMP_LINEAR_STATE_IDLE;
 	linearRamp->homingDistance      = TMC_RAMP_LINEAR_HOMING_DISTANCE;
 	linearRamp->stopVelocity        = TMC_RAMP_LINEAR_STOP_VELOCITY;
@@ -110,11 +109,6 @@ int32_t tmc_ramp_linear_get_acceleration(TMC_LinearRamp *linearRamp)
 	return linearRamp->acceleration;
 }
 
-int32_t tmc_ramp_linear_get_dx(TMC_LinearRamp *linearRamp)
-{
-	return linearRamp->dx;
-}
-
 TMC_LinearRamp_State tmc_ramp_linear_get_state(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->state;
@@ -135,18 +129,13 @@ uint32_t tmc_ramp_linear_get_stopVelocity(TMC_LinearRamp *linearRamp)
 	return linearRamp->stopVelocity;
 }
 
-void tmc_ramp_linear_reset_dx(TMC_LinearRamp *linearRamp)
+int32_t tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32_t delta)
 {
-	linearRamp->dx = 0;
-}
-
-void tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32_t delta)
-{
-	tmc_ramp_linear_compute_velocity(linearRamp, delta);
 	tmc_ramp_linear_compute_position(linearRamp, delta);
+	return tmc_ramp_linear_compute_velocity(linearRamp, delta);
 }
 
-void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta)
+int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta)
 {
 	bool accelerating = linearRamp->rampVelocity != linearRamp->targetVelocity;
 
@@ -177,18 +166,20 @@ void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta
 
 	// Accumulate required position change by current velocity
 	linearRamp->accumulatorPosition += (linearRamp->rampVelocity * delta);
-	linearRamp->dx = linearRamp->accumulatorPosition >> TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
-	linearRamp->accumulatorPosition -= linearRamp->dx << TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
+	int32_t dx = linearRamp->accumulatorPosition >> TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
+	linearRamp->accumulatorPosition -= dx << TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
 
-	if(linearRamp->dx == 0)
-		return;
+	if(dx == 0)
+		return dx;
 
 	// Change actual position determined by position change and delta-time
-	linearRamp->rampPosition += (linearRamp->dx < 0) ? (-1) : (1);
+	linearRamp->rampPosition += (dx < 0) ? (-1) : (1);
 	//linearRamp->rampPosition += (linearRamp->dx * delta);
 
 	// Count acceleration steps needed for decelerating later
 	linearRamp->accelerationSteps += (abs(linearRamp->rampVelocity) < abs(linearRamp->targetVelocity)) ? accelerating : -accelerating;
+
+	return dx;
 }
 
 void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta)

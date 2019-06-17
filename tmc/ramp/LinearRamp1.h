@@ -43,7 +43,6 @@ typedef struct
 	int32_t accumulatorVelocity;
 	int32_t accumulatorPosition;
 	TMC_LinearRamp_Mode rampMode;
-	int32_t dx;
 	TMC_LinearRamp_State state;
 	int32_t accelerationSteps;
 	uint32_t homingDistance;
@@ -51,8 +50,8 @@ typedef struct
 } TMC_LinearRamp;
 
 void tmc_ramp_linear_init(TMC_LinearRamp *linearRamp);
-void tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32_t delta);
-void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta);
+int32_t tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32_t delta);
+int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta);
 void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta);
 
 void tmc_ramp_linear_set_enabled(TMC_LinearRamp *linearRamp, bool enabled);
@@ -73,12 +72,9 @@ int32_t tmc_ramp_linear_get_rampPosition(TMC_LinearRamp *linearRamp);
 int32_t tmc_ramp_linear_get_targetVelocity(TMC_LinearRamp *linearRamp);
 int32_t tmc_ramp_linear_get_rampVelocity(TMC_LinearRamp *linearRamp);
 int32_t tmc_ramp_linear_get_acceleration(TMC_LinearRamp *linearRamp);
-int32_t tmc_ramp_linear_get_dx(TMC_LinearRamp *linearRamp);
 TMC_LinearRamp_State tmc_ramp_linear_get_state(TMC_LinearRamp *linearRamp);
 TMC_LinearRamp_Mode tmc_ramp_linear_get_mode(TMC_LinearRamp *linearRamp);
 uint32_t tmc_ramp_linear_get_homingDistance(TMC_LinearRamp *linearRamp);
 uint32_t tmc_ramp_linear_get_stopVelocity(TMC_LinearRamp *linearRamp);
-
-void tmc_ramp_linear_reset_dx(TMC_LinearRamp *linearRamp);
 
 #endif /* TMC_RAMP_LINEARRAMP1_H_ */

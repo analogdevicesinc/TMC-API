@@ -21,7 +21,8 @@ void tmc_ramp_init(void *ramp, TMC_RampType type);
 // Note: To call this function periodically with a fixed delta-time, use delta = 1 and
 // define the units of acceleration as v/delta-time. If you want to specify a different unit,
 // change delta to your preference.
-void tmc_ramp_compute(void *ramp, TMC_RampType type, uint32_t delta);
+// Returns the position difference of the calculation.
+int32_t tmc_ramp_compute(void *ramp, TMC_RampType type, uint32_t delta);
 
 // Returns the current ramp velocity computed by the given ramp
 int32_t tmc_ramp_get_rampVelocity(void *ramp, TMC_RampType type);
@@ -33,11 +34,5 @@ int32_t tmc_ramp_get_rampPosition(void *ramp, TMC_RampType type);
 bool tmc_ramp_get_enabled(void *ramp, TMC_RampType type);
 void tmc_ramp_set_enabled(void *ramp, TMC_RampType type, bool enabled);
 void tmc_ramp_toggle_enabled(void *ramp, TMC_RampType type);
-
-// Get the position change for last delta time frame
-int32_t tmc_ramp_get_dx(void *ramp, TMC_RampType type);
-
-// Resets dx value between computing deltas
-void tmc_ramp_reset_dx(void *ramp, TMC_RampType type);
 
 #endif /* TMC_RAMP_RAMP_H_ */
