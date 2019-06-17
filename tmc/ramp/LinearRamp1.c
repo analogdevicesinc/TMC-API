@@ -129,20 +129,20 @@ uint32_t tmc_ramp_linear_get_stopVelocity(TMC_LinearRamp *linearRamp)
 	return linearRamp->stopVelocity;
 }
 
-int32_t tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32_t delta)
+int32_t tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp)
 {
-	tmc_ramp_linear_compute_position(linearRamp, delta);
-	return tmc_ramp_linear_compute_velocity(linearRamp, delta);
+	tmc_ramp_linear_compute_position(linearRamp);
+	return tmc_ramp_linear_compute_velocity(linearRamp);
 }
 
-int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta)
+int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp)
 {
 	bool accelerating = linearRamp->rampVelocity != linearRamp->targetVelocity;
 
 	if (linearRamp->rampEnabled)
 	{
 		// Add current acceleration to accumulator
-		linearRamp->accumulatorVelocity += linearRamp->acceleration * delta;
+		linearRamp->accumulatorVelocity += linearRamp->acceleration;
 
 		// Emit the TMC_RAMP_LINEAR_ACCUMULATOR_DECIMALS decimal places and use the integer as dv
 		int32_t dv = linearRamp->accumulatorVelocity >> TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS;
@@ -165,7 +165,7 @@ int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t de
 	}
 
 	// Accumulate required position change by current velocity
-	linearRamp->accumulatorPosition += (linearRamp->rampVelocity * delta);
+	linearRamp->accumulatorPosition += linearRamp->rampVelocity;
 	int32_t dx = linearRamp->accumulatorPosition >> TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
 	linearRamp->accumulatorPosition -= dx << TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
 
@@ -182,10 +182,8 @@ int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t de
 	return dx;
 }
 
-void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta)
+void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 {
-	UNUSED(delta);
-
 	if (!linearRamp->rampEnabled)
 		return;
 

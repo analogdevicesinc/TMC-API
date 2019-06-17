@@ -19,14 +19,20 @@ void tmc_ramp_init(void *ramp, TMC_RampType type)
 
 int32_t tmc_ramp_compute(void *ramp, TMC_RampType type, uint32_t delta)
 {
+	uint32_t i;
+	int32_t dxSum = 0;
+
 	switch(type) {
 	case TMC_RAMP_TYPE_LINEAR:
 	default:
-		return tmc_ramp_linear_compute((TMC_LinearRamp *)ramp, delta);
+		for (i = 0; i < delta; i++)
+		{
+			dxSum += tmc_ramp_linear_compute((TMC_LinearRamp *)ramp);
+		}
 		break;
 	}
 
-	return 0;
+	return dxSum;
 }
 
 int32_t tmc_ramp_get_rampVelocity(void *ramp, TMC_RampType type)

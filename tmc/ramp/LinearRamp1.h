@@ -50,9 +50,9 @@ typedef struct
 } TMC_LinearRamp;
 
 void tmc_ramp_linear_init(TMC_LinearRamp *linearRamp);
-int32_t tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32_t delta);
-int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta);
-void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta);
+int32_t tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp);
+int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp);
+void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp);
 
 void tmc_ramp_linear_set_enabled(TMC_LinearRamp *linearRamp, bool enabled);
 void tmc_ramp_linear_set_maxVelocity(TMC_LinearRamp *linearRamp, uint32_t maxVelocity);
