@@ -28,9 +28,6 @@ typedef struct {
 	uint8_t coolStepInactiveValue;
 	uint8_t coolStepActiveValue;
 	uint32_t coolStepThreshold;
-	int velocity;
-	int oldX;
-	uint32_t oldTick;
 
 	uint8_t isStandStillCurrent;
 	uint8_t runCurrentScale;

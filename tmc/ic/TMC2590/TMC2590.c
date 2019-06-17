@@ -134,10 +134,6 @@ void tmc2590_init(TMC2590TypeDef *tmc2590, uint8_t channel, ConfigurationTypeDef
 	tmc2590->config->configIndex  = 0;
 	tmc2590->config->state        = CONFIG_READY;
 
-	tmc2590->velocity                  = 0;
-	tmc2590->oldTick                   = 0;
-	tmc2590->oldX                      = 0;
-
 	tmc2590->continuousModeEnable      = 0;
 
 	tmc2590->coolStepActiveValue       = 0;
