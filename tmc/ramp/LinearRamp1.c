@@ -20,6 +20,7 @@ void tmc_ramp_linear_init(TMC_LinearRamp *linearRamp)
 	linearRamp->accumulatorPosition = 0;
 	linearRamp->rampMode            = TMC_RAMP_LINEAR_MODE_VELOCITY;
 	linearRamp->state               = TMC_RAMP_LINEAR_STATE_IDLE;
+	linearRamp->precision           = TMC_RAMP_LINEAR_DEFAULT_PRECISION;
 	linearRamp->homingDistance      = TMC_RAMP_LINEAR_DEFAULT_HOMING_DISTANCE;
 	linearRamp->stopVelocity        = TMC_RAMP_LINEAR_DEFAULT_STOP_VELOCITY;
 }
@@ -144,11 +145,9 @@ int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp)
 		// Add current acceleration to accumulator
 		linearRamp->accumulatorVelocity += linearRamp->acceleration;
 
-		// Emit the TMC_RAMP_LINEAR_ACCUMULATOR_DECIMALS decimal places and use the integer as dv
-		int32_t dv = linearRamp->accumulatorVelocity >> TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS;
-
-		// Reset accumulator
-		linearRamp->accumulatorVelocity -= dv << TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS;
+		// Calculate the velocity delta value and keep the remainder of the velocity accumulator
+		int32_t dv = linearRamp->accumulatorVelocity / linearRamp->precision;
+		linearRamp->accumulatorVelocity = linearRamp->accumulatorVelocity % linearRamp->precision;
 
 		// Add dv to rampVelocity, and regulate to target velocity
 		if(linearRamp->rampVelocity < linearRamp->targetVelocity)
@@ -164,10 +163,10 @@ int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp)
 		linearRamp->accumulatorVelocity = 0;
 	}
 
-	// Accumulate required position change by current velocity
+	// Calculate the velocity delta value and keep the remainder of the position accumulator
 	linearRamp->accumulatorPosition += linearRamp->rampVelocity;
-	int32_t dx = linearRamp->accumulatorPosition >> TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
-	linearRamp->accumulatorPosition -= dx << TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
+	int32_t dx = linearRamp->accumulatorPosition / (int32_t) linearRamp->precision;
+	linearRamp->accumulatorPosition = linearRamp->accumulatorPosition % (int32_t) linearRamp->precision;
 
 	if(dx == 0)
 		return dx;

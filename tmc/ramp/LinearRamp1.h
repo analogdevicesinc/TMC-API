@@ -11,14 +11,16 @@
 #include "tmc/helpers/API_Header.h"
 #include "Ramp.h"
 
+// Default precision of the calculations. Internal calculations use a precision
+// of 1/TMC_RAMP_LINEAR_PRECISION for acceleration and velocity.
+// When using 2**N as precision, this results in N digits of precision.
+#define TMC_RAMP_LINEAR_DEFAULT_PRECISION (1<<17)
+
 // Position mode: When hitting the target position a velocity below the V_STOP threshold will be cut off to velocity 0
 #define TMC_RAMP_LINEAR_DEFAULT_HOMING_DISTANCE 5
 
 // Position mode: When barely missing the target position by HOMING_DISTANCE or less, the remainder will be driven with V_STOP velocity
 #define TMC_RAMP_LINEAR_DEFAULT_STOP_VELOCITY 5
-
-#define TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS 17
-#define TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS 17
 
 typedef enum {
 	TMC_RAMP_LINEAR_MODE_VELOCITY,
@@ -45,6 +47,7 @@ typedef struct
 	TMC_LinearRamp_Mode rampMode;
 	TMC_LinearRamp_State state;
 	int32_t accelerationSteps;
+	uint32_t precision;
 	uint32_t homingDistance;
 	uint32_t stopVelocity;
 } TMC_LinearRamp;
