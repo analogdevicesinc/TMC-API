@@ -167,7 +167,7 @@
 	#define TMC4671_PHI_E_AENC      			6
 	#define TMC4671_PHI_A_AENC       			7
 
-	// velocity/position selection
+	// velocity selection
     #define TMC4671_VELOCITY_PHI_E_SELECTION	0
 	#define TMC4671_VELOCITY_PHI_E_EXT			1
 	#define TMC4671_VELOCITY_PHI_E_OPENLOOP		2
@@ -182,6 +182,7 @@
 	#define TMC4671_VELOCITY_PHI_M_AENC			11
 	#define TMC4671_VELOCITY_PHI_M_HAL			12
 
+	// position selection
 	#define TMC4671_POSITION_PHI_E_SELECTION	0
 	#define TMC4671_POSITION_PHI_E_EXT			1
 	#define TMC4671_POSITION_PHI_E_OPENLOOP		2

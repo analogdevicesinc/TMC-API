@@ -20,8 +20,8 @@
 		int32_t rampVelocity;
 		int32_t acceleration;
 		uint16_t encoderSteps;
-		int lastdVRest;
-		int lastdXRest;
+		int32_t lastdVRest;
+		int32_t lastdXRest;
 		uint8_t rampEnabled;
 	} TMC_LinearRamp;
 
