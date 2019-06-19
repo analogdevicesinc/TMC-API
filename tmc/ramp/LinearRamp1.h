@@ -1,12 +1,12 @@
 /*
- * LinearRamp.h
+ * LinearRamp1.h
  *
  *  Created on: 09.11.2018
  *      Author: LK
  */
 
-#ifndef TMC_RAMP_LINEARRAMP_H_
-#define TMC_RAMP_LINEARRAMP_H_
+#ifndef TMC_RAMP_LINEARRAMP1_H_
+#define TMC_RAMP_LINEARRAMP1_H_
 
 #include "tmc/helpers/API_Header.h"
 #include "Ramp.h"
@@ -81,4 +81,4 @@ uint32_t tmc_ramp_linear_get_stopVelocity(TMC_LinearRamp *linearRamp);
 
 void tmc_ramp_linear_reset_dx(TMC_LinearRamp *linearRamp);
 
-#endif /* TMC_RAMP_LINEARRAMP_H_ */
+#endif /* TMC_RAMP_LINEARRAMP1_H_ */

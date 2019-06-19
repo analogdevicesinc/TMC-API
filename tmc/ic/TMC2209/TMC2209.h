@@ -33,8 +33,7 @@ typedef struct {
 typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
 
 // Default Register values
-#define R00 0x00000041  // GCONF
-//#define R10 0x00001F00  // IHOLD_IRUN
+#define R00 0x00000040  // GCONF
 #define R10 0x00071703  // IHOLD_IRUN
 #define R11 0x00000014  // TPOWERDOWN
 #define R6C 0x10000053  // CHOPCONF
@@ -84,7 +83,7 @@ static const int32_t tmc2209_defaultRegisterResetState[TMC2209_REGISTER_COUNT] =
 void tmc2209_writeInt(TMC2209TypeDef *tmc2209, uint8_t address, int32_t value);
 int32_t tmc2209_readInt(TMC2209TypeDef *tmc2209, uint8_t address);
 
-void tmc2209_init(TMC2209TypeDef *tmc2209, uint8_t channel, ConfigurationTypeDef *tmc2209_config, const int32_t *registerResetState);
+void tmc2209_init(TMC2209TypeDef *tmc2209, uint8_t channel, uint8 slaveAddress, ConfigurationTypeDef *tmc2209_config, const int32_t *registerResetState);
 uint8_t tmc2209_reset(TMC2209TypeDef *tmc2209);
 uint8_t tmc2209_restore(TMC2209TypeDef *tmc2209);
 void tmc2209_setRegisterResetState(TMC2209TypeDef *tmc2209, const int32_t *resetState);

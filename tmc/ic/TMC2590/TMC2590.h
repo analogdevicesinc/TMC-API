@@ -22,18 +22,19 @@
 // Usage note: use 1 TypeDef per IC
 typedef struct {
 	ConfigurationTypeDef *config;
-	uint8_t standStillCurrentScale;
-	uint32_t standStillTimeout;
-	uint8_t isStandStillOverCurrent;
-	uint8_t isStandStillCurrentLimit;
+
 	uint8_t continuousModeEnable;
-	uint8_t runCurrentScale;
+
 	uint8_t coolStepInactiveValue;
 	uint8_t coolStepActiveValue;
 	uint32_t coolStepThreshold;
-	int velocity;
-	int oldX;
-	uint32_t oldTick;
+
+	uint8_t isStandStillCurrent;
+	uint8_t runCurrentScale;
+	uint8_t standStillCurrentScale;
+	uint32_t standStillTimeout;
+	uint32_t standStillTick;
+
 	uint8_t registerAccess[TMC2590_REGISTER_COUNT];
 	int32_t registerResetState[TMC2590_REGISTER_COUNT];
 } TMC2590TypeDef;
