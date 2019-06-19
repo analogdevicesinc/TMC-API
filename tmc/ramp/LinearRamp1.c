@@ -171,9 +171,8 @@ int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp)
 	if(dx == 0)
 		return dx;
 
-	// Change actual position determined by position change and delta-time
+	// Change actual position determined by position change
 	linearRamp->rampPosition += (dx < 0) ? (-1) : (1);
-	//linearRamp->rampPosition += (linearRamp->dx * delta);
 
 	// Count acceleration steps needed for decelerating later
 	linearRamp->accelerationSteps += (abs(linearRamp->rampVelocity) < abs(linearRamp->targetVelocity)) ? accelerating : -accelerating;
@@ -228,8 +227,8 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 		{
 			if(abs(linearRamp->rampVelocity) <= linearRamp->stopVelocity)
 			{	// Position reached, velocity within cutoff threshold (or zero)
-				linearRamp->rampVelocity = 0; // actualVelocity = 0;
-				linearRamp->targetVelocity = 0; // currCh->targetVelocity = 0;
+				linearRamp->rampVelocity = 0;
+				linearRamp->targetVelocity = 0;
 				linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
 			}
 			else
@@ -263,7 +262,7 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 			}
 
 			if(abs(linearRamp->targetPosition - linearRamp->rampPosition) <= linearRamp->homingDistance)
-			{	// Within homing distance - drive with V_STOP velocity
+			{	// Within homing distance - drive with stop velocity
 				linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition)? linearRamp->stopVelocity : -linearRamp->stopVelocity;
 			}
 			else
