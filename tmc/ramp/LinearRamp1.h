@@ -12,10 +12,10 @@
 #include "Ramp.h"
 
 // Position mode: When hitting the target position a velocity below the V_STOP threshold will be cut off to velocity 0
-#define TMC_RAMP_LINEAR_HOMING_DISTANCE 5
+#define TMC_RAMP_LINEAR_DEFAULT_HOMING_DISTANCE 5
 
 // Position mode: When barely missing the target position by HOMING_DISTANCE or less, the remainder will be driven with V_STOP velocity
-#define TMC_RAMP_LINEAR_STOP_VELOCITY 5
+#define TMC_RAMP_LINEAR_DEFAULT_STOP_VELOCITY 5
 
 #define TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS 17
 #define TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS 17

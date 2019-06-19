@@ -20,8 +20,8 @@ void tmc_ramp_linear_init(TMC_LinearRamp *linearRamp)
 	linearRamp->accumulatorPosition = 0;
 	linearRamp->rampMode            = TMC_RAMP_LINEAR_MODE_VELOCITY;
 	linearRamp->state               = TMC_RAMP_LINEAR_STATE_IDLE;
-	linearRamp->homingDistance      = TMC_RAMP_LINEAR_HOMING_DISTANCE;
-	linearRamp->stopVelocity        = TMC_RAMP_LINEAR_STOP_VELOCITY;
+	linearRamp->homingDistance      = TMC_RAMP_LINEAR_DEFAULT_HOMING_DISTANCE;
+	linearRamp->stopVelocity        = TMC_RAMP_LINEAR_DEFAULT_STOP_VELOCITY;
 }
 
 void tmc_ramp_linear_set_enabled(TMC_LinearRamp *linearRamp, bool enabled)
