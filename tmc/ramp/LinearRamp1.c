@@ -65,6 +65,11 @@ void tmc_ramp_linear_set_mode(TMC_LinearRamp *linearRamp, TMC_LinearRamp_Mode mo
 	linearRamp->rampMode = mode;
 }
 
+void tmc_ramp_linear_set_precision(TMC_LinearRamp * linearRamp, uint32_t precision)
+{
+	linearRamp->precision = precision;
+}
+
 void tmc_ramp_linear_set_homingDistance(TMC_LinearRamp *linearRamp, uint32_t homingDistance)
 {
 	linearRamp->homingDistance = homingDistance;
@@ -118,6 +123,22 @@ TMC_LinearRamp_State tmc_ramp_linear_get_state(TMC_LinearRamp *linearRamp)
 TMC_LinearRamp_Mode tmc_ramp_linear_get_mode(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->rampMode;
+}
+
+uint32_t tmc_ramp_linear_get_precision(TMC_LinearRamp *linearRamp)
+{
+	return linearRamp->precision;
+}
+
+// The maximum acceleration depends on the precision value
+uint32_t tmc_ramp_linear_get_acceleration_limit(TMC_LinearRamp *linearRamp)
+{
+	return (0xFFFFFFFFu / linearRamp->precision) * linearRamp->precision;
+}
+
+uint32_t tmc_ramp_linear_get_velocity_limit(TMC_LinearRamp *linearRamp)
+{
+	return linearRamp->precision;
 }
 
 uint32_t tmc_ramp_linear_get_homingDistance(TMC_LinearRamp *linearRamp)

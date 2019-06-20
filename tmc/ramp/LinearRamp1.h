@@ -65,6 +65,7 @@ void tmc_ramp_linear_set_targetVelocity(TMC_LinearRamp *linearRamp, int32_t targ
 void tmc_ramp_linear_set_rampVelocity(TMC_LinearRamp *linearRamp, int32_t rampVelocity);
 void tmc_ramp_linear_set_acceleration(TMC_LinearRamp *linearRamp, int32_t acceleration);
 void tmc_ramp_linear_set_mode(TMC_LinearRamp *linearRamp, TMC_LinearRamp_Mode mode);
+void tmc_ramp_linear_set_precision(TMC_LinearRamp * linearRamp, uint32_t precision);
 void tmc_ramp_linear_set_homingDistance(TMC_LinearRamp *linearRamp, uint32_t homingDistance);
 void tmc_ramp_linear_set_stopVelocity(TMC_LinearRamp *linearRamp, uint32_t stopVelocity);
 
@@ -77,6 +78,9 @@ int32_t tmc_ramp_linear_get_rampVelocity(TMC_LinearRamp *linearRamp);
 int32_t tmc_ramp_linear_get_acceleration(TMC_LinearRamp *linearRamp);
 TMC_LinearRamp_State tmc_ramp_linear_get_state(TMC_LinearRamp *linearRamp);
 TMC_LinearRamp_Mode tmc_ramp_linear_get_mode(TMC_LinearRamp *linearRamp);
+uint32_t tmc_ramp_linear_get_precision(TMC_LinearRamp *linearRamp);
+uint32_t tmc_ramp_linear_get_acceleration_limit(TMC_LinearRamp *linearRamp);
+uint32_t tmc_ramp_linear_get_velocity_limit(TMC_LinearRamp *linearRamp);
 uint32_t tmc_ramp_linear_get_homingDistance(TMC_LinearRamp *linearRamp);
 uint32_t tmc_ramp_linear_get_stopVelocity(TMC_LinearRamp *linearRamp);
 
