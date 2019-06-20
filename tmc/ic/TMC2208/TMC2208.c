@@ -7,10 +7,69 @@
 
 #include "TMC2208.h"
 
-// => SPI wrapper
-extern void tmc2208_writeRegister(uint8_t motor, uint8_t address, int32_t value);
-extern void tmc2208_readRegister(uint8_t motor, uint8_t address, int32_t *value);
-// <= SPI wrapper
+// => UART wrapper
+extern void tmc2208_readWriteArray(uint8_t channel, uint8_t *data, size_t writeLength, size_t readLength);
+// <= UART wrapper
+
+// => CRC wrapper
+extern uint8_t tmc2208_CRC8(uint8_t *data, size_t length);
+// <= CRC wrapper
+
+void tmc2208_writeInt(TMC2208TypeDef *tmc2208, uint8_t address, int32_t value)
+{
+	uint8_t data[8];
+
+	data[0] = 0x05;
+	data[1] = 0;
+	data[2] = address | TMC_WRITE_BIT;
+	data[3] = (value >> 24) & 0xFF;
+	data[4] = (value >> 16) & 0xFF;
+	data[5] = (value >> 8 ) & 0xFF;
+	data[6] = (value      ) & 0xFF;
+	data[7] = tmc2208_CRC8(data, 7);
+
+	tmc2208_readWriteArray(tmc2208->config->channel, &data[0], 8, 0);
+
+	// Write to the shadow register and mark the register dirty
+	address = TMC_ADDRESS(address);
+	tmc2208->config->shadowRegister[address] = value;
+	tmc2208->registerAccess[address] |= TMC_ACCESS_DIRTY;
+}
+
+int32_t tmc2208_readInt(TMC2208TypeDef *tmc2208, uint8_t address)
+{
+	uint8_t data[8] = { 0 };
+
+	address = TMC_ADDRESS(address);
+
+	if (!TMC_IS_READABLE(tmc2208->registerAccess[address]))
+		return tmc2208->config->shadowRegister[address];
+
+	data[0] = 0x05;
+	data[1] = 0;
+	data[2] = address;
+	data[3] = tmc2208_CRC8(data, 3);
+
+	tmc2208_readWriteArray(tmc2208->config->channel, data, 4, 8);
+
+	// Byte 0: Sync nibble correct?
+	if (data[0] != 0x05)
+		return 0;
+
+	// Byte 1: Master address correct?
+	if (data[1] != 0xFF)
+		return 0;
+
+	// Byte 2: Address correct?
+	if (data[2] != address)
+		return 0;
+
+	// Byte 7: CRC correct?
+	if (data[7] != tmc2208_CRC8(data, 7))
+		return 0;
+
+	return (data[3] << 24) | (data[4] << 16) | (data[5] << 8) | data[6];
+}
 
 void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState)
 {
@@ -53,7 +112,7 @@ static void writeConfiguration(TMC2208TypeDef *tmc2208)
 
 	if(*ptr < TMC2208_REGISTER_COUNT)
 	{
-		tmc2208_writeRegister(tmc2208->config->channel, *ptr, settings[*ptr]);
+		tmc2208_writeInt(tmc2208, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration

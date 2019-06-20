@@ -68,6 +68,9 @@ static const int32_t tmc2208_defaultRegisterResetState[TMC2208_REGISTER_COUNT] =
 #undef R6C
 #undef R70
 
+void tmc2208_writeInt(TMC2208TypeDef *tmc2208, uint8_t address, int32_t value);
+int32_t tmc2208_readInt(TMC2208TypeDef *tmc2208, uint8_t address);
+
 void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState);
 uint8_t tmc2208_reset(TMC2208TypeDef *tmc2208);
 uint8_t tmc2208_restore(TMC2208TypeDef *tmc2208);
