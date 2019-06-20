@@ -20,7 +20,6 @@ typedef struct {
 	uint32_t oldTick;
 	int32_t registerResetState[TMC2208_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2208_REGISTER_COUNT];
-	uint8_t slave;
 } TMC2208TypeDef;
 
 typedef void (*tmc2208_callback)(TMC2208TypeDef*, ConfigState);

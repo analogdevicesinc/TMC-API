@@ -17,7 +17,6 @@ void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef
 	tmc2208->velocity  = 0;
 	tmc2208->oldTick   = 0;
 	tmc2208->oldX      = 0;
-	tmc2208->slave     = 0;
 	tmc2208->config    = tmc2208_config;
 
 	/*
@@ -132,10 +131,8 @@ uint8_t tmc2208_restore(TMC2208TypeDef *tmc2208)
 
 uint8_t tmc2208_get_slave(TMC2208TypeDef *tmc2208)
 {
-	return tmc2208->slave;
-}
+	UNUSED(tmc2208);
 
-void tmc2208_set_slave(TMC2208TypeDef *tmc2208, uint8_t slave)
-{
-	tmc2208->slave = slave;
+	// The TMC2208 has a hardcoded slave address 0
+	return 0;
 }
