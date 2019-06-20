@@ -14,9 +14,6 @@ extern void tmc2208_readRegister(uint8_t motor, uint8_t address, int32_t *value)
 
 void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState)
 {
-	tmc2208->velocity  = 0;
-	tmc2208->oldTick   = 0;
-	tmc2208->oldX      = 0;
 	tmc2208->config    = tmc2208_config;
 
 	/*
@@ -75,16 +72,12 @@ static void writeConfiguration(TMC2208TypeDef *tmc2208)
 
 void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32_t tick)
 {
+	UNUSED(tick);
+
 	if(tmc2208->config->state != CONFIG_READY)
 	{
 		writeConfiguration(tmc2208);
 		return;
-	}
-
-	// Calculate velocity v = dx/dt
-	if((tick - tmc2208->oldTick) >= 5)
-	{
-		tmc2208->oldTick  = tick;
 	}
 }
 
