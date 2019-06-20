@@ -23,7 +23,6 @@ typedef void (*tmc2208_callback)(TMC2208TypeDef*, ConfigState);
 
 // Default Register values
 #define R00 0x00000041  // GCONF
-//#define R10 0x00001F00  // IHOLD_IRUN
 #define R10 0x00071703  // IHOLD_IRUN
 #define R11 0x00000014  // TPOWERDOWN
 #define R6C 0x10000053  // CHOPCONF

@@ -14,13 +14,7 @@ extern void tmc2208_readRegister(uint8_t motor, uint8_t address, int32_t *value)
 
 void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState)
 {
-	tmc2208->config    = tmc2208_config;
-
-	/*
-	 * TODO: Config initialization
-	 * We can either explicitly initialize in each IC's init respectively,
-	 * or do that with a seperate function config_init where also the channel is set.
-	 */
+	tmc2208->config               = tmc2208_config;
 	tmc2208->config->callback     = NULL;
 	tmc2208->config->channel      = channel;
 	tmc2208->config->configIndex  = 0;
@@ -43,15 +37,18 @@ static void writeConfiguration(TMC2208TypeDef *tmc2208)
 		settings = tmc2208->config->shadowRegister;
 		// Find the next restorable register
 		while((*ptr < TMC2208_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc2208->registerAccess[*ptr]))
+		{
 			(*ptr)++;
+		}
 	}
 	else
 	{
 		settings = tmc2208->registerResetState;
 		// Find the next resettable register
 		while((*ptr < TMC2208_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc2208->registerAccess[*ptr]))
+		{
 			(*ptr)++;
-
+		}
 	}
 
 	if(*ptr < TMC2208_REGISTER_COUNT)
@@ -81,11 +78,12 @@ void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32_t tick)
 	}
 }
 
-
 void tmc2208_setRegisterResetState(TMC2208TypeDef *tmc2208, const int32_t *resetState)
 {
 	for(size_t i = 0; i < TMC2208_REGISTER_COUNT; i++)
+	{
 		tmc2208->registerResetState[i] = resetState[i];
+	}
 }
 
 void tmc2208_setCallback(TMC2208TypeDef *tmc2208, tmc2208_callback callback)
