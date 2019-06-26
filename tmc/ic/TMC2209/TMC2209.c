@@ -7,11 +7,6 @@
 
 #include "TMC2209.h"
 
-// => SPI wrapper
-extern void tmc2209_writeRegister(uint8_t motor, uint8_t address, int32_t value);
-extern void tmc2209_readRegister(uint8_t motor, uint8_t address, int32_t *value);
-// <= SPI wrapper
-
 // => UART wrapper
 extern void tmc2209_readWriteArray(uint8_t channel, uint8_t *data, size_t writeLength, size_t readLength);
 // <= UART wrapper
@@ -119,7 +114,7 @@ static void writeConfiguration(TMC2209TypeDef *tmc2209)
 
 	if(*ptr < TMC2209_REGISTER_COUNT)
 	{
-		tmc2209_writeRegister(tmc2209->config->channel, *ptr, settings[*ptr]);
+		tmc2209_writeInt(tmc2209, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration
