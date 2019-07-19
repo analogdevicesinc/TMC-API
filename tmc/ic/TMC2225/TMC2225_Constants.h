@@ -1,0 +1,20 @@
+/*
+ * TMC2225_Constants.h
+ *
+ *  Created on: 21.06.2019
+ *      Author: LH
+ */
+
+#ifndef TMC_IC_TMC2225_TMC2225_CONSTANTS_H_
+#define TMC_IC_TMC2225_TMC2225_CONSTANTS_H_
+
+#include "tmc/helpers/Constants.h"
+
+#define TMC2225_MOTORS           1
+#define TMC2225_REGISTER_COUNT   TMC_REGISTER_COUNT
+#define TMC2225_WRITE_BIT        TMC_WRITE_BIT
+#define TMC2225_ADDRESS_MASK     TMC_ADDRESS_MASK
+#define TMC2225_MAX_VELOCITY     s32_MAX
+#define TMC2225_MAX_ACCELERATION u24_MAX
+
+#endif /* TMC_IC_TMC2225_TMC2225_CONSTANTS_H_ */
