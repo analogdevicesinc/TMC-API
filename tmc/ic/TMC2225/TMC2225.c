@@ -179,10 +179,12 @@ uint8_t tmc2225_restore(TMC2225TypeDef *tmc2225)
 	return true;
 }
 
+void tmc2225_set_slave(TMC2225TypeDef *tmc2225, uint8_t slave)
+{
+	tmc2225->slave_address = slave;
+}
+
 uint8_t tmc2225_get_slave(TMC2225TypeDef *tmc2225)
 {
-	UNUSED(tmc2225);
-
-	// The TMC2225 has a hardcoded slave address 0
-	return 0;
+	return tmc2225->slave_address;
 }

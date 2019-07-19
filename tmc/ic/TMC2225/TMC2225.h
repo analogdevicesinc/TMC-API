@@ -11,12 +11,20 @@
 #include "tmc/helpers/API_Header.h"
 #include "TMC2225_Constants.h"
 #include "TMC2225_Register.h"
+#include "TMC2225_Fields.h"
+
+// Helper macros
+#define TMC2225_FIELD_READ(tdef, address, mask, shift) \
+	FIELD_GET(tmc2225_readInt(tdef, address), mask, shift)
+#define TMC2225_FIELD_UPDATE(tdef, address, mask, shift, value) \
+	(tmc2225_writeInt(tdef, address, FIELD_SET(tmc2225_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
 	ConfigurationTypeDef *config;
 	int32_t registerResetState[TMC2225_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2225_REGISTER_COUNT];
+	uint8_t slave_address;
 } TMC2225TypeDef;
 
 typedef void (*tmc2225_callback)(TMC2225TypeDef*, ConfigState);
