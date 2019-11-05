@@ -15,19 +15,14 @@
 // Usage note: use 1 TypeDef per IC
 typedef struct {
 	ConfigurationTypeDef *config;
-	int velocity;
-	int oldX;
-	uint32_t oldTick;
 	int32_t registerResetState[TMC2208_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2208_REGISTER_COUNT];
-	uint8_t slave;
 } TMC2208TypeDef;
 
 typedef void (*tmc2208_callback)(TMC2208TypeDef*, ConfigState);
 
 // Default Register values
 #define R00 0x00000041  // GCONF
-//#define R10 0x00001F00  // IHOLD_IRUN
 #define R10 0x00071703  // IHOLD_IRUN
 #define R11 0x00000014  // TPOWERDOWN
 #define R6C 0x10000053  // CHOPCONF
@@ -72,6 +67,9 @@ static const int32_t tmc2208_defaultRegisterResetState[TMC2208_REGISTER_COUNT] =
 #undef R11
 #undef R6C
 #undef R70
+
+void tmc2208_writeInt(TMC2208TypeDef *tmc2208, uint8_t address, int32_t value);
+int32_t tmc2208_readInt(TMC2208TypeDef *tmc2208, uint8_t address);
 
 void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState);
 uint8_t tmc2208_reset(TMC2208TypeDef *tmc2208);

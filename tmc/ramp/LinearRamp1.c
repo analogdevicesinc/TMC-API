@@ -19,10 +19,10 @@ void tmc_ramp_linear_init(TMC_LinearRamp *linearRamp)
 	linearRamp->accumulatorVelocity = 0;
 	linearRamp->accumulatorPosition = 0;
 	linearRamp->rampMode            = TMC_RAMP_LINEAR_MODE_VELOCITY;
-	linearRamp->dx                  = 0;
 	linearRamp->state               = TMC_RAMP_LINEAR_STATE_IDLE;
-	linearRamp->homingDistance      = TMC_RAMP_LINEAR_HOMING_DISTANCE;
-	linearRamp->stopVelocity        = TMC_RAMP_LINEAR_STOP_VELOCITY;
+	linearRamp->precision           = TMC_RAMP_LINEAR_DEFAULT_PRECISION;
+	linearRamp->homingDistance      = TMC_RAMP_LINEAR_DEFAULT_HOMING_DISTANCE;
+	linearRamp->stopVelocity        = TMC_RAMP_LINEAR_DEFAULT_STOP_VELOCITY;
 }
 
 void tmc_ramp_linear_set_enabled(TMC_LinearRamp *linearRamp, bool enabled)
@@ -63,6 +63,11 @@ void tmc_ramp_linear_set_acceleration(TMC_LinearRamp *linearRamp, int32_t accele
 void tmc_ramp_linear_set_mode(TMC_LinearRamp *linearRamp, TMC_LinearRamp_Mode mode)
 {
 	linearRamp->rampMode = mode;
+}
+
+void tmc_ramp_linear_set_precision(TMC_LinearRamp * linearRamp, uint32_t precision)
+{
+	linearRamp->precision = precision;
 }
 
 void tmc_ramp_linear_set_homingDistance(TMC_LinearRamp *linearRamp, uint32_t homingDistance)
@@ -110,11 +115,6 @@ int32_t tmc_ramp_linear_get_acceleration(TMC_LinearRamp *linearRamp)
 	return linearRamp->acceleration;
 }
 
-int32_t tmc_ramp_linear_get_dx(TMC_LinearRamp *linearRamp)
-{
-	return linearRamp->dx;
-}
-
 TMC_LinearRamp_State tmc_ramp_linear_get_state(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->state;
@@ -123,6 +123,22 @@ TMC_LinearRamp_State tmc_ramp_linear_get_state(TMC_LinearRamp *linearRamp)
 TMC_LinearRamp_Mode tmc_ramp_linear_get_mode(TMC_LinearRamp *linearRamp)
 {
 	return linearRamp->rampMode;
+}
+
+uint32_t tmc_ramp_linear_get_precision(TMC_LinearRamp *linearRamp)
+{
+	return linearRamp->precision;
+}
+
+// The maximum acceleration depends on the precision value
+uint32_t tmc_ramp_linear_get_acceleration_limit(TMC_LinearRamp *linearRamp)
+{
+	return (0xFFFFFFFFu / linearRamp->precision) * linearRamp->precision;
+}
+
+uint32_t tmc_ramp_linear_get_velocity_limit(TMC_LinearRamp *linearRamp)
+{
+	return linearRamp->precision;
 }
 
 uint32_t tmc_ramp_linear_get_homingDistance(TMC_LinearRamp *linearRamp)
@@ -135,31 +151,24 @@ uint32_t tmc_ramp_linear_get_stopVelocity(TMC_LinearRamp *linearRamp)
 	return linearRamp->stopVelocity;
 }
 
-void tmc_ramp_linear_reset_dx(TMC_LinearRamp *linearRamp)
+int32_t tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp)
 {
-	linearRamp->dx = 0;
+	tmc_ramp_linear_compute_position(linearRamp);
+	return tmc_ramp_linear_compute_velocity(linearRamp);
 }
 
-void tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp, uint32_t delta)
-{
-	tmc_ramp_linear_compute_velocity(linearRamp, delta);
-	tmc_ramp_linear_compute_position(linearRamp, delta);
-}
-
-void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta)
+int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp)
 {
 	bool accelerating = linearRamp->rampVelocity != linearRamp->targetVelocity;
 
 	if (linearRamp->rampEnabled)
 	{
 		// Add current acceleration to accumulator
-		linearRamp->accumulatorVelocity += linearRamp->acceleration * delta;
+		linearRamp->accumulatorVelocity += linearRamp->acceleration;
 
-		// Emit the TMC_RAMP_LINEAR_ACCUMULATOR_DECIMALS decimal places and use the integer as dv
-		int32_t dv = linearRamp->accumulatorVelocity >> TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS;
-
-		// Reset accumulator
-		linearRamp->accumulatorVelocity -= dv << TMC_RAMP_LINEAR_ACCUMULATOR_VELOCITY_DECIMALS;
+		// Calculate the velocity delta value and keep the remainder of the velocity accumulator
+		int32_t dv = linearRamp->accumulatorVelocity / linearRamp->precision;
+		linearRamp->accumulatorVelocity = linearRamp->accumulatorVelocity % linearRamp->precision;
 
 		// Add dv to rampVelocity, and regulate to target velocity
 		if(linearRamp->rampVelocity < linearRamp->targetVelocity)
@@ -175,26 +184,25 @@ void tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp, uint32_t delta
 		linearRamp->accumulatorVelocity = 0;
 	}
 
-	// Accumulate required position change by current velocity
-	linearRamp->accumulatorPosition += (linearRamp->rampVelocity * delta);
-	linearRamp->dx = linearRamp->accumulatorPosition >> TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
-	linearRamp->accumulatorPosition -= linearRamp->dx << TMC_RAMP_LINEAR_ACCUMULATOR_POSITION_DECIMALS;
+	// Calculate the velocity delta value and keep the remainder of the position accumulator
+	linearRamp->accumulatorPosition += linearRamp->rampVelocity;
+	int32_t dx = linearRamp->accumulatorPosition / (int32_t) linearRamp->precision;
+	linearRamp->accumulatorPosition = linearRamp->accumulatorPosition % (int32_t) linearRamp->precision;
 
-	if(linearRamp->dx == 0)
-		return;
+	if(dx == 0)
+		return dx;
 
-	// Change actual position determined by position change and delta-time
-	linearRamp->rampPosition += (linearRamp->dx < 0) ? (-1) : (1);
-	//linearRamp->rampPosition += (linearRamp->dx * delta);
+	// Change actual position determined by position change
+	linearRamp->rampPosition += (dx < 0) ? (-1) : (1);
 
 	// Count acceleration steps needed for decelerating later
 	linearRamp->accelerationSteps += (abs(linearRamp->rampVelocity) < abs(linearRamp->targetVelocity)) ? accelerating : -accelerating;
+
+	return dx;
 }
 
-void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta)
+void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 {
-	UNUSED(delta);
-
 	if (!linearRamp->rampEnabled)
 		return;
 
@@ -240,8 +248,8 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta
 		{
 			if(abs(linearRamp->rampVelocity) <= linearRamp->stopVelocity)
 			{	// Position reached, velocity within cutoff threshold (or zero)
-				linearRamp->rampVelocity = 0; // actualVelocity = 0;
-				linearRamp->targetVelocity = 0; // currCh->targetVelocity = 0;
+				linearRamp->rampVelocity = 0;
+				linearRamp->targetVelocity = 0;
 				linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
 			}
 			else
@@ -275,7 +283,7 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp, uint32_t delta
 			}
 
 			if(abs(linearRamp->targetPosition - linearRamp->rampPosition) <= linearRamp->homingDistance)
-			{	// Within homing distance - drive with V_STOP velocity
+			{	// Within homing distance - drive with stop velocity
 				linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition)? linearRamp->stopVelocity : -linearRamp->stopVelocity;
 			}
 			else
