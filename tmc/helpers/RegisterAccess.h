@@ -52,6 +52,7 @@
 #define TMC_IS_READABLE(x)    ((x) & TMC_ACCESS_READ)
 #define TMC_IS_WRITABLE(x)    ((x) & TMC_ACCESS_WRITE)
 #define TMC_IS_DIRTY(x)       ((x) & TMC_ACCESS_DIRTY)
+#define TMC_IS_PRESET(x)      ((x) & TMC_ACCESS_HW_PRESET)
 #define TMC_IS_RESETTABLE(x)  (((x) & (TMC_ACCESS_W_PRESET)) == TMC_ACCESS_WRITE) // Write bit set, Hardware preset bit not set
 #define TMC_IS_RESTORABLE(x)  (((x) & TMC_ACCESS_WRITE) && (!(x & TMC_ACCESS_HW_PRESET) || (x & TMC_ACCESS_DIRTY))) // Write bit set, if it's a hardware preset register, it needs to be dirty
 
