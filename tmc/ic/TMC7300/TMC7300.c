@@ -102,7 +102,7 @@ void tmc7300_init(TMC7300TypeDef *tmc7300, uint8_t channel, ConfigurationTypeDef
 	}
 }
 
-// Fill the shadow registers of hardware preset non-readable registers
+// Fill the shadow registers of hardware preset registers.
 // Only needed if you want to read out those registers to display the value
 // (e.g. for the TMCL IDE register browser)
 static void fillShadowRegisters(TMC7300TypeDef *tmc7300)
