@@ -197,6 +197,8 @@ int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp)
 
 	// Count acceleration steps needed for decelerating later
 	linearRamp->accelerationSteps += (abs(linearRamp->rampVelocity) < abs(linearRamp->targetVelocity)) ? accelerating : -accelerating;
+	if (linearRamp->accelerationSteps < 0)
+		linearRamp->accelerationSteps = 0;
 
 	return dx;
 }
