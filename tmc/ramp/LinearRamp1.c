@@ -261,7 +261,7 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 			}
 		}
 		else
-		{
+		{	// We're not at the target position
 			if(linearRamp->rampVelocity != 0)
 			{	// Still decelerating
 
@@ -279,17 +279,18 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 				{
 					linearRamp->state = TMC_RAMP_LINEAR_STATE_DRIVING;
 				}
-				break;
-			}
-
-			if(abs(linearRamp->targetPosition - linearRamp->rampPosition) <= linearRamp->homingDistance)
-			{	// Within homing distance - drive with stop velocity
-				linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition)? linearRamp->stopVelocity : -linearRamp->stopVelocity;
 			}
 			else
-			{	// Not within homing distance - start a new motion by switching to RAMP_IDLE
-				// Since (targetPosition != actualPosition) a new ramp will be started.
-				linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
+			{	// Standing still (not at the target position)
+				if(abs(linearRamp->targetPosition - linearRamp->rampPosition) <= linearRamp->homingDistance)
+				{	// Within homing distance - drive with stop velocity
+					linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition)? linearRamp->stopVelocity : -linearRamp->stopVelocity;
+				}
+				else
+				{	// Not within homing distance - start a new motion by switching to RAMP_IDLE
+					// Since (targetPosition != actualPosition) a new ramp will be started.
+					linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
+				}
 			}
 		}
 		break;
