@@ -255,7 +255,7 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 			else
 			{
 				// We're still too fast, we're going to miss the target position
-				// Let the decceleration continue until velocity is zero, then either
+				// Let the deceleration continue until velocity is zero, then either
 				// home when within homing distance or start a new ramp (RAMP_DRIVING)
 				// towards the target.
 			}
@@ -263,7 +263,7 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 		else
 		{
 			if(linearRamp->rampVelocity != 0)
-			{	// Still deccelerating
+			{	// Still decelerating
 
 				// Calculate distance to target (positive = driving towards target)
 				if(linearRamp->rampVelocity > 0)
