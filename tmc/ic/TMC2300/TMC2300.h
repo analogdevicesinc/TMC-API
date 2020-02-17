@@ -97,4 +97,6 @@ void tmc2300_setSlaveAddress(TMC2300TypeDef *tmc2300, uint8_t slaveAddress);
 uint8_t tmc2300_getStandby(TMC2300TypeDef *tmc2300);
 void tmc2300_setStandby(TMC2300TypeDef *tmc2300, uint8_t standbyState);
 
+uint8_t tmc2300_consistencyCheck(TMC2300TypeDef *tmc2300);
+
 #endif /* TMC_IC_TMC2300_H_ */
