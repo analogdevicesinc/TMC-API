@@ -103,6 +103,7 @@ void tmc5160_writeConfiguration(uint8_t motor, TMC5160TypeDef *tmc5160, Configur
 
 void tmc5160_periodicJob(uint8_t motor, uint32_t tick, TMC5160TypeDef *tmc5160, ConfigurationTypeDef *TMC5160_config)
 {
+	volatile uint8_t mot = motor;
 	if(TMC5160_config->state != CONFIG_READY)
 	{
 		tmc5160_writeConfiguration(motor, tmc5160, TMC5160_config);
