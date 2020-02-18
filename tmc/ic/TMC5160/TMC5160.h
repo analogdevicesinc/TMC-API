@@ -43,6 +43,7 @@ typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
 #define R2B 0x00000001  // VSTOP
 #define R3A 0x00010000  // ENC_CONST
 #define R6C 0x00410153  // CHOPCONF
+#define R70 0xC40C001E
 
 static const int32_t tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
 {
@@ -54,7 +55,7 @@ static const int32_t tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
 	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
-	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
+	R70, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
 };
 
 // Register access permissions:
@@ -94,7 +95,7 @@ static const TMCRegisterConstant tmc5160_RegisterConstants[] =
 		{ 0x67, 0x00404222 }, // MSLUT[7]
 		{ 0x68, 0xFFFF8056 }, // MSLUTSEL
 		{ 0x69, 0x00F70000 }, // MSLUTSTART
-		{ 0x70, 0x00050480 }  // PWMCONF
+		{ 0x70, 0xC40C001E }  // PWMCONF
 };
 
 void tmc5160_writeDatagram(TMC5160TypeDef *tmc5160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
