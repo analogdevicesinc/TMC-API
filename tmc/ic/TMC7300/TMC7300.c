@@ -275,3 +275,22 @@ void tmc7300_setStandby(TMC7300TypeDef *tmc7300, uint8_t standbyState)
 	}
 	tmc7300->standbyEnabled = standbyState;
 }
+
+uint8_t tmc7300_consistencyCheck(TMC7300TypeDef *tmc7300)
+{
+	// Config has not yet been written -> it cant be consistent
+	if(tmc7300->config->state != CONFIG_READY)
+		return 0;
+
+	// Standby is enabled -> registers cant be accessed
+	if(tmc7300_getStandby(tmc7300))
+		return 0;
+
+	// Check constant shadow registers consistent with actual registers
+	for(size_t i = 0; i < ARRAY_SIZE(tmc7300_registerConstants); i++)
+		if(tmc7300->config->shadowRegister[tmc7300_registerConstants[i].address] != tmc7300_readInt(tmc7300, tmc7300_registerConstants[i].address))
+			return 1;
+
+	// No inconsistency detected
+	return 0;
+}

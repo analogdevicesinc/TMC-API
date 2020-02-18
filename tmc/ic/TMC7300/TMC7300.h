@@ -94,4 +94,6 @@ void tmc7300_set_slave(TMC7300TypeDef *tmc7300, uint8_t slaveAddress);
 uint8_t tmc7300_getStandby(TMC7300TypeDef *tmc7300);
 void tmc7300_setStandby(TMC7300TypeDef *tmc7300, uint8_t standbyState);
 
+uint8_t tmc7300_consistencyCheck(TMC7300TypeDef *tmc7300);
+
 #endif /* TMC_IC_TMC7300_H_ */
