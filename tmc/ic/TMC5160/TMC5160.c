@@ -1,147 +1,278 @@
 /*
  * TMC5160.c
  *
- *  Created on: 04.07.2017
- *      Author: LK based on ED based on BS
+ *  Created on: 03.07.2017
+ *      Author: LK
  */
 
 #include "TMC5160.h"
 
-// todo ADD API 3: Some Registers have default hardware configuration from OTP, we shouldnt overwrite those - add the weak write register permission and use it here (LH)
-// Default Register Values
-#define R00 0x00000008  // GCONF
-#define R09 0x00010606  // SHORT_CONF
-#define R0A 0x00080400  // DRV_CONF
-#define R10 0x00070A03  // IHOLD_IRUN
-#define R11 0x0000000A  // TPOWERDOWN
-#define R2B 0x00000001  // VSTOP
-#define R3A 0x00010000  // ENC_CONST
-#define R60 0xAAAAB554  // MSLUT[0]
-#define R61 0x4A9554AA  // MSLUT[1]
-#define R62 0x24492929  // MSLUT[2]
-#define R63 0x10104222  // MSLUT[3]
-#define R64 0xFBFFFFFF  // MSLUT[4]
-#define R65 0xB5BB777D  // MSLUT[5]
-#define R66 0x49295556  // MSLUT[6]
-#define R67 0x00404222  // MSLUT[7]
-#define R68 0xFFFF8056  // MSLUTSEL
-#define R69 0x00F70000  // MSLUTSTART
-#define R6C 0x00410153  // CHOPCONF
-#define R70 0xC40C001E  // PWMCONF
-
-/* Register access permissions:
- * 0: none (reserved)
- * 1: read
- * 2: write
- * 3: read/write
- * 7: read^write (seperate functions/values)
- */
-const uint8_t tmc5160_defaultRegisterAccess[TMC5160_REGISTER_COUNT] =
-{
-//	0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
-	3, 7, 1, 2, 7, 2, 2, 1, 1, 2, 2, 2, 1, 0, 0, 0, // 0x00 - 0x0F
-	2, 2, 1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 0x10 - 0x1F
-	3, 3, 1, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 3, 0, 0, // 0x20 - 0x2F
-	0, 0, 0, 2, 3, 7, 1, 0, 3, 3, 2, 7, 1, 2, 0, 0, // 0x30 - 0x3F
-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 0x40 - 0x4F
-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 0x50 - 0x5F
-	2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 1, // 0x60 - 0x6F
-	2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0  // 0x70 - 0x7F
-};
-
-const int32_t tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
-{
-//	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
-	R00, 0,   0,   0,   0,   0,   0,   0,   0,   R09, R0A, 0,   0,   0,   0,   0, // 0x00 - 0x0F
-	R10, R11, 0,   0,   0,   0,   0,   0,   0,   0,   0,   R2B, 0,   0,   0,   0, // 0x10 - 0x1F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x30 - 0x3F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
-	R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
-	R70, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  // 0x70 - 0x7F
-};
-
 // => SPI wrapper
-extern void tmc5160_writeDatagram(uint8_t motor, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-extern void tmc5160_writeInt(uint8_t motor, uint8_t address, int value);
-extern int tmc5160_readInt(uint8_t motor, uint8_t address);
+// Send [length] bytes stored in the [data] array over SPI and overwrite [data]
+// with the reply. The first byte sent/received is data[0].
+extern void tmc5160_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
 // <= SPI wrapper
 
-void tmc5160_initConfig(TMC5160TypeDef *tmc5160)
+// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
+void tmc5160_writeDatagram(TMC5160TypeDef *tmc5160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
+{
+	uint8_t data[5] = { address | TMC5160_WRITE_BIT, x1, x2, x3, x4 };
+	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
+
+	int32_t value = (x1 << 24) | (x2 << 16) | (x3 << 8) | x4;
+
+	// Write to the shadow register and mark the register dirty
+	address = TMC_ADDRESS(address);
+	tmc5160->config->shadowRegister[address] = value;
+	tmc5160->registerAccess[address] |= TMC_ACCESS_DIRTY;
+}
+
+// Write an integer to the given address
+void tmc5160_writeInt(TMC5160TypeDef *tmc5160, uint8_t address, int32_t value)
+{
+	tmc5160_writeDatagram(tmc5160, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
+}
+
+// Read an integer from the given address
+int32_t tmc5160_readInt(TMC5160TypeDef *tmc5160, uint8_t address)
+{
+	address = TMC_ADDRESS(address);
+
+	// register not readable -> shadow register copy
+	if(!TMC_IS_READABLE(tmc5160->registerAccess[address]))
+		return tmc5160->config->shadowRegister[address];
+
+	uint8_t data[5] = { 0, 0, 0, 0, 0 };
+
+	data[0] = address;
+	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
+
+	data[0] = address;
+	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
+
+	return (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
+}
+
+// Initialize a TMC5160 IC.
+// This function requires:
+//     - tmc5160: The pointer to a TMC5160TypeDef struct, which represents one IC
+//     - channel: The channel index, which will be sent back in the SPI callback
+//     - config: A ConfigurationTypeDef struct, which will be used by the IC
+//     - registerResetState: An int32_t array with 128 elements. This holds the values to be used for a reset.
+void tmc5160_init(TMC5160TypeDef *tmc5160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
 {
 	tmc5160->velocity  = 0;
 	tmc5160->oldTick   = 0;
 	tmc5160->oldX      = 0;
 
-	int i;
+	tmc5160->config               = config;
+	tmc5160->config->callback     = NULL;
+	tmc5160->config->channel      = channel;
+	tmc5160->config->configIndex  = 0;
+	tmc5160->config->state        = CONFIG_READY;
+
+	size_t i;
 	for(i = 0; i < TMC5160_REGISTER_COUNT; i++)
 	{
 		tmc5160->registerAccess[i]      = tmc5160_defaultRegisterAccess[i];
-		tmc5160->registerResetState[i]  = tmc5160_defaultRegisterResetState[i];
+		tmc5160->registerResetState[i]  = registerResetState[i];
 	}
 }
 
-void tmc5160_writeConfiguration(uint8_t motor, TMC5160TypeDef *tmc5160, ConfigurationTypeDef *TMC5160_config)
+// Fill the shadow registers of hardware preset non-readable registers
+// Only needed if you want to 'read' those registers e.g to display the value
+// in the TMCL IDE register browser
+void tmc5160_fillShadowRegisters(TMC5160TypeDef *tmc5160)
 {
-	uint8_t *ptr = &TMC5160_config->configIndex;
-	const int32_t *settings = (TMC5160_config->state == CONFIG_RESTORE) ? TMC5160_config->shadowRegister : tmc5160->registerResetState;
+	// Check if we have constants defined
+	if(ARRAY_SIZE(tmc5160_RegisterConstants) == 0)
+		return;
 
-	while((*ptr < TMC5160_REGISTER_COUNT) && !TMC_IS_WRITABLE(tmc5160->registerAccess[*ptr]))
-		(*ptr)++;
-
-	if(*ptr < TMC5160_REGISTER_COUNT)
+	size_t i, j;
+	for(i = 0, j = 0; i < TMC5160_REGISTER_COUNT; i++)
 	{
-		tmc5160_writeInt(motor, *ptr, settings[*ptr]);
-		(*ptr)++;
+		// We only need to worry about hardware preset, write-only registers
+		// that have not yet been written (no dirty bit) here.
+		if(tmc5160->registerAccess[i] != TMC_ACCESS_W_PRESET)
+			continue;
+
+		// Search the constant list for the current address. With the constant
+		// list being sorted in ascended order, we can walk through the list
+		// until the entry with an address equal or greater than i
+		while(j < ARRAY_SIZE(tmc5160_RegisterConstants) && (tmc5160_RegisterConstants[j].address < i))
+			j++;
+
+		// Abort when we reach the end of the constant list
+		if (j == ARRAY_SIZE(tmc5160_RegisterConstants))
+			break;
+
+		// If we have an entry for our current address, write the constant
+		if(tmc5160_RegisterConstants[j].address == i)
+		{
+			tmc5160->config->shadowRegister[i] = tmc5160_RegisterConstants[j].value;
+		}
+	}
+}
+
+// Reset the TMC5160.
+uint8_t tmc5160_reset(TMC5160TypeDef *tmc5160)
+{
+	if(tmc5160->config->state != CONFIG_READY)
+		return false;
+
+	// Reset the dirty bits and wipe the shadow registers
+	size_t i;
+	for(i = 0; i < TMC5160_REGISTER_COUNT; i++)
+	{
+		tmc5160->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
+		tmc5160->config->shadowRegister[i] = 0;
+	}
+
+	tmc5160->config->state        = CONFIG_RESET;
+	tmc5160->config->configIndex  = 0;
+
+	return true;
+}
+
+// Restore the TMC5160 to the state stored in the shadow registers.
+// This can be used to recover the IC configuration after a VM power loss.
+uint8_t tmc5160_restore(TMC5160TypeDef *tmc5160)
+{
+	if(tmc5160->config->state != CONFIG_READY)
+		return false;
+
+	tmc5160->config->state        = CONFIG_RESTORE;
+	tmc5160->config->configIndex  = 0;
+
+	return true;
+}
+
+// Change the values the IC will be configured with when performing a reset.
+void tmc5160_setRegisterResetState(TMC5160TypeDef *tmc5160, const int32_t *resetState)
+{
+	size_t i;
+	for(i = 0; i < TMC5160_REGISTER_COUNT; i++)
+	{
+		tmc5160->registerResetState[i] = resetState[i];
+	}
+}
+
+// Register a function to be called after completion of the configuration mechanism
+void tmc5160_setCallback(TMC5160TypeDef *tmc5160, tmc5160_callback callback)
+{
+	tmc5160->config->callback = (tmc_callback_config) callback;
+}
+
+// Helper function: Configure the next register.
+static void writeConfiguration(TMC5160TypeDef *tmc5160)
+{
+	uint8_t *ptr = &tmc5160->config->configIndex;
+	const int32_t *settings;
+
+	if(tmc5160->config->state == CONFIG_RESTORE)
+	{
+		settings = tmc5160->config->shadowRegister;
+		// Find the next restorable register
+		while((*ptr < TMC5160_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc5160->registerAccess[*ptr]))
+		{
+			(*ptr)++;
+		}
 	}
 	else
 	{
-		TMC5160_config->state = CONFIG_READY;
+		settings = tmc5160->registerResetState;
+		// Find the next resettable register
+		while((*ptr < TMC5160_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc5160->registerAccess[*ptr]))
+		{
+			(*ptr)++;
+		}
+	}
+
+	if(*ptr < TMC5160_REGISTER_COUNT)
+	{
+		tmc5160_writeInt(tmc5160, *ptr, settings[*ptr]);
+		(*ptr)++;
+	}
+	else // Finished configuration
+	{
+		if(tmc5160->config->callback)
+		{
+			((tmc5160_callback)tmc5160->config->callback)(tmc5160, tmc5160->config->state);
+		}
+
+		tmc5160->config->state = CONFIG_READY;
 	}
 }
 
-void tmc5160_periodicJob(uint8_t motor, uint32_t tick, TMC5160TypeDef *tmc5160, ConfigurationTypeDef *TMC5160_config)
+// Call this periodically
+void tmc5160_periodicJob(TMC5160TypeDef *tmc5160, uint32_t tick)
 {
-	volatile uint8_t mot = motor;
-	if(TMC5160_config->state != CONFIG_READY)
+	if(tmc5160->config->state != CONFIG_READY)
 	{
-		tmc5160_writeConfiguration(motor, tmc5160, TMC5160_config);
+		writeConfiguration(tmc5160);
 		return;
 	}
 
-	int XActual;
+	int32_t XActual;
 	uint32_t tickDiff;
 
-	if((tickDiff = tick-tmc5160->oldTick) >= 5) // measured speed dx/dt
+	// Calculate velocity v = dx/dt
+	if((tickDiff = tick - tmc5160->oldTick) >= 5)
 	{
-		XActual = tmc5160_readInt(motor, TMC5160_XACTUAL);
-		TMC5160_config->shadowRegister[TMC5160_XACTUAL] = XActual;
-		tmc5160->velocity = (int) ((float) ((XActual-tmc5160->oldX) / (float) tickDiff) * (float) 1048.576);
+		XActual = tmc5160_readInt(tmc5160, TMC5160_XACTUAL);
+		// ToDo CHECK 2: API Compatibility - write alternative algorithm w/o floating point? (LH)
+		tmc5160->velocity = (uint32_t) ((float32_t) ((XActual - tmc5160->oldX) / (float32_t) tickDiff) * (float32_t) 1048.576);
 
 		tmc5160->oldX     = XActual;
 		tmc5160->oldTick  = tick;
 	}
 }
 
-uint8_t tmc5160_reset(ConfigurationTypeDef *TMC5160_config)
+// Rotate with a given velocity (to the right)
+void tmc5160_rotate(TMC5160TypeDef *tmc5160, int32_t velocity)
 {
-	if(TMC5160_config->state != CONFIG_READY)
-		return 0;
-
-	TMC5160_config->state        = CONFIG_RESET;
-	TMC5160_config->configIndex  = 0;
-
-	return 1;
+	// Set absolute velocity
+	tmc5160_writeInt(tmc5160, TMC5160_VMAX, abs(velocity));
+	// Set direction
+	tmc5160_writeInt(tmc5160, TMC5160_RAMPMODE, (velocity >= 0) ? TMC5160_MODE_VELPOS : TMC5160_MODE_VELNEG);
 }
 
-uint8_t tmc5160_restore(ConfigurationTypeDef *TMC5160_config)
+// Rotate to the right
+void tmc5160_right(TMC5160TypeDef *tmc5160, uint32_t velocity)
 {
-	if(TMC5160_config->state != CONFIG_READY)
-		return 0;
+	tmc5160_rotate(tmc5160, velocity);
+}
 
-	TMC5160_config->state        = CONFIG_RESTORE;
-	TMC5160_config->configIndex  = 0;
+// Rotate to the left
+void tmc5160_left(TMC5160TypeDef *tmc5160, uint32_t velocity)
+{
+	tmc5160_rotate(tmc5160, -velocity);
+}
 
-	return 1;
+// Stop moving
+void tmc5160_stop(TMC5160TypeDef *tmc5160)
+{
+	tmc5160_rotate(tmc5160, 0);
+}
+
+// Move to a specified position with a given velocity
+void tmc5160_moveTo(TMC5160TypeDef *tmc5160, int32_t position, uint32_t velocityMax)
+{
+	tmc5160_writeInt(tmc5160, TMC5160_RAMPMODE, TMC5160_MODE_POSITION);
+
+	// VMAX also holds the target velocity in velocity mode.
+	// Re-write the position mode maximum velocity here.
+	tmc5160_writeInt(tmc5160, TMC5160_VMAX, velocityMax);
+
+	tmc5160_writeInt(tmc5160, TMC5160_XTARGET, position);
+}
+
+// Move by a given amount with a given velocity
+// This function will write the absolute target position to *ticks
+void tmc5160_moveBy(TMC5160TypeDef *tmc5160, int32_t *ticks, uint32_t velocityMax)
+{
+	// determine actual position and add numbers of ticks to move
+	*ticks += tmc5160_readInt(tmc5160, TMC5160_XACTUAL);
+
+	tmc5160_moveTo(tmc5160, *ticks, velocityMax);
 }
