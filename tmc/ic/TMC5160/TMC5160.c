@@ -276,3 +276,18 @@ void tmc5160_moveBy(TMC5160TypeDef *tmc5160, int32_t *ticks, uint32_t velocityMa
 
 	tmc5160_moveTo(tmc5160, *ticks, velocityMax);
 }
+
+uint8_t tmc5160_consistencyCheck(TMC5160TypeDef *tmc5160)
+{
+	// Config has not yet been written -> it cant be consistent
+	if(tmc5160->config->state != CONFIG_READY)
+		return 0;
+
+	// Check constant shadow registers consistent with actual registers
+	for(size_t i = 0; i < TMC5160_REGISTER_COUNT; i++)
+		if(tmc5160->config->shadowRegister[i] != tmc5160_readInt(tmc5160, i))
+			return 1;
+
+	// No inconsistency detected
+	return 0;
+}

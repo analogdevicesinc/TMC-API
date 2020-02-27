@@ -117,4 +117,6 @@ void tmc5160_stop(TMC5160TypeDef *tmc5160);
 void tmc5160_moveTo(TMC5160TypeDef *tmc5160, int32_t position, uint32_t velocityMax);
 void tmc5160_moveBy(TMC5160TypeDef *tmc5160, int32_t *ticks, uint32_t velocityMax);
 
+uint8_t tmc5160_consistencyCheck(TMC5160TypeDef *tmc5160);
+
 #endif /* TMC_IC_TMC5160_H_ */
