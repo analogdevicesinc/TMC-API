@@ -44,7 +44,7 @@ typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
 //   0x01: read
 //   0x02: write
 //   0x03: read/write
-//   0x13: read/write, seperate functions/values for reading or writing
+//   0x13: read/write, separate functions/values for reading or writing
 //   0x23: read/write, flag register (write to clear)
 //   0x42: write, has hardware presets on reset
 static const uint8_t tmc2209_defaultRegisterAccess[TMC2209_REGISTER_COUNT] =

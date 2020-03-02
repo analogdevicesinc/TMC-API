@@ -115,7 +115,7 @@ void tmc5072_init(TMC5072TypeDef *tmc5072, uint8_t channel, ConfigurationTypeDef
 	/*
 	 * TODO: Config initialization
 	 * We can either explicitly initialize in each IC's init respectively,
-	 * or do that with a seperate function config_init where also the channel is set.
+	 * or do that with a separate function config_init where also the channel is set.
 	 */
 	tmc5072->config->callback     = NULL;
 	tmc5072->config->channel      = channel;

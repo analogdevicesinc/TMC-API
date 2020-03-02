@@ -42,7 +42,7 @@ typedef void (*tmc2041_callback)(TMC2041TypeDef*, ConfigState);
 // 0x01: read
 // 0x02: write
 // 0x03: read/write
-// 0x13: read/write, seperate functions/values for reading or writing
+// 0x13: read/write, separate functions/values for reading or writing
 // 0x21: read to clear
 static const uint8_t tmc2041_defaultRegisterAccess[TMC2041_REGISTER_COUNT] = {
 //	0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F

@@ -29,7 +29,7 @@
 //   0x01: read
 //   0x02: write
 //   0x03: read/write
-//   0x13: read/write, seperate functions/values for reading or writing
+//   0x13: read/write, separate functions/values for reading or writing
 //   0x21: read, flag register (read to clear)
 //   0x42: write, has hardware presets on reset
 static const uint8_t tmc5161_defaultRegisterAccess[TMC5161_REGISTER_COUNT] =

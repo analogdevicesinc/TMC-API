@@ -19,7 +19,7 @@
  * 1: read
  * 2: write
  * 3: read/write
- * 7: read^write (seperate functions/values)
+ * 7: read^write (separate functions/values)
  */
 const uint8_t tmc2224_defaultRegisterAccess[TMC2224_REGISTER_COUNT] =
 {

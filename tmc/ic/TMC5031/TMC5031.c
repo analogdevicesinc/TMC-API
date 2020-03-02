@@ -29,7 +29,7 @@
  * 1: read
  * 2: write
  * 3: read/write
- * 7: read^write (seperate functions/values)
+ * 7: read^write (separate functions/values)
  */
 const uint8_t tmc5031_defaultRegisterAccess[TMC5031_REGISTER_COUNT] = {
 //	0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
