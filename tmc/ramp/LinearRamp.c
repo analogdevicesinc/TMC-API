@@ -114,7 +114,7 @@ void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp)
 		}
 
 		// limit positionRampTargetVelocity to maxRampTargetVelocity
-		linearRamp->rampVelocity = tmc_limitInt(linearRamp->rampVelocity, -abs(maxRampTargetVelocity), abs(maxRampTargetVelocity));
+		//linearRamp->rampVelocity = tmc_limitInt(linearRamp->rampVelocity, -abs(maxRampTargetVelocity), abs(maxRampTargetVelocity));
 
 		// do position ramping using actual ramp velocity to update dX
 		int64_t dX = ((int64_t)linearRamp->rampVelocity * (int64_t)linearRamp->encoderSteps) / ((int64_t)60) + linearRamp->lastdXRest;
