@@ -61,11 +61,11 @@ static const int32_t tmc4361A_defaultRegisterResetState[TMC4361A_REGISTER_COUNT]
 //     0x01: read
 //     0x02: write
 //     0x03: read/write
-//     0x13: read/write, seperate functions/values for reading or writing
+//     0x13: read/write, separate functions/values for reading or writing
 //     0x23: read/write, holds read or write to clear flags
 //     0x42: write, has hardware presets on reset
 //     0x43: read/write, has hardware presets on reset
-//     0x53: read/write, has hardware presets on reset, seperate functions/values for reading or writing
+//     0x53: read/write, has hardware presets on reset, separate functions/values for reading or writing
 static const uint8_t tmc4361A_defaultRegisterAccess[TMC4361A_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F

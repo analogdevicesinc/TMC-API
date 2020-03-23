@@ -197,6 +197,8 @@ int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp)
 
 	// Count acceleration steps needed for decelerating later
 	linearRamp->accelerationSteps += (abs(linearRamp->rampVelocity) < abs(linearRamp->targetVelocity)) ? accelerating : -accelerating;
+	if (linearRamp->accelerationSteps < 0)
+		linearRamp->accelerationSteps = 0;
 
 	return dx;
 }
@@ -255,15 +257,15 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 			else
 			{
 				// We're still too fast, we're going to miss the target position
-				// Let the decceleration continue until velocity is zero, then either
+				// Let the deceleration continue until velocity is zero, then either
 				// home when within homing distance or start a new ramp (RAMP_DRIVING)
 				// towards the target.
 			}
 		}
 		else
-		{
+		{	// We're not at the target position
 			if(linearRamp->rampVelocity != 0)
-			{	// Still deccelerating
+			{	// Still decelerating
 
 				// Calculate distance to target (positive = driving towards target)
 				if(linearRamp->rampVelocity > 0)
@@ -279,17 +281,18 @@ void tmc_ramp_linear_compute_position(TMC_LinearRamp *linearRamp)
 				{
 					linearRamp->state = TMC_RAMP_LINEAR_STATE_DRIVING;
 				}
-				break;
-			}
-
-			if(abs(linearRamp->targetPosition - linearRamp->rampPosition) <= linearRamp->homingDistance)
-			{	// Within homing distance - drive with stop velocity
-				linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition)? linearRamp->stopVelocity : -linearRamp->stopVelocity;
 			}
 			else
-			{	// Not within homing distance - start a new motion by switching to RAMP_IDLE
-				// Since (targetPosition != actualPosition) a new ramp will be started.
-				linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
+			{	// Standing still (not at the target position)
+				if(abs(linearRamp->targetPosition - linearRamp->rampPosition) <= linearRamp->homingDistance)
+				{	// Within homing distance - drive with stop velocity
+					linearRamp->targetVelocity = (linearRamp->targetPosition > linearRamp->rampPosition)? linearRamp->stopVelocity : -linearRamp->stopVelocity;
+				}
+				else
+				{	// Not within homing distance - start a new motion by switching to RAMP_IDLE
+					// Since (targetPosition != actualPosition) a new ramp will be started.
+					linearRamp->state = TMC_RAMP_LINEAR_STATE_IDLE;
+				}
 			}
 		}
 		break;

@@ -287,7 +287,7 @@ static const uint16_t IntSinTable[4096]={
  * 1: read
  * 2: write
  * 3: read/write
- * 7: read^write (seperate functions/values)
+ * 7: read^write (separate functions/values)
  */
 // Table that shows if a TMC475 register can also be read (1)
 static const uint8_t TMC457RegisterReadable[128]=
