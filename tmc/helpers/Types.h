@@ -5,6 +5,12 @@
  *      Author: ed
  */
 
+// Turn off the integer typedefs by uncommenting the following two defines.
+// If your IDE (e.g. Arduino IDE) already defines these types, deactivating
+// these typedefs will fix errors and/or warnings.
+//#define TMC_SKIP_UINT_TYPEDEFS // Disable u8, u16, u32, uint8, uint16 and uint32 typedefs
+//#define TMC_SKIP_INT_TYPEDEFS  // Disable s8, s16, s32, int8, int16 and int32 typedefs
+
 #ifndef TMC_TYPES_H_
 #define TMC_TYPES_H_
 
@@ -30,6 +36,7 @@ typedef double float64_t;
 #ifndef TMC_TYPES_INTEGERS_UNSIGNED
 #define TMC_TYPES_INTEGERS_UNSIGNED
 
+#ifndef TMC_SKIP_UINT_TYPEDEFS
 typedef uint8_t  u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
@@ -37,6 +44,7 @@ typedef uint32_t u32;
 typedef uint8_t       uint8;
 typedef uint16_t      uint16;
 typedef uint32_t      uint32;
+#endif /* TMC_SKIP_UINT_TYPEDEFS */
 
 #define u8_MAX   (uint8_t)   255
 #define u10_MAX  (uint16_t)  1023
@@ -49,11 +57,12 @@ typedef uint32_t      uint32;
 #define u24_MAX  (uint32_t)  16777215uL
 #define u32_MAX  (uint32_t)  4294967295uL
 
-#endif
+#endif /* TMC_TYPES_INTEGERS_UNSIGNED */
 
 #ifndef TMC_TYPES_INTEGERS_SIGNED
 #define TMC_TYPES_INTEGERS_SIGNED
 
+#ifndef TMC_SKIP_INT_TYPEDEFS
 typedef int8_t   s8;
 typedef int16_t  s16;
 typedef int32_t  s32;
@@ -61,6 +70,7 @@ typedef int32_t  s32;
 typedef int8_t       int8;
 typedef int16_t      int16;
 typedef int32_t      int32;
+#endif /* TMC_SKIP_INT_TYPEDEFS */
 
 #define s8_MAX   (int8_t)   127
 #define s8_MIN   (int8_t)   -128
@@ -71,17 +81,17 @@ typedef int32_t      int32;
 #define s32_MAX  (int32_t)  2147483647
 #define s32_MIN  (int32_t)  -2147483648
 
-#endif
+#endif /* TMC_TYPES_INTEGERS_SIGNED */
 
-#endif
+#endif /* TMC_TYPES_INTEGERS */
 
 #ifndef TMC_TYPES_NULL
 #define TMC_TYPES_NULL
 
 #ifndef NULL
 #define NULL ((void *) 0)
-#endif
+#endif /* NULL */
 
-#endif
+#endif /* TMC_TYPES_NULL */
 
 #endif /* TMC_TYPES_H_ */
