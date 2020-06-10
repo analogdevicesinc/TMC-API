@@ -14,7 +14,7 @@
 // Default precision of the calculations. Internal calculations use a precision
 // of 1/TMC_RAMP_LINEAR_PRECISION for acceleration and velocity.
 // When using 2**N as precision, this results in N digits of precision.
-#define TMC_RAMP_LINEAR_DEFAULT_PRECISION (1<<17)
+#define TMC_RAMP_LINEAR_DEFAULT_PRECISION ((uint32_t)1<<17)
 
 // Position mode: When hitting the target position a velocity below the V_STOP threshold will be cut off to velocity 0
 #define TMC_RAMP_LINEAR_DEFAULT_HOMING_DISTANCE 5

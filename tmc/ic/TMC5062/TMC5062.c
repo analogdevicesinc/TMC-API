@@ -318,11 +318,11 @@ uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t channel, TMC5062_Micr
 	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT6(channel), table->LUT_6);
 	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT7(channel), table->LUT_7);
 
-	uint32_t tmp =   (table->X3 << 24) | (table->X2 << 16) | (table->X1 << 8)
+	uint32_t tmp =   ((uint32_t)table->X3 << 24) | ((uint32_t)table->X2 << 16) | (table->X1 << 8)
 			     | (table->W3 <<  6) | (table->W2 <<  4) | (table->W1 << 2) | (table->W0);
 	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUTSEL(channel), tmp);
 
-	tmp = (table->START_SIN90 << 16) | (table->START_SIN);
+	tmp = ((uint32_t)table->START_SIN90 << 16) | (table->START_SIN);
 	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUTSTART(channel), tmp);
 
 	return 1;

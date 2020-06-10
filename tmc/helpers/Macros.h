@@ -13,7 +13,7 @@
  * If it is 1, the value is negative and the Bits 32 to n+1 are set to 1
  * If it is 0, the value remains unchanged
  */
-#define CAST_Sn_TO_S32(value, n) ((value) | (((value) & (1<<((n)-1)))? ~((0x1<<(n))-1) : 0 ))
+#define CAST_Sn_TO_S32(value, n) ((value) | (((value) & ((uint32_t)1<<((n)-1)))? ~(((uint32_t)1<<(n))-1) : 0 ))
 
 // Min/Max macros
 #ifndef MIN

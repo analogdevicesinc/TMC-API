@@ -16,7 +16,7 @@ void tmc2041_writeDatagram(TMC2041TypeDef *tmc2041, uint8_t address, uint8_t x1,
 	uint8_t data[5] = { address | TMC2041_WRITE_BIT, x1, x2, x3, x4 };
 	tmc2041_readWriteArray(tmc2041->config->channel, &data[0], 5);
 
-	int value = (x1 << 24) | (x2 << 16) | (x3 << 8) | x4;
+	int value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
 
 	// Write to the shadow register and mark the register dirty
 	address = address & ~TMC2041_WRITE_BIT;
@@ -45,7 +45,7 @@ int32_t tmc2041_readInt(TMC2041TypeDef *tmc2041, uint8_t address)
 	data[0] = address;
 	tmc2041_readWriteArray(tmc2041->config->channel, &data[0], 5);
 
-	return (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
+	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
 }
 
 void tmc2041_init(TMC2041TypeDef *tmc2041, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)

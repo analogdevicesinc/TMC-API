@@ -85,8 +85,8 @@ void tmc43xx_writeBytes(uint8_t Axis, uint8_t Address, uint8_t x1, uint8_t x2, u
 {
 	uint32_t Value;
 
-	Value  = x1 << 24;
-	Value |= x2 << 16;
+	Value  = (uint32_t)x1 << 24;
+	Value |= (uint32_t)x2 << 16;
 	Value |= x3 << 8;
 	Value |= x4;
 

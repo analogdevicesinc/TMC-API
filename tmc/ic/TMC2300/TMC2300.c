@@ -77,7 +77,7 @@ int32_t tmc2300_readInt(TMC2300TypeDef *tmc2300, uint8_t address)
 	if (data[7] != tmc2300_CRC8(data, 7))
 		return 0;
 
-	return (data[3] << 24) | (data[4] << 16) | (data[5] << 8) | data[6];
+	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
 }
 
 void tmc2300_init(TMC2300TypeDef *tmc2300, uint8_t channel, ConfigurationTypeDef *tmc2300_config, const int32_t *registerResetState)

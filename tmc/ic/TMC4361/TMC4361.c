@@ -23,7 +23,7 @@ void tmc4361_writeDatagram(TMC4361TypeDef *tmc4361, uint8_t address, uint8_t x1,
 
 	tmc4361->status = data[0];
 
-	value = (x1 << 24) | (x2 << 16) | (x3 << 8) | x4;
+	value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
 
 	// Write to the shadow register and mark the register dirty
 	address = TMC_ADDRESS(address);
@@ -53,7 +53,7 @@ int32_t tmc4361_readInt(TMC4361TypeDef *tmc4361, uint8_t address)
 	tmc4361_readWriteArray(tmc4361->config->channel, &data[0], 5);
 
 	tmc4361->status = data[0];
-	value = (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
+	value = ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
 
 	return value;
 }

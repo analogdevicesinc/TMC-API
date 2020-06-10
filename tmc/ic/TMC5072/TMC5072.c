@@ -17,7 +17,7 @@ void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1,
 	uint8_t data[5] = { address | TMC5072_WRITE_BIT, x1, x2, x3, x4 };
 	tmc5072_readWriteArray(tmc5072->config->channel, &data[0], 5);
 
-	int32_t value = (x1 << 24) | (x2 << 16) | (x3 << 8) | x4;
+	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
 
 	// Write to the shadow register and mark the register dirty
 	address = TMC_ADDRESS(address);
@@ -46,7 +46,7 @@ int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address)
 	data[0] = address;
 	tmc5072_readWriteArray(tmc5072->config->channel, &data[0], 5);
 
-	return (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
+	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
 }
 
 //void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)

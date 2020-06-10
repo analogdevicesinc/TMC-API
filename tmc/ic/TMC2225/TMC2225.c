@@ -68,7 +68,7 @@ int32_t tmc2225_readInt(TMC2225TypeDef *tmc2225, uint8_t address)
 	if (data[7] != tmc2225_CRC8(data, 7))
 		return 0;
 
-	return (data[3] << 24) | (data[4] << 16) | (data[5] << 8) | data[6];
+	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
 }
 
 void tmc2225_init(TMC2225TypeDef *tmc2225, uint8_t channel, ConfigurationTypeDef *tmc2225_config, const int32_t *registerResetState)

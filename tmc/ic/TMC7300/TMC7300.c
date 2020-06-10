@@ -77,7 +77,7 @@ int32_t tmc7300_readInt(TMC7300TypeDef *tmc7300, uint8_t address)
 	if (data[7] != tmc7300_CRC8(data, 7))
 		return 0;
 
-	return (data[3] << 24) | (data[4] << 16) | (data[5] << 8) | data[6];
+	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
 }
 
 void tmc7300_init(TMC7300TypeDef *tmc7300, uint8_t channel, ConfigurationTypeDef *tmc7300_config, const int32_t *registerResetState)
