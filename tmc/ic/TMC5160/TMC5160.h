@@ -43,7 +43,7 @@ typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
 #define R2B 0x00000001  // VSTOP
 #define R3A 0x00010000  // ENC_CONST
 #define R6C 0x00410153  // CHOPCONF
-#define R70 0xC40C001E
+#define R70 0xC40C001E  // PWMCONF
 
 static const int32_t tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
 {
