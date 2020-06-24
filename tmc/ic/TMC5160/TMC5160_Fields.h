@@ -7,6 +7,25 @@
 #ifndef TMC5160_FIELDS_H
 #define TMC5160_FIELDS_H
 
+// Status fields returned with every SPI transaction
+#define TMC5160_SPI_STATUS_RESET_FLAG_MASK          0x01 /* GSTAT[0] - 1: Signals, that a reset has occurred (clear by reading GSTAT) */
+#define TMC5160_SPI_STATUS_RESET_FLAG_SHIFT         0
+#define TMC5160_SPI_STATUS_DRIVER_ERROR_MASK        0x02 /* GSTAT[1] – 1: Signals driver 1 driver error (clear by reading GSTAT) */
+#define TMC5160_SPI_STATUS_DRIVER_ERROR_SHIFT       1
+#define TMC5160_SPI_STATUS_SG2_MASK                 0x04 /* DRV_STATUS[24] – 1: Signals StallGuard flag active */
+#define TMC5160_SPI_STATUS_SG2_SHIFT                2
+#define TMC5160_SPI_STATUS_STANDSTILL_MASK          0x08 /* DRV_STATUS[31] – 1: Signals motor stand still */
+#define TMC5160_SPI_STATUS_STANDSTILL_SHIFT         3
+#define TMC5160_SPI_STATUS_VELOCITY_REACHED_MASK    0x10 /* RAMP_STAT[8] – 1: Signals target velocity reached (motion controller only) */
+#define TMC5160_SPI_STATUS_VELOCITY_REACHED_SHIFT   4
+#define TMC5160_SPI_STATUS_POSITION_REACHED_MASK    0x20 /* RAMP_STAT[9] – 1: Signals target position reached (motion controller only) */
+#define TMC5160_SPI_STATUS_POSITION_REACHED_SHIFT   5
+#define TMC5160_SPI_STATUS_STATUS_STOP_L_MASK       0x40 /* RAMP_STAT[0] – 1: Signals stop left switch status (motion controller only) */
+#define TMC5160_SPI_STATUS_STATUS_STOP_L_SHIFT      6
+#define TMC5160_SPI_STATUS_STATUS_STOP_R_MASK       0x80 /* RAMP_STAT[1] – 1: Signals stop right switch status (motion controller only) */
+#define TMC5160_SPI_STATUS_STATUS_STOP_R_SHIFT      7
+
+// Configuration & status registers
 #define TMC5160_RECALIBRATE_MASK                      0x01 // GCONF //
 #define TMC5160_RECALIBRATE_SHIFT                     0 // min.: 0, max.: 1, default: 0
 #define TMC5160_FASTSTANDSTILL_MASK                   0x02 // GCONF // Timeout for step execution until standstill detection
