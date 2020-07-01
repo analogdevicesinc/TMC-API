@@ -32,13 +32,13 @@ static void standStillCurrentLimitation(TMC2590TypeDef *tmc2590, uint32_t tick)
 	{
 		tmc2590->isStandStillCurrent = 1;
 		// Change to standstill current
-		TMC2590_FIELD_UPDATE(tmc2590, TMC2590_SGCSCONF, TMC2590_CS_MASK, TMC2590_CS_SHIFT, tmc2590->standStillCurrentScale);
+		TMC2590_FIELD_WRITE(tmc2590, TMC2590_SGCSCONF, TMC2590_CS_MASK, TMC2590_CS_SHIFT, tmc2590->standStillCurrentScale);
 	}
 	else
 	{
 		tmc2590->isStandStillCurrent = 0;
 		// Change to run current
-		TMC2590_FIELD_UPDATE(tmc2590, TMC2590_SGCSCONF, TMC2590_CS_MASK, TMC2590_CS_SHIFT, tmc2590->runCurrentScale);
+		TMC2590_FIELD_WRITE(tmc2590, TMC2590_SGCSCONF, TMC2590_CS_MASK, TMC2590_CS_SHIFT, tmc2590->runCurrentScale);
 	}
 }
 

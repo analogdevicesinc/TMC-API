@@ -17,7 +17,7 @@
 // Helper macros
 #define TMC5161_FIELD_READ(tdef, address, mask, shift) \
 	FIELD_GET(tmc5161_readInt(tdef, address), mask, shift)
-#define TMC5161_FIELD_UPDATE(tdef, address, mask, shift, value) \
+#define TMC5161_FIELD_WRITE(tdef, address, mask, shift, value) \
 	(tmc5161_writeInt(tdef, address, FIELD_SET(tmc5161_readInt(tdef, address), mask, shift, value)))
 
 // Factor between 10ms units and internal units for 16MHz

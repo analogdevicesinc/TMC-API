@@ -17,7 +17,7 @@
 // Helper macros
 #define TMC8461_FIELD_READ(tdef, read, address, mask, shift) \
 	FIELD_GET(read(tdef, address), mask, shift)
-#define TMC8461_FIELD_UPDATE(tdef, read, write, address, mask, shift, value) \
+#define TMC8461_FIELD_WRITE(tdef, read, write, address, mask, shift, value) \
 	(write(tdef, address, FIELD_SET(read(tdef, address), mask, shift, value)))
 
 typedef struct {

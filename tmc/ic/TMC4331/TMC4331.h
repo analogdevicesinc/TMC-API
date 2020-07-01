@@ -16,7 +16,7 @@
 // Helper macros
 #define TMC4331_FIELD_READ(tdef, address, mask, shift) \
 	FIELD_GET(tmc4331_readInt(tdef, address), mask, shift)
-#define TMC4331_FIELD_UPDATE(tdef, address, mask, shift, value) \
+#define TMC4331_FIELD_WRITE(tdef, address, mask, shift, value) \
 	(tmc4331_writeInt(tdef, address, FIELD_SET(tmc4331_readInt(tdef, address), mask, shift, value)))
 
 // Typedefs

@@ -17,7 +17,7 @@
 // Helper macros
 #define TMC2300_FIELD_READ(tdef, address, mask, shift) \
 	FIELD_GET(tmc2300_readInt(tdef, address), mask, shift)
-#define TMC2300_FIELD_UPDATE(tdef, address, mask, shift, value) \
+#define TMC2300_FIELD_WRITE(tdef, address, mask, shift, value) \
 	(tmc2300_writeInt(tdef, address, FIELD_SET(tmc2300_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC

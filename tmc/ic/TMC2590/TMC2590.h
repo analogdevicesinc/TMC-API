@@ -16,7 +16,7 @@
 
 #define TMC2590_FIELD_READ(tdef, address, mask, shift) \
 	FIELD_GET(tmc2590_readInt(tdef, address), mask, shift)
-#define TMC2590_FIELD_UPDATE(tdef, address, mask, shift, value) \
+#define TMC2590_FIELD_WRITE(tdef, address, mask, shift, value) \
 	(tmc2590_writeInt(tdef, address, FIELD_SET(tmc2590_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC

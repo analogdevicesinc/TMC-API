@@ -16,7 +16,7 @@
 // Helper macros
 #define TMC2130_FIELD_READ(tdef, address, mask, shift) \
 	FIELD_GET(tmc2130_readInt(tdef, address), mask, shift)
-#define TMC2130_FIELD_UPDATE(tdef, address, mask, shift, value) \
+#define TMC2130_FIELD_WRITE(tdef, address, mask, shift, value) \
 	(tmc2130_writeInt(tdef, address, FIELD_SET(tmc2130_readInt(tdef, address), mask, shift, value)))
 
 // Typedefs
