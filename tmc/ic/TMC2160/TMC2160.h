@@ -10,7 +10,7 @@
 
 #include "tmc/helpers/API_Header.h"
 #include "TMC2160_Constants.h"
-#include "TMC2160_Mask_Shift.h"
+#include "TMC2160_Fields.h"
 #include "TMC2160_Register.h"
 
 // Helper macros
