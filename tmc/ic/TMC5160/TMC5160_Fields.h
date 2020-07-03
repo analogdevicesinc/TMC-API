@@ -940,12 +940,12 @@
 #define TMC5160_DC_SG_SHIFT                           16 // min.: 0, max.: 255, default: 0
 #define TMC5160_SG_RESULT_MASK                        0x03FF // DRV_STATUS // Mechanical load measurement: The stallGuard2 result gives a means to measure mechanical motor load. A higher value means lower mechanical load. A value of 0 signals highest load. With optimum SGT setting, this is an indicator for a motor stall. The stall detection compares SG_RESULT to 0 in order to detect a stall. SG_RESULT is used as a base for coolStep operation, by comparing it to a programmable upper and a lower limit. It is not applicable in stealthChop mode. SG_RESULT is ALSO applicable when dcStep is active. stallGuard2 works best with microstep operation. Temperature measurement: In standstill, no stallGuard2 result can be obtained. SG_RESULT shows the chopper on-time for motor coil A instead. If the motor is moved to a determined microstep position at a certain current setting, a comparison of the chopper on-time can help to get a rough estimation of motor temperature. As the motor heats up, its coil resistance rises and the chopper on-time increases.
 #define TMC5160_SG_RESULT_SHIFT                       0 // min.: 0, max.: 1023, default: 0
-//#define //TMC5160__MASK                             0x1000 // DRV_STATUS // s2vsa
-//#define //TMC5160__SHIFT                            12 // min.: 0, max.: 1, default: 0
-//#define ////TMC5160__MASK                           0x2000 // DRV_STATUS // s2vsb
-//#define ////TMC5160__SHIFT                          13 // min.: 0, max.: 1, default: 0
-//#define //////TMC5160__MASK                         0x4000 // DRV_STATUS // stealth
-//#define //////TMC5160__SHIFT                        14 // min.: 0, max.: 1, default: 0
+#define TMC5160_S2VSA_MASK                            0x1000 // DRV_STATUS // s2vsa
+#define TMC5160_S2VSA_SHIFT                           12 // min.: 0, max.: 1, default: 0
+#define TMC5160_S2VSB_MASK                            0x2000 // DRV_STATUS // s2vsb
+#define TMC5160_S2VSB_SHIFT                           13 // min.: 0, max.: 1, default: 0
+#define TMC5160_STEALTH_MASK                          0x4000 // DRV_STATUS // stealth
+#define TMC5160_STEALTH_SHIFT                         14 // min.: 0, max.: 1, default: 0
 #define TMC5160_FSACTIVE_MASK                         0x8000 // DRV_STATUS //
 #define TMC5160_FSACTIVE_SHIFT                        15 // min.: 0, max.: 1, default: 0
 #define TMC5160_CS_ACTUAL_MASK                        0x1F0000 // DRV_STATUS //
