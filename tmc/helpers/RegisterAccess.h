@@ -61,7 +61,7 @@
 typedef struct
 {
 	uint8_t address;
-	int32_t value;
+	uint32_t value;
 } TMCRegisterConstant;
 
 // Helper define:

@@ -146,9 +146,8 @@ void tmc4361A_fillShadowRegisters(TMC4361ATypeDef *tmc4361A)
 	if(ARRAY_SIZE(tmc4361A_RegisterConstants) == 0)
 		return;
 
-	int i;
-	uint8_t j = 0;
-	for(i = 0; i < TMC4361A_REGISTER_COUNT; i++)
+	size_t i, j;
+	for(i = 0, j = 0; i < TMC4361A_REGISTER_COUNT; i++)
 	{
 		// We only need to worry about hardware preset, write-only registers
 		// that have not yet been written (no dirty bit) here.

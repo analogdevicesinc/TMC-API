@@ -72,7 +72,8 @@ void tmc2160_fillShadowRegisters(TMC2160TypeDef *tmc2160)
 	if(ARRAY_SIZE(tmc2160_RegisterConstants) == 0)
 		return;
 
-	for(size_t i = 0, j = 0; i < TMC2160_REGISTER_COUNT; i++)
+	size_t i, j;
+	for (i = 0, j = 0; i < TMC2160_REGISTER_COUNT; i++)
 	{
 		// We only need to worry about hardware preset, write-only registers
 		// that have not yet been written (no dirty bit) here.

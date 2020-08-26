@@ -90,7 +90,8 @@ void tmc5062_fillShadowRegisters(TMC5062TypeDef *tmc5062)
 	if(ARRAY_SIZE(tmc5062_RegisterConstants) == 0)
 		return;
 
-	for(size_t i = 0, j = 0; i < TMC5062_REGISTER_COUNT; i++)
+	size_t i, j;
+	for(i = 0, j = 0; i < TMC5062_REGISTER_COUNT; i++)
 	{
 		// We only need to worry about hardware preset, write-only registers
 		// that have not yet been written (no dirty bit) here.
