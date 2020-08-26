@@ -34,6 +34,7 @@ typedef struct
 	uint8_t (*restore)     (void);
 	tmc_callback_config  callback;
 	uint8_t                   channel;
+	void                 *userData;
 } ConfigurationTypeDef;
 
 #endif /* TMC_HELPERS_CONFIG_H_ */
