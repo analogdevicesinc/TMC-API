@@ -22,7 +22,7 @@
 // Typedefs
 typedef struct
 {
-	ConfigurationTypeDef *config;
+	ConfigurationTypeDef config;
 	int32_t registerResetState[TMC2130_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2130_REGISTER_COUNT];
 } TMC2130TypeDef;
@@ -95,7 +95,7 @@ void tmc2130_writeDatagram(TMC2130TypeDef *tmc2130, uint8_t address, uint8_t x1,
 void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8_t address, int32_t value);
 int32_t tmc2130_readInt(TMC2130TypeDef *tmc2130, uint8_t address);
 
-void tmc2130_init(TMC2130TypeDef *tmc2130, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
+void tmc2130_init(TMC2130TypeDef *tmc2130, uint8_t channel, const int32_t *registerResetState);
 void tmc2130_fillShadowRegisters(TMC2130TypeDef *tmc2130);
 uint8_t tmc2130_reset(TMC2130TypeDef *tmc2130);
 uint8_t tmc2130_restore(TMC2130TypeDef *tmc2130);
