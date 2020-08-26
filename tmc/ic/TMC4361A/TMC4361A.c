@@ -160,6 +160,10 @@ void tmc4361A_fillShadowRegisters(TMC4361ATypeDef *tmc4361A)
 		while(j < ARRAY_SIZE(tmc4361A_RegisterConstants) && (tmc4361A_RegisterConstants[j].address < i))
 			j++;
 
+		// Abort when we reach the end of the constant list
+		if (j == ARRAY_SIZE(tmc4361A_RegisterConstants))
+			break;
+
 		// If we have an entry for our current address, write the constant
 		if(tmc4361A_RegisterConstants[j].address == i)
 			tmc4361A->config->shadowRegister[i] = tmc4361A_RegisterConstants[j].value;

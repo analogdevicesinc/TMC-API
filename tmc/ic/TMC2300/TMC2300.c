@@ -127,6 +127,10 @@ static void fillShadowRegisters(TMC2300TypeDef *tmc2300)
 			j++;
 		}
 
+		// Abort when we reach the end of the constant list
+		if (j == ARRAY_SIZE(tmc2300_RegisterConstants))
+			break;
+
 		// If we have an entry for our current address, write the constant
 		if (tmc2300_RegisterConstants[j].address == i)
 		{

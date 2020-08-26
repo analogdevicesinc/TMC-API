@@ -104,6 +104,10 @@ void tmc5062_fillShadowRegisters(TMC5062TypeDef *tmc5062)
 		while(j < ARRAY_SIZE(tmc5062_RegisterConstants) && (tmc5062_RegisterConstants[j].address < i))
 			j++;
 
+		// Abort when we reach the end of the constant list
+		if (j == ARRAY_SIZE(tmc5062_RegisterConstants))
+			break;
+
 		// If we have an entry for our current address, write the constant
 		if(tmc5062_RegisterConstants[j].address == i)
 			tmc5062->config->shadowRegister[i] = tmc5062_RegisterConstants[j].value;

@@ -86,6 +86,10 @@ void tmc2160_fillShadowRegisters(TMC2160TypeDef *tmc2160)
 		while(j < ARRAY_SIZE(tmc2160_RegisterConstants) && (tmc2160_RegisterConstants[j].address < i))
 			j++;
 
+		// Abort when we reach the end of the constant list
+		if (j == ARRAY_SIZE(tmc2160_RegisterConstants))
+			break;
+
 		// If we have an entry for our current address, write the constant
 		if(tmc2160_RegisterConstants[j].address == i)
 			tmc2160->config->shadowRegister[i] = tmc2160_RegisterConstants[j].value;
