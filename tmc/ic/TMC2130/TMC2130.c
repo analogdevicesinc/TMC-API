@@ -13,24 +13,22 @@
 extern void tmc2130_readWriteArray(uint8_t *data, size_t length, void *userData);
 // <= SPI wrapper
 
-// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc2130_writeDatagram(TMC2130TypeDef *tmc2130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
+// Write an integer to the given address
+void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8_t address, int32_t value)
 {
-	uint8_t data[5] = { address | TMC2130_WRITE_BIT, x1, x2, x3, x4 };
-	tmc2130_readWriteArray(&data[0], 5, tmc2130->config.userData);
+	uint8_t data[5];
+	data[0] = address | TMC2130_WRITE_BIT;
+	data[1] = BYTE(value, 3);
+	data[2] = BYTE(value, 2);
+	data[3] = BYTE(value, 1);
+	data[4] = BYTE(value, 0);
 
-	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
+	tmc2130_readWriteArray(&data[0], 5, tmc2130->config.userData);
 
 	// Write to the shadow register and mark the register dirty
 	address = TMC_ADDRESS(address);
 	tmc2130->config.shadowRegister[address] = value;
 	tmc2130->registerAccess[address] |= TMC_ACCESS_DIRTY;
-}
-
-// Write an integer to the given address
-void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8_t address, int32_t value)
-{
-	tmc2130_writeDatagram(tmc2130, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
 }
 
 // Read an integer from the given address
