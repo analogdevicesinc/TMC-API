@@ -100,7 +100,7 @@ uint8_t tmc2130_reset(TMC2130TypeDef *tmc2130);
 uint8_t tmc2130_restore(TMC2130TypeDef *tmc2130);
 void tmc2130_setRegisterResetState(TMC2130TypeDef *tmc2130, const int32_t *resetState);
 void tmc2130_setCallback(TMC2130TypeDef *tmc2130, tmc2130_callback callback);
-void tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32_t tick);
+uint8_t tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32_t tick);
 
 static inline int tmc2130_readField(TMC2130TypeDef *tmc2130, RegisterField field)
 {

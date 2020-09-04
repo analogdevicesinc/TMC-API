@@ -197,7 +197,7 @@ static void writeConfiguration(TMC2130TypeDef *tmc2130)
 }
 
 // Call this periodically
-void tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32_t tick)
+uint8_t tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32_t tick)
 {
 	UNUSED(tick);
 
@@ -205,4 +205,6 @@ void tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32_t tick)
 	{
 		writeConfiguration(tmc2130);
 	}
+
+	return tmc2130->config.state != CONFIG_READY;
 }
