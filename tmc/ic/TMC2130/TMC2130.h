@@ -102,4 +102,14 @@ void tmc2130_setRegisterResetState(TMC2130TypeDef *tmc2130, const int32_t *reset
 void tmc2130_setCallback(TMC2130TypeDef *tmc2130, tmc2130_callback callback);
 void tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32_t tick);
 
+static inline int tmc2130_readField(TMC2130TypeDef *tmc2130, RegisterField field)
+{
+	return TMC2130_FIELD_READ(tmc2130, field.address, field.mask, field.shift);
+}
+
+static inline void tmc2130_writeField(TMC2130TypeDef *tmc2130, RegisterField field, int32_t value)
+{
+	TMC2130_FIELD_WRITE(tmc2130, field.address, field.mask, field.shift, value);
+}
+
 #endif /* TMC_IC_TMC2130_H_ */
