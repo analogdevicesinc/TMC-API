@@ -119,9 +119,12 @@ typedef struct
 #define TMC2130_THIGH_MASK                    0x000FFFFF
 #define TMC2130_THIGH_SHIFT                   0
 #define TMC2130_THIGH_FIELD                   ((RegisterField) { 0x000FFFFF, 0, 0x15 })
-//#define TMC2130_DIRECT_MODE_MASK              0x00FFFFFF
-//#define TMC2130_DIRECT_MODE_SHIFT             0
-//#define TMC2130_DIRECT_MODE_FIELD             ((RegisterField) { 0x00FFFFFF, 0, 0x2D })
+#define TMC2130_DIRECT_CURRENT_A_MASK         0x000000FF
+#define TMC2130_DIRECT_CURRENT_A_SHIFT        0
+#define TMC2130_DIRECT_CURRENT_A_FIELD        ((RegisterField) { 0x000000FF, 0, 0x2D })
+#define TMC2130_DIRECT_CURRENT_B_MASK         0x00FF0000
+#define TMC2130_DIRECT_CURRENT_B_SHIFT        16
+#define TMC2130_DIRECT_CURRENT_B_FIELD        ((RegisterField) { 0x00FF0000, 16, 0x2D })
 #define TMC2130_VDCMIN_MASK                   0x07FFFFFF
 #define TMC2130_VDCMIN_SHIFT                  0
 #define TMC2130_VDCMIN_FIELD                  ((RegisterField) { 0x07FFFFFF, 0, 0x33 })
