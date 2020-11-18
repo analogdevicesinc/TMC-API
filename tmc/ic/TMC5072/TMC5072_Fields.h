@@ -1021,8 +1021,8 @@
 #define TMC5072_SFILT_SHIFT              24 // min.: 0, max.: 1, default: 0
 #define TMC5072_DC_TIME_MASK             0xFF // DCCTRL_M1 // Upper PWM on time limit for commutation (DC_TIME * 1/f CLK ). Set slightly above effective blank time TBL.
 #define TMC5072_DC_TIME_SHIFT            0 // min.: 0, max.: 255, default: 0
-#define TMC5072_DC_SG_MASK               0xFF0000 // DCCTRL_M1 // Max. PWM on time for step loss detection using dcStep stallGuard2 in dcStep mode. (DC_SG * 16/f CLK); Set slightly higher than DC_TIME/16; 0=disable
-#define TMC5072_DC_SG_SHIFT              16 // min.: 0, max.: 255, default: 0
+#define TMC5072_DC_SG_MASK               0xFF00 // DCCTRL_M1 // Max. PWM on time for step loss detection using dcStep stallGuard2 in dcStep mode. (DC_SG * 16/f CLK); Set slightly higher than DC_TIME/16; 0=disable
+#define TMC5072_DC_SG_SHIFT              8 // min.: 0, max.: 255, default: 0
 #define TMC5072_SG_RESULT_MASK           0x03FF // DRV_STATUS_M1 // Mechanical load measurement: The stallGuard2 result gives a means to measure mechanical motor load. A higher value means lower mechanical load. A value of 0 signals highest load. With optimum SGT setting, this is an indicator for a motor stall. The stall detection compares SG_RESULT to 0 in order to detect a stall. SG_RESULT is used as a base for coolStep operation, by comparing it to a programmable upper and a lower limit. It is not applicable in stealthChop mode. SG_RESULT is ALSO applicable when dcStep is active. stallGuard2 works best with microstep operation. Temperature measurement: In standstill, no stallGuard2 result can be obtained. SG_RESULT shows the chopper on-time for motor coil A instead. If the motor is moved to a determined microstep position at a certain current setting, a comparison of the chopper on-time can help to get a rough estimation of motor temperature. As the motor heats up, its coil resistance rises and the chopper on-time increases.
 #define TMC5072_SG_RESULT_SHIFT          0 // min.: 0, max.: 511, default: 0
 #define TMC5072_FSACTIVE_MASK            0x8000 // DRV_STATUS_M1 //
@@ -1153,8 +1153,8 @@
 #define TMC5072_SFILT_SHIFT              24 // min.: 0, max.: 1, default: 0
 #define TMC5072_DC_TIME_MASK             0xFF // DCCTRL_M2 // Upper PWM on time limit for commutation (DC_TIME * 1/f CLK ). Set slightly above effective blank time TBL.
 #define TMC5072_DC_TIME_SHIFT            0 // min.: 0, max.: 255, default: 0
-#define TMC5072_DC_SG_MASK               0xFF0000 // DCCTRL_M2 // Max. PWM on time for step loss detection using dcStep stallGuard2 in dcStep mode. (DC_SG * 16/f CLK); Set slightly higher than DC_TIME/16; 0=disable
-#define TMC5072_DC_SG_SHIFT              16 // min.: 0, max.: 255, default: 0
+#define TMC5072_DC_SG_MASK               0xFF00 // DCCTRL_M2 // Max. PWM on time for step loss detection using dcStep stallGuard2 in dcStep mode. (DC_SG * 16/f CLK); Set slightly higher than DC_TIME/16; 0=disable
+#define TMC5072_DC_SG_SHIFT              8 // min.: 0, max.: 255, default: 0
 #define TMC5072_SG_RESULT_MASK           0x03FF // DRV_STATUS_M2 // Mechanical load measurement: The stallGuard2 result gives a means to measure mechanical motor load. A higher value means lower mechanical load. A value of 0 signals highest load. With optimum SGT setting, this is an indicator for a motor stall. The stall detection compares SG_RESULT to 0 in order to detect a stall. SG_RESULT is used as a base for coolStep operation, by comparing it to a programmable upper and a lower limit. It is not applicable in stealthChop mode. SG_RESULT is ALSO applicable when dcStep is active. stallGuard2 works best with microstep operation. Temperature measurement: In standstill, no stallGuard2 result can be obtained. SG_RESULT shows the chopper on-time for motor coil A instead. If the motor is moved to a determined microstep position at a certain current setting, a comparison of the chopper on-time can help to get a rough estimation of motor temperature. As the motor heats up, its coil resistance rises and the chopper on-time increases.
 #define TMC5072_SG_RESULT_SHIFT          0 // min.: 0, max.: 511, default: 0
 #define TMC5072_FSACTIVE_MASK            0x8000 // DRV_STATUS_M2 //
