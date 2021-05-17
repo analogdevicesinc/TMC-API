@@ -16,7 +16,8 @@ To set up your project to use the TMC-API, simply copy the source files you need
 **For a reference usage of the TMC-API**, visit the [TMC-Evalsystem](https://github.com/trinamic/TMC-EvalSystem)
 
 **To use the TMC-API**, perform the following steps in your code:
-- Call **tmcXXXX_init()** once for each Trinamic IC in your design. This function initializes an *IC object* which represents one pyhsical IC.
+- Implement the **tmcXXXX_readWriteArray()** function in **in your code**. This function provides the necessary hardware access to the TMC-API.
+- Call **tmcXXXX_init()** once for each Trinamic IC in your design. This function initializes an *IC object* which represents one physical IC.
 - Call **tmcXXXX_periodicJob()** periodically. Pass a millisecond timestamp as the *tick* parameter.
 - After initializing, calling **tmcXXXX_reset()** or **tmcXXXX_restore()**, the TMC-API will write multiple registers to the IC (referred to as *IC configuration*). Per call to **tmcXXXX_periodicJob()**, one register will be written until IC configuration is completed.
 - Once the IC configuration is completed, you can use **tmcXXXX_readInt()** and **tmcXXXX_writeInt()** to read and write registers.
