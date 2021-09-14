@@ -137,5 +137,8 @@ void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp)
 	{
 		// use target position directly
 		linearRamp->rampPosition = linearRamp->targetPosition;
+
+		// hold ramp velocity in reset
+		linearRamp->rampVelocity = 0;
 	}
 }
