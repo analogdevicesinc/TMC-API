@@ -16,13 +16,13 @@
 	void Write429Zero(uint8_t Address);
 	void Write429Bytes(uint8_t Address, uint8_t *Bytes);
 	void Write429Datagram(uint8_t Address, uint8_t HighByte, uint8_t MidByte, uint8_t LowByte);
-	void Write429Short(uint8_t Address, int Value);
-	void Write429Int(uint8_t Address, int Value);
+	void Write429U16(uint8_t Address, uint16_t Value);
+	void Write429U24(uint8_t Address, uint32_t Value);
 	uint8_t Read429Status(void);
 	uint8_t Read429Bytes(uint8_t Address, uint8_t *Bytes);
 	uint8_t Read429SingleByte(uint8_t Address, uint8_t Index);
-	int32_t Read429Short(uint8_t Address);
-	int32_t Read429Int(uint8_t Address);
+	int32_t Read429Int12(uint8_t Address);
+	int32_t Read429Int24(uint8_t Address);
 	void Set429RampMode(uint8_t Axis, uint8_t RampMode);
 	void Set429SwitchMode(uint8_t Axis, uint8_t SwitchMode);
 	uint8_t SetAMax(uint8_t Motor, uint32_t AMax);
