@@ -10,6 +10,9 @@
 	#include "tmc/helpers/API_Header.h"
 	#include "TMC429_Register.h"
 
+	// user must provide this function
+	uint8_t ReadWriteSPI(void* p_SPI_DeviceHandle, uint8_t data,bool endTransaction);
+
 	// TMC429 library functions
 	void Init429(void);
 	void ReadWrite429(uint8_t *Read, uint8_t *Write);
