@@ -31,10 +31,10 @@ void tmc_linearRamp_computeRampVelocity(TMC_LinearRamp *linearRamp)
 		// update target velocity according actual set acceleration
 		// (scaling pre-factor of 1000 used for 1ms velocity ramp handling)
 
-		int dV = linearRamp->acceleration;
+		int32_t dV = linearRamp->acceleration;
 
 		// to ensure that small velocity changes at high set acceleration are also possible
-		int maxDTV = abs(linearRamp->targetVelocity - linearRamp->rampVelocity);
+		int32_t maxDTV = abs(linearRamp->targetVelocity - linearRamp->rampVelocity);
 		if (maxDTV < (dV/1000))
 			dV = maxDTV*1000;
 
@@ -93,10 +93,10 @@ void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp)
 			//maxRampTargetVelocity = 0;
 		}
 
-		int dV = linearRamp->acceleration;  // pre-factor ~ 1/1000
+		int32_t dV = linearRamp->acceleration;  // pre-factor ~ 1/1000
 
 		// to ensure that small velocity changes at high set acceleration are also possible
-		int maxDTV = abs(maxRampTargetVelocity - linearRamp->rampVelocity);
+		int32_t maxDTV = abs(maxRampTargetVelocity - linearRamp->rampVelocity);
 		if (maxDTV < (dV / 1000))
 			dV = maxDTV * 1000;
 
@@ -122,13 +122,31 @@ void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp)
 		// scale actual target position
 		int64_t tempActualTargetPosition = (int64_t)linearRamp->rampPosition * 1000;
 
-		// update actual target position
-		tempActualTargetPosition += dX;
+		// reset helper variables if ramp position reached target position
+		if (abs(linearRamp->targetPosition - linearRamp->rampPosition) <= 10) /*abs(dX)*/
+		{
+			// sync ramp position with target position on small deviations
+			linearRamp->rampPosition = linearRamp->targetPosition;
+
+			// update actual target position
+			tempActualTargetPosition = (int64_t)linearRamp->rampPosition * 1000;
+
+			dX = 0;
+			linearRamp->lastdXRest = 0;
+			linearRamp->rampVelocity = 0;
+		}
+		else
+		{
+			// update actual target position
+			tempActualTargetPosition += dX;
+		}
+
+		int64_t absTempActualTargetPosition = (tempActualTargetPosition >= 0) ? tempActualTargetPosition : -tempActualTargetPosition;
 
 		if (tempActualTargetPosition >= 0)
-			linearRamp->lastdXRest = (abs(tempActualTargetPosition) % 1000);
+			linearRamp->lastdXRest = (absTempActualTargetPosition % 1000);
 		else if (tempActualTargetPosition < 0)
-			linearRamp->lastdXRest = -(abs(tempActualTargetPosition) % 1000);
+			linearRamp->lastdXRest = -(absTempActualTargetPosition % 1000);
 
 		// scale actual target position back
 		linearRamp->rampPosition = tempActualTargetPosition / 1000;
