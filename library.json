@@ -1,0 +1,14 @@
+{
+    "name": "TMC-API",
+    "version": "0.1.0",
+    "description": "Official TRINAMIC API library",
+    "keywords": ["tmc", "trinamic"],
+    "build": {
+      "includeDir": ".",
+      "srcDir": "tmc",
+      "srcFilter": [
+        "-<*>",
+        "+<ic/TMC2209>"
+      ]
+    }
+  }
