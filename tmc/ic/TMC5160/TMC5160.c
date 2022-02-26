@@ -42,12 +42,7 @@ int32_t tmc5160_readInt(TMC5160TypeDef *tmc5160, uint8_t address)
 	if(!TMC_IS_READABLE(tmc5160->registerAccess[address]))
 		return tmc5160->config->shadowRegister[address];
 
-	uint8_t data[5] = { 0, 0, 0, 0, 0 };
-
-	data[0] = address;
-	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
-
-	data[0] = address;
+	uint8_t data[5] = { address, 0, 0, 0, 0 };
 	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
 
 	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
