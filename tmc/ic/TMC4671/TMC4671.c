@@ -303,6 +303,9 @@ void tmc4671_doEncoderInitializationMode0(uint8_t motor, uint8_t *initState, uin
 		*last_UQ_UD_EXT = (uint32_t) tmc4671_readInt(motor, TMC4671_UQ_UD_EXT);
 		*last_PHI_E_EXT = (int16_t) tmc4671_readRegister16BitValue(motor, TMC4671_PHI_E_EXT, BIT_0_TO_15);
 
+		//switch motion mode for running motor in open loop
+		tmc4671_writeInt(motor, TMC4671_MODE_RAMP_MODE_MOTION, TMC4671_MOTION_MODE_UQ_UD_EXT);
+
 		// set ABN_DECODER_PHI_E_OFFSET to zero
 		tmc4671_writeRegister16BitValue(motor, TMC4671_ABN_DECODER_PHI_E_PHI_M_OFFSET, BIT_16_TO_31, 0);
 
