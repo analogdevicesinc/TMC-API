@@ -289,11 +289,6 @@ uint8_t tmc2300_consistencyCheck(TMC2300TypeDef *tmc2300)
 	if(tmc2300_getStandby(tmc2300))
 		return 0;
 
-	// Check constant shadow registers consistent with actual registers
-	for(size_t i = 0; i < ARRAY_SIZE(tmc2300_RegisterConstants); i++)
-		if(tmc2300->config->shadowRegister[tmc2300_RegisterConstants[i].address] != tmc2300_readInt(tmc2300, tmc2300_RegisterConstants[i].address))
-			return 1;
-
 	// No inconsistency detected
 	return 0;
 }
