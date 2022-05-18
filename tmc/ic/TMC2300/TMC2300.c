@@ -278,17 +278,3 @@ void tmc2300_setStandby(TMC2300TypeDef *tmc2300, uint8_t standbyState)
 	}
 	tmc2300->standbyEnabled = standbyState;
 }
-
-uint8_t tmc2300_consistencyCheck(TMC2300TypeDef *tmc2300)
-{
-	// Config has not yet been written -> it cant be consistent
-	if(tmc2300->config->state != CONFIG_READY)
-		return 0;
-
-	// Standby is enabled -> registers cant be accessed
-	if(tmc2300_getStandby(tmc2300))
-		return 0;
-
-	// No inconsistency detected
-	return 0;
-}
