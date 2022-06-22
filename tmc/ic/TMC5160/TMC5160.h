@@ -6,6 +6,7 @@
  */
 
 #ifndef TMC_IC_TMC5160_H_
+#define TMC_IC_TMC5160_H_
 
 #include "tmc/helpers/API_Header.h"
 #include "TMC5160_Register.h"

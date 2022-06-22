@@ -5,8 +5,8 @@
  *      Author: LK
  */
 
-#ifndef TMC_IC_TMC5072_H_
-#define TMC_IC_TMC5072_H_
+#ifndef TMC_IC_TMC2041_H_
+#define TMC_IC_TMC2041_H_
 
 #include "tmc/helpers/API_Header.h"
 #include "TMC2041_Register.h"
@@ -79,4 +79,4 @@ void tmc2041_setRegisterResetState(TMC2041TypeDef *tmc2041, const int32_t *reset
 void tmc2041_setCallback(TMC2041TypeDef *tmc2041, tmc2041_callback callback);
 void tmc2041_periodicJob(TMC2041TypeDef *tmc2041, uint32_t tick);
 
-#endif /* TMC_IC_TMC5072_H_ */
+#endif /* TMC_IC_TMC2041_H_ */
