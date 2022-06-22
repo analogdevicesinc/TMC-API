@@ -52,6 +52,8 @@ static const int32_t tmc4330_defaultRegisterResetState[TMC4330_REGISTER_COUNT] =
 	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   0,   0,   0,   N_A, 0    // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
 #undef R10
 #undef R20
 

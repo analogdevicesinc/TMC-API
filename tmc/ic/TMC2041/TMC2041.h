@@ -68,6 +68,14 @@ static const int32_t tmc2041_defaultRegisterResetState[TMC2041_REGISTER_COUNT] =
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R7C, 0,   0,   0  // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R00
+#undef R30
+#undef R50
+#undef R6C
+#undef R7C
+
 void tmc2041_writeDatagram(TMC2041TypeDef *tmc2041, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc2041_writeInt(TMC2041TypeDef *tmc2041, uint8_t address, int32_t value);
 int32_t tmc2041_readInt(TMC2041TypeDef *tmc2041, uint8_t address);

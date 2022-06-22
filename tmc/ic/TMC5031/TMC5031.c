@@ -55,6 +55,23 @@ const int32_t tmc5031_defaultRegisterResetState[TMC5031_REGISTER_COUNT] = {
 	R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0  // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R30
+#undef R32
+#undef R3A
+#undef R60
+#undef R61
+#undef R62
+#undef R63
+#undef R64
+#undef R65
+#undef R66
+#undef R67
+#undef R68
+#undef R69
+#undef R6C
+
 // => SPI wrapper
 extern void tmc5031_writeDatagram(uint8_t motor, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 extern void tmc5031_writeInt(uint8_t motor, uint8_t address, int value);

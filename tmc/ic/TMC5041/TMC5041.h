@@ -80,6 +80,25 @@ static const int32_t tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] =
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R7C, 0,   0,   0  // 70 - 7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R30
+#undef R32
+#undef R50
+#undef R52
+#undef R60
+#undef R61
+#undef R62
+#undef R63
+#undef R64
+#undef R65
+#undef R66
+#undef R67
+#undef R68
+#undef R69
+#undef R6C
+#undef R7C
+
 void tmc5041_writeDatagram(TMC5041TypeDef *tmc5041, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5041_writeInt(TMC5041TypeDef *tmc5041, uint8_t address, int32_t value);
 int32_t tmc5041_readInt(TMC5041TypeDef *tmc5041, uint8_t address);

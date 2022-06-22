@@ -62,6 +62,8 @@ static const int32_t tmc2208_defaultRegisterResetState[TMC2208_REGISTER_COUNT] =
 	R70, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
 #undef R00
 #undef R10
 #undef R11

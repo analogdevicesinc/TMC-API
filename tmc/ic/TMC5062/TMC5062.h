@@ -62,14 +62,16 @@ static const int32_t tmc5062_defaultRegisterResetState[TMC5062_REGISTER_COUNT] =
 	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R7C, 0,   0,   0  // 0x70 - 0x7F
 };
 
-#undef R50
-#undef R52
-#undef R5A
-#undef R7C
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
 #undef R30
 #undef R32
 #undef R3A
+#undef R50
+#undef R52
+#undef R5A
 #undef R6C
+#undef R7C
 
 static const uint8_t tmc5062_defaultRegisterAccess[TMC5062_REGISTER_COUNT] = {
 //	0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
