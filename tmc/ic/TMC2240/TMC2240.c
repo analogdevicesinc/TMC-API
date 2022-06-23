@@ -6,6 +6,7 @@
  */
 
 #include "TMC2240.h"
+extern void tmc2240_writeInt(TMC2240TypeDef *tmc2240, uint8_t address, int32_t value);
 
 
 // Initialize a TMC2240 IC.
@@ -135,6 +136,7 @@ static void writeConfiguration(TMC2240TypeDef *tmc2240)
 // Call this periodically
 void tmc2240_periodicJob(TMC2240TypeDef *tmc2240, uint32_t tick)
 {
+	UNUSED(tick);
 	if(tmc2240->config->state != CONFIG_READY)
 	{
 		writeConfiguration(tmc2240);
