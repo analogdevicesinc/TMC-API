@@ -194,7 +194,7 @@ uint8_t Read429SingleByte(uint8_t Address, uint8_t Index)
 }
 
 /***************************************************************//**
-	 \fn Read429Short(uint8_t Address)
+	 \fn Read429Int12(uint8_t Address)
 	 \brief Read TMC429 register (12 bit)
 	 \param Address  TMC429 register address (see TMC429.h)
 
@@ -203,7 +203,7 @@ uint8_t Read429SingleByte(uint8_t Address, uint8_t Index)
 	 This functions reads a TMC429 12 bit register and sign-extends the
 	 register value to 32 bit.
 ********************************************************************/
-int32_t Read429Short(uint8_t Address)
+int32_t Read429Int12(uint8_t Address)
 {
 	uint8_t Read[4], Write[4];
 	int32_t Result;
@@ -219,7 +219,7 @@ int32_t Read429Short(uint8_t Address)
 }
 
 /***************************************************************//**
-	 \fn Read429Int(uint8_t Address)
+	 \fn Read429Int24(uint8_t Address)
 	 \brief Read TMC429 register (24 bit)
 	 \param Address  TMC429 register address (see TMC429.h)
 
@@ -228,7 +228,7 @@ int32_t Read429Short(uint8_t Address)
 	 This functions reads a TMC429 24 bit register and sign-extends the
 	 register value to 32 bit.
 ********************************************************************/
-int32_t Read429Int(uint8_t Address)
+int32_t Read429Int24(uint8_t Address)
 {
 	uint8_t Read[4], Write[4];
 	int32_t Result;
@@ -320,9 +320,9 @@ uint8_t SetAMax(uint8_t Motor, uint32_t AMax)
 	pd = -1;
 
 	if(ramp_div >= pulse_div)
-		p = AMax / ( 128.0 * (1<<ramp_div-pulse_div));  // Exponent positive or 0
+		p = AMax / ( 128.0 * (1<<(ramp_div-pulse_div)));  // Exponent positive or 0
 	else
-		p = AMax / ( 128.0 / (1<<pulse_div-ramp_div));  // Exponent negative
+		p = AMax / ( 128.0 / (1<<(pulse_div-ramp_div)));  // Exponent negative
 
 	p_reduced = p*0.988;
 
@@ -342,7 +342,7 @@ uint8_t SetAMax(uint8_t Motor, uint32_t AMax)
 	Data[1] = (uint8_t) pm;
 	Data[2] = (uint8_t) pd;
 	Write429Bytes(TMC429_IDX_PMUL_PDIV(Motor), Data);
-	Write429Short(TMC429_IDX_AMAX(Motor), AMax);
+	Write429U16(TMC429_IDX_AMAX(Motor), AMax);
 
 	return 0;
 }
@@ -380,16 +380,16 @@ void Init429(void)
 			Write429Zero(addr | TMC429_MOTOR(motor));
 	}
 
-	Write429Int(TMC429_IDX_IF_CONFIG_429, TMC429_IFCONF_EN_SD | TMC429_IFCONF_EN_REFR | TMC429_IFCONF_SDO_INT);
+	Write429U24(TMC429_IDX_IF_CONFIG_429, TMC429_IFCONF_EN_SD | TMC429_IFCONF_EN_REFR | TMC429_IFCONF_SDO_INT);
 	Write429Datagram(TMC429_IDX_SMGP, 0x00, 0x00, 0x02);
 
 	for(motor = 0; motor < 3; motor++)
 	{
 		Write429Datagram(TMC429_IDX_PULSEDIV_RAMPDIV(motor), 0x00, 0x37, 0x06);
 		Write429Datagram(TMC429_IDX_REFCONF_RM(motor), 0x00, TMC429_NO_REF, 0x00);
-		Write429Short(TMC429_IDX_VMIN(motor), 1);
+		Write429U16(TMC429_IDX_VMIN(motor), 1);
 
-		Write429Int(TMC429_IDX_VMAX(motor), 1000);
+		Write429U24(TMC429_IDX_VMAX(motor), 1000);
 		SetAMax(motor, 1000);
 	}
 }
