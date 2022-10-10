@@ -40,7 +40,4 @@ void max22216_init(MAX22216TypeDef *max22216, uint8_t channel);
 uint8_t max22216_getSlaveAddress(const MAX22216TypeDef *max22216);
 void max22216_setSlaveAddress(MAX22216TypeDef *max22216, uint8_t slaveAddress);
 
-// pwm control
-void max22216_disablePWM(MAX22216TypeDef *max22216);
-
 #endif /* API_IC_MAX22216_H */

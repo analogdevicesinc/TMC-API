@@ -151,8 +151,3 @@ int16_t max22216_getS16CircleDifference(int16_t newValue, int16_t oldValue)
 {
 	return (newValue - oldValue);
 }
-
-void max22216_disablePWM(MAX22216TypeDef *max22216)
-{
-	max22216_writeInt(max22216, MAX22216_PWM_SV_CHOP, 0);
-}
