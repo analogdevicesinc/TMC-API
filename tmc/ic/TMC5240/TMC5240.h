@@ -127,6 +127,4 @@ void tmc5240_stop(TMC5240TypeDef *tmc5240);
 void tmc5240_moveTo(TMC5240TypeDef *tmc5240, int32_t position, uint32_t velocityMax);
 void tmc5240_moveBy(TMC5240TypeDef *tmc5240, int32_t *ticks, uint32_t velocityMax);
 
-uint8_t tmc5240_consistencyCheck(TMC5240TypeDef *tmc5240);
-
 #endif /* TMC_IC_TMC5240_H_ */

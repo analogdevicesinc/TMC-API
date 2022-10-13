@@ -2,7 +2,7 @@
  * TMC2240.h
  *
  *  Created on: 17.03.2017
- *      Author: JH based on TMC2240.h
+ *      Author: JH
  */
 
 #ifndef TMC_IC_TMC2240_H_
@@ -18,10 +18,6 @@
 #define TMC2240_FIELD_WRITE(tdef, address, mask, shift, value) \
 	(tmc2240_writeInt(tdef, address, FIELD_SET(tmc2240_readInt(tdef, address), mask, shift, value)))
 
-// Factor between 10ms units and internal units for 16MHz
-//#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
-// TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
-
 // Typedefs
 typedef struct
 {
@@ -36,7 +32,7 @@ typedef struct
 typedef void (*tmc2240_callback)(TMC2240TypeDef*, ConfigState);
 
 // Default Register values
-#define R00 0x00000008  // GCONF
+#define R00 0x00002108  // GCONF
 #define R0A 0x00000020  // DRVCONF
 #define R10 0x00070A03  // IHOLD_IRUN
 #define R11 0x0000000A  // TPOWERDOWN

@@ -41,14 +41,6 @@ uint8_t tmc2240_reset(TMC2240TypeDef *tmc2240)
 	if(tmc2240->config->state != CONFIG_READY)
 		return false;
 
-	// Reset the dirty bits and wipe the shadow registers
-	//size_t i;
-	//for(i = 0; i < TMC2240_REGISTER_COUNT; i++)
-	//{
-	//	tmc2240->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
-	//	tmc2240->config->shadowRegister[i] = 0;
-	//}
-
 	tmc2240->config->state        = CONFIG_RESET;
 	tmc2240->config->configIndex  = 0;
 
@@ -97,18 +89,7 @@ static void writeConfiguration(TMC2240TypeDef *tmc2240)
 {
 	uint8_t *ptr = &tmc2240->config->configIndex;
 	const int32_t *settings;
-/*
-	if(tmc2240->config->state == CONFIG_RESTORE)
-	{
-		settings = tmc2240->config->shadowRegister;
-		// Find the next restorable register
-		while((*ptr < TMC2240_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc2240->registerAccess[*ptr]))
-		{
-			(*ptr)++;
-		}
-	}
-	else*/
-//	{
+
 	settings = tmc2240->registerResetState;
 	// Find the next resettable register
 	while((*ptr < TMC2240_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc2240->registerAccess[*ptr]))
@@ -145,17 +126,3 @@ void tmc2240_periodicJob(TMC2240TypeDef *tmc2240, uint32_t tick)
 }
 
 
-uint8_t tmc2240_consistencyCheck(TMC2240TypeDef *tmc2240)
-{
-	// Config has not yet been written -> it cant be consistent
-	if(tmc2240->config->state != CONFIG_READY)
-		return 0;
-
-	// Check constant shadow registers consistent with actual registers
-	//for(size_t i = 0; i < TMC2240_REGISTER_COUNT; i++)
-	//	if(tmc2240->config->shadowRegister[i] != tmc2240_readInt(tmc2240, i))
-	//		return 1;
-
-	// No inconsistency detected
-	return 0;
-}
