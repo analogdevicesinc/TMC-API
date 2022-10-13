@@ -40,13 +40,6 @@ uint8_t tmc5240_reset(TMC5240TypeDef *tmc5240)
 	if(tmc5240->config->state != CONFIG_READY)
 		return false;
 
-	// Reset the dirty bits and wipe the shadow registers
-	//size_t i;
-	//for(i = 0; i < TMC5240_REGISTER_COUNT; i++)
-	//{
-	//	tmc5240->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
-	//	tmc5240->config->shadowRegister[i] = 0;
-	//}
 
 	tmc5240->config->state        = CONFIG_RESET;
 	tmc5240->config->configIndex  = 0;
@@ -96,18 +89,7 @@ static void writeConfiguration(TMC5240TypeDef *tmc5240)
 {
 	uint8_t *ptr = &tmc5240->config->configIndex;
 	const int32_t *settings;
-/*
-	if(tmc5240->config->state == CONFIG_RESTORE)
-	{
-		settings = tmc5240->config->shadowRegister;
-		// Find the next restorable register
-		while((*ptr < TMC5240_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc5240->registerAccess[*ptr]))
-		{
-			(*ptr)++;
-		}
-	}
-	else*/
-//	{
+
 	settings = tmc5240->registerResetState;
 	// Find the next resettable register
 	while((*ptr < TMC5240_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc5240->registerAccess[*ptr]))
@@ -205,17 +187,3 @@ void tmc5240_moveBy(TMC5240TypeDef *tmc5240, int32_t *ticks, uint32_t velocityMa
 	tmc5240_moveTo(tmc5240, *ticks, velocityMax);
 }
 
-uint8_t tmc5240_consistencyCheck(TMC5240TypeDef *tmc5240)
-{
-	// Config has not yet been written -> it cant be consistent
-	if(tmc5240->config->state != CONFIG_READY)
-		return 0;
-
-	// Check constant shadow registers consistent with actual registers
-	//for(size_t i = 0; i < TMC5240_REGISTER_COUNT; i++)
-	//	if(tmc5240->config->shadowRegister[i] != tmc5240_readInt(tmc5240, i))
-	//		return 1;
-
-	// No inconsistency detected
-	return 0;
-}
