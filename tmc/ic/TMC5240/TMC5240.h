@@ -6,6 +6,7 @@
  */
 
 #ifndef TMC_IC_TMC5240_H_
+#define TMC_IC_TMC5240_H_
 
 #include "tmc/helpers/API_Header.h"
 #include "tmc/helpers/Constants.h"
