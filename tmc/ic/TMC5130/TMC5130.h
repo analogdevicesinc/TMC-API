@@ -49,6 +49,12 @@ static const int32_t tmc5130_defaultRegisterResetState[TMC5130_REGISTER_COUNT] =
 	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R10
+#undef R3A
+#undef R6C
+
 // Register access permissions:
 //   0x00: none (reserved)
 //   0x01: read

@@ -73,6 +73,13 @@ static const int32_t tmc2226_defaultRegisterResetState[TMC2226_REGISTER_COUNT] =
 	R70, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R00
+#undef R10
+#undef R6C
+#undef R70
+
 // Register constants (only required for 0x42 registers, since we do not have
 // any way to find out the content but want to hold the actual value in the
 // shadow register so an application (i.e. the TMCL IDE) can still display

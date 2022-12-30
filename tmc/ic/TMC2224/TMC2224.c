@@ -46,6 +46,14 @@ const int32_t tmc2224_defaultRegisterResetState[TMC2224_REGISTER_COUNT] = {
 	R70, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R00
+#undef R10
+#undef R11
+#undef R6C
+#undef R70
+
 // => SPI wrapper
 extern void tmc2224_writeRegister(uint8_t motor, uint8_t address, int32_t value);
 extern void tmc2224_readRegister(uint8_t motor, uint8_t address, int32_t *value);

@@ -67,6 +67,10 @@ static const int32_t tmc7300_defaultRegisterResetState[TMC7300_REGISTER_COUNT] =
 	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R00
+
 // Register constants (only required for 0x42 and 0x43 registers)
 // This allows us to fill the shadow registers with the register content in
 // order to provide the TMCL-IDE with correct values to display.

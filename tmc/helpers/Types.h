@@ -92,6 +92,14 @@ typedef int32_t      int32;
 #define NULL ((void *) 0)
 #endif /* NULL */
 
+#ifndef FALSE
+#define FALSE false
+#endif
+
+#ifndef TRUE
+#define TRUE true
+#endif
+
 #endif /* TMC_TYPES_NULL */
 
 #endif /* TMC_TYPES_H_ */

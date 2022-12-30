@@ -74,6 +74,17 @@ static const int32_t tmc5072_defaultRegisterResetState[TMC5072_REGISTER_COUNT] =
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R7C, 0,   0,   0  // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R30
+#undef R32
+#undef R3A
+#undef R50
+#undef R52
+#undef R5A
+#undef R6C
+#undef R7C
+
 static const TMCRegisterConstant tmc5072_RegisterConstants[] =
 {		// Use ascending addresses!
 		{ 0x60, 0xAAAAB554 }, // MSLUT[0]
@@ -87,15 +98,6 @@ static const TMCRegisterConstant tmc5072_RegisterConstants[] =
 		{ 0x68, 0xFFFF8056 }, // MSLUTSEL
 		{ 0x69, 0x00F70000 }  // MSLUTSTART
 };
-
-#undef R30
-#undef R32
-#undef R3A
-#undef R50
-#undef R52
-#undef R5A
-#undef R6C
-#undef R7C
 
 void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8_t address, int32_t value);

@@ -80,6 +80,4 @@
 #define _16_64(__3, __2, __1, __0)                     (((__3) << SHORT3_SHIFT) | ((__2) << SHORT2_SHIFT) | ((__1) << SHORT1_SHIFT) | ((__0) << SHORT0_SHIFT))
 #define _32_64(__1, __0)                               (((__1) << WORD1_SHIFT) | ((__0) << WORD0_SHIFT))
 
-#define SIGN_EXTEND(base, bit, extended) ((extended) ((base) | ((((extended)(base)) & (1 << (bit))) << ((sizeof(extended) * 8) - (bit) - 1))))
-
 #endif /* TMC_BITS_H_ */

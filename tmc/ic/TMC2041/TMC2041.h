@@ -5,8 +5,8 @@
  *      Author: LK
  */
 
-#ifndef TMC_IC_TMC5072_H_
-#define TMC_IC_TMC5072_H_
+#ifndef TMC_IC_TMC2041_H_
+#define TMC_IC_TMC2041_H_
 
 #include "tmc/helpers/API_Header.h"
 #include "TMC2041_Register.h"
@@ -68,6 +68,14 @@ static const int32_t tmc2041_defaultRegisterResetState[TMC2041_REGISTER_COUNT] =
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R7C, 0,   0,   0  // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R00
+#undef R30
+#undef R50
+#undef R6C
+#undef R7C
+
 void tmc2041_writeDatagram(TMC2041TypeDef *tmc2041, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc2041_writeInt(TMC2041TypeDef *tmc2041, uint8_t address, int32_t value);
 int32_t tmc2041_readInt(TMC2041TypeDef *tmc2041, uint8_t address);
@@ -79,4 +87,4 @@ void tmc2041_setRegisterResetState(TMC2041TypeDef *tmc2041, const int32_t *reset
 void tmc2041_setCallback(TMC2041TypeDef *tmc2041, tmc2041_callback callback);
 void tmc2041_periodicJob(TMC2041TypeDef *tmc2041, uint32_t tick);
 
-#endif /* TMC_IC_TMC5072_H_ */
+#endif /* TMC_IC_TMC2041_H_ */
