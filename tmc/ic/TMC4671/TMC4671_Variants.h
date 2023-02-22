@@ -3,8 +3,8 @@
  *  Author: ED
  */
 
-#ifndef TMC4671_VARIANTS_H
-#define TMC4671_VARIANTS_H
+#ifndef TMC4671_VARIANTS_H_
+#define TMC4671_VARIANTS_H_
 
 #define CHIPINFO_ADDR_SI_TYPE                                   0
 #define CHIPINFO_ADDR_SI_VERSION                                1
@@ -123,4 +123,4 @@
 #define INTERIM_ADDR_STATUS_PARAM_10                            214
 #define INTERIM_ADDR_STATUS_PARAM_32                            215
 
-#endif
+#endif /* TMC4671_VARIANTS_H_ */

@@ -2,11 +2,11 @@
  * TMC4671_Registers.h
  *
  *  Created on: 18.02.2016
- *      Author: ed
+ *      Author: ED
  */
 
-#ifndef TMC4671_REGISTERS_H
-#define TMC4671_REGISTERS_H
+#ifndef TMC4671_REGISTERS_H_
+#define TMC4671_REGISTERS_H_
 
 	// ===== TMC4671 register set =====
 
@@ -90,10 +90,6 @@
 	#define TMC4671_AENC_DECODER_PHI_E_PHI_M_OFFSET    0x45
 	#define TMC4671_AENC_DECODER_PHI_E_PHI_M           0x46
 	#define TMC4671_AENC_DECODER_POSITION              0x47
-
-	#define TMC4671_PIDIN_TORQUE_TARGET_FLUX_TARGET    0x4A
-	#define TMC4671_PIDIN_VELOCITY_TARGET              0x4B
-	#define TMC4671_PIDIN_POSITION_TARGET              0x4C
 
 	#define TMC4671_CONFIG_DATA                        0x4D
 	#define TMC4671_CONFIG_ADDR                        0x4E
@@ -201,4 +197,4 @@
 	#define TMC4671_POSITION_PHI_M_AENC			11
 	#define TMC4671_POSITION_PHI_M_HAL			12
 
-#endif /* TMC4671_REGISTERS_H */
+#endif /* TMC4671_REGISTERS_H_ */
