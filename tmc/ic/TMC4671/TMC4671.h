@@ -2,7 +2,7 @@
  * TMC4671.h
  *
  *  Created on: 30.09.2016
- *      Author: ed
+ *      Author: ED
  */
 
 #ifndef TMC_IC_TMC4671_H_

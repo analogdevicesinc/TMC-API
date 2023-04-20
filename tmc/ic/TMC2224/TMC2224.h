@@ -31,7 +31,7 @@ typedef struct {
 
 void tmc2224_initConfig(TMC2224TypeDef *TMC2224);
 void tmc2224_periodicJob(uint8_t motor, uint32_t tick, TMC2224TypeDef *TMC2224, ConfigurationTypeDef *TMC2224_config);
-uint8_t tmc2224_reset(ConfigurationTypeDef *TMC2224_config);
+uint8_t tmc2224_reset(TMC2224TypeDef *tmc2224, ConfigurationTypeDef *TMC2224_config);
 uint8_t tmc2224_restore(ConfigurationTypeDef *TMC2224_config);
 
 uint8_t tmc2224_get_slave(TMC2224TypeDef *tmc2224);

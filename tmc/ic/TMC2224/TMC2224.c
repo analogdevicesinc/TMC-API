@@ -104,11 +104,17 @@ void tmc2224_periodicJob(uint8_t motor, uint32_t tick, TMC2224TypeDef *tmc2224, 
 	}
 }
 
-uint8_t tmc2224_reset(ConfigurationTypeDef *TMC2224_config)
+uint8_t tmc2224_reset(TMC2224TypeDef *tmc2224, ConfigurationTypeDef *TMC2224_config)
 {
 	if(TMC2224_config->state != CONFIG_READY)
 		return 0;
 
+	// Reset the dirty bits and wipe the shadow registers
+	for(size_t i = 0; i < TMC2224_REGISTER_COUNT; i++)
+	{
+		tmc2224->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
+		TMC2224_config->shadowRegister[i] = 0;
+	}
 	TMC2224_config->state        = CONFIG_RESET;
 	TMC2224_config->configIndex  = 0;
 
