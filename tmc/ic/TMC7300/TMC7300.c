@@ -94,7 +94,7 @@ void tmc7300_init(TMC7300TypeDef *tmc7300, uint8_t channel, ConfigurationTypeDef
 	// Start in standby
 	tmc7300->standbyEnabled = 1;
 
-	int i;
+	int32_t i;
 	for(i = 0; i < TMC7300_REGISTER_COUNT; i++)
 	{
 		tmc7300->registerAccess[i]      = tmc7300_defaultRegisterAccess[i];

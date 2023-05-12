@@ -57,7 +57,7 @@ int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address)
 //	tmc5072_readWrite(tmc5072->channel, x3, false);
 //	tmc5072_readWrite(tmc5072->channel, x4, true);
 //
-//	int value = x1;
+//	int32_t value = x1;
 //	value <<= 8;
 //	value |= x2;
 //	value <<= 8;
@@ -88,7 +88,7 @@ int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address)
 //	tmc5072_readWrite(tmc5072->channel, 0, true);
 //
 //	tmc5072_readWrite(tmc5072->channel, address, false);
-//	int value = tmc5072_readWrite(tmc5072->channel, 0, false);
+//	int32_t value = tmc5072_readWrite(tmc5072->channel, 0, false);
 //	value <<= 8;
 //	value |= tmc5072_readWrite(tmc5072->channel, 0, false);
 //	value <<= 8;
@@ -140,7 +140,7 @@ void tmc5072_init(TMC5072TypeDef *tmc5072, uint8_t channel, ConfigurationTypeDef
 //	tmc5072->vMaxModified[0]  = false;
 //	tmc5072->vMaxModified[1]  = false;
 //
-//	int i;
+//	int32_t i;
 //	for(i=0; i < TMC5072_REGISTER_COUNT; i++)
 //	{
 //		tmc5072->registerAccess[i]      = tmc5072_defaultRegisterAccess[i];
@@ -262,7 +262,7 @@ void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32_t tick)
 
 //void tmc5072_periodicJob(uint8_t motor, uint32_t tick, TMC5072TypeDef *tmc5072, ConfigurationTypeDef *TMC5072_config)
 //{
-//	int xActual;
+//	int32_t xActual;
 //	uint32_t tickDiff;
 //
 //	if(TMC5072_config->state != CONFIG_READY)
@@ -276,18 +276,18 @@ void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32_t tick)
 //
 //		xActual = tmc5072_readInt(0, TMC5072_XACTUAL(motor));
 //		TMC5072_config->shadowRegister[TMC5072_XACTUAL(motor)] = xActual;
-//		tmc5072->velocity[motor] = (int) ((float) (abs(xActual-tmc5072->oldX[motor]) / (float) tickDiff) * (float) 1048.576);
+//		tmc5072->velocity[motor] = (int32_t) ((float) (abs(xActual-tmc5072->oldX[motor]) / (float) tickDiff) * (float) 1048.576);
 //		tmc5072->oldX[motor] = xActual;
 //
 //		// Not per motor:
 //		/*xActual = tmc5072_readInt(motor, TMC5072_XACTUAL_1);
 //		TMC562v3_config->shadowRegister[TMC5072_XACTUAL_1] = xActual;
-//		TMC562V3.velocityMotor1 = (int) ((float) (abs(xActual-oldX[0]) / (float) t) * (float) 1048.576);
+//		TMC562V3.velocityMotor1 = (int32_t) ((float) (abs(xActual-oldX[0]) / (float) t) * (float) 1048.576);
 //		tmc5072->oldX = xActual;
 //
 //		xActual = readInt(TMC5072_XACTUAL_2);
 //		TMC562v3_config->shadowRegister[TMC5072_XACTUAL_2] = xActual;
-//		TMC562V3.velocityMotor2 = (int) ((float) (abs(xActual-oldX[1]) / (float) t) * (float) 1048.576);
+//		TMC562V3.velocityMotor2 = (int32_t) ((float) (abs(xActual-oldX[1]) / (float) t) * (float) 1048.576);
 //		tmc5072->oldX = xActual;*/
 //
 //		tmc5072->oldTick = tick;

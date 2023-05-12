@@ -23,7 +23,7 @@
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
-	int velocity[2], oldX[2];
+	int32_t velocity[2], oldX[2];
 	uint32_t oldTick;
 	int32_t registerResetState[TMC5031_REGISTER_COUNT];
 	uint8_t registerAccess[TMC5031_REGISTER_COUNT];

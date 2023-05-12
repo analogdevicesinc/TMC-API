@@ -23,7 +23,7 @@
 typedef struct
 {
 	ConfigurationTypeDef *config;
-	int velocity, oldX;
+	int32_t velocity, oldX;
 	uint32_t oldTick;
 	int32_t registerResetState[TMC5130_REGISTER_COUNT];
 	uint8_t registerAccess[TMC5130_REGISTER_COUNT];

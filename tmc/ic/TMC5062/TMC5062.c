@@ -15,7 +15,7 @@ extern uint8_t tmc5062_readWrite(uint8_t motor, uint8_t data, uint8_t lastTransf
 static void measureVelocity(TMC5062TypeDef *tmc5062, uint32_t tick);
 static void writeConfiguration(TMC5062TypeDef *tmc5062);
 
-void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address, int value)
+void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address, int32_t value)
 {
 	if(channel >= TMC5062_MOTORS)
 		return;
@@ -29,7 +29,7 @@ void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address,
 	tmc5062->config->shadowRegister[TMC_ADDRESS(address)] = value;
 }
 
-int tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address)
+int32_t tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address)
 {
 	if(channel >= TMC5062_MOTORS)
 		return 0;
@@ -43,7 +43,7 @@ int tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address)
 	tmc5062_readWrite(tmc5062->motors[channel], 0, false);
 	tmc5062_readWrite(tmc5062->motors[channel], 0, true);
 
-	int value = 0;
+	int32_t value = 0;
 
 	tmc5062_readWrite(tmc5062->motors[channel], address, false);
 	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, false);
@@ -77,7 +77,7 @@ void tmc5062_init(TMC5062TypeDef *tmc5062, ConfigurationTypeDef *tmc5062_config,
 	tmc5062->config->configIndex  = 0;
 	tmc5062->config->state        = CONFIG_READY;
 
-	for(int i = 0; i < TMC5062_REGISTER_COUNT; i++)
+	for(int32_t i = 0; i < TMC5062_REGISTER_COUNT; i++)
 	{
 		tmc5062->registerAccess[i] = tmc5062_defaultRegisterAccess[i];
 		tmc5062->registerResetState[i]  = registerResetState[i];
@@ -276,20 +276,20 @@ uint8_t dcStepActive(TMC5062TypeDef *tmc5062, uint8_t channel)
 {
 
 	// vhighfs and vhighchm set?
-	int chopConf = tmc5062_readInt(tmc5062, channel, TMC5062_CHOPCONF(channel));
+	int32_t chopConf = tmc5062_readInt(tmc5062, channel, TMC5062_CHOPCONF(channel));
 	if((chopConf & (TMC5062_VHIGHFS_MASK | TMC5062_VHIGHCHM_MASK)) != (TMC5062_VHIGHFS_MASK | TMC5062_VHIGHCHM_MASK))
 		return 0;
 
 	// Velocity above dcStep velocity threshold?
-	int vActual = tmc5062_readInt(tmc5062, channel, TMC5062_VACTUAL(channel));
-	int vDCMin  = tmc5062_readInt(tmc5062, channel, TMC5062_VDCMIN(channel));
+	int32_t vActual = tmc5062_readInt(tmc5062, channel, TMC5062_VACTUAL(channel));
+	int32_t vDCMin  = tmc5062_readInt(tmc5062, channel, TMC5062_VDCMIN(channel));
 
 	return vActual >= vDCMin;
 }
 
 static void measureVelocity(TMC5062TypeDef *tmc5062, uint32_t tick)
 {
-	int xActual;
+	int32_t xActual;
 	uint32_t tickDiff;
 
 	if((tickDiff = tick - tmc5062->oldTick) >= tmc5062->measurementInterval)
@@ -342,8 +342,8 @@ uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t channel, TMC5062_Micr
  */
 uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t channel, uint32_t motorFullSteps, uint32_t microSteps, uint32_t encoderResolution)
 {
-	int numerator, denominator, remainder;
-	int binaryError, decimalError;
+	int32_t numerator, denominator, remainder;
+	int32_t binaryError, decimalError;
 	uint8_t useDecimal, binaryRounded = false, decimalRounded = false;
 
 	// Check for divisor 0

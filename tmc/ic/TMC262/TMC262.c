@@ -800,7 +800,7 @@ void tmc262_enable()
 	}
 }
 
-void tmc262_getSPIData(uint8_t Index, int *Data)
+void tmc262_getSPIData(uint8_t Index, int32_t *Data)
 {
 	switch(Index)
 	{

@@ -65,7 +65,7 @@ void tmc5041_init(TMC5041TypeDef *tmc5041, uint8_t channel, ConfigurationTypeDef
 	tmc5041->config->configIndex  = 0;
 	tmc5041->config->state        = CONFIG_READY;
 
-	int i;
+	int32_t i;
 	for(i = 0; i < TMC5041_REGISTER_COUNT; i++)
 	{
 		tmc5041->registerAccess[i]      = tmc5041_defaultRegisterAccess[i];
@@ -94,7 +94,7 @@ static void tmc5041_writeConfiguration(TMC5041TypeDef *tmc5041)
 
 void tmc5041_periodicJob(TMC5041TypeDef *tmc5041, uint32_t tick)
 {
-	int xActual;
+	int32_t xActual;
 	uint32_t tickDiff;
 
 	if(tmc5041->config->state != CONFIG_READY)
@@ -105,12 +105,12 @@ void tmc5041_periodicJob(TMC5041TypeDef *tmc5041, uint32_t tick)
 
 	if((tickDiff = tick - tmc5041->oldTick) >= 5)
 	{
-		int i;
+		int32_t i;
 		for (i = 0; i < TMC5041_MOTORS; i++)
 		{
 			xActual = tmc5041_readInt(tmc5041, TMC5041_XACTUAL(i));
 			tmc5041->config->shadowRegister[TMC5041_XACTUAL(i)] = xActual;
-			tmc5041->velocity[i] = (int) ((float) (abs(xActual-tmc5041->oldX[i]) / (float) tickDiff) * (float) 1048.576);
+			tmc5041->velocity[i] = (int32_t) ((float) (abs(xActual-tmc5041->oldX[i]) / (float) tickDiff) * (float) 1048.576);
 			tmc5041->oldX[i] = xActual;
 		}
 		tmc5041->oldTick = tick;

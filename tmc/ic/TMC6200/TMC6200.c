@@ -21,7 +21,7 @@ int32_t tmc6200_readInt(uint8_t motor, uint8_t address)
 	tmc6200_readwriteByte(motor, address, false);
 
 	// read data
-	int value = tmc6200_readwriteByte(motor, 0, false);
+	int32_t value = tmc6200_readwriteByte(motor, 0, false);
 	value <<= 8;
 	value |= tmc6200_readwriteByte(motor, 0, false);
 	value <<= 8;

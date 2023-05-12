@@ -94,7 +94,7 @@ void tmc2300_init(TMC2300TypeDef *tmc2300, uint8_t channel, ConfigurationTypeDef
 	// Start in standby
 	tmc2300->standbyEnabled = 1;
 
-	int i;
+	int32_t i;
 	for(i = 0; i < TMC2300_REGISTER_COUNT; i++)
 	{
 		tmc2300->registerAccess[i]      = tmc2300_defaultRegisterAccess[i];

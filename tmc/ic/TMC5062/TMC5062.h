@@ -31,8 +31,8 @@ typedef struct {
 	// Velocity estimation (for dcStep)
 	uint32_t measurementInterval;
 	uint32_t oldTick;
-	int oldXActual[TMC5062_MOTORS];
-	int velocity[TMC5062_MOTORS];
+	int32_t oldXActual[TMC5062_MOTORS];
+	int32_t velocity[TMC5062_MOTORS];
 
 	int32_t registerResetState[TMC5062_REGISTER_COUNT];
 	uint8_t registerAccess[TMC5062_REGISTER_COUNT];
@@ -109,8 +109,8 @@ static const TMCRegisterConstant tmc5062_RegisterConstants[] =
 		{ 0x79, 0x00F70000 }  // MSLUTSTART_M2
 };
 
-void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address, int value);
-int tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address);
+void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address, int32_t value);
+int32_t tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address);
 
 void tmc5062_init(TMC5062TypeDef *tmc5062, ConfigurationTypeDef *tmc5062_config, const int32_t *registerResetState, uint8_t motorIndex0, uint8_t motorIndex1, uint32_t chipFrequency);
 void tmc5062_fillShadowRegisters(TMC5062TypeDef *tmc5062);

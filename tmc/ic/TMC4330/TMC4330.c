@@ -16,7 +16,7 @@ extern void tmc4330_readWriteArray(uint8_t channel, uint8_t *data, size_t length
 // Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
 void tmc4330_writeDatagram(TMC4330TypeDef *tmc4330, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
 {
-	int value;
+	int32_t value;
 	uint8_t data[5] = { address | TMC4330_WRITE_BIT, x1, x2, x3, x4 };
 
 	tmc4330_readWriteArray(tmc4330->config->channel, &data[0], 5);
@@ -38,7 +38,7 @@ void tmc4330_writeInt(TMC4330TypeDef *tmc4330, uint8_t address, int32_t value)
 
 int32_t tmc4330_readInt(TMC4330TypeDef *tmc4330, uint8_t address)
 {
-	int value;
+	int32_t value;
 	uint8_t data[5];
 
 	address = TMC_ADDRESS(address);
@@ -72,7 +72,7 @@ void tmc4330_init(TMC4330TypeDef *tmc4330, uint8_t channel, ConfigurationTypeDef
 	tmc4330->config->configIndex  = 0;
 	tmc4330->config->state        = CONFIG_READY;
 
-	int i;
+	int32_t i;
 	for(i = 0; i < TMC4330_REGISTER_COUNT; i++)
 	{
 		tmc4330->registerAccess[i]      = tmc4330_defaultRegisterAccess[i];
@@ -85,7 +85,7 @@ uint8_t tmc4330_reset(TMC4330TypeDef *tmc4330)
 	if(tmc4330->config->state != CONFIG_READY)
 		return 0;
 
-	int i;
+	int32_t i;
 
 	// Reset the dirty bits
 	for(i = 0; i < TMC4330_REGISTER_COUNT; i++)

@@ -13,7 +13,7 @@
 #include "TMC6100_Register.h"
 #include "TMC6100_Fields.h"
 
-int tmc6100_readInt(uint8_t motor, uint8_t address);
-void tmc6100_writeInt(uint8_t motor, uint8_t address, int value);
+int32_t tmc6100_readInt(uint8_t motor, uint8_t address);
+void tmc6100_writeInt(uint8_t motor, uint8_t address, int32_t value);
 
 #endif /* TMC_IC_TMC6630_H_ */

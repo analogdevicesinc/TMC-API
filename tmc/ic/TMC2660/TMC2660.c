@@ -32,7 +32,7 @@ const int32_t tmc2660_defaultRegisterResetState[TMC2660_REGISTER_COUNT] =
 };
 
 // => SPI wrapper
-extern void tmc2660_writeInt(uint8_t motor, uint8_t address, int value);
+extern void tmc2660_writeInt(uint8_t motor, uint8_t address, int32_t value);
 extern uint32_t tmc2660_readInt(uint8_t motor, uint8_t address);
 extern void tmc2660_readWrite(uint8_t motor, uint32_t value);
 //extern void tmc2660_setField(uint8_t motor, uint8_t address, uint32_t clearMask, uint32_t field);
@@ -109,7 +109,7 @@ void tmc2660_initConfig(TMC2660TypeDef *tmc2660)
 	tmc2660->standStillCurrentScale    = 5;
 	tmc2660->standStillTimeout         = 0;
 
-	int i;
+	int32_t i;
 	for(i = 0; i < TMC2660_REGISTER_COUNT; i++)
 	{
 		tmc2660->registerAccess[i]      = tmc2660_defaultRegisterAccess[i];

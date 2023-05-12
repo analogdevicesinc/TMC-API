@@ -16,7 +16,7 @@ extern void tmc4361A_readWriteArray(uint8_t channel, uint8_t *data, size_t lengt
 // Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
 void tmc4361A_writeDatagram(TMC4361ATypeDef *tmc4361A, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
 {
-	int value;
+	int32_t value;
 	uint8_t data[5] = { address | TMC4361A_WRITE_BIT, x1, x2, x3, x4 };
 
 	tmc4361A_readWriteArray(tmc4361A->config->channel, &data[0], 5);
@@ -38,7 +38,7 @@ void tmc4361A_writeInt(TMC4361ATypeDef *tmc4361A, uint8_t address, int32_t value
 
 int32_t tmc4361A_readInt(TMC4361ATypeDef *tmc4361A, uint8_t address)
 {
-	int value;
+	int32_t value;
 	uint8_t data[5];
 
 	address = TMC_ADDRESS(address);
@@ -129,7 +129,7 @@ void tmc4361A_init(TMC4361ATypeDef *tmc4361A, uint8_t channel, ConfigurationType
 	tmc4361A->config->configIndex  = 0;
 	tmc4361A->config->state        = CONFIG_READY;
 
-	int i;
+	int32_t i;
 	for(i = 0; i < TMC4361A_REGISTER_COUNT; i++)
 	{
 		tmc4361A->registerAccess[i]      = tmc4361A_defaultRegisterAccess[i];
@@ -175,7 +175,7 @@ uint8_t tmc4361A_reset(TMC4361ATypeDef *tmc4361A)
 	if(tmc4361A->config->state != CONFIG_READY)
 		return 0;
 
-	int i;
+	int32_t i;
 
 	// Reset the dirty bits
 	for(i = 0; i < TMC4361A_REGISTER_COUNT; i++)

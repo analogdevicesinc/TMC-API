@@ -12,7 +12,7 @@ extern uint8_t tmc6100_readwriteByte(uint8_t motor, uint8_t data, uint8_t lastTr
 // <= SPI wrapper
 
 // spi access
-int tmc6100_readInt(uint8_t motor, uint8_t address)
+int32_t tmc6100_readInt(uint8_t motor, uint8_t address)
 {
 	// clear write bit
 	address = TMC_ADDRESS(address);
@@ -21,7 +21,7 @@ int tmc6100_readInt(uint8_t motor, uint8_t address)
 	tmc6100_readwriteByte(motor, address, false);
 
 	// read data
-	int value = tmc6100_readwriteByte(motor, 0, false);
+	int32_t value = tmc6100_readwriteByte(motor, 0, false);
 	value <<= 8;
 	value |= tmc6100_readwriteByte(motor, 0, false);
 	value <<= 8;
@@ -32,7 +32,7 @@ int tmc6100_readInt(uint8_t motor, uint8_t address)
 	return value;
 }
 
-void tmc6100_writeInt(uint8_t motor, uint8_t address, int value)
+void tmc6100_writeInt(uint8_t motor, uint8_t address, int32_t value)
 {
 	// write address
 	tmc6100_readwriteByte(motor, address | TMC6100_WRITE_BIT, false);

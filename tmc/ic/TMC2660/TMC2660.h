@@ -28,8 +28,8 @@ typedef struct {
 	uint8_t coolStepInactiveValue;
 	uint8_t coolStepActiveValue;
 	uint32_t coolStepThreshold;
-	int velocity;
-	int oldX;
+	int32_t velocity;
+	int32_t oldX;
 	uint32_t oldTick;
 	uint8_t registerAccess[TMC2660_REGISTER_COUNT];
 	int32_t registerResetState[TMC2660_REGISTER_COUNT];

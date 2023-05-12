@@ -88,6 +88,6 @@ void tmc262_enable();
 
 void tmc262_readState(uint8_t *Phases, uint8_t *MStep, uint32_t *StallGuard, uint8_t *SmartEnergy, uint8_t *Flags);
 
-void tmc262_getSPIData(uint8_t Index, int *Data);
+void tmc262_getSPIData(uint8_t Index, int32_t *Data);
 
 #endif /* TMC_IC_TMC262_H_ */

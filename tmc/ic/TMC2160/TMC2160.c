@@ -17,7 +17,7 @@ void tmc2160_writeDatagram(TMC2160TypeDef *tmc2160, uint8_t address, uint8_t x1,
 	uint8_t data[5] = { address | TMC2160_WRITE_BIT, x1, x2, x3, x4 };
 	tmc2160_readWriteArray(tmc2160->config->channel, &data[0], 5);
 
-	int value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
+	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
 
 	// Write to the shadow register and mark the register dirty
 	address = TMC_ADDRESS(address);
@@ -58,7 +58,7 @@ void tmc2160_init(TMC2160TypeDef *tmc2160, uint8_t channel, ConfigurationTypeDef
 	tmc2160->config->configIndex  = 0;
 	tmc2160->config->state        = CONFIG_READY;
 
-	int i;
+	int32_t i;
 	for(i = 0; i < TMC2160_REGISTER_COUNT; i++)
 	{
 		tmc2160->registerAccess[i]      = tmc2160_defaultRegisterAccess[i];
@@ -101,7 +101,7 @@ uint8_t tmc2160_reset(TMC2160TypeDef *tmc2160)
 	if(tmc2160->config->state != CONFIG_READY)
 		return false;
 
-	int i;
+	int32_t i;
 
 	// Reset the dirty bits
 	for(i = 0; i < TMC2160_REGISTER_COUNT; i++)
