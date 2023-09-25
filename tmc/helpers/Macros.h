@@ -24,7 +24,9 @@
 #endif
 
 // Static Array length
+#ifndef ARRAY_SIZE
 #define ARRAY_SIZE(x) (sizeof(x)/sizeof(x[0]))
+#endif
 
 // Generic mask/shift macros
 #define FIELD_GET(data, mask, shift) \
