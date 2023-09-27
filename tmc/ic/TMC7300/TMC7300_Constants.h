@@ -1,9 +1,11 @@
-/*
- * TMC7300_Constants.h
- *
- *  Created on: 13.11.2019
- *      Author: LH
- */
+/*******************************************************************************
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #ifndef TMC_IC_TMC7300_TMC7300_CONSTANTS_H_
 #define TMC_IC_TMC7300_TMC7300_CONSTANTS_H_

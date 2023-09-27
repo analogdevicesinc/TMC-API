@@ -1,9 +1,12 @@
+/*******************************************************************************
+* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 /*
- * RegisterAccess.h
- *
- *  Created on: 12.07.2017
- *      Author: LK
- *
  *  The permission system aims to allow a general-purpose implementation for
  *  all common hardware register usages. This includes:
  *  - Trivial Cases: Read, Write, Read & Write

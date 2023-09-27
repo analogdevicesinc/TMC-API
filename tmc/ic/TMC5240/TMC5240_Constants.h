@@ -1,9 +1,11 @@
-/*
- * TMC5240_Constants.h
- *
- *  Created on: 23.07.2018
- *      Author: JH based on TMC5160_Constants.h
- */
+/*******************************************************************************
+* Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #ifndef TMC_IC_TMC5240_TMC5240_CONSTANTS_H_
 #define TMC_IC_TMC5240_TMC5240_CONSTANTS_H_

@@ -1,9 +1,11 @@
-/*
- * TMC4361A.h
- *
- *  Created on: 18.07.2017
- *      Author: LK
- */
+/*******************************************************************************
+* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #ifndef TMC_IC_TMC4361A_H_
 #define TMC_IC_TMC4361A_H_

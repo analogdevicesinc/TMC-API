@@ -1,9 +1,11 @@
-/*
- * TMC5130_Register.h
- *
- *  Created on: 30.09.2016
- *      Author: ed based on te
- */
+/*******************************************************************************
+* Copyright © 2016 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #ifndef TMC5130_REGISTER_H
 #define TMC5130_REGISTER_H

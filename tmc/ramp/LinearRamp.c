@@ -1,9 +1,12 @@
+/*******************************************************************************
+* Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 /*
- * TMC_LinearRamp.c
- *
- *  Created on: 23.07.2018
- *      Author: ed
- *
  *  This is a basic proof-of-concept implementation of a linear motion ramp
  *  generator. It is designed to run with 1 calculation / ms.
  *

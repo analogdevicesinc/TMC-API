@@ -1,9 +1,11 @@
-/*
- * Macros.h
- *
- *  Created on: 04.01.2018
- *      Author: LH
- */
+/*******************************************************************************
+* Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #ifndef TMC_MACROS_H_
 #define TMC_MACROS_H_

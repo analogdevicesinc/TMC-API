@@ -1,9 +1,11 @@
-/*
- * Types.h
- *
- *  Created on: 29.09.2016
- *      Author: ed
- */
+/*******************************************************************************
+* Copyright © 2016 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 // Turn off the integer typedefs by uncommenting the following two defines.
 // If your IDE (e.g. Arduino IDE) already defines these types, deactivating

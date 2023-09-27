@@ -1,9 +1,11 @@
-/*
- * TMC2224_Register.h
- *
- *  Created on: 10.11.2016
- *      Author: bd
- */
+/*******************************************************************************
+* Copyright © 2016 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #ifndef TMC2224_REGISTER_H
 #define TMC2224_REGISTER_H

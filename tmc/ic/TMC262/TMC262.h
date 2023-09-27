@@ -1,10 +1,11 @@
-/*
- * TMC262.h
- *
- *  Created on: 27.01.2017
- *      Author: BS
- *    Based on: TMC262-K20.h (12.01.2009 OK)
- */
+/*******************************************************************************
+* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #ifndef TMC_IC_TMC262_H_
 #define TMC_IC_TMC262_H_

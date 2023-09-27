@@ -1,9 +1,12 @@
-/*
- * MAX22216.c
- *
- *  Created on: 04.09.2018
- *      Author: LK
- */
+/*******************************************************************************
+* Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
+
 #include "MAX22216.h"
 
 // => UART wrapper

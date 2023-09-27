@@ -1,9 +1,12 @@
+/*******************************************************************************
+* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 /*
- * CRC.c
- *
- *  Created on: 04.12.2017
- *      Author: LH
- *
  *  This is a generic implementation for a CRC8 generator supporting
  *  both compile-time (1) and run-time initialized Lookup tables for efficient CRC8 calculation.
  *  You can store multiple tables for different polynomials and (non-)reflected CRCs.

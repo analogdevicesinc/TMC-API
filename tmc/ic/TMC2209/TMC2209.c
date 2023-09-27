@@ -1,9 +1,11 @@
-/*
- * TMC2209.c
- *
- *  Created on: 18.01.2019
- *      Author: LK
- */
+/*******************************************************************************
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #include "TMC2209.h"
 

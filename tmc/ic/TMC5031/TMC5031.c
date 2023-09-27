@@ -1,10 +1,11 @@
-/*
- * TMC5031.c
- *
- *  Created on: 06.07.2017
- *      Author: LK
- *    Based on: TMC562-MKL.h (26.01.2012 OK)
- */
+/*******************************************************************************
+* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #include "TMC5031.h"
 

@@ -1,9 +1,11 @@
-/*
- * TMC2240.c
- *
- *  Created on: 03.07.2017
- *      Author: JH based on TMC5160.c
- */
+/*******************************************************************************
+* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #include "TMC2240.h"
 extern void tmc2240_writeInt(TMC2240TypeDef *tmc2240, uint8_t address, int32_t value);

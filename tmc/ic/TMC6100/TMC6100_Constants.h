@@ -1,9 +1,11 @@
-/*
- * TMC6100_Constants.h
- *
- *  Created on: 26.10.2018
- *      Author: LK
- */
+/*******************************************************************************
+* Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
+*
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #ifndef TMC_IC_TMC6100_TMC6100_CONSTANTS_H_
 #define TMC_IC_TMC6100_TMC6100_CONSTANTS_H_

@@ -1,9 +1,11 @@
-/*
-* TMC6100_Register.h
+/*******************************************************************************
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
+* (now owned by Analog Devices Inc.),
 *
-*  Created on: 13.11.2019
-*      Author: ED
-*/
+* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* proprietary & confidential to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
 
 #ifndef TMC6100_REGISTER_H
 #define TMC6100_REGISTER_H
