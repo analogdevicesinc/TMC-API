@@ -384,7 +384,7 @@ void Init429(void)
 	for(motor = 0; motor < 3; motor++)
 	{
 		uint32_t addr;
-		for(addr = 0; addr <= TMC429_IDX_XLATCHED; addr++)
+		for(addr = 0; addr <= TMC429_IDX_XLATCHED(motor); addr++)
 			Write429Zero(addr | TMC429_MOTOR(motor));
 	}
 
