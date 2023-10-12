@@ -1,0 +1,1646 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2590__Fields_8h" kind="file" language="C++">
+    <compoundname>TMC2590_Fields.h</compoundname>
+    <includedby refid="TMC2590_8h" local="yes">TMC2590.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC2590.c</label>
+        <link refid="TMC2590_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC2590.h</label>
+        <link refid="TMC2590_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2590_Fields.h</label>
+        <link refid="TMC2590__Fields_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a810d274904a5f6245886e31557622f5c" prot="public" static="no">
+        <name>TMC2590_DRVCTRL_SDOFF_MASK</name>
+        <initializer>(0xFFFFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="13" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a409ccfb888e20fcbff4ae6fa795fc437" prot="public" static="no">
+        <name>TMC2590_DRVCTRL_MASK</name>
+        <initializer>(0xFFFFF &amp; ~((0x0F&lt;&lt;4) | (0x7F &lt;&lt;10)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="14" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a906063f09420ad830c4834c56cffc9f0" prot="public" static="no">
+        <name>TMC2590_CHOPCONF_MASK</name>
+        <initializer>(0xFFFFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5231b8c8f6fbc690df2953ea20d53b66" prot="public" static="no">
+        <name>TMC2590_SMARTEN_MASK</name>
+        <initializer>(0xFFFFF &amp; ~((0x01&lt;&lt;4) | (0x01&lt;&lt;7) | (0x01&lt;&lt;12)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1acedf25f20e3140867a8e0e0b05e6377a" prot="public" static="no">
+        <name>TMC2590_SGCSCONF_MASK</name>
+        <initializer>(0xFFFFF &amp; ~((0x07&lt;&lt;5) | (0x01&lt;&lt;15)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5aac3d95acde7ac7a8080024e376811d" prot="public" static="no">
+        <name>TMC2590_DRVCONF_MASK</name>
+        <initializer>(0xFFFFF &amp; ~((0x0F&lt;&lt;0) | (0x01&lt;&lt;11)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ab59e2ba2266a59729919b1c5f26cd0e6" prot="public" static="no">
+        <name>TMC2590_MSTEP_MASK</name>
+        <initializer>0x0FFC00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a9ce84a77a05561c1cb0526bce28547d9" prot="public" static="no">
+        <name>TMC2590_MSTEP_SHIFT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a165ef4b316a0595cfb48b111e964c8a8" prot="public" static="no">
+        <name>TMC2590_STATUS_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a252e16fa36ecae58725b7e0e1b758553" prot="public" static="no">
+        <name>TMC2590_STATUS_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1af6535d2efbca2ce6709968bdf84546d4" prot="public" static="no">
+        <name>TMC2590_STST_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a68fff9934b2e3ce730ccf14178f8d735" prot="public" static="no">
+        <name>TMC2590_STST_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a4aa652f0faacc9240c422f1023023832" prot="public" static="no">
+        <name>TMC2590_OLB_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ac913c6665c2217887a840e4560aa832b" prot="public" static="no">
+        <name>TMC2590_OLB_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a9555ee6fc84a4a39dfcfc517f2a8d3a8" prot="public" static="no">
+        <name>TMC2590_OLA_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5b41e24323c3e57947b2d87032bc9b94" prot="public" static="no">
+        <name>TMC2590_OLA_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ac3414f799ec893e3421ef06c3d435088" prot="public" static="no">
+        <name>TMC2590_S2GB_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1af3bf894cd8ccabe71314b2996d317e60" prot="public" static="no">
+        <name>TMC2590_S2GB_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aeeac7adbbbb9a49b4f1b0705a3bf90d4" prot="public" static="no">
+        <name>TMC2590_S2GA_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aa52b6af25300ebd4c2a5f21ee780147e" prot="public" static="no">
+        <name>TMC2590_S2GA_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1af32c3f66e1fac0d57e2fa3e246f76a65" prot="public" static="no">
+        <name>TMC2590_OTPW_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a463317f35db205f45c7ee1476f70b50a" prot="public" static="no">
+        <name>TMC2590_OTPW_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aed966bd7dc1f10cd044976ab1a496e9e" prot="public" static="no">
+        <name>TMC2590_OT_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a9009606c1aca9110874ef5bb23e04bd2" prot="public" static="no">
+        <name>TMC2590_OT_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ae0ab0262449eba82a52c6f0a66d78167" prot="public" static="no">
+        <name>TMC2590_SG_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a768858f9faec84697c60ae35b8bcec14" prot="public" static="no">
+        <name>TMC2590_SG_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a464a36b111cc850ae50364a881de34b8" prot="public" static="no">
+        <name>TMC2590_SG2_MASK</name>
+        <initializer>0x0FFC00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1adcc0c085d2a171d62330e771897b95d8" prot="public" static="no">
+        <name>TMC2590_SG2_SHIFT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1af6535d2efbca2ce6709968bdf84546d4" prot="public" static="no">
+        <name>TMC2590_STST_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a68fff9934b2e3ce730ccf14178f8d735" prot="public" static="no">
+        <name>TMC2590_STST_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a4aa652f0faacc9240c422f1023023832" prot="public" static="no">
+        <name>TMC2590_OLB_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ac913c6665c2217887a840e4560aa832b" prot="public" static="no">
+        <name>TMC2590_OLB_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a9555ee6fc84a4a39dfcfc517f2a8d3a8" prot="public" static="no">
+        <name>TMC2590_OLA_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="46" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5b41e24323c3e57947b2d87032bc9b94" prot="public" static="no">
+        <name>TMC2590_OLA_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ac3414f799ec893e3421ef06c3d435088" prot="public" static="no">
+        <name>TMC2590_S2GB_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1af3bf894cd8ccabe71314b2996d317e60" prot="public" static="no">
+        <name>TMC2590_S2GB_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aeeac7adbbbb9a49b4f1b0705a3bf90d4" prot="public" static="no">
+        <name>TMC2590_S2GA_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aa52b6af25300ebd4c2a5f21ee780147e" prot="public" static="no">
+        <name>TMC2590_S2GA_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1af32c3f66e1fac0d57e2fa3e246f76a65" prot="public" static="no">
+        <name>TMC2590_OTPW_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a463317f35db205f45c7ee1476f70b50a" prot="public" static="no">
+        <name>TMC2590_OTPW_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aed966bd7dc1f10cd044976ab1a496e9e" prot="public" static="no">
+        <name>TMC2590_OT_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a9009606c1aca9110874ef5bb23e04bd2" prot="public" static="no">
+        <name>TMC2590_OT_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ae0ab0262449eba82a52c6f0a66d78167" prot="public" static="no">
+        <name>TMC2590_SG_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a768858f9faec84697c60ae35b8bcec14" prot="public" static="no">
+        <name>TMC2590_SG_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aa20f821b66a334a4b12beb3d40b3bb18" prot="public" static="no">
+        <name>TMC2590_SGU_MASK</name>
+        <initializer>0x0F8000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="58" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aba58ec420e7288d4273d811815e7d6ad" prot="public" static="no">
+        <name>TMC2590_SGU_SHIFT</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a29c6476cd135af5e3e6d296c7b29c750" prot="public" static="no">
+        <name>TMC2590_SE_MASK</name>
+        <initializer>0x7C00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a36f971af5fe4cc5084d5059cee2cf57d" prot="public" static="no">
+        <name>TMC2590_SE_SHIFT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1af6535d2efbca2ce6709968bdf84546d4" prot="public" static="no">
+        <name>TMC2590_STST_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="62" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a68fff9934b2e3ce730ccf14178f8d735" prot="public" static="no">
+        <name>TMC2590_STST_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="63" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a4aa652f0faacc9240c422f1023023832" prot="public" static="no">
+        <name>TMC2590_OLB_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="64" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ac913c6665c2217887a840e4560aa832b" prot="public" static="no">
+        <name>TMC2590_OLB_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a9555ee6fc84a4a39dfcfc517f2a8d3a8" prot="public" static="no">
+        <name>TMC2590_OLA_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5b41e24323c3e57947b2d87032bc9b94" prot="public" static="no">
+        <name>TMC2590_OLA_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="67" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ac3414f799ec893e3421ef06c3d435088" prot="public" static="no">
+        <name>TMC2590_S2GB_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="68" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1af3bf894cd8ccabe71314b2996d317e60" prot="public" static="no">
+        <name>TMC2590_S2GB_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="69" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aeeac7adbbbb9a49b4f1b0705a3bf90d4" prot="public" static="no">
+        <name>TMC2590_S2GA_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="70" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aa52b6af25300ebd4c2a5f21ee780147e" prot="public" static="no">
+        <name>TMC2590_S2GA_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="71" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1af32c3f66e1fac0d57e2fa3e246f76a65" prot="public" static="no">
+        <name>TMC2590_OTPW_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="72" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a463317f35db205f45c7ee1476f70b50a" prot="public" static="no">
+        <name>TMC2590_OTPW_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="73" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aed966bd7dc1f10cd044976ab1a496e9e" prot="public" static="no">
+        <name>TMC2590_OT_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="74" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a9009606c1aca9110874ef5bb23e04bd2" prot="public" static="no">
+        <name>TMC2590_OT_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="75" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ae0ab0262449eba82a52c6f0a66d78167" prot="public" static="no">
+        <name>TMC2590_SG_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="76" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a768858f9faec84697c60ae35b8bcec14" prot="public" static="no">
+        <name>TMC2590_SG_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="77" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ac997a99bed14d99fb131e9326ee122c7" prot="public" static="no">
+        <name>TMC2590_REGISTER_ADDRESS_BITS_MASK</name>
+        <initializer>0xC00000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="78" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ad4abb1cef8b41e19149400c3a4d4cd53" prot="public" static="no">
+        <name>TMC2590_REGISTER_ADDRESS_BITS_SHIFT</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="79" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a0d44eb3a9184693d0b937598d7e7737d" prot="public" static="no">
+        <name>TMC2590_INTPOL_MASK</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="80" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ae72c8a312f9a942edbbb4a21ff83145f" prot="public" static="no">
+        <name>TMC2590_INTPOL_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="81" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a4cddd64ef4a4189fa5d3532c54923cc9" prot="public" static="no">
+        <name>TMC2590_DEDGE_MASK</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="82" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a7d5b12a4b0615abdf437eb05711a217e" prot="public" static="no">
+        <name>TMC2590_DEDGE_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="83" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a116f0eadb0cfade8e39bb31a1e71959f" prot="public" static="no">
+        <name>TMC2590_MRES_MASK</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="84" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a20a90adf31cd407153619bfceb161208" prot="public" static="no">
+        <name>TMC2590_MRES_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="85" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a4b46fd844cb61c9d0427728d1bd3e137" prot="public" static="no">
+        <name>TMC2590_PHA_MASK</name>
+        <initializer>0x020000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="88" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a224198a847f6b4db643bf053233e8c5a" prot="public" static="no">
+        <name>TMC2590_PHA_SHIFT</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="89" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a385f41a0c5903e5e2a0e01e16c9a427a" prot="public" static="no">
+        <name>TMC2590_CA_MASK</name>
+        <initializer>0x01FE00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="90" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a0949addbaa0010bcbecd1cf6a225035d" prot="public" static="no">
+        <name>TMC2590_CA_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="91" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ad3441b810aea3c554ead8a81c27de97d" prot="public" static="no">
+        <name>TMC2590_PHB_MASK</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="92" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1abadb34c007fad0fc1077da31205a7b7e" prot="public" static="no">
+        <name>TMC2590_PHB_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="93" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5d0a4849069c15161b4bd5187668b658" prot="public" static="no">
+        <name>TMC2590_CB_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="94" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a07f4841e3c870c8b1a396a597ac97f02" prot="public" static="no">
+        <name>TMC2590_CB_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="95" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ac77f05e371121ea78af2edf32e846714" prot="public" static="no">
+        <name>TMC2590_TBL_MASK</name>
+        <initializer>0x018000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="98" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a778e90214cb6f9bee73eeb4753484375" prot="public" static="no">
+        <name>TMC2590_TBL_SHIFT</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="99" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a60ddc867696af1823edec521ddfd1a2c" prot="public" static="no">
+        <name>TMC2590_CHM_MASK</name>
+        <initializer>0x4000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="100" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a1ad3d0ff0df54291118c510303ced14c" prot="public" static="no">
+        <name>TMC2590_CHM_SHIFT</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="101" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ab5eebfb600b420e3a9d914026dcd15ae" prot="public" static="no">
+        <name>TMC2590_RNDTF_MASK</name>
+        <initializer>0x2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="102" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a6fc1ea0bf1225ad517aee51bbbf64d68" prot="public" static="no">
+        <name>TMC2590_RNDTF_SHIFT</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="103" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a6ada27354675dc58399c55c8c75c91c1" prot="public" static="no">
+        <name>TMC2590_HDEC_MASK</name>
+        <initializer>0x1800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="104" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aebcf17b514390e46166c55396ca3b03e" prot="public" static="no">
+        <name>TMC2590_HDEC_SHIFT</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="105" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a87a1e4f427d30f80153a4bdad677a2ce" prot="public" static="no">
+        <name>TMC2590_HEND_MASK</name>
+        <initializer>0x0780</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="106" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a65aab0c1ac7cf77503087de353e1e4d5" prot="public" static="no">
+        <name>TMC2590_HEND_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="107" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a28ccd1a15740cde3144e0c988aaa80a9" prot="public" static="no">
+        <name>TMC2590_HSTRT_MASK</name>
+        <initializer>0x70</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="108" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a7f551768d1899cc7436556a9f13f3b1e" prot="public" static="no">
+        <name>TMC2590_HSTRT_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="109" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a606a5aa10e1a730525d53234d32c7ffb" prot="public" static="no">
+        <name>TMC2590_HDEC1_MASK</name>
+        <initializer>0x2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="110" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aba667df980cd55b8844fca9ed34d3711" prot="public" static="no">
+        <name>TMC2590_HDEC1_SHIFT</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="111" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a87a1e4f427d30f80153a4bdad677a2ce" prot="public" static="no">
+        <name>TMC2590_HEND_MASK</name>
+        <initializer>0x0780</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="112" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a65aab0c1ac7cf77503087de353e1e4d5" prot="public" static="no">
+        <name>TMC2590_HEND_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="113" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5403e79bfa934ab7180105529395f0b9" prot="public" static="no">
+        <name>TMC2590_HDEC0_MASK</name>
+        <initializer>0x1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="114" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a01d011cae308461d6d0670ff234c7109" prot="public" static="no">
+        <name>TMC2590_HDEC0_SHIFT</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="115" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a91795494917056eb7d06368d0af5b080" prot="public" static="no">
+        <name>TMC2590_TOFF_MASK</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="119" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a7afa92d4efd28269c9820915272dae08" prot="public" static="no">
+        <name>TMC2590_TOFF_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="120" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a6232d25d92f3fd0e387db0773d937d0d" prot="public" static="no">
+        <name>TMC2590_SEIMIN_MASK</name>
+        <initializer>0x8000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="123" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a52f2d1f7f88cfdca479d0d5ab81a01b0" prot="public" static="no">
+        <name>TMC2590_SEIMIN_SHIFT</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="124" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ab69579ce765453574974173aff074684" prot="public" static="no">
+        <name>TMC2590_SEDN_MASK</name>
+        <initializer>0x6000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="125" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ad0b98dadcd8ec8ed080099c8d8c39939" prot="public" static="no">
+        <name>TMC2590_SEDN_SHIFT</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="126" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5b02876ede1c588b9f1fc0775ae37188" prot="public" static="no">
+        <name>TMC2590_SEUP_MASK</name>
+        <initializer>0x60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="127" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a21ec7f72e49d685c30aa75696553eb47" prot="public" static="no">
+        <name>TMC2590_SEUP_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="128" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ad0cf8ce3e9018f86aa5fac2a67756f92" prot="public" static="no">
+        <name>TMC2590_SEMAX_MASK</name>
+        <initializer>0x0F00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="129" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ad804426d1bba06a16e3cc1ebf4a4fd06" prot="public" static="no">
+        <name>TMC2590_SEMAX_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="130" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a536cce0c045f4ff7cf8cecea1f2b0bc7" prot="public" static="no">
+        <name>TMC2590_SEMIN_MASK</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="131" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ae7a899b76e4fbb1250f7b56a7f06eb13" prot="public" static="no">
+        <name>TMC2590_SEMIN_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="132" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a336825dc8f0a25b267d193116f17dd53" prot="public" static="no">
+        <name>TMC2590_SFILT_MASK</name>
+        <initializer>0x010000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="135" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a3d6ad1f3e5d9a2f5647393173087088e" prot="public" static="no">
+        <name>TMC2590_SFILT_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="136" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1adbe22fcfef8dbf170554bb617555cb1d" prot="public" static="no">
+        <name>TMC2590_SGT_MASK</name>
+        <initializer>0x7F00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="137" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a4c588f8dcbf87d96facd4d5fb3651f0f" prot="public" static="no">
+        <name>TMC2590_SGT_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="138" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5f02a998040672cae2106b581e4420ea" prot="public" static="no">
+        <name>TMC2590_CS_MASK</name>
+        <initializer>0x1F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="139" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a245621005d24c4f2b746d3e44a64ab7e" prot="public" static="no">
+        <name>TMC2590_CS_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="140" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a5d02a99dafa4660e4f49501c95215091" prot="public" static="no">
+        <name>TMC2590_TST_MASK</name>
+        <initializer>0x010000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="143" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a23dfc6fd0a7d8d60dd1fea34a48ab8bb" prot="public" static="no">
+        <name>TMC2590_TST_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="144" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a6facec75a251d03324e6b8edabc168d2" prot="public" static="no">
+        <name>TMC2590_SLPH_MASK</name>
+        <initializer>0xC000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="145" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a19c2bbe8c59e5cfa402b1543863405f6" prot="public" static="no">
+        <name>TMC2590_SLPH_SHIFT</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="146" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1accf920567bf3343e55b5968f4698f0c3" prot="public" static="no">
+        <name>TMC2590_SLPL_MASK</name>
+        <initializer>0x3000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="147" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ad2a808ef19f423b8d2509300ca13c5e0" prot="public" static="no">
+        <name>TMC2590_SLPL_SHIFT</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="148" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a894501dd84cc7a52cff1b6702d61acec" prot="public" static="no">
+        <name>TMC2590_DISS2G_MASK</name>
+        <initializer>0x0400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="149" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1aaa4be7f046e7ffd56262e2ed3606bc57" prot="public" static="no">
+        <name>TMC2590_DISS2G_SHIFT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="150" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a0d1c13cb828c7eb8cfbab22eb30d0892" prot="public" static="no">
+        <name>TMC2590_TS2G_MASK</name>
+        <initializer>0x0300</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="151" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a90679ab7f589339bb869f7d7b2d4c0a8" prot="public" static="no">
+        <name>TMC2590_TS2G_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="152" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a18a71849861340114597e30a6437ee68" prot="public" static="no">
+        <name>TMC2590_SDOFF_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="153" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1ad15464d6ab7f4498fbaa7daa845bbfb4" prot="public" static="no">
+        <name>TMC2590_SDOFF_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="154" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1adb93bf957913ecd7b9da62581e9f2cc6" prot="public" static="no">
+        <name>TMC2590_VSENSE_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="155" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a2290b3f0fe43e46dc6c2073d5f4d2284" prot="public" static="no">
+        <name>TMC2590_VSENSE_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="156" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a108acf0e3a140952cad1cdbf41847c90" prot="public" static="no">
+        <name>TMC2590_RDSEL_MASK</name>
+        <initializer>0x30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="157" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Fields_8h_1a93fbf21ff34367216e44ca528057876c" prot="public" static="no">
+        <name>TMC2590_RDSEL_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" line="158" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC2590_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="TMC2590__Fields_8h_1a810d274904a5f6245886e31557622f5c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_DRVCTRL_SDOFF_MASK<sp/><sp/>(0xFFFFF)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="TMC2590__Fields_8h_1a409ccfb888e20fcbff4ae6fa795fc437" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_DRVCTRL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF<sp/>&amp;<sp/>~((0x0F&lt;&lt;4)<sp/>|<sp/>(0x7F<sp/>&lt;&lt;10)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC2590__Fields_8h_1a906063f09420ad830c4834c56cffc9f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_CHOPCONF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC2590__Fields_8h_1a5231b8c8f6fbc690df2953ea20d53b66" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SMARTEN_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF<sp/>&amp;<sp/>~((0x01&lt;&lt;4)<sp/>|<sp/>(0x01&lt;&lt;7)<sp/>|<sp/>(0x01&lt;&lt;12)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC2590__Fields_8h_1acedf25f20e3140867a8e0e0b05e6377a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SGCSCONF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF<sp/>&amp;<sp/>~((0x07&lt;&lt;5)<sp/>|<sp/>(0x01&lt;&lt;15)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC2590__Fields_8h_1a5aac3d95acde7ac7a8080024e376811d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_DRVCONF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF<sp/>&amp;<sp/>~((0x0F&lt;&lt;0)<sp/>|<sp/>(0x01&lt;&lt;11)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC2590__Fields_8h_1ab59e2ba2266a59729919b1c5f26cd0e6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_MSTEP_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0FFC00<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>MSTEP<sp/>//<sp/>ustep<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC2590__Fields_8h_1a9ce84a77a05561c1cb0526bce28547d9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_MSTEP_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1023,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC2590__Fields_8h_1a165ef4b316a0595cfb48b111e964c8a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_STATUS_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>STATUS<sp/>//<sp/>All<sp/>Status<sp/>flags<sp/>(manually<sp/>added)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC2590__Fields_8h_1a252e16fa36ecae58725b7e0e1b758553" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_STATUS_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>256,<sp/>default<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC2590__Fields_8h_1af6535d2efbca2ce6709968bdf84546d4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_STST_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>MSTEP<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC2590__Fields_8h_1a68fff9934b2e3ce730ccf14178f8d735" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_STST_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC2590__Fields_8h_1a4aa652f0faacc9240c422f1023023832" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>MSTEP<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC2590__Fields_8h_1ac913c6665c2217887a840e4560aa832b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC2590__Fields_8h_1a9555ee6fc84a4a39dfcfc517f2a8d3a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>MSTEP<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC2590__Fields_8h_1a5b41e24323c3e57947b2d87032bc9b94" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC2590__Fields_8h_1ac3414f799ec893e3421ef06c3d435088" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>MSTEP<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC2590__Fields_8h_1af3bf894cd8ccabe71314b2996d317e60" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC2590__Fields_8h_1aeeac7adbbbb9a49b4f1b0705a3bf90d4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>MSTEP<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC2590__Fields_8h_1aa52b6af25300ebd4c2a5f21ee780147e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC2590__Fields_8h_1af32c3f66e1fac0d57e2fa3e246f76a65" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OTPW_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>MSTEP<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC2590__Fields_8h_1a463317f35db205f45c7ee1476f70b50a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OTPW_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC2590__Fields_8h_1aed966bd7dc1f10cd044976ab1a496e9e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>MSTEP<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC2590__Fields_8h_1a9009606c1aca9110874ef5bb23e04bd2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC2590__Fields_8h_1ae0ab0262449eba82a52c6f0a66d78167" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SG_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>MSTEP<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC2590__Fields_8h_1a768858f9faec84697c60ae35b8bcec14" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SG_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC2590__Fields_8h_1a464a36b111cc850ae50364a881de34b8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SG2_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0FFC00<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG<sp/>//<sp/>stallGuard2<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC2590__Fields_8h_1adcc0c085d2a171d62330e771897b95d8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SG2_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1023,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_STST_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_STST_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OTPW_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OTPW_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SG_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SG_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC2590__Fields_8h_1aa20f821b66a334a4b12beb3d40b3bb18" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SGU_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F8000<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//<sp/>Upper<sp/>stallGuard2<sp/>value<sp/>bit9:5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC2590__Fields_8h_1aba58ec420e7288d4273d811815e7d6ad" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SGU_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>15<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>31,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC2590__Fields_8h_1a29c6476cd135af5e3e6d296c7b29c750" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7C00<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//<sp/>Actual<sp/>coolstep<sp/>scaling<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC2590__Fields_8h_1a36f971af5fe4cc5084d5059cee2cf57d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>31,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_STST_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_STST_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OLA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_S2GA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OTPW_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OTPW_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_OT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SG_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>DRVSTATUS<sp/>/<sp/>SG_SE<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SG_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="TMC2590__Fields_8h_1ac997a99bed14d99fb131e9326ee122c7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_REGISTER_ADDRESS_BITS_MASK<sp/><sp/><sp/>0xC00000<sp/></highlight><highlight class="comment">//<sp/>DRVCTRL<sp/>//<sp/>Locked<sp/>for<sp/>Register<sp/>Browser</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="TMC2590__Fields_8h_1ad4abb1cef8b41e19149400c3a4d4cd53" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_REGISTER_ADDRESS_BITS_SHIFT<sp/><sp/>18<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>0,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="TMC2590__Fields_8h_1a0d44eb3a9184693d0b937598d7e7737d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_INTPOL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0200<sp/></highlight><highlight class="comment">//<sp/>DRVCTRL<sp/>//<sp/>Enabling<sp/>step<sp/>pulse<sp/>interpolation<sp/>by<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="TMC2590__Fields_8h_1ae72c8a312f9a942edbbb4a21ff83145f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_INTPOL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="TMC2590__Fields_8h_1a4cddd64ef4a4189fa5d3532c54923cc9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_DEDGE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0100<sp/></highlight><highlight class="comment">//<sp/>DRVCTRL<sp/>//<sp/>Enabling<sp/>double<sp/>edge<sp/>STEP<sp/>pulse<sp/>detection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="TMC2590__Fields_8h_1a7d5b12a4b0615abdf437eb05711a217e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_DEDGE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="TMC2590__Fields_8h_1a116f0eadb0cfade8e39bb31a1e71959f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_MRES_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F<sp/></highlight><highlight class="comment">//<sp/>DRVCTRL<sp/>//<sp/>ustep<sp/>resolution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="TMC2590__Fields_8h_1a20a90adf31cd407153619bfceb161208" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_MRES_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>8,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC2590_REGISTER_ADDRESS_BITS_MASK<sp/>0x0E0000<sp/>//<sp/>DRVCTRL<sp/>//<sp/>Locked<sp/>for<sp/>Register<sp/>Browser</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC2590_REGISTER_ADDRESS_BITS_SHIFT<sp/>17<sp/>//<sp/>min.:<sp/>0,<sp/>max.:<sp/>0,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="TMC2590__Fields_8h_1a4b46fd844cb61c9d0427728d1bd3e137" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_PHA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x020000<sp/></highlight><highlight class="comment">//<sp/>DRVCTRL<sp/>//<sp/>Current<sp/>flow<sp/>from<sp/>OA1<sp/>-&gt;<sp/>OA2<sp/>(if<sp/>PHA=0),<sp/>else<sp/>from<sp/>OA2<sp/>-&gt;<sp/>OA1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="TMC2590__Fields_8h_1a224198a847f6b4db643bf053233e8c5a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_PHA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>17<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="TMC2590__Fields_8h_1a385f41a0c5903e5e2a0e01e16c9a427a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_CA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01FE00<sp/></highlight><highlight class="comment">//<sp/>DRVCTRL<sp/>//<sp/>Magnitude<sp/>of<sp/>current<sp/>flow<sp/>through<sp/>coil<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="TMC2590__Fields_8h_1a0949addbaa0010bcbecd1cf6a225035d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_CA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="TMC2590__Fields_8h_1ad3441b810aea3c554ead8a81c27de97d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_PHB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0100<sp/></highlight><highlight class="comment">//<sp/>DRVCTRL<sp/>//<sp/>Current<sp/>flow<sp/>from<sp/>OB1<sp/>-&gt;<sp/>OB2<sp/>(if<sp/>PHB=0),<sp/>else<sp/>from<sp/>OB2<sp/>-&gt;<sp/>OB1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="TMC2590__Fields_8h_1abadb34c007fad0fc1077da31205a7b7e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_PHB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="TMC2590__Fields_8h_1a5d0a4849069c15161b4bd5187668b658" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_CB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>DRVCTRL<sp/>//<sp/>Magnitude<sp/>of<sp/>current<sp/>flow<sp/>through<sp/>coil<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="TMC2590__Fields_8h_1a07f4841e3c870c8b1a396a597ac97f02" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_CB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC2590_REGISTER_ADDRESS_BITS_MASK<sp/>0x0E0000<sp/>//<sp/>CHOPCONF<sp/>//<sp/>Locked<sp/>for<sp/>Register<sp/>Browser</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC2590_REGISTER_ADDRESS_BITS_SHIFT<sp/>17<sp/>//<sp/>min.:<sp/>4,<sp/>max.:<sp/>4,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="TMC2590__Fields_8h_1ac77f05e371121ea78af2edf32e846714" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_TBL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x018000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>Blanking<sp/>time<sp/>[clock<sp/>cycles]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="TMC2590__Fields_8h_1a778e90214cb6f9bee73eeb4753484375" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_TBL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>15<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="TMC2590__Fields_8h_1a60ddc867696af1823edec521ddfd1a2c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_CHM_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="TMC2590__Fields_8h_1a1ad3d0ff0df54291118c510303ced14c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_CHM_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>14<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="TMC2590__Fields_8h_1ab5eebfb600b420e3a9d914026dcd15ae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_RNDTF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="TMC2590__Fields_8h_1a6fc1ea0bf1225ad517aee51bbbf64d68" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_RNDTF_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>13<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="TMC2590__Fields_8h_1a6ada27354675dc58399c55c8c75c91c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HDEC_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1800<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>Hysteresis<sp/>decrement<sp/>interval<sp/>[clock<sp/>cycles]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="TMC2590__Fields_8h_1aebcf17b514390e46166c55396ca3b03e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HDEC_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="TMC2590__Fields_8h_1a87a1e4f427d30f80153a4bdad677a2ce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HEND_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0780<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>Hysteresis<sp/>end<sp/>(low)<sp/>value;<sp/>HEND+HSTART<sp/>&lt;<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="TMC2590__Fields_8h_1a65aab0c1ac7cf77503087de353e1e4d5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HEND_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>15,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="TMC2590__Fields_8h_1a28ccd1a15740cde3144e0c988aaa80a9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HSTRT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x70<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>Hysteresis<sp/>start<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="TMC2590__Fields_8h_1a7f551768d1899cc7436556a9f13f3b1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HSTRT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>7,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="TMC2590__Fields_8h_1a606a5aa10e1a730525d53234d32c7ffb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HDEC1_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>Fast<sp/>decay<sp/>mode<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="TMC2590__Fields_8h_1aba667df980cd55b8844fca9ed34d3711" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HDEC1_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HEND_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0780<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>Sine<sp/>wave<sp/>offset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HEND_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>15,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="TMC2590__Fields_8h_1a5403e79bfa934ab7180105529395f0b9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HDEC0_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>MSB<sp/>of<sp/>fast<sp/>decay<sp/>time<sp/>setting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="TMC2590__Fields_8h_1a01d011cae308461d6d0670ff234c7109" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_HDEC0_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo:<sp/>CHECK<sp/>3:<sp/>Redefinition<sp/>of<sp/>HSTRT<sp/>doesn&apos;t<sp/>really<sp/>make<sp/>sense<sp/>here?<sp/>(LH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC2590_HSTRT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x70<sp/>//<sp/>CHOPCONF<sp/>//<sp/>LSBs<sp/>of<sp/>fast<sp/>decay<sp/>setting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC2590_HSTRT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/>//<sp/>min.:<sp/>0,<sp/>max.:<sp/>7,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="TMC2590__Fields_8h_1a91795494917056eb7d06368d0af5b080" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_TOFF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>Slow<sp/>decay<sp/>duration.<sp/>TOFF=0<sp/>=&gt;<sp/>ShutOff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="TMC2590__Fields_8h_1a7afa92d4efd28269c9820915272dae08" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_TOFF_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>15,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC2590_REGISTER_ADDRESS_BITS_MASK<sp/>0x0E0000<sp/>//<sp/>SMARTEN<sp/>//<sp/>Locked<sp/>for<sp/>Register<sp/>Browser</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC2590_REGISTER_ADDRESS_BITS_SHIFT<sp/>17<sp/>//<sp/>min.:<sp/>5,<sp/>max.:<sp/>5,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="TMC2590__Fields_8h_1a6232d25d92f3fd0e387db0773d937d0d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEIMIN_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x8000<sp/></highlight><highlight class="comment">//<sp/>SMARTEN<sp/>//<sp/>Minimum<sp/>coolstep<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="TMC2590__Fields_8h_1a52f2d1f7f88cfdca479d0d5ab81a01b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEIMIN_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>15<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="TMC2590__Fields_8h_1ab69579ce765453574974173aff074684" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEDN_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x6000<sp/></highlight><highlight class="comment">//<sp/>SMARTEN<sp/>//<sp/>StallGuard2<sp/>value<sp/>count</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="TMC2590__Fields_8h_1ad0b98dadcd8ec8ed080099c8d8c39939" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEDN_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>13<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="TMC2590__Fields_8h_1a5b02876ede1c588b9f1fc0775ae37188" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEUP_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x60<sp/></highlight><highlight class="comment">//<sp/>SMARTEN<sp/>//<sp/>Current<sp/>increment<sp/>size;<sp/>StallGuard2<sp/>value<sp/>sample<sp/>count</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="TMC2590__Fields_8h_1a21ec7f72e49d685c30aa75696553eb47" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEUP_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="TMC2590__Fields_8h_1ad0cf8ce3e9018f86aa5fac2a67756f92" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEMAX_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F00<sp/></highlight><highlight class="comment">//<sp/>SMARTEN<sp/>//<sp/>Upper<sp/>coolstep<sp/>threshold<sp/>offset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="TMC2590__Fields_8h_1ad804426d1bba06a16e3cc1ebf4a4fd06" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEMAX_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>15,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="TMC2590__Fields_8h_1a536cce0c045f4ff7cf8cecea1f2b0bc7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEMIN_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F<sp/></highlight><highlight class="comment">//<sp/>SMARTEN<sp/>//<sp/>Lower<sp/>coolstep<sp/>threshold.<sp/>SEMIN=0<sp/>=&gt;<sp/>coolStep<sp/>disabled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="TMC2590__Fields_8h_1ae7a899b76e4fbb1250f7b56a7f06eb13" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SEMIN_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>15,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>//TMC2590_REGISTER_ADDRESS_BITS_MASK<sp/>0x0E0000<sp/>//<sp/>SGCSCONF<sp/>//<sp/>Locked<sp/>for<sp/>Register<sp/>Browser</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>//TMC2590_REGISTER_ADDRESS_BITS_SHIFT<sp/>20<sp/>//<sp/>min.:<sp/>6,<sp/>max.:<sp/>6,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="TMC2590__Fields_8h_1a336825dc8f0a25b267d193116f17dd53" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SFILT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x010000<sp/></highlight><highlight class="comment">//<sp/>SGCSCONF<sp/>//<sp/>stallGuard2<sp/>filter<sp/>mode<sp/>enable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="TMC2590__Fields_8h_1a3d6ad1f3e5d9a2f5647393173087088e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SFILT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="TMC2590__Fields_8h_1adbe22fcfef8dbf170554bb617555cb1d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SGT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7F00<sp/></highlight><highlight class="comment">//<sp/>SGCSCONF<sp/>//<sp/>StallGuard2<sp/>threshold<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="TMC2590__Fields_8h_1a4c588f8dcbf87d96facd4d5fb3651f0f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SGT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>127,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="TMC2590__Fields_8h_1a5f02a998040672cae2106b581e4420ea" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_CS_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1F<sp/></highlight><highlight class="comment">//<sp/>SGCSCONF<sp/>//<sp/>Current<sp/>scale<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="TMC2590__Fields_8h_1a245621005d24c4f2b746d3e44a64ab7e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_CS_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>31,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>//TMC2590_REGISTER_ADDRESS_BITS_MASK<sp/>0x0E0000<sp/>//<sp/>DRVCONF<sp/>//<sp/>Locked<sp/>for<sp/>Register<sp/>Browser</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>//TMC2590_REGISTER_ADDRESS_BITS_SHIFT<sp/>20<sp/>//<sp/>min.:<sp/>7,<sp/>max.:<sp/>7,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="TMC2590__Fields_8h_1a5d02a99dafa4660e4f49501c95215091" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_TST_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x010000<sp/></highlight><highlight class="comment">//<sp/>DRVCONF<sp/>//<sp/>Reserved<sp/>Test<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="TMC2590__Fields_8h_1a23dfc6fd0a7d8d60dd1fea34a48ab8bb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_TST_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="TMC2590__Fields_8h_1a6facec75a251d03324e6b8edabc168d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SLPH_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xC000<sp/></highlight><highlight class="comment">//<sp/>DRVCONF<sp/>//<sp/>Slope<sp/>control,<sp/>high<sp/>side</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="TMC2590__Fields_8h_1a19c2bbe8c59e5cfa402b1543863405f6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SLPH_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>14<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="TMC2590__Fields_8h_1accf920567bf3343e55b5968f4698f0c3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SLPL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3000<sp/></highlight><highlight class="comment">//<sp/>DRVCONF<sp/>//<sp/>Slope<sp/>control,<sp/>low<sp/>side</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="TMC2590__Fields_8h_1ad2a808ef19f423b8d2509300ca13c5e0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SLPL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="TMC2590__Fields_8h_1a894501dd84cc7a52cff1b6702d61acec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_DISS2G_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0400<sp/></highlight><highlight class="comment">//<sp/>DRVCONF<sp/>//<sp/>Disable<sp/>Short<sp/>to<sp/>ground<sp/>protection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="TMC2590__Fields_8h_1aaa4be7f046e7ffd56262e2ed3606bc57" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_DISS2G_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="TMC2590__Fields_8h_1a0d1c13cb828c7eb8cfbab22eb30d0892" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_TS2G_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0300<sp/></highlight><highlight class="comment">//<sp/>DRVCONF<sp/>//<sp/>Short<sp/>to<sp/>ground<sp/>detection<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="TMC2590__Fields_8h_1a90679ab7f589339bb869f7d7b2d4c0a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_TS2G_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="TMC2590__Fields_8h_1a18a71849861340114597e30a6437ee68" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SDOFF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>DRVCONF<sp/>//<sp/>Disable<sp/>S/D<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="TMC2590__Fields_8h_1ad15464d6ab7f4498fbaa7daa845bbfb4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SDOFF_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="TMC2590__Fields_8h_1adb93bf957913ecd7b9da62581e9f2cc6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_VSENSE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>DRVCONF<sp/>//<sp/>Sense<sp/>resistor<sp/>voltage-based<sp/>current<sp/>scaling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="TMC2590__Fields_8h_1a2290b3f0fe43e46dc6c2073d5f4d2284" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_VSENSE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="TMC2590__Fields_8h_1a108acf0e3a140952cad1cdbf41847c90" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_RDSEL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30<sp/></highlight><highlight class="comment">//<sp/>DRVCONF<sp/>//<sp/>RD<sp/>bit<sp/>selection<sp/>=&gt;<sp/>DRVSTATUS(19:10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="TMC2590__Fields_8h_1a93fbf21ff34367216e44ca528057876c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_RDSEL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>2,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC2590_FIELDS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Fields.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_89f591a10993868cc0d63b0599fa2082" kind="dir">
+    <compoundname>TMC5130</compoundname>
+    <innerfile refid="TMC5130_8c">TMC5130.c</innerfile>
+    <innerfile refid="TMC5130_8h">TMC5130.h</innerfile>
+    <innerfile refid="TMC5130__Constants_8h">TMC5130_Constants.h</innerfile>
+    <innerfile refid="TMC5130__Fields_8h">TMC5130_Fields.h</innerfile>
+    <innerfile refid="TMC5130__Register_8h">TMC5130_Register.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/"/>
+  </compounddef>
+</doxygen>

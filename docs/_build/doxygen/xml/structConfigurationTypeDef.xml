@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structConfigurationTypeDef" kind="struct" language="C++" prot="public">
+    <compoundname>ConfigurationTypeDef</compoundname>
+    <includes refid="Config_8h" local="no">Config.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" prot="public" static="no" mutable="no">
+        <type><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837f" kindref="member">ConfigState</ref></type>
+        <definition>ConfigState ConfigurationTypeDef::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <qualifiedname>ConfigurationTypeDef::state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" line="32" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ConfigurationTypeDef::configIndex</definition>
+        <argsstring></argsstring>
+        <name>configIndex</name>
+        <qualifiedname>ConfigurationTypeDef::configIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" line="33" column="24" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t ConfigurationTypeDef::shadowRegister[TMC_REGISTER_COUNT]</definition>
+        <argsstring>[TMC_REGISTER_COUNT]</argsstring>
+        <name>shadowRegister</name>
+        <qualifiedname>ConfigurationTypeDef::shadowRegister</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" line="34" column="24" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structConfigurationTypeDef_1a4844564a6e4680e17d2330dd01eb773b" prot="public" static="no" mutable="no">
+        <type>uint8_t(*</type>
+        <definition>uint8_t(* ConfigurationTypeDef::reset) (void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>reset</name>
+        <qualifiedname>ConfigurationTypeDef::reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" line="35" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structConfigurationTypeDef_1a55b2b5ac72df4a5b6de127cc606302b3" prot="public" static="no" mutable="no">
+        <type>uint8_t(*</type>
+        <definition>uint8_t(* ConfigurationTypeDef::restore) (void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>restore</name>
+        <qualifiedname>ConfigurationTypeDef::restore</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" line="36" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" prot="public" static="no" mutable="no">
+        <type><ref refid="Config_8h_1a4f94914f5c7a97833e65a3d10eedfdee" kindref="member">tmc_callback_config</ref></type>
+        <definition>tmc_callback_config ConfigurationTypeDef::callback</definition>
+        <argsstring></argsstring>
+        <name>callback</name>
+        <qualifiedname>ConfigurationTypeDef::callback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" line="37" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structConfigurationTypeDef_1a85862109a7b056b2697830e98029a3c1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ConfigurationTypeDef::channel</definition>
+        <argsstring></argsstring>
+        <name>channel</name>
+        <qualifiedname>ConfigurationTypeDef::channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" line="38" column="27" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" line="30" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Config.h" bodystart="31" bodyend="39"/>
+    <listofallmembers>
+      <member refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" prot="public" virt="non-virtual"><scope>ConfigurationTypeDef</scope><name>callback</name></member>
+      <member refid="structConfigurationTypeDef_1a85862109a7b056b2697830e98029a3c1" prot="public" virt="non-virtual"><scope>ConfigurationTypeDef</scope><name>channel</name></member>
+      <member refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" prot="public" virt="non-virtual"><scope>ConfigurationTypeDef</scope><name>configIndex</name></member>
+      <member refid="structConfigurationTypeDef_1a4844564a6e4680e17d2330dd01eb773b" prot="public" virt="non-virtual"><scope>ConfigurationTypeDef</scope><name>reset</name></member>
+      <member refid="structConfigurationTypeDef_1a55b2b5ac72df4a5b6de127cc606302b3" prot="public" virt="non-virtual"><scope>ConfigurationTypeDef</scope><name>restore</name></member>
+      <member refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" prot="public" virt="non-virtual"><scope>ConfigurationTypeDef</scope><name>shadowRegister</name></member>
+      <member refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" prot="public" virt="non-virtual"><scope>ConfigurationTypeDef</scope><name>state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

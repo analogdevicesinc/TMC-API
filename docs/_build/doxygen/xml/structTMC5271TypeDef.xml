@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTMC5271TypeDef" kind="struct" language="C++" prot="public">
+    <compoundname>TMC5271TypeDef</compoundname>
+    <includes refid="TMC5271_8h" local="no">TMC5271.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTMC5271TypeDef_1a2860fa795a4c5bb1cb4d8d82295804f5" prot="public" static="no" mutable="no">
+        <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+        <definition>ConfigurationTypeDef* TMC5271TypeDef::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>TMC5271TypeDef::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" line="27" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5271TypeDef_1a92cf8c8655f5d2b6924cdd832da4b05f" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC5271TypeDef::oldX[TMC5271_MOTORS]</definition>
+        <argsstring>[TMC5271_MOTORS]</argsstring>
+        <name>oldX</name>
+        <qualifiedname>TMC5271TypeDef::oldX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5271TypeDef_1ae7a7ee6187c780710bd63d52e833c0de" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC5271TypeDef::velocity[TMC5271_MOTORS]</definition>
+        <argsstring>[TMC5271_MOTORS]</argsstring>
+        <name>velocity</name>
+        <qualifiedname>TMC5271TypeDef::velocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5271TypeDef_1ad78cd31e255a0b2db0a32651e0f74a3d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC5271TypeDef::oldTick</definition>
+        <argsstring></argsstring>
+        <name>oldTick</name>
+        <qualifiedname>TMC5271TypeDef::oldTick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" line="30" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5271TypeDef_1adbaf199fd45f75d6f92da8e15c9557ce" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC5271TypeDef::registerResetState[TMC5271_REGISTER_COUNT]</definition>
+        <argsstring>[TMC5271_REGISTER_COUNT]</argsstring>
+        <name>registerResetState</name>
+        <qualifiedname>TMC5271TypeDef::registerResetState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5271TypeDef_1a08725cf37b45c9568471612689b79091" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC5271TypeDef::registerAccess[TMC5271_REGISTER_COUNT]</definition>
+        <argsstring>[TMC5271_REGISTER_COUNT]</argsstring>
+        <name>registerAccess</name>
+        <qualifiedname>TMC5271TypeDef::registerAccess</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5271TypeDef_1ad9af86ad4403576f0352c37f7202a5c1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC5271TypeDef::slaveAddress</definition>
+        <argsstring></argsstring>
+        <name>slaveAddress</name>
+        <qualifiedname>TMC5271TypeDef::slaveAddress</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ConfigurationTypeDef</label>
+        <link refid="structConfigurationTypeDef"/>
+      </node>
+      <node id="1">
+        <label>TMC5271TypeDef</label>
+        <link refid="structTMC5271TypeDef"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" line="25" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5271/TMC5271.h" bodystart="26" bodyend="34"/>
+    <listofallmembers>
+      <member refid="structTMC5271TypeDef_1a2860fa795a4c5bb1cb4d8d82295804f5" prot="public" virt="non-virtual"><scope>TMC5271TypeDef</scope><name>config</name></member>
+      <member refid="structTMC5271TypeDef_1ad78cd31e255a0b2db0a32651e0f74a3d" prot="public" virt="non-virtual"><scope>TMC5271TypeDef</scope><name>oldTick</name></member>
+      <member refid="structTMC5271TypeDef_1a92cf8c8655f5d2b6924cdd832da4b05f" prot="public" virt="non-virtual"><scope>TMC5271TypeDef</scope><name>oldX</name></member>
+      <member refid="structTMC5271TypeDef_1a08725cf37b45c9568471612689b79091" prot="public" virt="non-virtual"><scope>TMC5271TypeDef</scope><name>registerAccess</name></member>
+      <member refid="structTMC5271TypeDef_1adbaf199fd45f75d6f92da8e15c9557ce" prot="public" virt="non-virtual"><scope>TMC5271TypeDef</scope><name>registerResetState</name></member>
+      <member refid="structTMC5271TypeDef_1ad9af86ad4403576f0352c37f7202a5c1" prot="public" virt="non-virtual"><scope>TMC5271TypeDef</scope><name>slaveAddress</name></member>
+      <member refid="structTMC5271TypeDef_1ae7a7ee6187c780710bd63d52e833c0de" prot="public" virt="non-virtual"><scope>TMC5271TypeDef</scope><name>velocity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

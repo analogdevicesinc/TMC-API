@@ -1,0 +1,1190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2660__Register_8h" kind="file" language="C++">
+    <compoundname>TMC2660_Register.h</compoundname>
+    <includedby refid="TMC2660_8h" local="yes">TMC2660.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC2660.c</label>
+        <link refid="TMC2660_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC2660.h</label>
+        <link refid="TMC2660_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2660_Register.h</label>
+        <link refid="TMC2660__Register_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2660__Register_8h_1a241db19b6e28afbfb637a369b07f3e8d" prot="public" static="no">
+        <name>TMC2660_DRVCTRL</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="14" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a68d02b6cce9078655b62e3988bf06d99" prot="public" static="no">
+        <name>TMC2660_CHOPCONF</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a05085c9ea6228788c462a9cf4bf2df27" prot="public" static="no">
+        <name>TMC2660_SMARTEN</name>
+        <initializer>0x05</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ad5aa65f835d9ad58da2f7db15784e573" prot="public" static="no">
+        <name>TMC2660_SGCSCONF</name>
+        <initializer>0x06</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a60e677dd1b463ce6fce850b1cad80530" prot="public" static="no">
+        <name>TMC2660_DRVCONF</name>
+        <initializer>0x07</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aeec06562de9101913b645393e640f86e" prot="public" static="no">
+        <name>TMC2660_DRVCTRL_SDOFF_MASK</name>
+        <initializer>(0xFFFFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1acfca0fa31c75870dd5d043a96532b34c" prot="public" static="no">
+        <name>TMC2660_DRVCTRL_MASK</name>
+        <initializer>(0xFFFFF &amp; ~((0x0F&lt;&lt;4) | (0x7F &lt;&lt;10)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a3e693b13005b17d52e447004502675a9" prot="public" static="no">
+        <name>TMC2660_CHOPCONF_MASK</name>
+        <initializer>(0xFFFFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a71a202c5ee459aea8ae75bf96e911397" prot="public" static="no">
+        <name>TMC2660_SMARTEN_MASK</name>
+        <initializer>(0xFFFFF &amp; ~((0x01&lt;&lt;4) | (0x01&lt;&lt;7) | (0x01&lt;&lt;12)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ad48500ccec199436add7dda1803b823a" prot="public" static="no">
+        <name>TMC2660_SGCSCONF_MASK</name>
+        <initializer>(0xFFFFF &amp; ~((0x07&lt;&lt;5) | (0x01&lt;&lt;15)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ad5ba3eca9dde751a0c98ab426c0f6968" prot="public" static="no">
+        <name>TMC2660_DRVCONF_MASK</name>
+        <initializer>(0xFFFFF &amp; ~((0x0F&lt;&lt;0) | (0x01&lt;&lt;11)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aec5d37756462dfbb10f38a5a166a7f57" prot="public" static="no">
+        <name>TMC2660_GET_ADDRESS</name>
+        <param><defname>datagram</defname></param>
+        <initializer>((uint8_t) ((((datagram) &gt;&gt; 18) ? ((datagram)&gt;&gt;17) : 0) &amp; 0x07))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a3e9760698f49c8ddef4efe579902d206" prot="public" static="no">
+        <name>TMC2660_DATAGRAM</name>
+        <param><defname>addr</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>(((addr) &lt;&lt; 17) | (value))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a52c16921ec9960cd645f807ff8433e87" prot="public" static="no">
+        <name>TMC2660_SET_CB</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0xFF) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a809a61dfdc7b185182334d41cb9b94e5" prot="public" static="no">
+        <name>TMC2660_SET_PHB</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ab6a50759a0094658d34228905106e472" prot="public" static="no">
+        <name>TMC2660_SET_CA</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0xFF) &lt;&lt; 9)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a47744bdf730f0380c3044f0b0cd7da1a" prot="public" static="no">
+        <name>TMC2660_SET_PHA</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0xFF) &lt;&lt; 17)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a137c52221153f8d07dadeac091d730f4" prot="public" static="no">
+        <name>TMC2660_SET_MRES</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a63835d426c25cd71b81fd17325bba944" prot="public" static="no">
+        <name>TMC2660_SET_DEDGE</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aba4858702b6cc5e6fbca7db5f4d1806f" prot="public" static="no">
+        <name>TMC2660_SET_INTERPOL</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 9)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1afff498cf99c190764c0da4e952ca3abb" prot="public" static="no">
+        <name>TMC2660_SET_TOFF</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aa1f09963f6412e208a70ef7e4c307c1a" prot="public" static="no">
+        <name>TMC2660_SET_HSTRT</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x07) &lt;&lt; 4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a1f52997a89f903fdc6fab2ab3fa1b993" prot="public" static="no">
+        <name>TMC2660_SET_HEND</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 7)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a5d318f4f08b82538e410012d93ac6fe7" prot="public" static="no">
+        <name>TMC2660_SET_HDEC</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 11)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a8bafd75244ee7ff9442e6482cd6aa464" prot="public" static="no">
+        <name>TMC2660_SET_RNDTF</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 13)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a43cd6b491b085b0da656a33728bef138" prot="public" static="no">
+        <name>TMC2660_SET_CHM</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 14)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a7a962163841d7808b3c6e1b0381c1f6b" prot="public" static="no">
+        <name>TMC2660_SET_TBL</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 15)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a4c779f2abd5e99bbda0a5256b33e503b" prot="public" static="no">
+        <name>TMC2660_SET_SEMIN</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a40548a93658bd6126099d4aec14876e1" prot="public" static="no">
+        <name>TMC2660_SET_SEUP</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="58" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a8580348c46efc1049b5b4b784fb2a0e3" prot="public" static="no">
+        <name>TMC2660_SET_SEMAX</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ac5a453ac939651b24fe0fa80dad8e9b8" prot="public" static="no">
+        <name>TMC2660_SET_SEDN</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 13)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1acb8168e70c0ee8cb8c6b271e612b27fc" prot="public" static="no">
+        <name>TMC2660_SET_SEIMIN</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 15)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a443fc86f7dc05d4ed35bfeb6374e463e" prot="public" static="no">
+        <name>TMC2660_SET_CS</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x1F) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ad2a1ab7ff518777bdbe77083f5a32a1a" prot="public" static="no">
+        <name>TMC2660_SET_SGT</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x7F) &lt;&lt; 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a7ca008f43955e7a96f8f2725dcca24b9" prot="public" static="no">
+        <name>TMC2660_SET_SFILT</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 16)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="67" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aa6ed648efe6de22be4b319def45fac11" prot="public" static="no">
+        <name>TMC2660_SET_RDSEL</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="70" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a9f41d1392b84151074e3f507a245f419" prot="public" static="no">
+        <name>TMC2660_SET_VSENSE</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 6)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="71" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ab37e9c053d45962c6b7de48b743562a1" prot="public" static="no">
+        <name>TMC2660_SET_SDOFF</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 7)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="72" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aba4d0f681c09feafc1dd13fbe128af9e" prot="public" static="no">
+        <name>TMC2660_SET_TS2G</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="73" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a59959297fe61afc30d5d2bcd72124b22" prot="public" static="no">
+        <name>TMC2660_SET_DISS2G</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 10)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="74" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a16b53a209b985cfd3438abc4aa52b71c" prot="public" static="no">
+        <name>TMC2660_SET_SLPL</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 12)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="75" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a804e636109458e4b2039f414e744b3d6" prot="public" static="no">
+        <name>TMC2660_SET_SLPH</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 14)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="76" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a3dab6d44557072e0b4d458e0e49b15d2" prot="public" static="no">
+        <name>TMC2660_SET_TST</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 16)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="77" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a9541e569dca2fb32e68e9cb1629fc617" prot="public" static="no">
+        <name>TMC2660_GET_CB</name>
+        <param><defname>X</defname></param>
+        <initializer>(0xFF &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="84" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ae9153f7bf87cff1a01d643b963a989e1" prot="public" static="no">
+        <name>TMC2660_GET_PHB</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="85" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a9755ec3b2b156f2678dcfb7267a07801" prot="public" static="no">
+        <name>TMC2660_GET_CA</name>
+        <param><defname>X</defname></param>
+        <initializer>(0xFF &amp; ((X) &gt;&gt; 9))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="86" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a2a5ef685528b6c3c04d48ad66b7fec83" prot="public" static="no">
+        <name>TMC2660_GET_PHA</name>
+        <param><defname>X</defname></param>
+        <initializer>(0xFF &amp; ((X) &gt;&gt; 17))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="87" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a41357168d8a43fcdb1190e61a42dd6a4" prot="public" static="no">
+        <name>TMC2660_GET_MRES</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="88" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a73fecc64e13b6123688acdf6abb58cbf" prot="public" static="no">
+        <name>TMC2660_GET_DEDGE</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="90" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a6d682f524d8aeb114ed6f997374f9da8" prot="public" static="no">
+        <name>TMC2660_GET_INTERPOL</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 9))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="91" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aeb85bf58e372146bd62f1113780d98c3" prot="public" static="no">
+        <name>TMC2660_GET_TOFF</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="94" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a4f183eec024b12270296e0b72e9d7852" prot="public" static="no">
+        <name>TMC2660_GET_HSTRT</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x07 &amp; ((X) &gt;&gt; 4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="95" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a1cbb3931832a7c8567ba0cdb66a0153e" prot="public" static="no">
+        <name>TMC2660_GET_HEND</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 7))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="96" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aaaa3c960c7d6011d9517577fa5d09a89" prot="public" static="no">
+        <name>TMC2660_GET_HDEC</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 11))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="97" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a8a89a77581dd5807144c8b5fc6d4ddfd" prot="public" static="no">
+        <name>TMC2660_GET_RNDTF</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 13))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="98" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ad24a15f918881000ebb6e811b2c6e04d" prot="public" static="no">
+        <name>TMC2660_GET_CHM</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 14))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="99" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a7b1cd8df8f0a69cb42ebb48b4b1a4ee5" prot="public" static="no">
+        <name>TMC2660_GET_TBL</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 15))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="100" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a3aa45116dfb52580200472c74591294a" prot="public" static="no">
+        <name>TMC2660_GET_SEMIN</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="103" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aff305e1c229c2b95d6859e9661f1e61b" prot="public" static="no">
+        <name>TMC2660_GET_SEUP</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 5))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="104" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a868528fb69ad6687d12cf6ea4e051607" prot="public" static="no">
+        <name>TMC2660_GET_SEMAX</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="105" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ac2ded65f070483d8b4dbeaff74acbc60" prot="public" static="no">
+        <name>TMC2660_GET_SEDN</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 13))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="106" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ae45c894f06d67ee70e57957e17e78ab6" prot="public" static="no">
+        <name>TMC2660_GET_SEIMIN</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 15))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="107" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a80927460510fbfc46c1b7ed3d9772745" prot="public" static="no">
+        <name>TMC2660_GET_CS</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x1F &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="110" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1af43f36b15d8483ab831a368b56ebea09" prot="public" static="no">
+        <name>TMC2660_GET_SGT</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x7F &amp; ((X) &gt;&gt; 8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="111" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a2d2a229beef4ad1f607cd4f2d7006364" prot="public" static="no">
+        <name>TMC2660_GET_SFILT</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 16))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="112" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a031262cd8f3e6d80a8ea676a2b13bd8e" prot="public" static="no">
+        <name>TMC2660_GET_RDSEL</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="115" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a208124ec55dd7c1827bcebba3583645e" prot="public" static="no">
+        <name>TMC2660_GET_VSENSE</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 6))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="116" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a8abc19afb2ac9691568f8436f847e78a" prot="public" static="no">
+        <name>TMC2660_GET_SDOFF</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 7))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="117" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a810e10a741aa68823c26830a565ed07f" prot="public" static="no">
+        <name>TMC2660_GET_TS2G</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="118" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a0c4af005c4276b0bed49e0d96eff7836" prot="public" static="no">
+        <name>TMC2660_GET_DISS2G</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="119" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ad52c26e47ec0339838fd966a6ec1ad58" prot="public" static="no">
+        <name>TMC2660_GET_SLPL</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 12))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="120" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1af449a4ae3c0c3fcc288c14951580ecc4" prot="public" static="no">
+        <name>TMC2660_GET_SLPH</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 14))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="121" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a087e14003a6306d53a927d4f44c97294" prot="public" static="no">
+        <name>TMC2660_GET_TST</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 16))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="122" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a7f29f6804077858a4b553b6a4ac9e216" prot="public" static="no">
+        <name>TMC2660_GET_MSTEP</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x3FF &amp; ((X) &gt;&gt; 10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="127" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ac3eb590db3434f4ac47f1be81a279f32" prot="public" static="no">
+        <name>TMC2660_GET_SG</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x3FF &amp; ((X) &gt;&gt; 10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="130" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a5d0ac9bae92ff8ab49cf132654cbd250" prot="public" static="no">
+        <name>TMC2660_GET_SGU</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x1F &amp; ((X) &gt;&gt; 15))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="133" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a3e6b8de529b819a23284150adad2f5af" prot="public" static="no">
+        <name>TMC2660_GET_SE</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x1F &amp; ((X) &gt;&gt; 10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="134" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ae486c0ba649d6ec52bc60b5f39d44374" prot="public" static="no">
+        <name>TMC2660_GET_STST</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 7))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="137" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a72c3c9acdc1a79205edf65af2e5d74c7" prot="public" static="no">
+        <name>TMC2660_GET_OLB</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 6))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="138" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ab6d5bbe40ab0b20a7b715bb68292d23d" prot="public" static="no">
+        <name>TMC2660_GET_OLA</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 5))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="139" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1a4c77415988347facad2f9a15d21d6d77" prot="public" static="no">
+        <name>TMC2660_GET_S2GB</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="140" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1aa83356276dfc94da56480d96f1d52ee4" prot="public" static="no">
+        <name>TMC2660_GET_S2GA</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 3))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="141" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ac32ab753a742c4aa33d84cd8e903fba4" prot="public" static="no">
+        <name>TMC2660_GET_OTPW</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 2))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="142" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ac7f82cc6218ae8c764ed370219d1cfdb" prot="public" static="no">
+        <name>TMC2660_GET_OT</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 1))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="143" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2660__Register_8h_1ae59b9632bd9dfd09e23af4481708605a" prot="public" static="no">
+        <name>TMC2660_GET_SGF</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" line="144" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC2660_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>addresses<sp/>out<sp/>auf<sp/>address<sp/>bits<sp/>from<sp/>write<sp/>datagrams</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="TMC2660__Register_8h_1a241db19b6e28afbfb637a369b07f3e8d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_DRVCTRL<sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC2660__Register_8h_1a68d02b6cce9078655b62e3988bf06d99" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_CHOPCONF<sp/><sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC2660__Register_8h_1a05085c9ea6228788c462a9cf4bf2df27" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SMARTEN<sp/><sp/><sp/>0x05</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC2660__Register_8h_1ad5aa65f835d9ad58da2f7db15784e573" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SGCSCONF<sp/><sp/>0x06</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC2660__Register_8h_1a60e677dd1b463ce6fce850b1cad80530" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_DRVCONF<sp/><sp/><sp/>0x07</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC2660__Register_8h_1aeec06562de9101913b645393e640f86e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_DRVCTRL_SDOFF_MASK<sp/><sp/>(0xFFFFF)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC2660__Register_8h_1acfca0fa31c75870dd5d043a96532b34c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_DRVCTRL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF<sp/>&amp;<sp/>~((0x0F&lt;&lt;4)<sp/>|<sp/>(0x7F<sp/>&lt;&lt;10)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC2660__Register_8h_1a3e693b13005b17d52e447004502675a9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_CHOPCONF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC2660__Register_8h_1a71a202c5ee459aea8ae75bf96e911397" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SMARTEN_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF<sp/>&amp;<sp/>~((0x01&lt;&lt;4)<sp/>|<sp/>(0x01&lt;&lt;7)<sp/>|<sp/>(0x01&lt;&lt;12)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC2660__Register_8h_1ad48500ccec199436add7dda1803b823a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SGCSCONF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF<sp/>&amp;<sp/>~((0x07&lt;&lt;5)<sp/>|<sp/>(0x01&lt;&lt;15)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC2660__Register_8h_1ad5ba3eca9dde751a0c98ab426c0f6968" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_DRVCONF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFFFFF<sp/>&amp;<sp/>~((0x0F&lt;&lt;0)<sp/>|<sp/>(0x01&lt;&lt;11)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Helper<sp/>macro<sp/>to<sp/>determine<sp/>register<sp/>address<sp/>out<sp/>of<sp/>write<sp/>datagram</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC2660__Register_8h_1aec5d37756462dfbb10f38a5a166a7f57" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_ADDRESS(datagram)<sp/><sp/>((uint8_t)<sp/>((((datagram)<sp/>&gt;&gt;<sp/>18)<sp/>?<sp/>((datagram)&gt;&gt;17)<sp/>:<sp/>0)<sp/>&amp;<sp/>0x07))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Helper<sp/>macro<sp/>to<sp/>construct<sp/>the<sp/>datagram<sp/>out<sp/>of<sp/>the<sp/>address<sp/>and<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC2660__Register_8h_1a3e9760698f49c8ddef4efe579902d206" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_DATAGRAM(addr,<sp/>value)<sp/><sp/>(((addr)<sp/>&lt;&lt;<sp/>17)<sp/>|<sp/>(value))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>makro<sp/>function<sp/>to<sp/>shift<sp/>register<sp/>data<sp/>fields<sp/>to<sp/>correct<sp/>position<sp/>with<sp/>masking<sp/>to<sp/>add<sp/>them<sp/>to<sp/>a<sp/>write<sp/>datagram<sp/>like<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>write<sp/>&amp;=<sp/>~TMC2660_SET_CB(-1);<sp/>//<sp/>clearing<sp/>CB<sp/>field<sp/>of<sp/>write<sp/>datagram<sp/>to<sp/>DRVCTRL<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>write<sp/>|=<sp/>TMC2660_SET_CB(5);<sp/>//<sp/>setting<sp/>value<sp/>5<sp/>to<sp/>CB<sp/>field<sp/>of<sp/><sp/>write<sp/>datagram<sp/>to<sp/>DRVCTRL<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>for<sp/>clearing<sp/>use:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC2660__Register_8h_1a52c16921ec9960cd645f807ff8433e87" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_CB(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0xFF)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC2660__Register_8h_1a809a61dfdc7b185182334d41cb9b94e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_PHB(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC2660__Register_8h_1ab6a50759a0094658d34228905106e472" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_CA(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0xFF)<sp/>&lt;&lt;<sp/>9)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC2660__Register_8h_1a47744bdf730f0380c3044f0b0cd7da1a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_PHA(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0xFF)<sp/>&lt;&lt;<sp/>17)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="TMC2660__Register_8h_1a137c52221153f8d07dadeac091d730f4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_MRES(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC2660__Register_8h_1a63835d426c25cd71b81fd17325bba944" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_DEDGE(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC2660__Register_8h_1aba4858702b6cc5e6fbca7db5f4d1806f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_INTERPOL(X)<sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>9)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_CHOPCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC2660__Register_8h_1afff498cf99c190764c0da4e952ca3abb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_TOFF(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC2660__Register_8h_1aa1f09963f6412e208a70ef7e4c307c1a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_HSTRT(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x07)<sp/>&lt;&lt;<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC2660__Register_8h_1a1f52997a89f903fdc6fab2ab3fa1b993" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_HEND(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>7)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="TMC2660__Register_8h_1a5d318f4f08b82538e410012d93ac6fe7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_HDEC(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>11)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC2660__Register_8h_1a8bafd75244ee7ff9442e6482cd6aa464" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_RNDTF(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>13)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC2660__Register_8h_1a43cd6b491b085b0da656a33728bef138" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_CHM(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>14)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC2660__Register_8h_1a7a962163841d7808b3c6e1b0381c1f6b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_TBL(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>15)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_SMARTEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="TMC2660__Register_8h_1a4c779f2abd5e99bbda0a5256b33e503b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SEMIN(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC2660__Register_8h_1a40548a93658bd6126099d4aec14876e1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SEUP(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>5)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC2660__Register_8h_1a8580348c46efc1049b5b4b784fb2a0e3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SEMAX(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC2660__Register_8h_1ac5a453ac939651b24fe0fa80dad8e9b8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SEDN(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>13)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC2660__Register_8h_1acb8168e70c0ee8cb8c6b271e612b27fc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SEIMIN(X)<sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>15)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_SGCSCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC2660__Register_8h_1a443fc86f7dc05d4ed35bfeb6374e463e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_CS(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x1F)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC2660__Register_8h_1ad2a1ab7ff518777bdbe77083f5a32a1a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SGT(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x7F)<sp/>&lt;&lt;<sp/>8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="TMC2660__Register_8h_1a7ca008f43955e7a96f8f2725dcca24b9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SFILT(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>16)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_DRVCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="TMC2660__Register_8h_1aa6ed648efe6de22be4b319def45fac11" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_RDSEL(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="TMC2660__Register_8h_1a9f41d1392b84151074e3f507a245f419" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_VSENSE(X)<sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>6)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="TMC2660__Register_8h_1ab37e9c053d45962c6b7de48b743562a1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SDOFF(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>7)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="TMC2660__Register_8h_1aba4d0f681c09feafc1dd13fbe128af9e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_TS2G(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="TMC2660__Register_8h_1a59959297fe61afc30d5d2bcd72124b22" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_DISS2G(X)<sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="TMC2660__Register_8h_1a16b53a209b985cfd3438abc4aa52b71c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SLPL(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>12)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="TMC2660__Register_8h_1a804e636109458e4b2039f414e744b3d6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_SLPH(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>14)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="TMC2660__Register_8h_1a3dab6d44557072e0b4d458e0e49b15d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_SET_TST(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>16)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>makro<sp/>function<sp/>to<sp/>shift<sp/>register<sp/>data<sp/>fields<sp/>to<sp/>correct<sp/>position<sp/>with<sp/>masking<sp/>to<sp/>read<sp/>out<sp/>values<sp/>out<sp/>of<sp/>write<sp/>datagram</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>cb<sp/>=<sp/>TMC2660_GET_CB(write);<sp/>//<sp/>reading<sp/>CB<sp/>field<sp/>of<sp/>write<sp/>datagram<sp/>to<sp/>DRVCTRL<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_DRVCTRL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="TMC2660__Register_8h_1a9541e569dca2fb32e68e9cb1629fc617" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_CB(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="TMC2660__Register_8h_1ae9153f7bf87cff1a01d643b963a989e1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_PHB(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="TMC2660__Register_8h_1a9755ec3b2b156f2678dcfb7267a07801" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_CA(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>9))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="TMC2660__Register_8h_1a2a5ef685528b6c3c04d48ad66b7fec83" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_PHA(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>17))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="TMC2660__Register_8h_1a41357168d8a43fcdb1190e61a42dd6a4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_MRES(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="TMC2660__Register_8h_1a73fecc64e13b6123688acdf6abb58cbf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_DEDGE(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="TMC2660__Register_8h_1a6d682f524d8aeb114ed6f997374f9da8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_INTERPOL(X)<sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>9))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_CHOPCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="TMC2660__Register_8h_1aeb85bf58e372146bd62f1113780d98c3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_TOFF(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="TMC2660__Register_8h_1a4f183eec024b12270296e0b72e9d7852" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_HSTRT(X)<sp/><sp/><sp/><sp/><sp/>(0x07<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>4))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="TMC2660__Register_8h_1a1cbb3931832a7c8567ba0cdb66a0153e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_HEND(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>7))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="TMC2660__Register_8h_1aaaa3c960c7d6011d9517577fa5d09a89" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_HDEC(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>11))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="TMC2660__Register_8h_1a8a89a77581dd5807144c8b5fc6d4ddfd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_RNDTF(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>13))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="TMC2660__Register_8h_1ad24a15f918881000ebb6e811b2c6e04d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_CHM(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>14))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="TMC2660__Register_8h_1a7b1cd8df8f0a69cb42ebb48b4b1a4ee5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_TBL(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>15))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_SMARTEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="TMC2660__Register_8h_1a3aa45116dfb52580200472c74591294a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SEMIN(X)<sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="TMC2660__Register_8h_1aff305e1c229c2b95d6859e9661f1e61b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SEUP(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>5))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="TMC2660__Register_8h_1a868528fb69ad6687d12cf6ea4e051607" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SEMAX(X)<sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="TMC2660__Register_8h_1ac2ded65f070483d8b4dbeaff74acbc60" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SEDN(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>13))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="TMC2660__Register_8h_1ae45c894f06d67ee70e57957e17e78ab6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SEIMIN(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>15))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_SGCSCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="TMC2660__Register_8h_1a80927460510fbfc46c1b7ed3d9772745" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_CS(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x1F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="TMC2660__Register_8h_1af43f36b15d8483ab831a368b56ebea09" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SGT(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x7F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="TMC2660__Register_8h_1a2d2a229beef4ad1f607cd4f2d7006364" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SFILT(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>16))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_DRVCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="TMC2660__Register_8h_1a031262cd8f3e6d80a8ea676a2b13bd8e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_RDSEL(X)<sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>4))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="TMC2660__Register_8h_1a208124ec55dd7c1827bcebba3583645e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_VSENSE(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>6))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="TMC2660__Register_8h_1a8abc19afb2ac9691568f8436f847e78a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SDOFF(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>7))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="TMC2660__Register_8h_1a810e10a741aa68823c26830a565ed07f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_TS2G(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="TMC2660__Register_8h_1a0c4af005c4276b0bed49e0d96eff7836" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_DISS2G(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>10))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="TMC2660__Register_8h_1ad52c26e47ec0339838fd966a6ec1ad58" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SLPL(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>12))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="TMC2660__Register_8h_1af449a4ae3c0c3fcc288c14951580ecc4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SLPH(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>14))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="TMC2660__Register_8h_1a087e14003a6306d53a927d4f44c97294" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_TST(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>16))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">//<sp/>makro<sp/>function<sp/>to<sp/>shift<sp/>register<sp/>data<sp/>fields<sp/>to<sp/>correct<sp/>position<sp/>with<sp/>masking<sp/>to<sp/>read<sp/>out<sp/>values<sp/>out<sp/>of<sp/>read<sp/>datagram</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_RESPONSE0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="TMC2660__Register_8h_1a7f29f6804077858a4b553b6a4ac9e216" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_MSTEP(X)<sp/><sp/>(0x3FF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>10))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_RESPONSE1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="TMC2660__Register_8h_1ac3eb590db3434f4ac47f1be81a279f32" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SG(X)<sp/><sp/><sp/><sp/><sp/>(0x3FF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>10))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_RESPONSE2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="TMC2660__Register_8h_1a5d0ac9bae92ff8ab49cf132654cbd250" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SGU(X)<sp/><sp/><sp/><sp/>(0x1F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>15))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="TMC2660__Register_8h_1a3e6b8de529b819a23284150adad2f5af" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SE(X)<sp/><sp/><sp/><sp/><sp/>(0x1F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>10))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2660_RESPONSE_LATEST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="TMC2660__Register_8h_1ae486c0ba649d6ec52bc60b5f39d44374" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_STST(X)<sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>7))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="TMC2660__Register_8h_1a72c3c9acdc1a79205edf65af2e5d74c7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_OLB(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>6))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="TMC2660__Register_8h_1ab6d5bbe40ab0b20a7b715bb68292d23d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_OLA(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>5))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="TMC2660__Register_8h_1a4c77415988347facad2f9a15d21d6d77" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_S2GB(X)<sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>4))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="TMC2660__Register_8h_1aa83356276dfc94da56480d96f1d52ee4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_S2GA(X)<sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>3))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="TMC2660__Register_8h_1ac32ab753a742c4aa33d84cd8e903fba4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_OTPW(X)<sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>2))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="TMC2660__Register_8h_1ac7f82cc6218ae8c764ed370219d1cfdb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_OT(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>1))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="TMC2660__Register_8h_1ae59b9632bd9dfd09e23af4481708605a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2660_GET_SGF(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC2660_REGISTER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2660/TMC2660_Register.h"/>
+  </compounddef>
+</doxygen>

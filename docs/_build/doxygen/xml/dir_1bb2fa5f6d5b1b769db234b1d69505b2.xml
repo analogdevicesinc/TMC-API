@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_1bb2fa5f6d5b1b769db234b1d69505b2" kind="dir">
+    <compoundname>TMC4671</compoundname>
+    <innerfile refid="TMC4671_8c">TMC4671.c</innerfile>
+    <innerfile refid="TMC4671_8h">TMC4671.h</innerfile>
+    <innerfile refid="TMC4671__Constants_8h">TMC4671_Constants.h</innerfile>
+    <innerfile refid="TMC4671__Fields_8h">TMC4671_Fields.h</innerfile>
+    <innerfile refid="TMC4671__Register_8h">TMC4671_Register.h</innerfile>
+    <innerfile refid="TMC4671__Variants_8h">TMC4671_Variants.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/"/>
+  </compounddef>
+</doxygen>

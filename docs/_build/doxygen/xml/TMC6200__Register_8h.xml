@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC6200__Register_8h" kind="file" language="C++">
+    <compoundname>TMC6200_Register.h</compoundname>
+    <includedby refid="TMC6200_8h" local="yes">TMC6200.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC6200.c</label>
+        <link refid="TMC6200_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC6200.h</label>
+        <link refid="TMC6200_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC6200_Register.h</label>
+        <link refid="TMC6200__Register_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC6200__Register_8h_1a84382eb84daea62066f7d68146d1f9a4" prot="public" static="no">
+        <name>TMC6200_GCONF</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" line="15" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Register_8h_1ad1a5e08225af4839d2c98c38e9dcb1fc" prot="public" static="no">
+        <name>TMC6200_GSTAT</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" line="16" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Register_8h_1ab8fc47aa521304fa8085a71f7b2c0576" prot="public" static="no">
+        <name>TMC6200_IOIN_OUTPUT</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" line="17" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Register_8h_1a732f7bcbfa4ff3b9989a9c313d3b113b" prot="public" static="no">
+        <name>TMC6200_OTP_PROG</name>
+        <initializer>0x06</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" line="18" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Register_8h_1a743e40c3bfbbed473de2a7313c006092" prot="public" static="no">
+        <name>TMC6200_OTP_READ</name>
+        <initializer>0x07</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" line="19" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Register_8h_1a83a576231b615128e197b4aa64d8bd0b" prot="public" static="no">
+        <name>TMC6200_FACTORY_CONF</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" line="20" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Register_8h_1a62c646804784acea6fd0033406a83fd2" prot="public" static="no">
+        <name>TMC6200_SHORT_CONF</name>
+        <initializer>0x09</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" line="21" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Register_8h_1aea24836dee0422f49cd766b9f46eebcb" prot="public" static="no">
+        <name>TMC6200_DRV_CONF</name>
+        <initializer>0x0A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" line="22" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2018<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC6200_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>=====<sp/>TMC6200<sp/>register<sp/>set<sp/>=====</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC6200__Register_8h_1a84382eb84daea62066f7d68146d1f9a4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC6200_GCONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC6200__Register_8h_1ad1a5e08225af4839d2c98c38e9dcb1fc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC6200_GSTAT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC6200__Register_8h_1ab8fc47aa521304fa8085a71f7b2c0576" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC6200_IOIN_OUTPUT<sp/><sp/><sp/><sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC6200__Register_8h_1a732f7bcbfa4ff3b9989a9c313d3b113b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC6200_OTP_PROG<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x06</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC6200__Register_8h_1a743e40c3bfbbed473de2a7313c006092" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC6200_OTP_READ<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x07</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC6200__Register_8h_1a83a576231b615128e197b4aa64d8bd0b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC6200_FACTORY_CONF<sp/><sp/><sp/>0x08</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC6200__Register_8h_1a62c646804784acea6fd0033406a83fd2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC6200_SHORT_CONF<sp/><sp/><sp/><sp/><sp/>0x09</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC6200__Register_8h_1aea24836dee0422f49cd766b9f46eebcb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC6200_DRV_CONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC6200_REGISTER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Register.h"/>
+  </compounddef>
+</doxygen>

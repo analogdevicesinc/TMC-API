@@ -1,0 +1,419 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC457_8h" kind="file" language="C++">
+    <compoundname>TMC457.h</compoundname>
+    <includes refid="API__Header_8h" local="yes">tmc/helpers/API_Header.h</includes>
+    <includes refid="TMC457__Register_8h" local="yes">TMC457_Register.h</includes>
+    <includedby refid="TMC457_8c" local="yes">TMC457.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="11">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="9">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="12">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="5">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC457.h</label>
+        <link refid="TMC457_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TMC457_Register.h</label>
+        <link refid="TMC457__Register_8h"/>
+      </node>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>TMC457.c</label>
+        <link refid="TMC457_8c"/>
+      </node>
+      <node id="1">
+        <label>TMC457.h</label>
+        <link refid="TMC457_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC457_8h_1aaca9d3ec5aaa93b935f78270f54b4dc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Write457Zero</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Write457Zero</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Clear a TMC457 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address of the register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Write zero to a TMC457 register (and to its software copy). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" line="21" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.c" bodystart="344" bodyend="361" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" declline="21" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC457_8h_1a7c055c069fa946ad30396514a1ea8f9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Write457Int</definition>
+        <argsstring>(uint8_t Address, int32_t Value)</argsstring>
+        <name>Write457Int</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+<para>Write integer to a TMC457 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC457 register address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be written to the TMC457 register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Write a value to a TMC457 register (and to its software copy). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" line="22" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.c" bodystart="372" bodyend="389" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" declline="22" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC457_8h_1ac5fc9695954ecea81673f66b03da60bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Write457Wavetable</definition>
+        <argsstring>(uint16_t RAMAddress, uint16_t Value)</argsstring>
+        <name>Write457Wavetable</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>RAMAddress</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+<para>Write to the TMC457 wavetable RAM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>RAMAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address into TMC457 wavetable RAM </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>16 bit value to be written</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Write a 16 bit value to the given location of the wavetable RAM of the TMC457. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" line="23" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.c" bodystart="401" bodyend="412" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" declline="23" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC457_8h_1a11681069d515e109d2388d144410742d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Read457Int</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Read457Int</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC457 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>register to be read from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>contents of that register</para>
+</simplesect>
+Read a TMC457 register and return its value. If this is a write-only register then the contents will be taken from the software copy. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.c" bodystart="425" bodyend="445" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" declline="24" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC457_8h_1a59000a2dfce8c4c3f12ee4bb8a5e5403" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Read457Wavetable</definition>
+        <argsstring>(uint16_t RAMAddress)</argsstring>
+        <name>Read457Wavetable</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>RAMAddress</declname>
+        </param>
+        <briefdescription>
+<para>Read a value from the TMC457 wavetable RAM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>RAMAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address in wavetable RAM </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Value read from the wavetable RAM</para>
+</simplesect>
+This function reads a 16 bit value from the TMC457 wavetable RAM. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" line="25" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.c" bodystart="456" bodyend="472" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" declline="25" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC457_8h_1a92650960b6699ac2b27f5d6c1d35f174" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Set457RampMode</definition>
+        <argsstring>(uint32_t RampMode)</argsstring>
+        <name>Set457RampMode</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>RampMode</declname>
+        </param>
+        <briefdescription>
+<para>Set ramp mode of the TMC457. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>RampMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ramp mode to be set</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Change the ramp mode of the TMC457. To be used with the TMC457_RM_xxx constants. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" line="26" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.c" bodystart="483" bodyend="490" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" declline="26" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC457_8h_1ac55e82448a2207be2c3b213c5fe33563" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Init457Wavetable</definition>
+        <argsstring>(uint32_t Resolution, int32_t Offset)</argsstring>
+        <name>Init457Wavetable</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>Resolution</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>Offset</declname>
+        </param>
+        <briefdescription>
+<para>Initialize wavetable for the given microstep resolution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Resolution</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Microstep resolution (0..11, 0=2048, 1=1024, ...) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wavetable offset (mostly 0)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function initializes the TMC457 wavetable for a given microstep resolution. An offset can also be given (depending on the motor this optimizes the zero crossing). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" line="27" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.c" bodystart="503" bodyend="512" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" declline="27" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC457_8h_1a8670565b1afee45f939f999f8beebabc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Init457</definition>
+        <argsstring>(void)</argsstring>
+        <name>Init457</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Intialize the TMC457. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function does the necessary initializations on the TMC457. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" line="28" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.c" bodystart="521" bodyend="539" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" declline="28" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC457_8h_1a11b816f8733e09fcc9d887edf1d06c55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HardStop</definition>
+        <argsstring>()</argsstring>
+        <name>HardStop</name>
+        <briefdescription>
+<para>Stop the motor immediately. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop motor immediately.</para>
+<para>This function stops the motor immediately (hard stop) by switching to velocity mode and then zeroing the V_TARGT and V_ACTUAL registers.</para>
+<para>This function stops the motor immediately, without using the decelaration ramp. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" line="29" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="364" bodyend="369" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h" declline="29" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>TMC457<sp/>library<sp/>definitions</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>all<sp/>macro<sp/>and<sp/>function<sp/>definitions<sp/>of<sp/>the<sp/>TMC457<sp/>library.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC457_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC457_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="API__Header_8h" kindref="compound">tmc/helpers/API_Header.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="TMC457__Register_8h" kindref="compound">TMC457_Register.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC457_8h_1aaca9d3ec5aaa93b935f78270f54b4dc9" kindref="member">Write457Zero</ref>(uint8_t<sp/>Address);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC457_8h_1a7c055c069fa946ad30396514a1ea8f9e" kindref="member">Write457Int</ref>(uint8_t<sp/>Address,<sp/>int32_t<sp/>Value);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC457_8h_1ac5fc9695954ecea81673f66b03da60bf" kindref="member">Write457Wavetable</ref>(uint16_t<sp/>RAMAddress,<sp/>uint16_t<sp/>Value);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="TMC457_8h_1a11681069d515e109d2388d144410742d" kindref="member">Read457Int</ref>(uint8_t<sp/>Address);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="TMC457_8h_1a59000a2dfce8c4c3f12ee4bb8a5e5403" kindref="member">Read457Wavetable</ref>(uint16_t<sp/>RAMAddress);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC457_8h_1a92650960b6699ac2b27f5d6c1d35f174" kindref="member">Set457RampMode</ref>(uint32_t<sp/>RampMode);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC457_8h_1ac55e82448a2207be2c3b213c5fe33563" kindref="member">Init457Wavetable</ref>(uint32_t<sp/>Resolution,<sp/>int32_t<sp/>Offset);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC457_8h_1a8670565b1afee45f939f999f8beebabc" kindref="member">Init457</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC457_8h_1a11b816f8733e09fcc9d887edf1d06c55" kindref="member">HardStop</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC457_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457.h"/>
+  </compounddef>
+</doxygen>

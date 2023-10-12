@@ -1,0 +1,838 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="RegisterAccess_8h" kind="file" language="C++">
+    <compoundname>RegisterAccess.h</compoundname>
+    <includedby refid="API__Header_8h" local="yes">API_Header.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Functions.c</label>
+        <link refid="Functions_8c"/>
+      </node>
+      <node id="3">
+        <label>Functions.h</label>
+        <link refid="Functions_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>MAX22216.c</label>
+        <link refid="MAX22216_8c"/>
+      </node>
+      <node id="11">
+        <label>MAX22216.h</label>
+        <link refid="MAX22216_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TMC2130.c</label>
+        <link refid="TMC2130_8c"/>
+      </node>
+      <node id="13">
+        <label>TMC2130.h</label>
+        <link refid="TMC2130_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>TMC2160.c</label>
+        <link refid="TMC2160_8c"/>
+      </node>
+      <node id="15">
+        <label>TMC2160.h</label>
+        <link refid="TMC2160_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>TMC2208.c</label>
+        <link refid="TMC2208_8c"/>
+      </node>
+      <node id="17">
+        <label>TMC2208.h</label>
+        <link refid="TMC2208_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>TMC2209.c</label>
+        <link refid="TMC2209_8c"/>
+      </node>
+      <node id="19">
+        <label>TMC2209.h</label>
+        <link refid="TMC2209_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>TMC2224.c</label>
+        <link refid="TMC2224_8c"/>
+      </node>
+      <node id="21">
+        <label>TMC2224.h</label>
+        <link refid="TMC2224_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>TMC2225.c</label>
+        <link refid="TMC2225_8c"/>
+      </node>
+      <node id="23">
+        <label>TMC2225.h</label>
+        <link refid="TMC2225_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>TMC2226.c</label>
+        <link refid="TMC2226_8c"/>
+      </node>
+      <node id="25">
+        <label>TMC2226.h</label>
+        <link refid="TMC2226_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>TMC2240.c</label>
+        <link refid="TMC2240_8c"/>
+      </node>
+      <node id="27">
+        <label>TMC2240.h</label>
+        <link refid="TMC2240_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>TMC2300.c</label>
+        <link refid="TMC2300_8c"/>
+      </node>
+      <node id="29">
+        <label>TMC2300.h</label>
+        <link refid="TMC2300_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>TMC2590.c</label>
+        <link refid="TMC2590_8c"/>
+      </node>
+      <node id="31">
+        <label>TMC2590.h</label>
+        <link refid="TMC2590_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>TMC262.c</label>
+        <link refid="TMC262_8c"/>
+      </node>
+      <node id="33">
+        <label>TMC262.h</label>
+        <link refid="TMC262_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>TMC2660.c</label>
+        <link refid="TMC2660_8c"/>
+      </node>
+      <node id="35">
+        <label>TMC2660.h</label>
+        <link refid="TMC2660_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>TMC4210.c</label>
+        <link refid="TMC4210_8c"/>
+      </node>
+      <node id="37">
+        <label>TMC4210.h</label>
+        <link refid="TMC4210_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>TMC424.c</label>
+        <link refid="TMC424_8c"/>
+      </node>
+      <node id="39">
+        <label>TMC424.h</label>
+        <link refid="TMC424_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>TMC429.c</label>
+        <link refid="TMC429_8c"/>
+      </node>
+      <node id="41">
+        <label>TMC429.h</label>
+        <link refid="TMC429_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>TMC4330.c</label>
+        <link refid="TMC4330_8c"/>
+      </node>
+      <node id="43">
+        <label>TMC4330.h</label>
+        <link refid="TMC4330_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>TMC4331.c</label>
+        <link refid="TMC4331_8c"/>
+      </node>
+      <node id="45">
+        <label>TMC4331.h</label>
+        <link refid="TMC4331_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>TMC4361A.c</label>
+        <link refid="TMC4361A_8c"/>
+      </node>
+      <node id="47">
+        <label>TMC4361A.h</label>
+        <link refid="TMC4361A_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>TMC43xx.c</label>
+        <link refid="TMC43xx_8c"/>
+      </node>
+      <node id="49">
+        <label>TMC43xx.h</label>
+        <link refid="TMC43xx_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>TMC457.c</label>
+        <link refid="TMC457_8c"/>
+      </node>
+      <node id="51">
+        <label>TMC457.h</label>
+        <link refid="TMC457_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>TMC4671.c</label>
+        <link refid="TMC4671_8c"/>
+      </node>
+      <node id="53">
+        <label>TMC4671.h</label>
+        <link refid="TMC4671_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>TMC5031.c</label>
+        <link refid="TMC5031_8c"/>
+      </node>
+      <node id="55">
+        <label>TMC5031.h</label>
+        <link refid="TMC5031_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>TMC5041.c</label>
+        <link refid="TMC5041_8c"/>
+      </node>
+      <node id="57">
+        <label>TMC5041.h</label>
+        <link refid="TMC5041_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>TMC5062.c</label>
+        <link refid="TMC5062_8c"/>
+      </node>
+      <node id="59">
+        <label>TMC5062.h</label>
+        <link refid="TMC5062_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>TMC5072.c</label>
+        <link refid="TMC5072_8c"/>
+      </node>
+      <node id="61">
+        <label>TMC5072.h</label>
+        <link refid="TMC5072_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>TMC5130.c</label>
+        <link refid="TMC5130_8c"/>
+      </node>
+      <node id="63">
+        <label>TMC5130.h</label>
+        <link refid="TMC5130_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>TMC5160.c</label>
+        <link refid="TMC5160_8c"/>
+      </node>
+      <node id="65">
+        <label>TMC5160.h</label>
+        <link refid="TMC5160_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>TMC5240.c</label>
+        <link refid="TMC5240_8c"/>
+      </node>
+      <node id="67">
+        <label>TMC5240.h</label>
+        <link refid="TMC5240_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>TMC5271.c</label>
+        <link refid="TMC5271_8c"/>
+      </node>
+      <node id="69">
+        <label>TMC5271.h</label>
+        <link refid="TMC5271_8h"/>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>TMC5272.c</label>
+        <link refid="TMC5272_8c"/>
+      </node>
+      <node id="71">
+        <label>TMC5272.h</label>
+        <link refid="TMC5272_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>TMC6100.c</label>
+        <link refid="TMC6100_8c"/>
+      </node>
+      <node id="73">
+        <label>TMC6100.h</label>
+        <link refid="TMC6100_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>TMC6200.c</label>
+        <link refid="TMC6200_8c"/>
+      </node>
+      <node id="75">
+        <label>TMC6200.h</label>
+        <link refid="TMC6200_8h"/>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>TMC7300.c</label>
+        <link refid="TMC7300_8c"/>
+      </node>
+      <node id="77">
+        <label>TMC7300.h</label>
+        <link refid="TMC7300_8h"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>TMC8461.c</label>
+        <link refid="TMC8461_8c"/>
+      </node>
+      <node id="79">
+        <label>TMC8461.h</label>
+        <link refid="TMC8461_8h"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>TMC8462.c</label>
+        <link refid="TMC8462_8c"/>
+      </node>
+      <node id="81">
+        <label>TMC8462.h</label>
+        <link refid="TMC8462_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>LinearRamp.c</label>
+        <link refid="LinearRamp_8c"/>
+      </node>
+      <node id="5">
+        <label>LinearRamp.h</label>
+        <link refid="LinearRamp_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>LinearRamp1.c</label>
+        <link refid="LinearRamp1_8c"/>
+      </node>
+      <node id="8">
+        <label>LinearRamp1.h</label>
+        <link refid="LinearRamp1_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Ramp.c</label>
+        <link refid="Ramp_8c"/>
+      </node>
+      <node id="9">
+        <label>Ramp.h</label>
+        <link refid="Ramp_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structTMCRegisterConstant" prot="public">TMCRegisterConstant</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="RegisterAccess_8h_1ab44971b415fd1bd8fd16b85f3a7de84e" prot="public" static="no">
+        <name>TMC_ACCESS_NONE</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1aa00f0c6a9e9d78184105874557bbca41" prot="public" static="no">
+        <name>TMC_ACCESS_READ</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a9bbc17f9c25f656ded4987d46ef6fe48" prot="public" static="no">
+        <name>TMC_ACCESS_WRITE</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1ab7bf3c3ea0569faa301549892d541c37" prot="public" static="no">
+        <name>TMC_ACCESS_DIRTY</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a7671750189afbfe74020ed5f30df6068" prot="public" static="no">
+        <name>TMC_ACCESS_RW_SPECIAL</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a885905a0148819416fb28410cc054b6c" prot="public" static="no">
+        <name>TMC_ACCESS_FLAGS</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1aadd09ecc74b6823f349786613cab0a2d" prot="public" static="no">
+        <name>TMC_ACCESS_HW_PRESET</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1ab2cf5506f2c257a5445cf5ea751d8be1" prot="public" static="no">
+        <name>TMC_ACCESS_RW</name>
+        <initializer>(<ref refid="RegisterAccess_8h_1aa00f0c6a9e9d78184105874557bbca41" kindref="member">TMC_ACCESS_READ</ref>  | <ref refid="RegisterAccess_8h_1a9bbc17f9c25f656ded4987d46ef6fe48" kindref="member">TMC_ACCESS_WRITE</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a4bf7542eef05ab0e8a2a0cc96e111728" prot="public" static="no">
+        <name>TMC_ACCESS_RW_SEPARATE</name>
+        <initializer>(<ref refid="RegisterAccess_8h_1ab2cf5506f2c257a5445cf5ea751d8be1" kindref="member">TMC_ACCESS_RW</ref>    | <ref refid="RegisterAccess_8h_1a7671750189afbfe74020ed5f30df6068" kindref="member">TMC_ACCESS_RW_SPECIAL</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1afc2eae2556b90d96f24b8a67cc26b048" prot="public" static="no">
+        <name>TMC_ACCESS_R_FLAGS</name>
+        <initializer>(<ref refid="RegisterAccess_8h_1aa00f0c6a9e9d78184105874557bbca41" kindref="member">TMC_ACCESS_READ</ref>  | <ref refid="RegisterAccess_8h_1a885905a0148819416fb28410cc054b6c" kindref="member">TMC_ACCESS_FLAGS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a8699afffa1b4b0d0d88cdbdc154a129f" prot="public" static="no">
+        <name>TMC_ACCESS_RW_FLAGS</name>
+        <initializer>(<ref refid="RegisterAccess_8h_1ab2cf5506f2c257a5445cf5ea751d8be1" kindref="member">TMC_ACCESS_RW</ref>    | <ref refid="RegisterAccess_8h_1a885905a0148819416fb28410cc054b6c" kindref="member">TMC_ACCESS_FLAGS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a0a68eeac67d2149074f3f6191d60b80c" prot="public" static="no">
+        <name>TMC_ACCESS_W_PRESET</name>
+        <initializer>(<ref refid="RegisterAccess_8h_1a9bbc17f9c25f656ded4987d46ef6fe48" kindref="member">TMC_ACCESS_WRITE</ref> | <ref refid="RegisterAccess_8h_1aadd09ecc74b6823f349786613cab0a2d" kindref="member">TMC_ACCESS_HW_PRESET</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1ae2b46256ddeb4230067256b51bea8cfb" prot="public" static="no">
+        <name>TMC_ACCESS_RW_PRESET</name>
+        <initializer>(<ref refid="RegisterAccess_8h_1ab2cf5506f2c257a5445cf5ea751d8be1" kindref="member">TMC_ACCESS_RW</ref>    | <ref refid="RegisterAccess_8h_1aadd09ecc74b6823f349786613cab0a2d" kindref="member">TMC_ACCESS_HW_PRESET</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1af08f0d12a2110808e943d969103914a8" prot="public" static="no">
+        <name>TMC_IS_READABLE</name>
+        <param><defname>x</defname></param>
+        <initializer>((x) &amp; <ref refid="RegisterAccess_8h_1aa00f0c6a9e9d78184105874557bbca41" kindref="member">TMC_ACCESS_READ</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a9ed149c96912c0b202d8326509d7e923" prot="public" static="no">
+        <name>TMC_IS_WRITABLE</name>
+        <param><defname>x</defname></param>
+        <initializer>((x) &amp; <ref refid="RegisterAccess_8h_1a9bbc17f9c25f656ded4987d46ef6fe48" kindref="member">TMC_ACCESS_WRITE</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a693219534d53ab0222781336324fa9af" prot="public" static="no">
+        <name>TMC_IS_DIRTY</name>
+        <param><defname>x</defname></param>
+        <initializer>((x) &amp; <ref refid="RegisterAccess_8h_1ab7bf3c3ea0569faa301549892d541c37" kindref="member">TMC_ACCESS_DIRTY</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1abc4e7617dbd4a66c3efe62ed34ca6d33" prot="public" static="no">
+        <name>TMC_IS_PRESET</name>
+        <param><defname>x</defname></param>
+        <initializer>((x) &amp; <ref refid="RegisterAccess_8h_1aadd09ecc74b6823f349786613cab0a2d" kindref="member">TMC_ACCESS_HW_PRESET</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="58" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a08cbb9fb1db72595e25b38131ee3dba0" prot="public" static="no">
+        <name>TMC_IS_RESETTABLE</name>
+        <param><defname>x</defname></param>
+        <initializer>(((x) &amp; (<ref refid="RegisterAccess_8h_1a0a68eeac67d2149074f3f6191d60b80c" kindref="member">TMC_ACCESS_W_PRESET</ref>)) == <ref refid="RegisterAccess_8h_1a9bbc17f9c25f656ded4987d46ef6fe48" kindref="member">TMC_ACCESS_WRITE</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a70866cbed8c69a330b4aebc9a1e8287e" prot="public" static="no">
+        <name>TMC_IS_RESTORABLE</name>
+        <param><defname>x</defname></param>
+        <initializer>(((x) &amp; <ref refid="RegisterAccess_8h_1a9bbc17f9c25f656ded4987d46ef6fe48" kindref="member">TMC_ACCESS_WRITE</ref>) &amp;&amp; (!(x &amp; <ref refid="RegisterAccess_8h_1aadd09ecc74b6823f349786613cab0a2d" kindref="member">TMC_ACCESS_HW_PRESET</ref>) || (x &amp; <ref refid="RegisterAccess_8h_1ab7bf3c3ea0569faa301549892d541c37" kindref="member">TMC_ACCESS_DIRTY</ref>)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" prot="public" static="no">
+        <name>____</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="77" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="RegisterAccess_8h_1a1db2da50e48d48d6cc41e3ff41071113" prot="public" static="no">
+        <name>N_A</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="84" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2017<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>permission<sp/>system<sp/>aims<sp/>to<sp/>allow<sp/>a<sp/>general-purpose<sp/>implementation<sp/>for</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>all<sp/>common<sp/>hardware<sp/>register<sp/>usages.<sp/>This<sp/>includes:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>Trivial<sp/>Cases:<sp/>Read,<sp/>Write,<sp/>Read<sp/>&amp;<sp/>Write</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>Read<sp/>&amp;<sp/>Write<sp/>accesses<sp/>that<sp/>route<sp/>to<sp/>different<sp/>values/functions<sp/>of<sp/>a<sp/>chip.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>(e.g.<sp/>serial<sp/>communication,<sp/>where<sp/>read/write<sp/>corresponds<sp/>to<sp/>RX/TX)</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>Read<sp/>to<sp/>clear,<sp/>write<sp/>to<sp/>clear.<sp/>This<sp/>does<sp/>not<sp/>directly<sp/>affect<sp/>the<sp/>access,</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>but<sp/>can<sp/>be<sp/>used<sp/>to<sp/>implement<sp/>a<sp/>software<sp/>shadow<sp/>register<sp/>for<sp/>flags</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>(ORing<sp/>the<sp/>read<sp/>value<sp/>into<sp/>a<sp/>shadow<sp/>register<sp/>instead<sp/>of<sp/>overwriting).</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>Registers<sp/>with<sp/>default<sp/>values<sp/>that<sp/>are<sp/>not<sp/>known<sp/>(e.g.<sp/>Factory<sp/>configuration</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>values<sp/>that<sp/>should<sp/>not<sp/>be<sp/>overwritten<sp/>by<sp/>default).</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_HELPERS_REGISTERACCESS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_HELPERS_REGISTERACCESS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Register<sp/>access<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Lower<sp/>nibble<sp/>is<sp/>used<sp/>for<sp/>read/write,<sp/>higher<sp/>nibble<sp/>is<sp/>used<sp/>for</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>special<sp/>case<sp/>registers.<sp/>This<sp/>makes<sp/>it<sp/>easy<sp/>to<sp/>identify<sp/>the<sp/>read/write</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>part<sp/>of<sp/>the<sp/>permissions<sp/>in<sp/>a<sp/>hexadecimal<sp/>permission<sp/>number.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>The<sp/>dirty<sp/>bit<sp/>will<sp/>only<sp/>ever<sp/>be<sp/>set<sp/>at<sp/>runtime,<sp/>so<sp/>we<sp/>keep<sp/>the<sp/>easily</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>readable<sp/>lower<sp/>nibble.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="RegisterAccess_8h_1ab44971b415fd1bd8fd16b85f3a7de84e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_NONE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="RegisterAccess_8h_1aa00f0c6a9e9d78184105874557bbca41" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_READ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="RegisterAccess_8h_1a9bbc17f9c25f656ded4987d46ef6fe48" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_WRITE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x04<sp/>is<sp/>currently<sp/>unused</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="RegisterAccess_8h_1ab7bf3c3ea0569faa301549892d541c37" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_DIRTY<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/><sp/></highlight><highlight class="comment">//<sp/>Register<sp/>has<sp/>been<sp/>written<sp/>since<sp/>reset<sp/>-&gt;<sp/>shadow<sp/>register<sp/>is<sp/>valid<sp/>for<sp/>restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Special<sp/>Register<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="RegisterAccess_8h_1a7671750189afbfe74020ed5f30df6068" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_RW_SPECIAL<sp/><sp/>0x10<sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>and<sp/>write<sp/>are<sp/>independent<sp/>-<sp/>different<sp/>values<sp/>and/or<sp/>different<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="RegisterAccess_8h_1a885905a0148819416fb28410cc054b6c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_FLAGS<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20<sp/><sp/></highlight><highlight class="comment">//<sp/>Register<sp/>has<sp/>read<sp/>or<sp/>write<sp/>to<sp/>clear<sp/>flags.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="RegisterAccess_8h_1aadd09ecc74b6823f349786613cab0a2d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_HW_PRESET<sp/><sp/><sp/>0x40<sp/><sp/></highlight><highlight class="comment">//<sp/>Register<sp/>has<sp/>hardware<sp/>presets<sp/>(e.g.<sp/>Factory<sp/>calibrations)<sp/>-<sp/>do<sp/>not<sp/>write<sp/>a<sp/>default<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x80<sp/>is<sp/>currently<sp/>unused</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Permission<sp/>combinations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="RegisterAccess_8h_1ab2cf5506f2c257a5445cf5ea751d8be1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_RW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(TMC_ACCESS_READ<sp/><sp/>|<sp/>TMC_ACCESS_WRITE)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x03<sp/>-<sp/>Read<sp/>and<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="RegisterAccess_8h_1a4bf7542eef05ab0e8a2a0cc96e111728" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_RW_SEPARATE<sp/><sp/><sp/><sp/><sp/>(TMC_ACCESS_RW<sp/><sp/><sp/><sp/>|<sp/>TMC_ACCESS_RW_SPECIAL)<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x13<sp/>-<sp/>Read<sp/>and<sp/>write,<sp/>with<sp/>separate<sp/>values/functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="RegisterAccess_8h_1afc2eae2556b90d96f24b8a67cc26b048" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_R_FLAGS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(TMC_ACCESS_READ<sp/><sp/>|<sp/>TMC_ACCESS_FLAGS)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x21<sp/>-<sp/>Read,<sp/>has<sp/>flags<sp/>(read<sp/>to<sp/>clear)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="RegisterAccess_8h_1a8699afffa1b4b0d0d88cdbdc154a129f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_RW_FLAGS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(TMC_ACCESS_RW<sp/><sp/><sp/><sp/>|<sp/>TMC_ACCESS_FLAGS)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x23<sp/>-<sp/>Read<sp/>and<sp/>write,<sp/>has<sp/>flags<sp/>(read<sp/>or<sp/>write<sp/>to<sp/>clear)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="RegisterAccess_8h_1a0a68eeac67d2149074f3f6191d60b80c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_W_PRESET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(TMC_ACCESS_WRITE<sp/>|<sp/>TMC_ACCESS_HW_PRESET)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x42<sp/>-<sp/>Write,<sp/>has<sp/>hardware<sp/>preset<sp/>-<sp/>skipped<sp/>in<sp/>reset<sp/>routine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="RegisterAccess_8h_1ae2b46256ddeb4230067256b51bea8cfb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ACCESS_RW_PRESET<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(TMC_ACCESS_RW<sp/><sp/><sp/><sp/>|<sp/>TMC_ACCESS_HW_PRESET)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x43<sp/>-<sp/>Read<sp/>and<sp/>write,<sp/>has<sp/>hardware<sp/>presets<sp/>-<sp/>skipped<sp/>in<sp/>reset<sp/>routine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Helper<sp/>macros</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="RegisterAccess_8h_1af08f0d12a2110808e943d969103914a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IS_READABLE(x)<sp/><sp/><sp/><sp/>((x)<sp/>&amp;<sp/>TMC_ACCESS_READ)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="RegisterAccess_8h_1a9ed149c96912c0b202d8326509d7e923" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IS_WRITABLE(x)<sp/><sp/><sp/><sp/>((x)<sp/>&amp;<sp/>TMC_ACCESS_WRITE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="RegisterAccess_8h_1a693219534d53ab0222781336324fa9af" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IS_DIRTY(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>((x)<sp/>&amp;<sp/>TMC_ACCESS_DIRTY)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="RegisterAccess_8h_1abc4e7617dbd4a66c3efe62ed34ca6d33" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IS_PRESET(x)<sp/><sp/><sp/><sp/><sp/><sp/>((x)<sp/>&amp;<sp/>TMC_ACCESS_HW_PRESET)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="RegisterAccess_8h_1a08cbb9fb1db72595e25b38131ee3dba0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IS_RESETTABLE(x)<sp/><sp/>(((x)<sp/>&amp;<sp/>(TMC_ACCESS_W_PRESET))<sp/>==<sp/>TMC_ACCESS_WRITE)<sp/></highlight><highlight class="comment">//<sp/>Write<sp/>bit<sp/>set,<sp/>Hardware<sp/>preset<sp/>bit<sp/>not<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="RegisterAccess_8h_1a70866cbed8c69a330b4aebc9a1e8287e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IS_RESTORABLE(x)<sp/><sp/>(((x)<sp/>&amp;<sp/>TMC_ACCESS_WRITE)<sp/>&amp;&amp;<sp/>(!(x<sp/>&amp;<sp/>TMC_ACCESS_HW_PRESET)<sp/>||<sp/>(x<sp/>&amp;<sp/>TMC_ACCESS_DIRTY)))<sp/></highlight><highlight class="comment">//<sp/>Write<sp/>bit<sp/>set,<sp/>if<sp/>it&apos;s<sp/>a<sp/>hardware<sp/>preset<sp/>register,<sp/>it<sp/>needs<sp/>to<sp/>be<sp/>dirty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Struct<sp/>for<sp/>listing<sp/>registers<sp/>that<sp/>have<sp/>constant<sp/>contents<sp/>which<sp/>we<sp/>cannot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">//<sp/>obtain<sp/>by<sp/>reading<sp/>them<sp/>due<sp/>to<sp/>the<sp/>register<sp/>not<sp/>being<sp/>read-back.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structTMCRegisterConstant" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66" refid="structTMCRegisterConstant_1ab42037c24f4b4c46ce305a2c1686b603" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMCRegisterConstant_1ab42037c24f4b4c46ce305a2c1686b603" kindref="member">address</ref>;</highlight></codeline>
+<codeline lineno="67" refid="structTMCRegisterConstant_1a8ee397638840f4461cd9b559fde7fc30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structTMCRegisterConstant_1a8ee397638840f4461cd9b559fde7fc30" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/><ref refid="structTMCRegisterConstant" kindref="compound">TMCRegisterConstant</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Helper<sp/>define:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Most<sp/>register<sp/>permission<sp/>arrays<sp/>are<sp/>initialized<sp/>with<sp/>128<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>those<sp/>fields<sp/>its<sp/>quite<sp/>hard<sp/>to<sp/>have<sp/>an<sp/>easy<sp/>overview<sp/>of<sp/>available</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">//<sp/>registers.<sp/>For<sp/>that,<sp/>____<sp/>is<sp/>defined<sp/>to<sp/>0,<sp/>since<sp/>4<sp/>underscores<sp/>are</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>very<sp/>easy<sp/>to<sp/>distinguish<sp/>from<sp/>the<sp/>2-digit<sp/>hexadecimal<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>way,<sp/>the<sp/>used<sp/>registers<sp/>(permission<sp/>!=<sp/>ACCESS_NONE)<sp/>are<sp/>easily<sp/>spotted</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">//<sp/>amongst<sp/>unused<sp/>(permission<sp/>==<sp/>ACCESS_NONE)<sp/>registers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>____<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Helper<sp/>define:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Default<sp/>reset<sp/>values<sp/>are<sp/>not<sp/>used<sp/>if<sp/>the<sp/>corresponding<sp/>register<sp/>has<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>hardware<sp/>preset.<sp/>Since<sp/>this<sp/>is<sp/>not<sp/>directly<sp/>visible<sp/>in<sp/>the<sp/>default</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//<sp/>register<sp/>reset<sp/>values<sp/>array,<sp/>N_A<sp/>is<sp/>used<sp/>as<sp/>an<sp/>indicator<sp/>for<sp/>a<sp/>preset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">//<sp/>value,<sp/>where<sp/>any<sp/>value<sp/>will<sp/>be<sp/>ignored<sp/>anyways<sp/>(N_A:<sp/>not<sp/>available).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="RegisterAccess_8h_1a1db2da50e48d48d6cc41e3ff41071113" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>N_A<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_HELPERS_REGISTERACCESS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h"/>
+  </compounddef>
+</doxygen>

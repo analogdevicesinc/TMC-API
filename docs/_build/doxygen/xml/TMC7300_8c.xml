@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC7300_8c" kind="file" language="C++">
+    <compoundname>TMC7300.c</compoundname>
+    <includes refid="TMC7300_8h" local="yes">TMC7300.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="12">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tmc/helpers/Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="10">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="13">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="6">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC7300.c</label>
+        <link refid="TMC7300_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TMC7300.h</label>
+        <link refid="TMC7300_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>TMC7300_Constants.h</label>
+        <link refid="TMC7300__Constants_8h"/>
+      </node>
+      <node id="16">
+        <label>TMC7300_Fields.h</label>
+        <link refid="TMC7300__Fields_8h"/>
+      </node>
+      <node id="17">
+        <label>TMC7300_Register.h</label>
+        <link refid="TMC7300__Register_8h"/>
+      </node>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC7300_8c_1aa8b045877ad64ea6e4039e6e8a80a68f" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc7300_readWriteArray</definition>
+        <argsstring>(uint8_t channel, uint8_t *data, size_t writeLength, size_t readLength)</argsstring>
+        <name>tmc7300_readWriteArray</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>writeLength</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>readLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="13" column="13" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" declline="13" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a792193f0db2e0429e5584145b6547f46" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc7300_CRC8</definition>
+        <argsstring>(uint8_t *data, size_t length)</argsstring>
+        <name>tmc7300_CRC8</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="17" column="16" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" declline="17" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1ac8526d1f5e8fbabd8de582188dcd6cc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc7300_writeInt</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300, uint8_t address, int32_t value)</argsstring>
+        <name>tmc7300_writeInt</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="20" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="20" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a43b6850e807ea838bf86de94de8408c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc7300_readInt</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300, uint8_t address)</argsstring>
+        <name>tmc7300_readInt</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="48" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a762d8a46e1734b5247dd7a411768bc3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc7300_init</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300, uint8_t channel, ConfigurationTypeDef *tmc7300_config, const int32_t *registerResetState)</argsstring>
+        <name>tmc7300_init</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>tmc7300_config</declname>
+        </param>
+        <param>
+          <type>const int32_t *</type>
+          <declname>registerResetState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="85" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="85" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a5ebe03a8baa71e42e97b4e9026ed221c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void fillShadowRegisters</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300)</argsstring>
+        <name>fillShadowRegisters</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="110" column="13" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="110" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a5f02e8129beb47a280996fc96716b46c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void writeConfiguration</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300)</argsstring>
+        <name>writeConfiguration</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="140" column="13" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="140" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1acb822b3efd89fa6211fd3ce177d6b653" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc7300_setRegisterResetState</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300, const int32_t *resetState)</argsstring>
+        <name>tmc7300_setRegisterResetState</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <param>
+          <type>const int32_t *</type>
+          <declname>resetState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="199" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="199" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1ab1cdd383a221de51fcd834199a13d725" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc7300_setCallback</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300, tmc7300_callback callback)</argsstring>
+        <name>tmc7300_setCallback</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <param>
+          <type><ref refid="TMC7300_8h_1a30e320d188f3bc5d53ffcd67a129f012" kindref="member">tmc7300_callback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="208" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a32e15d17c7980bbd250c7b554d57c0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc7300_periodicJob</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300, uint32_t tick)</argsstring>
+        <name>tmc7300_periodicJob</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="213" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="213" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a7f968a5b4cedcb256b06748e3fa7d62a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc7300_reset</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300)</argsstring>
+        <name>tmc7300_reset</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="224" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="224" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a54cb5f4c0caef0790f16105b76144845" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc7300_restore</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300)</argsstring>
+        <name>tmc7300_restore</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="243" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="243" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a675f7813d8651a5ce1fa01c52bddb970" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc7300_get_slave</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300)</argsstring>
+        <name>tmc7300_get_slave</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="256" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="256" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1aff0070ab3a73faa83c46d1b4d352ad9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc7300_set_slave</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300, uint8_t slaveAddress)</argsstring>
+        <name>tmc7300_set_slave</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>slaveAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="261" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="261" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1ac3470b1e6064183ced413d3024130dbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc7300_getStandby</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300)</argsstring>
+        <name>tmc7300_getStandby</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="266" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="266" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a50100fcd56e64c1e66d0701c9535c420" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc7300_setStandby</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300, uint8_t standbyState)</argsstring>
+        <name>tmc7300_setStandby</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>standbyState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="271" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="271" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC7300_8c_1a77a844426e5ab1428cb735ec53db5df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc7300_consistencyCheck</definition>
+        <argsstring>(TMC7300TypeDef *tmc7300)</argsstring>
+        <name>tmc7300_consistencyCheck</name>
+        <param>
+          <type><ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref> *</type>
+          <declname>tmc7300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" line="281" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c" bodystart="281" bodyend="297"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC7300_8h" kindref="compound">TMC7300.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>UART<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1aa8b045877ad64ea6e4039e6e8a80a68f" kindref="member">tmc7300_readWriteArray</ref>(uint8_t<sp/>channel,<sp/>uint8_t<sp/>*data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>writeLength,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>readLength);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>UART<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>CRC<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="TMC7300_8c_1a792193f0db2e0429e5584145b6547f46" kindref="member">tmc7300_CRC8</ref>(uint8_t<sp/>*data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>CRC<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1ac8526d1f5e8fbabd8de582188dcd6cc8" kindref="member">tmc7300_writeInt</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300,<sp/>uint8_t<sp/>address,<sp/>int32_t<sp/>value)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>we<sp/>are<sp/>in<sp/>standby<sp/>or<sp/>in<sp/>the<sp/>reset<sp/>procedure<sp/>we<sp/>do<sp/>not<sp/>actually<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>the<sp/>IC<sp/>-<sp/>we<sp/>only<sp/>update<sp/>the<sp/>shadow<sp/>registers.<sp/>After<sp/>exiting<sp/>standby<sp/>or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>completing<sp/>a<sp/>reset<sp/>we<sp/>transition<sp/>into<sp/>a<sp/>restore,<sp/>which<sp/>pushes<sp/>the<sp/>shadow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>register<sp/>contents<sp/>into<sp/>the<sp/>chip.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!tmc7300-&gt;<ref refid="structTMC7300TypeDef_1ad47aba0ff2927f46212cc17249448cd7" kindref="member">standbyEnabled</ref><sp/>||<sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>==<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>data[8];</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[0]<sp/>=<sp/>0x05;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[1]<sp/>=<sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a79b82ffde6cec049386948ebf010f4ac" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[2]<sp/>=<sp/>address<sp/>|<sp/><ref refid="Constants_8h_1aa432cd9074eb257b2c69561eae5ecda0" kindref="member">TMC_WRITE_BIT</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[3]<sp/>=<sp/>(value<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[4]<sp/>=<sp/>(value<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[5]<sp/>=<sp/>(value<sp/>&gt;&gt;<sp/>8<sp/>)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[6]<sp/>=<sp/>(value<sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[7]<sp/>=<sp/><ref refid="TMC7300_8c_1a792193f0db2e0429e5584145b6547f46" kindref="member">tmc7300_CRC8</ref>(data,<sp/>7);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC7300_8c_1aa8b045877ad64ea6e4039e6e8a80a68f" kindref="member">tmc7300_readWriteArray</ref>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a85862109a7b056b2697830e98029a3c1" kindref="member">channel</ref>,<sp/>&amp;data[0],<sp/>8,<sp/>0);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Write<sp/>to<sp/>the<sp/>shadow<sp/>register<sp/>and<sp/>mark<sp/>the<sp/>register<sp/>dirty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>address<sp/>=<sp/><ref refid="Macros_8h_1a25b929527496d1e227906cb8e2b2f01a" kindref="member">TMC_ADDRESS</ref>(address);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>[address]<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a07602ab6754e4de1972379619adc8657" kindref="member">registerAccess</ref>[address]<sp/>|=<sp/><ref refid="RegisterAccess_8h_1ab7bf3c3ea0569faa301549892d541c37" kindref="member">TMC_ACCESS_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">int32_t<sp/><ref refid="TMC7300_8c_1a43b6850e807ea838bf86de94de8408c4" kindref="member">tmc7300_readInt</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300,<sp/>uint8_t<sp/>address)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data[8]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>address<sp/>=<sp/><ref refid="Macros_8h_1a25b929527496d1e227906cb8e2b2f01a" kindref="member">TMC_ADDRESS</ref>(address);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>the<sp/>chip<sp/>is<sp/>in<sp/>standby<sp/>or<sp/>when<sp/>accessing<sp/>a<sp/>write-only<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>use<sp/>the<sp/>shadow<sp/>register<sp/>content<sp/>instead.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1ad47aba0ff2927f46212cc17249448cd7" kindref="member">standbyEnabled</ref><sp/>||<sp/>!<ref refid="RegisterAccess_8h_1af08f0d12a2110808e943d969103914a8" kindref="member">TMC_IS_READABLE</ref>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a07602ab6754e4de1972379619adc8657" kindref="member">registerAccess</ref>[address]))</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>[address];</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>data[0]<sp/>=<sp/>0x05;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>data[1]<sp/>=<sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a79b82ffde6cec049386948ebf010f4ac" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>data[2]<sp/>=<sp/>address;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>data[3]<sp/>=<sp/><ref refid="TMC7300_8c_1a792193f0db2e0429e5584145b6547f46" kindref="member">tmc7300_CRC8</ref>(data,<sp/>3);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC7300_8c_1aa8b045877ad64ea6e4039e6e8a80a68f" kindref="member">tmc7300_readWriteArray</ref>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a85862109a7b056b2697830e98029a3c1" kindref="member">channel</ref>,<sp/>data,<sp/>4,<sp/>8);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>0:<sp/>Sync<sp/>nibble<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[0]<sp/>!=<sp/>0x05)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>1:<sp/>Master<sp/>address<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[1]<sp/>!=<sp/>0xFF)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>2:<sp/>Address<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[2]<sp/>!=<sp/>address)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>7:<sp/>CRC<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[7]<sp/>!=<sp/><ref refid="TMC7300_8c_1a792193f0db2e0429e5584145b6547f46" kindref="member">tmc7300_CRC8</ref>(data,<sp/>7))</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((uint32_t)data[3]<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>((uint32_t)data[4]<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(data[5]<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>data[6];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1a762d8a46e1734b5247dd7a411768bc3b" kindref="member">tmc7300_init</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300,<sp/>uint8_t<sp/>channel,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*tmc7300_config,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*registerResetState)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>tmc7300_config;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Types_8h_1a070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a85862109a7b056b2697830e98029a3c1" kindref="member">channel</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>channel;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>slave<sp/>address:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a79b82ffde6cec049386948ebf010f4ac" kindref="member">slaveAddress</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>in<sp/>standby</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1ad47aba0ff2927f46212cc17249448cd7" kindref="member">standbyEnabled</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="TMC7300__Constants_8h_1a090a1d6bf014147e1baff7d13de689fc" kindref="member">TMC7300_REGISTER_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a07602ab6754e4de1972379619adc8657" kindref="member">registerAccess</ref>[i]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="TMC7300_8h_1a8aafdf24120c3f5f37ac707255512bcf" kindref="member">tmc7300_defaultRegisterAccess</ref>[i];</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a733e6d7ee0c03037def088260a0fd103" kindref="member">registerResetState</ref>[i]<sp/><sp/>=<sp/>registerResetState[i];</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fill<sp/>the<sp/>shadow<sp/>registers<sp/>of<sp/>hardware<sp/>preset<sp/>registers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Only<sp/>needed<sp/>if<sp/>you<sp/>want<sp/>to<sp/>read<sp/>out<sp/>those<sp/>registers<sp/>to<sp/>display<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(e.g.<sp/>for<sp/>the<sp/>TMCL<sp/>IDE<sp/>register<sp/>browser)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1a5ebe03a8baa71e42e97b4e9026ed221c" kindref="member">fillShadowRegisters</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>we<sp/>have<sp/>constants<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="Macros_8h_1a6242a25f9d996f0cc4f4cdb911218b75" kindref="member">ARRAY_SIZE</ref>(<ref refid="TMC7300_8h_1afa41d2ca70fed19c34abec845ba17fcb" kindref="member">tmc7300_registerConstants</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i,<sp/>j<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="TMC7300__Constants_8h_1a090a1d6bf014147e1baff7d13de689fc" kindref="member">TMC7300_REGISTER_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>only<sp/>need<sp/>to<sp/>worry<sp/>about<sp/>hardware<sp/>preset<sp/>registers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>that<sp/>have<sp/>not<sp/>yet<sp/>been<sp/>written<sp/>(no<sp/>dirty<sp/>bit)<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="RegisterAccess_8h_1abc4e7617dbd4a66c3efe62ed34ca6d33" kindref="member">TMC_IS_PRESET</ref>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a07602ab6754e4de1972379619adc8657" kindref="member">registerAccess</ref>[i])<sp/>||<sp/><ref refid="RegisterAccess_8h_1a693219534d53ab0222781336324fa9af" kindref="member">TMC_IS_DIRTY</ref>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a07602ab6754e4de1972379619adc8657" kindref="member">registerAccess</ref>[i]))</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Search<sp/>the<sp/>constant<sp/>list<sp/>for<sp/>the<sp/>current<sp/>address.<sp/>With<sp/>the<sp/>constant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>list<sp/>being<sp/>sorted<sp/>in<sp/>ascended<sp/>order,<sp/>we<sp/>can<sp/>walk<sp/>through<sp/>the<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>until<sp/>the<sp/>entry<sp/>with<sp/>an<sp/>address<sp/>equal<sp/>or<sp/>greater<sp/>than<sp/>i</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(j<sp/>&lt;<sp/><ref refid="Macros_8h_1a6242a25f9d996f0cc4f4cdb911218b75" kindref="member">ARRAY_SIZE</ref>(<ref refid="TMC7300_8h_1afa41d2ca70fed19c34abec845ba17fcb" kindref="member">tmc7300_registerConstants</ref>)<sp/>&amp;&amp;<sp/>(<ref refid="TMC7300_8h_1afa41d2ca70fed19c34abec845ba17fcb" kindref="member">tmc7300_registerConstants</ref>[j].address<sp/>&lt;<sp/>i))</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j++;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>we<sp/>have<sp/>an<sp/>entry<sp/>for<sp/>our<sp/>current<sp/>address,<sp/>write<sp/>the<sp/>constant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="TMC7300_8h_1afa41d2ca70fed19c34abec845ba17fcb" kindref="member">tmc7300_registerConstants</ref>[j].address<sp/>==<sp/>i)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>[i]<sp/>=<sp/><ref refid="TMC7300_8h_1afa41d2ca70fed19c34abec845ba17fcb" kindref="member">tmc7300_registerConstants</ref>[j].<ref refid="structTMCRegisterConstant_1a8ee397638840f4461cd9b559fde7fc30" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1a5f02e8129beb47a280996fc96716b46c" kindref="member">writeConfiguration</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*ptr<sp/>=<sp/>&amp;tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*settings;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>next<sp/>register<sp/>to<sp/>reset/restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>==<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>settings<sp/>=<sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a733e6d7ee0c03037def088260a0fd103" kindref="member">registerResetState</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>next<sp/>resettable<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((*ptr<sp/>&lt;<sp/><ref refid="TMC7300__Constants_8h_1a090a1d6bf014147e1baff7d13de689fc" kindref="member">TMC7300_REGISTER_COUNT</ref>)<sp/>&amp;&amp;<sp/>!<ref refid="RegisterAccess_8h_1a08cbb9fb1db72595e25b38131ee3dba0" kindref="member">TMC_IS_RESETTABLE</ref>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a07602ab6754e4de1972379619adc8657" kindref="member">registerAccess</ref>[*ptr]))</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*ptr)++;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>restore<sp/>while<sp/>in<sp/>standby</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1ad47aba0ff2927f46212cc17249448cd7" kindref="member">standbyEnabled</ref>)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>settings<sp/>=<sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>next<sp/>restorable<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((*ptr<sp/>&lt;<sp/><ref refid="TMC7300__Constants_8h_1a090a1d6bf014147e1baff7d13de689fc" kindref="member">TMC7300_REGISTER_COUNT</ref>)<sp/>&amp;&amp;<sp/>!<ref refid="RegisterAccess_8h_1a70866cbed8c69a330b4aebc9a1e8287e" kindref="member">TMC_IS_RESTORABLE</ref>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a07602ab6754e4de1972379619adc8657" kindref="member">registerAccess</ref>[*ptr]))</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*ptr)++;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*ptr<sp/>&lt;<sp/><ref refid="TMC7300__Constants_8h_1a090a1d6bf014147e1baff7d13de689fc" kindref="member">TMC7300_REGISTER_COUNT</ref>)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset/restore<sp/>the<sp/>found<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC7300_8c_1ac8526d1f5e8fbabd8de582188dcd6cc8" kindref="member">tmc7300_writeInt</ref>(tmc7300,<sp/>*ptr,<sp/>settings[*ptr]);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*ptr)++;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC7300_8c_1a5ebe03a8baa71e42e97b4e9026ed221c" kindref="member">fillShadowRegisters</ref>(tmc7300);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset/restore<sp/>complete<sp/>-&gt;<sp/>call<sp/>the<sp/>callback<sp/>if<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref>)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((<ref refid="TMC7300_8h_1a30e320d188f3bc5d53ffcd67a129f012" kindref="member">tmc7300_callback</ref>)tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref>)(tmc7300,<sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>==<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>done<sp/>-&gt;<sp/>Perform<sp/>a<sp/>restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa7554d7ac751dd29b0f06634cdbafdcc6" kindref="member">CONFIG_RESTORE</ref>;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Restore<sp/>done<sp/>-&gt;<sp/>configuration<sp/>complete</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1acb822b3efd89fa6211fd3ce177d6b653" kindref="member">tmc7300_setRegisterResetState</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*resetState)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="TMC7300__Constants_8h_1a090a1d6bf014147e1baff7d13de689fc" kindref="member">TMC7300_REGISTER_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a733e6d7ee0c03037def088260a0fd103" kindref="member">registerResetState</ref>[i]<sp/>=<sp/>resetState[i];</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1ab1cdd383a221de51fcd834199a13d725" kindref="member">tmc7300_setCallback</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300,<sp/><ref refid="TMC7300_8h_1a30e320d188f3bc5d53ffcd67a129f012" kindref="member">tmc7300_callback</ref><sp/>callback)</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref><sp/>=<sp/>(<ref refid="Config_8h_1a4f94914f5c7a97833e65a3d10eedfdee" kindref="member">tmc_callback_config</ref>)<sp/>callback;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1a32e15d17c7980bbd250c7b554d57c0e1" kindref="member">tmc7300_periodicJob</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300,<sp/>uint32_t<sp/>tick)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(tick);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC7300_8c_1a5f02e8129beb47a280996fc96716b46c" kindref="member">writeConfiguration</ref>(tmc7300);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal">uint8_t<sp/><ref refid="TMC7300_8c_1a7f968a5b4cedcb256b06748e3fa7d62a" kindref="member">tmc7300_reset</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>reset<sp/>can<sp/>always<sp/>happen<sp/>-<sp/>even<sp/>during<sp/>another<sp/>reset<sp/>or<sp/>restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>dirty<sp/>bits<sp/>and<sp/>wipe<sp/>the<sp/>shadow<sp/>registers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="TMC7300__Constants_8h_1a090a1d6bf014147e1baff7d13de689fc" kindref="member">TMC7300_REGISTER_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a07602ab6754e4de1972379619adc8657" kindref="member">registerAccess</ref>[i]<sp/>&amp;=<sp/>~TMC_ACCESS_DIRTY;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Activate<sp/>the<sp/>reset<sp/>config<sp/>mechanism</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal">uint8_t<sp/><ref refid="TMC7300_8c_1a54cb5f4c0caef0790f16105b76144845" kindref="member">tmc7300_restore</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>interrupt<sp/>a<sp/>reset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>reset<sp/>will<sp/>transition<sp/>into<sp/>a<sp/>restore<sp/>anyways</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>==<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa7554d7ac751dd29b0f06634cdbafdcc6" kindref="member">CONFIG_RESTORE</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal">uint8_t<sp/><ref refid="TMC7300_8c_1a675f7813d8651a5ce1fa01c52bddb970" kindref="member">tmc7300_get_slave</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a79b82ffde6cec049386948ebf010f4ac" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1aff0070ab3a73faa83c46d1b4d352ad9a" kindref="member">tmc7300_set_slave</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300,<sp/>uint8_t<sp/>slaveAddress)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a79b82ffde6cec049386948ebf010f4ac" kindref="member">slaveAddress</ref><sp/>=<sp/>slaveAddress;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal">uint8_t<sp/><ref refid="TMC7300_8c_1ac3470b1e6064183ced413d3024130dbe" kindref="member">tmc7300_getStandby</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1ad47aba0ff2927f46212cc17249448cd7" kindref="member">standbyEnabled</ref>;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC7300_8c_1a50100fcd56e64c1e66d0701c9535c420" kindref="member">tmc7300_setStandby</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300,<sp/>uint8_t<sp/>standbyState)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1ad47aba0ff2927f46212cc17249448cd7" kindref="member">standbyEnabled</ref><sp/>&amp;&amp;<sp/>!standbyState)</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Just<sp/>exited<sp/>standby<sp/>-&gt;<sp/>call<sp/>the<sp/>restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC7300_8c_1a54cb5f4c0caef0790f16105b76144845" kindref="member">tmc7300_restore</ref>(tmc7300);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc7300-&gt;<ref refid="structTMC7300TypeDef_1ad47aba0ff2927f46212cc17249448cd7" kindref="member">standbyEnabled</ref><sp/>=<sp/>standbyState;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal">uint8_t<sp/><ref refid="TMC7300_8c_1a77a844426e5ab1428cb735ec53db5df1" kindref="member">tmc7300_consistencyCheck</ref>(<ref refid="structTMC7300TypeDef" kindref="compound">TMC7300TypeDef</ref><sp/>*tmc7300)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Config<sp/>has<sp/>not<sp/>yet<sp/>been<sp/>written<sp/>-&gt;<sp/>it<sp/>can&apos;t<sp/>be<sp/>consistent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tmc7300-&gt;<ref refid="structTMC7300TypeDef_1a20775494d542ff82e166845dd3435d16" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Standby<sp/>is<sp/>enabled<sp/>-&gt;<sp/>registers<sp/>can&apos;t<sp/>be<sp/>accessed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="TMC7300_8c_1ac3470b1e6064183ced413d3024130dbe" kindref="member">tmc7300_getStandby</ref>(tmc7300))</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>PWM_DIRECT<sp/>bit<sp/>is<sp/>no<sp/>longer<sp/>set,<sp/>report<sp/>an<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="TMC7300_8h_1a558f75b590b264700c7f31050abca181" kindref="member">TMC7300_FIELD_READ</ref>(tmc7300,<sp/><ref refid="TMC7300__Register_8h_1a21585b5f9020b4c9db3dfc82a2eeeb41" kindref="member">TMC7300_GCONF</ref>,<sp/><ref refid="TMC7300__Fields_8h_1abc785fea93413ad24819a9eae0b7927c" kindref="member">TMC7300_PWM_DIRECT_MASK</ref>,<sp/><ref refid="TMC7300__Fields_8h_1a21e024d06937e1d6b895085f460b23a6" kindref="member">TMC7300_PWM_DIRECT_SHIFT</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>No<sp/>inconsistency<sp/>detected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC7300/TMC7300.c"/>
+  </compounddef>
+</doxygen>

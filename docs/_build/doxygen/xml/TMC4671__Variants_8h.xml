@@ -1,0 +1,1421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC4671__Variants_8h" kind="file" language="C++">
+    <compoundname>TMC4671_Variants.h</compoundname>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aae68d7da9cd3ba5dc7abde974d06891d" prot="public" static="no">
+        <name>CHIPINFO_ADDR_SI_TYPE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="13" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1afcf273dee1071fdc2c96a2eed93fd7cf" prot="public" static="no">
+        <name>CHIPINFO_ADDR_SI_VERSION</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="14" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a5db2c54eb6e1749e90d289b29057c118" prot="public" static="no">
+        <name>CHIPINFO_ADDR_SI_DATA</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1abd490908cbda3e5d172ece84d8527dff" prot="public" static="no">
+        <name>CHIPINFO_ADDR_SI_TIME</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1abde5812bf18bed0894de3f5ef72aa068" prot="public" static="no">
+        <name>CHIPINFO_ADDR_SI_VARIANT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a84f6a7351f68cecb6ce0f4efc3ad3a8f" prot="public" static="no">
+        <name>CHIPINFO_ADDR_SI_BUILD</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ad21906d9a88a36295ecdc84787ffcc35" prot="public" static="no">
+        <name>ADC_RAW_ADDR_ADC_I1_RAW_ADC_I0_RAW</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a3523db77124251f87b6cba89f143b6dd" prot="public" static="no">
+        <name>ADC_RAW_ADDR_ADC_AGPI_A_RAW_ADC_VM_RAW</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1acfcf457ced822fcec2ad12a7aa72d5fc" prot="public" static="no">
+        <name>ADC_RAW_ADDR_ADC_AENC_UX_RAW_ADC_AGPI_B_RAW</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a07b9fe6ae9ee26afe7538c56bc8ed7e2" prot="public" static="no">
+        <name>ADC_RAW_ADDR_ADC_AENC_WY_RAW_ADC_AENC_VN_RAW</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a2204c1aea6d85a2f643a34f0ea3fc8ca" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_x_a_1</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a4c395e256be3aed4463a5087cabacf8a" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_x_a_2</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a9db734fcb3ef2dbf9ddaac4cbc1ea2b4" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_x_b_0</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a6c2cc8c635e46f26b81eeb02293019ec" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_x_b_1</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a0bbc85a4dfc4243e3baea3cd5687df42" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_x_b_2</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1acdbadb2f85223ff7363ba189ac4c12cc" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_x_enable</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ae136b113e2217e70219903f8f1eaeddd" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_v_a_1</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a9c7ed553c25ec18f1dabb3ff62320a92" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_v_a_2</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a75029fe99ea9003d3c910b8838748462" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_v_b_0</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a07a2bc7997300c6688865c4729958709" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_v_b_1</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aba68af6755e7a1714127ffbcb0f01309" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_v_b_2</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a065d3c7841188780dfdb8dd535fdd9aa" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_v_enable</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a2292296f5eab8e2e6a47f6f07935d76a" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_t_a_1</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a9d8a0b3418096dfea1e618d786224739" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_t_a_2</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a6977555792765dab1a975ce70c77df8d" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_t_b_0</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ac184e9dc9ca6553a33a05675102e15bf" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_t_b_1</name>
+        <initializer>21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a2be6945650a2e377378e5b3f20daab9a" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_t_b_2</name>
+        <initializer>22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1abb1e8abb6155b4537ff17b0389799369" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_t_enable</name>
+        <initializer>23</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a05e296d4e5295bfd0fdb9ffe939bef1e" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_f_a_1</name>
+        <initializer>25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a8cbfcd776ee73db05d7a02fad2e4d27d" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_f_a_2</name>
+        <initializer>26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ace2c69b87e10e555c39cc806b49f8787" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_f_b_0</name>
+        <initializer>28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a88bd32937f0e750da4b65ff9c06742b6" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_f_b_1</name>
+        <initializer>29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aca977e0874c0e1d019eac46c97b36719" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_f_b_2</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a370eafb4788bba1c7f41372df44ff91b" prot="public" static="no">
+        <name>CONFIG_ADDR_biquad_f_enable</name>
+        <initializer>31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="46" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ab7498caa99ba1595a6db11cd5eb78861" prot="public" static="no">
+        <name>CONFIG_ADDR_prbs_amplitude</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ac6fcb1fb1750a1cb0fb2130b9d3f7307" prot="public" static="no">
+        <name>CONFIG_ADDR_prbs_down_sampling_ratio</name>
+        <initializer>33</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ae0ef4c22bd89b43e38f6b6884a56ef72" prot="public" static="no">
+        <name>CONFIG_ADDR_feed_forward_velocity_gain</name>
+        <initializer>40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a8887b242b1c62c7112f70ddc3e90eef4" prot="public" static="no">
+        <name>CONFIG_ADDR_feed_forward_velicity_filter_constant</name>
+        <initializer>41</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a2348e36595b1fe59e999bd4cff9d8ee1" prot="public" static="no">
+        <name>CONFIG_ADDR_feed_forward_torque_gain</name>
+        <initializer>42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a2bd3111c944e8cd768ae91533f6d8f4e" prot="public" static="no">
+        <name>CONFIG_ADDR_feed_forward_torgue_filter_constant</name>
+        <initializer>43</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ad05a2a1f33df15532844f84f5fccdba8" prot="public" static="no">
+        <name>CONFIG_ADDR_VELOCITY_METER_PPTM_MIN_POS_DEV</name>
+        <initializer>50</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a1d44aec9fe5c7770486a58341abe24c7" prot="public" static="no">
+        <name>CONFIG_ADDR_ref_switch_config</name>
+        <initializer>51</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1af0a3fdc989508a08cc62cf08e8735ee7" prot="public" static="no">
+        <name>CONFIG_ADDR_Encoder_Init_hall_Enable</name>
+        <initializer>52</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1abd16aa8f38003928ef0819ce31cbf8a6" prot="public" static="no">
+        <name>CONFIG_ADDR_SINGLE_PIN_IF_STATUS_CFG</name>
+        <initializer>60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a88e8cf81c2a6ced4cdc44786938a1c1d" prot="public" static="no">
+        <name>CONFIG_ADDR_SINGLE_PIN_IF_SCALE_OFFSET</name>
+        <initializer>61</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aeb07a517c6474cf471e91f0bb8b7681e" prot="public" static="no">
+        <name>PID_ERROR_ADDR_PID_TORQUE_ERROR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="58" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a20ff878f6efbb9352b5d80e4f4f0ef62" prot="public" static="no">
+        <name>PID_ERROR_ADDR_PID_FLUX_ERROR</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a22f59213eaa3315cd47f003c4a76411f" prot="public" static="no">
+        <name>PID_ERROR_ADDR_PID_VELOCITY_ERROR</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a650105bd79c47b9aac5b352f473531ba" prot="public" static="no">
+        <name>PID_ERROR_ADDR_PID_POSITION_ERROR</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1af0dcf3522cb4b56ae2b276504ee4a114" prot="public" static="no">
+        <name>PID_ERROR_ADDR_PID_TORQUE_ERROR_SUM</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="62" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a797a1517873930c62ccab6926229b303" prot="public" static="no">
+        <name>PID_ERROR_ADDR_PID_FLUX_ERROR_SUM</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="63" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aa822e3bf224b2b283dd35885117987c1" prot="public" static="no">
+        <name>PID_ERROR_ADDR_PID_VELOCITY_ERROR_SUM</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="64" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a7f569c4c4a54a27c45fe82561b55a19b" prot="public" static="no">
+        <name>PID_ERROR_ADDR_PID_POSITION_ERROR_SUM</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aaab2c7f85d0039d0ac3fb75de175f148" prot="public" static="no">
+        <name>INTERIM_ADDR_PIDIN_TARGET_TORQUE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aec02a910e38ac1242b01a0845be76f8a" prot="public" static="no">
+        <name>INTERIM_ADDR_PIDIN_TARGET_FLUX</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="67" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a1160b530da39e73c7469e8b0e321e430" prot="public" static="no">
+        <name>INTERIM_ADDR_PIDIN_TARGET_VELOCITY</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="68" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a05302e2296b8960e12782ca4b1bc7aa4" prot="public" static="no">
+        <name>INTERIM_ADDR_PIDIN_TARGET_POSITION</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="69" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a51efbcfbda4d976239b61c0c545bd860" prot="public" static="no">
+        <name>INTERIM_ADDR_PIDOUT_TARGET_TORQUE</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="70" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a95efcefda717c36bd416d1248ac743f3" prot="public" static="no">
+        <name>INTERIM_ADDR_PIDOUT_TARGET_FLUX</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="71" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ae34fcc76544d8412c32b2360c3c2ab5b" prot="public" static="no">
+        <name>INTERIM_ADDR_PIDOUT_TARGET_VELOCITY</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="72" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a68a351d8d7444244fae4667d182b0d1d" prot="public" static="no">
+        <name>INTERIM_ADDR_PIDOUT_TARGET_POSITION</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="73" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a11e78557cd0fc65a0857a28d7d32f908" prot="public" static="no">
+        <name>INTERIM_ADDR_FOC_IWY_IUX</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="74" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a163de34d84612628334f8aa30ca1772a" prot="public" static="no">
+        <name>INTERIM_ADDR_FOC_IV</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="75" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a54f1a4185e9e0e7b0927df42a97705f2" prot="public" static="no">
+        <name>INTERIM_ADDR_FOC_IB_IA</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="76" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a2089ba9f405385072da80f53b6a5614d" prot="public" static="no">
+        <name>INTERIM_ADDR_FOC_IQ_ID</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="77" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a67479d8c104cbeff119b9953c1ddf420" prot="public" static="no">
+        <name>INTERIM_ADDR_FOC_UQ_UD</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="78" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a32b13c5712838a13b3d06d936eea9552" prot="public" static="no">
+        <name>INTERIM_ADDR_FOC_UQ_UD_LIMITED</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="79" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ab27f3f2e08ef9027f96bd82ca19bb527" prot="public" static="no">
+        <name>INTERIM_ADDR_FOC_UB_UA</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="80" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ac210fd9010a1e98ae9c271114f91ad08" prot="public" static="no">
+        <name>INTERIM_ADDR_FOC_UWY_UUX</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="81" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a4802506c8770fc6492b0ebc87c92a7f1" prot="public" static="no">
+        <name>INTERIM_ADDR_FOC_UV</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="82" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1accfc0f701ec3b80916d0ef8bc8483a6d" prot="public" static="no">
+        <name>INTERIM_ADDR_PWM_WY_UX</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="83" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a01a4a735b2c1385b6e4b05a8dd821b58" prot="public" static="no">
+        <name>INTERIM_ADDR_PWM_UV</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="84" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aafbeecd93b3e9269d495b5afacdf54f4" prot="public" static="no">
+        <name>INTERIM_ADDR_ADC_I1_I0</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="85" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a0437e937fb47a28e93ae82203eb9e71f" prot="public" static="no">
+        <name>INTERIM_ADDR_PID_TORQUE_TARGET_FLUX_TARGET_TORQUE_ACTUAL_FLUX_ACTUAL_DIV256</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="86" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1af621a59e7d3a0610fff0b0f377780cd3" prot="public" static="no">
+        <name>INTERIM_ADDR_PID_TORQUE_TARGET_TORQUE_ACTUAL</name>
+        <initializer>21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="87" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1adb07c4dc684ca7ea06c2917ae28e469d" prot="public" static="no">
+        <name>INTERIM_ADDR_PID_FLUX_TARGET_FLUX_ACTUAL</name>
+        <initializer>22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="88" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a844ed4ca526fd38120c5ba497334e6ce" prot="public" static="no">
+        <name>INTERIM_ADDR_PID_VELOCITY_TARGET_VELOCITY_ACTUAL_DIV256</name>
+        <initializer>23</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="89" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1adf1bde28defbba1af9f05cd1c2ee86f7" prot="public" static="no">
+        <name>INTERIM_ADDR_PID_VELOCITY_TARGET_VELOCITY_ACTUAL</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="90" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ab0774ea52528e9cdee314fd22347b942" prot="public" static="no">
+        <name>INTERIM_ADDR_PID_POSITION_TARGET_POSITION_ACTUAL_DIV256</name>
+        <initializer>25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="91" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a938cf01d65f9504175a44a72caccae82" prot="public" static="no">
+        <name>INTERIM_ADDR_PID_POSITION_TARGET_POSITION_ACTUAL</name>
+        <initializer>26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="92" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1abda63f0d26a5b7b4b603d121a3fc17c1" prot="public" static="no">
+        <name>INTERIM_ADDR_FF_VELOCITY</name>
+        <initializer>27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="93" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ac9b186c9fbf57d97c2dd420b4f7b59d3" prot="public" static="no">
+        <name>INTERIM_ADDR_FF_TORQUE</name>
+        <initializer>28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="94" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a4d12339a4d813097d6fdaaf464317352" prot="public" static="no">
+        <name>INTERIM_ADDR_ACTUAL_VELOCITY_PPTM</name>
+        <initializer>29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="95" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a7a319d568aec1f352f7555f0095437ac" prot="public" static="no">
+        <name>INTERIM_ADDR_REF_SWITCH_STATUS</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="96" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ad0ba58db314d52b7ca253e20b72c42bd" prot="public" static="no">
+        <name>INTERIM_ADDR_HOME_POSITION</name>
+        <initializer>31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="97" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a3978d609a129d3683a1752e4174eba9a" prot="public" static="no">
+        <name>INTERIM_ADDR_LEFT_POSITION</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="98" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a92cafb3ce569ecd0bdd2118f5c4cd958" prot="public" static="no">
+        <name>INTERIM_ADDR_RIGHT_POSITION</name>
+        <initializer>33</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="99" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a7d33073e262e171ec01cad38e6c10404" prot="public" static="no">
+        <name>INTERIM_ADDR_ENC_INIT_HALL_STATUS</name>
+        <initializer>34</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="100" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ad53ac10227ab1b67b327806bacfb0614" prot="public" static="no">
+        <name>INTERIM_ADDR_ENC_INIT_HALL_PHI_E_ABN_OFFSET</name>
+        <initializer>35</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="101" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a175e588778576a520c2f46acda776c46" prot="public" static="no">
+        <name>INTERIM_ADDR_ENC_INIT_HALL_PHI_E_AENC_OFFSET</name>
+        <initializer>36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="102" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a0bc4a659bfa9a09a3ab8cf3783de625e" prot="public" static="no">
+        <name>INTERIM_ADDR_ENC_INIT_HALL_PHI_A_AENC_OFFSET</name>
+        <initializer>37</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="103" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a1917e4664a5df09c9449b5182b258ffd" prot="public" static="no">
+        <name>INTERIM_ADDR_enc_init_mini_move_u_d_status</name>
+        <initializer>40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="104" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a548aa4a3e641631dc71fdf6bea2ad0c9" prot="public" static="no">
+        <name>INTERIM_ADDR_enc_init_mini_move_phi_e_phi_e_offset</name>
+        <initializer>41</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="105" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ac18b95cd6b3bd0b193e312a488656470" prot="public" static="no">
+        <name>INTERIM_ADDR_SINGLE_PIN_IF_PWM_DUTY_CYCLE_TORQUE_TARGET</name>
+        <initializer>42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="106" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ac9331a9c5eb738c01d9862c12440f5bd" prot="public" static="no">
+        <name>INTERIM_ADDR_SINGLE_PIN_IF_VELOCITY_TARGET</name>
+        <initializer>43</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="107" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1abedd41f96615eb957dfd2db582f93bef" prot="public" static="no">
+        <name>INTERIM_ADDR_SINGLE_PIN_IF_POSITION_TARGET</name>
+        <initializer>44</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="108" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a93fd0a996c7817dbcf3e5222a1859934" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_1_0</name>
+        <initializer>192</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="109" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1ac775c2bc8e9851ffb6bb8293c9ffa9cd" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_3_2</name>
+        <initializer>193</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="110" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aa05da66e40fc918b99967951008b8529" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_5_4</name>
+        <initializer>194</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="111" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1abc9869f5a3bdb5383b1658c3f14fc730" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_7_6</name>
+        <initializer>195</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="112" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1abdf5439668ad03840a856952dd2d5eea" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_9_8</name>
+        <initializer>196</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="113" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aec300560b4216931e48eae9bc5cfee4a" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_11_10</name>
+        <initializer>197</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="114" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a477702f4f9d11b60940bf93080beea89" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_13_12</name>
+        <initializer>198</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="115" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a564dfb6214aabd0c9516a23f4764523f" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_15_14</name>
+        <initializer>199</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="116" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a66c67faec52b9737f3f2817ce3431f29" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_16</name>
+        <initializer>200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="117" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a7131a2f521907962853eedd825d46803" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_17</name>
+        <initializer>201</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="118" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aef4c7b6e44e749d4634743661b07c4a1" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_18</name>
+        <initializer>202</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="119" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a5259aee1202925c449100efa7534786f" prot="public" static="no">
+        <name>INTERIM_ADDR_DEBUG_VALUE_19</name>
+        <initializer>203</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="120" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1acb0edbca01e3d72fc335f593cd6dde63" prot="public" static="no">
+        <name>INTERIM_ADDR_CONFIG_REG_0</name>
+        <initializer>208</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="121" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a678966234fb59a5218ff54d1c95a299a" prot="public" static="no">
+        <name>INTERIM_ADDR_CONFIG_REG_1</name>
+        <initializer>209</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="122" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1affbbee4fc61439239c470e0d4b07a1d8" prot="public" static="no">
+        <name>INTERIM_ADDR_CTRL_PARAM_10</name>
+        <initializer>210</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="123" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a435fb65599b2146c39f99ce4e4815f02" prot="public" static="no">
+        <name>INTERIM_ADDR_CTRL_PARAM_32</name>
+        <initializer>211</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="124" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1aed31b1cf066255001b2fb330a1aa7593" prot="public" static="no">
+        <name>INTERIM_ADDR_STATUS_REG_0</name>
+        <initializer>212</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="125" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1afe318830746277d16d901e180edfac25" prot="public" static="no">
+        <name>INTERIM_ADDR_STATUS_REG_1</name>
+        <initializer>213</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="126" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a5bdc252f357c5c8ab13fb85434ce813f" prot="public" static="no">
+        <name>INTERIM_ADDR_STATUS_PARAM_10</name>
+        <initializer>214</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="127" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671__Variants_8h_1a9127c8819345f46e61e1eb831fff218c" prot="public" static="no">
+        <name>INTERIM_ADDR_STATUS_PARAM_32</name>
+        <initializer>215</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" line="128" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC4671_VARIANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC4671_VARIANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="TMC4671__Variants_8h_1aae68d7da9cd3ba5dc7abde974d06891d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHIPINFO_ADDR_SI_TYPE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="TMC4671__Variants_8h_1afcf273dee1071fdc2c96a2eed93fd7cf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHIPINFO_ADDR_SI_VERSION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC4671__Variants_8h_1a5db2c54eb6e1749e90d289b29057c118" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHIPINFO_ADDR_SI_DATA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC4671__Variants_8h_1abd490908cbda3e5d172ece84d8527dff" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHIPINFO_ADDR_SI_TIME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC4671__Variants_8h_1abde5812bf18bed0894de3f5ef72aa068" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHIPINFO_ADDR_SI_VARIANT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC4671__Variants_8h_1a84f6a7351f68cecb6ce0f4efc3ad3a8f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHIPINFO_ADDR_SI_BUILD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC4671__Variants_8h_1ad21906d9a88a36295ecdc84787ffcc35" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_RAW_ADDR_ADC_I1_RAW_ADC_I0_RAW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC4671__Variants_8h_1a3523db77124251f87b6cba89f143b6dd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_RAW_ADDR_ADC_AGPI_A_RAW_ADC_VM_RAW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC4671__Variants_8h_1acfcf457ced822fcec2ad12a7aa72d5fc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_RAW_ADDR_ADC_AENC_UX_RAW_ADC_AGPI_B_RAW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC4671__Variants_8h_1a07b9fe6ae9ee26afe7538c56bc8ed7e2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_RAW_ADDR_ADC_AENC_WY_RAW_ADC_AENC_VN_RAW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC4671__Variants_8h_1a2204c1aea6d85a2f643a34f0ea3fc8ca" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_x_a_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC4671__Variants_8h_1a4c395e256be3aed4463a5087cabacf8a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_x_a_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC4671__Variants_8h_1a9db734fcb3ef2dbf9ddaac4cbc1ea2b4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_x_b_0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC4671__Variants_8h_1a6c2cc8c635e46f26b81eeb02293019ec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_x_b_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC4671__Variants_8h_1a0bbc85a4dfc4243e3baea3cd5687df42" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_x_b_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC4671__Variants_8h_1acdbadb2f85223ff7363ba189ac4c12cc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_x_enable<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC4671__Variants_8h_1ae136b113e2217e70219903f8f1eaeddd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_v_a_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC4671__Variants_8h_1a9c7ed553c25ec18f1dabb3ff62320a92" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_v_a_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC4671__Variants_8h_1a75029fe99ea9003d3c910b8838748462" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_v_b_0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC4671__Variants_8h_1a07a2bc7997300c6688865c4729958709" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_v_b_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC4671__Variants_8h_1aba68af6755e7a1714127ffbcb0f01309" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_v_b_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC4671__Variants_8h_1a065d3c7841188780dfdb8dd535fdd9aa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_v_enable<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC4671__Variants_8h_1a2292296f5eab8e2e6a47f6f07935d76a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_t_a_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC4671__Variants_8h_1a9d8a0b3418096dfea1e618d786224739" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_t_a_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC4671__Variants_8h_1a6977555792765dab1a975ce70c77df8d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_t_b_0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC4671__Variants_8h_1ac184e9dc9ca6553a33a05675102e15bf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_t_b_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>21</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC4671__Variants_8h_1a2be6945650a2e377378e5b3f20daab9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_t_b_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>22</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC4671__Variants_8h_1abb1e8abb6155b4537ff17b0389799369" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_t_enable<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>23</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC4671__Variants_8h_1a05e296d4e5295bfd0fdb9ffe939bef1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_f_a_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>25</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="TMC4671__Variants_8h_1a8cbfcd776ee73db05d7a02fad2e4d27d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_f_a_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>26</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="TMC4671__Variants_8h_1ace2c69b87e10e555c39cc806b49f8787" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_f_b_0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>28</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC4671__Variants_8h_1a88bd32937f0e750da4b65ff9c06742b6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_f_b_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>29</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC4671__Variants_8h_1aca977e0874c0e1d019eac46c97b36719" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_f_b_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>30</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC4671__Variants_8h_1a370eafb4788bba1c7f41372df44ff91b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_biquad_f_enable<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="TMC4671__Variants_8h_1ab7498caa99ba1595a6db11cd5eb78861" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_prbs_amplitude<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC4671__Variants_8h_1ac6fcb1fb1750a1cb0fb2130b9d3f7307" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_prbs_down_sampling_ratio<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>33</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC4671__Variants_8h_1ae0ef4c22bd89b43e38f6b6884a56ef72" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_feed_forward_velocity_gain<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC4671__Variants_8h_1a8887b242b1c62c7112f70ddc3e90eef4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_feed_forward_velicity_filter_constant<sp/><sp/><sp/><sp/><sp/><sp/><sp/>41</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="TMC4671__Variants_8h_1a2348e36595b1fe59e999bd4cff9d8ee1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_feed_forward_torque_gain<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>42</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC4671__Variants_8h_1a2bd3111c944e8cd768ae91533f6d8f4e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_feed_forward_torgue_filter_constant<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>43</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC4671__Variants_8h_1ad05a2a1f33df15532844f84f5fccdba8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_VELOCITY_METER_PPTM_MIN_POS_DEV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>50</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC4671__Variants_8h_1a1d44aec9fe5c7770486a58341abe24c7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_ref_switch_config<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>51</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC4671__Variants_8h_1af0a3fdc989508a08cc62cf08e8735ee7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_Encoder_Init_hall_Enable<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>52</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC4671__Variants_8h_1abd16aa8f38003928ef0819ce31cbf8a6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_SINGLE_PIN_IF_STATUS_CFG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>60</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="TMC4671__Variants_8h_1a88e8cf81c2a6ced4cdc44786938a1c1d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_ADDR_SINGLE_PIN_IF_SCALE_OFFSET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>61</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC4671__Variants_8h_1aeb07a517c6474cf471e91f0bb8b7681e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PID_ERROR_ADDR_PID_TORQUE_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC4671__Variants_8h_1a20ff878f6efbb9352b5d80e4f4f0ef62" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PID_ERROR_ADDR_PID_FLUX_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC4671__Variants_8h_1a22f59213eaa3315cd47f003c4a76411f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PID_ERROR_ADDR_PID_VELOCITY_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC4671__Variants_8h_1a650105bd79c47b9aac5b352f473531ba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PID_ERROR_ADDR_PID_POSITION_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC4671__Variants_8h_1af0dcf3522cb4b56ae2b276504ee4a114" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PID_ERROR_ADDR_PID_TORQUE_ERROR_SUM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC4671__Variants_8h_1a797a1517873930c62ccab6926229b303" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PID_ERROR_ADDR_PID_FLUX_ERROR_SUM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC4671__Variants_8h_1aa822e3bf224b2b283dd35885117987c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PID_ERROR_ADDR_PID_VELOCITY_ERROR_SUM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC4671__Variants_8h_1a7f569c4c4a54a27c45fe82561b55a19b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PID_ERROR_ADDR_PID_POSITION_ERROR_SUM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC4671__Variants_8h_1aaab2c7f85d0039d0ac3fb75de175f148" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PIDIN_TARGET_TORQUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="TMC4671__Variants_8h_1aec02a910e38ac1242b01a0845be76f8a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PIDIN_TARGET_FLUX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="TMC4671__Variants_8h_1a1160b530da39e73c7469e8b0e321e430" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PIDIN_TARGET_VELOCITY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="TMC4671__Variants_8h_1a05302e2296b8960e12782ca4b1bc7aa4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PIDIN_TARGET_POSITION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="TMC4671__Variants_8h_1a51efbcfbda4d976239b61c0c545bd860" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PIDOUT_TARGET_TORQUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="TMC4671__Variants_8h_1a95efcefda717c36bd416d1248ac743f3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PIDOUT_TARGET_FLUX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="TMC4671__Variants_8h_1ae34fcc76544d8412c32b2360c3c2ab5b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PIDOUT_TARGET_VELOCITY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="TMC4671__Variants_8h_1a68a351d8d7444244fae4667d182b0d1d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PIDOUT_TARGET_POSITION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="TMC4671__Variants_8h_1a11e78557cd0fc65a0857a28d7d32f908" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FOC_IWY_IUX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="TMC4671__Variants_8h_1a163de34d84612628334f8aa30ca1772a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FOC_IV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="TMC4671__Variants_8h_1a54f1a4185e9e0e7b0927df42a97705f2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FOC_IB_IA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="TMC4671__Variants_8h_1a2089ba9f405385072da80f53b6a5614d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FOC_IQ_ID<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="TMC4671__Variants_8h_1a67479d8c104cbeff119b9953c1ddf420" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FOC_UQ_UD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="TMC4671__Variants_8h_1a32b13c5712838a13b3d06d936eea9552" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FOC_UQ_UD_LIMITED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="TMC4671__Variants_8h_1ab27f3f2e08ef9027f96bd82ca19bb527" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FOC_UB_UA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="TMC4671__Variants_8h_1ac210fd9010a1e98ae9c271114f91ad08" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FOC_UWY_UUX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="TMC4671__Variants_8h_1a4802506c8770fc6492b0ebc87c92a7f1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FOC_UV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="TMC4671__Variants_8h_1accfc0f701ec3b80916d0ef8bc8483a6d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PWM_WY_UX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="TMC4671__Variants_8h_1a01a4a735b2c1385b6e4b05a8dd821b58" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PWM_UV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="TMC4671__Variants_8h_1aafbeecd93b3e9269d495b5afacdf54f4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_ADC_I1_I0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="TMC4671__Variants_8h_1a0437e937fb47a28e93ae82203eb9e71f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PID_TORQUE_TARGET_FLUX_TARGET_TORQUE_ACTUAL_FLUX_ACTUAL_DIV256<sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="TMC4671__Variants_8h_1af621a59e7d3a0610fff0b0f377780cd3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PID_TORQUE_TARGET_TORQUE_ACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>21</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="TMC4671__Variants_8h_1adb07c4dc684ca7ea06c2917ae28e469d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PID_FLUX_TARGET_FLUX_ACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>22</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="TMC4671__Variants_8h_1a844ed4ca526fd38120c5ba497334e6ce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PID_VELOCITY_TARGET_VELOCITY_ACTUAL_DIV256<sp/>23</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="TMC4671__Variants_8h_1adf1bde28defbba1af9f05cd1c2ee86f7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PID_VELOCITY_TARGET_VELOCITY_ACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="TMC4671__Variants_8h_1ab0774ea52528e9cdee314fd22347b942" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PID_POSITION_TARGET_POSITION_ACTUAL_DIV256<sp/>25</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="TMC4671__Variants_8h_1a938cf01d65f9504175a44a72caccae82" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_PID_POSITION_TARGET_POSITION_ACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>26</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="TMC4671__Variants_8h_1abda63f0d26a5b7b4b603d121a3fc17c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FF_VELOCITY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="TMC4671__Variants_8h_1ac9b186c9fbf57d97c2dd420b4f7b59d3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_FF_TORQUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>28</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="TMC4671__Variants_8h_1a4d12339a4d813097d6fdaaf464317352" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_ACTUAL_VELOCITY_PPTM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>29</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="TMC4671__Variants_8h_1a7a319d568aec1f352f7555f0095437ac" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_REF_SWITCH_STATUS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>30</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="TMC4671__Variants_8h_1ad0ba58db314d52b7ca253e20b72c42bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_HOME_POSITION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="TMC4671__Variants_8h_1a3978d609a129d3683a1752e4174eba9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_LEFT_POSITION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="TMC4671__Variants_8h_1a92cafb3ce569ecd0bdd2118f5c4cd958" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_RIGHT_POSITION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>33</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="TMC4671__Variants_8h_1a7d33073e262e171ec01cad38e6c10404" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_ENC_INIT_HALL_STATUS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>34</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="TMC4671__Variants_8h_1ad53ac10227ab1b67b327806bacfb0614" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_ENC_INIT_HALL_PHI_E_ABN_OFFSET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>35</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="TMC4671__Variants_8h_1a175e588778576a520c2f46acda776c46" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_ENC_INIT_HALL_PHI_E_AENC_OFFSET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>36</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="TMC4671__Variants_8h_1a0bc4a659bfa9a09a3ab8cf3783de625e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_ENC_INIT_HALL_PHI_A_AENC_OFFSET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>37</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="TMC4671__Variants_8h_1a1917e4664a5df09c9449b5182b258ffd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_enc_init_mini_move_u_d_status<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="TMC4671__Variants_8h_1a548aa4a3e641631dc71fdf6bea2ad0c9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_enc_init_mini_move_phi_e_phi_e_offset<sp/><sp/><sp/><sp/><sp/><sp/>41</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="TMC4671__Variants_8h_1ac18b95cd6b3bd0b193e312a488656470" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_SINGLE_PIN_IF_PWM_DUTY_CYCLE_TORQUE_TARGET<sp/>42</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="TMC4671__Variants_8h_1ac9331a9c5eb738c01d9862c12440f5bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_SINGLE_PIN_IF_VELOCITY_TARGET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>43</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="TMC4671__Variants_8h_1abedd41f96615eb957dfd2db582f93bef" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_SINGLE_PIN_IF_POSITION_TARGET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>44</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="TMC4671__Variants_8h_1a93fd0a996c7817dbcf3e5222a1859934" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_1_0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>192</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="TMC4671__Variants_8h_1ac775c2bc8e9851ffb6bb8293c9ffa9cd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_3_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>193</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="TMC4671__Variants_8h_1aa05da66e40fc918b99967951008b8529" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_5_4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>194</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="TMC4671__Variants_8h_1abc9869f5a3bdb5383b1658c3f14fc730" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_7_6<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>195</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="TMC4671__Variants_8h_1abdf5439668ad03840a856952dd2d5eea" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_9_8<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>196</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="TMC4671__Variants_8h_1aec300560b4216931e48eae9bc5cfee4a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_11_10<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>197</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="TMC4671__Variants_8h_1a477702f4f9d11b60940bf93080beea89" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_13_12<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>198</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="TMC4671__Variants_8h_1a564dfb6214aabd0c9516a23f4764523f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_15_14<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>199</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="TMC4671__Variants_8h_1a66c67faec52b9737f3f2817ce3431f29" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_16<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="TMC4671__Variants_8h_1a7131a2f521907962853eedd825d46803" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_17<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>201</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="TMC4671__Variants_8h_1aef4c7b6e44e749d4634743661b07c4a1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_18<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>202</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="TMC4671__Variants_8h_1a5259aee1202925c449100efa7534786f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_DEBUG_VALUE_19<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>203</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="TMC4671__Variants_8h_1acb0edbca01e3d72fc335f593cd6dde63" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_CONFIG_REG_0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>208</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="TMC4671__Variants_8h_1a678966234fb59a5218ff54d1c95a299a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_CONFIG_REG_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>209</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="TMC4671__Variants_8h_1affbbee4fc61439239c470e0d4b07a1d8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_CTRL_PARAM_10<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>210</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="TMC4671__Variants_8h_1a435fb65599b2146c39f99ce4e4815f02" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_CTRL_PARAM_32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>211</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="TMC4671__Variants_8h_1aed31b1cf066255001b2fb330a1aa7593" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_STATUS_REG_0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>212</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="TMC4671__Variants_8h_1afe318830746277d16d901e180edfac25" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_STATUS_REG_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>213</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="TMC4671__Variants_8h_1a5bdc252f357c5c8ab13fb85434ce813f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_STATUS_PARAM_10<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>214</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="TMC4671__Variants_8h_1a9127c8819345f46e61e1eb831fff218c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERIM_ADDR_STATUS_PARAM_32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>215</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC4671_VARIANTS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671_Variants.h"/>
+  </compounddef>
+</doxygen>

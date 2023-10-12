@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2300__Register_8h" kind="file" language="C++">
+    <compoundname>TMC2300_Register.h</compoundname>
+    <includedby refid="TMC2300_8h" local="yes">TMC2300.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC2300.c</label>
+        <link refid="TMC2300_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC2300.h</label>
+        <link refid="TMC2300_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2300_Register.h</label>
+        <link refid="TMC2300__Register_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2300__Register_8h_1aaec4cff052d88b0204dd3501ce8f7aa3" prot="public" static="no">
+        <name>TMC2300_GCONF</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a15c090fc5941ba099e0d8044ce8c51d7" prot="public" static="no">
+        <name>TMC2300_GSTAT</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1af637816c4987643df74bc5030446c135" prot="public" static="no">
+        <name>TMC2300_IFCNT</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a7fe068cc7c2501c32faf8741e2537047" prot="public" static="no">
+        <name>TMC2300_SLAVECONF</name>
+        <initializer>0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1aa2c822923633e6ff88d3fe0897c39376" prot="public" static="no">
+        <name>TMC2300_IOIN</name>
+        <initializer>0x06</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1aa9ff3031c857404289c1a8b2c233c898" prot="public" static="no">
+        <name>TMC2300_IHOLD_IRUN</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1abdc7801e837bf268ceb9a52b82c144bb" prot="public" static="no">
+        <name>TMC2300_TPOWERDOWN</name>
+        <initializer>0x11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a23458e9bc5af84d8cfc79bc8b10e2742" prot="public" static="no">
+        <name>TMC2300_TSTEP</name>
+        <initializer>0x12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1ae505550e14b062f4c5dfdbe80eaa82e7" prot="public" static="no">
+        <name>TMC2300_TCOOLTHRS</name>
+        <initializer>0x14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1ac79a4c1ac0b47809ca957236cd0331ec" prot="public" static="no">
+        <name>TMC2300_VACTUAL</name>
+        <initializer>0x22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a7a83e88d7e2e9359ba126d666960464f" prot="public" static="no">
+        <name>TMC2300_XDIRECT</name>
+        <initializer>0x22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a1a5eee453ecafbd095b32b18aa9eb9fb" prot="public" static="no">
+        <name>TMC2300_SGTHRS</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a7316d1f8943dc39f549bf1f44e35f17f" prot="public" static="no">
+        <name>TMC2300_SG_VALUE</name>
+        <initializer>0x41</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1ac4373b5fd57dfdd7cb4a37651c00129b" prot="public" static="no">
+        <name>TMC2300_COOLCONF</name>
+        <initializer>0x42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a69b695dcd69e3cda2e5a6ad13143330f" prot="public" static="no">
+        <name>TMC2300_MSCNT</name>
+        <initializer>0x6A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1afe5ef22a899041576b3e39d507fb2581" prot="public" static="no">
+        <name>TMC2300_CHOPCONF</name>
+        <initializer>0x6C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a2b5bedd6115ef2fc2f8bacd8af9ef499" prot="public" static="no">
+        <name>TMC2300_DRVSTATUS</name>
+        <initializer>0x6F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a16557ff6edb44ff62b5c8026b19330c1" prot="public" static="no">
+        <name>TMC2300_PWMCONF</name>
+        <initializer>0x70</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a53ae38c9ffb2875c6a930d96a95c0136" prot="public" static="no">
+        <name>TMC2300_PWMSCALE</name>
+        <initializer>0x71</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Register_8h_1a68337d535fd23d6c787aa6b87590ecc0" prot="public" static="no">
+        <name>TMC2300_PWM_AUTO</name>
+        <initializer>0x72</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC2300_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=====<sp/>TMC2300<sp/>register<sp/>set<sp/>=====</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC2300__Register_8h_1aaec4cff052d88b0204dd3501ce8f7aa3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_GCONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC2300__Register_8h_1a15c090fc5941ba099e0d8044ce8c51d7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_GSTAT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC2300__Register_8h_1af637816c4987643df74bc5030446c135" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IFCNT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC2300__Register_8h_1a7fe068cc7c2501c32faf8741e2537047" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SLAVECONF<sp/><sp/><sp/><sp/><sp/>0x03</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC2300__Register_8h_1aa2c822923633e6ff88d3fe0897c39376" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IOIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x06</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC2300__Register_8h_1aa9ff3031c857404289c1a8b2c233c898" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IHOLD_IRUN<sp/><sp/><sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC2300__Register_8h_1abdc7801e837bf268ceb9a52b82c144bb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TPOWERDOWN<sp/><sp/><sp/><sp/>0x11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC2300__Register_8h_1a23458e9bc5af84d8cfc79bc8b10e2742" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TSTEP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC2300__Register_8h_1ae505550e14b062f4c5dfdbe80eaa82e7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TCOOLTHRS<sp/><sp/><sp/><sp/><sp/>0x14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC2300__Register_8h_1ac79a4c1ac0b47809ca957236cd0331ec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_VACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x22</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC2300__Register_8h_1a7a83e88d7e2e9359ba126d666960464f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_XDIRECT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x22</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC2300__Register_8h_1a1a5eee453ecafbd095b32b18aa9eb9fb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SGTHRS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC2300__Register_8h_1a7316d1f8943dc39f549bf1f44e35f17f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SG_VALUE<sp/><sp/><sp/><sp/><sp/><sp/>0x41</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC2300__Register_8h_1ac4373b5fd57dfdd7cb4a37651c00129b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_COOLCONF<sp/><sp/><sp/><sp/><sp/><sp/>0x42</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC2300__Register_8h_1a69b695dcd69e3cda2e5a6ad13143330f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MSCNT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x6A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC2300__Register_8h_1afe5ef22a899041576b3e39d507fb2581" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_CHOPCONF<sp/><sp/><sp/><sp/><sp/><sp/>0x6C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC2300__Register_8h_1a2b5bedd6115ef2fc2f8bacd8af9ef499" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DRVSTATUS<sp/><sp/><sp/><sp/><sp/>0x6F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC2300__Register_8h_1a16557ff6edb44ff62b5c8026b19330c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWMCONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x70</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC2300__Register_8h_1a53ae38c9ffb2875c6a930d96a95c0136" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWMSCALE<sp/><sp/><sp/><sp/><sp/><sp/>0x71</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC2300__Register_8h_1a68337d535fd23d6c787aa6b87590ecc0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_AUTO<sp/><sp/><sp/><sp/><sp/><sp/>0x72</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC2300_Register<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Register.h"/>
+  </compounddef>
+</doxygen>

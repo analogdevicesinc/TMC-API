@@ -1,0 +1,746 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC429_8h" kind="file" language="C++">
+    <compoundname>TMC429.h</compoundname>
+    <includes refid="API__Header_8h" local="yes">tmc/helpers/API_Header.h</includes>
+    <includes refid="TMC429__Register_8h" local="yes">TMC429_Register.h</includes>
+    <includedby refid="TMC429_8c" local="yes">TMC429.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="11">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="9">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="12">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="5">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC429.h</label>
+        <link refid="TMC429_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TMC429_Register.h</label>
+        <link refid="TMC429__Register_8h"/>
+      </node>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>TMC429.c</label>
+        <link refid="TMC429_8c"/>
+      </node>
+      <node id="1">
+        <label>TMC429.h</label>
+        <link refid="TMC429_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ReadWriteSPI</definition>
+        <argsstring>(void *p_SPI_DeviceHandle, uint8_t data, bool endTransaction)</argsstring>
+        <name>ReadWriteSPI</name>
+        <param>
+          <type>void *</type>
+          <declname>p_SPI_DeviceHandle</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>endTransaction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="22" column="9" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="22" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a8301ac7f272d51ac0c84d7be55a9f410" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Init429</definition>
+        <argsstring>(void)</argsstring>
+        <name>Init429</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>TMC429 initialization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function does all necessary initializations of the TMC429 to operate in step/direction mode. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="25" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="381" bodyend="403" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="25" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a8c3da7c2fab63dfd98da7db40e886be1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ReadWrite429</definition>
+        <argsstring>(uint8_t *Read, uint8_t *Write)</argsstring>
+        <name>ReadWrite429</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Read</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Write</declname>
+        </param>
+        <briefdescription>
+<para>32 bit SPI communication with TMC429 </para>
+        </briefdescription>
+        <detaileddescription>
+<para>40 bit SPI communication with TMC457</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Read</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>four byte array holding the data read from the TMC428 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Write</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>four byte array holding the data to write to the TMC428</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This is the low-level function that does all SPI communication with the TMC429. It sends a 32 bit SPI telegramme to the TMC429 and receives the 32 bit answer telegramme from the TMC429.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Read</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>five byte array holding the data read from the TMC457 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Write</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>five byte array holding the data to write to the TMC457</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This is the low-level function that does all SPI communication with the TMC457. It sends a 40 bit SPI telegramme to the TMC457 and receives the 40 bit answer telegramme from the TMC457. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="26" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="38" bodyend="44" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="26" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a0da9a8c5a240e18e77fa36c74de33167" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Write429Zero</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Write429Zero</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Write zero to a TMC429 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function sets a TMC429 register to zero. This can be useful e.g. to stop a motor quickly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="27" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="95" bodyend="104" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="27" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a86865d616854acebb75f7e9dfe4a1ec6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Write429Bytes</definition>
+        <argsstring>(uint8_t Address, uint8_t *Bytes)</argsstring>
+        <name>Write429Bytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Bytes</declname>
+        </param>
+        <briefdescription>
+<para>TMC429 write access. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see also <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array holding three bytes to be written to the TMC429 register.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function writes an array of three bytes to a TMC429 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="28" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="55" bodyend="64" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="28" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a8991639672e224d03f640022e658affc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Write429Datagram</definition>
+        <argsstring>(uint8_t Address, uint8_t HighByte, uint8_t MidByte, uint8_t LowByte)</argsstring>
+        <name>Write429Datagram</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>HighByte</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>MidByte</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>LowByte</declname>
+        </param>
+        <briefdescription>
+<para>TMC429 write access. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>HighByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MSB of the TMC429 register </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MidByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mid byte of the TMC429 register </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>LowByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LSB of the TMC429 register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function write three bytes to a TMC429 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="29" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="76" bodyend="85" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="29" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a6e28b51e524ce6f005bdf13ede8b8046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Write429U16</definition>
+        <argsstring>(uint8_t Address, uint16_t Value)</argsstring>
+        <name>Write429U16</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="30" column="6" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="30" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a209e12b85077c5053fee2b3a6bcc5734" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Write429U24</definition>
+        <argsstring>(uint8_t Address, uint32_t Value)</argsstring>
+        <name>Write429U24</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="31" column="6" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="31" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1ae6276c868acfddd6d0eb2b0b37309d28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Read429Status</definition>
+        <argsstring>(void)</argsstring>
+        <name>Read429Status</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Read TMC429 status byte. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>TMC429 status byte</para>
+</simplesect>
+This functions reads just the status byte of the TMC429 using a single byte SPI access which makes this a little bit faster. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="153" bodyend="156" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="32" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1ae8e6872ca48b587e491d49c1d99a6163" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Read429Bytes</definition>
+        <argsstring>(uint8_t Address, uint8_t *Bytes)</argsstring>
+        <name>Read429Bytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Bytes</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC429 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer at array of three bytes</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TMC429 status byte</para>
+</simplesect>
+This functions reads a TMC429 register and puts the result into an array of bytes. It also returns the TMC429 status bytes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="169" bodyend="181" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="33" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a645026166ccd6ba4df58f730c656c3c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Read429SingleByte</definition>
+        <argsstring>(uint8_t Address, uint8_t Index)</argsstring>
+        <name>Read429SingleByte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC429 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register byte to be returned (0..3)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TM429 register byte</para>
+</simplesect>
+This functions reads a TMC429 register and returns the desired byte of that register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="194" bodyend="202" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="34" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a5955b8d23669f32088fa62aef008414f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Read429Int12</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Read429Int12</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC429 register (12 bit) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TMC429 register value (sign extended)</para>
+</simplesect>
+This functions reads a TMC429 12 bit register and sign-extends the register value to 32 bit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="214" bodyend="227" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="35" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a44a3d7a64b6bd4271b1a5da18cc6e07c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Read429Int24</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Read429Int24</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC429 register (24 bit) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TMC429 register value (sign extended)</para>
+</simplesect>
+This functions reads a TMC429 24 bit register and sign-extends the register value to 32 bit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="239" bodyend="252" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="36" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a8257811715ce1abc318682c4e2f987a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Set429RampMode</definition>
+        <argsstring>(uint8_t Axis, uint8_t RampMode)</argsstring>
+        <name>Set429RampMode</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>RampMode</declname>
+        </param>
+        <briefdescription>
+<para>Set the ramping mode of an axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Motor number (0, 1 or 2) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>RampMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ramping mode (RM_RAMP/RM_SOFT/RM_VELOCITY/RM_HOLD)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This functions changes the ramping mode of a motor in the TMC429. It is some TMC429 register bit twiddling. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="37" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="263" bodyend="275" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="37" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a307f653e02dc97c36a14d2b686ff1612" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Set429SwitchMode</definition>
+        <argsstring>(uint8_t Axis, uint8_t SwitchMode)</argsstring>
+        <name>Set429SwitchMode</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>SwitchMode</declname>
+        </param>
+        <briefdescription>
+<para>Set the end switch mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Motor number (0, 1 or 2) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SwitchMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>end switch mode</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This functions changes the end switch mode of a motor in the TMC429. It is some TMC429 register bit twiddling. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="38" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="286" bodyend="298" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="38" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1ae4e37f2fadff616e4ca1e29160410433" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t SetAMax</definition>
+        <argsstring>(uint8_t Motor, uint32_t AMax)</argsstring>
+        <name>SetAMax</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Motor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>AMax</declname>
+        </param>
+        <briefdescription>
+<para>Set the maximum acceleration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Motor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>motor number (0, 1, 2) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>AMax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum acceleration (1..2047)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function sets the maximum acceleration and also calculates the PMUL and PDIV value according to all other parameters (please see the TMC429 data sheet for more info about PMUL and PDIV values). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="311" bodyend="356" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="39" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8h_1a6fd7bc68c872350f73b806e4e3a61aa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HardStop</definition>
+        <argsstring>(uint32_t Motor)</argsstring>
+        <name>HardStop</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>Motor</declname>
+        </param>
+        <briefdescription>
+<para>Stop a motor immediately. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Motor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>motor number (0, 1, 2)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function stops a motor immediately (hard stop) by switching to velocity mode and then zeroing the V_TARGT and V_ACTUAL registers of that axis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" line="40" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="367" bodyend="372" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h" declline="40" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>TMC429<sp/>library<sp/>definitions</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>all<sp/>macro<sp/>and<sp/>function<sp/>definitions<sp/>of<sp/>the<sp/>TMC429<sp/>library.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC429_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC429_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="API__Header_8h" kindref="compound">tmc/helpers/API_Header.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="TMC429__Register_8h" kindref="compound">TMC429_Register.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>user<sp/>must<sp/>provide<sp/>this<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_SPI_DeviceHandle,<sp/>uint8_t<sp/>data,</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>endTransaction);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TMC429<sp/>library<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a8301ac7f272d51ac0c84d7be55a9f410" kindref="member">Init429</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a8c3da7c2fab63dfd98da7db40e886be1" kindref="member">ReadWrite429</ref>(uint8_t<sp/>*Read,<sp/>uint8_t<sp/>*Write);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a0da9a8c5a240e18e77fa36c74de33167" kindref="member">Write429Zero</ref>(uint8_t<sp/>Address);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a86865d616854acebb75f7e9dfe4a1ec6" kindref="member">Write429Bytes</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>*Bytes);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a8991639672e224d03f640022e658affc" kindref="member">Write429Datagram</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>HighByte,<sp/>uint8_t<sp/>MidByte,<sp/>uint8_t<sp/>LowByte);</highlight></codeline>
+<codeline lineno="30" refid="TMC429_8h_1a6e28b51e524ce6f005bdf13ede8b8046" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a6e28b51e524ce6f005bdf13ede8b8046" kindref="member">Write429U16</ref>(uint8_t<sp/>Address,<sp/>uint16_t<sp/>Value);</highlight></codeline>
+<codeline lineno="31" refid="TMC429_8h_1a209e12b85077c5053fee2b3a6bcc5734" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a209e12b85077c5053fee2b3a6bcc5734" kindref="member">Write429U24</ref>(uint8_t<sp/>Address,<sp/>uint32_t<sp/>Value);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="TMC429_8h_1ae6276c868acfddd6d0eb2b0b37309d28" kindref="member">Read429Status</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="TMC429_8h_1ae8e6872ca48b587e491d49c1d99a6163" kindref="member">Read429Bytes</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>*Bytes);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="TMC429_8h_1a645026166ccd6ba4df58f730c656c3c8" kindref="member">Read429SingleByte</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>Index);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="TMC429_8h_1a5955b8d23669f32088fa62aef008414f" kindref="member">Read429Int12</ref>(uint8_t<sp/>Address);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="TMC429_8h_1a44a3d7a64b6bd4271b1a5da18cc6e07c" kindref="member">Read429Int24</ref>(uint8_t<sp/>Address);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a8257811715ce1abc318682c4e2f987a9" kindref="member">Set429RampMode</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>RampMode);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a307f653e02dc97c36a14d2b686ff1612" kindref="member">Set429SwitchMode</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>SwitchMode);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="TMC429_8h_1ae4e37f2fadff616e4ca1e29160410433" kindref="member">SetAMax</ref>(uint8_t<sp/>Motor,<sp/>uint32_t<sp/>AMax);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1aac6b7f2765168cb00956d73607e19831" kindref="member">HardStop</ref>(uint32_t<sp/>Motor);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC429_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.h"/>
+  </compounddef>
+</doxygen>

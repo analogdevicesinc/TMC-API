@@ -1,0 +1,2021 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC4671_8c" kind="file" language="C++">
+    <compoundname>TMC4671.c</compoundname>
+    <includes refid="TMC4671_8h" local="yes">TMC4671.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="12">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="10">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="13">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="6">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC4671.c</label>
+        <link refid="TMC4671_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TMC4671.h</label>
+        <link refid="TMC4671_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>TMC4671_Constants.h</label>
+        <link refid="TMC4671__Constants_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>TMC4671_Fields.h</label>
+        <link refid="TMC4671__Fields_8h"/>
+      </node>
+      <node id="15">
+        <label>TMC4671_Register.h</label>
+        <link refid="TMC4671__Register_8h"/>
+      </node>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC4671_8c_1aee7bbb04f23b06182b701fe1352d851d" prot="public" static="no">
+        <name>STATE_NOTHING_TO_DO</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="12" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671_8c_1aa9b0b8d7794853595a96df5f3e8abd15" prot="public" static="no">
+        <name>STATE_START_INIT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="13" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671_8c_1a7cc13b78f95b2e24a872f6c2deef686c" prot="public" static="no">
+        <name>STATE_WAIT_INIT_TIME</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="14" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4671_8c_1a552e79e10d1a7e6a9197b53a3b22af5c" prot="public" static="no">
+        <name>STATE_ESTIMATE_OFFSET</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc4671_readwriteByte</definition>
+        <argsstring>(uint8_t motor, uint8_t data, uint8_t lastTransfer)</argsstring>
+        <name>tmc4671_readwriteByte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>lastTransfer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="18" column="16" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" declline="18" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_readInt</definition>
+        <argsstring>(uint8_t motor, uint8_t address)</argsstring>
+        <name>tmc4671_readInt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="22" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_writeInt</definition>
+        <argsstring>(uint8_t motor, uint8_t address, int32_t value)</argsstring>
+        <name>tmc4671_writeInt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="42" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="42" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t tmc4671_readRegister16BitValue</definition>
+        <argsstring>(uint8_t motor, uint8_t address, uint8_t channel)</argsstring>
+        <name>tmc4671_readRegister16BitValue</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="54" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="54" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_writeRegister16BitValue</definition>
+        <argsstring>(uint8_t motor, uint8_t address, uint8_t channel, uint16_t value)</argsstring>
+        <name>tmc4671_writeRegister16BitValue</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="71" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="71" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a1a1d48335b7ba9b708f494ea7e0625aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_switchToMotionMode</definition>
+        <argsstring>(uint8_t motor, uint8_t mode)</argsstring>
+        <name>tmc4671_switchToMotionMode</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="92" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="92" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1aad96b52459f93ba7515064ea2d3c73d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setTargetTorque_raw</definition>
+        <argsstring>(uint8_t motor, int32_t targetTorque)</argsstring>
+        <name>tmc4671_setTargetTorque_raw</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>targetTorque</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="101" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="101" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a5c4e39266502f28d90f159d51a4b940c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getTargetTorque_raw</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getTargetTorque_raw</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="107" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="107" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a5af67f41f805b0fbda064ef373f7e5a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualTorque_raw</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getActualTorque_raw</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="121" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1abb6f3d5cdf54df11a63a7a4907200563" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualRampTorque_raw</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getActualRampTorque_raw</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="126" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="126" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a07533812ed758a3628c1db919f6f54df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setTargetTorque_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor, int32_t targetTorque)</argsstring>
+        <name>tmc4671_setTargetTorque_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>targetTorque</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="133" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="133" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1af8d8a923f55a04f5dcf003a9ea7d4bd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getTargetTorque_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor)</argsstring>
+        <name>tmc4671_getTargetTorque_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="139" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="139" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1ad5e08753cf8f74e46e3f6c629efa3205" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualTorque_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor)</argsstring>
+        <name>tmc4671_getActualTorque_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="144" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a5061d64725527b7a88b441d0beba284c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getTargetTorqueFluxSum_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor)</argsstring>
+        <name>tmc4671_getTargetTorqueFluxSum_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="149" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="149" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a6d1aea820f6a42b16910c0c4c5e3d8f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualTorqueFluxSum_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor)</argsstring>
+        <name>tmc4671_getActualTorqueFluxSum_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="168" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="168" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a5e008034f4f07100b98c28aa0e0a6727" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualRampTorque_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor)</argsstring>
+        <name>tmc4671_getActualRampTorque_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="176" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="176" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a4636718dc8e7bedcad8ad874c58e6d26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setTargetFlux_raw</definition>
+        <argsstring>(uint8_t motor, int32_t targetFlux)</argsstring>
+        <name>tmc4671_setTargetFlux_raw</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>targetFlux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="184" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="184" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a60b6e8013c6dafba3bb94e8549e1436d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getTargetFlux_raw</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getTargetFlux_raw</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="190" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="190" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a861f6c88adfbb5b7316c24ae6d792d0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualFlux_raw</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getActualFlux_raw</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="204" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="204" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a50223ae07e35250db0f9557d91271ead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setTargetFlux_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor, int32_t targetFlux)</argsstring>
+        <name>tmc4671_setTargetFlux_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>targetFlux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="209" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="209" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a001d976eed24698b7b93bb2f7a36a370" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getTargetFlux_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor)</argsstring>
+        <name>tmc4671_getTargetFlux_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="215" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="215" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a4d7126a23427e55d97777d1807a5e3f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualFlux_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor)</argsstring>
+        <name>tmc4671_getActualFlux_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="220" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="220" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a8ae477814a4e69f4e8cc3e603c90180c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setTorqueFluxLimit_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor, int32_t max)</argsstring>
+        <name>tmc4671_setTorqueFluxLimit_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="225" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="225" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a5d4fc8b163199ca9a84aa4414a2735b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getTorqueFluxLimit_mA</definition>
+        <argsstring>(uint8_t motor, uint16_t torqueMeasurementFactor)</argsstring>
+        <name>tmc4671_getTorqueFluxLimit_mA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>torqueMeasurementFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="230" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="230" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a623f674d992a1d4962d8e492b19d4130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setTargetVelocity</definition>
+        <argsstring>(uint8_t motor, int32_t targetVelocity)</argsstring>
+        <name>tmc4671_setTargetVelocity</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>targetVelocity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="235" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="235" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a56d3bda698bd48a652629671598835df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getTargetVelocity</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getTargetVelocity</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="241" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="241" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a7084140a06b8255cac0ab7b5f2e2cd29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualVelocity</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getActualVelocity</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="246" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="246" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a2d2be648de206f1d75d02f5e3e12e0f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualRampVelocity</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getActualRampVelocity</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="251" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="251" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a7a695059b659d752bfb480f10f5874be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setAbsolutTargetPosition</definition>
+        <argsstring>(uint8_t motor, int32_t targetPosition)</argsstring>
+        <name>tmc4671_setAbsolutTargetPosition</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>targetPosition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="258" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="258" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a1ba0c0fcfcc9e7ef86f95f8ae1b67976" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setRelativeTargetPosition</definition>
+        <argsstring>(uint8_t motor, int32_t relativePosition)</argsstring>
+        <name>tmc4671_setRelativeTargetPosition</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>relativePosition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="264" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="264" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1aefa5280004fd16d9ea913744d6f161fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getTargetPosition</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getTargetPosition</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="271" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="271" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a5a661bf2286d513ee0e102430648aea3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setActualPosition</definition>
+        <argsstring>(uint8_t motor, int32_t actualPosition)</argsstring>
+        <name>tmc4671_setActualPosition</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>actualPosition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="276" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="276" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1acb25bd5708f2fbb4ed046d81825adce4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualPosition</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getActualPosition</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="281" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="281" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a17493bd695a5411d32e8a3834ae358ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_getActualRampPosition</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getActualRampPosition</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="286" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="286" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a48f44d3e6c01b5444d22a70c5050bd99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_doEncoderInitializationMode0</definition>
+        <argsstring>(uint8_t motor, uint8_t *initState, uint16_t initWaitTime, uint16_t *actualInitWaitTime, uint16_t startVoltage, uint16_t *last_Phi_E_Selection, uint32_t *last_UQ_UD_EXT, int16_t *last_PHI_E_EXT)</argsstring>
+        <name>tmc4671_doEncoderInitializationMode0</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>initState</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>initWaitTime</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>actualInitWaitTime</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>startVoltage</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>last_Phi_E_Selection</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>last_UQ_UD_EXT</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>last_PHI_E_EXT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="294" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="294" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a25d0b581a67167da5676f0cc45f9aeef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int16_t</type>
+        <definition>int16_t tmc4671_getS16CircleDifference</definition>
+        <argsstring>(int16_t newValue, int16_t oldValue)</argsstring>
+        <name>tmc4671_getS16CircleDifference</name>
+        <param>
+          <type>int16_t</type>
+          <declname>newValue</declname>
+        </param>
+        <param>
+          <type>int16_t</type>
+          <declname>oldValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="360" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="360" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1aa083699f9709a5dd35ee278f4a5bcb44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_doEncoderInitializationMode2</definition>
+        <argsstring>(uint8_t motor, uint8_t *initState, uint16_t *actualInitWaitTime, int16_t *hall_phi_e_old, int16_t *hall_phi_e_new, int16_t *hall_actual_coarse_offset, uint16_t *last_Phi_E_Selection)</argsstring>
+        <name>tmc4671_doEncoderInitializationMode2</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>initState</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>actualInitWaitTime</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>hall_phi_e_old</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>hall_phi_e_new</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>hall_actual_coarse_offset</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>last_Phi_E_Selection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="365" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="365" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a7f0f4ba559552098954b4801c9929527" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_checkEncderInitialization</definition>
+        <argsstring>(uint8_t motor, uint32_t actualSystick, uint8_t initMode, uint8_t *initState, uint16_t initWaitTime, uint16_t *actualInitWaitTime, uint16_t startVoltage, int16_t *hall_phi_e_old, int16_t *hall_phi_e_new, int16_t *hall_actual_coarse_offset, uint16_t *last_Phi_E_Selection, uint32_t *last_UQ_UD_EXT, int16_t *last_PHI_E_EXT)</argsstring>
+        <name>tmc4671_checkEncderInitialization</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>actualSystick</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>initMode</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>initState</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>initWaitTime</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>actualInitWaitTime</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>startVoltage</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>hall_phi_e_old</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>hall_phi_e_new</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>hall_actual_coarse_offset</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>last_Phi_E_Selection</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>last_UQ_UD_EXT</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>last_PHI_E_EXT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="430" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="430" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a2f9ab699ce3473a1f94e3832a05082a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_periodicJob</definition>
+        <argsstring>(uint8_t motor, uint32_t actualSystick, uint8_t initMode, uint8_t *initState, uint16_t initWaitTime, uint16_t *actualInitWaitTime, uint16_t startVoltage, int16_t *hall_phi_e_old, int16_t *hall_phi_e_new, int16_t *hall_actual_coarse_offset, uint16_t *last_Phi_E_Selection, uint32_t *last_UQ_UD_EXT, int16_t *last_PHI_E_EXT)</argsstring>
+        <name>tmc4671_periodicJob</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>actualSystick</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>initMode</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>initState</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>initWaitTime</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>actualInitWaitTime</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>startVoltage</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>hall_phi_e_old</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>hall_phi_e_new</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>hall_actual_coarse_offset</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>last_Phi_E_Selection</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>last_UQ_UD_EXT</declname>
+        </param>
+        <param>
+          <type>int16_t *</type>
+          <declname>last_PHI_E_EXT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="453" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="453" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a903c6d03eb82720342685e11a2c79d74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_startEncoderInitialization</definition>
+        <argsstring>(uint8_t mode, uint8_t *initMode, uint8_t *initState)</argsstring>
+        <name>tmc4671_startEncoderInitialization</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>initMode</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>initState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="461" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="461" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1ae3c01b101e5f38c1b8785099a9643aa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_updatePhiSelectionAndInitialize</definition>
+        <argsstring>(uint8_t motor, uint8_t actualPhiESelection, uint8_t desiredPhiESelection, uint8_t initMode, uint8_t *initState)</argsstring>
+        <name>tmc4671_updatePhiSelectionAndInitialize</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>actualPhiESelection</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>desiredPhiESelection</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>initMode</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>initState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="485" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="485" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a1ee704f5be9c99a1d6dd8137d53c8ca5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_disablePWM</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_disablePWM</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="502" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="502" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a00c1fd086b156fb94ec217b92682381c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc4671_getMotorType</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getMotorType</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="507" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="507" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a08c2047ed6e8f3600ef942ed2583ffc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setMotorType</definition>
+        <argsstring>(uint8_t motor, uint8_t motorType)</argsstring>
+        <name>tmc4671_setMotorType</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>motorType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="512" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="512" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a72ce5a21b96f4dbd560bed2409bc8b79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc4671_getPolePairs</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getPolePairs</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="517" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="517" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a34927e796ba50479e3cb7fe56769471e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setPolePairs</definition>
+        <argsstring>(uint8_t motor, uint8_t polePairs)</argsstring>
+        <name>tmc4671_setPolePairs</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>polePairs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="522" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="522" bodyend="525"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a0deb84e3d26937ede151a124151a6f50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t tmc4671_getAdcI0Offset</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getAdcI0Offset</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="527" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="527" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a0cc6d6fe27a1d9962b6f779b5df80daf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setAdcI0Offset</definition>
+        <argsstring>(uint8_t motor, uint16_t offset)</argsstring>
+        <name>tmc4671_setAdcI0Offset</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="532" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="532" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a13f8ef450ac56a7e4ffc98fda9ce389f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t tmc4671_getAdcI1Offset</definition>
+        <argsstring>(uint8_t motor)</argsstring>
+        <name>tmc4671_getAdcI1Offset</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="537" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="537" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1ab955ee58247b33857ea6b5b7405d22f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setAdcI1Offset</definition>
+        <argsstring>(uint8_t motor, uint16_t offset)</argsstring>
+        <name>tmc4671_setAdcI1Offset</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="542" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="542" bodyend="545"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1aaa854a38a737c194b360555607d0e580" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setTorqueFluxPI</definition>
+        <argsstring>(uint8_t motor, uint16_t pParameter, uint16_t iParameter)</argsstring>
+        <name>tmc4671_setTorqueFluxPI</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>pParameter</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>iParameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="547" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="547" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1aabd645ac7e93ddb8b60df0c225d68f4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setVelocityPI</definition>
+        <argsstring>(uint8_t motor, uint16_t pParameter, uint16_t iParameter)</argsstring>
+        <name>tmc4671_setVelocityPI</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>pParameter</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>iParameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="553" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="553" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1aa5b4311ae28ca422919ac1bf3777eab3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc4671_setPositionPI</definition>
+        <argsstring>(uint8_t motor, uint16_t pParameter, uint16_t iParameter)</argsstring>
+        <name>tmc4671_setPositionPI</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>pParameter</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>iParameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="558" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="558" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4671_8c_1a5db0822778b1f0f3ae490a0e5a331ec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc4671_readFieldWithDependency</definition>
+        <argsstring>(uint8_t motor, uint8_t reg, uint8_t dependsReg, uint32_t dependsValue, uint32_t mask, uint8_t shift)</argsstring>
+        <name>tmc4671_readFieldWithDependency</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>reg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>dependsReg</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dependsValue</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>shift</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" line="563" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c" bodystart="563" bodyend="575"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2016<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC4671_8h" kindref="compound">TMC4671.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STATE_NOTHING_TO_DO<sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STATE_START_INIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STATE_WAIT_INIT_TIME<sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STATE_ESTIMATE_OFFSET<sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>SPI<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>data,<sp/>uint8_t<sp/>lastTransfer);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>SPI<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>spi<sp/>access</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>address)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>clear<sp/>write<sp/>bit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>address<sp/>&amp;=<sp/>0x7F;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>write<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>address,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>value<sp/>=<sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>&lt;&lt;=<sp/>8;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>|=<sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>&lt;&lt;=<sp/>8;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>|=<sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>&lt;&lt;=<sp/>8;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>|=<sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>address,<sp/>int32_t<sp/>value)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>write<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>address|0x80,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>write<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>0xFF<sp/>&amp;<sp/>(value&gt;&gt;24),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>0xFF<sp/>&amp;<sp/>(value&gt;&gt;16),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>0xFF<sp/>&amp;<sp/>(value&gt;&gt;8),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a80d2996a5bf0ea9db6d6aaf6d2d969f3" kindref="member">tmc4671_readwriteByte</ref>(motor,<sp/>0xFF<sp/>&amp;<sp/>(value&gt;&gt;0),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">uint16_t<sp/><ref refid="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" kindref="member">tmc4671_readRegister16BitValue</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>address,<sp/>uint8_t<sp/>channel)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>registerValue<sp/>=<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/>address);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>one<sp/>channel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(channel)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>:</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(registerValue<sp/>&amp;<sp/>0xFFFF);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((registerValue<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFFFF);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>address,<sp/>uint8_t<sp/>channel,<sp/>uint16_t<sp/>value)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>actual<sp/>register<sp/>content</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>registerValue<sp/>=<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/>address);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>one<sp/>channel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(channel)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>registerValue<sp/>&amp;=<sp/>0xFFFF0000;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>registerValue<sp/>|=<sp/>value;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>:</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>registerValue<sp/>&amp;=<sp/>0x0000FFFF;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>registerValue<sp/>|=<sp/>(value<sp/>&lt;&lt;<sp/>16);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>write<sp/>the<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/>address,<sp/>registerValue);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a1a1d48335b7ba9b708f494ea7e0625aa" kindref="member">tmc4671_switchToMotionMode</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>mode)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>switch<sp/>motion<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>actualModeRegister<sp/>=<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aa7c69e58d88c9b81fd0223f327b28e78" kindref="member">TMC4671_MODE_RAMP_MODE_MOTION</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>actualModeRegister<sp/>&amp;=<sp/>0xFFFFFF00;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>actualModeRegister<sp/>|=<sp/>mode;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aa7c69e58d88c9b81fd0223f327b28e78" kindref="member">TMC4671_MODE_RAMP_MODE_MOTION</ref>,<sp/>actualModeRegister);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1aad96b52459f93ba7515064ea2d3c73d1" kindref="member">tmc4671_setTargetTorque_raw</ref>(uint8_t<sp/>motor,<sp/>int32_t<sp/>targetTorque)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a1a1d48335b7ba9b708f494ea7e0625aa" kindref="member">tmc4671_switchToMotionMode</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ada4211ffceaa43f55d9ce3b63b2b10dc" kindref="member">TMC4671_MOTION_MODE_TORQUE</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a2c288b7eeb0d460a590c1a82343260ed" kindref="member">TMC4671_PID_TORQUE_FLUX_TARGET</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>,<sp/>targetTorque);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a5c4e39266502f28d90f159d51a4b940c" kindref="member">tmc4671_getTargetTorque_raw</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>remember<sp/>last<sp/>set<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>lastIndex<sp/>=<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>value<sp/>=<sp/>(int32_t)<ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a863a27e19a76d27b3b0fef8dcb9f5965" kindref="member">TMC4671_INTERIM_DATA</ref>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reset<sp/>last<sp/>set<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>,<sp/>lastIndex);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a5af67f41f805b0fbda064ef373f7e5a2" kindref="member">tmc4671_getActualTorque_raw</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(int16_t)<sp/><ref refid="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" kindref="member">tmc4671_readRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a0fb1891ca799f38593eca66419d3f7fb" kindref="member">TMC4671_PID_TORQUE_FLUX_ACTUAL</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1abb6f3d5cdf54df11a63a7a4907200563" kindref="member">tmc4671_getActualRampTorque_raw</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>no<sp/>ramp<sp/>implemented</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(motor);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a07533812ed758a3628c1db919f6f54df" kindref="member">tmc4671_setTargetTorque_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor,<sp/>int32_t<sp/>targetTorque)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a1a1d48335b7ba9b708f494ea7e0625aa" kindref="member">tmc4671_switchToMotionMode</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ada4211ffceaa43f55d9ce3b63b2b10dc" kindref="member">TMC4671_MOTION_MODE_TORQUE</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a2c288b7eeb0d460a590c1a82343260ed" kindref="member">TMC4671_PID_TORQUE_FLUX_TARGET</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>,<sp/>(targetTorque<sp/>*<sp/>256)<sp/>/<sp/>(int32_t)<sp/>torqueMeasurementFactor);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1af8d8a923f55a04f5dcf003a9ea7d4bd5" kindref="member">tmc4671_getTargetTorque_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="TMC4671_8c_1a5c4e39266502f28d90f159d51a4b940c" kindref="member">tmc4671_getTargetTorque_raw</ref>(motor)<sp/>*<sp/>(int32_t)<sp/>torqueMeasurementFactor)<sp/>/<sp/>256;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1ad5e08753cf8f74e46e3f6c629efa3205" kindref="member">tmc4671_getActualTorque_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="TMC4671_8c_1a5af67f41f805b0fbda064ef373f7e5a2" kindref="member">tmc4671_getActualTorque_raw</ref>(motor)<sp/>*<sp/>(int32_t)<sp/>torqueMeasurementFactor)<sp/>/<sp/>256;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a5061d64725527b7a88b441d0beba284c" kindref="member">tmc4671_getTargetTorqueFluxSum_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>remember<sp/>last<sp/>set<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>lastIndex<sp/>=<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>target<sp/>torque<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>torque<sp/>=<sp/>(int32_t)<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a863a27e19a76d27b3b0fef8dcb9f5965" kindref="member">TMC4671_INTERIM_DATA</ref>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>target<sp/>flux<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>flux<sp/>=<sp/>(int32_t)<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a863a27e19a76d27b3b0fef8dcb9f5965" kindref="member">TMC4671_INTERIM_DATA</ref>);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reset<sp/>last<sp/>set<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>,<sp/>lastIndex);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(((int32_t)flux+(int32_t)torque)<sp/>*<sp/>(int32_t)torqueMeasurementFactor)<sp/>/<sp/>256;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a6d1aea820f6a42b16910c0c4c5e3d8f4" kindref="member">tmc4671_getActualTorqueFluxSum_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>registerValue<sp/>=<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a0fb1891ca799f38593eca66419d3f7fb" kindref="member">TMC4671_PID_TORQUE_FLUX_ACTUAL</ref>);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/>flux<sp/>=<sp/>(registerValue<sp/>&amp;<sp/>0xFFFF);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/>torque<sp/>=<sp/>((registerValue<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFFFF);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(((int32_t)flux+(int32_t)torque)<sp/>*<sp/>(int32_t)torqueMeasurementFactor)<sp/>/<sp/>256;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a5e008034f4f07100b98c28aa0e0a6727" kindref="member">tmc4671_getActualRampTorque_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>no<sp/>ramp<sp/>implemented</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(motor);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(torqueMeasurementFactor);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a4636718dc8e7bedcad8ad874c58e6d26" kindref="member">tmc4671_setTargetFlux_raw</ref>(uint8_t<sp/>motor,<sp/>int32_t<sp/>targetFlux)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>not<sp/>change<sp/>the<sp/>MOTION_MODE<sp/>here!<sp/>target<sp/>flux<sp/>can<sp/>also<sp/>be<sp/>used<sp/>during<sp/>velocity<sp/>and<sp/>position<sp/>modes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a2c288b7eeb0d460a590c1a82343260ed" kindref="member">TMC4671_PID_TORQUE_FLUX_TARGET</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/>targetFlux);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a60b6e8013c6dafba3bb94e8549e1436d" kindref="member">tmc4671_getTargetFlux_raw</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>remember<sp/>last<sp/>set<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>lastIndex<sp/>=<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>value<sp/>=<sp/>(int32_t)<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a863a27e19a76d27b3b0fef8dcb9f5965" kindref="member">TMC4671_INTERIM_DATA</ref>);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reset<sp/>last<sp/>set<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1adaa4ba90d18e390cb4ae89b35cf2176f" kindref="member">TMC4671_INTERIM_ADDR</ref>,<sp/>lastIndex);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a861f6c88adfbb5b7316c24ae6d792d0a" kindref="member">tmc4671_getActualFlux_raw</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(int16_t)<sp/><ref refid="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" kindref="member">tmc4671_readRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a0fb1891ca799f38593eca66419d3f7fb" kindref="member">TMC4671_PID_TORQUE_FLUX_ACTUAL</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a50223ae07e35250db0f9557d91271ead" kindref="member">tmc4671_setTargetFlux_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor,<sp/>int32_t<sp/>targetFlux)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>not<sp/>change<sp/>the<sp/>MOTION_MODE<sp/>here!<sp/>target<sp/>flux<sp/>can<sp/>also<sp/>be<sp/>used<sp/>during<sp/>velocity<sp/>and<sp/>position<sp/>modes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a2c288b7eeb0d460a590c1a82343260ed" kindref="member">TMC4671_PID_TORQUE_FLUX_TARGET</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/>(targetFlux<sp/>*<sp/>256)<sp/>/<sp/>(int32_t)<sp/>torqueMeasurementFactor);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a001d976eed24698b7b93bb2f7a36a370" kindref="member">tmc4671_getTargetFlux_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="TMC4671_8c_1a60b6e8013c6dafba3bb94e8549e1436d" kindref="member">tmc4671_getTargetFlux_raw</ref>(motor)<sp/>*<sp/>(int32_t)<sp/>torqueMeasurementFactor)<sp/>/<sp/>256;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a4d7126a23427e55d97777d1807a5e3f1" kindref="member">tmc4671_getActualFlux_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="TMC4671_8c_1a861f6c88adfbb5b7316c24ae6d792d0a" kindref="member">tmc4671_getActualFlux_raw</ref>(motor)<sp/>*<sp/>(int32_t)<sp/>torqueMeasurementFactor)<sp/>/<sp/>256;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a8ae477814a4e69f4e8cc3e603c90180c" kindref="member">tmc4671_setTorqueFluxLimit_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor,<sp/>int32_t<sp/>max)</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ab3525fde41a38930c498060073c79e83" kindref="member">TMC4671_PID_TORQUE_FLUX_LIMITS</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/>(max<sp/>*<sp/>256)<sp/>/<sp/>(int32_t)<sp/>torqueMeasurementFactor);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a5d4fc8b163199ca9a84aa4414a2735b6" kindref="member">tmc4671_getTorqueFluxLimit_mA</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>torqueMeasurementFactor)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((int32_t)<sp/><ref refid="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" kindref="member">tmc4671_readRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ab3525fde41a38930c498060073c79e83" kindref="member">TMC4671_PID_TORQUE_FLUX_LIMITS</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>)<sp/>*<sp/>(int32_t)<sp/>torqueMeasurementFactor)<sp/>/<sp/>256;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a623f674d992a1d4962d8e492b19d4130" kindref="member">tmc4671_setTargetVelocity</ref>(uint8_t<sp/>motor,<sp/>int32_t<sp/>targetVelocity)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a1a1d48335b7ba9b708f494ea7e0625aa" kindref="member">tmc4671_switchToMotionMode</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1acaf77f4c8fa253fa6b4c32831f52744a" kindref="member">TMC4671_MOTION_MODE_VELOCITY</ref>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aa9d9ee355168843164c1bdc2f777ce25" kindref="member">TMC4671_PID_VELOCITY_TARGET</ref>,<sp/>targetVelocity);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a56d3bda698bd48a652629671598835df" kindref="member">tmc4671_getTargetVelocity</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(int32_t)<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aa9d9ee355168843164c1bdc2f777ce25" kindref="member">TMC4671_PID_VELOCITY_TARGET</ref>);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a7084140a06b8255cac0ab7b5f2e2cd29" kindref="member">tmc4671_getActualVelocity</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(int32_t)<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a9ea522b3600345269f6826ebb0d19892" kindref="member">TMC4671_PID_VELOCITY_ACTUAL</ref>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a2d2be648de206f1d75d02f5e3e12e0f4" kindref="member">tmc4671_getActualRampVelocity</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="252"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(motor);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>no<sp/>ramp<sp/>implemented</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a7a695059b659d752bfb480f10f5874be" kindref="member">tmc4671_setAbsolutTargetPosition</ref>(uint8_t<sp/>motor,<sp/>int32_t<sp/>targetPosition)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a1a1d48335b7ba9b708f494ea7e0625aa" kindref="member">tmc4671_switchToMotionMode</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a9c703f30a579c2222aa4ac2b26c8db6c" kindref="member">TMC4671_MOTION_MODE_POSITION</ref>);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a4c9ff399b4044b59c5129715bbcf3581" kindref="member">TMC4671_PID_POSITION_TARGET</ref>,<sp/>targetPosition);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a1ba0c0fcfcc9e7ef86f95f8ae1b67976" kindref="member">tmc4671_setRelativeTargetPosition</ref>(uint8_t<sp/>motor,<sp/>int32_t<sp/>relativePosition)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a1a1d48335b7ba9b708f494ea7e0625aa" kindref="member">tmc4671_switchToMotionMode</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a9c703f30a579c2222aa4ac2b26c8db6c" kindref="member">TMC4671_MOTION_MODE_POSITION</ref>);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>determine<sp/>actual<sp/>position<sp/>and<sp/>add<sp/>relative<sp/>position<sp/>ticks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a4c9ff399b4044b59c5129715bbcf3581" kindref="member">TMC4671_PID_POSITION_TARGET</ref>,<sp/>(int32_t)<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1abefeaa3fe9748d8fbfc9f65a52197d08" kindref="member">TMC4671_PID_POSITION_ACTUAL</ref>)<sp/>+<sp/>relativePosition);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1aefa5280004fd16d9ea913744d6f161fb" kindref="member">tmc4671_getTargetPosition</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(int32_t)<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a4c9ff399b4044b59c5129715bbcf3581" kindref="member">TMC4671_PID_POSITION_TARGET</ref>);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a5a661bf2286d513ee0e102430648aea3" kindref="member">tmc4671_setActualPosition</ref>(uint8_t<sp/>motor,<sp/>int32_t<sp/>actualPosition)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1abefeaa3fe9748d8fbfc9f65a52197d08" kindref="member">TMC4671_PID_POSITION_ACTUAL</ref>,<sp/>actualPosition);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1acb25bd5708f2fbb4ed046d81825adce4" kindref="member">tmc4671_getActualPosition</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(int32_t)<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1abefeaa3fe9748d8fbfc9f65a52197d08" kindref="member">TMC4671_PID_POSITION_ACTUAL</ref>);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a17493bd695a5411d32e8a3834ae358ce" kindref="member">tmc4671_getActualRampPosition</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(motor);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>no<sp/>ramp<sp/>implemented</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="comment">//<sp/>encoder<sp/>initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a48f44d3e6c01b5444d22a70c5050bd99" kindref="member">tmc4671_doEncoderInitializationMode0</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>*initState,<sp/>uint16_t<sp/>initWaitTime,<sp/>uint16_t<sp/>*actualInitWaitTime,<sp/>uint16_t<sp/>startVoltage,</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>*last_Phi_E_Selection,<sp/>uint32_t<sp/>*last_UQ_UD_EXT,<sp/>int16_t<sp/>*last_PHI_E_EXT)</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(*initState)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1aee7bbb04f23b06182b701fe1352d851d" kindref="member">STATE_NOTHING_TO_DO</ref>:</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*actualInitWaitTime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1aa9b0b8d7794853595a96df5f3e8abd15" kindref="member">STATE_START_INIT</ref>:<sp/></highlight><highlight class="comment">//<sp/>started<sp/>by<sp/>writing<sp/>1<sp/>to<sp/>initState</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>save<sp/>actual<sp/>set<sp/>values<sp/>for<sp/>PHI_E_SELECTION,<sp/>UQ_UD_EXT,<sp/>and<sp/>PHI_E_EXT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*last_Phi_E_Selection<sp/>=<sp/>(uint16_t)<sp/><ref refid="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" kindref="member">tmc4671_readRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed53f10bbd85f05cdc2aa115a410b1fd" kindref="member">TMC4671_PHI_E_SELECTION</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*last_UQ_UD_EXT<sp/>=<sp/>(uint32_t)<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed11e767bf70f5f7056460c5eab6ccd6" kindref="member">TMC4671_UQ_UD_EXT</ref>);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*last_PHI_E_EXT<sp/>=<sp/>(int16_t)<sp/><ref refid="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" kindref="member">tmc4671_readRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ac1f0a1e8736de43c4bba73821949c0e7" kindref="member">TMC4671_PHI_E_EXT</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//switch<sp/>motion<sp/>mode<sp/>for<sp/>running<sp/>motor<sp/>in<sp/>open<sp/>loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aa7c69e58d88c9b81fd0223f327b28e78" kindref="member">TMC4671_MODE_RAMP_MODE_MOTION</ref>,<sp/><ref refid="TMC4671__Register_8h_1aa5b750d58bcceb9f1ebe593f183edc78" kindref="member">TMC4671_MOTION_MODE_UQ_UD_EXT</ref>);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>ABN_DECODER_PHI_E_OFFSET<sp/>to<sp/>zero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ac779bdba6420814272939de9257ed0d6" kindref="member">TMC4671_ABN_DECODER_PHI_E_PHI_M_OFFSET</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>select<sp/>phi_e_ext</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed53f10bbd85f05cdc2aa115a410b1fd" kindref="member">TMC4671_PHI_E_SELECTION</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>an<sp/>initialization<sp/>voltage<sp/>on<sp/>UD_EXT<sp/>(to<sp/>the<sp/>flux,<sp/>not<sp/>the<sp/>torque!)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed11e767bf70f5f7056460c5eab6ccd6" kindref="member">TMC4671_UQ_UD_EXT</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed11e767bf70f5f7056460c5eab6ccd6" kindref="member">TMC4671_UQ_UD_EXT</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/>startVoltage);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>the<sp/>&quot;zero&quot;<sp/>angle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ac1f0a1e8736de43c4bba73821949c0e7" kindref="member">TMC4671_PHI_E_EXT</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initState<sp/>=<sp/><ref refid="TMC4671_8c_1a7cc13b78f95b2e24a872f6c2deef686c" kindref="member">STATE_WAIT_INIT_TIME</ref>;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a7cc13b78f95b2e24a872f6c2deef686c" kindref="member">STATE_WAIT_INIT_TIME</ref>:</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wait<sp/>until<sp/>initialization<sp/>time<sp/>is<sp/>over<sp/>(until<sp/>no<sp/>more<sp/>vibration<sp/>on<sp/>the<sp/>motor)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*actualInitWaitTime)++;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*actualInitWaitTime<sp/>&gt;=<sp/>initWaitTime)</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>internal<sp/>encoder<sp/>value<sp/>to<sp/>zero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1acdbc0e4bda2188a2fec9dda320dddcac" kindref="member">TMC4671_ABN_DECODER_COUNT</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>switch<sp/>back<sp/>to<sp/>last<sp/>used<sp/>UQ_UD_EXT<sp/>setting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed11e767bf70f5f7056460c5eab6ccd6" kindref="member">TMC4671_UQ_UD_EXT</ref>,<sp/>*last_UQ_UD_EXT);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>PHI_E_EXT<sp/>back<sp/>to<sp/>last<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ac1f0a1e8736de43c4bba73821949c0e7" kindref="member">TMC4671_PHI_E_EXT</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/>*last_PHI_E_EXT);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>switch<sp/>back<sp/>to<sp/>last<sp/>used<sp/>PHI_E_SELECTION<sp/>setting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed53f10bbd85f05cdc2aa115a410b1fd" kindref="member">TMC4671_PHI_E_SELECTION</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/>*last_Phi_E_Selection);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>go<sp/>to<sp/>next<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initState<sp/>=<sp/><ref refid="TMC4671_8c_1a552e79e10d1a7e6a9197b53a3b22af5c" kindref="member">STATE_ESTIMATE_OFFSET</ref>;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a552e79e10d1a7e6a9197b53a3b22af5c" kindref="member">STATE_ESTIMATE_OFFSET</ref>:</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>you<sp/>can<sp/>do<sp/>offset<sp/>estimation<sp/>here<sp/>(wait<sp/>for<sp/>N-Channel<sp/>if<sp/>available<sp/>and<sp/>save<sp/>encoder<sp/>value)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>go<sp/>to<sp/>ready<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initState<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initState<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal">int16_t<sp/><ref refid="TMC4671_8c_1a25d0b581a67167da5676f0cc45f9aeef" kindref="member">tmc4671_getS16CircleDifference</ref>(int16_t<sp/>newValue,<sp/>int16_t<sp/>oldValue)</highlight></codeline>
+<codeline lineno="361"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(newValue<sp/>-<sp/>oldValue);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1aa083699f9709a5dd35ee278f4a5bcb44" kindref="member">tmc4671_doEncoderInitializationMode2</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>*initState,<sp/>uint16_t<sp/>*actualInitWaitTime,</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int16_t<sp/>*hall_phi_e_old,<sp/>int16_t<sp/>*hall_phi_e_new,<sp/>int16_t<sp/>*hall_actual_coarse_offset,<sp/>uint16_t<sp/>*last_Phi_E_Selection)</highlight></codeline>
+<codeline lineno="367"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(*initState)</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1aee7bbb04f23b06182b701fe1352d851d" kindref="member">STATE_NOTHING_TO_DO</ref>:</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*actualInitWaitTime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1aa9b0b8d7794853595a96df5f3e8abd15" kindref="member">STATE_START_INIT</ref>:<sp/></highlight><highlight class="comment">//<sp/>started<sp/>by<sp/>writing<sp/>1<sp/>to<sp/>initState</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>save<sp/>actual<sp/>set<sp/>value<sp/>for<sp/>PHI_E_SELECTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*last_Phi_E_Selection<sp/>=<sp/>(uint16_t)<ref refid="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" kindref="member">tmc4671_readRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed53f10bbd85f05cdc2aa115a410b1fd" kindref="member">TMC4671_PHI_E_SELECTION</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>turn<sp/>hall_mode<sp/>interpolation<sp/>off<sp/>(read,<sp/>clear<sp/>bit<sp/>8,<sp/>write<sp/>back)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aa46acaebb3c9c7ee6ce457c4f2c51f10" kindref="member">TMC4671_HALL_MODE</ref>,<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aa46acaebb3c9c7ee6ce457c4f2c51f10" kindref="member">TMC4671_HALL_MODE</ref>)<sp/>&amp;<sp/>0xFFFFFEFF);</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>ABN_DECODER_PHI_E_OFFSET<sp/>to<sp/>zero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ac779bdba6420814272939de9257ed0d6" kindref="member">TMC4671_ABN_DECODER_PHI_E_PHI_M_OFFSET</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>actual<sp/>hall<sp/>angle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*hall_phi_e_old<sp/>=<sp/><ref refid="TMC4671_8h_1a8851513eebe4e202eb979d660d3747b4" kindref="member">TMC4671_FIELD_READ</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a2ced26a3b543787940cf8833d1d7f7bb" kindref="member">TMC4671_HALL_PHI_E_INTERPOLATED_PHI_E</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a0f82688fdf8ac979e56e4f430f42eaf3" kindref="member">TMC4671_HALL_PHI_E_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a9428948ee393be26ff9fd7f84532b890" kindref="member">TMC4671_HALL_PHI_E_SHIFT</ref>);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>actual<sp/>abn_decoder<sp/>angle<sp/>and<sp/>compute<sp/>difference<sp/>to<sp/>actual<sp/>hall<sp/>angle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*hall_actual_coarse_offset<sp/>=<sp/><ref refid="TMC4671_8c_1a25d0b581a67167da5676f0cc45f9aeef" kindref="member">tmc4671_getS16CircleDifference</ref>(*hall_phi_e_old,<sp/>(int16_t)<sp/><ref refid="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" kindref="member">tmc4671_readRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aeea2a752c3649ee983fea86a9f7e42cd" kindref="member">TMC4671_ABN_DECODER_PHI_E_PHI_M</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>));</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>ABN_DECODER_PHI_E_OFFSET<sp/>to<sp/>actual<sp/>hall-abn-difference,<sp/>to<sp/>use<sp/>the<sp/>actual<sp/>hall<sp/>angle<sp/>for<sp/>coarse<sp/>initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ac779bdba6420814272939de9257ed0d6" kindref="member">TMC4671_ABN_DECODER_PHI_E_PHI_M_OFFSET</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>,<sp/>*hall_actual_coarse_offset);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>normally<sp/>MOTION_MODE_UQ_UD_EXT<sp/>is<sp/>only<sp/>used<sp/>by<sp/>e.g.<sp/>a<sp/>wizard,<sp/>not<sp/>in<sp/>normal<sp/>operation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="TMC4671_8h_1a8851513eebe4e202eb979d660d3747b4" kindref="member">TMC4671_FIELD_READ</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aa7c69e58d88c9b81fd0223f327b28e78" kindref="member">TMC4671_MODE_RAMP_MODE_MOTION</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a07830cd8e239cdeb7c3861c68b821b27" kindref="member">TMC4671_MODE_MOTION_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1ad8ff317646aecca55ff2109d9c12d324" kindref="member">TMC4671_MODE_MOTION_SHIFT</ref>)<sp/>!=<sp/><ref refid="TMC4671__Register_8h_1aa5b750d58bcceb9f1ebe593f183edc78" kindref="member">TMC4671_MOTION_MODE_UQ_UD_EXT</ref>)</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>select<sp/>the<sp/>use<sp/>of<sp/>phi_e_hall<sp/>to<sp/>start<sp/>motor<sp/>with<sp/>hall<sp/>signals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed53f10bbd85f05cdc2aa115a410b1fd" kindref="member">TMC4671_PHI_E_SELECTION</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/><ref refid="TMC4671__Register_8h_1ad0bb91584fa8fb942637538bdf3adc7b" kindref="member">TMC4671_PHI_E_HALL</ref>);</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initState<sp/>=<sp/><ref refid="TMC4671_8c_1a7cc13b78f95b2e24a872f6c2deef686c" kindref="member">STATE_WAIT_INIT_TIME</ref>;</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a7cc13b78f95b2e24a872f6c2deef686c" kindref="member">STATE_WAIT_INIT_TIME</ref>:</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>actual<sp/>hall<sp/>angle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*hall_phi_e_new<sp/>=<sp/><ref refid="TMC4671_8h_1a8851513eebe4e202eb979d660d3747b4" kindref="member">TMC4671_FIELD_READ</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a2ced26a3b543787940cf8833d1d7f7bb" kindref="member">TMC4671_HALL_PHI_E_INTERPOLATED_PHI_E</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a0f82688fdf8ac979e56e4f430f42eaf3" kindref="member">TMC4671_HALL_PHI_E_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a9428948ee393be26ff9fd7f84532b890" kindref="member">TMC4671_HALL_PHI_E_SHIFT</ref>);</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wait<sp/>until<sp/>hall<sp/>angle<sp/>changed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*hall_phi_e_old<sp/>!=<sp/>*hall_phi_e_new)</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>estimated<sp/>value<sp/>=<sp/>old<sp/>value<sp/>+<sp/>diff<sp/>between<sp/>old<sp/>and<sp/>new<sp/>(handle<sp/>int16_t<sp/>overrun)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int16_t<sp/>hall_phi_e_estimated<sp/>=<sp/>*hall_phi_e_old<sp/>+<sp/><ref refid="TMC4671_8c_1a25d0b581a67167da5676f0cc45f9aeef" kindref="member">tmc4671_getS16CircleDifference</ref>(*hall_phi_e_new,<sp/>*hall_phi_e_old)/2;</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>actual<sp/>abn_decoder<sp/>angle<sp/>and<sp/>consider<sp/>last<sp/>set<sp/>abn_decoder_offset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int16_t<sp/>abn_phi_e_actual<sp/>=<sp/>(int16_t)<sp/><ref refid="TMC4671_8c_1a7ae982afedc51508c36ac8afd9a152c3" kindref="member">tmc4671_readRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aeea2a752c3649ee983fea86a9f7e42cd" kindref="member">TMC4671_ABN_DECODER_PHI_E_PHI_M</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>)<sp/>-<sp/>*hall_actual_coarse_offset;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>ABN_DECODER_PHI_E_OFFSET<sp/>to<sp/>actual<sp/>estimated<sp/>angle<sp/>-<sp/>abn_phi_e_actual<sp/>difference</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1ac779bdba6420814272939de9257ed0d6" kindref="member">TMC4671_ABN_DECODER_PHI_E_PHI_M_OFFSET</ref>,<sp/><ref refid="TMC4671_8h_1a7840c91613b3a5b1a8485e817f04dc58" kindref="member">BIT_16_TO_31</ref>,<sp/><ref refid="TMC4671_8c_1a25d0b581a67167da5676f0cc45f9aeef" kindref="member">tmc4671_getS16CircleDifference</ref>(hall_phi_e_estimated,<sp/>abn_phi_e_actual));</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>switch<sp/>back<sp/>to<sp/>last<sp/>used<sp/>PHI_E_SELECTION<sp/>setting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1abd0ee7ee9d67222811c6c1c0354cec82" kindref="member">tmc4671_writeRegister16BitValue</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed53f10bbd85f05cdc2aa115a410b1fd" kindref="member">TMC4671_PHI_E_SELECTION</ref>,<sp/><ref refid="TMC4671_8h_1a370897f9a27aa811e220462c17e5b45f" kindref="member">BIT_0_TO_15</ref>,<sp/>*last_Phi_E_Selection);</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>go<sp/>to<sp/>ready<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initState<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initState<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="428"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a7f0f4ba559552098954b4801c9929527" kindref="member">tmc4671_checkEncderInitialization</ref>(uint8_t<sp/>motor,<sp/>uint32_t<sp/>actualSystick,<sp/>uint8_t<sp/>initMode,<sp/>uint8_t<sp/>*initState,<sp/>uint16_t<sp/>initWaitTime,<sp/>uint16_t<sp/>*actualInitWaitTime,<sp/>uint16_t<sp/>startVoltage,</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int16_t<sp/>*hall_phi_e_old,<sp/>int16_t<sp/>*hall_phi_e_new,<sp/>int16_t<sp/>*hall_actual_coarse_offset,</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>*last_Phi_E_Selection,<sp/>uint32_t<sp/>*last_UQ_UD_EXT,<sp/>int16_t<sp/>*last_PHI_E_EXT)</highlight></codeline>
+<codeline lineno="433"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>use<sp/>the<sp/>systick<sp/>as<sp/>1ms<sp/>timer<sp/>for<sp/>encoder<sp/>initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t<sp/>lastSystick<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(actualSystick<sp/>!=<sp/>lastSystick)</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>needs<sp/>timer<sp/>to<sp/>use<sp/>the<sp/>wait<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(initMode<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a48f44d3e6c01b5444d22a70c5050bd99" kindref="member">tmc4671_doEncoderInitializationMode0</ref>(motor,<sp/>initState,<sp/>initWaitTime,<sp/>actualInitWaitTime,<sp/>startVoltage,<sp/>last_Phi_E_Selection,<sp/>last_UQ_UD_EXT,<sp/>last_PHI_E_EXT);</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lastSystick<sp/>=<sp/>actualSystick;</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>needs<sp/>no<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(initMode<sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1aa083699f9709a5dd35ee278f4a5bcb44" kindref="member">tmc4671_doEncoderInitializationMode2</ref>(motor,<sp/>initState,<sp/>actualInitWaitTime,<sp/>hall_phi_e_old,<sp/>hall_phi_e_new,<sp/>hall_actual_coarse_offset,<sp/>last_Phi_E_Selection);</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="451"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a2f9ab699ce3473a1f94e3832a05082a2" kindref="member">tmc4671_periodicJob</ref>(uint8_t<sp/>motor,<sp/>uint32_t<sp/>actualSystick,<sp/>uint8_t<sp/>initMode,<sp/>uint8_t<sp/>*initState,<sp/>uint16_t<sp/>initWaitTime,<sp/>uint16_t<sp/>*actualInitWaitTime,<sp/>uint16_t<sp/>startVoltage,</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int16_t<sp/>*hall_phi_e_old,<sp/>int16_t<sp/>*hall_phi_e_new,<sp/>int16_t<sp/>*hall_actual_coarse_offset,</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>*last_Phi_E_Selection,<sp/>uint32_t<sp/>*last_UQ_UD_EXT,<sp/>int16_t<sp/>*last_PHI_E_EXT)</highlight></codeline>
+<codeline lineno="456"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a7f0f4ba559552098954b4801c9929527" kindref="member">tmc4671_checkEncderInitialization</ref>(motor,<sp/>actualSystick,<sp/>initMode,<sp/>initState,<sp/>initWaitTime,<sp/>actualInitWaitTime,<sp/>startVoltage,</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hall_phi_e_old,<sp/>hall_phi_e_new,<sp/>hall_actual_coarse_offset,<sp/>last_Phi_E_Selection,<sp/>last_UQ_UD_EXT,<sp/>last_PHI_E_EXT);</highlight></codeline>
+<codeline lineno="459"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a903c6d03eb82720342685e11a2c79d74" kindref="member">tmc4671_startEncoderInitialization</ref>(uint8_t<sp/>mode,<sp/>uint8_t<sp/>*initMode,<sp/>uint8_t<sp/>*initState)</highlight></codeline>
+<codeline lineno="462"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>allow<sp/>only<sp/>a<sp/>new<sp/>initialization<sp/>if<sp/>no<sp/>actual<sp/>initialization<sp/>is<sp/>running</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*initState<sp/>==<sp/><ref refid="TMC4671_8c_1aee7bbb04f23b06182b701fe1352d851d" kindref="member">STATE_NOTHING_TO_DO</ref>)</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mode<sp/>==<sp/>0)<sp/></highlight><highlight class="comment">//<sp/>estimate<sp/>offset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initMode<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>start<sp/>initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initState<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mode<sp/>==<sp/>2)<sp/></highlight><highlight class="comment">//<sp/>use<sp/>hall<sp/>sensor<sp/>signals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initMode<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>start<sp/>initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*initState<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="483"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"></highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1ae3c01b101e5f38c1b8785099a9643aa9" kindref="member">tmc4671_updatePhiSelectionAndInitialize</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>actualPhiESelection,<sp/>uint8_t<sp/>desiredPhiESelection,<sp/>uint8_t<sp/>initMode,<sp/>uint8_t<sp/>*initState)</highlight></codeline>
+<codeline lineno="486"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(actualPhiESelection<sp/>!=<sp/>desiredPhiESelection)</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aed53f10bbd85f05cdc2aa115a410b1fd" kindref="member">TMC4671_PHI_E_SELECTION</ref>,<sp/>desiredPhiESelection);</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(desiredPhiESelection)</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>3:</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a903c6d03eb82720342685e11a2c79d74" kindref="member">tmc4671_startEncoderInitialization</ref>(initMode,<sp/>&amp;initMode,<sp/>initState);</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="498"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=====</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="501"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a1ee704f5be9c99a1d6dd8137d53c8ca5" kindref="member">tmc4671_disablePWM</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="503"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a1c0f6782a622b803ecebe51434a17ee3" kindref="member">TMC4671_PWM_SV_CHOP</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="505"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal">uint8_t<sp/><ref refid="TMC4671_8c_1a00c1fd086b156fb94ec217b92682381c" kindref="member">tmc4671_getMotorType</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="508"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(<ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a7e447aab038764d6e3916cea34c8743b" kindref="member">TMC4671_MOTOR_TYPE_N_POLE_PAIRS</ref>),<sp/><ref refid="TMC4671__Fields_8h_1a6d574a353553aaa5f4e9fb5a4274dec9" kindref="member">TMC4671_MOTOR_TYPE_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a5c8c721a2467c729fb44b816c18932b7" kindref="member">TMC4671_MOTOR_TYPE_SHIFT</ref>);</highlight></codeline>
+<codeline lineno="510"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a08c2047ed6e8f3600ef942ed2583ffc1" kindref="member">tmc4671_setMotorType</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>motorType)</highlight></codeline>
+<codeline lineno="513"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8h_1adec088c16f41cb92a242c1ca2bc55518" kindref="member">TMC4671_FIELD_UPDATE</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a7e447aab038764d6e3916cea34c8743b" kindref="member">TMC4671_MOTOR_TYPE_N_POLE_PAIRS</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a6d574a353553aaa5f4e9fb5a4274dec9" kindref="member">TMC4671_MOTOR_TYPE_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a5c8c721a2467c729fb44b816c18932b7" kindref="member">TMC4671_MOTOR_TYPE_SHIFT</ref>,<sp/>motorType);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal">uint8_t<sp/><ref refid="TMC4671_8c_1a72ce5a21b96f4dbd560bed2409bc8b79" kindref="member">tmc4671_getPolePairs</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="518"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(<ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a7e447aab038764d6e3916cea34c8743b" kindref="member">TMC4671_MOTOR_TYPE_N_POLE_PAIRS</ref>),<sp/><ref refid="TMC4671__Fields_8h_1a9c5f5368cd79883d11ec1b82f59f26ae" kindref="member">TMC4671_N_POLE_PAIRS_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a8ffac30429d7c3b23d238cd79d4dcea7" kindref="member">TMC4671_N_POLE_PAIRS_SHIFT</ref>);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"></highlight></codeline>
+<codeline lineno="522"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a34927e796ba50479e3cb7fe56769471e" kindref="member">tmc4671_setPolePairs</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>polePairs)</highlight></codeline>
+<codeline lineno="523"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8h_1adec088c16f41cb92a242c1ca2bc55518" kindref="member">TMC4671_FIELD_UPDATE</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a7e447aab038764d6e3916cea34c8743b" kindref="member">TMC4671_MOTOR_TYPE_N_POLE_PAIRS</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a9c5f5368cd79883d11ec1b82f59f26ae" kindref="member">TMC4671_N_POLE_PAIRS_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a8ffac30429d7c3b23d238cd79d4dcea7" kindref="member">TMC4671_N_POLE_PAIRS_SHIFT</ref>,<sp/>polePairs);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal">uint16_t<sp/><ref refid="TMC4671_8c_1a0deb84e3d26937ede151a124151a6f50" kindref="member">tmc4671_getAdcI0Offset</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="528"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(<ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a2ee8fc6e7bc3fc90326baa3639074f8e" kindref="member">TMC4671_ADC_I0_SCALE_OFFSET</ref>),<sp/><ref refid="TMC4671__Fields_8h_1a902a6666c7dc76f17896e1ff7d0f9a32" kindref="member">TMC4671_ADC_I0_OFFSET_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a3b84ce67cafc40a4623aa8a91bab97da" kindref="member">TMC4671_ADC_I0_OFFSET_SHIFT</ref>);</highlight></codeline>
+<codeline lineno="530"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"></highlight></codeline>
+<codeline lineno="532"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1a0cc6d6fe27a1d9962b6f779b5df80daf" kindref="member">tmc4671_setAdcI0Offset</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>offset)</highlight></codeline>
+<codeline lineno="533"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8h_1adec088c16f41cb92a242c1ca2bc55518" kindref="member">TMC4671_FIELD_UPDATE</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a2ee8fc6e7bc3fc90326baa3639074f8e" kindref="member">TMC4671_ADC_I0_SCALE_OFFSET</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a902a6666c7dc76f17896e1ff7d0f9a32" kindref="member">TMC4671_ADC_I0_OFFSET_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a3b84ce67cafc40a4623aa8a91bab97da" kindref="member">TMC4671_ADC_I0_OFFSET_SHIFT</ref>,<sp/>offset);</highlight></codeline>
+<codeline lineno="535"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"></highlight></codeline>
+<codeline lineno="537"><highlight class="normal">uint16_t<sp/><ref refid="TMC4671_8c_1a13f8ef450ac56a7e4ffc98fda9ce389f" kindref="member">tmc4671_getAdcI1Offset</ref>(uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="538"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(<ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a3f081dfc3f86d3af83bde45d08a46fe5" kindref="member">TMC4671_ADC_I1_SCALE_OFFSET</ref>),<sp/><ref refid="TMC4671__Fields_8h_1a72fce4f24993adfae7d8ff6e5862ef5f" kindref="member">TMC4671_ADC_I1_OFFSET_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1ab413b5da70c4cfa4db399ba0da107015" kindref="member">TMC4671_ADC_I1_OFFSET_SHIFT</ref>);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"></highlight></codeline>
+<codeline lineno="542"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1ab955ee58247b33857ea6b5b7405d22f4" kindref="member">tmc4671_setAdcI1Offset</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>offset)</highlight></codeline>
+<codeline lineno="543"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8h_1adec088c16f41cb92a242c1ca2bc55518" kindref="member">TMC4671_FIELD_UPDATE</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a3f081dfc3f86d3af83bde45d08a46fe5" kindref="member">TMC4671_ADC_I1_SCALE_OFFSET</ref>,<sp/><ref refid="TMC4671__Fields_8h_1a72fce4f24993adfae7d8ff6e5862ef5f" kindref="member">TMC4671_ADC_I1_OFFSET_MASK</ref>,<sp/><ref refid="TMC4671__Fields_8h_1ab413b5da70c4cfa4db399ba0da107015" kindref="member">TMC4671_ADC_I1_OFFSET_SHIFT</ref>,<sp/>offset);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"></highlight></codeline>
+<codeline lineno="547"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1aaa854a38a737c194b360555607d0e580" kindref="member">tmc4671_setTorqueFluxPI</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>pParameter,<sp/>uint16_t<sp/>iParameter)</highlight></codeline>
+<codeline lineno="548"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1aa975ca8871d39f0ebec464ce20725cdd" kindref="member">TMC4671_PID_FLUX_P_FLUX_I</ref>,<sp/>((uint32_t)pParameter<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(uint32_t)iParameter);</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a178d0029668fa408563e4fa8afcd54e5" kindref="member">TMC4671_PID_TORQUE_P_TORQUE_I</ref>,<sp/>((uint32_t)pParameter<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(uint32_t)iParameter);</highlight></codeline>
+<codeline lineno="551"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"></highlight></codeline>
+<codeline lineno="553"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1aabd645ac7e93ddb8b60df0c225d68f4e" kindref="member">tmc4671_setVelocityPI</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>pParameter,<sp/>uint16_t<sp/>iParameter)</highlight></codeline>
+<codeline lineno="554"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a1a5a50ff882ea8bb8acbcdee85ddf5be" kindref="member">TMC4671_PID_VELOCITY_P_VELOCITY_I</ref>,<sp/>((uint32_t)pParameter<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(uint32_t)iParameter);</highlight></codeline>
+<codeline lineno="556"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4671_8c_1aa5b4311ae28ca422919ac1bf3777eab3" kindref="member">tmc4671_setPositionPI</ref>(uint8_t<sp/>motor,<sp/>uint16_t<sp/>pParameter,<sp/>uint16_t<sp/>iParameter)</highlight></codeline>
+<codeline lineno="559"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/><ref refid="TMC4671__Register_8h_1a920360b996d0ee61f8c3d4e6d73bd59d" kindref="member">TMC4671_PID_POSITION_P_POSITION_I</ref>,<sp/>((uint32_t)pParameter<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(uint32_t)iParameter);</highlight></codeline>
+<codeline lineno="561"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"></highlight></codeline>
+<codeline lineno="563"><highlight class="normal">int32_t<sp/><ref refid="TMC4671_8c_1a5db0822778b1f0f3ae490a0e5a331ec8" kindref="member">tmc4671_readFieldWithDependency</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>reg,<sp/>uint8_t<sp/>dependsReg,<sp/>uint32_t<sp/>dependsValue,<sp/>uint32_t<sp/>mask,<sp/>uint8_t<sp/>shift)</highlight></codeline>
+<codeline lineno="564"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>remember<sp/>old<sp/>depends<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>lastDependsValue<sp/>=<sp/><ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/>dependsReg);</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>needed<sp/>depends<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/>dependsReg,<sp/>dependsValue);</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>value<sp/>=<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(<ref refid="TMC4671_8c_1a0919451b5dfe6a79e56e8f9c42f259fe" kindref="member">tmc4671_readInt</ref>(motor,<sp/>reg),<sp/>mask,<sp/>shift);</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"></highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>old<sp/>depends<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4671_8c_1a22b142193c6783c44aa180449d94f298" kindref="member">tmc4671_writeInt</ref>(motor,<sp/>dependsReg,<sp/>lastDependsValue);</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="575"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4671/TMC4671.c"/>
+  </compounddef>
+</doxygen>

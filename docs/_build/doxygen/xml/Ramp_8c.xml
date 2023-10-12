@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Ramp_8c" kind="file" language="C++">
+    <compoundname>Ramp.c</compoundname>
+    <includes refid="Ramp_8h" local="yes">Ramp.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="13">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="11">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="14">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="7">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LinearRamp1.h</label>
+        <link refid="LinearRamp1_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Ramp.c</label>
+        <link refid="Ramp_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Ramp.h</label>
+        <link refid="Ramp_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>stdbool.h</label>
+      </node>
+      <node id="8">
+        <label>stddef.h</label>
+      </node>
+      <node id="10">
+        <label>stdint.h</label>
+      </node>
+      <node id="15">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="Ramp_8c_1a4fdefddce925336a3bc656007f1870bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc_ramp_init</definition>
+        <argsstring>(void *ramp, TMC_RampType type)</argsstring>
+        <name>tmc_ramp_init</name>
+        <param>
+          <type>void *</type>
+          <declname>ramp</declname>
+        </param>
+        <param>
+          <type><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" line="12" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" bodystart="12" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="Ramp_8c_1ac169e45f8f96a9fe66bdef128281121d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc_ramp_compute</definition>
+        <argsstring>(void *ramp, TMC_RampType type, uint32_t delta)</argsstring>
+        <name>tmc_ramp_compute</name>
+        <param>
+          <type>void *</type>
+          <declname>ramp</declname>
+        </param>
+        <param>
+          <type><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" bodystart="22" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="Ramp_8c_1a041c182d1e4b1acede666e694ab03ebc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc_ramp_get_rampVelocity</definition>
+        <argsstring>(void *ramp, TMC_RampType type)</argsstring>
+        <name>tmc_ramp_get_rampVelocity</name>
+        <param>
+          <type>void *</type>
+          <declname>ramp</declname>
+        </param>
+        <param>
+          <type><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" bodystart="40" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="Ramp_8c_1a1707f69417dc52692c56f440bd717e7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc_ramp_get_rampPosition</definition>
+        <argsstring>(void *ramp, TMC_RampType type)</argsstring>
+        <name>tmc_ramp_get_rampPosition</name>
+        <param>
+          <type>void *</type>
+          <declname>ramp</declname>
+        </param>
+        <param>
+          <type><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" bodystart="51" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="Ramp_8c_1a5642c9348ea381c4f0ff2a900eae13ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tmc_ramp_get_enabled</definition>
+        <argsstring>(void *ramp, TMC_RampType type)</argsstring>
+        <name>tmc_ramp_get_enabled</name>
+        <param>
+          <type>void *</type>
+          <declname>ramp</declname>
+        </param>
+        <param>
+          <type><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" line="62" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" bodystart="62" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="Ramp_8c_1a262731c87f9113fedd9bb268a7f21cdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc_ramp_set_enabled</definition>
+        <argsstring>(void *ramp, TMC_RampType type, bool enabled)</argsstring>
+        <name>tmc_ramp_set_enabled</name>
+        <param>
+          <type>void *</type>
+          <declname>ramp</declname>
+        </param>
+        <param>
+          <type><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" line="73" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" bodystart="73" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="Ramp_8c_1a3ef762121e323691d6ec047d3ddb0f47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc_ramp_toggle_enabled</definition>
+        <argsstring>(void *ramp, TMC_RampType type)</argsstring>
+        <name>tmc_ramp_toggle_enabled</name>
+        <param>
+          <type>void *</type>
+          <declname>ramp</declname>
+        </param>
+        <param>
+          <type><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" line="83" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c" bodystart="83" bodyend="91"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2018<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Ramp_8h" kindref="compound">Ramp.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Ramp_8c_1a4fdefddce925336a3bc656007f1870bc" kindref="member">tmc_ramp_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ramp,<sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref><sp/>type)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(type)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048ae76c1ce476842e39bcb9327bd6966947" kindref="member">TMC_RAMP_TYPE_LINEAR</ref>:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="LinearRamp1_8c_1a1d998c909468a1438e89c30bf641f65a" kindref="member">tmc_ramp_linear_init</ref>((<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*)ramp);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">int32_t<sp/><ref refid="Ramp_8c_1ac169e45f8f96a9fe66bdef128281121d" kindref="member">tmc_ramp_compute</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ramp,<sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref><sp/>type,<sp/>uint32_t<sp/>delta)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>i;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>dxSum<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(type)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048ae76c1ce476842e39bcb9327bd6966947" kindref="member">TMC_RAMP_TYPE_LINEAR</ref>:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>delta;<sp/>i++)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dxSum<sp/>+=<sp/><ref refid="LinearRamp1_8c_1ae7246587f66f482d75e1651458aa1a4d" kindref="member">tmc_ramp_linear_compute</ref>((<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*)ramp);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dxSum;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">int32_t<sp/><ref refid="Ramp_8c_1a041c182d1e4b1acede666e694ab03ebc" kindref="member">tmc_ramp_get_rampVelocity</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ramp,<sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref><sp/>type)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>v<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(type)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048ae76c1ce476842e39bcb9327bd6966947" kindref="member">TMC_RAMP_TYPE_LINEAR</ref>:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v<sp/>=<sp/><ref refid="LinearRamp1_8c_1af17792e8fa5bfcea82de372d446b0a0f" kindref="member">tmc_ramp_linear_get_rampVelocity</ref>((<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*)ramp);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>v;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">int32_t<sp/><ref refid="Ramp_8c_1a1707f69417dc52692c56f440bd717e7a" kindref="member">tmc_ramp_get_rampPosition</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ramp,<sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref><sp/>type)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>x<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(type)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048ae76c1ce476842e39bcb9327bd6966947" kindref="member">TMC_RAMP_TYPE_LINEAR</ref>:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="LinearRamp1_8c_1af26a7b981a214bdd9bc81f76891ca76d" kindref="member">tmc_ramp_linear_get_rampPosition</ref>((<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*)ramp);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="Ramp_8c_1a5642c9348ea381c4f0ff2a900eae13ed" kindref="member">tmc_ramp_get_enabled</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ramp,<sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref><sp/>type)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(type)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048ae76c1ce476842e39bcb9327bd6966947" kindref="member">TMC_RAMP_TYPE_LINEAR</ref>:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enabled<sp/>=<sp/><ref refid="LinearRamp1_8c_1ada73138fe95b5541a5e6d0a28106b4e7" kindref="member">tmc_ramp_linear_get_enabled</ref>((<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*)ramp);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>enabled;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Ramp_8c_1a262731c87f9113fedd9bb268a7f21cdb" kindref="member">tmc_ramp_set_enabled</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ramp,<sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref><sp/>type,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(type)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048ae76c1ce476842e39bcb9327bd6966947" kindref="member">TMC_RAMP_TYPE_LINEAR</ref>:</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="LinearRamp1_8c_1a60cff28e1206055c3c6953cdddbcac12" kindref="member">tmc_ramp_linear_set_enabled</ref>((<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*)ramp,<sp/>enabled);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Ramp_8c_1a3ef762121e323691d6ec047d3ddb0f47" kindref="member">tmc_ramp_toggle_enabled</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ramp,<sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048" kindref="member">TMC_RampType</ref><sp/>type)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(type)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="Ramp_8h_1aaa9e843c41eaafe201f32863e73c2048ae76c1ce476842e39bcb9327bd6966947" kindref="member">TMC_RAMP_TYPE_LINEAR</ref>:</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="LinearRamp1_8c_1a60cff28e1206055c3c6953cdddbcac12" kindref="member">tmc_ramp_linear_set_enabled</ref>((<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*)ramp,<sp/>!<ref refid="Ramp_8c_1a5642c9348ea381c4f0ff2a900eae13ed" kindref="member">tmc_ramp_get_enabled</ref>(ramp,<sp/>type));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/Ramp.c"/>
+  </compounddef>
+</doxygen>

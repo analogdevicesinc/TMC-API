@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTMC2240TypeDef" kind="struct" language="C++" prot="public">
+    <compoundname>TMC2240TypeDef</compoundname>
+    <includes refid="TMC2240_8h" local="no">TMC2240.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTMC2240TypeDef_1ac4566cbee3028ad3082c6d84d3cc7418" prot="public" static="no" mutable="no">
+        <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+        <definition>ConfigurationTypeDef* TMC2240TypeDef::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>TMC2240TypeDef::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" line="26" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2240TypeDef_1a02ca712eca46237c97b46b20a0589e01" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC2240TypeDef::velocity</definition>
+        <argsstring></argsstring>
+        <name>velocity</name>
+        <qualifiedname>TMC2240TypeDef::velocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2240TypeDef_1af073421bb09078fcc0da1e6b7226041e" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC2240TypeDef::oldX</definition>
+        <argsstring></argsstring>
+        <name>oldX</name>
+        <qualifiedname>TMC2240TypeDef::oldX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" line="27" column="18" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2240TypeDef_1a54162e1bc8e2bec32d093182698fb14a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC2240TypeDef::oldTick</definition>
+        <argsstring></argsstring>
+        <name>oldTick</name>
+        <qualifiedname>TMC2240TypeDef::oldTick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" line="28" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2240TypeDef_1a488b5f9a23825926ee9c8c214b2dadee" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC2240TypeDef::registerResetState[TMC2240_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2240_REGISTER_COUNT]</argsstring>
+        <name>registerResetState</name>
+        <qualifiedname>TMC2240TypeDef::registerResetState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2240TypeDef_1ad130d091dc63224b7b75d30982a314f8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2240TypeDef::registerAccess[TMC2240_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2240_REGISTER_COUNT]</argsstring>
+        <name>registerAccess</name>
+        <qualifiedname>TMC2240TypeDef::registerAccess</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2240TypeDef_1a5da70d3967dbaf66bfe2b2e0ab0345a5" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2240TypeDef::slaveAddress</definition>
+        <argsstring></argsstring>
+        <name>slaveAddress</name>
+        <qualifiedname>TMC2240TypeDef::slaveAddress</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ConfigurationTypeDef</label>
+        <link refid="structConfigurationTypeDef"/>
+      </node>
+      <node id="1">
+        <label>TMC2240TypeDef</label>
+        <link refid="structTMC2240TypeDef"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" line="24" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2240/TMC2240.h" bodystart="25" bodyend="32"/>
+    <listofallmembers>
+      <member refid="structTMC2240TypeDef_1ac4566cbee3028ad3082c6d84d3cc7418" prot="public" virt="non-virtual"><scope>TMC2240TypeDef</scope><name>config</name></member>
+      <member refid="structTMC2240TypeDef_1a54162e1bc8e2bec32d093182698fb14a" prot="public" virt="non-virtual"><scope>TMC2240TypeDef</scope><name>oldTick</name></member>
+      <member refid="structTMC2240TypeDef_1af073421bb09078fcc0da1e6b7226041e" prot="public" virt="non-virtual"><scope>TMC2240TypeDef</scope><name>oldX</name></member>
+      <member refid="structTMC2240TypeDef_1ad130d091dc63224b7b75d30982a314f8" prot="public" virt="non-virtual"><scope>TMC2240TypeDef</scope><name>registerAccess</name></member>
+      <member refid="structTMC2240TypeDef_1a488b5f9a23825926ee9c8c214b2dadee" prot="public" virt="non-virtual"><scope>TMC2240TypeDef</scope><name>registerResetState</name></member>
+      <member refid="structTMC2240TypeDef_1a5da70d3967dbaf66bfe2b2e0ab0345a5" prot="public" virt="non-virtual"><scope>TMC2240TypeDef</scope><name>slaveAddress</name></member>
+      <member refid="structTMC2240TypeDef_1a02ca712eca46237c97b46b20a0589e01" prot="public" virt="non-virtual"><scope>TMC2240TypeDef</scope><name>velocity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

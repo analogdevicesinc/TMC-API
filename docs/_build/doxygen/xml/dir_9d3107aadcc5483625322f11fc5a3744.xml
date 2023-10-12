@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_9d3107aadcc5483625322f11fc5a3744" kind="dir">
+    <compoundname>TMC2160</compoundname>
+    <innerfile refid="TMC2160_8c">TMC2160.c</innerfile>
+    <innerfile refid="TMC2160_8h">TMC2160.h</innerfile>
+    <innerfile refid="TMC2160__Constants_8h">TMC2160_Constants.h</innerfile>
+    <innerfile refid="TMC2160__Fields_8h">TMC2160_Fields.h</innerfile>
+    <innerfile refid="TMC2160__Register_8h">TMC2160_Register.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2160/"/>
+  </compounddef>
+</doxygen>

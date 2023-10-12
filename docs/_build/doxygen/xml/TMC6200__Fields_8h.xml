@@ -1,0 +1,1200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC6200__Fields_8h" kind="file" language="C++">
+    <compoundname>TMC6200_Fields.h</compoundname>
+    <includedby refid="TMC6200_8h" local="yes">TMC6200.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC6200.c</label>
+        <link refid="TMC6200_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC6200.h</label>
+        <link refid="TMC6200_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC6200_Fields.h</label>
+        <link refid="TMC6200__Fields_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a132858bf8117ce5eaa5ea40a7bd4eda1" prot="public" static="no">
+        <name>TMC6200_DISABLE_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="13" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aab44597f17e1d91cd16898b2913f6fc6" prot="public" static="no">
+        <name>TMC6200_DISABLE_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="14" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a893f8e07a72b5b3a9c7447f99818b958" prot="public" static="no">
+        <name>TMC6200_SINGLELINE_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a399b93c560a49310d54e942cb684979f" prot="public" static="no">
+        <name>TMC6200_SINGLELINE_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a2bb52d8bb89ae7751e85babc5e006234" prot="public" static="no">
+        <name>TMC6200_FAULTDIRECT_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a6b46823df0a460f306f8bf8785944999" prot="public" static="no">
+        <name>TMC6200_FAULTDIRECT_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a8a333e66fe50fe173252bf6b770b2f32" prot="public" static="no">
+        <name>TMC6200_UNUSED_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a1863f0c5d9d82c883133a6f5eb9f38ec" prot="public" static="no">
+        <name>TMC6200_UNUSED_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aa02319a6563fbe2c671aed2a3217ad49" prot="public" static="no">
+        <name>TMC6200_AMPLIFICATION_MASK</name>
+        <initializer>0x30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a790fd8f2068f3b2bc7bee9d2bc6e1c82" prot="public" static="no">
+        <name>TMC6200_AMPLIFICATION_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a5d7efac70d919f6411cb8110e8c161a5" prot="public" static="no">
+        <name>TMC6200_CURRENT_ZERO_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a7690c4041b985756ce76bbb353b261b2" prot="public" static="no">
+        <name>TMC6200_CURRENT_ZERO_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1af2fcee3660a175d090e50fd2183cbcdc" prot="public" static="no">
+        <name>TMC6200_TEST_MODE_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ad5ba63ccbe2f38ba1f01b29b721988c6" prot="public" static="no">
+        <name>TMC6200_TEST_MODE_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a7ec12a4db90fab883031964d9bd9f42c" prot="public" static="no">
+        <name>TMC6200_RESET_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ab346927f83f934fe929bbd6df0d67a40" prot="public" static="no">
+        <name>TMC6200_RESET_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a38f4c6a69e42b2b678a8b33be445c40d" prot="public" static="no">
+        <name>TMC6200_DRV_OTPW_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ae2451631322966f43a3a068aa8881670" prot="public" static="no">
+        <name>TMC6200_DRV_OTPW_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a3517a880ca06f247e7737db6a3cd7972" prot="public" static="no">
+        <name>TMC6200_DRV_OT_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a8bbc5607882ca2ec235318219aaf4208" prot="public" static="no">
+        <name>TMC6200_DRV_OT_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a88c6bf45a224a6b2369803120ba4719f" prot="public" static="no">
+        <name>TMC6200_UV_CP_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ae6cd6f7a8d6d57930b7303b4bd482f22" prot="public" static="no">
+        <name>TMC6200_UV_CP_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a4a85687204c1cdd0024eab0a5943d2cc" prot="public" static="no">
+        <name>TMC6200_SHORTDET_U_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ad74968d5a418670e08f08de9be22769f" prot="public" static="no">
+        <name>TMC6200_SHORTDET_U_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a5fc6e93caf6484740632259e20e3431b" prot="public" static="no">
+        <name>TMC6200_S2VSU_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a915afc13e59f43440fdb910bde7d0afe" prot="public" static="no">
+        <name>TMC6200_S2VSU_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1af32b01c4b24c8c64ebaf5bfae5d70b36" prot="public" static="no">
+        <name>TMC6200_SHORTDET_V_MASK</name>
+        <initializer>0x100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a9b63fdf953c08b0832e1104b30a33cf2" prot="public" static="no">
+        <name>TMC6200_SHORTDET_V_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1abb4254faab18e9ab0ebcd905b0e57f49" prot="public" static="no">
+        <name>TMC6200_S2GV_MASK</name>
+        <initializer>0x200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a5b0981db2b63ceb9513ab6e86e62bb56" prot="public" static="no">
+        <name>TMC6200_S2GV_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a30f5ea258a3367097d0dc11325e59977" prot="public" static="no">
+        <name>TMC6200_S2VSV_MASK</name>
+        <initializer>0x400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a944c1e0577a48b9bed860928a61ac508" prot="public" static="no">
+        <name>TMC6200_S2VSV_SHIFT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a89dc8e1e997a842f0de39b85f418eab2" prot="public" static="no">
+        <name>TMC6200_SHORTDET_W_MASK</name>
+        <initializer>0x1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ab8ecfdde380c67f7ab8011ffb4c5c7e9" prot="public" static="no">
+        <name>TMC6200_SHORTDET_W_SHIFT</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="46" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a4e03bb28d2203a4225b78a3d541e8983" prot="public" static="no">
+        <name>TMC6200_S2VSW_MASK</name>
+        <initializer>0x4000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a640c1bb196cac330ba0a0df6285e8e8e" prot="public" static="no">
+        <name>TMC6200_S2VSW_SHIFT</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a73a41ea5e2776a67a261635f0f2e0a10" prot="public" static="no">
+        <name>TMC6200_UL_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ac05f2c227f6e7056b0dd8ab9e8577934" prot="public" static="no">
+        <name>TMC6200_UL_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aec2a6221c7a1512a790f01265675e925" prot="public" static="no">
+        <name>TMC6200_UH_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a5aefb90c82fd35bcf358d04cd9af54a6" prot="public" static="no">
+        <name>TMC6200_UH_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a387eea230fd4f3755bd3503bdbf519f5" prot="public" static="no">
+        <name>TMC6200_VL_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a998a2f4374fb06b3e5034946727252a8" prot="public" static="no">
+        <name>TMC6200_VL_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a8e28d37b05b10520625dec5d5241cc3a" prot="public" static="no">
+        <name>TMC6200_VH_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1afab14a8be6e2866314d73d04df32fa66" prot="public" static="no">
+        <name>TMC6200_VH_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a25c10dede435b0296b866849052f5098" prot="public" static="no">
+        <name>TMC6200_WL_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a7657261237201104c32f7e4d8962ac49" prot="public" static="no">
+        <name>TMC6200_WL_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="58" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a9afee75226c9341763968f6fb4233df8" prot="public" static="no">
+        <name>TMC6200_WH_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ad1492a5b94e9815510d875e859df51d0" prot="public" static="no">
+        <name>TMC6200_WH_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a289fe545e86e8678a8f239b77034ad66" prot="public" static="no">
+        <name>TMC6200_DRV_EN_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a23d85e42f553a01583c5e4cbd0d29bd2" prot="public" static="no">
+        <name>TMC6200_DRV_EN_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="62" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aac5f1e941e3facc73519b04d0d850717" prot="public" static="no">
+        <name>TMC6200_OTPW_MASK</name>
+        <initializer>0x100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="63" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a263e9d5663008edc09124e93e0cccc2a" prot="public" static="no">
+        <name>TMC6200_OTPW_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="64" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a357650096b2825c20150ad3427beea6b" prot="public" static="no">
+        <name>TMC6200_OT136C_MASK</name>
+        <initializer>0x200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aefc269492ba8ca8874abda7297f1838e" prot="public" static="no">
+        <name>TMC6200_OT136C_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a30ab6713912304d4e14a44c3afa3eda1" prot="public" static="no">
+        <name>TMC6200_OT143C_MASK</name>
+        <initializer>0x400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="67" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a4d1ecb767d8eec86cf2f3544aa9c76c8" prot="public" static="no">
+        <name>TMC6200_OT143C_SHIFT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="68" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aa45b6d296927a060bf8d18b81b05ec6d" prot="public" static="no">
+        <name>TMC6200_OT150C_MASK</name>
+        <initializer>0x800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="69" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aae0301de5f9a766e5c9e18c324880be1" prot="public" static="no">
+        <name>TMC6200_OT150C_SHIFT</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="70" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ab0be5ab105cb02838b63c0dd75cc1ff9" prot="public" static="no">
+        <name>TMC6200_VERSION_MASK</name>
+        <initializer>0xFF000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="71" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ad3ef6b84904a2102971613d2ab172f17" prot="public" static="no">
+        <name>TMC6200_VERSION_SHIFT</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="72" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ae1fea12be3b82acd4d2e17a179a958e7" prot="public" static="no">
+        <name>TMC6200_OTPBIT_MASK</name>
+        <initializer>0x07</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="73" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aa58c7c8057160f38e2550fc2bf0da891" prot="public" static="no">
+        <name>TMC6200_OTPBIT_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="74" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aef4333d09aaaa6da89479c866f6bc385" prot="public" static="no">
+        <name>TMC6200_OTPBYTE_MASK</name>
+        <initializer>0x30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="75" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a510ddf05b1807c3d8e24b51a9db04324" prot="public" static="no">
+        <name>TMC6200_OTPBYTE_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="76" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a3aa5c7a998559d99dfb1a49a2a447c7f" prot="public" static="no">
+        <name>TMC6200_OTPMAGIC_MASK</name>
+        <initializer>0xFF00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="77" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a990c4ab95008ecb5b43722c8d9d6d2d7" prot="public" static="no">
+        <name>TMC6200_OTPMAGIC_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="78" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a787575e7e5c2e11d3fddfb8aeaeea702" prot="public" static="no">
+        <name>TMC6200_OTP_BBM_MASK</name>
+        <initializer>0xC0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="79" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a2db3f3bb2c9291d1a70d81c03566281d" prot="public" static="no">
+        <name>TMC6200_OTP_BBM_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="80" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a99b2a1fcc45aaf05a978c731321a181e" prot="public" static="no">
+        <name>TMC6200_OTP_S2_LEVEL_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="81" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a638981ce06fcc6c9541ea4451b2b6dfd" prot="public" static="no">
+        <name>TMC6200_OTP_S2_LEVEL_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="82" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a905fc32567e4b9209bb8255cee757dc7" prot="public" static="no">
+        <name>TMC6200_OTP_FCLKTRIM_MASK</name>
+        <initializer>0x1F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="83" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a2f03e6020e63fcae4b70af64c90dd22a" prot="public" static="no">
+        <name>TMC6200_OTP_FCLKTRIM_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="84" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aec02758e3478b9d804b5f4cb6842de52" prot="public" static="no">
+        <name>TMC6200_FCLKTRIM_MASK</name>
+        <initializer>0x1F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="85" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ae2abbc0a69b0dd4fc7f38f226cff6417" prot="public" static="no">
+        <name>TMC6200_FCLKTRIM_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="86" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ae9319da2506e572dfbfbac66fe30e79b" prot="public" static="no">
+        <name>TMC6200_S2VS_LEVEL_MASK</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="87" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ac4f951edb6d894a9c7b2a2d574f81ef5" prot="public" static="no">
+        <name>TMC6200_S2VS_LEVEL_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="88" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a42d60071a142057cc5880cc210d7a7c1" prot="public" static="no">
+        <name>TMC6200_S2GND_LEVEL_MASK</name>
+        <initializer>0xF00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="89" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a7bd683d384e9a7daa9ca7e5ebeb99a88" prot="public" static="no">
+        <name>TMC6200_S2GND_LEVEL_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="90" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a54404107e8a8f02fde4c1874e302b88e" prot="public" static="no">
+        <name>TMC6200_SHORTFILTER_MASK</name>
+        <initializer>0x30000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="91" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aed1962ba3e72cf83c3fa8cbe60d3849c" prot="public" static="no">
+        <name>TMC6200_SHORTFILTER_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="92" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a638aa82676c16ea20aedf7da96841770" prot="public" static="no">
+        <name>TMC6200_SHORTDELAY_MASK</name>
+        <initializer>0x100000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="93" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aeb60fa90751549d3999256433c8aa085" prot="public" static="no">
+        <name>TMC6200_SHORTDELAY_SHIFT</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="94" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a48c6f554a642ae29c7d7bd79606d242d" prot="public" static="no">
+        <name>TMC6200_RETRY_MASK</name>
+        <initializer>0x3000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="95" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a9319badd3671af563c4e1f3d4cba6145" prot="public" static="no">
+        <name>TMC6200_RETRY_SHIFT</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="96" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aafb77471564f625e365b4e39dff89d5e" prot="public" static="no">
+        <name>TMC6200_PROTECT_PARALLEL_MASK</name>
+        <initializer>0x10000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="97" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a8fb15d08caf4e64c648263ff6eeddd06" prot="public" static="no">
+        <name>TMC6200_PROTECT_PARALLEL_SHIFT</name>
+        <initializer>28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="98" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a0d21d1cc39167dc16ed73597a0f0d053" prot="public" static="no">
+        <name>TMC6200_DISABLE_S2G_MASK</name>
+        <initializer>0x20000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="99" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a564631dbc3d111101ad36587832861c0" prot="public" static="no">
+        <name>TMC6200_DISABLE_S2G_SHIFT</name>
+        <initializer>29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="100" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a9b2ec3e0ac5f00d655a639cb0d2f3344" prot="public" static="no">
+        <name>TMC6200_DISABLE_S2VS_MASK</name>
+        <initializer>0x40000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="101" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1ab2a509aac4bfecfec4011cb7fdae49b4" prot="public" static="no">
+        <name>TMC6200_DISABLE_S2VS_SHIFT</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="102" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a10978e813fb858b30d41e6eb6c83e8ba" prot="public" static="no">
+        <name>TMC6200_BBMCLKS_MASK</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="103" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a0118dda545326a2f4c86a09a4f4b286f" prot="public" static="no">
+        <name>TMC6200_BBMCLKS_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="104" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a82ca5d8e2a4df33c0b4d1eb7e70a9130" prot="public" static="no">
+        <name>TMC6200_OTSELECT_MASK</name>
+        <initializer>0x30000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="105" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1aa3268713fba5467cb35d81a50eff1477" prot="public" static="no">
+        <name>TMC6200_OTSELECT_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="106" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a407d9715ce584183164c9ee8c361acbb" prot="public" static="no">
+        <name>TMC6200_DRVSTRENGTH_MASK</name>
+        <initializer>0xC0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="107" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC6200__Fields_8h_1a20339af886068d5f176b5461f821d1cb" prot="public" static="no">
+        <name>TMC6200_DRVSTRENGTH_SHIFT</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" line="108" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC6200_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="TMC6200__Fields_8h_1a132858bf8117ce5eaa5ea40a7bd4eda1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DISABLE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="TMC6200__Fields_8h_1aab44597f17e1d91cd16898b2913f6fc6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DISABLE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC6200__Fields_8h_1a893f8e07a72b5b3a9c7447f99818b958" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SINGLELINE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>0:<sp/>Individual,<sp/>1:<sp/>Combined<sp/>LS/HS<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC6200__Fields_8h_1a399b93c560a49310d54e942cb684979f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SINGLELINE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/>0:<sp/>Individual,<sp/>1:<sp/>Combined<sp/>LS/HS<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC6200__Fields_8h_1a2bb52d8bb89ae7751e85babc5e006234" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_FAULTDIRECT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC6200__Fields_8h_1a6b46823df0a460f306f8bf8785944999" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_FAULTDIRECT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC6200__Fields_8h_1a8a333e66fe50fe173252bf6b770b2f32" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_UNUSED_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC6200__Fields_8h_1a1863f0c5d9d82c883133a6f5eb9f38ec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_UNUSED_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC6200__Fields_8h_1aa02319a6563fbe2c671aed2a3217ad49" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_AMPLIFICATION_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>Amplification<sp/>of<sp/>current<sp/>amplifier<sp/>0:<sp/>5*,<sp/>1:<sp/>10*,<sp/>3:20*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC6200__Fields_8h_1a790fd8f2068f3b2bc7bee9d2bc6e1c82" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_AMPLIFICATION_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>Amplification<sp/>of<sp/>current<sp/>amplifier<sp/>0:<sp/>5*,<sp/>1:<sp/>10*,<sp/>3:20*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC6200__Fields_8h_1a5d7efac70d919f6411cb8110e8c161a5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_CURRENT_ZERO_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>Current<sp/>amplifier<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC6200__Fields_8h_1a7690c4041b985756ce76bbb353b261b2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_CURRENT_ZERO_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>Current<sp/>amplifier<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC6200__Fields_8h_1af2fcee3660a175d090e50fd2183cbcdc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_TEST_MODE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC6200__Fields_8h_1ad5ba63ccbe2f38ba1f01b29b721988c6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_TEST_MODE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC6200__Fields_8h_1a7ec12a4db90fab883031964d9bd9f42c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_RESET_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>reset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC6200__Fields_8h_1ab346927f83f934fe929bbd6df0d67a40" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_RESET_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>reset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC6200__Fields_8h_1a38f4c6a69e42b2b678a8b33be445c40d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DRV_OTPW_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>drv_otpw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC6200__Fields_8h_1ae2451631322966f43a3a068aa8881670" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DRV_OTPW_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/>drv_otpw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC6200__Fields_8h_1a3517a880ca06f247e7737db6a3cd7972" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DRV_OT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>drv_ot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC6200__Fields_8h_1a8bbc5607882ca2ec235318219aaf4208" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DRV_OT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//<sp/>drv_ot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC6200__Fields_8h_1a88c6bf45a224a6b2369803120ba4719f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_UV_CP_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>uv_cp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC6200__Fields_8h_1ae6cd6f7a8d6d57930b7303b4bd482f22" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_UV_CP_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/></highlight><highlight class="comment">//<sp/>uv_cp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC6200__Fields_8h_1a4a85687204c1cdd0024eab0a5943d2cc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTDET_U_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>shortdet_u</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC6200__Fields_8h_1ad74968d5a418670e08f08de9be22769f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTDET_U_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>shortdet_u</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC6200__Fields_8h_1a5fc6e93caf6484740632259e20e3431b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2VSU_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>short<sp/>to<sp/>VS<sp/>U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC6200__Fields_8h_1a915afc13e59f43440fdb910bde7d0afe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2VSU_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>short<sp/>to<sp/>VS<sp/>U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC6200__Fields_8h_1af32b01c4b24c8c64ebaf5bfae5d70b36" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTDET_V_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x100<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>shortdet_v</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC6200__Fields_8h_1a9b63fdf953c08b0832e1104b30a33cf2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTDET_V_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>shortdet_v</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC6200__Fields_8h_1abb4254faab18e9ab0ebcd905b0e57f49" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2GV_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x200<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>short<sp/>to<sp/>gnd<sp/>V</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="TMC6200__Fields_8h_1a5b0981db2b63ceb9513ab6e86e62bb56" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2GV_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9<sp/></highlight><highlight class="comment">//<sp/>short<sp/>to<sp/>gnd<sp/>V</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="TMC6200__Fields_8h_1a30f5ea258a3367097d0dc11325e59977" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2VSV_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x400<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>short<sp/>to<sp/>VS<sp/>V</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC6200__Fields_8h_1a944c1e0577a48b9bed860928a61ac508" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2VSV_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/></highlight><highlight class="comment">//<sp/>short<sp/>to<sp/>VS<sp/>V</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC6200__Fields_8h_1a89dc8e1e997a842f0de39b85f418eab2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTDET_W_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1000<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>shortdet_W</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC6200__Fields_8h_1ab8ecfdde380c67f7ab8011ffb4c5c7e9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTDET_W_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12<sp/></highlight><highlight class="comment">//<sp/>shortdet_W</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="TMC6200__Fields_8h_1a4e03bb28d2203a4225b78a3d541e8983" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2VSW_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4000<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>short<sp/>to<sp/>VS<sp/>W</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC6200__Fields_8h_1a640c1bb196cac330ba0a0df6285e8e8e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2VSW_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>14<sp/></highlight><highlight class="comment">//<sp/>short<sp/>to<sp/>VS<sp/>W</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC6200__Fields_8h_1a73a41ea5e2776a67a261635f0f2e0a10" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_UL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>UL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC6200__Fields_8h_1ac05f2c227f6e7056b0dd8ab9e8577934" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_UL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>UL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="TMC6200__Fields_8h_1aec2a6221c7a1512a790f01265675e925" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_UH_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>UH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC6200__Fields_8h_1a5aefb90c82fd35bcf358d04cd9af54a6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_UH_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/>UH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC6200__Fields_8h_1a387eea230fd4f3755bd3503bdbf519f5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_VL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>VL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC6200__Fields_8h_1a998a2f4374fb06b3e5034946727252a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_VL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//<sp/>VL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC6200__Fields_8h_1a8e28d37b05b10520625dec5d5241cc3a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_VH_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>VH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC6200__Fields_8h_1afab14a8be6e2866314d73d04df32fa66" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_VH_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/></highlight><highlight class="comment">//<sp/>VH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="TMC6200__Fields_8h_1a25c10dede435b0296b866849052f5098" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_WL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>WH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC6200__Fields_8h_1a7657261237201104c32f7e4d8962ac49" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_WL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>WH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC6200__Fields_8h_1a9afee75226c9341763968f6fb4233df8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_WH_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>WH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC6200__Fields_8h_1ad1492a5b94e9815510d875e859df51d0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_WH_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/></highlight><highlight class="comment">//<sp/>WH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC6200__Fields_8h_1a289fe545e86e8678a8f239b77034ad66" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DRV_EN_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>DRV_EN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC6200__Fields_8h_1a23d85e42f553a01583c5e4cbd0d29bd2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DRV_EN_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>DRV_EN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC6200__Fields_8h_1aac5f1e941e3facc73519b04d0d850717" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTPW_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x100<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>Overtemp<sp/>prewarning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC6200__Fields_8h_1a263e9d5663008edc09124e93e0cccc2a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTPW_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>Overtemp<sp/>prewarning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC6200__Fields_8h_1a357650096b2825c20150ad3427beea6b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OT136C_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x200<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>Overtemp<sp/>136�C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC6200__Fields_8h_1aefc269492ba8ca8874abda7297f1838e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OT136C_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9<sp/></highlight><highlight class="comment">//<sp/>Overtemp<sp/>136�C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="TMC6200__Fields_8h_1a30ab6713912304d4e14a44c3afa3eda1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OT143C_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x400<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>Overtemp<sp/>143�C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="TMC6200__Fields_8h_1a4d1ecb767d8eec86cf2f3544aa9c76c8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OT143C_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/></highlight><highlight class="comment">//<sp/>Overtemp<sp/>143�C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="TMC6200__Fields_8h_1aa45b6d296927a060bf8d18b81b05ec6d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OT150C_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x800<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>Overtemp<sp/>150�C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="TMC6200__Fields_8h_1aae0301de5f9a766e5c9e18c324880be1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OT150C_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/></highlight><highlight class="comment">//<sp/>Overtemp<sp/>150�C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="TMC6200__Fields_8h_1ab0be5ab105cb02838b63c0dd75cc1ff9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_VERSION_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF000000<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>/<sp/>OUTPUT<sp/>//<sp/>VERSION:<sp/>0x10=first<sp/>version<sp/>of<sp/>the<sp/>IC;<sp/>Identical<sp/>numbers<sp/>mean<sp/>full<sp/>digital<sp/>compatibility.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="TMC6200__Fields_8h_1ad3ef6b84904a2102971613d2ab172f17" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_VERSION_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>24<sp/></highlight><highlight class="comment">//<sp/>VERSION:<sp/>0x10=first<sp/>version<sp/>of<sp/>the<sp/>IC;<sp/>Identical<sp/>numbers<sp/>mean<sp/>full<sp/>digital<sp/>compatibility.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="TMC6200__Fields_8h_1ae1fea12be3b82acd4d2e17a179a958e7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTPBIT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x07<sp/></highlight><highlight class="comment">//<sp/>OTP_PROG<sp/>//<sp/>Selection<sp/>of<sp/>OTP<sp/>bit<sp/>to<sp/>be<sp/>programmed<sp/>to<sp/>the<sp/>selected<sp/>byte<sp/>location<sp/>(n=0..7:<sp/>programs<sp/>bit<sp/>n<sp/>to<sp/>a<sp/>logic<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="TMC6200__Fields_8h_1aa58c7c8057160f38e2550fc2bf0da891" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTPBIT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>Selection<sp/>of<sp/>OTP<sp/>bit<sp/>to<sp/>be<sp/>programmed<sp/>to<sp/>the<sp/>selected<sp/>byte<sp/>location<sp/>(n=0..7:<sp/>programs<sp/>bit<sp/>n<sp/>to<sp/>a<sp/>logic<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="TMC6200__Fields_8h_1aef4333d09aaaa6da89479c866f6bc385" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTPBYTE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30<sp/></highlight><highlight class="comment">//<sp/>OTP_PROG<sp/>//<sp/>Set<sp/>to<sp/>00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="TMC6200__Fields_8h_1a510ddf05b1807c3d8e24b51a9db04324" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTPBYTE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>Set<sp/>to<sp/>00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="TMC6200__Fields_8h_1a3aa5c7a998559d99dfb1a49a2a447c7f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTPMAGIC_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF00<sp/></highlight><highlight class="comment">//<sp/>OTP_PROG<sp/>//<sp/>Set<sp/><sp/>to<sp/><sp/>0xbd<sp/><sp/>to<sp/><sp/>enable<sp/><sp/>programming.<sp/><sp/>A<sp/><sp/>programming<sp/>time<sp/>of<sp/><sp/>minimum<sp/>10ms<sp/>per<sp/>bit<sp/>is<sp/><sp/>recommended<sp/>(check<sp/>by<sp/>reading<sp/>OTP_READ).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="TMC6200__Fields_8h_1a990c4ab95008ecb5b43722c8d9d6d2d7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTPMAGIC_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>Set<sp/><sp/>to<sp/><sp/>0xbd<sp/><sp/>to<sp/><sp/>enable<sp/><sp/>programming.<sp/><sp/>A<sp/><sp/>programming<sp/>time<sp/>of<sp/><sp/>minimum<sp/>10ms<sp/>per<sp/>bit<sp/>is<sp/><sp/>recommended<sp/>(check<sp/>by<sp/>reading<sp/>OTP_READ).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="TMC6200__Fields_8h_1a787575e7e5c2e11d3fddfb8aeaeea702" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTP_BBM_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xC0<sp/></highlight><highlight class="comment">//<sp/>OTP_READ<sp/>//<sp/>Reset<sp/>default<sp/>for<sp/>BBM<sp/>time,<sp/>0:<sp/>4<sp/>clocks,<sp/>1:<sp/>1<sp/>clocks,<sp/>2:<sp/>2<sp/>clocks,<sp/>3:<sp/>3<sp/>clocks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="TMC6200__Fields_8h_1a2db3f3bb2c9291d1a70d81c03566281d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTP_BBM_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>default<sp/>for<sp/>BBM<sp/>time,<sp/>0:<sp/>4<sp/>clocks,<sp/>1:<sp/>1<sp/>clocks,<sp/>2:<sp/>2<sp/>clocks,<sp/>3:<sp/>3<sp/>clocks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="TMC6200__Fields_8h_1a99b2a1fcc45aaf05a978c731321a181e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTP_S2_LEVEL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>OTP_READ<sp/>//<sp/>Reset<sp/>default<sp/>for<sp/>Short<sp/>detection<sp/>Levels</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="TMC6200__Fields_8h_1a638981ce06fcc6c9541ea4451b2b6dfd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTP_S2_LEVEL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>default<sp/>for<sp/>Short<sp/>detection<sp/>Levels</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="TMC6200__Fields_8h_1a905fc32567e4b9209bb8255cee757dc7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTP_FCLKTRIM_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1F<sp/></highlight><highlight class="comment">//<sp/>OTP_READ<sp/>//<sp/>Reset<sp/>default<sp/>for<sp/>FCLKTRIM<sp/>0:<sp/>lowest<sp/>frequency<sp/>setting<sp/>31:<sp/>highest<sp/>frequency<sp/>setting<sp/>Attention:<sp/>This<sp/>value<sp/>is<sp/>pre-programmed<sp/>by<sp/>factory<sp/>clock<sp/>trimming<sp/>to<sp/>the<sp/>default<sp/>clock<sp/>frequency<sp/>of<sp/>24MHz<sp/>and<sp/>differs<sp/>between<sp/>individual<sp/>ICs!<sp/>It<sp/>should<sp/>not<sp/>be<sp/>altered.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="TMC6200__Fields_8h_1a2f03e6020e63fcae4b70af64c90dd22a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTP_FCLKTRIM_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>default<sp/>for<sp/>FCLKTRIM<sp/>0:<sp/>lowest<sp/>frequency<sp/>setting<sp/>31:<sp/>highest<sp/>frequency<sp/>setting<sp/>Attention:<sp/>This<sp/>value<sp/>is<sp/>pre-programmed<sp/>by<sp/>factory<sp/>clock<sp/>trimming<sp/>to<sp/>the<sp/>default<sp/>clock<sp/>frequency<sp/>of<sp/>24MHz<sp/>and<sp/>differs<sp/>between<sp/>individual<sp/>ICs!<sp/>It<sp/>should<sp/>not<sp/>be<sp/>altered.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="TMC6200__Fields_8h_1aec02758e3478b9d804b5f4cb6842de52" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_FCLKTRIM_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1F<sp/></highlight><highlight class="comment">//<sp/>FACTORY_CONF<sp/>//<sp/>FCLKTRIM<sp/>(Reset<sp/>default:<sp/>OTP)<sp/>31:<sp/><sp/>Lowest<sp/><sp/>to<sp/><sp/>highest<sp/><sp/>clock<sp/><sp/>frequency.<sp/><sp/>Check<sp/><sp/>at<sp/>charge<sp/><sp/>pump<sp/><sp/>output.<sp/><sp/>The<sp/><sp/>frequency<sp/><sp/>span<sp/><sp/>is<sp/><sp/>not<sp/>guaranteed,<sp/><sp/>but<sp/><sp/>it<sp/><sp/>is<sp/><sp/>tested,<sp/><sp/>that<sp/><sp/>tuning<sp/><sp/>to<sp/><sp/>24MHz<sp/>internal<sp/><sp/>clock<sp/><sp/>is<sp/><sp/>possible.<sp/><sp/>The<sp/><sp/>devices<sp/><sp/>come<sp/><sp/>preset<sp/><sp/>to<sp/>24MHz<sp/>clock<sp/>frequency<sp/>by<sp/>OTP<sp/>programming.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="TMC6200__Fields_8h_1ae2abbc0a69b0dd4fc7f38f226cff6417" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_FCLKTRIM_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>FCLKTRIM<sp/>(Reset<sp/>default:<sp/>OTP)<sp/>31:<sp/><sp/>Lowest<sp/><sp/>to<sp/><sp/>highest<sp/><sp/>clock<sp/><sp/>frequency.<sp/><sp/>Check<sp/><sp/>at<sp/>charge<sp/><sp/>pump<sp/><sp/>output.<sp/><sp/>The<sp/><sp/>frequency<sp/><sp/>span<sp/><sp/>is<sp/><sp/>not<sp/>guaranteed,<sp/><sp/>but<sp/><sp/>it<sp/><sp/>is<sp/><sp/>tested,<sp/><sp/>that<sp/><sp/>tuning<sp/><sp/>to<sp/><sp/>24MHz<sp/>internal<sp/><sp/>clock<sp/><sp/>is<sp/><sp/>possible.<sp/><sp/>The<sp/><sp/>devices<sp/><sp/>come<sp/><sp/>preset<sp/><sp/>to<sp/>24MHz<sp/>clock<sp/>frequency<sp/>by<sp/>OTP<sp/>programming.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="TMC6200__Fields_8h_1ae9319da2506e572dfbfbac66fe30e79b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2VS_LEVEL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F<sp/></highlight><highlight class="comment">//<sp/>SHORT_CONF<sp/>//<sp/>Short<sp/>to<sp/>VS<sp/>detector<sp/>level<sp/>(15=<sp/>lowest<sp/>sensitivity)<sp/>(Reset<sp/>Default:<sp/>OTP<sp/>6<sp/>or<sp/>12)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="TMC6200__Fields_8h_1ac4f951edb6d894a9c7b2a2d574f81ef5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2VS_LEVEL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>Short<sp/>to<sp/>VS<sp/>detector<sp/>level<sp/>(15=<sp/>lowest<sp/>sensitivity)<sp/>(Reset<sp/>Default:<sp/>OTP<sp/>6<sp/>or<sp/>12)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="TMC6200__Fields_8h_1a42d60071a142057cc5880cc210d7a7c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2GND_LEVEL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xF00<sp/></highlight><highlight class="comment">//<sp/>SHORT_CONF<sp/>//<sp/>Short<sp/>to<sp/>GND<sp/>detector<sp/>level<sp/>(15=<sp/>lowest<sp/>sensitivity)<sp/>(Reset<sp/>Default:<sp/>OTP<sp/>6<sp/>or<sp/>12)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="TMC6200__Fields_8h_1a7bd683d384e9a7daa9ca7e5ebeb99a88" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_S2GND_LEVEL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>Short<sp/>to<sp/>GND<sp/>detector<sp/>level<sp/>(15=<sp/>lowest<sp/>sensitivity)<sp/>(Reset<sp/>Default:<sp/>OTP<sp/>6<sp/>or<sp/>12)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="TMC6200__Fields_8h_1a54404107e8a8f02fde4c1874e302b88e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTFILTER_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30000<sp/></highlight><highlight class="comment">//<sp/>SHORT_CONF<sp/>//<sp/>Spike<sp/>filtering<sp/>bandwidth<sp/>for<sp/>short<sp/>detection<sp/>(0=lowest)<sp/>(Reset<sp/>Default<sp/>=<sp/>%01)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="TMC6200__Fields_8h_1aed1962ba3e72cf83c3fa8cbe60d3849c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTFILTER_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>Spike<sp/>filtering<sp/>bandwidth<sp/>for<sp/>short<sp/>detection<sp/>(0=lowest)<sp/>(Reset<sp/>Default<sp/>=<sp/>%01)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="TMC6200__Fields_8h_1a638aa82676c16ea20aedf7da96841770" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTDELAY_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x100000<sp/></highlight><highlight class="comment">//<sp/>SHORT_CONF<sp/>//<sp/>Detector<sp/>delay<sp/>(0=750ns,<sp/>1=1500ns)<sp/>(Reset<sp/>Default<sp/>=<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="TMC6200__Fields_8h_1aeb60fa90751549d3999256433c8aa085" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_SHORTDELAY_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>20<sp/></highlight><highlight class="comment">//<sp/>Detector<sp/>delay<sp/>(0=750ns,<sp/>1=1500ns)<sp/>(Reset<sp/>Default<sp/>=<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="TMC6200__Fields_8h_1a48c6f554a642ae29c7d7bd79606d242d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_RETRY_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3000000<sp/></highlight><highlight class="comment">//<sp/>SHORT_CONF<sp/>//<sp/>0:<sp/>Half<sp/>bridge<sp/>disabled<sp/>after<sp/>first<sp/>short<sp/>detection,<sp/>1..3:<sp/>Half<sp/>bridge<sp/>re-enabled<sp/>in<sp/>next<sp/>chopper<sp/>cycles<sp/>1<sp/>time<sp/>to<sp/>3<sp/>times.<sp/>With<sp/>retry,<sp/>the<sp/>short-counter<sp/>is<sp/>decreased<sp/>once<sp/>each<sp/>256<sp/>chopper<sp/>cycles<sp/>per<sp/>coil,<sp/>unless<sp/>the<sp/>upper<sp/>limit<sp/>has<sp/>been<sp/>reached.<sp/>(Reset<sp/>Default<sp/>=<sp/>%10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="TMC6200__Fields_8h_1a9319badd3671af563c4e1f3d4cba6145" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_RETRY_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>24<sp/></highlight><highlight class="comment">//<sp/>0:<sp/>Half<sp/>bridge<sp/>disabled<sp/>after<sp/>first<sp/>short<sp/>detection,<sp/>1..3:<sp/>Half<sp/>bridge<sp/>re-enabled<sp/>in<sp/>next<sp/>chopper<sp/>cycles<sp/>1<sp/>time<sp/>to<sp/>3<sp/>times.<sp/>With<sp/>retry,<sp/>the<sp/>short-counter<sp/>is<sp/>decreased<sp/>once<sp/>each<sp/>256<sp/>chopper<sp/>cycles<sp/>per<sp/>coil,<sp/>unless<sp/>the<sp/>upper<sp/>limit<sp/>has<sp/>been<sp/>reached.<sp/>(Reset<sp/>Default<sp/>=<sp/>%10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="TMC6200__Fields_8h_1aafb77471564f625e365b4e39dff89d5e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_PROTECT_PARALLEL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10000000<sp/></highlight><highlight class="comment">//<sp/>SHORT_CONF<sp/>//<sp/>0:<sp/>Only<sp/>the<sp/>detected<sp/>half<sp/>bridge<sp/>driver<sp/>becomes<sp/>shut<sp/>down<sp/>upon<sp/>final<sp/>short<sp/>detection,<sp/>1:<sp/>All<sp/>half<sp/>bridge<sp/>drivers<sp/>become<sp/>shut<sp/>down<sp/>upon<sp/>final<sp/>short<sp/>detection<sp/>(Reset<sp/>Default<sp/>=<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="TMC6200__Fields_8h_1a8fb15d08caf4e64c648263ff6eeddd06" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_PROTECT_PARALLEL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/>28<sp/></highlight><highlight class="comment">//<sp/>0:<sp/>Only<sp/>the<sp/>detected<sp/>half<sp/>bridge<sp/>driver<sp/>becomes<sp/>shut<sp/>down<sp/>upon<sp/>final<sp/>short<sp/>detection,<sp/>1:<sp/>All<sp/>half<sp/>bridge<sp/>drivers<sp/>become<sp/>shut<sp/>down<sp/>upon<sp/>final<sp/>short<sp/>detection<sp/>(Reset<sp/>Default<sp/>=<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="TMC6200__Fields_8h_1a0d21d1cc39167dc16ed73597a0f0d053" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DISABLE_S2G_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20000000<sp/></highlight><highlight class="comment">//<sp/>SHORT_CONF<sp/>//<sp/>Disable<sp/>Short<sp/>to<sp/>GND<sp/>protection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="TMC6200__Fields_8h_1a564631dbc3d111101ad36587832861c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DISABLE_S2G_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>29<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>Short<sp/>to<sp/>GND<sp/>protection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="TMC6200__Fields_8h_1a9b2ec3e0ac5f00d655a639cb0d2f3344" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DISABLE_S2VS_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40000000<sp/></highlight><highlight class="comment">//<sp/>SHORT_CONF<sp/>//<sp/>Disable<sp/>Short<sp/>to<sp/>VS<sp/>protection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="TMC6200__Fields_8h_1ab2a509aac4bfecfec4011cb7fdae49b4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DISABLE_S2VS_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>30<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>Short<sp/>to<sp/>VS<sp/>protection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="TMC6200__Fields_8h_1a10978e813fb858b30d41e6eb6c83e8ba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_BBMCLKS_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F<sp/></highlight><highlight class="comment">//<sp/>DRV_CONF<sp/>//<sp/>Digital<sp/>BBM<sp/>time<sp/>in<sp/>multiple<sp/>of<sp/>1<sp/>clock.<sp/>The<sp/>longer<sp/>setting<sp/>rules<sp/>(BBMTIME<sp/>vs.<sp/>BBMCLKS).<sp/>(Reset<sp/>Default:<sp/>OTP<sp/>1<sp/>to<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="TMC6200__Fields_8h_1a0118dda545326a2f4c86a09a4f4b286f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_BBMCLKS_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>Digital<sp/>BBM<sp/>time<sp/>in<sp/>multiple<sp/>of<sp/>1<sp/>clock.<sp/>The<sp/>longer<sp/>setting<sp/>rules<sp/>(BBMTIME<sp/>vs.<sp/>BBMCLKS).<sp/>(Reset<sp/>Default:<sp/>OTP<sp/>1<sp/>to<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="TMC6200__Fields_8h_1a82ca5d8e2a4df33c0b4d1eb7e70a9130" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTSELECT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30000<sp/></highlight><highlight class="comment">//<sp/>DRV_CONF<sp/>//<sp/>Selection<sp/>of<sp/>over<sp/>temperature<sp/>level.<sp/>00:<sp/>150�C,<sp/>01:<sp/>143�C,<sp/>10:<sp/>136�C,<sp/>11:<sp/>120�C<sp/>(Reset<sp/>Default<sp/>=<sp/>%00)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="TMC6200__Fields_8h_1aa3268713fba5467cb35d81a50eff1477" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_OTSELECT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>Selection<sp/>of<sp/>over<sp/>temperature<sp/>level.<sp/>00:<sp/>150�C,<sp/>01:<sp/>143�C,<sp/>10:<sp/>136�C,<sp/>11:<sp/>120�C<sp/>(Reset<sp/>Default<sp/>=<sp/>%00)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="TMC6200__Fields_8h_1a407d9715ce584183164c9ee8c361acbb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DRVSTRENGTH_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xC0000<sp/></highlight><highlight class="comment">//<sp/>DRV_CONF<sp/>//<sp/>Selection<sp/>of<sp/>gate<sp/>driver<sp/>current.<sp/>00:<sp/>weak,<sp/>01:<sp/>weak+TC<sp/>(medium<sp/>at<sp/>&gt;<sp/>120�C),<sp/>10:<sp/>medium,<sp/>11:<sp/>strong<sp/>(Reset<sp/>Default<sp/>=<sp/>%10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="TMC6200__Fields_8h_1a20339af886068d5f176b5461f821d1cb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC6200_DRVSTRENGTH_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18<sp/></highlight><highlight class="comment">//<sp/>Selection<sp/>of<sp/>gate<sp/>driver<sp/>current.<sp/>00:<sp/>weak,<sp/>01:<sp/>weak+TC<sp/>(medium<sp/>at<sp/>&gt;<sp/>120�C),<sp/>10:<sp/>medium,<sp/>11:<sp/>strong<sp/>(Reset<sp/>Default<sp/>=<sp/>%10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC6200_FIELDS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC6200/TMC6200_Fields.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,900 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC4210_8c" kind="file" language="C++">
+    <compoundname>TMC4210.c</compoundname>
+    <includes refid="TMC4210_8h" local="yes">TMC4210.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="12">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="10">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="13">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="6">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC4210.c</label>
+        <link refid="TMC4210_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TMC4210.h</label>
+        <link refid="TMC4210_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>TMC4210_Registers.h</label>
+        <link refid="TMC4210__Registers_8h"/>
+      </node>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ReadWrite4210</definition>
+        <argsstring>(uint8_t *Read, uint8_t *Write)</argsstring>
+        <name>ReadWrite4210</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Read</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Write</declname>
+        </param>
+        <briefdescription>
+<para>32 bit SPI communication with TMC4210 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Read</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>four byte array holding the data read from the TMC428 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Write</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>four byte array holding the data to write to the TMC428</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This is the low-level function that does all SPI communication with the TMC4210. It sends a 32 bit SPI telegramme to the TMC4210 and receives the 32 bit answer telegramme from the TMC4210. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="38" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="38" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1aaf5c08c77c8aa47049269ddd3b9643cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write4210Bytes</definition>
+        <argsstring>(uint8_t Address, uint8_t *Bytes)</argsstring>
+        <name>Write4210Bytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Bytes</declname>
+        </param>
+        <briefdescription>
+<para>TMC4210 write access. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register address (see also <ref refid="TMC4210_8h" kindref="compound">TMC4210.h</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array holding three bytes to be written to the TMC4210 register.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function writes an array of three bytes to a TMC4210 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="57" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="57" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1a24e752ac9c48c68e8b9a6adb4411618c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write4210Datagram</definition>
+        <argsstring>(uint8_t Address, uint8_t HighByte, uint8_t MidByte, uint8_t LowByte)</argsstring>
+        <name>Write4210Datagram</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>HighByte</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>MidByte</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>LowByte</declname>
+        </param>
+        <briefdescription>
+<para>TMC4210 write access. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>HighByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MSB of the TMC4210 register </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MidByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mid byte of the TMC4210 register </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>LowByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LSB of the TMC4210 register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function write three bytes to a TMC4210 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="78" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="78" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1a1306736ab0a16ff1f4f61afc56423361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write4210Zero</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Write4210Zero</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Write zero to a TMC4210 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register address</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function sets a TMC4210 register to zero. This can be useful e.g. to stop a motor quickly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="97" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="97" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1aa8862cd201ef7239b2b175bee0fa4126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write4210Short</definition>
+        <argsstring>(uint8_t Address, int32_t Value)</argsstring>
+        <name>Write4210Short</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+<para>Write 16 bit value to a TMC4210 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be written</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function writes a 16 bit value to a TMC4210 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="116" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="116" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1a27386b32b61e8fb8be32f46f9b280699" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write4210Int</definition>
+        <argsstring>(uint8_t Address, int32_t Value)</argsstring>
+        <name>Write4210Int</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+<para>Write 24 bit value to a TMC4210 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be written</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function writes a 24 bit value to a TMC4210 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="135" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="135" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1a17b61e8866ccd30fe7e9265b6559ab86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>Read4210Status</definition>
+        <argsstring>(void)</argsstring>
+        <name>Read4210Status</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Read TMC4210 status byte. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>TMC4210 status byte</para>
+</simplesect>
+This functions reads just the status byte of the TMC4210 using a single byte SPI access which makes this a little bit faster. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="155" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1a45a1e1b104e8d84a2468e92557c60f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>Read4210Bytes</definition>
+        <argsstring>(uint8_t Address, uint8_t *Bytes)</argsstring>
+        <name>Read4210Bytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Bytes</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC4210 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register address (see <ref refid="TMC4210_8h" kindref="compound">TMC4210.h</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer at array of three bytes</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TMC4210 status byte</para>
+</simplesect>
+This functions reads a TMC4210 register and puts the result into an array of bytes. It also returns the TMC4210 status bytes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="171" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="171" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1ad74914b7da242a31dd930f63b95453d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>Read4210SingleByte</definition>
+        <argsstring>(uint8_t Address, uint8_t Index)</argsstring>
+        <name>Read4210SingleByte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC4210 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register address (see <ref refid="TMC4210_8h" kindref="compound">TMC4210.h</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register byte to be returned (0..3)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TM4210 register byte</para>
+</simplesect>
+This functions reads a TMC4210 register and returns the desired byte of that register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="196" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="196" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1a014cfdda708ec02393944e00b0544188" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>Read4210Short</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Read4210Short</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC4210 register (12 bit) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register address (see <ref refid="TMC4210_8h" kindref="compound">TMC4210.h</ref>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TMC4210 register value (sign extended)</para>
+</simplesect>
+This functions reads a TMC4210 12 bit register and sign-extends the register value to 32 bit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="216" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="216" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1a5655054964ddd99a0ca80dd38bf630f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>Read4210Int</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Read4210Int</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC4210 register (24 bit) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC4210 register address (see <ref refid="TMC4210_8h" kindref="compound">TMC4210.h</ref>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TMC4210 register value (sign extended)</para>
+</simplesect>
+This functions reads a TMC4210 24 bit register and sign-extends the register value to 32 bit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="241" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="241" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1acdc30283c68149024cd60cf2a5a20831" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Set4210RampMode</definition>
+        <argsstring>(uint8_t RampMode)</argsstring>
+        <name>Set4210RampMode</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>RampMode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="264" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="264" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1adff2593369ac181ed3c3e0f7bc4e58ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Set4210SwitchMode</definition>
+        <argsstring>(uint8_t SwitchMode)</argsstring>
+        <name>Set4210SwitchMode</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>SwitchMode</declname>
+        </param>
+        <briefdescription>
+<para>Set the end switch mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>SwitchMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>end switch mode</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This functions changes the end switch mode of a motor in the TMC4210. It is some TMC4210 register bit twiddling. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="286" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="286" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1a95acf13286d52819c379fb0fdd9dfa65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>SetAMax</definition>
+        <argsstring>(uint32_t AMax)</argsstring>
+        <name>SetAMax</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>AMax</declname>
+        </param>
+        <briefdescription>
+<para>Set the maximum acceleration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>AMax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum acceleration (1..2047)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function sets the maximum acceleration and also calculates the PMUL and PDIV value according to all other parameters (please see the TMC4210 data sheet for more info about PMUL and PDIV values). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="310" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="310" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1aac6b7f2765168cb00956d73607e19831" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>HardStop</definition>
+        <argsstring>(void)</argsstring>
+        <name>HardStop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Stop the motor immediately. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop motor immediately.</para>
+<para>This function stops the motor immediately (hard stop) by switching to velocity mode and then zeroing the V_TARGT and V_ACTUAL registers.</para>
+<para>This function stops the motor immediately, without using the decelaration ramp. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="364" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="364" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC4210_8c_1acffb963a09c09ecce52c99bbbe8b8e64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Init4210</definition>
+        <argsstring>(void)</argsstring>
+        <name>Init4210</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>TMC4210 initialization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function does all necessary initializations of the TMC4210 to operate in step/direction mode. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" line="378" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c" bodystart="378" bodyend="393"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>This<sp/>file<sp/>provides<sp/>all<sp/>functions<sp/>needed<sp/>for<sp/>easy</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>access<sp/>to<sp/>the<sp/>TMC429<sp/>motion<sp/>control<sp/>IC.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>Please<sp/>note<sp/>that<sp/>functions<sp/>for<sp/>communication<sp/>over<sp/>SPI<sp/>must<sp/>be<sp/>added<sp/>by<sp/>the<sp/>user,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/>because<sp/>this<sp/>is<sp/>specific<sp/>to<sp/>the<sp/>MCU<sp/>that<sp/>is<sp/>to<sp/>be<sp/>used.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/>The<sp/>ReadWriteSPI<sp/>function<sp/>with<sp/>the<sp/>following<sp/>parameters<sp/>and<sp/>functionality:</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>First<sp/>parameter:<sp/>indentifies<sp/>the<sp/>SPI<sp/>device</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/>Second<sp/>parameter:<sp/>byte<sp/>to<sp/>be<sp/>sent<sp/>to<sp/>the<sp/>SPI<sp/>device</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>Third<sp/>parameter:<sp/>FALSE<sp/>means<sp/>that<sp/>more<sp/>bytes<sp/>will<sp/>follow,<sp/>so<sp/>do<sp/>not<sp/>relase<sp/>the</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/>chip<sp/>select<sp/>line.<sp/>TRUE<sp/>means<sp/>that<sp/>this<sp/>was<sp/>the<sp/>last<sp/>byte,<sp/>so<sp/>release<sp/>the<sp/>chip</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/>select<sp/>line<sp/>after<sp/>this<sp/>byte<sp/>has<sp/>been<sp/>sent<sp/>and<sp/>the<sp/>answer<sp/>has<sp/>been<sp/>fully<sp/>received.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/>The<sp/>function<sp/>shall<sp/>return<sp/>the<sp/>byte<sp/>that<sp/>has<sp/>been<sp/>received<sp/>via<sp/>SPI.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC4210_8h" kindref="compound">TMC4210.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(uint8_t<sp/>*Read,<sp/>uint8_t<sp/>*Write)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Motor;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Read[0]<sp/>=<sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC4210,<sp/>Write[0],<sp/><ref refid="Types_8h_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>Read[1]<sp/>=<sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC4210,<sp/>Write[1],<sp/><ref refid="Types_8h_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>Read[2]<sp/>=<sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC4210,<sp/>Write[2],<sp/><ref refid="Types_8h_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>Read[3]<sp/>=<sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC4210,<sp/>Write[3],<sp/><ref refid="Types_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1aaf5c08c77c8aa47049269ddd3b9643cd" kindref="member">Write4210Bytes</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>*Bytes)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>Bytes[0];</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>Bytes[1];</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>Bytes[2];</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1a24e752ac9c48c68e8b9a6adb4411618c" kindref="member">Write4210Datagram</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>HighByte,<sp/>uint8_t<sp/>MidByte,<sp/>uint8_t<sp/>LowByte)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>HighByte;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>MidByte;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>LowByte;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1a1306736ab0a16ff1f4f61afc56423361" kindref="member">Write4210Zero</ref>(uint8_t<sp/>Address)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1aa8862cd201ef7239b2b175bee0fa4126" kindref="member">Write4210Short</ref>(uint8_t<sp/>Address,<sp/>int32_t<sp/>Value)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>Value<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>Value<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1a27386b32b61e8fb8be32f46f9b280699" kindref="member">Write4210Int</ref>(uint8_t<sp/>Address,<sp/>int32_t<sp/>Value)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>Value<sp/>&gt;&gt;<sp/>16;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>Value<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>Value<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal">uint8_t<sp/><ref refid="TMC4210_8c_1a17b61e8866ccd30fe7e9265b6559ab86" kindref="member">Read4210Status</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC4210,<sp/>0x01,<sp/><ref refid="Types_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">uint8_t<sp/><ref refid="TMC4210_8c_1a45a1e1b104e8d84a2468e92557c60f13" kindref="member">Read4210Bytes</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>*Bytes)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Read[4],<sp/>Write[4];</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address<sp/>|<sp/><ref refid="TMC4210__Registers_8h_1aec11f123b2e3c7ab95a3b0b89d6883e1" kindref="member">TMC4210_READ</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>Bytes[0]<sp/>=<sp/>Read[1];</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>Bytes[1]<sp/>=<sp/>Read[2];</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>Bytes[2]<sp/>=<sp/>Read[3];</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Read[0];</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal">uint8_t<sp/><ref refid="TMC4210_8c_1ad74914b7da242a31dd930f63b95453d5" kindref="member">Read4210SingleByte</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>Index)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Read[4],<sp/>Write[4];</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address<sp/>|<sp/><ref refid="TMC4210__Registers_8h_1aec11f123b2e3c7ab95a3b0b89d6883e1" kindref="member">TMC4210_READ</ref>;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Read[Index+1];</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal">int32_t<sp/><ref refid="TMC4210_8c_1a014cfdda708ec02393944e00b0544188" kindref="member">Read4210Short</ref>(uint8_t<sp/>Address)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Read[4],<sp/>Write[4];</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Result;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address<sp/>|<sp/><ref refid="TMC4210__Registers_8h_1aec11f123b2e3c7ab95a3b0b89d6883e1" kindref="member">TMC4210_READ</ref>;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>Result<sp/>=<sp/>(Read[2]&lt;&lt;8)<sp/>|<sp/>Read[3];</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(Result<sp/>&amp;<sp/>0x00000800)<sp/></highlight><highlight class="comment">//<sp/>convert<sp/>signed<sp/>12<sp/>bit<sp/>to<sp/>signed<sp/>32<sp/>bit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Result<sp/>|=<sp/>0xFFFFF000;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Result;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal">int32_t<sp/><ref refid="TMC4210_8c_1a5655054964ddd99a0ca80dd38bf630f3" kindref="member">Read4210Int</ref>(uint8_t<sp/>Address)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Read[4],<sp/>Write[4];</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Result;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address<sp/>|<sp/><ref refid="TMC4210__Registers_8h_1aec11f123b2e3c7ab95a3b0b89d6883e1" kindref="member">TMC4210_READ</ref>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>Result<sp/>=<sp/>(Read[1]&lt;&lt;16)<sp/>|<sp/>(Read[2]&lt;&lt;8)<sp/>|<sp/>Read[3];</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(Result<sp/>&amp;<sp/>0x00800000)<sp/></highlight><highlight class="comment">//<sp/>convert<sp/>signed<sp/>24<sp/>bit<sp/>to<sp/>signed<sp/>32<sp/>bit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Result<sp/>|=<sp/>0xFF000000;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Result;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1acdc30283c68149024cd60cf2a5a20831" kindref="member">Set4210RampMode</ref>(uint8_t<sp/>RampMode)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/><ref refid="TMC4210__Registers_8h_1a9044e7e358237b3e03d34020e9df7b2d" kindref="member">TMC4210_IDX_REFCONF_RM</ref>|<ref refid="TMC4210__Registers_8h_1aec11f123b2e3c7ab95a3b0b89d6883e1" kindref="member">TMC4210_READ</ref>;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/><ref refid="TMC4210__Registers_8h_1a9044e7e358237b3e03d34020e9df7b2d" kindref="member">TMC4210_IDX_REFCONF_RM</ref>;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>Read[1];</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>Read[2];</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>RampMode;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1adff2593369ac181ed3c3e0f7bc4e58ad" kindref="member">Set4210SwitchMode</ref>(uint8_t<sp/>SwitchMode)</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/><ref refid="TMC4210__Registers_8h_1a9044e7e358237b3e03d34020e9df7b2d" kindref="member">TMC4210_IDX_REFCONF_RM</ref>|<ref refid="TMC4210__Registers_8h_1aec11f123b2e3c7ab95a3b0b89d6883e1" kindref="member">TMC4210_READ</ref>;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/><ref refid="TMC4210__Registers_8h_1a9044e7e358237b3e03d34020e9df7b2d" kindref="member">TMC4210_IDX_REFCONF_RM</ref>;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>Read[1];</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>SwitchMode;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>Read[3];</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45c0febe074e705af559f503952d7cfc" kindref="member">ReadWrite4210</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal">uint8_t<sp/><ref refid="TMC4210_8c_1a95acf13286d52819c379fb0fdd9dfa65" kindref="member">SetAMax</ref>(uint32_t<sp/>AMax)</highlight></codeline>
+<codeline lineno="311"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>pmul,<sp/>pm,<sp/>pd;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>p,<sp/>p_reduced;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>ramp_div;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>pulse_div;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>PulseRampDiv;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Data[3];</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>AMax<sp/>&amp;=<sp/>0x000007FF;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a45a1e1b104e8d84a2468e92557c60f13" kindref="member">Read4210Bytes</ref>(<ref refid="TMC4210__Registers_8h_1ad5c0cf042f282777cf51154a5efe0523" kindref="member">TMC4210_IDX_PULSEDIV_RAMPDIV</ref>,<sp/>Data);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>PulseRampDiv<sp/>=<sp/>Data[1];</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>pulse_div<sp/>=<sp/>PulseRampDiv<sp/>&gt;&gt;<sp/>4;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>ramp_div<sp/>=<sp/>PulseRampDiv<sp/>&amp;<sp/>0x0F;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-1<sp/>indicates<sp/>:<sp/>no<sp/>valid<sp/>pair<sp/>found</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>pm<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>pd<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ramp_div<sp/>&gt;=<sp/>pulse_div)</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>AMax<sp/>/<sp/>(<sp/>128.0<sp/>*<sp/>(1<sp/>&lt;&lt;<sp/>(ramp_div<sp/>-<sp/>pulse_div)));<sp/><sp/></highlight><highlight class="comment">//<sp/>Exponent<sp/>positive<sp/>or<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>AMax<sp/>/<sp/>(<sp/>128.0<sp/>/<sp/>(1<sp/>&lt;&lt;<sp/>(pulse_div<sp/>-<sp/>ramp_div)));<sp/><sp/></highlight><highlight class="comment">//<sp/>Exponent<sp/>negative</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>p_reduced<sp/>=<sp/>p*0.988;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>pdiv;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(pdiv<sp/>=<sp/>0;<sp/>pdiv<sp/>&lt;=<sp/>13;<sp/>pdiv++)</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmul<sp/>=<sp/>(int32_t)<sp/>(p_reduced<sp/>*<sp/>8.0<sp/>*<sp/>(1&lt;&lt;pdiv))<sp/>-<sp/>128;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((0<sp/>&lt;=<sp/>pmul)<sp/>&amp;&amp;<sp/>(pmul<sp/>&lt;=<sp/>127))</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pm<sp/>=<sp/>pmul<sp/>+<sp/>128;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pd<sp/>=<sp/>pdiv;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>Data[0]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>Data[1]<sp/>=<sp/>(uint8_t)<sp/>pm;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>Data[2]<sp/>=<sp/>(uint8_t)<sp/>pd;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1aaf5c08c77c8aa47049269ddd3b9643cd" kindref="member">Write4210Bytes</ref>(<ref refid="TMC4210__Registers_8h_1a764ed8f54a51481dbd6b8505e7e461c7" kindref="member">TMC4210_IDX_PMUL_PDIV</ref>,<sp/>Data);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1aa8862cd201ef7239b2b175bee0fa4126" kindref="member">Write4210Short</ref>(<ref refid="TMC4210__Registers_8h_1a7e074febcc17ea19ac00c011408b5b30" kindref="member">TMC4210_IDX_AMAX</ref>,<sp/>AMax);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1aac6b7f2765168cb00956d73607e19831" kindref="member">HardStop</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="365"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1acdc30283c68149024cd60cf2a5a20831" kindref="member">Set4210RampMode</ref>(<ref refid="TMC4210__Registers_8h_1a703a4011c11100094df7890cb0c92462" kindref="member">TMC4210_RM_VELOCITY</ref>);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a1306736ab0a16ff1f4f61afc56423361" kindref="member">Write4210Zero</ref>(<ref refid="TMC4210__Registers_8h_1a8d06f4707f57bf40fa1f018d213816d4" kindref="member">TMC4210_IDX_VTARGET</ref>);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a1306736ab0a16ff1f4f61afc56423361" kindref="member">Write4210Zero</ref>(<ref refid="TMC4210__Registers_8h_1a22d806b7a360738ae7ecd007a4ebafde" kindref="member">TMC4210_IDX_VACTUAL</ref>);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1acffb963a09c09ecce52c99bbbe8b8e64" kindref="member">Init4210</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="379"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>addr;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(addr<sp/>=<sp/>0;<sp/>addr<sp/>&lt;=<sp/><ref refid="TMC4210__Registers_8h_1a91c0056deb1ca94a915374ceebeb381e" kindref="member">TMC4210_IDX_XLATCHED</ref>;<sp/>addr++)</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a1306736ab0a16ff1f4f61afc56423361" kindref="member">Write4210Zero</ref>(addr<sp/>|<sp/>(Motor&lt;&lt;5));</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a27386b32b61e8fb8be32f46f9b280699" kindref="member">Write4210Int</ref>(<ref refid="TMC4210__Registers_8h_1ab18f0b6501fd9af0e70c561d156d3ae9" kindref="member">TMC4210_IDX_IF_CONFIG_4210</ref>,<sp/><ref refid="TMC4210__Registers_8h_1af0f1394ccf389c79dfc4d1c21d30010f" kindref="member">TMC4210_IFCONF_EN_SD</ref>|<ref refid="TMC4210__Registers_8h_1afac14bfc0433e404cae433556bd0911d" kindref="member">TMC4210_IFCONF_EN_REFR</ref>|<ref refid="TMC4210__Registers_8h_1ac069b6258d874d389ca67bac1f18c3c8" kindref="member">TMC4210_IFCONF_SDO_INT</ref>);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a24e752ac9c48c68e8b9a6adb4411618c" kindref="member">Write4210Datagram</ref>(<ref refid="TMC4210__Registers_8h_1aff86e4da47cfe2d126963f8cd3364666" kindref="member">TMC4210_IDX_SMGP</ref>,<sp/>0x00,<sp/>0x00,<sp/>0x00);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a24e752ac9c48c68e8b9a6adb4411618c" kindref="member">Write4210Datagram</ref>(<ref refid="TMC4210__Registers_8h_1ad5c0cf042f282777cf51154a5efe0523" kindref="member">TMC4210_IDX_PULSEDIV_RAMPDIV</ref>,<sp/>0x00,<sp/>0x37,<sp/>0x06);</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a24e752ac9c48c68e8b9a6adb4411618c" kindref="member">Write4210Datagram</ref>(<ref refid="TMC4210__Registers_8h_1a9044e7e358237b3e03d34020e9df7b2d" kindref="member">TMC4210_IDX_REFCONF_RM</ref>,<sp/>0x00,<sp/><ref refid="TMC4210__Registers_8h_1a970d18c797565cb38bc360923e459e66" kindref="member">TMC4210_NO_REF</ref>,<sp/>0x00);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1aa8862cd201ef7239b2b175bee0fa4126" kindref="member">Write4210Short</ref>(<ref refid="TMC4210__Registers_8h_1adda049fcc9c8edc55ec50da6e9d6c69c" kindref="member">TMC4210_IDX_VMIN</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a27386b32b61e8fb8be32f46f9b280699" kindref="member">Write4210Int</ref>(<ref refid="TMC4210__Registers_8h_1a790daef4ff1e6025be2613e54a4d16d8" kindref="member">TMC4210_IDX_VMAX</ref>,<sp/>1000);</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC4210_8c_1a95acf13286d52819c379fb0fdd9dfa65" kindref="member">SetAMax</ref>(1000);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4210/TMC4210.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC8461__Fields_8h" kind="file" language="C++">
+    <compoundname>TMC8461_Fields.h</compoundname>
+    <includedby refid="TMC8461_8h" local="yes">TMC8461.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC8461.c</label>
+        <link refid="TMC8461_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC8461.h</label>
+        <link refid="TMC8461_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC8461_Fields.h</label>
+        <link refid="TMC8461__Fields_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC8461__Fields_8h_1a588647ef8f8d4f13a994c6ee1c204672" prot="public" static="no">
+        <name>TMC8461_ESC_AL_STATE_MASK</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1af333e3a2a3f822cd539edb592cbfea68" prot="public" static="no">
+        <name>TMC8461_ESC_AL_STATE_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1abe5a9e3948eb67129d93dd1a240a493f" prot="public" static="no">
+        <name>TMC8461_ESC_AL_ERROR_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1ab77b87878600af1cb4a2d266f87c296b" prot="public" static="no">
+        <name>TMC8461_ESC_AL_ERROR_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1a2a684da117903017ef8597dbff7b4a64" prot="public" static="no">
+        <name>TMC8461_ESC_DEVICEID_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1aa733e921c4351e14597a42a69bcd52f6" prot="public" static="no">
+        <name>TMC8461_ESC_DEVICEID_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1ad8500ddafc92d77c355e0511cdb351b9" prot="public" static="no">
+        <name>TMC8461_ESC_PDI_MODE_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1acf01ad8f39091ddf1f15bf9af0a702e6" prot="public" static="no">
+        <name>TMC8461_ESC_PDI_MODE_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1ad1b3e327d42007ea4e8092c505056ded" prot="public" static="no">
+        <name>TMC8461_ESC_EEP_PDI_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1adcfafcaafb4a9354242fc1577829ef63" prot="public" static="no">
+        <name>TMC8461_ESC_EEP_PDI_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1af04a03c401e67534c9aa55ade9bb22af" prot="public" static="no">
+        <name>TMC8461_ESC_PDI_ACCESS_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1a1d35d2c05b0c0909836f024b45af3215" prot="public" static="no">
+        <name>TMC8461_ESC_PDI_ACCESS_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1a370d407ca3c048f8a51f2e37d63b167d" prot="public" static="no">
+        <name>TMC8461_ESC_EEP_BUSY_MASK</name>
+        <initializer>0x8000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1a987099db2cff3c3078afe83ff44f3392" prot="public" static="no">
+        <name>TMC8461_ESC_EEP_BUSY_SHIFT</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1a61fdb0b9a2d4fffa9d9e12f4f30b0c27" prot="public" static="no">
+        <name>TMC8461_ESC_EEP_CMD_MASK</name>
+        <initializer>0x0700</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC8461__Fields_8h_1ac820cb3bee4e5834bf41077261808838" prot="public" static="no">
+        <name>TMC8461_ESC_EEP_CMD_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO:<sp/>Incomplete,<sp/>currently<sp/>only<sp/>actively<sp/>used<sp/>fields<sp/>in<sp/>EvalSystem<sp/>are<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC8461_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC8461_ESC_AL_STATUS<sp/>(0x0130)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC8461__Fields_8h_1a588647ef8f8d4f13a994c6ee1c204672" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_AL_STATE_MASK<sp/><sp/><sp/><sp/><sp/>0x0F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC8461__Fields_8h_1af333e3a2a3f822cd539edb592cbfea68" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_AL_STATE_SHIFT<sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC8461__Fields_8h_1abe5a9e3948eb67129d93dd1a240a493f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_AL_ERROR_MASK<sp/><sp/><sp/><sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC8461__Fields_8h_1ab77b87878600af1cb4a2d266f87c296b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_AL_ERROR_SHIFT<sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC8461__Fields_8h_1a2a684da117903017ef8597dbff7b4a64" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_DEVICEID_MASK<sp/><sp/><sp/><sp/><sp/>0x20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC8461__Fields_8h_1aa733e921c4351e14597a42a69bcd52f6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_DEVICEID_SHIFT<sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC8461_ESC_PDI_CTRL<sp/>(0x0140)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC8461__Fields_8h_1ad8500ddafc92d77c355e0511cdb351b9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_PDI_MODE_MASK<sp/><sp/><sp/><sp/><sp/>0xFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC8461__Fields_8h_1acf01ad8f39091ddf1f15bf9af0a702e6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_PDI_MODE_SHIFT<sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC8461_ESC_EEP_CFG<sp/>(0x0500)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC8461__Fields_8h_1ad1b3e327d42007ea4e8092c505056ded" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_EEP_PDI_MASK<sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC8461__Fields_8h_1adcfafcaafb4a9354242fc1577829ef63" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_EEP_PDI_SHIFT<sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC8461_ESC_EEP_PDI_ACCESS<sp/>(0x0501)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC8461__Fields_8h_1af04a03c401e67534c9aa55ade9bb22af" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_PDI_ACCESS_MASK<sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC8461__Fields_8h_1a1d35d2c05b0c0909836f024b45af3215" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_PDI_ACCESS_SHIFT<sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC8461_ESC_EEP_STATUS<sp/>(0x0502)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC8461__Fields_8h_1a370d407ca3c048f8a51f2e37d63b167d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_EEP_BUSY_MASK<sp/><sp/><sp/><sp/><sp/>0x8000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC8461__Fields_8h_1a987099db2cff3c3078afe83ff44f3392" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_EEP_BUSY_SHIFT<sp/><sp/><sp/><sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC8461__Fields_8h_1a61fdb0b9a2d4fffa9d9e12f4f30b0c27" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_EEP_CMD_MASK<sp/><sp/><sp/><sp/><sp/><sp/>0x0700</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC8461__Fields_8h_1ac820cb3bee4e5834bf41077261808838" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC8461_ESC_EEP_CMD_SHIFT<sp/><sp/><sp/><sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC8461_FIELDS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC8461/TMC8461_Fields.h"/>
+  </compounddef>
+</doxygen>

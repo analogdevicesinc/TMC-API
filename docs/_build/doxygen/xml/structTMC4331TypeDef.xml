@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTMC4331TypeDef" kind="struct" language="C++" prot="public">
+    <compoundname>TMC4331TypeDef</compoundname>
+    <includes refid="TMC4331_8h" local="no">TMC4331.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTMC4331TypeDef_1aadbccc0d6d21bda886674beac04d20e1" prot="public" static="no" mutable="no">
+        <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+        <definition>ConfigurationTypeDef* TMC4331TypeDef::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>TMC4331TypeDef::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" line="27" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC4331TypeDef_1ab9916d8ca4ed29fafa7ea537e62402a7" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC4331TypeDef::velocity</definition>
+        <argsstring></argsstring>
+        <name>velocity</name>
+        <qualifiedname>TMC4331TypeDef::velocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC4331TypeDef_1ade2f329e7549bc0c3bfc44b52938024a" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC4331TypeDef::oldX</definition>
+        <argsstring></argsstring>
+        <name>oldX</name>
+        <qualifiedname>TMC4331TypeDef::oldX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC4331TypeDef_1af6dfab7844b0afa22702be90d9e1d2d0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC4331TypeDef::oldTick</definition>
+        <argsstring></argsstring>
+        <name>oldTick</name>
+        <qualifiedname>TMC4331TypeDef::oldTick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" line="30" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC4331TypeDef_1a438f1ba53d328498ef2a886afe00fa68" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC4331TypeDef::registerResetState[TMC4331_REGISTER_COUNT]</definition>
+        <argsstring>[TMC4331_REGISTER_COUNT]</argsstring>
+        <name>registerResetState</name>
+        <qualifiedname>TMC4331TypeDef::registerResetState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC4331TypeDef_1aaf5223f27e9d35d314e5833fbfe70bf0" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC4331TypeDef::registerAccess[TMC4331_REGISTER_COUNT]</definition>
+        <argsstring>[TMC4331_REGISTER_COUNT]</argsstring>
+        <name>registerAccess</name>
+        <qualifiedname>TMC4331TypeDef::registerAccess</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC4331TypeDef_1a1ca5f8ff361a28d170f6d2d1cb87fc3d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC4331TypeDef::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>TMC4331TypeDef::status</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ConfigurationTypeDef</label>
+        <link refid="structConfigurationTypeDef"/>
+      </node>
+      <node id="1">
+        <label>TMC4331TypeDef</label>
+        <link refid="structTMC4331TypeDef"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" line="25" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC4331/TMC4331.h" bodystart="26" bodyend="36"/>
+    <listofallmembers>
+      <member refid="structTMC4331TypeDef_1aadbccc0d6d21bda886674beac04d20e1" prot="public" virt="non-virtual"><scope>TMC4331TypeDef</scope><name>config</name></member>
+      <member refid="structTMC4331TypeDef_1af6dfab7844b0afa22702be90d9e1d2d0" prot="public" virt="non-virtual"><scope>TMC4331TypeDef</scope><name>oldTick</name></member>
+      <member refid="structTMC4331TypeDef_1ade2f329e7549bc0c3bfc44b52938024a" prot="public" virt="non-virtual"><scope>TMC4331TypeDef</scope><name>oldX</name></member>
+      <member refid="structTMC4331TypeDef_1aaf5223f27e9d35d314e5833fbfe70bf0" prot="public" virt="non-virtual"><scope>TMC4331TypeDef</scope><name>registerAccess</name></member>
+      <member refid="structTMC4331TypeDef_1a438f1ba53d328498ef2a886afe00fa68" prot="public" virt="non-virtual"><scope>TMC4331TypeDef</scope><name>registerResetState</name></member>
+      <member refid="structTMC4331TypeDef_1a1ca5f8ff361a28d170f6d2d1cb87fc3d" prot="public" virt="non-virtual"><scope>TMC4331TypeDef</scope><name>status</name></member>
+      <member refid="structTMC4331TypeDef_1ab9916d8ca4ed29fafa7ea537e62402a7" prot="public" virt="non-virtual"><scope>TMC4331TypeDef</scope><name>velocity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structMAX22216TypeDef" kind="struct" language="C++" prot="public">
+    <compoundname>MAX22216TypeDef</compoundname>
+    <includes refid="MAX22216_8h" local="no">MAX22216.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structMAX22216TypeDef_1af96f081ab894cc56686c57ed36690dba" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t MAX22216TypeDef::channel</definition>
+        <argsstring></argsstring>
+        <name>channel</name>
+        <qualifiedname>MAX22216TypeDef::channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMAX22216TypeDef_1a0c8dfe6c4dcffe3d1c3c45f2c646f5b3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t MAX22216TypeDef::slaveAddress</definition>
+        <argsstring></argsstring>
+        <name>slaveAddress</name>
+        <qualifiedname>MAX22216TypeDef::slaveAddress</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMAX22216TypeDef_1addeb1797fa007ef87de4591dab9e4bb7" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t MAX22216TypeDef::crc_en</definition>
+        <argsstring></argsstring>
+        <name>crc_en</name>
+        <qualifiedname>MAX22216TypeDef::crc_en</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.h" line="25" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.h" bodystart="25" bodyend="29"/>
+    <listofallmembers>
+      <member refid="structMAX22216TypeDef_1af96f081ab894cc56686c57ed36690dba" prot="public" virt="non-virtual"><scope>MAX22216TypeDef</scope><name>channel</name></member>
+      <member refid="structMAX22216TypeDef_1addeb1797fa007ef87de4591dab9e4bb7" prot="public" virt="non-virtual"><scope>MAX22216TypeDef</scope><name>crc_en</name></member>
+      <member refid="structMAX22216TypeDef_1a0c8dfe6c4dcffe3d1c3c45f2c646f5b3" prot="public" virt="non-virtual"><scope>MAX22216TypeDef</scope><name>slaveAddress</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

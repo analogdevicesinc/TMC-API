@@ -1,0 +1,740 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Macros_8h" kind="file" language="C++">
+    <compoundname>Macros.h</compoundname>
+    <includedby refid="API__Header_8h" local="yes">API_Header.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Functions.c</label>
+        <link refid="Functions_8c"/>
+      </node>
+      <node id="3">
+        <label>Functions.h</label>
+        <link refid="Functions_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>MAX22216.c</label>
+        <link refid="MAX22216_8c"/>
+      </node>
+      <node id="11">
+        <label>MAX22216.h</label>
+        <link refid="MAX22216_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TMC2130.c</label>
+        <link refid="TMC2130_8c"/>
+      </node>
+      <node id="13">
+        <label>TMC2130.h</label>
+        <link refid="TMC2130_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>TMC2160.c</label>
+        <link refid="TMC2160_8c"/>
+      </node>
+      <node id="15">
+        <label>TMC2160.h</label>
+        <link refid="TMC2160_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>TMC2208.c</label>
+        <link refid="TMC2208_8c"/>
+      </node>
+      <node id="17">
+        <label>TMC2208.h</label>
+        <link refid="TMC2208_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>TMC2209.c</label>
+        <link refid="TMC2209_8c"/>
+      </node>
+      <node id="19">
+        <label>TMC2209.h</label>
+        <link refid="TMC2209_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>TMC2224.c</label>
+        <link refid="TMC2224_8c"/>
+      </node>
+      <node id="21">
+        <label>TMC2224.h</label>
+        <link refid="TMC2224_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>TMC2225.c</label>
+        <link refid="TMC2225_8c"/>
+      </node>
+      <node id="23">
+        <label>TMC2225.h</label>
+        <link refid="TMC2225_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>TMC2226.c</label>
+        <link refid="TMC2226_8c"/>
+      </node>
+      <node id="25">
+        <label>TMC2226.h</label>
+        <link refid="TMC2226_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>TMC2240.c</label>
+        <link refid="TMC2240_8c"/>
+      </node>
+      <node id="27">
+        <label>TMC2240.h</label>
+        <link refid="TMC2240_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>TMC2300.c</label>
+        <link refid="TMC2300_8c"/>
+      </node>
+      <node id="29">
+        <label>TMC2300.h</label>
+        <link refid="TMC2300_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>TMC2590.c</label>
+        <link refid="TMC2590_8c"/>
+      </node>
+      <node id="31">
+        <label>TMC2590.h</label>
+        <link refid="TMC2590_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>TMC262.c</label>
+        <link refid="TMC262_8c"/>
+      </node>
+      <node id="33">
+        <label>TMC262.h</label>
+        <link refid="TMC262_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>TMC2660.c</label>
+        <link refid="TMC2660_8c"/>
+      </node>
+      <node id="35">
+        <label>TMC2660.h</label>
+        <link refid="TMC2660_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>TMC4210.c</label>
+        <link refid="TMC4210_8c"/>
+      </node>
+      <node id="37">
+        <label>TMC4210.h</label>
+        <link refid="TMC4210_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>TMC424.c</label>
+        <link refid="TMC424_8c"/>
+      </node>
+      <node id="39">
+        <label>TMC424.h</label>
+        <link refid="TMC424_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>TMC429.c</label>
+        <link refid="TMC429_8c"/>
+      </node>
+      <node id="41">
+        <label>TMC429.h</label>
+        <link refid="TMC429_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>TMC4330.c</label>
+        <link refid="TMC4330_8c"/>
+      </node>
+      <node id="43">
+        <label>TMC4330.h</label>
+        <link refid="TMC4330_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>TMC4331.c</label>
+        <link refid="TMC4331_8c"/>
+      </node>
+      <node id="45">
+        <label>TMC4331.h</label>
+        <link refid="TMC4331_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>TMC4361A.c</label>
+        <link refid="TMC4361A_8c"/>
+      </node>
+      <node id="47">
+        <label>TMC4361A.h</label>
+        <link refid="TMC4361A_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>TMC43xx.c</label>
+        <link refid="TMC43xx_8c"/>
+      </node>
+      <node id="49">
+        <label>TMC43xx.h</label>
+        <link refid="TMC43xx_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>TMC457.c</label>
+        <link refid="TMC457_8c"/>
+      </node>
+      <node id="51">
+        <label>TMC457.h</label>
+        <link refid="TMC457_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>TMC4671.c</label>
+        <link refid="TMC4671_8c"/>
+      </node>
+      <node id="53">
+        <label>TMC4671.h</label>
+        <link refid="TMC4671_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>TMC5031.c</label>
+        <link refid="TMC5031_8c"/>
+      </node>
+      <node id="55">
+        <label>TMC5031.h</label>
+        <link refid="TMC5031_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>TMC5041.c</label>
+        <link refid="TMC5041_8c"/>
+      </node>
+      <node id="57">
+        <label>TMC5041.h</label>
+        <link refid="TMC5041_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>TMC5062.c</label>
+        <link refid="TMC5062_8c"/>
+      </node>
+      <node id="59">
+        <label>TMC5062.h</label>
+        <link refid="TMC5062_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>TMC5072.c</label>
+        <link refid="TMC5072_8c"/>
+      </node>
+      <node id="61">
+        <label>TMC5072.h</label>
+        <link refid="TMC5072_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>TMC5130.c</label>
+        <link refid="TMC5130_8c"/>
+      </node>
+      <node id="63">
+        <label>TMC5130.h</label>
+        <link refid="TMC5130_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>TMC5160.c</label>
+        <link refid="TMC5160_8c"/>
+      </node>
+      <node id="65">
+        <label>TMC5160.h</label>
+        <link refid="TMC5160_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>TMC5240.c</label>
+        <link refid="TMC5240_8c"/>
+      </node>
+      <node id="67">
+        <label>TMC5240.h</label>
+        <link refid="TMC5240_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>TMC5271.c</label>
+        <link refid="TMC5271_8c"/>
+      </node>
+      <node id="69">
+        <label>TMC5271.h</label>
+        <link refid="TMC5271_8h"/>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>TMC5272.c</label>
+        <link refid="TMC5272_8c"/>
+      </node>
+      <node id="71">
+        <label>TMC5272.h</label>
+        <link refid="TMC5272_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>TMC6100.c</label>
+        <link refid="TMC6100_8c"/>
+      </node>
+      <node id="73">
+        <label>TMC6100.h</label>
+        <link refid="TMC6100_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>TMC6200.c</label>
+        <link refid="TMC6200_8c"/>
+      </node>
+      <node id="75">
+        <label>TMC6200.h</label>
+        <link refid="TMC6200_8h"/>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>TMC7300.c</label>
+        <link refid="TMC7300_8c"/>
+      </node>
+      <node id="77">
+        <label>TMC7300.h</label>
+        <link refid="TMC7300_8h"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>TMC8461.c</label>
+        <link refid="TMC8461_8c"/>
+      </node>
+      <node id="79">
+        <label>TMC8461.h</label>
+        <link refid="TMC8461_8h"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>TMC8462.c</label>
+        <link refid="TMC8462_8c"/>
+      </node>
+      <node id="81">
+        <label>TMC8462.h</label>
+        <link refid="TMC8462_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>LinearRamp.c</label>
+        <link refid="LinearRamp_8c"/>
+      </node>
+      <node id="5">
+        <label>LinearRamp.h</label>
+        <link refid="LinearRamp_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>LinearRamp1.c</label>
+        <link refid="LinearRamp1_8c"/>
+      </node>
+      <node id="8">
+        <label>LinearRamp1.h</label>
+        <link refid="LinearRamp1_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Ramp.c</label>
+        <link refid="Ramp_8c"/>
+      </node>
+      <node id="9">
+        <label>Ramp.h</label>
+        <link refid="Ramp_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="Macros_8h_1ab8d549207df4a6db2faafa27b56a65c1" prot="public" static="no">
+        <name>CAST_Sn_TO_S32</name>
+        <param><defname>value</defname></param>
+        <param><defname>n</defname></param>
+        <initializer>((value) | (((value) &amp; ((uint32_t)1&lt;&lt;((n)-1)))? ~(((uint32_t)1&lt;&lt;(n))-1) : 0 ))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1a3acffbd305ee72dcd4593c0d8af64a4f" prot="public" static="no">
+        <name>MIN</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>(((a)&lt;(b)) ? (a) : (b))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="22" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1afa99ec4acc4ecb2dc3c2d05da15d0e3f" prot="public" static="no">
+        <name>MAX</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>(((a)&gt;(b)) ? (a) : (b))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="25" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1a6242a25f9d996f0cc4f4cdb911218b75" prot="public" static="no">
+        <name>ARRAY_SIZE</name>
+        <param><defname>x</defname></param>
+        <initializer>(sizeof(x)/sizeof(x[0]))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" prot="public" static="no">
+        <name>FIELD_GET</name>
+        <param><defname>data</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <initializer>	(((data) &amp; (mask)) &gt;&gt; (shift))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="34" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" prot="public" static="no">
+        <name>FIELD_SET</name>
+        <param><defname>data</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>	(((data) &amp; (~(mask))) | (((value) &lt;&lt; (shift)) &amp; (mask)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="36" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1a9d5131a40f02e310bcda478094c51d96" prot="public" static="no">
+        <name>FIELD_READ</name>
+        <param><defname>read</defname></param>
+        <param><defname>motor</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <initializer>	<ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(read(motor, address), mask, shift)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="40" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1a00a939c2a87a8ec926bf3045fd967573" prot="public" static="no">
+        <name>FIELD_WRITE</name>
+        <param><defname>write</defname></param>
+        <param><defname>motor</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>	(write(motor, address, ((value)&lt;&lt;(shift)) &amp; (mask)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="42" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1a6cd671b344715f3ab8b27941b8b2af1c" prot="public" static="no">
+        <name>FIELD_UPDATE</name>
+        <param><defname>read</defname></param>
+        <param><defname>write</defname></param>
+        <param><defname>motor</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>	(write(motor, address, <ref refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" kindref="member">FIELD_SET</ref>(read(motor, address), mask, shift, value)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="44" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" prot="public" static="no">
+        <name>UNUSED</name>
+        <param><defname>x</defname></param>
+        <initializer>(void)(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="49" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1a17941fdfe190c9268d99642ae9b101ca" prot="public" static="no">
+        <name>ACCESS_ONCE</name>
+        <param><defname>x</defname></param>
+        <initializer>*((volatile typeof(x) *) (&amp;x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Macros_8h_1a25b929527496d1e227906cb8e2b2f01a" prot="public" static="no">
+        <name>TMC_ADDRESS</name>
+        <param><defname>x</defname></param>
+        <initializer>((x) &amp; (<ref refid="Constants_8h_1a08695e21b3868da01ba4598384304390" kindref="member">TMC_ADDRESS_MASK</ref>))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2018<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_MACROS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_MACROS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Cast<sp/>a<sp/>n<sp/>bit<sp/>signed<sp/>int<sp/>to<sp/>a<sp/>32<sp/>bit<sp/>signed<sp/>int</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>done<sp/>by<sp/>checking<sp/>the<sp/>MSB<sp/>of<sp/>the<sp/>signed<sp/>int<sp/>(Bit<sp/>n).</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>If<sp/>it<sp/>is<sp/>1,<sp/>the<sp/>value<sp/>is<sp/>negative<sp/>and<sp/>the<sp/>Bits<sp/>32<sp/>to<sp/>n+1<sp/>are<sp/>set<sp/>to<sp/>1</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>If<sp/>it<sp/>is<sp/>0,<sp/>the<sp/>value<sp/>remains<sp/>unchanged</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="Macros_8h_1ab8d549207df4a6db2faafa27b56a65c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CAST_Sn_TO_S32(value,<sp/>n)<sp/>((value)<sp/>|<sp/>(((value)<sp/>&amp;<sp/>((uint32_t)1&lt;&lt;((n)-1)))?<sp/>~(((uint32_t)1&lt;&lt;(n))-1)<sp/>:<sp/>0<sp/>))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Min/Max<sp/>macros</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="Macros_8h_1a3acffbd305ee72dcd4593c0d8af64a4f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MIN(a,b)<sp/>(((a)&lt;(b))<sp/>?<sp/>(a)<sp/>:<sp/>(b))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="Macros_8h_1afa99ec4acc4ecb2dc3c2d05da15d0e3f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MAX(a,b)<sp/>(((a)&gt;(b))<sp/>?<sp/>(a)<sp/>:<sp/>(b))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Static<sp/>Array<sp/>length</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ARRAY_SIZE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="Macros_8h_1a6242a25f9d996f0cc4f4cdb911218b75" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ARRAY_SIZE(x)<sp/>(sizeof(x)/sizeof(x[0]))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Generic<sp/>mask/shift<sp/>macros</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIELD_GET(data,<sp/>mask,<sp/>shift)<sp/>\</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((data)<sp/>&amp;<sp/>(mask))<sp/>&gt;&gt;<sp/>(shift))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIELD_SET(data,<sp/>mask,<sp/>shift,<sp/>value)<sp/>\</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((data)<sp/>&amp;<sp/>(~(mask)))<sp/>|<sp/>(((value)<sp/>&lt;&lt;<sp/>(shift))<sp/>&amp;<sp/>(mask)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Register<sp/>read/write/update<sp/>macros<sp/>using<sp/>Mask/Shift:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="Macros_8h_1a9d5131a40f02e310bcda478094c51d96" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIELD_READ(read,<sp/>motor,<sp/>address,<sp/>mask,<sp/>shift)<sp/>\</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>FIELD_GET(read(motor,<sp/>address),<sp/>mask,<sp/>shift)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="Macros_8h_1a00a939c2a87a8ec926bf3045fd967573" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIELD_WRITE(write,<sp/>motor,<sp/>address,<sp/>mask,<sp/>shift,<sp/>value)<sp/>\</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(write(motor,<sp/>address,<sp/>((value)&lt;&lt;(shift))<sp/>&amp;<sp/>(mask)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="Macros_8h_1a6cd671b344715f3ab8b27941b8b2af1c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIELD_UPDATE(read,<sp/>write,<sp/>motor,<sp/>address,<sp/>mask,<sp/>shift,<sp/>value)<sp/>\</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(write(motor,<sp/>address,<sp/>FIELD_SET(read(motor,<sp/>address),<sp/>mask,<sp/>shift,<sp/>value)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Macro<sp/>to<sp/>surpress<sp/>unused<sp/>parameter<sp/>warnings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>UNUSED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>UNUSED(x)<sp/>(void)(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Memory<sp/>access<sp/>helpers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Force<sp/>the<sp/>compiler<sp/>to<sp/>access<sp/>a<sp/>location<sp/>exactly<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="Macros_8h_1a17941fdfe190c9268d99642ae9b101ca" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ACCESS_ONCE(x)<sp/>*((volatile<sp/>typeof(x)<sp/>*)<sp/>(&amp;x))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Macro<sp/>to<sp/>remove<sp/>write<sp/>bit<sp/>for<sp/>shadow<sp/>register<sp/>array<sp/>access</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="Macros_8h_1a25b929527496d1e227906cb8e2b2f01a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_ADDRESS(x)<sp/>((x)<sp/>&amp;<sp/>(TMC_ADDRESS_MASK))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_MACROS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Macros.h"/>
+  </compounddef>
+</doxygen>

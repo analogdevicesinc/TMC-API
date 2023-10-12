@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_6cf92853e2ff30e840ab739facb5ed94" kind="dir">
+    <compoundname>TMC389</compoundname>
+    <innerfile refid="TMC389__Register_8h">TMC389_Register.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC389/"/>
+  </compounddef>
+</doxygen>

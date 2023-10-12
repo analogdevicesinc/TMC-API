@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_bf0115f7d1c8bbc502695d6566754ba2" kind="dir">
+    <compoundname>TMC43xx</compoundname>
+    <innerfile refid="Configs_8h">Configs.h</innerfile>
+    <innerfile refid="TMC43xx_2TMC4330__Register_8h">TMC43xx/TMC4330_Register.h</innerfile>
+    <innerfile refid="TMC4331A__Register_8h">TMC4331A_Register.h</innerfile>
+    <innerfile refid="TMC4361__Register_8h">TMC4361_Register.h</innerfile>
+    <innerfile refid="TMC43xx_2TMC4361A__Register_8h">TMC43xx/TMC4361A_Register.h</innerfile>
+    <innerfile refid="TMC43xx_8c">TMC43xx.c</innerfile>
+    <innerfile refid="TMC43xx_8h">TMC43xx.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/"/>
+  </compounddef>
+</doxygen>

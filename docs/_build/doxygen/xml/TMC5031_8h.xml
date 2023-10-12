@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC5031_8h" kind="file" language="C++">
+    <compoundname>TMC5031.h</compoundname>
+    <includes refid="API__Header_8h" local="yes">tmc/helpers/API_Header.h</includes>
+    <includes refid="TMC5031__Register_8h" local="yes">TMC5031_Register.h</includes>
+    <includes refid="TMC5031__Constants_8h" local="yes">TMC5031_Constants.h</includes>
+    <includes refid="TMC5031__Fields_8h" local="yes">TMC5031_Fields.h</includes>
+    <includedby refid="TMC5031_8c" local="yes">TMC5031.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="11">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="9">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="12">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="5">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC5031.h</label>
+        <link refid="TMC5031_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>TMC5031_Constants.h</label>
+        <link refid="TMC5031__Constants_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>TMC5031_Fields.h</label>
+        <link refid="TMC5031__Fields_8h"/>
+      </node>
+      <node id="14">
+        <label>TMC5031_Register.h</label>
+        <link refid="TMC5031__Register_8h"/>
+      </node>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>TMC5031.c</label>
+        <link refid="TMC5031_8c"/>
+      </node>
+      <node id="1">
+        <label>TMC5031.h</label>
+        <link refid="TMC5031_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structTMC5031TypeDef" prot="public">TMC5031TypeDef</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC5031_8h_1af9f63852b25f84605fdaa359105f9bb8" prot="public" static="no">
+        <name>TMC5031_FIELD_READ</name>
+        <param><defname>motor</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <initializer>	<ref refid="Macros_8h_1a9d5131a40f02e310bcda478094c51d96" kindref="member">FIELD_READ</ref>(<ref refid="TMC5031_8c_1aa3bf9f70a5548007701a02859bf531e4" kindref="member">tmc5031_readInt</ref>, motor, address, mask, shift)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" bodystart="18" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8h_1a862dab6876c3b0d22f4a66bf2a7ce256" prot="public" static="no">
+        <name>TMC5031_FIELD_WRITE</name>
+        <param><defname>motor</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>	<ref refid="Macros_8h_1a00a939c2a87a8ec926bf3045fd967573" kindref="member">FIELD_WRITE</ref>(<ref refid="TMC5031_8c_1af67c932bbb11027bc6262869e19263a0" kindref="member">tmc5031_writeInt</ref>, motor, address, mask, shift, value)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" bodystart="20" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8h_1a2e033a7cf2d54f5f76326675ebc71db2" prot="public" static="no">
+        <name>TMC5031_FIELD_UPDATE</name>
+        <param><defname>motor</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>	<ref refid="Macros_8h_1a6cd671b344715f3ab8b27941b8b2af1c" kindref="member">FIELD_UPDATE</ref>(<ref refid="TMC5031_8c_1aa3bf9f70a5548007701a02859bf531e4" kindref="member">tmc5031_readInt</ref>, <ref refid="TMC5031_8c_1af67c932bbb11027bc6262869e19263a0" kindref="member">tmc5031_writeInt</ref>, motor, address, mask, shift, value)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" bodystart="22" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC5031_8h_1ad949abbce18991fbf1bbb55e87e77b7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5031_initConfig</definition>
+        <argsstring>(TMC5031TypeDef *TMC5031)</argsstring>
+        <name>tmc5031_initConfig</name>
+        <param>
+          <type><ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref> *</type>
+          <declname>TMC5031</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" line="34" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="82" bodyend="98" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" declline="34" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8h_1ab03235471697f09db411c7baaa1596e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5031_periodicJob</definition>
+        <argsstring>(uint8_t motor, uint32_t tick, TMC5031TypeDef *TMC5031, ConfigurationTypeDef *TMC5031_config)</argsstring>
+        <name>tmc5031_periodicJob</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tick</declname>
+        </param>
+        <param>
+          <type><ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref> *</type>
+          <declname>TMC5031</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC5031_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" line="35" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="119" bodyend="151" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" declline="35" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8h_1aec3971c14642a21c09942a1c94632fae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc5031_reset</definition>
+        <argsstring>(ConfigurationTypeDef *TMC5031_config)</argsstring>
+        <name>tmc5031_reset</name>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC5031_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="153" bodyend="162" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" declline="36" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8h_1ad7af045aec4e3fb11d3b714cf6c55518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc5031_restore</definition>
+        <argsstring>(ConfigurationTypeDef *TMC5031_config)</argsstring>
+        <name>tmc5031_restore</name>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC5031_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="164" bodyend="173" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h" declline="37" declcolumn="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2017<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC5031_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC5031_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="API__Header_8h" kindref="compound">tmc/helpers/API_Header.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC5031__Register_8h" kindref="compound">TMC5031_Register.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC5031__Constants_8h" kindref="compound">TMC5031_Constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC5031__Fields_8h" kindref="compound">TMC5031_Fields.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC5031_8h_1af9f63852b25f84605fdaa359105f9bb8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5031_FIELD_READ(motor,<sp/>address,<sp/>mask,<sp/>shift)<sp/>\</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>FIELD_READ(tmc5031_readInt,<sp/>motor,<sp/>address,<sp/>mask,<sp/>shift)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC5031_8h_1a862dab6876c3b0d22f4a66bf2a7ce256" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5031_FIELD_WRITE(motor,<sp/>address,<sp/>mask,<sp/>shift,<sp/>value)<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>FIELD_WRITE(tmc5031_writeInt,<sp/>motor,<sp/>address,<sp/>mask,<sp/>shift,<sp/>value)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC5031_8h_1a2e033a7cf2d54f5f76326675ebc71db2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5031_FIELD_UPDATE(motor,<sp/>address,<sp/>mask,<sp/>shift,<sp/>value)<sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>FIELD_UPDATE(tmc5031_readInt,<sp/>tmc5031_writeInt,<sp/>motor,<sp/>address,<sp/>mask,<sp/>shift,<sp/>value)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Usage<sp/>note:<sp/>use<sp/>1<sp/>TypeDef<sp/>per<sp/>IC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structTMC5031TypeDef" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27" refid="structTMC5031TypeDef_1a99c9601db151fc36465f188a6b4b3ac2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>velocity[2],<sp/>oldX[2];</highlight></codeline>
+<codeline lineno="28" refid="structTMC5031TypeDef_1a80025ea7ce00d13c756dff891b759f7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structTMC5031TypeDef_1a80025ea7ce00d13c756dff891b759f7e" kindref="member">oldTick</ref>;</highlight></codeline>
+<codeline lineno="29" refid="structTMC5031TypeDef_1a61e7597036f4c850fa52cd9d6baf78d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>registerResetState[<ref refid="TMC5031__Constants_8h_1aa8b41dbf7944ddd054ffe491ac13bfa0" kindref="member">TMC5031_REGISTER_COUNT</ref>];</highlight></codeline>
+<codeline lineno="30" refid="structTMC5031TypeDef_1a45ac0bb6ec286dc7cb19effdd5fe3003" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>registerAccess[<ref refid="TMC5031__Constants_8h_1aa8b41dbf7944ddd054ffe491ac13bfa0" kindref="member">TMC5031_REGISTER_COUNT</ref>];</highlight></codeline>
+<codeline lineno="31" refid="structTMC5031TypeDef_1a99008a2bda2cf3fa62d2443125e1d79b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>vMaxModified[2];</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}<sp/><ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5031_8h_1ad949abbce18991fbf1bbb55e87e77b7c" kindref="member">tmc5031_initConfig</ref>(<ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref><sp/>*TMC5031);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5031_8h_1ab03235471697f09db411c7baaa1596e6" kindref="member">tmc5031_periodicJob</ref>(uint8_t<sp/>motor,<sp/>uint32_t<sp/>tick,<sp/><ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref><sp/>*TMC5031,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC5031_config);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">uint8_t<sp/><ref refid="TMC5031_8h_1aec3971c14642a21c09942a1c94632fae" kindref="member">tmc5031_reset</ref>(<ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC5031_config);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">uint8_t<sp/><ref refid="TMC5031_8h_1ad7af045aec4e3fb11d3b714cf6c55518" kindref="member">tmc5031_restore</ref>(<ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC5031_config);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC5031_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.h"/>
+  </compounddef>
+</doxygen>

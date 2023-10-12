@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTMC2160TypeDef" kind="struct" language="C++" prot="public">
+    <compoundname>TMC2160TypeDef</compoundname>
+    <includes refid="TMC2160_8h" local="no">TMC2160.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTMC2160TypeDef_1ac69cecd9370e65a7a9a673accf317467" prot="public" static="no" mutable="no">
+        <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+        <definition>ConfigurationTypeDef* TMC2160TypeDef::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>TMC2160TypeDef::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2160/TMC2160.h" line="26" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2160/TMC2160.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2160TypeDef_1a126270637eeabe0e9fb8749d47fde003" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC2160TypeDef::registerResetState[TMC2160_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2160_REGISTER_COUNT]</argsstring>
+        <name>registerResetState</name>
+        <qualifiedname>TMC2160TypeDef::registerResetState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2160/TMC2160.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2160/TMC2160.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2160TypeDef_1adebdf287d5892637240df533e528191a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2160TypeDef::registerAccess[TMC2160_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2160_REGISTER_COUNT]</argsstring>
+        <name>registerAccess</name>
+        <qualifiedname>TMC2160TypeDef::registerAccess</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2160/TMC2160.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2160/TMC2160.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ConfigurationTypeDef</label>
+        <link refid="structConfigurationTypeDef"/>
+      </node>
+      <node id="1">
+        <label>TMC2160TypeDef</label>
+        <link refid="structTMC2160TypeDef"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2160/TMC2160.h" line="24" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2160/TMC2160.h" bodystart="25" bodyend="29"/>
+    <listofallmembers>
+      <member refid="structTMC2160TypeDef_1ac69cecd9370e65a7a9a673accf317467" prot="public" virt="non-virtual"><scope>TMC2160TypeDef</scope><name>config</name></member>
+      <member refid="structTMC2160TypeDef_1adebdf287d5892637240df533e528191a" prot="public" virt="non-virtual"><scope>TMC2160TypeDef</scope><name>registerAccess</name></member>
+      <member refid="structTMC2160TypeDef_1a126270637eeabe0e9fb8749d47fde003" prot="public" virt="non-virtual"><scope>TMC2160TypeDef</scope><name>registerResetState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

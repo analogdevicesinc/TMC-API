@@ -1,0 +1,685 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC5031_8c" kind="file" language="C++">
+    <compoundname>TMC5031.c</compoundname>
+    <includes refid="TMC5031_8h" local="yes">TMC5031.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="12">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="10">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="13">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="6">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC5031.c</label>
+        <link refid="TMC5031_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TMC5031.h</label>
+        <link refid="TMC5031_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>TMC5031_Constants.h</label>
+        <link refid="TMC5031__Constants_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>TMC5031_Fields.h</label>
+        <link refid="TMC5031__Fields_8h"/>
+      </node>
+      <node id="15">
+        <label>TMC5031_Register.h</label>
+        <link refid="TMC5031__Register_8h"/>
+      </node>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC5031_8c_1aa521dea7b5f221a412d358cd18d7fa51" prot="public" static="no">
+        <name>R30</name>
+        <initializer>0x00071703</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="13" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a75360c1ef61a0da75c61f4800f861237" prot="public" static="no">
+        <name>R32</name>
+        <initializer>0x00FFFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="14" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a34579d700931d8c250d1835b34264705" prot="public" static="no">
+        <name>R3A</name>
+        <initializer>0x00010000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a3387ebf4ef77cb5520a8b3758fb6cc0b" prot="public" static="no">
+        <name>R60</name>
+        <initializer>0xAAAAB554</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a9afe9df27e15e8b805dcffb64fb26cd8" prot="public" static="no">
+        <name>R61</name>
+        <initializer>0x4A9554AA</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a527d65e673422cb09af0951fbe3a471f" prot="public" static="no">
+        <name>R62</name>
+        <initializer>0x24492929</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a9c0f64b7f70bbbfe15d18e4870bb5523" prot="public" static="no">
+        <name>R63</name>
+        <initializer>0x10104222</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1acd2f0090f344fb815e5aa16d7c2414c6" prot="public" static="no">
+        <name>R64</name>
+        <initializer>0xFBFFFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a90bde46011331034a4ae86d3ad6f0a06" prot="public" static="no">
+        <name>R65</name>
+        <initializer>0xB5BB777D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a6606997d1dcd74a40073bfcbfbb00d58" prot="public" static="no">
+        <name>R66</name>
+        <initializer>0x49295556</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a13de2d18cd4d77febda0fca5ad5217f8" prot="public" static="no">
+        <name>R67</name>
+        <initializer>0x00404222</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a66081597ded6d610713ddaffe217377a" prot="public" static="no">
+        <name>R68</name>
+        <initializer>0xFFFF8056</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a5ec58cc94c414b129d3a4fc05303ccc1" prot="public" static="no">
+        <name>R69</name>
+        <initializer>0x00F70000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5031_8c_1a013e4296fbb7ad84bcf4def3205402b3" prot="public" static="no">
+        <name>R6C</name>
+        <initializer>0x000101D5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="TMC5031_8c_1a8f146f1935dd1721879fb3a4b7cd1e1d" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t tmc5031_defaultRegisterAccess[TMC5031_REGISTER_COUNT]</definition>
+        <argsstring>[TMC5031_REGISTER_COUNT]</argsstring>
+        <name>tmc5031_defaultRegisterAccess</name>
+        <initializer>= {
+
+	3, 1, 1, 2, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	2, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 
+	3, 3, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 0, 0, 
+	2, 2, 2, 2, 3, 1, 1, 0, 3, 3, 2, 1, 1, 0, 0, 0, 
+	3, 3, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 0, 0, 
+	2, 2, 2, 2, 3, 1, 1, 0, 3, 3, 2, 1, 1, 0, 0, 0, 
+	2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 1, 
+	2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 1  
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="35" column="15" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="35" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="variable" id="TMC5031_8c_1a3ae3dc3e4369163b067ff0ed9406af64" prot="public" static="no" mutable="no">
+        <type>const int32_t</type>
+        <definition>const int32_t tmc5031_defaultRegisterResetState[TMC5031_REGISTER_COUNT]</definition>
+        <argsstring>[TMC5031_REGISTER_COUNT]</argsstring>
+        <name>tmc5031_defaultRegisterResetState</name>
+        <initializer>= {
+
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	<ref refid="TMC5031_8c_1aa521dea7b5f221a412d358cd18d7fa51" kindref="member">R30</ref>, 0,   <ref refid="TMC5031_8c_1a75360c1ef61a0da75c61f4800f861237" kindref="member">R32</ref>, 0,   0,   0,   0,   0,   0,   0,   <ref refid="TMC2240_8h_1a34579d700931d8c250d1835b34264705" kindref="member">R3A</ref>, 0,   0,   0,   0,   0, 
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	<ref refid="TMC5031_8c_1aa521dea7b5f221a412d358cd18d7fa51" kindref="member">R30</ref>, 0,   <ref refid="TMC5031_8c_1a75360c1ef61a0da75c61f4800f861237" kindref="member">R32</ref>, 0,   0,   0,   0,   0,   0,   0,   <ref refid="TMC2240_8h_1a34579d700931d8c250d1835b34264705" kindref="member">R3A</ref>, 0,   0,   0,   0,   0, 
+	<ref refid="TMC2240_8h_1a3387ebf4ef77cb5520a8b3758fb6cc0b" kindref="member">R60</ref>, <ref refid="TMC2240_8h_1a9afe9df27e15e8b805dcffb64fb26cd8" kindref="member">R61</ref>, <ref refid="TMC2240_8h_1a527d65e673422cb09af0951fbe3a471f" kindref="member">R62</ref>, <ref refid="TMC2240_8h_1a9c0f64b7f70bbbfe15d18e4870bb5523" kindref="member">R63</ref>, <ref refid="TMC2240_8h_1acd2f0090f344fb815e5aa16d7c2414c6" kindref="member">R64</ref>, <ref refid="TMC2240_8h_1a90bde46011331034a4ae86d3ad6f0a06" kindref="member">R65</ref>, <ref refid="TMC2240_8h_1a6606997d1dcd74a40073bfcbfbb00d58" kindref="member">R66</ref>, <ref refid="TMC2240_8h_1a13de2d18cd4d77febda0fca5ad5217f8" kindref="member">R67</ref>, <ref refid="TMC2240_8h_1a66081597ded6d610713ddaffe217377a" kindref="member">R68</ref>, <ref refid="TMC2240_8h_1a5ec58cc94c414b129d3a4fc05303ccc1" kindref="member">R69</ref>, 0,   0,   <ref refid="TMC2130_8h_1a013e4296fbb7ad84bcf4def3205402b3" kindref="member">R6C</ref>, 0,   0,   0, 
+	<ref refid="TMC2240_8h_1a3387ebf4ef77cb5520a8b3758fb6cc0b" kindref="member">R60</ref>, <ref refid="TMC2240_8h_1a9afe9df27e15e8b805dcffb64fb26cd8" kindref="member">R61</ref>, <ref refid="TMC2240_8h_1a527d65e673422cb09af0951fbe3a471f" kindref="member">R62</ref>, <ref refid="TMC2240_8h_1a9c0f64b7f70bbbfe15d18e4870bb5523" kindref="member">R63</ref>, <ref refid="TMC2240_8h_1acd2f0090f344fb815e5aa16d7c2414c6" kindref="member">R64</ref>, <ref refid="TMC2240_8h_1a90bde46011331034a4ae86d3ad6f0a06" kindref="member">R65</ref>, <ref refid="TMC2240_8h_1a6606997d1dcd74a40073bfcbfbb00d58" kindref="member">R66</ref>, <ref refid="TMC2240_8h_1a13de2d18cd4d77febda0fca5ad5217f8" kindref="member">R67</ref>, <ref refid="TMC2240_8h_1a66081597ded6d610713ddaffe217377a" kindref="member">R68</ref>, <ref refid="TMC2240_8h_1a5ec58cc94c414b129d3a4fc05303ccc1" kindref="member">R69</ref>, 0,   0,   <ref refid="TMC2130_8h_1a013e4296fbb7ad84bcf4def3205402b3" kindref="member">R6C</ref>, 0,   0,   0  
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="47" column="15" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="47" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC5031_8c_1a37a356ece83331fe837efb7f5cd70117" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5031_writeDatagram</definition>
+        <argsstring>(uint8_t motor, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)</argsstring>
+        <name>tmc5031_writeDatagram</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x3</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x4</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="77" column="13" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" declline="77" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8c_1af67c932bbb11027bc6262869e19263a0" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5031_writeInt</definition>
+        <argsstring>(uint8_t motor, uint8_t address, int value)</argsstring>
+        <name>tmc5031_writeInt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="78" column="13" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" declline="78" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8c_1aa3bf9f70a5548007701a02859bf531e4" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc5031_readInt</definition>
+        <argsstring>(uint8_t motor, uint8_t address)</argsstring>
+        <name>tmc5031_readInt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="79" column="16" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" declline="79" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8c_1ad1a748d81f0e695194514d64b989837d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5031_initConfig</definition>
+        <argsstring>(TMC5031TypeDef *tmc5031)</argsstring>
+        <name>tmc5031_initConfig</name>
+        <param>
+          <type><ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref> *</type>
+          <declname>tmc5031</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="82" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="82" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8c_1a040b4f1a9b76d41ba619548c27e812b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5031_writeConfiguration</definition>
+        <argsstring>(TMC5031TypeDef *tmc5031, ConfigurationTypeDef *TMC5031_config)</argsstring>
+        <name>tmc5031_writeConfiguration</name>
+        <param>
+          <type><ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref> *</type>
+          <declname>tmc5031</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC5031_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="100" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="100" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8c_1abf0fc9ccf949d2e968c1061977240c01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5031_periodicJob</definition>
+        <argsstring>(uint8_t motor, uint32_t tick, TMC5031TypeDef *tmc5031, ConfigurationTypeDef *TMC5031_config)</argsstring>
+        <name>tmc5031_periodicJob</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tick</declname>
+        </param>
+        <param>
+          <type><ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref> *</type>
+          <declname>tmc5031</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC5031_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="119" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="119" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8c_1aec3971c14642a21c09942a1c94632fae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc5031_reset</definition>
+        <argsstring>(ConfigurationTypeDef *TMC5031_config)</argsstring>
+        <name>tmc5031_reset</name>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC5031_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="153" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="153" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5031_8c_1ad7af045aec4e3fb11d3b714cf6c55518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc5031_restore</definition>
+        <argsstring>(ConfigurationTypeDef *TMC5031_config)</argsstring>
+        <name>tmc5031_restore</name>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC5031_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" line="164" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c" bodystart="164" bodyend="173"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2017<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC5031_8h" kindref="compound">TMC5031.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Default<sp/>Register<sp/>Values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R30<sp/>0x00071703<sp/><sp/></highlight><highlight class="comment">//<sp/>IHOLD_IRUN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R32<sp/>0x00FFFFFF<sp/><sp/></highlight><highlight class="comment">//<sp/>VHIGH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R3A<sp/>0x00010000<sp/><sp/></highlight><highlight class="comment">//<sp/>ENC_CONST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R60<sp/>0xAAAAB554<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUT[0]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R61<sp/>0x4A9554AA<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUT[1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R62<sp/>0x24492929<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUT[2]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R63<sp/>0x10104222<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUT[3]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R64<sp/>0xFBFFFFFF<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUT[4]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R65<sp/>0xB5BB777D<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUT[5]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R66<sp/>0x49295556<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUT[6]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R67<sp/>0x00404222<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUT[7]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R68<sp/>0xFFFF8056<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUTSEL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R69<sp/>0x00F70000<sp/><sp/></highlight><highlight class="comment">//<sp/>MSLUTSTART</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R6C<sp/>0x000101D5<sp/><sp/></highlight><highlight class="comment">//<sp/>CHOPCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Register<sp/>access<sp/>permissions:</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>0:<sp/>none<sp/>(reserved)</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>1:<sp/>read</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>2:<sp/>write</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>3:<sp/>read/write</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>7:<sp/>read^write<sp/>(separate<sp/>functions/values)</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="TMC5031_8c_1a8f146f1935dd1721879fb3a4b7cd1e1d" kindref="member">tmc5031_defaultRegisterAccess</ref>[<ref refid="TMC5031__Constants_8h_1aa8b41dbf7944ddd054ffe491ac13bfa0" kindref="member">TMC5031_REGISTER_COUNT</ref>]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>0<sp/><sp/>1<sp/><sp/>2<sp/><sp/>3<sp/><sp/>4<sp/><sp/>5<sp/><sp/>6<sp/><sp/>7<sp/><sp/>8<sp/><sp/>9<sp/><sp/>A<sp/><sp/>B<sp/><sp/>C<sp/><sp/>D<sp/><sp/>E<sp/><sp/>F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>3,<sp/>1,<sp/>1,<sp/>2,<sp/>7,<sp/>2,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x00<sp/>-<sp/>0x0F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>2,<sp/>1,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>2,<sp/>1,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x10<sp/>-<sp/>0x1F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>3,<sp/>3,<sp/>1,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>3,<sp/>0,<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x20<sp/>-<sp/>0x2F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>3,<sp/>1,<sp/>1,<sp/>0,<sp/>3,<sp/>3,<sp/>2,<sp/>1,<sp/>1,<sp/>0,<sp/>0,<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x30<sp/>-<sp/>0x3F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>3,<sp/>3,<sp/>1,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>3,<sp/>0,<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x40<sp/>-<sp/>0x4F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>3,<sp/>1,<sp/>1,<sp/>0,<sp/>3,<sp/>3,<sp/>2,<sp/>1,<sp/>1,<sp/>0,<sp/>0,<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x50<sp/>-<sp/>0x5F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>1,<sp/>1,<sp/>3,<sp/>2,<sp/>2,<sp/>1,<sp/></highlight><highlight class="comment">//<sp/>0x60<sp/>-<sp/>0x6F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>2,<sp/>1,<sp/>1,<sp/>3,<sp/>2,<sp/>2,<sp/>1<sp/><sp/></highlight><highlight class="comment">//<sp/>0x70<sp/>-<sp/>0x7F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="TMC5031_8c_1a3ae3dc3e4369163b067ff0ed9406af64" kindref="member">tmc5031_defaultRegisterResetState</ref>[<ref refid="TMC5031__Constants_8h_1aa8b41dbf7944ddd054ffe491ac13bfa0" kindref="member">TMC5031_REGISTER_COUNT</ref>]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>0<sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/>2<sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/>4<sp/><sp/><sp/><sp/>5<sp/><sp/><sp/><sp/>6<sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/>8<sp/><sp/><sp/><sp/>9<sp/><sp/><sp/><sp/>A<sp/><sp/><sp/><sp/>B<sp/><sp/><sp/><sp/>C<sp/><sp/><sp/><sp/>D<sp/><sp/><sp/><sp/>E<sp/><sp/><sp/><sp/>F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x00<sp/>-<sp/>0x0F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x10<sp/>-<sp/>0x1F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x20<sp/>-<sp/>0x2F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC5031_8c_1aa521dea7b5f221a412d358cd18d7fa51" kindref="member">R30</ref>,<sp/>0,<sp/><sp/><sp/><ref refid="TMC5031_8c_1a75360c1ef61a0da75c61f4800f861237" kindref="member">R32</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/><ref refid="TMC5031_8c_1a34579d700931d8c250d1835b34264705" kindref="member">R3A</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x30<sp/>-<sp/>0x3F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x40<sp/>-<sp/>0x4F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC5031_8c_1aa521dea7b5f221a412d358cd18d7fa51" kindref="member">R30</ref>,<sp/>0,<sp/><sp/><sp/><ref refid="TMC5031_8c_1a75360c1ef61a0da75c61f4800f861237" kindref="member">R32</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/><ref refid="TMC5031_8c_1a34579d700931d8c250d1835b34264705" kindref="member">R3A</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x50<sp/>-<sp/>0x5F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC5031_8c_1a3387ebf4ef77cb5520a8b3758fb6cc0b" kindref="member">R60</ref>,<sp/><ref refid="TMC5031_8c_1a9afe9df27e15e8b805dcffb64fb26cd8" kindref="member">R61</ref>,<sp/><ref refid="TMC5031_8c_1a527d65e673422cb09af0951fbe3a471f" kindref="member">R62</ref>,<sp/><ref refid="TMC5031_8c_1a9c0f64b7f70bbbfe15d18e4870bb5523" kindref="member">R63</ref>,<sp/><ref refid="TMC5031_8c_1acd2f0090f344fb815e5aa16d7c2414c6" kindref="member">R64</ref>,<sp/><ref refid="TMC5031_8c_1a90bde46011331034a4ae86d3ad6f0a06" kindref="member">R65</ref>,<sp/><ref refid="TMC5031_8c_1a6606997d1dcd74a40073bfcbfbb00d58" kindref="member">R66</ref>,<sp/><ref refid="TMC5031_8c_1a13de2d18cd4d77febda0fca5ad5217f8" kindref="member">R67</ref>,<sp/><ref refid="TMC5031_8c_1a66081597ded6d610713ddaffe217377a" kindref="member">R68</ref>,<sp/><ref refid="TMC5031_8c_1a5ec58cc94c414b129d3a4fc05303ccc1" kindref="member">R69</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/><ref refid="TMC5031_8c_1a013e4296fbb7ad84bcf4def3205402b3" kindref="member">R6C</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x60<sp/>-<sp/>0x6F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC5031_8c_1a3387ebf4ef77cb5520a8b3758fb6cc0b" kindref="member">R60</ref>,<sp/><ref refid="TMC5031_8c_1a9afe9df27e15e8b805dcffb64fb26cd8" kindref="member">R61</ref>,<sp/><ref refid="TMC5031_8c_1a527d65e673422cb09af0951fbe3a471f" kindref="member">R62</ref>,<sp/><ref refid="TMC5031_8c_1a9c0f64b7f70bbbfe15d18e4870bb5523" kindref="member">R63</ref>,<sp/><ref refid="TMC5031_8c_1acd2f0090f344fb815e5aa16d7c2414c6" kindref="member">R64</ref>,<sp/><ref refid="TMC5031_8c_1a90bde46011331034a4ae86d3ad6f0a06" kindref="member">R65</ref>,<sp/><ref refid="TMC5031_8c_1a6606997d1dcd74a40073bfcbfbb00d58" kindref="member">R66</ref>,<sp/><ref refid="TMC5031_8c_1a13de2d18cd4d77febda0fca5ad5217f8" kindref="member">R67</ref>,<sp/><ref refid="TMC5031_8c_1a66081597ded6d610713ddaffe217377a" kindref="member">R68</ref>,<sp/><ref refid="TMC5031_8c_1a5ec58cc94c414b129d3a4fc05303ccc1" kindref="member">R69</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/><ref refid="TMC5031_8c_1a013e4296fbb7ad84bcf4def3205402b3" kindref="member">R6C</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0<sp/><sp/></highlight><highlight class="comment">//<sp/>0x70<sp/>-<sp/>0x7F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Undefine<sp/>the<sp/>default<sp/>register<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>prevents<sp/>warnings<sp/>in<sp/>case<sp/>multiple<sp/>TMC-API<sp/>chip<sp/>headers<sp/>are<sp/>included<sp/>at<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R30</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R3A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R60</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R61</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R62</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R63</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R65</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R66</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R67</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R68</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R69</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R6C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>SPI<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5031_8c_1a37a356ece83331fe837efb7f5cd70117" kindref="member">tmc5031_writeDatagram</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>address,<sp/>uint8_t<sp/>x1,<sp/>uint8_t<sp/>x2,<sp/>uint8_t<sp/>x3,<sp/>uint8_t<sp/>x4);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5031_8c_1af67c932bbb11027bc6262869e19263a0" kindref="member">tmc5031_writeInt</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>address,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="TMC5031_8c_1aa3bf9f70a5548007701a02859bf531e4" kindref="member">tmc5031_readInt</ref>(uint8_t<sp/>motor,<sp/>uint8_t<sp/>address);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>SPI<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5031_8c_1ad1a748d81f0e695194514d64b989837d" kindref="member">tmc5031_initConfig</ref>(<ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref><sp/>*tmc5031)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a3f594bef9299befb49c9452a31390922" kindref="member">velocity</ref>[0]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a3f594bef9299befb49c9452a31390922" kindref="member">velocity</ref>[1]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a80025ea7ce00d13c756dff891b759f7e" kindref="member">oldTick</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a99c9601db151fc36465f188a6b4b3ac2" kindref="member">oldX</ref>[0]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a99c9601db151fc36465f188a6b4b3ac2" kindref="member">oldX</ref>[1]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a99008a2bda2cf3fa62d2443125e1d79b" kindref="member">vMaxModified</ref>[0]<sp/><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a99008a2bda2cf3fa62d2443125e1d79b" kindref="member">vMaxModified</ref>[1]<sp/><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="TMC5031__Constants_8h_1aa8b41dbf7944ddd054ffe491ac13bfa0" kindref="member">TMC5031_REGISTER_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a45ac0bb6ec286dc7cb19effdd5fe3003" kindref="member">registerAccess</ref>[i]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="TMC5031_8c_1a8f146f1935dd1721879fb3a4b7cd1e1d" kindref="member">tmc5031_defaultRegisterAccess</ref>[i];</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a61e7597036f4c850fa52cd9d6baf78d2" kindref="member">registerResetState</ref>[i]<sp/><sp/>=<sp/><ref refid="TMC5031_8c_1a3ae3dc3e4369163b067ff0ed9406af64" kindref="member">tmc5031_defaultRegisterResetState</ref>[i];</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5031_8c_1a040b4f1a9b76d41ba619548c27e812b3" kindref="member">tmc5031_writeConfiguration</ref>(<ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref><sp/>*tmc5031,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC5031_config)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*ptr<sp/>=<sp/>&amp;TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref>;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*settings<sp/>=<sp/>(TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>==<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa7554d7ac751dd29b0f06634cdbafdcc6" kindref="member">CONFIG_RESTORE</ref>)<sp/>?<sp/>TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref><sp/>:<sp/>tmc5031-&gt;registerResetState;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((*ptr<sp/>&lt;<sp/><ref refid="TMC5031__Constants_8h_1aa8b41dbf7944ddd054ffe491ac13bfa0" kindref="member">TMC5031_REGISTER_COUNT</ref>)<sp/>&amp;&amp;<sp/>!<ref refid="RegisterAccess_8h_1a9ed149c96912c0b202d8326509d7e923" kindref="member">TMC_IS_WRITABLE</ref>(tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a45ac0bb6ec286dc7cb19effdd5fe3003" kindref="member">registerAccess</ref>[*ptr]))</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*ptr)++;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*ptr<sp/>&lt;<sp/><ref refid="TMC5031__Constants_8h_1aa8b41dbf7944ddd054ffe491ac13bfa0" kindref="member">TMC5031_REGISTER_COUNT</ref>)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC5031_8c_1af67c932bbb11027bc6262869e19263a0" kindref="member">tmc5031_writeInt</ref>(0,<sp/>*ptr,<sp/>settings[*ptr]);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*ptr)++;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5031_8c_1abf0fc9ccf949d2e968c1061977240c01" kindref="member">tmc5031_periodicJob</ref>(uint8_t<sp/>motor,<sp/>uint32_t<sp/>tick,<sp/><ref refid="structTMC5031TypeDef" kindref="compound">TMC5031TypeDef</ref><sp/>*tmc5031,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC5031_config)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>xActual;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tickDiff;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC5031_8c_1a040b4f1a9b76d41ba619548c27e812b3" kindref="member">tmc5031_writeConfiguration</ref>(tmc5031,<sp/>TMC5031_config);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((tickDiff<sp/>=<sp/>tick<sp/>-<sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a80025ea7ce00d13c756dff891b759f7e" kindref="member">oldTick</ref>)<sp/>&gt;=<sp/>5)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xActual<sp/>=<sp/><ref refid="TMC5031_8c_1aa3bf9f70a5548007701a02859bf531e4" kindref="member">tmc5031_readInt</ref>(0,<sp/><ref refid="TMC5031__Register_8h_1a07409667a9c6266c86190bc9617a0dbb" kindref="member">TMC5031_XACTUAL</ref>(motor));</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>[<ref refid="TMC5031__Register_8h_1a07409667a9c6266c86190bc9617a0dbb" kindref="member">TMC5031_XACTUAL</ref>(motor)]<sp/>=<sp/>xActual;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a3f594bef9299befb49c9452a31390922" kindref="member">velocity</ref>[motor]<sp/>=<sp/>(int32_t)<sp/>((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<sp/>(abs(xActual-tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a99c9601db151fc36465f188a6b4b3ac2" kindref="member">oldX</ref>[motor])<sp/>/<sp/>(float)<sp/>tickDiff)<sp/>*<sp/>(float)<sp/>1048.576);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="TMC5031_8c_1aa3bf9f70a5548007701a02859bf531e4" kindref="member">tmc5031_readInt</ref>(0,<sp/><ref refid="TMC5031__Register_8h_1af35f7644c89a1db9af60dc843c9d908c" kindref="member">TMC5031_VACTUAL</ref>(motor))&lt;0)<sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a3f594bef9299befb49c9452a31390922" kindref="member">velocity</ref>[motor]<sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a99c9601db151fc36465f188a6b4b3ac2" kindref="member">oldX</ref>[motor]<sp/>=<sp/>xActual;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Not<sp/>per<sp/>motor:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*xActual<sp/>=<sp/>tmc5031_readInt(motor,<sp/>TMC5031_XACTUAL_1);</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC562v3_config-&gt;shadowRegister[TMC5031_XACTUAL_1]<sp/>=<sp/>xActual;</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC562V3.velocityMotor1<sp/>=<sp/>(int32_t)<sp/>((float)<sp/>(abs(xActual-oldX[0])<sp/>/<sp/>(float)<sp/>t)<sp/>*<sp/>(float)<sp/>1048.576);</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5031-&gt;oldX<sp/>=<sp/>xActual;</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"></highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xActual<sp/>=<sp/>readInt(TMC5031_XACTUAL_2);</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC562v3_config-&gt;shadowRegister[TMC5031_XACTUAL_2]<sp/>=<sp/>xActual;</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC562V3.velocityMotor2<sp/>=<sp/>(int32_t)<sp/>((float)<sp/>(abs(xActual-oldX[1])<sp/>/<sp/>(float)<sp/>t)<sp/>*<sp/>(float)<sp/>1048.576);</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5031-&gt;oldX<sp/>=<sp/>xActual;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5031-&gt;<ref refid="structTMC5031TypeDef_1a80025ea7ce00d13c756dff891b759f7e" kindref="member">oldTick</ref><sp/>=<sp/>tick;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">uint8_t<sp/><ref refid="TMC5031_8c_1aec3971c14642a21c09942a1c94632fae" kindref="member">tmc5031_reset</ref>(<ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC5031_config)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal">uint8_t<sp/><ref refid="TMC5031_8c_1ad7af045aec4e3fb11d3b714cf6c55518" kindref="member">tmc5031_restore</ref>(<ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC5031_config)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa7554d7ac751dd29b0f06634cdbafdcc6" kindref="member">CONFIG_RESTORE</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>TMC5031_config-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5031/TMC5031.c"/>
+  </compounddef>
+</doxygen>

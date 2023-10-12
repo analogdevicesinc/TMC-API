@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="LinearRamp_8h" kind="file" language="C++">
+    <compoundname>LinearRamp.h</compoundname>
+    <includes refid="API__Header_8h" local="yes">tmc/helpers/API_Header.h</includes>
+    <includes refid="Functions_8h" local="yes">tmc/helpers/Functions.h</includes>
+    <includedby refid="LinearRamp_8c" local="yes">LinearRamp.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="11">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="14">
+        <label>tmc/helpers/Functions.h</label>
+        <link refid="Functions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="12">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="5">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>LinearRamp.h</label>
+        <link refid="LinearRamp_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>LinearRamp.c</label>
+        <link refid="LinearRamp_8c"/>
+      </node>
+      <node id="1">
+        <label>LinearRamp.h</label>
+        <link refid="LinearRamp_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structTMC__LinearRamp" prot="public">TMC_LinearRamp</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="LinearRamp_8h_1a6c97359a0f471823aca667a8560395f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc_linearRamp_init</definition>
+        <argsstring>(TMC_LinearRamp *linearRamp)</argsstring>
+        <name>tmc_linearRamp_init</name>
+        <param>
+          <type><ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref> *</type>
+          <declname>linearRamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="30" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.c" bodystart="17" bodyend="28" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" declline="30" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="LinearRamp_8h_1ab77163fb99289b1e2141a55c5e636890" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc_linearRamp_computeRampVelocity</definition>
+        <argsstring>(TMC_LinearRamp *linearRamp)</argsstring>
+        <name>tmc_linearRamp_computeRampVelocity</name>
+        <param>
+          <type><ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref> *</type>
+          <declname>linearRamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="31" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.c" bodystart="30" bodyend="66" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" declline="31" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="LinearRamp_8h_1a478737b01c4eba04ed8bd9dd8f5fec50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc_linearRamp_computeRampPosition</definition>
+        <argsstring>(TMC_LinearRamp *linearRamp)</argsstring>
+        <name>tmc_linearRamp_computeRampPosition</name>
+        <param>
+          <type><ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref> *</type>
+          <declname>linearRamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="32" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.c" bodystart="68" bodyend="165" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" declline="32" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2018<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_LINEAR_RAMP_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_LINEAR_RAMP_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="API__Header_8h" kindref="compound">tmc/helpers/API_Header.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="Functions_8h" kindref="compound">tmc/helpers/Functions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="structTMC__LinearRamp" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="18" refid="structTMC__LinearRamp_1a6ad4b77eb22f23e19227d43c76a054b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structTMC__LinearRamp_1a6ad4b77eb22f23e19227d43c76a054b6" kindref="member">maxVelocity</ref>;</highlight></codeline>
+<codeline lineno="19" refid="structTMC__LinearRamp_1a72229b1359cec3515a993fdae83f47fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structTMC__LinearRamp_1a72229b1359cec3515a993fdae83f47fa" kindref="member">targetPosition</ref>;</highlight></codeline>
+<codeline lineno="20" refid="structTMC__LinearRamp_1a91fc84d3a0ce09bb0ee2dadccd4c731e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structTMC__LinearRamp_1a91fc84d3a0ce09bb0ee2dadccd4c731e" kindref="member">rampPosition</ref>;</highlight></codeline>
+<codeline lineno="21" refid="structTMC__LinearRamp_1a873636f5f69940df6f199978b75378b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structTMC__LinearRamp_1a873636f5f69940df6f199978b75378b8" kindref="member">targetVelocity</ref>;</highlight></codeline>
+<codeline lineno="22" refid="structTMC__LinearRamp_1a0aa2232e6ddac3535c5e0f9b4879e37a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structTMC__LinearRamp_1a0aa2232e6ddac3535c5e0f9b4879e37a" kindref="member">rampVelocity</ref>;</highlight></codeline>
+<codeline lineno="23" refid="structTMC__LinearRamp_1a9b3bf9a0f3dde00f440edd5f1bd6c0c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structTMC__LinearRamp_1a9b3bf9a0f3dde00f440edd5f1bd6c0c0" kindref="member">acceleration</ref>;</highlight></codeline>
+<codeline lineno="24" refid="structTMC__LinearRamp_1a974fd86f8eb6d0c1629f6a2ffe4813d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structTMC__LinearRamp_1a974fd86f8eb6d0c1629f6a2ffe4813d8" kindref="member">encoderSteps</ref>;</highlight></codeline>
+<codeline lineno="25" refid="structTMC__LinearRamp_1a087cdb4fbb91899cd97bbe7e3130e707" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structTMC__LinearRamp_1a087cdb4fbb91899cd97bbe7e3130e707" kindref="member">lastdVRest</ref>;</highlight></codeline>
+<codeline lineno="26" refid="structTMC__LinearRamp_1a9821047fcad8ea3bfa2823484b468341" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structTMC__LinearRamp_1a9821047fcad8ea3bfa2823484b468341" kindref="member">lastdXRest</ref>;</highlight></codeline>
+<codeline lineno="27" refid="structTMC__LinearRamp_1abfc4ad3d560d857dd5a4d130a9fa3486" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMC__LinearRamp_1abfc4ad3d560d857dd5a4d130a9fa3486" kindref="member">rampEnabled</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="LinearRamp_8h_1a6c97359a0f471823aca667a8560395f1" kindref="member">tmc_linearRamp_init</ref>(<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*linearRamp);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="LinearRamp_8h_1ab77163fb99289b1e2141a55c5e636890" kindref="member">tmc_linearRamp_computeRampVelocity</ref>(<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*linearRamp);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="LinearRamp_8h_1a478737b01c4eba04ed8bd9dd8f5fec50" kindref="member">tmc_linearRamp_computeRampPosition</ref>(<ref refid="structTMC__LinearRamp" kindref="compound">TMC_LinearRamp</ref><sp/>*linearRamp);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_LINEAR_RAMP_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h"/>
+  </compounddef>
+</doxygen>

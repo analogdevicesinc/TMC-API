@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC5240__Constants_8h" kind="file" language="C++">
+    <compoundname>TMC5240_Constants.h</compoundname>
+    <includes refid="Constants_8h" local="yes">tmc/helpers/Constants.h</includes>
+    <includedby refid="TMC5240_8h" local="yes">TMC5240.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>tmc/helpers/Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="1">
+        <label>TMC5240_Constants.h</label>
+        <link refid="TMC5240__Constants_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC5240.c</label>
+        <link refid="TMC5240_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC5240.h</label>
+        <link refid="TMC5240_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC5240_Constants.h</label>
+        <link refid="TMC5240__Constants_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a6734d8367ae46049a05d4cc780eec27e" prot="public" static="no">
+        <name>TMC5240_REGISTER_COUNT</name>
+        <initializer><ref refid="Constants_8h_1a8ac38932318be2eeb26a7d35a110e074" kindref="member">TMC_REGISTER_COUNT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1ab502dd44e670daa3dd6a7e19424721ff" prot="public" static="no">
+        <name>TMC5240_MOTORS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1ad7d1f02e4d569386171be12259b7d34a" prot="public" static="no">
+        <name>TMC5240_WRITE_BIT</name>
+        <initializer><ref refid="Constants_8h_1aa432cd9074eb257b2c69561eae5ecda0" kindref="member">TMC_WRITE_BIT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a91553fc85131fb48d6567c91fe5010f0" prot="public" static="no">
+        <name>TMC5240_ADDRESS_MASK</name>
+        <initializer><ref refid="Constants_8h_1a08695e21b3868da01ba4598384304390" kindref="member">TMC_ADDRESS_MASK</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1aee522531ba43d8ff79d8cdb54f74702f" prot="public" static="no">
+        <name>TMC5240_MAX_VELOCITY</name>
+        <initializer>8388096</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a731a7d743ad4bdaa4ae8358ef5ba833c" prot="public" static="no">
+        <name>TMC5240_MAX_ACCELERATION</name>
+        <initializer><ref refid="Types_8h_1a859f1af2da9918bd81d8f8aedd21f118" kindref="member">u16_MAX</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a2ab6da5e38d473de2467c64a247dc8fa" prot="public" static="no">
+        <name>TMC5240_MODE_POSITION</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a9ac7d6b1102b199dbb121e90ab8de344" prot="public" static="no">
+        <name>TMC5240_MODE_VELPOS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a2fa5afb9cc70d806346412b7601c7575" prot="public" static="no">
+        <name>TMC5240_MODE_VELNEG</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1aa5bebdd3e76f74b0a3c1156bd1880a39" prot="public" static="no">
+        <name>TMC5240_MODE_HOLD</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1ae86426eb31351bd20afa068b0e563922" prot="public" static="no">
+        <name>TMC5240_SW_STOPL_ENABLE</name>
+        <initializer>0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a2a80da0cae4b04f99e3d6b49e10a74ef" prot="public" static="no">
+        <name>TMC5240_SW_STOPR_ENABLE</name>
+        <initializer>0x0002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1af77da63ab6c06d3cca20bdd315606e82" prot="public" static="no">
+        <name>TMC5240_SW_STOPL_POLARITY</name>
+        <initializer>0x0004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a5c71a8892d838cf9a7b1371134711bee" prot="public" static="no">
+        <name>TMC5240_SW_STOPR_POLARITY</name>
+        <initializer>0x0008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a936b843abc90789602f6ba2cd549c3a2" prot="public" static="no">
+        <name>TMC5240_SW_SWAP_LR</name>
+        <initializer>0x0010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a20c631ea8bf6a7cec6baa8e381df43f4" prot="public" static="no">
+        <name>TMC5240_SW_LATCH_L_ACT</name>
+        <initializer>0x0020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a05d264b4a265e8762a6957538461f5fe" prot="public" static="no">
+        <name>TMC5240_SW_LATCH_L_INACT</name>
+        <initializer>0x0040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1aaddc0d2b019bed1b0b8ca4d0117f5912" prot="public" static="no">
+        <name>TMC5240_SW_LATCH_R_ACT</name>
+        <initializer>0x0080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a0c5c361005c756e04a19518551ab143a" prot="public" static="no">
+        <name>TMC5240_SW_LATCH_R_INACT</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1aef05c0625c9f31fab1498947df637484" prot="public" static="no">
+        <name>TMC5240_SW_LATCH_ENC</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1ab962fdd84b27910ce5c49dbe84b3e38c" prot="public" static="no">
+        <name>TMC5240_SW_SG_STOP</name>
+        <initializer>0x0400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a656e73500e9ccce24b52d74d67d0cf0b" prot="public" static="no">
+        <name>TMC5240_SW_SOFTSTOP</name>
+        <initializer>0x0800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1aff46fe939ce3cb2cd7e044f329028d51" prot="public" static="no">
+        <name>TMC5240_RS_STOPL</name>
+        <initializer>0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a7ef94a52875d8e184228df563399504c" prot="public" static="no">
+        <name>TMC5240_RS_STOPR</name>
+        <initializer>0x0002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a98f12a0d846b209a14a5b18fe2fcc5e8" prot="public" static="no">
+        <name>TMC5240_RS_LATCHL</name>
+        <initializer>0x0004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a5d25d9c0bce0075353cde21188f48425" prot="public" static="no">
+        <name>TMC5240_RS_LATCHR</name>
+        <initializer>0x0008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="46" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a7fc1936c08754b87e55530ee6ac1f97b" prot="public" static="no">
+        <name>TMC5240_RS_EV_STOPL</name>
+        <initializer>0x0010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1ac8b81164f00dc37e9118d29b22abfc4f" prot="public" static="no">
+        <name>TMC5240_RS_EV_STOPR</name>
+        <initializer>0x0020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a1b2b72f40689eafc4a42e3a61359ba03" prot="public" static="no">
+        <name>TMC5240_RS_EV_STOP_SG</name>
+        <initializer>0x0040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a7ea7854d2967729e70ca81d1fb405b61" prot="public" static="no">
+        <name>TMC5240_RS_EV_POSREACHED</name>
+        <initializer>0x0080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1aa9acae6a1a370499f4b15ab0fdd9f351" prot="public" static="no">
+        <name>TMC5240_RS_VELREACHED</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a67d84d1446f994cd1ed790d6f945de9e" prot="public" static="no">
+        <name>TMC5240_RS_POSREACHED</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1aa375ddecf01410a9534cf77a11ff1681" prot="public" static="no">
+        <name>TMC5240_RS_VZERO</name>
+        <initializer>0x0400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a8dbc0dbd2959a0f2880af0094d9e1fbf" prot="public" static="no">
+        <name>TMC5240_RS_ZEROWAIT</name>
+        <initializer>0x0800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a1cacf68ee802c80e4343785cf8136fed" prot="public" static="no">
+        <name>TMC5240_RS_SECONDMOVE</name>
+        <initializer>0x1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a73ee1f0c1dff531547b2626e5fec745e" prot="public" static="no">
+        <name>TMC5240_RS_SG</name>
+        <initializer>0x2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a923c448580f0476d980b41dfa3272784" prot="public" static="no">
+        <name>TMC5240_EM_DECIMAL</name>
+        <initializer>0x0400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1afc5bd10dbd0035bb1145a20360946c08" prot="public" static="no">
+        <name>TMC5240_EM_LATCH_XACT</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a44d0f03f22fb89f4df906bded77390e6" prot="public" static="no">
+        <name>TMC5240_EM_CLR_XENC</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1abdbc39ca763f8cc93a72f26498222001" prot="public" static="no">
+        <name>TMC5240_EM_NEG_EDGE</name>
+        <initializer>0x0080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="62" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a0013b60c68e142a5b0eb383875be8c7b" prot="public" static="no">
+        <name>TMC5240_EM_POS_EDGE</name>
+        <initializer>0x0040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="63" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1ada634619ff3e2f72075d7c9f6a136218" prot="public" static="no">
+        <name>TMC5240_EM_CLR_ONCE</name>
+        <initializer>0x0020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="64" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a592292be03ea3b4fc75b30657235e846" prot="public" static="no">
+        <name>TMC5240_EM_CLR_CONT</name>
+        <initializer>0x0010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1ab83f620d072a2bff3b70026f60aace1d" prot="public" static="no">
+        <name>TMC5240_EM_IGNORE_AB</name>
+        <initializer>0x0008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1ac2a43b6b04745cf1dc38449cd8081eda" prot="public" static="no">
+        <name>TMC5240_EM_POL_N</name>
+        <initializer>0x0004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="67" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1a8691d10f08c265bec0478c51cfe8998a" prot="public" static="no">
+        <name>TMC5240_EM_POL_B</name>
+        <initializer>0x0002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="68" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5240__Constants_8h_1aceffb9c0e35f05dc2441ca3ea0514aad" prot="public" static="no">
+        <name>TMC5240_EM_POL_A</name>
+        <initializer>0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" line="69" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2018<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC5240_TMC5240_CONSTANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC5240_TMC5240_CONSTANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Constants_8h" kindref="compound">tmc/helpers/Constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC5240__Constants_8h_1a6734d8367ae46049a05d4cc780eec27e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_REGISTER_COUNT<sp/><sp/><sp/>TMC_REGISTER_COUNT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC5240__Constants_8h_1ab502dd44e670daa3dd6a7e19424721ff" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_MOTORS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC5240__Constants_8h_1ad7d1f02e4d569386171be12259b7d34a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_WRITE_BIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC_WRITE_BIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC5240__Constants_8h_1a91553fc85131fb48d6567c91fe5010f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_ADDRESS_MASK<sp/><sp/><sp/><sp/><sp/>TMC_ADDRESS_MASK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC5240__Constants_8h_1aee522531ba43d8ff79d8cdb54f74702f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_MAX_VELOCITY<sp/><sp/><sp/><sp/><sp/>8388096</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC5240__Constants_8h_1a731a7d743ad4bdaa4ae8358ef5ba833c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_MAX_ACCELERATION<sp/>u16_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ramp<sp/>modes<sp/>(Register<sp/>TMC5240_RAMPMODE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC5240__Constants_8h_1a2ab6da5e38d473de2467c64a247dc8fa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_MODE_POSITION<sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC5240__Constants_8h_1a9ac7d6b1102b199dbb121e90ab8de344" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_MODE_VELPOS<sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC5240__Constants_8h_1a2fa5afb9cc70d806346412b7601c7575" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_MODE_VELNEG<sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC5240__Constants_8h_1aa5bebdd3e76f74b0a3c1156bd1880a39" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_MODE_HOLD<sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limit<sp/>switch<sp/>mode<sp/>bits<sp/>(Register<sp/>TMC5240_SWMODE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC5240__Constants_8h_1ae86426eb31351bd20afa068b0e563922" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_STOPL_ENABLE<sp/><sp/><sp/><sp/>0x0001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC5240__Constants_8h_1a2a80da0cae4b04f99e3d6b49e10a74ef" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_STOPR_ENABLE<sp/><sp/><sp/><sp/>0x0002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC5240__Constants_8h_1af77da63ab6c06d3cca20bdd315606e82" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_STOPL_POLARITY<sp/><sp/>0x0004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC5240__Constants_8h_1a5c71a8892d838cf9a7b1371134711bee" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_STOPR_POLARITY<sp/><sp/>0x0008</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC5240__Constants_8h_1a936b843abc90789602f6ba2cd549c3a2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_SWAP_LR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC5240__Constants_8h_1a20c631ea8bf6a7cec6baa8e381df43f4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_LATCH_L_ACT<sp/><sp/><sp/><sp/><sp/>0x0020</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC5240__Constants_8h_1a05d264b4a265e8762a6957538461f5fe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_LATCH_L_INACT<sp/><sp/><sp/>0x0040</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC5240__Constants_8h_1aaddc0d2b019bed1b0b8ca4d0117f5912" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_LATCH_R_ACT<sp/><sp/><sp/><sp/><sp/>0x0080</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC5240__Constants_8h_1a0c5c361005c756e04a19518551ab143a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_LATCH_R_INACT<sp/><sp/><sp/>0x0100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC5240__Constants_8h_1aef05c0625c9f31fab1498947df637484" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_LATCH_ENC<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC5240__Constants_8h_1ab962fdd84b27910ce5c49dbe84b3e38c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_SG_STOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC5240__Constants_8h_1a656e73500e9ccce24b52d74d67d0cf0b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_SW_SOFTSTOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0800</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Status<sp/>bits<sp/>(Register<sp/>TMC5240_RAMPSTAT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="TMC5240__Constants_8h_1aff46fe939ce3cb2cd7e044f329028d51" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_STOPL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC5240__Constants_8h_1a7ef94a52875d8e184228df563399504c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_STOPR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC5240__Constants_8h_1a98f12a0d846b209a14a5b18fe2fcc5e8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_LATCHL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC5240__Constants_8h_1a5d25d9c0bce0075353cde21188f48425" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_LATCHR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0008</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="TMC5240__Constants_8h_1a7fc1936c08754b87e55530ee6ac1f97b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_EV_STOPL<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC5240__Constants_8h_1ac8b81164f00dc37e9118d29b22abfc4f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_EV_STOPR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0020</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC5240__Constants_8h_1a1b2b72f40689eafc4a42e3a61359ba03" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_EV_STOP_SG<sp/><sp/><sp/><sp/><sp/>0x0040</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC5240__Constants_8h_1a7ea7854d2967729e70ca81d1fb405b61" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_EV_POSREACHED<sp/><sp/>0x0080</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="TMC5240__Constants_8h_1aa9acae6a1a370499f4b15ab0fdd9f351" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_VELREACHED<sp/><sp/><sp/><sp/><sp/>0x0100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC5240__Constants_8h_1a67d84d1446f994cd1ed790d6f945de9e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_POSREACHED<sp/><sp/><sp/><sp/><sp/>0x0200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC5240__Constants_8h_1aa375ddecf01410a9534cf77a11ff1681" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_VZERO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC5240__Constants_8h_1a8dbc0dbd2959a0f2880af0094d9e1fbf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_ZEROWAIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0800</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC5240__Constants_8h_1a1cacf68ee802c80e4343785cf8136fed" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_SECONDMOVE<sp/><sp/><sp/><sp/><sp/>0x1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC5240__Constants_8h_1a73ee1f0c1dff531547b2626e5fec745e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_RS_SG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Encoderbits<sp/>(Register<sp/>TMC5240_ENCMODE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC5240__Constants_8h_1a923c448580f0476d980b41dfa3272784" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_DECIMAL<sp/><sp/><sp/><sp/><sp/>0x0400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC5240__Constants_8h_1afc5bd10dbd0035bb1145a20360946c08" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_LATCH_XACT<sp/><sp/>0x0200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC5240__Constants_8h_1a44d0f03f22fb89f4df906bded77390e6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_CLR_XENC<sp/><sp/><sp/><sp/>0x0100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC5240__Constants_8h_1abdbc39ca763f8cc93a72f26498222001" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_NEG_EDGE<sp/><sp/><sp/><sp/>0x0080</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC5240__Constants_8h_1a0013b60c68e142a5b0eb383875be8c7b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_POS_EDGE<sp/><sp/><sp/><sp/>0x0040</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC5240__Constants_8h_1ada634619ff3e2f72075d7c9f6a136218" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_CLR_ONCE<sp/><sp/><sp/><sp/>0x0020</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC5240__Constants_8h_1a592292be03ea3b4fc75b30657235e846" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_CLR_CONT<sp/><sp/><sp/><sp/>0x0010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC5240__Constants_8h_1ab83f620d072a2bff3b70026f60aace1d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_IGNORE_AB<sp/><sp/><sp/>0x0008</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="TMC5240__Constants_8h_1ac2a43b6b04745cf1dc38449cd8081eda" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_POL_N<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="TMC5240__Constants_8h_1a8691d10f08c265bec0478c51cfe8998a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_POL_B<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="TMC5240__Constants_8h_1aceffb9c0e35f05dc2441ca3ea0514aad" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5240_EM_POL_A<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC5240_TMC5240_CONSTANTS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5240/TMC5240_Constants.h"/>
+  </compounddef>
+</doxygen>

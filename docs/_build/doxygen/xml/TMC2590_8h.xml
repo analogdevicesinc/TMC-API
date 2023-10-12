@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2590_8h" kind="file" language="C++">
+    <compoundname>TMC2590.h</compoundname>
+    <includes refid="API__Header_8h" local="yes">tmc/helpers/API_Header.h</includes>
+    <includes refid="TMC2590__Constants_8h" local="yes">TMC2590_Constants.h</includes>
+    <includes refid="TMC2590__Fields_8h" local="yes">TMC2590_Fields.h</includes>
+    <includes refid="TMC2590__Macros_8h" local="yes">TMC2590_Macros.h</includes>
+    <includes refid="TMC2590__Register_8h" local="yes">TMC2590_Register.h</includes>
+    <includedby refid="TMC2590_8c" local="yes">TMC2590.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="11">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="9">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="12">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="5">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2590.h</label>
+        <link refid="TMC2590_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TMC2590_Constants.h</label>
+        <link refid="TMC2590__Constants_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>TMC2590_Fields.h</label>
+        <link refid="TMC2590__Fields_8h"/>
+      </node>
+      <node id="16">
+        <label>TMC2590_Macros.h</label>
+        <link refid="TMC2590__Macros_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>TMC2590_Register.h</label>
+        <link refid="TMC2590__Register_8h"/>
+      </node>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>TMC2590.c</label>
+        <link refid="TMC2590_8c"/>
+      </node>
+      <node id="1">
+        <label>TMC2590.h</label>
+        <link refid="TMC2590_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structTMC2590TypeDef" prot="public">TMC2590TypeDef</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2590_8h_1a87397eb6cc6178b3c5dcde4be8f37971" prot="public" static="no">
+        <name>TMC2590_FIELD_READ</name>
+        <param><defname>tdef</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <initializer>	<ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(<ref refid="TMC2590_8c_1a6a5d4a2bb4f0d4ac207fc157e800706c" kindref="member">tmc2590_readInt</ref>(tdef, address), mask, shift)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="19" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590_8h_1ad9624927356f5a49ad0a07b1c194ed83" prot="public" static="no">
+        <name>TMC2590_FIELD_WRITE</name>
+        <param><defname>tdef</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>	(<ref refid="TMC2590_8c_1a5fd1a318ce77711f3b0872d99ba7871c" kindref="member">tmc2590_writeInt</ref>(tdef, address, <ref refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" kindref="member">FIELD_SET</ref>(<ref refid="TMC2590_8c_1a6a5d4a2bb4f0d4ac207fc157e800706c" kindref="member">tmc2590_readInt</ref>(tdef, address), mask, shift, value)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="21" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="TMC2590_8h_1a473c2849c80d0e872969bbbcf523c416" prot="public" static="yes" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t tmc2590_defaultRegisterAccess[TMC2590_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2590_REGISTER_COUNT]</argsstring>
+        <name>tmc2590_defaultRegisterAccess</name>
+        <initializer>=
+{
+	0x02,  
+	0x00,  
+	0x00,  
+	0x00,  
+	0x02,  
+	0x02,  
+	0x02,  
+	0x02   
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="44" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="44" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="variable" id="TMC2590_8h_1a012a9218e76cf8f5c339caa1c64d3578" prot="public" static="yes" mutable="no">
+        <type>const int32_t</type>
+        <definition>const int32_t tmc2590_defaultRegisterResetState[TMC2590_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2590_REGISTER_COUNT]</argsstring>
+        <name>tmc2590_defaultRegisterResetState</name>
+        <initializer>=
+{
+	0x10000000,  
+	0x00000000,  
+	0x00000000,  
+	0x00000000,  
+	0x00091935,  
+	0x000A0000,  
+	0x000D0505,  
+	0x000EF040   
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="56" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="56" bodyend="66"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC2590_8h_1a4b348c0af3d14a36ef6560ce9c06639b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2590_init</definition>
+        <argsstring>(TMC2590TypeDef *tmc2590, uint8_t channel, ConfigurationTypeDef *tmc2590_config, const int32_t *registerResetState)</argsstring>
+        <name>tmc2590_init</name>
+        <param>
+          <type><ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref> *</type>
+          <declname>tmc2590</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>tmc2590_config</declname>
+        </param>
+        <param>
+          <type>const int32_t *</type>
+          <declname>registerResetState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="68" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.c" bodystart="131" bodyend="155" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" declline="68" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2590_8h_1a51f4b0d5bf2e3ef928b18f0639a07b76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2590_periodicJob</definition>
+        <argsstring>(TMC2590TypeDef *tmc2590, uint32_t tick)</argsstring>
+        <name>tmc2590_periodicJob</name>
+        <param>
+          <type><ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref> *</type>
+          <declname>tmc2590</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="69" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.c" bodystart="157" bodyend="165" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" declline="69" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2590_8h_1a5fd1a318ce77711f3b0872d99ba7871c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2590_writeInt</definition>
+        <argsstring>(TMC2590TypeDef *tmc2590, uint8_t address, int32_t value)</argsstring>
+        <name>tmc2590_writeInt</name>
+        <param>
+          <type><ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref> *</type>
+          <declname>tmc2590</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="70" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.c" bodystart="115" bodyend="121" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" declline="70" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2590_8h_1a6a5d4a2bb4f0d4ac207fc157e800706c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t tmc2590_readInt</definition>
+        <argsstring>(TMC2590TypeDef *tmc2590, uint8_t address)</argsstring>
+        <name>tmc2590_readInt</name>
+        <param>
+          <type><ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref> *</type>
+          <declname>tmc2590</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="71" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.c" bodystart="123" bodyend="129" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" declline="71" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2590_8h_1a01bae6d75b29bffcb6fecc9d91fd7ce1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2590_reset</definition>
+        <argsstring>(TMC2590TypeDef *tmc2590)</argsstring>
+        <name>tmc2590_reset</name>
+        <param>
+          <type><ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref> *</type>
+          <declname>tmc2590</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="72" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.c" bodystart="167" bodyend="176" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" declline="72" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2590_8h_1a804eea1f634abdc9c688f80bd4831df7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2590_restore</definition>
+        <argsstring>(TMC2590TypeDef *tmc2590)</argsstring>
+        <name>tmc2590_restore</name>
+        <param>
+          <type><ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref> *</type>
+          <declname>tmc2590</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="73" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.c" bodystart="178" bodyend="187" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" declline="73" declcolumn="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC2590_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC2590_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="API__Header_8h" kindref="compound">tmc/helpers/API_Header.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2590__Constants_8h" kindref="compound">TMC2590_Constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2590__Fields_8h" kindref="compound">TMC2590_Fields.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2590__Macros_8h" kindref="compound">TMC2590_Macros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2590__Register_8h" kindref="compound">TMC2590_Register.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC2590_8h_1a87397eb6cc6178b3c5dcde4be8f37971" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_FIELD_READ(tdef,<sp/>address,<sp/>mask,<sp/>shift)<sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>FIELD_GET(tmc2590_readInt(tdef,<sp/>address),<sp/>mask,<sp/>shift)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC2590_8h_1ad9624927356f5a49ad0a07b1c194ed83" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_FIELD_WRITE(tdef,<sp/>address,<sp/>mask,<sp/>shift,<sp/>value)<sp/>\</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(tmc2590_writeInt(tdef,<sp/>address,<sp/>FIELD_SET(tmc2590_readInt(tdef,<sp/>address),<sp/>mask,<sp/>shift,<sp/>value)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Usage<sp/>note:<sp/>use<sp/>1<sp/>TypeDef<sp/>per<sp/>IC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="structTMC2590TypeDef" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26" refid="structTMC2590TypeDef_1a1891bac40b9e9e9a5f40ed7950bea879" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*<ref refid="structTMC2590TypeDef_1a1891bac40b9e9e9a5f40ed7950bea879" kindref="member">config</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="structTMC2590TypeDef_1ad1a8f1394d7f36ea4217858c743f2662" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMC2590TypeDef_1ad1a8f1394d7f36ea4217858c743f2662" kindref="member">continuousModeEnable</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="structTMC2590TypeDef_1ac8d5abb2883f4fa5f00a0c3b38e6339e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMC2590TypeDef_1ac8d5abb2883f4fa5f00a0c3b38e6339e" kindref="member">coolStepInactiveValue</ref>;</highlight></codeline>
+<codeline lineno="31" refid="structTMC2590TypeDef_1a1d0a84ead5681737675ae6e9c306106f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMC2590TypeDef_1a1d0a84ead5681737675ae6e9c306106f" kindref="member">coolStepActiveValue</ref>;</highlight></codeline>
+<codeline lineno="32" refid="structTMC2590TypeDef_1af928edae55eeaf5190a6330a18b513f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structTMC2590TypeDef_1af928edae55eeaf5190a6330a18b513f4" kindref="member">coolStepThreshold</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="structTMC2590TypeDef_1a8b6ace1b1ab359563a52154bee56e807" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMC2590TypeDef_1a8b6ace1b1ab359563a52154bee56e807" kindref="member">isStandStillCurrent</ref>;</highlight></codeline>
+<codeline lineno="35" refid="structTMC2590TypeDef_1a941bc0342cfa576e8a97979aab0a950a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMC2590TypeDef_1a941bc0342cfa576e8a97979aab0a950a" kindref="member">runCurrentScale</ref>;</highlight></codeline>
+<codeline lineno="36" refid="structTMC2590TypeDef_1a9909a51a7b5e76d470bfef0c09642d43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMC2590TypeDef_1a9909a51a7b5e76d470bfef0c09642d43" kindref="member">standStillCurrentScale</ref>;</highlight></codeline>
+<codeline lineno="37" refid="structTMC2590TypeDef_1a14b84aa72be7bda666f08eb65718df43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structTMC2590TypeDef_1a14b84aa72be7bda666f08eb65718df43" kindref="member">standStillTimeout</ref>;</highlight></codeline>
+<codeline lineno="38" refid="structTMC2590TypeDef_1a4cc17644f516c86c5e5406deb2933907" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structTMC2590TypeDef_1a4cc17644f516c86c5e5406deb2933907" kindref="member">standStillTick</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structTMC2590TypeDef_1a8f5475ee0c9d34cd9fde61a861c8b100" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>registerAccess[<ref refid="TMC2590__Constants_8h_1ad77f51342d7dc51050088d578e395b4d" kindref="member">TMC2590_REGISTER_COUNT</ref>];</highlight></codeline>
+<codeline lineno="41" refid="structTMC2590TypeDef_1abfcc82f74154a5c1ab7c3a4e86dfecd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>registerResetState[<ref refid="TMC2590__Constants_8h_1ad77f51342d7dc51050088d578e395b4d" kindref="member">TMC2590_REGISTER_COUNT</ref>];</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}<sp/><ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC2590_8h_1a473c2849c80d0e872969bbbcf523c416" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="TMC2590_8h_1a473c2849c80d0e872969bbbcf523c416" kindref="member">tmc2590_defaultRegisterAccess</ref>[<ref refid="TMC2590__Constants_8h_1ad77f51342d7dc51050088d578e395b4d" kindref="member">TMC2590_REGISTER_COUNT</ref>]<sp/>=</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>0x02,<sp/><sp/></highlight><highlight class="comment">//<sp/>0:<sp/>DRVCTRL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>0x00,<sp/><sp/></highlight><highlight class="comment">//<sp/>1:<sp/>UNUSED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>0x00,<sp/><sp/></highlight><highlight class="comment">//<sp/>2:<sp/>UNUSED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>0x00,<sp/><sp/></highlight><highlight class="comment">//<sp/>3:<sp/>UNUSED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>0x02,<sp/><sp/></highlight><highlight class="comment">//<sp/>4:<sp/>CHOPCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>0x02,<sp/><sp/></highlight><highlight class="comment">//<sp/>5:<sp/>SMARTEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>0x02,<sp/><sp/></highlight><highlight class="comment">//<sp/>6:<sp/>SGCSCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>0x02<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>7:<sp/>DRVCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC2590_8h_1a012a9218e76cf8f5c339caa1c64d3578" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="TMC2590_8h_1a012a9218e76cf8f5c339caa1c64d3578" kindref="member">tmc2590_defaultRegisterResetState</ref>[<ref refid="TMC2590__Constants_8h_1ad77f51342d7dc51050088d578e395b4d" kindref="member">TMC2590_REGISTER_COUNT</ref>]<sp/>=</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>0x10000000,<sp/><sp/></highlight><highlight class="comment">//<sp/>0:<sp/>DRVCTRL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>0x00000000,<sp/><sp/></highlight><highlight class="comment">//<sp/>1:<sp/>UNUSED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>0x00000000,<sp/><sp/></highlight><highlight class="comment">//<sp/>2:<sp/>UNUSED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>0x00000000,<sp/><sp/></highlight><highlight class="comment">//<sp/>3:<sp/>UNUSED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>0x00091935,<sp/><sp/></highlight><highlight class="comment">//<sp/>4:<sp/>CHOPCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>0x000A0000,<sp/><sp/></highlight><highlight class="comment">//<sp/>5:<sp/>SMARTEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>0x000D0505,<sp/><sp/></highlight><highlight class="comment">//<sp/>6:<sp/>SGCSCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>0x000EF040<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>7:<sp/>DRVCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2590_8h_1a4b348c0af3d14a36ef6560ce9c06639b" kindref="member">tmc2590_init</ref>(<ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref><sp/>*tmc2590,<sp/>uint8_t<sp/>channel,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*tmc2590_config,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*registerResetState);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2590_8h_1a51f4b0d5bf2e3ef928b18f0639a07b76" kindref="member">tmc2590_periodicJob</ref>(<ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref><sp/>*tmc2590,<sp/>uint32_t<sp/>tick);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2590_8h_1a5fd1a318ce77711f3b0872d99ba7871c" kindref="member">tmc2590_writeInt</ref>(<ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref><sp/>*tmc2590,<sp/>uint8_t<sp/>address,<sp/>int32_t<sp/>value);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">uint32_t<sp/><ref refid="TMC2590_8h_1a6a5d4a2bb4f0d4ac207fc157e800706c" kindref="member">tmc2590_readInt</ref>(<ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref><sp/>*tmc2590,<sp/>uint8_t<sp/>address);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">uint8_t<sp/><ref refid="TMC2590_8h_1a01bae6d75b29bffcb6fecc9d91fd7ce1" kindref="member">tmc2590_reset</ref>(<ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref><sp/>*tmc2590);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">uint8_t<sp/><ref refid="TMC2590_8h_1a804eea1f634abdc9c688f80bd4831df7" kindref="member">tmc2590_restore</ref>(<ref refid="structTMC2590TypeDef" kindref="compound">TMC2590TypeDef</ref><sp/>*tmc2590);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC2590_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h"/>
+  </compounddef>
+</doxygen>

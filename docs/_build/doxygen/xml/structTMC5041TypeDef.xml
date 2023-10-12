@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTMC5041TypeDef" kind="struct" language="C++" prot="public">
+    <compoundname>TMC5041TypeDef</compoundname>
+    <includes refid="TMC5041_8h" local="no">TMC5041.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTMC5041TypeDef_1af6653ebed1c14f9c0c896e95bcd8619b" prot="public" static="no" mutable="no">
+        <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+        <definition>ConfigurationTypeDef* TMC5041TypeDef::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>TMC5041TypeDef::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" line="25" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5041TypeDef_1a33da67fbaad18727258c6567a4a94bc5" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC5041TypeDef::velocity[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>velocity</name>
+        <qualifiedname>TMC5041TypeDef::velocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5041TypeDef_1ad496a9a724870052b17e044fbcbc7eb6" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC5041TypeDef::oldX[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>oldX</name>
+        <qualifiedname>TMC5041TypeDef::oldX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" line="27" column="18" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5041TypeDef_1a9eee52f454ef16a92a5a636ed84521df" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC5041TypeDef::oldTick</definition>
+        <argsstring></argsstring>
+        <name>oldTick</name>
+        <qualifiedname>TMC5041TypeDef::oldTick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" line="28" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5041TypeDef_1a36846e9c7fe7920ea75726d874f13a28" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC5041TypeDef::registerResetState[TMC5041_REGISTER_COUNT]</definition>
+        <argsstring>[TMC5041_REGISTER_COUNT]</argsstring>
+        <name>registerResetState</name>
+        <qualifiedname>TMC5041TypeDef::registerResetState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5041TypeDef_1a5e4c3e9999e7ea3c204a1d1e140a1f18" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC5041TypeDef::registerAccess[TMC5041_REGISTER_COUNT]</definition>
+        <argsstring>[TMC5041_REGISTER_COUNT]</argsstring>
+        <name>registerAccess</name>
+        <qualifiedname>TMC5041TypeDef::registerAccess</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC5041TypeDef_1a2c0ebbaf07aad48f2f98fa9f0998a53a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TMC5041TypeDef::vMaxModified[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>vMaxModified</name>
+        <qualifiedname>TMC5041TypeDef::vMaxModified</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" line="32" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ConfigurationTypeDef</label>
+        <link refid="structConfigurationTypeDef"/>
+      </node>
+      <node id="1">
+        <label>TMC5041TypeDef</label>
+        <link refid="structTMC5041TypeDef"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" line="24" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041.h" bodystart="24" bodyend="33"/>
+    <listofallmembers>
+      <member refid="structTMC5041TypeDef_1af6653ebed1c14f9c0c896e95bcd8619b" prot="public" virt="non-virtual"><scope>TMC5041TypeDef</scope><name>config</name></member>
+      <member refid="structTMC5041TypeDef_1a9eee52f454ef16a92a5a636ed84521df" prot="public" virt="non-virtual"><scope>TMC5041TypeDef</scope><name>oldTick</name></member>
+      <member refid="structTMC5041TypeDef_1ad496a9a724870052b17e044fbcbc7eb6" prot="public" virt="non-virtual"><scope>TMC5041TypeDef</scope><name>oldX</name></member>
+      <member refid="structTMC5041TypeDef_1a5e4c3e9999e7ea3c204a1d1e140a1f18" prot="public" virt="non-virtual"><scope>TMC5041TypeDef</scope><name>registerAccess</name></member>
+      <member refid="structTMC5041TypeDef_1a36846e9c7fe7920ea75726d874f13a28" prot="public" virt="non-virtual"><scope>TMC5041TypeDef</scope><name>registerResetState</name></member>
+      <member refid="structTMC5041TypeDef_1a33da67fbaad18727258c6567a4a94bc5" prot="public" virt="non-virtual"><scope>TMC5041TypeDef</scope><name>velocity</name></member>
+      <member refid="structTMC5041TypeDef_1a2c0ebbaf07aad48f2f98fa9f0998a53a" prot="public" virt="non-virtual"><scope>TMC5041TypeDef</scope><name>vMaxModified</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

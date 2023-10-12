@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Functions_8h" kind="file" language="C++">
+    <compoundname>Functions.h</compoundname>
+    <includes refid="API__Header_8h" local="yes">API_Header.h</includes>
+    <includedby refid="Functions_8c" local="yes">Functions.c</includedby>
+    <includedby refid="LinearRamp_8h" local="yes">LinearRamp.h</includedby>
+    <includedby refid="LinearRamp1_8c" local="yes">LinearRamp1.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="11">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="1">
+        <label>Functions.h</label>
+        <link refid="Functions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="12">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="5">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Functions.c</label>
+        <link refid="Functions_8c"/>
+      </node>
+      <node id="1">
+        <label>Functions.h</label>
+        <link refid="Functions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>LinearRamp.c</label>
+        <link refid="LinearRamp_8c"/>
+      </node>
+      <node id="3">
+        <label>LinearRamp.h</label>
+        <link refid="LinearRamp_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>LinearRamp1.c</label>
+        <link refid="LinearRamp1_8c"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="Functions_8h_1ac7f3f47bbf0e0df85fca0a0a139238e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc_limitInt</definition>
+        <argsstring>(int32_t value, int32_t min, int32_t max)</argsstring>
+        <name>tmc_limitInt</name>
+        <param>
+          <type>int32_t</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.c" bodystart="12" bodyend="20" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.h" declline="15" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="Functions_8h_1a1f74cd21fd8fe8f9a732d04c94f239f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int64_t</type>
+        <definition>int64_t tmc_limitS64</definition>
+        <argsstring>(int64_t value, int64_t min, int64_t max)</argsstring>
+        <name>tmc_limitS64</name>
+        <param>
+          <type>int64_t</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.c" bodystart="22" bodyend="30" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.h" declline="16" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="Functions_8h_1a05eaa42b83ca808581d982e11abcca73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc_sqrti</definition>
+        <argsstring>(int32_t x)</argsstring>
+        <name>tmc_sqrti</name>
+        <param>
+          <type>int32_t</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.c" bodystart="53" bodyend="167" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.h" declline="17" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="Functions_8h_1aa2d28c327bbd3f19771f374205b8c216" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc_filterPT1</definition>
+        <argsstring>(int64_t *akku, int32_t newValue, int32_t lastValue, uint8_t actualFilter, uint8_t maxFilter)</argsstring>
+        <name>tmc_filterPT1</name>
+        <param>
+          <type>int64_t *</type>
+          <declname>akku</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>newValue</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>lastValue</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>actualFilter</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>maxFilter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.c" bodystart="169" bodyend="173" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.h" declline="18" declcolumn="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2018<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_FUNCTIONS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_FUNCTIONS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="API__Header_8h" kindref="compound">API_Header.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">int32_t<sp/><ref refid="Functions_8h_1ac7f3f47bbf0e0df85fca0a0a139238e7" kindref="member">tmc_limitInt</ref>(int32_t<sp/>value,<sp/>int32_t<sp/>min,<sp/>int32_t<sp/>max);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">int64_t<sp/><ref refid="Functions_8h_1a1f74cd21fd8fe8f9a732d04c94f239f4" kindref="member">tmc_limitS64</ref>(int64_t<sp/>value,<sp/>int64_t<sp/>min,<sp/>int64_t<sp/>max);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">int32_t<sp/><ref refid="Functions_8h_1a05eaa42b83ca808581d982e11abcca73" kindref="member">tmc_sqrti</ref>(int32_t<sp/>x);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">int32_t<sp/><ref refid="Functions_8h_1aa2d28c327bbd3f19771f374205b8c216" kindref="member">tmc_filterPT1</ref>(int64_t<sp/>*akku,<sp/>int32_t<sp/>newValue,<sp/>int32_t<sp/>lastValue,<sp/>uint8_t<sp/>actualFilter,<sp/>uint8_t<sp/>maxFilter);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_FUNCTIONS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/Functions.h"/>
+  </compounddef>
+</doxygen>

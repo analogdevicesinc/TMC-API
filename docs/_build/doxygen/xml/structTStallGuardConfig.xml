@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTStallGuardConfig" kind="struct" language="C++" prot="public">
+    <compoundname>TStallGuardConfig</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTStallGuardConfig_1a952e5920c7b9fa4746a099e94a35678b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TStallGuardConfig::FilterEnable</definition>
+        <argsstring></argsstring>
+        <name>FilterEnable</name>
+        <qualifiedname>TStallGuardConfig::FilterEnable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTStallGuardConfig_1a4a68398689a0e984cc4c6667698a9317" prot="public" static="no" mutable="no">
+        <type>int8_t</type>
+        <definition>int8_t TStallGuardConfig::StallGuardThreshold</definition>
+        <argsstring></argsstring>
+        <name>StallGuardThreshold</name>
+        <qualifiedname>TStallGuardConfig::StallGuardThreshold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="44" column="8" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTStallGuardConfig_1ac142c823d8501338061e90e65f735a90" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TStallGuardConfig::CurrentScale</definition>
+        <argsstring></argsstring>
+        <name>CurrentScale</name>
+        <qualifiedname>TStallGuardConfig::CurrentScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="41" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="42" bodyend="46"/>
+    <listofallmembers>
+      <member refid="structTStallGuardConfig_1ac142c823d8501338061e90e65f735a90" prot="public" virt="non-virtual"><scope>TStallGuardConfig</scope><name>CurrentScale</name></member>
+      <member refid="structTStallGuardConfig_1a952e5920c7b9fa4746a099e94a35678b" prot="public" virt="non-virtual"><scope>TStallGuardConfig</scope><name>FilterEnable</name></member>
+      <member refid="structTStallGuardConfig_1a4a68398689a0e984cc4c6667698a9317" prot="public" virt="non-virtual"><scope>TStallGuardConfig</scope><name>StallGuardThreshold</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

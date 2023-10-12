@@ -1,0 +1,1944 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2225__Fields_8h" kind="file" language="C++">
+    <compoundname>TMC2225_Fields.h</compoundname>
+    <includedby refid="TMC2225_8h" local="yes">TMC2225.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC2225.c</label>
+        <link refid="TMC2225_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC2225.h</label>
+        <link refid="TMC2225_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2225_Fields.h</label>
+        <link refid="TMC2225__Fields_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ac56bb018173169984dff23c210bcae95" prot="public" static="no">
+        <name>TMC2225_I_SCALE_ANALOG_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="13" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1abdc9c89044ad882c012a070a2665b7b6" prot="public" static="no">
+        <name>TMC2225_I_SCALE_ANALOG_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="14" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a2655a229cf4c00675e85a924e70b6f15" prot="public" static="no">
+        <name>TMC2225_INTERNAL_RSENSE_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a64220f3302acd261420891494ff76b6a" prot="public" static="no">
+        <name>TMC2225_INTERNAL_RSENSE_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa05045286d64039f95f5aa19aabf8392" prot="public" static="no">
+        <name>TMC2225_EN_SPREADCYCLE_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a993fa4723c910aa1b94d3ee983730558" prot="public" static="no">
+        <name>TMC2225_EN_SPREADCYCLE_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ac68841b46ce7f12b53c4bbae2b39dcb2" prot="public" static="no">
+        <name>TMC2225_SHAFT_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a152ac1852d21ea2a99ad887ac5720134" prot="public" static="no">
+        <name>TMC2225_SHAFT_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a11947d76d9a02d903c71734991fa959b" prot="public" static="no">
+        <name>TMC2225_INDEX_OTPW_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ac903d574eaa1a0899675b3c50cdff6c3" prot="public" static="no">
+        <name>TMC2225_INDEX_OTPW_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ac7f4c18845785dbca050b6267b1b4ff4" prot="public" static="no">
+        <name>TMC2225_INDEX_STEP_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1af9887d046c40f659094512e0ae3cca61" prot="public" static="no">
+        <name>TMC2225_INDEX_STEP_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a29dc442d247e1714f16e8af8e8f26d0a" prot="public" static="no">
+        <name>TMC2225_PDN_DISABLE_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a07390ed4fbdf2afa18659114696f8e41" prot="public" static="no">
+        <name>TMC2225_PDN_DISABLE_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa2e9697af2372bc770963a8ebb13e08f" prot="public" static="no">
+        <name>TMC2225_MSTEP_REG_SELECT_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a183ba53836c2c66295ea9a62713d1063" prot="public" static="no">
+        <name>TMC2225_MSTEP_REG_SELECT_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a1be18a0e54250778826943c46a5a859f" prot="public" static="no">
+        <name>TMC2225_MULTISTEP_FILT_MASK</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a255992ae5b3a23cccfd7222dd42e66f0" prot="public" static="no">
+        <name>TMC2225_MULTISTEP_FILT_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1acce3a412c9395a8bfd7a6f420baf127e" prot="public" static="no">
+        <name>TMC2225_TEST_MODE_MASK</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ad01d8b9b40a7eef7bf7c84850450d9a0" prot="public" static="no">
+        <name>TMC2225_TEST_MODE_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a007a7d673fe6b29c85ca6909b2a1c1aa" prot="public" static="no">
+        <name>TMC2225_RESET_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a1267e59159fb01dc898b85014a768bc6" prot="public" static="no">
+        <name>TMC2225_RESET_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a840a02fd120b024722f23865685d657b" prot="public" static="no">
+        <name>TMC2225_DRV_ERR_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a464ebaa9092bde8b4ddd3779a3c8016a" prot="public" static="no">
+        <name>TMC2225_DRV_ERR_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aef00d93d1c5d698662c5b1c09861a22f" prot="public" static="no">
+        <name>TMC2225_UV_CP_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1acfd12a954eb4669010340af301a140f2" prot="public" static="no">
+        <name>TMC2225_UV_CP_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a229aa840227b1de42d3602f3b9496852" prot="public" static="no">
+        <name>TMC2225_IFCNT_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa35c405587f082131a4ea581361bf960" prot="public" static="no">
+        <name>TMC2225_IFCNT_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a62772a1c2367b2249ec873d62e40235c" prot="public" static="no">
+        <name>TMC2225_SLAVECONF_MASK</name>
+        <initializer>0x0F00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a6106b0783ff34c0791a6b2cd10c9bc7f" prot="public" static="no">
+        <name>TMC2225_SLAVECONF_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a82e79302b7281ef80dde751f07dd447c" prot="public" static="no">
+        <name>TMC2225_OTPBIT_MASK</name>
+        <initializer>0x07</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a88237eafc75584b022667aa664d6ad86" prot="public" static="no">
+        <name>TMC2225_OTPBIT_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a5f168a088bdb77c8cd4ba07a9daa91d3" prot="public" static="no">
+        <name>TMC2225_OTPBYTE_MASK</name>
+        <initializer>0x30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1affbc9dc11280f51ec42925453eb8f624" prot="public" static="no">
+        <name>TMC2225_OTPBYTE_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="46" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a6ee10f2d2498f2565e4682f4fb13d649" prot="public" static="no">
+        <name>TMC2225_OTPMAGIC_MASK</name>
+        <initializer>0xFF00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa1f0dc451162b9e72671d703e4b759da" prot="public" static="no">
+        <name>TMC2225_OTPMAGIC_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ac4240bffaf4edda68fb7b296ff630398" prot="public" static="no">
+        <name>TMC2225_OTP0_BYTE_0_READ_DATA_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1af4f255435b40fea402c68a358c6cc01e" prot="public" static="no">
+        <name>TMC2225_OTP0_BYTE_0_READ_DATA_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a3e94e83778308fafad14aca18e6a9deb" prot="public" static="no">
+        <name>TMC2225_OTP1_BYTE_1_READ_DATA_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1abb717bf481a05557f32d3ec11174dfbb" prot="public" static="no">
+        <name>TMC2225_OTP1_BYTE_1_READ_DATA_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa662dec4a38f1ac64f2bb3e321208f9d" prot="public" static="no">
+        <name>TMC2225_OTP2_BYTE_2_READ_DATA_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a350cd30d279b9a22a624721c00aef4b9" prot="public" static="no">
+        <name>TMC2225_OTP2_BYTE_2_READ_DATA_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ade741f3a7ad0790b61435823b0bc1c09" prot="public" static="no">
+        <name>TMC2225_ENN_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a1202c1e79bb5c0bb0ea379765f0896a5" prot="public" static="no">
+        <name>TMC2225_ENN_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ae556a9a0cf6018ec16070201ce1f1190" prot="public" static="no">
+        <name>TMC2225_MS1_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ab7e345eb353c20998c3427c0c1102c2d" prot="public" static="no">
+        <name>TMC2225_MS1_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="58" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1af0bccf589b0a9f70b9d3f55cb4758090" prot="public" static="no">
+        <name>TMC2225_MS2_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1abf238a5ee4f1d47d0b7f4ae068a20ce7" prot="public" static="no">
+        <name>TMC2225_MS2_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a4b5402612c29f09f2c86486ab4657be9" prot="public" static="no">
+        <name>TMC2225_DIAG_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aee2b2dba04abab8c2a2a100b6fadc64a" prot="public" static="no">
+        <name>TMC2225_DIAG_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="62" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aad015e8a4c938588089d9f49608bfb35" prot="public" static="no">
+        <name>TMC2225_PDN_UART_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="63" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a8b0aca818e0ac859d5a8d5669657a17a" prot="public" static="no">
+        <name>TMC2225_PDN_UART_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="64" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a48e3abe0762550fcedf197ce7c981dbe" prot="public" static="no">
+        <name>TMC2225_STEP_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a00bf11916601079e204d7574ee76015f" prot="public" static="no">
+        <name>TMC2225_STEP_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a5701ba8d198dce76efd87510ffa27778" prot="public" static="no">
+        <name>TMC2225_SEL_A_MASK</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="67" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ad6ccb053051240633c2cbc64edc91142" prot="public" static="no">
+        <name>TMC2225_SEL_A_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="68" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a9e9ee4f0d86b31eb103ae3aaa8189f6c" prot="public" static="no">
+        <name>TMC2225_DIR_MASK</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="69" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ac670b4dc2526ad1d0ab338cd7529eb7b" prot="public" static="no">
+        <name>TMC2225_DIR_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="70" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a126aa3e402deec0ae538214f143d1845" prot="public" static="no">
+        <name>TMC2225_VERSION_MASK</name>
+        <initializer>0xFF000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="71" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a2094c77b8ab54e0ccd90e8c7f837e49e" prot="public" static="no">
+        <name>TMC2225_VERSION_SHIFT</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="72" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1abf12054b06a58553c101bdaf1a2ffdf0" prot="public" static="no">
+        <name>TMC2225_FCLKTRIM_MASK</name>
+        <initializer>0x1F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="73" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a356a864168da7613a40f7370965960a3" prot="public" static="no">
+        <name>TMC2225_FCLKTRIM_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="74" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1af533d21a299f0ebe3d0bc705778620fb" prot="public" static="no">
+        <name>TMC2225_OTTRIM_MASK</name>
+        <initializer>0x30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="75" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ae39abff94fcfc78278bf536028e462ee" prot="public" static="no">
+        <name>TMC2225_OTTRIM_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="76" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a0b18fb0e3cec0ecf7bac72c4f5f562c0" prot="public" static="no">
+        <name>TMC2225_IHOLD_MASK</name>
+        <initializer>0x1F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="77" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a3e63f1b8ca0bf71e49e9e0904a6c094c" prot="public" static="no">
+        <name>TMC2225_IHOLD_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="78" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1af1d8563fd01689014a62251658e5e95f" prot="public" static="no">
+        <name>TMC2225_IRUN_MASK</name>
+        <initializer>0x1F00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="79" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a7eea00f3b472f65fd3aaa2d5b294c3dc" prot="public" static="no">
+        <name>TMC2225_IRUN_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="80" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a96571893f9e4308c750d13c343ce589c" prot="public" static="no">
+        <name>TMC2225_IHOLDDELAY_MASK</name>
+        <initializer>0x0F0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="81" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a4ef136794a603246aa12641c6252eb0e" prot="public" static="no">
+        <name>TMC2225_IHOLDDELAY_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="82" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a2999c1aa1393831e6107ac1ce332f0e7" prot="public" static="no">
+        <name>TMC2225_TPOWERDOWN_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="83" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a373b65fcf95417eaf347b7d603535497" prot="public" static="no">
+        <name>TMC2225_TPOWERDOWN_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="84" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a7f04547fec81e03fb59c304d13d603d2" prot="public" static="no">
+        <name>TMC2225_TSTEP_MASK</name>
+        <initializer>0x0FFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="85" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aaaf0db70a824fb8884d1caca9f3a6c67" prot="public" static="no">
+        <name>TMC2225_TSTEP_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="86" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a53e056bda178850aa290c01a5cc088db" prot="public" static="no">
+        <name>TMC2225_TPWMTHRS_MASK</name>
+        <initializer>0x0FFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="87" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a8454db1be5145c264cd7e5ae5b9b1e20" prot="public" static="no">
+        <name>TMC2225_TPWMTHRS_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="88" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1afcfa2055f4284c45ee4dda95a8ce7e0c" prot="public" static="no">
+        <name>TMC2225_VACTUAL_MASK</name>
+        <initializer>0xFFFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="89" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a0eba65689dbe14dd7a0edf4796c40494" prot="public" static="no">
+        <name>TMC2225_VACTUAL_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="90" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a68171b4489136499f2b1128917151691" prot="public" static="no">
+        <name>TMC2225_MSCNT_MASK</name>
+        <initializer>0x03FF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="91" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a58b71d897955603dd9dcf03ae422e58c" prot="public" static="no">
+        <name>TMC2225_MSCNT_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="92" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aad4f015de2c1ef6aac5cfc5484a5a992" prot="public" static="no">
+        <name>TMC2225_CUR_A_MASK</name>
+        <initializer>0x01FF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="93" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ae97cdc2c8461ac178742287338039446" prot="public" static="no">
+        <name>TMC2225_CUR_A_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="94" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a38db09434f3a64239e7dc8b2e3b505f0" prot="public" static="no">
+        <name>TMC2225_CUR_B_MASK</name>
+        <initializer>0x01FF0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="95" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ab83f43595cc34f0db9e1921f21b7ee0e" prot="public" static="no">
+        <name>TMC2225_CUR_B_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="96" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a76c6f7e698b038269f3a0457a317ab8f" prot="public" static="no">
+        <name>TMC2225_TOFF_MASK</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="97" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ae6fee1ef82af0cb7a71aa1b9c6338c5d" prot="public" static="no">
+        <name>TMC2225_TOFF_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="98" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a4437b07fe33a9211e2d2fe9b7a33a062" prot="public" static="no">
+        <name>TMC2225_HSTRT_MASK</name>
+        <initializer>0x70</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="99" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a6f23c991813d6aa44bd92aa69dc83d64" prot="public" static="no">
+        <name>TMC2225_HSTRT_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="100" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aae72e87b4432dc974ac76bbaec370615" prot="public" static="no">
+        <name>TMC2225_HEND_MASK</name>
+        <initializer>0x0780</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="101" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a3094b26993fc84f1fe82e4b99857911c" prot="public" static="no">
+        <name>TMC2225_HEND_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="102" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa7f3021b576a6501dce3bd1f26707051" prot="public" static="no">
+        <name>TMC2225_TBL_MASK</name>
+        <initializer>0x018000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="103" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a47a5354d6b4ed7964cea82b88fdff0a8" prot="public" static="no">
+        <name>TMC2225_TBL_SHIFT</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="104" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aab316a3cf979d6ce3171e3218610c319" prot="public" static="no">
+        <name>TMC2225_VSENSE_MASK</name>
+        <initializer>0x020000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="105" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a6133e1bf988951232cf7514412ec7ecb" prot="public" static="no">
+        <name>TMC2225_VSENSE_SHIFT</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="106" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa265e7e081b6092f358c0c1bdfa04405" prot="public" static="no">
+        <name>TMC2225_MRES_MASK</name>
+        <initializer>0x0F000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="107" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a3fa426efc1541a0adf7894878c9fa651" prot="public" static="no">
+        <name>TMC2225_MRES_SHIFT</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="108" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a64f5df1d488a75997c2254d8abea182b" prot="public" static="no">
+        <name>TMC2225_INTPOL_MASK</name>
+        <initializer>0x10000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="109" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a210a5ba6766f7bfaa72ee62a9d0f3b9d" prot="public" static="no">
+        <name>TMC2225_INTPOL_SHIFT</name>
+        <initializer>28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="110" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a51edf4321f5bb90e68d821618a6b52d4" prot="public" static="no">
+        <name>TMC2225_DEDGE_MASK</name>
+        <initializer>0x20000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="111" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ab6ed767440794ac7f4ba80797b16ffd4" prot="public" static="no">
+        <name>TMC2225_DEDGE_SHIFT</name>
+        <initializer>29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="112" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a3d870cd641b541a7d0c7c3b90000b2c1" prot="public" static="no">
+        <name>TMC2225_DISS2G_MASK</name>
+        <initializer>0x40000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="113" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a623f65c33850d70a0b081d74eb32b8ca" prot="public" static="no">
+        <name>TMC2225_DISS2G_SHIFT</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="114" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a70b3a4f6321eb8eb35c00afc329f575d" prot="public" static="no">
+        <name>TMC2225_DISS2VS_MASK</name>
+        <initializer>0x80000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="115" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a78e4cf570a8c6030ba8d5ded0f4f8a43" prot="public" static="no">
+        <name>TMC2225_DISS2VS_SHIFT</name>
+        <initializer>31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="116" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a110e356ec7263bc40e0abf9437e59014" prot="public" static="no">
+        <name>TMC2225_OTPW_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="117" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a93bb5ba995dc186ac719ee63c3bee701" prot="public" static="no">
+        <name>TMC2225_OTPW_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="118" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a0f051bf7ce13d21a5a364600f4b9dc4a" prot="public" static="no">
+        <name>TMC2225_OT_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="119" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a0ebd5a090e7f1dfe6b0b525751092e36" prot="public" static="no">
+        <name>TMC2225_OT_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="120" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a631c291b037dcac383f4aa4e5f6143b0" prot="public" static="no">
+        <name>TMC2225_S2GA_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="121" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a2d9c93959c0271db0ef5eff3466429b0" prot="public" static="no">
+        <name>TMC2225_S2GA_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="122" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1afac615b56123eb4acd84a82c3ae584da" prot="public" static="no">
+        <name>TMC2225_S2GB_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="123" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa3bf56ed283bf5e87b674aa789bfd0ea" prot="public" static="no">
+        <name>TMC2225_S2GB_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="124" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a58347c4e4a30bdb86bc377ae5c721bd9" prot="public" static="no">
+        <name>TMC2225_S2VSA_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="125" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1afd8f7243b0d526ac799e5eaa20d2a0ad" prot="public" static="no">
+        <name>TMC2225_S2VSA_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="126" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a9c3a6210b920f3a62c16c6ba3012aa91" prot="public" static="no">
+        <name>TMC2225_S2VSB_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="127" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a7daf45a43f7fd17b43f821b5842e4865" prot="public" static="no">
+        <name>TMC2225_S2VSB_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="128" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa4fb7135bf0206be28b8f9d8463941b8" prot="public" static="no">
+        <name>TMC2225_OLA_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="129" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a84eeeeb801ab134dc9d36c0b4a069956" prot="public" static="no">
+        <name>TMC2225_OLA_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="130" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a1def0c76074be63f4f5da1fae4ec12b9" prot="public" static="no">
+        <name>TMC2225_OLB_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="131" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ac6977ef169d2f827ee311486e088b210" prot="public" static="no">
+        <name>TMC2225_OLB_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="132" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ab0052dcfc7c3bafa4a6531df66c4f64f" prot="public" static="no">
+        <name>TMC2225_T120_MASK</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="133" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a55517ca18d171b7f0e8565de74f011a4" prot="public" static="no">
+        <name>TMC2225_T120_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="134" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a4fcf7d90211c41b95f1d323cee746108" prot="public" static="no">
+        <name>TMC2225_T143_MASK</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="135" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a59371a3fffc0937e99035ed9d39c7085" prot="public" static="no">
+        <name>TMC2225_T143_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="136" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aaf7283999d12caaca83f14195ac50921" prot="public" static="no">
+        <name>TMC2225_T150_MASK</name>
+        <initializer>0x0400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="137" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a201ce4c9fe6ce8cf9db941a6071ec9d6" prot="public" static="no">
+        <name>TMC2225_T150_SHIFT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="138" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ab0f23bd17f279a534dd1d6dbed00dd98" prot="public" static="no">
+        <name>TMC2225_T157_MASK</name>
+        <initializer>0x0800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="139" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aa1070391ac2cf81691949b54a8ae63d0" prot="public" static="no">
+        <name>TMC2225_T157_SHIFT</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="140" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1abb83b41322af2498d23a435b0db87edc" prot="public" static="no">
+        <name>TMC2225_CS_ACTUAL_MASK</name>
+        <initializer>0x1F0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="141" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a19fe0b035f8cce45043f5e6b4fe360ff" prot="public" static="no">
+        <name>TMC2225_CS_ACTUAL_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="142" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ad33b0faae131e739b18a05f519b50e4c" prot="public" static="no">
+        <name>TMC2225_STEALTH_MASK</name>
+        <initializer>0x40000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="143" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a8168a3aa905f8c24a3a6a36d7e854eae" prot="public" static="no">
+        <name>TMC2225_STEALTH_SHIFT</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="144" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1afdcb73c49417a50c5685cb370442dcc2" prot="public" static="no">
+        <name>TMC2225_STST_MASK</name>
+        <initializer>0x80000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="145" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a466b5474f8d0c9cbf2a761c97ee4b0ec" prot="public" static="no">
+        <name>TMC2225_STST_SHIFT</name>
+        <initializer>31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="146" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aba69dc916d2e5336ae546d8b9e8e1ce1" prot="public" static="no">
+        <name>TMC2225_PWM_OFS_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="147" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ad1911976dde735128c35d503c929c407" prot="public" static="no">
+        <name>TMC2225_PWM_OFS_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="148" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ae27431a5604c9c8b02c7ad4b174d2a94" prot="public" static="no">
+        <name>TMC2225_PWM_GRAD_MASK</name>
+        <initializer>0xFF00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="149" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1aaacb69c72376b15f075a7178b228e275" prot="public" static="no">
+        <name>TMC2225_PWM_GRAD_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="150" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a6e8780dc09d1c0f8e13385c2ccd40a18" prot="public" static="no">
+        <name>TMC2225_PWM_FREQ_MASK</name>
+        <initializer>0x030000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="151" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1afc81b26ba4759a412cae4d37969c2879" prot="public" static="no">
+        <name>TMC2225_PWM_FREQ_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="152" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ae5790fcd6c976ee7a88124686474b232" prot="public" static="no">
+        <name>TMC2225_PWM_AUTOSCALE_MASK</name>
+        <initializer>0x040000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="153" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a8d134ddcb93c03ac1b7bcfa3d562fe31" prot="public" static="no">
+        <name>TMC2225_PWM_AUTOSCALE_SHIFT</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="154" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ad4f43fa0fd891658bc918a063c542ed5" prot="public" static="no">
+        <name>TMC2225_PWM_AUTOGRAD_MASK</name>
+        <initializer>0x080000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="155" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a6a473aef65193d1fbbb48ea179cc2435" prot="public" static="no">
+        <name>TMC2225_PWM_AUTOGRAD_SHIFT</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="156" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a2f158d9ef87a07b6154cb6c42aa08e9b" prot="public" static="no">
+        <name>TMC2225_FREEWHEEL_MASK</name>
+        <initializer>0x300000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="157" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1afbd37f105518656ece120ccb2468161a" prot="public" static="no">
+        <name>TMC2225_FREEWHEEL_SHIFT</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="158" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ab2921585a88b628ec5f224cb81738a65" prot="public" static="no">
+        <name>TMC2225_PWM_REG_MASK</name>
+        <initializer>0x0F000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="159" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a4a1a1baf6a673a5e9550bae9e4775e53" prot="public" static="no">
+        <name>TMC2225_PWM_REG_SHIFT</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="160" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a435eb60b5c54ee9922fe3f4f921b9817" prot="public" static="no">
+        <name>TMC2225_PWM_LIM_MASK</name>
+        <initializer>0xF0000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="161" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a90a658d4df7d386cef7086687522556b" prot="public" static="no">
+        <name>TMC2225_PWM_LIM_SHIFT</name>
+        <initializer>28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="162" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1afd510fc053506f89d88e6fb6a789294a" prot="public" static="no">
+        <name>TMC2225_PWM_SCALE_SUM_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="163" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a4b28af3972677585d51b440c65aeb3db" prot="public" static="no">
+        <name>TMC2225_PWM_SCALE_SUM_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="164" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a9ae6d936c0e3f77be96fb2aff4c2637b" prot="public" static="no">
+        <name>TMC2225_PWM_SCALE_AUTO_MASK</name>
+        <initializer>0x01FF0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="165" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a20abc7ce9d9a7a6c260886cc9b554a16" prot="public" static="no">
+        <name>TMC2225_PWM_SCALE_AUTO_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="166" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a6b2ba024238cb2239c50736612cb1c9c" prot="public" static="no">
+        <name>TMC2225_PWM_OFS_AUTO_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="167" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ab841519ef3bbb7b44c7c670a788aa2bc" prot="public" static="no">
+        <name>TMC2225_PWM_OFS_AUTO_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="168" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1ac04b9d14b4b327805ba4538d1551487d" prot="public" static="no">
+        <name>TMC2225_PWM_GRAD_AUTO_MASK</name>
+        <initializer>0xFF0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="169" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2225__Fields_8h_1a1592d5e9c81e9790048ce25d6f83c9e3" prot="public" static="no">
+        <name>TMC2225_PWM_GRAD_AUTO_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" line="170" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC2225_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="TMC2225__Fields_8h_1ac56bb018173169984dff23c210bcae95" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_I_SCALE_ANALOG_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>I_scale_analog<sp/><sp/>(Reset<sp/>default=1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="TMC2225__Fields_8h_1abdc9c89044ad882c012a070a2665b7b6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_I_SCALE_ANALOG_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC2225__Fields_8h_1a2655a229cf4c00675e85a924e70b6f15" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_INTERNAL_RSENSE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>internal_Rsense<sp/>(Reset<sp/>default:<sp/>OTP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC2225__Fields_8h_1a64220f3302acd261420891494ff76b6a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_INTERNAL_RSENSE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC2225__Fields_8h_1aa05045286d64039f95f5aa19aabf8392" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_EN_SPREADCYCLE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>en_spreadCycle<sp/>(Reset<sp/>default:<sp/>OTP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC2225__Fields_8h_1a993fa4723c910aa1b94d3ee983730558" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_EN_SPREADCYCLE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC2225__Fields_8h_1ac68841b46ce7f12b53c4bbae2b39dcb2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_SHAFT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>controls<sp/>motor<sp/>direction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC2225__Fields_8h_1a152ac1852d21ea2a99ad887ac5720134" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_SHAFT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC2225__Fields_8h_1a11947d76d9a02d903c71734991fa959b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_INDEX_OTPW_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>index_otpw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC2225__Fields_8h_1ac903d574eaa1a0899675b3c50cdff6c3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_INDEX_OTPW_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC2225__Fields_8h_1ac7f4c18845785dbca050b6267b1b4ff4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_INDEX_STEP_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>index_step</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC2225__Fields_8h_1af9887d046c40f659094512e0ae3cca61" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_INDEX_STEP_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC2225__Fields_8h_1a29dc442d247e1714f16e8af8e8f26d0a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PDN_DISABLE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>pdn_disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC2225__Fields_8h_1a07390ed4fbdf2afa18659114696f8e41" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PDN_DISABLE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC2225__Fields_8h_1aa2e9697af2372bc770963a8ebb13e08f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MSTEP_REG_SELECT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>mstep_reg_select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC2225__Fields_8h_1a183ba53836c2c66295ea9a62713d1063" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MSTEP_REG_SELECT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC2225__Fields_8h_1a1be18a0e54250778826943c46a5a859f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MULTISTEP_FILT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0100<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>multistep_filt<sp/>(Reset<sp/>default=1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC2225__Fields_8h_1a255992ae5b3a23cccfd7222dd42e66f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MULTISTEP_FILT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC2225__Fields_8h_1acce3a412c9395a8bfd7a6f420baf127e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TEST_MODE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0200<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>test_mode<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC2225__Fields_8h_1ad01d8b9b40a7eef7bf7c84850450d9a0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TEST_MODE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC2225__Fields_8h_1a007a7d673fe6b29c85ca6909b2a1c1aa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_RESET_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>reset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC2225__Fields_8h_1a1267e59159fb01dc898b85014a768bc6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_RESET_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC2225__Fields_8h_1a840a02fd120b024722f23865685d657b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DRV_ERR_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>drv_err</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC2225__Fields_8h_1a464ebaa9092bde8b4ddd3779a3c8016a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DRV_ERR_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC2225__Fields_8h_1aef00d93d1c5d698662c5b1c09861a22f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_UV_CP_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>uv_cp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC2225__Fields_8h_1acfd12a954eb4669010340af301a140f2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_UV_CP_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC2225__Fields_8h_1a229aa840227b1de42d3602f3b9496852" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_IFCNT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>IFCNT<sp/>//<sp/>Interface<sp/><sp/>transmission<sp/><sp/>counter.<sp/><sp/>This<sp/><sp/>register<sp/><sp/>becomes<sp/>incremented<sp/><sp/>with<sp/><sp/>each<sp/>successful<sp/>UART<sp/><sp/>interface<sp/>write<sp/>access.<sp/><sp/>Read<sp/><sp/>out<sp/><sp/>to<sp/><sp/>check<sp/><sp/>the<sp/><sp/>serial<sp/><sp/>transmission<sp/><sp/>for<sp/>lost<sp/><sp/>data.<sp/><sp/>Read<sp/><sp/>accesses<sp/><sp/>do<sp/><sp/>not<sp/><sp/>change<sp/><sp/>the<sp/><sp/>content.<sp/>The<sp/>counter<sp/>wraps<sp/>around<sp/>from<sp/>255<sp/>to<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC2225__Fields_8h_1aa35c405587f082131a4ea581361bf960" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_IFCNT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC2225__Fields_8h_1a62772a1c2367b2249ec873d62e40235c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_SLAVECONF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F00<sp/></highlight><highlight class="comment">//<sp/>SLAVECONF<sp/>//<sp/>SENDDELAY<sp/>for<sp/>read<sp/>access<sp/>(time<sp/>until<sp/>reply<sp/>is<sp/>sent):<sp/>0,<sp/>1:<sp/><sp/><sp/>8<sp/>bit<sp/>times<sp/><sp/>2,<sp/>3:<sp/><sp/><sp/>3*8<sp/>bit<sp/>times<sp/><sp/>4,<sp/>5:<sp/><sp/><sp/>5*8<sp/>bit<sp/>times<sp/><sp/>6,<sp/>7:<sp/><sp/><sp/>7*8<sp/>bit<sp/>times<sp/><sp/>8,<sp/>9:<sp/><sp/><sp/>9*8<sp/>bit<sp/>times<sp/><sp/>10,<sp/>11:<sp/><sp/>11*8<sp/>bit<sp/>times<sp/><sp/>12,<sp/>13:<sp/><sp/>13*8<sp/>bit<sp/>times<sp/><sp/>14,<sp/>15:<sp/><sp/>15*8<sp/>bit<sp/>times</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="TMC2225__Fields_8h_1a6106b0783ff34c0791a6b2cd10c9bc7f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_SLAVECONF_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>15,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="TMC2225__Fields_8h_1a82e79302b7281ef80dde751f07dd447c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTPBIT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x07<sp/></highlight><highlight class="comment">//<sp/>OTP_PROG<sp/>//<sp/>Selection<sp/>of<sp/>OTP<sp/>bit<sp/>to<sp/>be<sp/>programmed<sp/>to<sp/>the<sp/>selected<sp/>byte<sp/>location<sp/>(n=0..7:<sp/>programs<sp/>bit<sp/>n<sp/>to<sp/>a<sp/>logic<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC2225__Fields_8h_1a88237eafc75584b022667aa664d6ad86" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTPBIT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>7,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC2225__Fields_8h_1a5f168a088bdb77c8cd4ba07a9daa91d3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTPBYTE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30<sp/></highlight><highlight class="comment">//<sp/>OTP_PROG<sp/>//<sp/>Selection<sp/>of<sp/>OTP<sp/>programming<sp/>location<sp/>(0,<sp/>1<sp/>or<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC2225__Fields_8h_1affbc9dc11280f51ec42925453eb8f624" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTPBYTE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="TMC2225__Fields_8h_1a6ee10f2d2498f2565e4682f4fb13d649" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTPMAGIC_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF00<sp/></highlight><highlight class="comment">//<sp/>OTP_PROG<sp/>//<sp/>Set<sp/><sp/>to<sp/><sp/>0xBD<sp/><sp/>to<sp/><sp/>enable<sp/><sp/>programming.<sp/><sp/>A<sp/><sp/>programming<sp/>time<sp/>of<sp/><sp/>minimum<sp/>10ms<sp/>per<sp/>bit<sp/>is<sp/><sp/>recommended<sp/>(check<sp/>by<sp/>reading<sp/>OTP_READ).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC2225__Fields_8h_1aa1f0dc451162b9e72671d703e4b759da" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTPMAGIC_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC2225__Fields_8h_1ac4240bffaf4edda68fb7b296ff630398" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTP0_BYTE_0_READ_DATA_MASK<sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>OTP_READ<sp/>//<sp/>to<sp/>be<sp/>detailed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC2225__Fields_8h_1af4f255435b40fea402c68a358c6cc01e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTP0_BYTE_0_READ_DATA_SHIFT<sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="TMC2225__Fields_8h_1a3e94e83778308fafad14aca18e6a9deb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTP1_BYTE_1_READ_DATA_MASK<sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>OTP_READ<sp/>//<sp/>to<sp/>be<sp/>detailed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC2225__Fields_8h_1abb717bf481a05557f32d3ec11174dfbb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTP1_BYTE_1_READ_DATA_SHIFT<sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC2225__Fields_8h_1aa662dec4a38f1ac64f2bb3e321208f9d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTP2_BYTE_2_READ_DATA_MASK<sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>OTP_READ<sp/>//<sp/>to<sp/>be<sp/>detailed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC2225__Fields_8h_1a350cd30d279b9a22a624721c00aef4b9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTP2_BYTE_2_READ_DATA_SHIFT<sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC2225__Fields_8h_1ade741f3a7ad0790b61435823b0bc1c09" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_ENN_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC2225__Fields_8h_1a1202c1e79bb5c0bb0ea379765f0896a5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_ENN_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="TMC2225__Fields_8h_1ae556a9a0cf6018ec16070201ce1f1190" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MS1_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC2225__Fields_8h_1ab7e345eb353c20998c3427c0c1102c2d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MS1_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC2225__Fields_8h_1af0bccf589b0a9f70b9d3f55cb4758090" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MS2_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC2225__Fields_8h_1abf238a5ee4f1d47d0b7f4ae068a20ce7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MS2_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC2225__Fields_8h_1a4b5402612c29f09f2c86486ab4657be9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DIAG_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC2225__Fields_8h_1aee2b2dba04abab8c2a2a100b6fadc64a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DIAG_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC2225__Fields_8h_1aad015e8a4c938588089d9f49608bfb35" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PDN_UART_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC2225__Fields_8h_1a8b0aca818e0ac859d5a8d5669657a17a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PDN_UART_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC2225__Fields_8h_1a48e3abe0762550fcedf197ce7c981dbe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_STEP_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC2225__Fields_8h_1a00bf11916601079e204d7574ee76015f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_STEP_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="TMC2225__Fields_8h_1a5701ba8d198dce76efd87510ffa27778" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_SEL_A_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0100<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>Driver<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="TMC2225__Fields_8h_1ad6ccb053051240633c2cbc64edc91142" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_SEL_A_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="TMC2225__Fields_8h_1a9e9ee4f0d86b31eb103ae3aaa8189f6c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DIR_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0200<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="TMC2225__Fields_8h_1ac670b4dc2526ad1d0ab338cd7529eb7b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DIR_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="TMC2225__Fields_8h_1a126aa3e402deec0ae538214f143d1845" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_VERSION_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF000000<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>VERSION:<sp/>0x20=first<sp/>version<sp/>of<sp/>the<sp/>IC<sp/>Identical<sp/>numbers<sp/>mean<sp/>full<sp/>digital<sp/>compatibility.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="TMC2225__Fields_8h_1a2094c77b8ab54e0ccd90e8c7f837e49e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_VERSION_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>24<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="TMC2225__Fields_8h_1abf12054b06a58553c101bdaf1a2ffdf0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_FCLKTRIM_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1F<sp/></highlight><highlight class="comment">//<sp/>FACTORY_CONF<sp/>//<sp/>FCLKTRIM<sp/>(Reset<sp/>default:<sp/>OTP)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0-31:<sp/><sp/>Lowest<sp/><sp/>to<sp/><sp/>highest<sp/><sp/>clock<sp/><sp/>frequency.<sp/><sp/>Check<sp/><sp/>at<sp/><sp/>charge<sp/><sp/>pump<sp/><sp/>output.<sp/><sp/>The<sp/><sp/>frequency<sp/><sp/>span<sp/><sp/>is<sp/><sp/>not<sp/><sp/>guaranteed,<sp/><sp/>but<sp/><sp/>it<sp/><sp/>is<sp/><sp/>tested,<sp/><sp/>that<sp/><sp/>tuning<sp/><sp/>to<sp/><sp/>12MHz<sp/><sp/>internal<sp/><sp/>clock<sp/><sp/>is<sp/><sp/>possible.<sp/><sp/>The<sp/><sp/>devices<sp/><sp/>come<sp/><sp/>preset<sp/><sp/>to<sp/><sp/>12MHz<sp/>clock<sp/>frequency<sp/>by<sp/>OTP<sp/>programming.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="TMC2225__Fields_8h_1a356a864168da7613a40f7370965960a3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_FCLKTRIM_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>31,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="TMC2225__Fields_8h_1af533d21a299f0ebe3d0bc705778620fb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTTRIM_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30<sp/></highlight><highlight class="comment">//<sp/>FACTORY_CONF<sp/>//<sp/>OTTRIM<sp/>(Default:<sp/>OTP)<sp/>%00:<sp/><sp/><sp/>OT=143°C,<sp/>OTPW=120°C<sp/>%01:<sp/><sp/>OT=150°C,<sp/>OTPW=120°C<sp/>%10:<sp/><sp/>OT=150°C,<sp/>OTPW=143°C<sp/>%11:<sp/><sp/>OT=157°C,<sp/>OTPW=143°C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="TMC2225__Fields_8h_1ae39abff94fcfc78278bf536028e462ee" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTTRIM_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="TMC2225__Fields_8h_1a0b18fb0e3cec0ecf7bac72c4f5f562c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_IHOLD_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1F<sp/></highlight><highlight class="comment">//<sp/>IHOLD_IRUN<sp/>//<sp/>IHOLD<sp/>(Reset<sp/>default:<sp/>OTP)<sp/>Standstill<sp/>current<sp/>(0=1/32...31=32/32)<sp/>In<sp/><sp/>combination<sp/><sp/>with<sp/><sp/>stealthChop<sp/><sp/>mode,<sp/><sp/>setting<sp/><sp/>IHOLD=0<sp/><sp/>allows<sp/><sp/>to<sp/><sp/>choose<sp/><sp/>freewheeling<sp/><sp/>or<sp/><sp/>coil<sp/><sp/>short<sp/>circuit<sp/>(passive<sp/>braking)<sp/>for<sp/>motor<sp/>stand<sp/>still.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="TMC2225__Fields_8h_1a3e63f1b8ca0bf71e49e9e0904a6c094c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_IHOLD_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>31,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="TMC2225__Fields_8h_1af1d8563fd01689014a62251658e5e95f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_IRUN_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1F00<sp/></highlight><highlight class="comment">//<sp/>IHOLD_IRUN<sp/>//<sp/>IRUN<sp/>(Reset<sp/>default=31)<sp/>Motor<sp/>run<sp/>current<sp/>(0=1/32...31=32/32)<sp/>Hint:<sp/><sp/>Choose<sp/><sp/>sense<sp/><sp/>resistors<sp/><sp/>in<sp/><sp/>a<sp/><sp/>way,<sp/><sp/>that<sp/><sp/>normal<sp/><sp/>IRUN<sp/>is<sp/>16<sp/>to<sp/>31<sp/>for<sp/>best<sp/>microstep<sp/>performance.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="TMC2225__Fields_8h_1a7eea00f3b472f65fd3aaa2d5b294c3dc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_IRUN_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>31,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="TMC2225__Fields_8h_1a96571893f9e4308c750d13c343ce589c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_IHOLDDELAY_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F0000<sp/></highlight><highlight class="comment">//<sp/>IHOLD_IRUN<sp/>//<sp/>IHOLDDELAY<sp/>(Reset<sp/>default:<sp/>OTP)<sp/>Controls<sp/><sp/>the<sp/><sp/>number<sp/><sp/>of<sp/><sp/>clock<sp/><sp/>cycles<sp/><sp/>for<sp/><sp/>motor<sp/><sp/>power<sp/>down<sp/>after<sp/>standstill<sp/>is<sp/>detected<sp/>(stst=1)<sp/>and<sp/><sp/>TPOWERDOWN<sp/><sp/>has<sp/><sp/>expired.<sp/><sp/>The<sp/><sp/>smooth<sp/><sp/>transition<sp/><sp/>avoids<sp/>a<sp/>motor<sp/>jerk<sp/>upon<sp/>power<sp/>down.<sp/>0:<sp/><sp/><sp/>instant<sp/>power<sp/>down<sp/>1..15:<sp/><sp/><sp/>Delay<sp/>per<sp/>current<sp/>reduction<sp/>step<sp/>in<sp/>multiple<sp/><sp/>of<sp/>2^18<sp/>clocks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="TMC2225__Fields_8h_1a4ef136794a603246aa12641c6252eb0e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_IHOLDDELAY_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>15,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="TMC2225__Fields_8h_1a2999c1aa1393831e6107ac1ce332f0e7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TPOWERDOWN_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>TPOWERDOWN<sp/>//<sp/>(Reset<sp/>default=20)<sp/>Sets<sp/><sp/>the<sp/><sp/>delay<sp/><sp/>time<sp/><sp/>from<sp/><sp/>stand<sp/><sp/>still<sp/><sp/>(stst)<sp/><sp/>detection<sp/><sp/>to<sp/><sp/>motor<sp/>current<sp/>power<sp/>down.<sp/>Time<sp/>range<sp/>is<sp/>about<sp/>0<sp/>to<sp/>5.6<sp/>seconds.<sp/><sp/>0...((2^8)-1)<sp/>*<sp/>2^18<sp/>tclk<sp/>Attention:<sp/><sp/>A<sp/><sp/>minimum<sp/><sp/>setting<sp/><sp/>of<sp/><sp/>2<sp/><sp/>is<sp/><sp/>required<sp/><sp/>to<sp/><sp/>allow<sp/>automatic<sp/>tuning<sp/>of<sp/>stealthChop<sp/>PWM_OFFS_AUTO.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="TMC2225__Fields_8h_1a373b65fcf95417eaf347b7d603535497" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TPOWERDOWN_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="TMC2225__Fields_8h_1a7f04547fec81e03fb59c304d13d603d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TSTEP_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0FFFFF<sp/></highlight><highlight class="comment">//<sp/>TSTEP<sp/>//<sp/>Actual<sp/><sp/>measured<sp/><sp/>time<sp/><sp/>between<sp/><sp/>two<sp/><sp/>1/256<sp/><sp/>microsteps<sp/><sp/>derived<sp/><sp/>from<sp/><sp/>the<sp/><sp/>step<sp/><sp/>input<sp/><sp/>frequency<sp/><sp/>in<sp/><sp/>units<sp/><sp/>of<sp/><sp/>1/fCLK.<sp/><sp/>Measured<sp/><sp/>value<sp/>is<sp/>(2^20)-1<sp/>in<sp/>case<sp/>of<sp/>overflow<sp/>or<sp/>stand<sp/>still.<sp/><sp/>The<sp/><sp/>TSTEP<sp/><sp/>related<sp/><sp/>threshold<sp/><sp/>uses<sp/><sp/>a<sp/><sp/>hysteresis<sp/><sp/>of<sp/><sp/>1/16<sp/><sp/>of<sp/><sp/>the<sp/><sp/>compare<sp/>value<sp/>to<sp/>compensate<sp/>for<sp/>jitter<sp/>in<sp/>the<sp/>clock<sp/>or<sp/>the<sp/>step<sp/><sp/>frequency:<sp/><sp/>(Txxx*15/16)-1<sp/><sp/>is<sp/><sp/>the<sp/><sp/>lower<sp/><sp/>compare<sp/><sp/>value<sp/><sp/>for<sp/><sp/>each<sp/><sp/>TSTEP<sp/>based<sp/>comparison.<sp/>This<sp/><sp/>means,<sp/><sp/>that<sp/><sp/>the<sp/><sp/>lower<sp/><sp/>switching<sp/><sp/>velocity<sp/><sp/>equals<sp/><sp/>the<sp/><sp/>calculated<sp/>setting,<sp/>but<sp/>the<sp/>upper<sp/>switching<sp/>velocity<sp/>is<sp/>higher<sp/>as<sp/><sp/>defined<sp/>by<sp/>the<sp/>hysteresis<sp/>setting.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="TMC2225__Fields_8h_1aaaf0db70a824fb8884d1caca9f3a6c67" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TSTEP_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1048575,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="TMC2225__Fields_8h_1a53e056bda178850aa290c01a5cc088db" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TPWMTHRS_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0FFFFF<sp/></highlight><highlight class="comment">//<sp/>TPWMTHRS<sp/>//<sp/>Sets<sp/>the<sp/>upper<sp/>velocity<sp/>for<sp/>stealthChop<sp/>voltage<sp/>PWM<sp/>mode.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>For<sp/>TSTEP<sp/>=<sp/>TPWMTHRS,<sp/>stealthChop<sp/>PWM<sp/>mode<sp/>is<sp/>enabled,<sp/>if<sp/>configured.<sp/>When<sp/><sp/>the<sp/><sp/>velocity<sp/><sp/>exceeds<sp/><sp/>the<sp/><sp/>limit<sp/><sp/>set<sp/><sp/>by<sp/><sp/>TPWMTHRS,<sp/><sp/>the<sp/><sp/>driver<sp/>switches<sp/>to<sp/>spreadCycle.<sp/>0<sp/>=<sp/>Disabled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="TMC2225__Fields_8h_1a8454db1be5145c264cd7e5ae5b9b1e20" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TPWMTHRS_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1048575,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="TMC2225__Fields_8h_1afcfa2055f4284c45ee4dda95a8ce7e0c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_VACTUAL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFFFFFF<sp/></highlight><highlight class="comment">//<sp/>VACTUAL<sp/>//<sp/>VACTUAL<sp/>allows<sp/>moving<sp/>the<sp/>motor<sp/>by<sp/>UART<sp/>control.<sp/>It<sp/>gives<sp/>the<sp/>motor<sp/>velocity<sp/>in<sp/>+-(2^23)-1<sp/>[µsteps<sp/>/<sp/>t]<sp/>0:<sp/>Normal<sp/>operation.<sp/>Driver<sp/>reacts<sp/>to<sp/>STEP<sp/>input.<sp/>/=0:<sp/><sp/>Motor<sp/><sp/>moves<sp/><sp/>with<sp/><sp/>the<sp/><sp/>velocity<sp/><sp/>given<sp/><sp/>by<sp/><sp/>VACTUAL.<sp/><sp/>Step<sp/><sp/>pulses<sp/><sp/>can<sp/><sp/>be<sp/><sp/>monitored<sp/><sp/>via<sp/><sp/>INDEX<sp/><sp/>output.<sp/><sp/>The<sp/><sp/>motor<sp/><sp/>direction<sp/>is<sp/>controlled<sp/>by<sp/>the<sp/>sign<sp/>of<sp/>VACTUAL.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="TMC2225__Fields_8h_1a0eba65689dbe14dd7a0edf4796c40494" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_VACTUAL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>-8388608,<sp/>max.:<sp/>8388607,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="TMC2225__Fields_8h_1a68171b4489136499f2b1128917151691" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MSCNT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x03FF<sp/></highlight><highlight class="comment">//<sp/>MSCNT<sp/>//<sp/>Microstep<sp/><sp/>counter.<sp/><sp/>Indicates<sp/><sp/>actual<sp/><sp/>position<sp/>in<sp/>the<sp/>microstep<sp/>table<sp/>for<sp/><sp/>CUR_A.<sp/><sp/>CUR_B<sp/><sp/>uses<sp/>an<sp/><sp/>offset<sp/><sp/>of<sp/><sp/>256<sp/><sp/>into<sp/><sp/>the<sp/><sp/>table.<sp/><sp/>Reading<sp/><sp/>out<sp/>MSCNT<sp/><sp/>allows<sp/><sp/>determination<sp/><sp/>of<sp/><sp/>the<sp/><sp/>motor<sp/>position<sp/>within<sp/>the<sp/>electrical<sp/>wave.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="TMC2225__Fields_8h_1a58b71d897955603dd9dcf03ae422e58c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MSCNT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1023,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="TMC2225__Fields_8h_1aad4f015de2c1ef6aac5cfc5484a5a992" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_CUR_A_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01FF<sp/></highlight><highlight class="comment">//<sp/>MSCURACT<sp/>//<sp/>(signed)<sp/>Actual<sp/><sp/>microstep<sp/>current<sp/>for<sp/>motor<sp/>phase<sp/><sp/>A<sp/><sp/>as<sp/><sp/>read<sp/><sp/>from<sp/><sp/>the<sp/>internal<sp/><sp/>sine<sp/><sp/>wave<sp/><sp/>table<sp/><sp/>(not<sp/>scaled<sp/>by<sp/>current<sp/>setting)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="TMC2225__Fields_8h_1ae97cdc2c8461ac178742287338039446" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_CUR_A_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>-255,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="TMC2225__Fields_8h_1a38db09434f3a64239e7dc8b2e3b505f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_CUR_B_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01FF0000<sp/></highlight><highlight class="comment">//<sp/>MSCURACT<sp/>//<sp/>(signed)<sp/>Actual<sp/><sp/>microstep<sp/>current<sp/>for<sp/>motor<sp/>phase<sp/><sp/>B<sp/><sp/>as<sp/><sp/>read<sp/><sp/>from<sp/><sp/>the<sp/>internal<sp/><sp/>sine<sp/><sp/>wave<sp/><sp/>table<sp/><sp/>(not<sp/>scaled<sp/>by<sp/>current<sp/>setting)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="TMC2225__Fields_8h_1ab83f43595cc34f0db9e1921f21b7ee0e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_CUR_B_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>-255,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="TMC2225__Fields_8h_1a76c6f7e698b038269f3a0457a317ab8f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TOFF_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>chopper<sp/>off<sp/>time<sp/>and<sp/>driver<sp/>enable,<sp/>Off<sp/>time<sp/>setting<sp/>controls<sp/>duration<sp/>of<sp/>slow<sp/>decay<sp/>phase<sp/>(Nclk<sp/>=<sp/>12<sp/>+<sp/>32*Toff),<sp/><sp/>%0000:<sp/>Driver<sp/>disable,<sp/>all<sp/>bridges<sp/>off<sp/>%0001:<sp/>1<sp/>-<sp/>use<sp/>only<sp/>with<sp/>TBL<sp/>=<sp/>2<sp/>%0010<sp/>...<sp/>%1111:<sp/>2<sp/>-<sp/>15<sp/>(Default:<sp/>OTP,<sp/>resp.<sp/>3<sp/>in<sp/>stealthChop<sp/>mode)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="TMC2225__Fields_8h_1ae6fee1ef82af0cb7a71aa1b9c6338c5d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TOFF_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>7,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="TMC2225__Fields_8h_1a4437b07fe33a9211e2d2fe9b7a33a062" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_HSTRT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x70<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>hysteresis<sp/>start<sp/>value<sp/>added<sp/>to<sp/>HEND,<sp/>%000<sp/>-<sp/>%111:<sp/>Add<sp/>1,<sp/>2,<sp/>...,<sp/>8<sp/>to<sp/>hysteresis<sp/>low<sp/>value<sp/>HEND<sp/>(1/512<sp/>of<sp/>this<sp/>setting<sp/>adds<sp/>to<sp/>current<sp/>setting)<sp/>Attention:<sp/>Effective<sp/>HEND+HSTRT<sp/>&lt;=<sp/>16.<sp/>Hint:<sp/>Hysteresis<sp/>decrement<sp/>is<sp/>done<sp/>each<sp/>16<sp/>clocks.<sp/>(Default:<sp/>OTP,<sp/>resp.<sp/>0<sp/>in<sp/>stealthChop<sp/>mode)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="TMC2225__Fields_8h_1a6f23c991813d6aa44bd92aa69dc83d64" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_HSTRT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>7,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="TMC2225__Fields_8h_1aae72e87b4432dc974ac76bbaec370615" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_HEND_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0780<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>hysteresis<sp/>low<sp/>value<sp/>OFFSET<sp/>sine<sp/>wave<sp/>offset,<sp/>%0000<sp/>-<sp/>%1111:<sp/>Hysteresis<sp/>is<sp/>-3,<sp/>-2,<sp/>-1,<sp/>0,<sp/>1,<sp/>...,<sp/>12<sp/>(1/512<sp/>of<sp/>this<sp/>setting<sp/>adds<sp/>to<sp/>current<sp/>setting)<sp/>This<sp/>is<sp/>the<sp/>hysteresis<sp/>value<sp/>which<sp/>becomes<sp/>used<sp/>for<sp/>the<sp/>hysteresis<sp/>chopper.<sp/>(Default:<sp/>OTP,<sp/>resp.<sp/>5<sp/>in<sp/>stealthChop<sp/>mode)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="TMC2225__Fields_8h_1a3094b26993fc84f1fe82e4b99857911c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_HEND_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="TMC2225__Fields_8h_1aa7f3021b576a6501dce3bd1f26707051" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TBL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x018000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>blank<sp/>time<sp/>select,<sp/>%00<sp/>-<sp/>%11:<sp/>Set<sp/>comparator<sp/>blank<sp/>time<sp/>to<sp/>16,<sp/>24,<sp/>32<sp/>or<sp/>40<sp/>clocks<sp/>Hint:<sp/>%00<sp/>or<sp/>%01<sp/>is<sp/>recommended<sp/>for<sp/>most<sp/>applications<sp/>(Default:<sp/>OTP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="TMC2225__Fields_8h_1a47a5354d6b4ed7964cea82b88fdff0a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_TBL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>15<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="TMC2225__Fields_8h_1aab316a3cf979d6ce3171e3218610c319" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_VSENSE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x020000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>sense<sp/>resistor<sp/>voltage<sp/>based<sp/>current<sp/>scaling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="TMC2225__Fields_8h_1a6133e1bf988951232cf7514412ec7ecb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_VSENSE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>17<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="TMC2225__Fields_8h_1aa265e7e081b6092f358c0c1bdfa04405" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MRES_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>MRES<sp/>micro<sp/>step<sp/>resolution,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%0000:<sp/>Native<sp/>256<sp/>microstep<sp/>setting.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%0001<sp/>-<sp/>%1000:<sp/>128,<sp/>64,<sp/>32,<sp/>16,<sp/>8,<sp/>4,<sp/>2,<sp/>FULLSTEP:<sp/>Reduced<sp/>microstep<sp/>resolution.<sp/><sp/>The<sp/><sp/>resolution<sp/><sp/>gives<sp/><sp/>the<sp/><sp/>number<sp/><sp/>of<sp/><sp/>microstep<sp/><sp/>entries<sp/><sp/>per<sp/>sine<sp/>quarter<sp/>wave.<sp/>When<sp/><sp/>choosing<sp/><sp/>a<sp/><sp/>lower<sp/><sp/>microstep<sp/><sp/>resolution,<sp/><sp/>the<sp/><sp/>driver<sp/>automatically<sp/><sp/>uses<sp/><sp/>microstep<sp/><sp/>positions<sp/><sp/>which<sp/><sp/>result<sp/><sp/>in<sp/><sp/>a<sp/>symmetrical<sp/>wave.<sp/>Number<sp/>of<sp/>microsteps<sp/>per<sp/>step<sp/>pulse<sp/>=<sp/>2^MRES<sp/>(Selection<sp/><sp/>by<sp/><sp/>pins<sp/><sp/>unless<sp/><sp/>disabled<sp/><sp/>by<sp/><sp/>GCONF.<sp/>mstep_reg_select)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="TMC2225__Fields_8h_1a3fa426efc1541a0adf7894878c9fa651" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_MRES_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>24<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="TMC2225__Fields_8h_1a64f5df1d488a75997c2254d8abea182b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_INTPOL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>interpolation<sp/>to<sp/>256<sp/>microsteps</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="TMC2225__Fields_8h_1a210a5ba6766f7bfaa72ee62a9d0f3b9d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_INTPOL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>28<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="TMC2225__Fields_8h_1a51edf4321f5bb90e68d821618a6b52d4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DEDGE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>enable<sp/>double<sp/>edge<sp/>step<sp/>pulses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="TMC2225__Fields_8h_1ab6ed767440794ac7f4ba80797b16ffd4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DEDGE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>29<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="TMC2225__Fields_8h_1a3d870cd641b541a7d0c7c3b90000b2c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DISS2G_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>short<sp/>to<sp/>GND<sp/>protection<sp/>disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="TMC2225__Fields_8h_1a623f65c33850d70a0b081d74eb32b8ca" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DISS2G_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>30<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="TMC2225__Fields_8h_1a70b3a4f6321eb8eb35c00afc329f575d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DISS2VS_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>Low<sp/>side<sp/>short<sp/>protection<sp/>disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="TMC2225__Fields_8h_1a78e4cf570a8c6030ba8d5ded0f4f8a43" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_DISS2VS_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>31<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="TMC2225__Fields_8h_1a110e356ec7263bc40e0abf9437e59014" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTPW_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>overtemperature<sp/>prewarning<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="TMC2225__Fields_8h_1a93bb5ba995dc186ac719ee63c3bee701" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OTPW_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="TMC2225__Fields_8h_1a0f051bf7ce13d21a5a364600f4b9dc4a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>overtemperature<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="TMC2225__Fields_8h_1a0ebd5a090e7f1dfe6b0b525751092e36" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OT_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="TMC2225__Fields_8h_1a631c291b037dcac383f4aa4e5f6143b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_S2GA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>short<sp/>to<sp/>ground<sp/>indicator<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="TMC2225__Fields_8h_1a2d9c93959c0271db0ef5eff3466429b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_S2GA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="TMC2225__Fields_8h_1afac615b56123eb4acd84a82c3ae584da" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_S2GB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>short<sp/>to<sp/>ground<sp/>indicator<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="TMC2225__Fields_8h_1aa3bf56ed283bf5e87b674aa789bfd0ea" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_S2GB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="TMC2225__Fields_8h_1a58347c4e4a30bdb86bc377ae5c721bd9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_S2VSA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>low<sp/>side<sp/>short<sp/>indicator<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="TMC2225__Fields_8h_1afd8f7243b0d526ac799e5eaa20d2a0ad" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_S2VSA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="TMC2225__Fields_8h_1a9c3a6210b920f3a62c16c6ba3012aa91" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_S2VSB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>low<sp/>side<sp/>short<sp/>indicator<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="TMC2225__Fields_8h_1a7daf45a43f7fd17b43f821b5842e4865" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_S2VSB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="TMC2225__Fields_8h_1aa4fb7135bf0206be28b8f9d8463941b8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OLA_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>open<sp/>load<sp/>indicator<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="TMC2225__Fields_8h_1a84eeeeb801ab134dc9d36c0b4a069956" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OLA_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="TMC2225__Fields_8h_1a1def0c76074be63f4f5da1fae4ec12b9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OLB_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>open<sp/>load<sp/>indicator<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="TMC2225__Fields_8h_1ac6977ef169d2f827ee311486e088b210" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_OLB_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="TMC2225__Fields_8h_1ab0052dcfc7c3bafa4a6531df66c4f64f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_T120_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0100<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>120°C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="TMC2225__Fields_8h_1a55517ca18d171b7f0e8565de74f011a4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_T120_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="TMC2225__Fields_8h_1a4fcf7d90211c41b95f1d323cee746108" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_T143_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0200<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>143°C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="TMC2225__Fields_8h_1a59371a3fffc0937e99035ed9d39c7085" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_T143_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="TMC2225__Fields_8h_1aaf7283999d12caaca83f14195ac50921" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_T150_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0400<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>150°C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="TMC2225__Fields_8h_1a201ce4c9fe6ce8cf9db941a6071ec9d6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_T150_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="TMC2225__Fields_8h_1ab0f23bd17f279a534dd1d6dbed00dd98" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_T157_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0800<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>157°C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="TMC2225__Fields_8h_1aa1070391ac2cf81691949b54a8ae63d0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_T157_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="TMC2225__Fields_8h_1abb83b41322af2498d23a435b0db87edc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_CS_ACTUAL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1F0000<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>actual<sp/>motor<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="TMC2225__Fields_8h_1a19fe0b035f8cce45043f5e6b4fe360ff" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_CS_ACTUAL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>31,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="TMC2225__Fields_8h_1ad33b0faae131e739b18a05f519b50e4c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_STEALTH_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40000000<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>stealthChop<sp/>indicator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="TMC2225__Fields_8h_1a8168a3aa905f8c24a3a6a36d7e854eae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_STEALTH_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>30<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="TMC2225__Fields_8h_1afdcb73c49417a50c5685cb370442dcc2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_STST_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80000000<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>standstill<sp/>indicator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="TMC2225__Fields_8h_1a466b5474f8d0c9cbf2a761c97ee4b0ec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_STST_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>31<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="TMC2225__Fields_8h_1aba69dc916d2e5336ae546d8b9e8e1ce1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_OFS_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>User<sp/>defined<sp/>PWM<sp/>amplitude<sp/>offset<sp/>(0-255)<sp/>related<sp/>to<sp/>full<sp/>motor<sp/>current<sp/>(CS_ACTUAL=31)<sp/>in<sp/>stand<sp/>still.<sp/>(Reset<sp/>default=36)<sp/>When<sp/><sp/>using<sp/><sp/>automatic<sp/><sp/>scaling<sp/><sp/>(pwm_autoscale=1)<sp/><sp/>the<sp/><sp/>value<sp/><sp/>is<sp/><sp/>used<sp/><sp/>for<sp/><sp/>initialization,<sp/><sp/>only.<sp/><sp/>The<sp/><sp/>autoscale<sp/><sp/>function<sp/><sp/>starts<sp/><sp/>with<sp/><sp/>PWM_SCALE_AUTO=PWM_OFS<sp/><sp/>and<sp/>finds<sp/><sp/>the<sp/><sp/>required<sp/><sp/>offset<sp/><sp/>to<sp/><sp/>yield<sp/><sp/>the<sp/><sp/>target<sp/><sp/>current<sp/><sp/>automatically.<sp/>PWM_OFS<sp/><sp/>=<sp/><sp/>0<sp/><sp/>will<sp/><sp/>disable<sp/><sp/>scaling<sp/><sp/>down<sp/><sp/>motor<sp/><sp/>current<sp/>below<sp/><sp/>a<sp/><sp/>motor<sp/><sp/>specific<sp/><sp/>lower<sp/><sp/>measurement<sp/><sp/>threshold.<sp/>This<sp/><sp/>setting<sp/><sp/>should<sp/><sp/>only<sp/><sp/>be<sp/><sp/>used<sp/><sp/>under<sp/><sp/>certain<sp/><sp/>conditions,<sp/>i.e.<sp/><sp/>when<sp/>the<sp/>power<sp/>supply<sp/>voltage<sp/>can<sp/>vary<sp/><sp/>up<sp/><sp/>and<sp/><sp/>down<sp/><sp/>by<sp/><sp/>a<sp/><sp/>factor<sp/><sp/>of<sp/><sp/>two<sp/><sp/>or<sp/><sp/>more.<sp/><sp/>It<sp/><sp/>prevents<sp/>the<sp/><sp/>motor<sp/><sp/>going<sp/><sp/>out<sp/><sp/>of<sp/><sp/>regulation,<sp/><sp/>but<sp/><sp/>it<sp/><sp/>also<sp/><sp/>prevents<sp/><sp/>power<sp/>down<sp/>below<sp/>the<sp/>regulation<sp/>limit.<sp/>PWM_OFS<sp/>&gt;<sp/>0<sp/>allows<sp/>automatic<sp/>scaling<sp/>to<sp/>low<sp/>PWM<sp/>duty<sp/><sp/>cycles<sp/><sp/>even<sp/><sp/>below<sp/><sp/>the<sp/><sp/>lower<sp/><sp/>regulation<sp/><sp/>threshold.<sp/><sp/>This<sp/><sp/>allows<sp/><sp/>low<sp/><sp/>(standstill)<sp/><sp/>current<sp/><sp/>settings<sp/><sp/>based<sp/><sp/>on<sp/><sp/>the<sp/><sp/>actual<sp/>(hold)<sp/>current<sp/>scale<sp/>(register<sp/>IHOLD_IRUN).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="TMC2225__Fields_8h_1ad1911976dde735128c35d503c929c407" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_OFS_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="TMC2225__Fields_8h_1ae27431a5604c9c8b02c7ad4b174d2a94" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_GRAD_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF00<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>Velocity<sp/>dependent<sp/>gradient<sp/>for<sp/>PWM<sp/>amplitude:<sp/><sp/>PWM_GRAD<sp/>*<sp/>256<sp/>/<sp/>TSTEP<sp/>This<sp/><sp/>value<sp/><sp/>is<sp/><sp/>added<sp/><sp/>to<sp/><sp/>PWM_AMPL<sp/><sp/>to<sp/><sp/>compensate<sp/><sp/>for<sp/><sp/>the<sp/>velocity-dependent<sp/>motor<sp/>back-EMF.<sp/><sp/>With<sp/><sp/>automatic<sp/><sp/>scaling<sp/><sp/>(pwm_autoscale=1)<sp/><sp/>the<sp/><sp/>value<sp/><sp/>is<sp/><sp/>used<sp/><sp/>for<sp/><sp/>first<sp/><sp/>initialization,<sp/><sp/>only.<sp/><sp/>Set<sp/><sp/>PWM_GRAD<sp/><sp/>to<sp/><sp/>the<sp/><sp/>application<sp/><sp/>specific<sp/><sp/>value<sp/><sp/>(it<sp/><sp/>can<sp/><sp/>be<sp/><sp/>read<sp/><sp/>out<sp/><sp/>from<sp/><sp/>PWM_GRAD_AUTO)<sp/><sp/>to<sp/><sp/>speed<sp/><sp/>up<sp/><sp/>the<sp/><sp/>automatic<sp/><sp/>tuning<sp/><sp/>process.<sp/><sp/>An<sp/><sp/>approximate<sp/><sp/>value<sp/>can<sp/>be<sp/>stored<sp/>to<sp/><sp/>OTP<sp/><sp/>by<sp/><sp/>programming<sp/>OTP_PWM_GRAD.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="TMC2225__Fields_8h_1aaacb69c72376b15f075a7178b228e275" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_GRAD_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="TMC2225__Fields_8h_1a6e8780dc09d1c0f8e13385c2ccd40a18" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_FREQ_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x030000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>%00:<sp/><sp/><sp/>fPWM=2/1024<sp/>fCLK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%01:<sp/><sp/><sp/>fPWM=2/683<sp/>fCLK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%10:<sp/><sp/><sp/>fPWM=2/512<sp/>fCLK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%11:<sp/><sp/><sp/>fPWM=2/410<sp/>fCLK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="TMC2225__Fields_8h_1afc81b26ba4759a412cae4d37969c2879" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_FREQ_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="TMC2225__Fields_8h_1ae5790fcd6c976ee7a88124686474b232" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_AUTOSCALE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x040000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="TMC2225__Fields_8h_1a8d134ddcb93c03ac1b7bcfa3d562fe31" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_AUTOSCALE_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="TMC2225__Fields_8h_1ad4f43fa0fd891658bc918a063c542ed5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_AUTOGRAD_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x080000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="TMC2225__Fields_8h_1a6a473aef65193d1fbbb48ea179cc2435" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_AUTOGRAD_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>19<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>1,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="TMC2225__Fields_8h_1a2f158d9ef87a07b6154cb6c42aa08e9b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_FREEWHEEL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x300000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>Stand<sp/>still<sp/>option<sp/>when<sp/>motor<sp/>current<sp/>setting<sp/>is<sp/>zero<sp/>(I_HOLD=0).<sp/><sp/>%00:<sp/><sp/><sp/>Normal<sp/>operation<sp/>%01:<sp/><sp/><sp/>Freewheeling<sp/>%10:<sp/><sp/><sp/>Coil<sp/>shorted<sp/>using<sp/>LS<sp/>drivers<sp/>%11:<sp/><sp/><sp/>Coil<sp/>shorted<sp/>using<sp/>HS<sp/>drivers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="TMC2225__Fields_8h_1afbd37f105518656ece120ccb2468161a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_FREEWHEEL_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>20<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>3,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="TMC2225__Fields_8h_1ab2921585a88b628ec5f224cb81738a65" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_REG_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F000000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>User<sp/>defined<sp/><sp/>maximum<sp/><sp/>PWM<sp/>amplitude<sp/><sp/>change<sp/>per<sp/><sp/>half<sp/><sp/>wave<sp/>when<sp/>using<sp/>pwm_autoscale=1.<sp/>(1...15):<sp/>1:<sp/>0.5<sp/>increments<sp/>(slowest<sp/>regulation)<sp/>2:<sp/>1<sp/>increment<sp/>(default<sp/>with<sp/>OTP2.1=1)<sp/>3:<sp/>1.5<sp/>increments<sp/>4:<sp/>2<sp/>increments<sp/>...<sp/>8:<sp/>4<sp/>increments<sp/>(default<sp/>with<sp/>OTP2.1=0)<sp/>...<sp/><sp/>15:<sp/>7.5<sp/>increments<sp/>(fastest<sp/>regulation)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="TMC2225__Fields_8h_1a4a1a1baf6a673a5e9550bae9e4775e53" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_REG_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>24<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>25,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="TMC2225__Fields_8h_1a435eb60b5c54ee9922fe3f4f921b9817" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_LIM_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xF0000000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>Limit<sp/><sp/>for<sp/><sp/>PWM_SCALE_AUTO<sp/><sp/>when<sp/><sp/>switching<sp/><sp/>back<sp/><sp/>from<sp/><sp/>spreadCycle<sp/>to<sp/>stealthChop.<sp/>This<sp/>value<sp/>defines<sp/><sp/>the<sp/>upper<sp/><sp/>limit<sp/><sp/>for<sp/><sp/>bits<sp/><sp/>7<sp/><sp/>to<sp/><sp/>4<sp/><sp/>of<sp/><sp/>the<sp/><sp/>automatic<sp/><sp/>current<sp/><sp/>control<sp/><sp/>when<sp/>switching<sp/>back.<sp/>It<sp/>can<sp/>be<sp/>set<sp/>to<sp/>reduce<sp/>the<sp/>current<sp/><sp/>jerk<sp/>during<sp/>mode<sp/>change<sp/>back<sp/>to<sp/>stealthChop.<sp/>It<sp/>does<sp/>not<sp/>limit<sp/>PWM_GRAD<sp/>or<sp/>PWM_GRAD_AUTO<sp/>offset.<sp/>(Default<sp/>=<sp/>12)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="TMC2225__Fields_8h_1a90a658d4df7d386cef7086687522556b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_LIM_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>28<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>15,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="TMC2225__Fields_8h_1afd510fc053506f89d88e6fb6a789294a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_SCALE_SUM_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>PWM_SCALE<sp/>//<sp/>Actual<sp/><sp/>PWM<sp/><sp/>duty<sp/><sp/>cycle.<sp/><sp/>This<sp/>value<sp/><sp/>is<sp/><sp/>used<sp/><sp/>for<sp/><sp/>scaling<sp/><sp/>the<sp/>values<sp/><sp/>CUR_A<sp/><sp/>and<sp/><sp/>CUR_B<sp/><sp/>read<sp/>from<sp/>the<sp/>sine<sp/>wave<sp/>table.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="TMC2225__Fields_8h_1a4b28af3972677585d51b440c65aeb3db" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_SCALE_SUM_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="TMC2225__Fields_8h_1a9ae6d936c0e3f77be96fb2aff4c2637b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_SCALE_AUTO_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01FF0000<sp/></highlight><highlight class="comment">//<sp/>PWM_SCALE<sp/>//<sp/>9<sp/>Bit<sp/>signed<sp/>offset<sp/>added<sp/>to<sp/>the<sp/>calculated<sp/><sp/>PWM<sp/><sp/>duty<sp/><sp/>cycle.<sp/><sp/>This<sp/>is<sp/><sp/>the<sp/><sp/>result<sp/><sp/>of<sp/><sp/>the<sp/><sp/>automatic<sp/>amplitude<sp/><sp/>regulation<sp/><sp/>based<sp/><sp/>on<sp/>current<sp/>measurement.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="TMC2225__Fields_8h_1a20abc7ce9d9a7a6c260886cc9b554a16" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_SCALE_AUTO_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>-255,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="TMC2225__Fields_8h_1a6b2ba024238cb2239c50736612cb1c9c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_OFS_AUTO_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>PWM_AUTO<sp/>//<sp/>Automatically<sp/><sp/>determined<sp/><sp/>offset<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="TMC2225__Fields_8h_1ab841519ef3bbb7b44c7c670a788aa2bc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_OFS_AUTO_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="TMC2225__Fields_8h_1ac04b9d14b4b327805ba4538d1551487d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_GRAD_AUTO_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF0000<sp/></highlight><highlight class="comment">//<sp/>PWM_AUTO<sp/>//<sp/>Automatically<sp/><sp/>determined<sp/>gradient<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="TMC2225__Fields_8h_1a1592d5e9c81e9790048ce25d6f83c9e3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2225_PWM_GRAD_AUTO_SHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/></highlight><highlight class="comment">//<sp/>min.:<sp/>0,<sp/>max.:<sp/>255,<sp/>default:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC2225_FIELDS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2225/TMC2225_Fields.h"/>
+  </compounddef>
+</doxygen>

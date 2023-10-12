@@ -1,0 +1,661 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC5041__Register_8h" kind="file" language="C++">
+    <compoundname>TMC5041_Register.h</compoundname>
+    <includedby refid="TMC5041_8h" local="yes">TMC5041.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC5041.c</label>
+        <link refid="TMC5041_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC5041.h</label>
+        <link refid="TMC5041_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC5041_Register.h</label>
+        <link refid="TMC5041__Register_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" prot="public" static="no">
+        <name>TMC5041_MOTOR_ADDR</name>
+        <param><defname>m</defname></param>
+        <initializer>(0x20 &lt;&lt; m)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" prot="public" static="no">
+        <name>TMC5041_MOTOR_ADDR_DRV</name>
+        <param><defname>m</defname></param>
+        <initializer>(m &lt;&lt; 4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a237522941ac9f2ae38798941a46f8bf0" prot="public" static="no">
+        <name>TMC5041_MOTOR_ADDR_PWM</name>
+        <param><defname>m</defname></param>
+        <initializer>(m &lt;&lt; 3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a33ed5818442ff67e5a4a9fbe210dc519" prot="public" static="no">
+        <name>TMC5041_GCONF</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a89033032e79bd889c4df9c5ba4f502d3" prot="public" static="no">
+        <name>TMC5041_GSTAT</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a788dd7e2773ffae537a454212f03010d" prot="public" static="no">
+        <name>TMC5041_IFCNT</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a5362fa0d23fc78177e7fd52d72cf3e1d" prot="public" static="no">
+        <name>TMC5041_SLAVECONF</name>
+        <initializer>0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a73ba0aa2acea5f6b260c7754fb7200b6" prot="public" static="no">
+        <name>TMC5041_INPUT</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1ac75b1dcd99bed16725ca82eae83fe34f" prot="public" static="no">
+        <name>TMC5041_X_COMPARE</name>
+        <initializer>0x05</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1ac54e6e66e997d0fb7e8e02e60c1d31a1" prot="public" static="no">
+        <name>TMC5041_PWMCONF</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x10|<ref refid="TMC5041__Register_8h_1a237522941ac9f2ae38798941a46f8bf0" kindref="member">TMC5041_MOTOR_ADDR_PWM</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a89bc21ef498e36b7377888f555c259f4" prot="public" static="no">
+        <name>TMC5041_PWM_STATUS</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x11|<ref refid="TMC5041__Register_8h_1a237522941ac9f2ae38798941a46f8bf0" kindref="member">TMC5041_MOTOR_ADDR_PWM</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a81d40de8f7599718f0552e10d0edcea8" prot="public" static="no">
+        <name>TMC5041_RAMPMODE</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x00|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1aa7a9b182420348b14f53ae13cadbc2ac" prot="public" static="no">
+        <name>TMC5041_XACTUAL</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x01|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a1c5978da735948e7d92a54299b0c9da0" prot="public" static="no">
+        <name>TMC5041_VACTUAL</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x02|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a53a64ed172a256418d35b897ab173086" prot="public" static="no">
+        <name>TMC5041_VSTART</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x03|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1ae75116e201e4af543cd43ca3d58d4fd6" prot="public" static="no">
+        <name>TMC5041_A1</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x04|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a3478aa0f304da89ce3539af27e8bd0f5" prot="public" static="no">
+        <name>TMC5041_V1</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x05|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a6b3280fb3900d38b4083d39dbd3fbe6b" prot="public" static="no">
+        <name>TMC5041_AMAX</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x06|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1ae2b86a9c3109b81f165bef623d542a55" prot="public" static="no">
+        <name>TMC5041_VMAX</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x07|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1aaa4f6418fcb7984db957da9d98f90136" prot="public" static="no">
+        <name>TMC5041_DMAX</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x08|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a5034f6dbd4d9e57176bb52ace00f3121" prot="public" static="no">
+        <name>TMC5041_D1</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x0A|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a4b0f7063e8262f0eb0b8febbcc0a9960" prot="public" static="no">
+        <name>TMC5041_VSTOP</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x0B|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a3972920894b93cc3698f68fb8cc24c5f" prot="public" static="no">
+        <name>TMC5041_TZEROWAIT</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x0C|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a127b7dd5b6efd2f3fa9b41a5c0a30539" prot="public" static="no">
+        <name>TMC5041_XTARGET</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x0D|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a75e8c8f9b3eca1b5d4f4a9ca908e94ac" prot="public" static="no">
+        <name>TMC5041_IHOLD_IRUN</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x10|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1ac91ed9c9dcb4a6004aa632add61b9669" prot="public" static="no">
+        <name>TMC5041_VCOOLTHRS</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x11|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a9a6a11103313126732275363a87ee80e" prot="public" static="no">
+        <name>TMC5041_VHIGH</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x12|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a11c3450ac77d828f802680d74a960e9a" prot="public" static="no">
+        <name>TMC5041_VDCMIN</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x13|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="46" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a1f384851b992b8a3ac1eb21cc91237ba" prot="public" static="no">
+        <name>TMC5041_SWMODE</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x14|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a265faff52851eb1ffaa556ca877d657d" prot="public" static="no">
+        <name>TMC5041_RAMPSTAT</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x15|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1aa7b93d272f77c3946cdddc4136cc3d80" prot="public" static="no">
+        <name>TMC5041_XLATCH</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x16|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a4cef841f94235cb7ed25296c8f120929" prot="public" static="no">
+        <name>TMC5041_ENC_CONST</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x1A|<ref refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" kindref="member">TMC5041_MOTOR_ADDR</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a3838056cbe218955138f10ecb4e04ff8" prot="public" static="no">
+        <name>TMC5041_MSLUT0</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x60|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a02fb3ad0d10d87562761c1c336b67825" prot="public" static="no">
+        <name>TMC5041_MSLUT1</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x61|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a728d69279efc106adba40d030c8cf3f8" prot="public" static="no">
+        <name>TMC5041_MSLUT2</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x62|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1ac603a7ff816f5edcf1e3c1a43894408f" prot="public" static="no">
+        <name>TMC5041_MSLUT3</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x63|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1af8c8f696b33d6b26fb3afe957126f12b" prot="public" static="no">
+        <name>TMC5041_MSLUT4</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x64|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a4792d063f9fdf1ccc2540db7881fa1ce" prot="public" static="no">
+        <name>TMC5041_MSLUT5</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x65|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="58" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a929f8109ce9b9fc03cc829ad65d44f9f" prot="public" static="no">
+        <name>TMC5041_MSLUT6</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x66|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1afffe6040227c6fa24a030c0e7a57ac4e" prot="public" static="no">
+        <name>TMC5041_MSLUT7</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x67|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1ae12fab340ab5914e872a783d54929f81" prot="public" static="no">
+        <name>TMC5041_MSLUTSEL</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x68|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a0c3eb432ceb596d467f331fdf3701c09" prot="public" static="no">
+        <name>TMC5041_MSLUTSTART</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x69|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="62" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1abfd0ef2314f3956c9f50bc6cb15d3af8" prot="public" static="no">
+        <name>TMC5041_MSCNT</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x6A|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="63" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a639c6f871beaf60bf6d80454ad301730" prot="public" static="no">
+        <name>TMC5041_MSCURACT</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x6B|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="64" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a7be51130b9e7cf568bbdf1a5328256bb" prot="public" static="no">
+        <name>TMC5041_CHOPCONF</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x6C|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a519c9f4f3a24c57ecc3947dae1f549a4" prot="public" static="no">
+        <name>TMC5041_COOLCONF</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x6D|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5041__Register_8h_1a72ffd3e0e0d38f3f13261267963c00ae" prot="public" static="no">
+        <name>TMC5041_DRVSTATUS</name>
+        <param><defname>motor</defname></param>
+        <initializer>(0x6F|<ref refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" kindref="member">TMC5041_MOTOR_ADDR_DRV</ref>(motor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" line="67" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC5041_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=====<sp/>TMC5041<sp/>register<sp/>set<sp/>=====</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC5041__Register_8h_1a8826dde1d734db458e34b5e2818d75b8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MOTOR_ADDR(m)<sp/><sp/><sp/><sp/><sp/><sp/>(0x20<sp/>&lt;&lt;<sp/>m)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC5041__Register_8h_1a363f2c1402f8864f9975088e04696c95" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MOTOR_ADDR_DRV(m)<sp/><sp/>(m<sp/>&lt;&lt;<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC5041__Register_8h_1a237522941ac9f2ae38798941a46f8bf0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MOTOR_ADDR_PWM(m)<sp/><sp/>(m<sp/>&lt;&lt;<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC5041__Register_8h_1a33ed5818442ff67e5a4a9fbe210dc519" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_GCONF<sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC5041__Register_8h_1a89033032e79bd889c4df9c5ba4f502d3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_GSTAT<sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC5041__Register_8h_1a788dd7e2773ffae537a454212f03010d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_IFCNT<sp/><sp/><sp/><sp/><sp/><sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC5041__Register_8h_1a5362fa0d23fc78177e7fd52d72cf3e1d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_SLAVECONF<sp/><sp/>0x03</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC5041__Register_8h_1a73ba0aa2acea5f6b260c7754fb7200b6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_INPUT<sp/><sp/><sp/><sp/><sp/><sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC5041__Register_8h_1ac75b1dcd99bed16725ca82eae83fe34f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_X_COMPARE<sp/><sp/>0x05</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>motor<sp/>=<sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC5041__Register_8h_1ac54e6e66e997d0fb7e8e02e60c1d31a1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_PWMCONF(motor)<sp/><sp/><sp/><sp/><sp/>(0x10|TMC5041_MOTOR_ADDR_PWM(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC5041__Register_8h_1a89bc21ef498e36b7377888f555c259f4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_PWM_STATUS(motor)<sp/><sp/>(0x11|TMC5041_MOTOR_ADDR_PWM(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>motor<sp/>=<sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC5041__Register_8h_1a81d40de8f7599718f0552e10d0edcea8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_RAMPMODE(motor)<sp/><sp/><sp/><sp/>(0x00|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x20<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC5041__Register_8h_1aa7a9b182420348b14f53ae13cadbc2ac" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_XACTUAL(motor)<sp/><sp/><sp/><sp/><sp/>(0x01|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x21<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x41</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC5041__Register_8h_1a1c5978da735948e7d92a54299b0c9da0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_VACTUAL(motor)<sp/><sp/><sp/><sp/><sp/>(0x02|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x22<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x42</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC5041__Register_8h_1a53a64ed172a256418d35b897ab173086" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_VSTART(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x23<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x43</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC5041__Register_8h_1ae75116e201e4af543cd43ca3d58d4fd6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_A1(motor)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x04|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x24<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x44</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC5041__Register_8h_1a3478aa0f304da89ce3539af27e8bd0f5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_V1(motor)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x05|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x25<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x45</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC5041__Register_8h_1a6b3280fb3900d38b4083d39dbd3fbe6b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_AMAX(motor)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x06|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x26<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x46</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC5041__Register_8h_1ae2b86a9c3109b81f165bef623d542a55" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_VMAX(motor)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x07|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x27<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x47</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC5041__Register_8h_1aaa4f6418fcb7984db957da9d98f90136" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_DMAX(motor)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x08|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x28<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x48</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC5041__Register_8h_1a5034f6dbd4d9e57176bb52ace00f3121" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_D1(motor)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x0A|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x2A<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC5041__Register_8h_1a4b0f7063e8262f0eb0b8febbcc0a9960" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_VSTOP(motor)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x0B|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x2B<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC5041__Register_8h_1a3972920894b93cc3698f68fb8cc24c5f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_TZEROWAIT(motor)<sp/><sp/><sp/>(0x0C|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x2C<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="TMC5041__Register_8h_1a127b7dd5b6efd2f3fa9b41a5c0a30539" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_XTARGET(motor)<sp/><sp/><sp/><sp/><sp/>(0x0D|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x2D<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="TMC5041__Register_8h_1a75e8c8f9b3eca1b5d4f4a9ca908e94ac" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_IHOLD_IRUN(motor)<sp/><sp/>(0x10|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x30<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x50</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC5041__Register_8h_1ac91ed9c9dcb4a6004aa632add61b9669" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_VCOOLTHRS(motor)<sp/><sp/><sp/>(0x11|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x31<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x51</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC5041__Register_8h_1a9a6a11103313126732275363a87ee80e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_VHIGH(motor)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x12|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x52</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC5041__Register_8h_1a11c3450ac77d828f802680d74a960e9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_VDCMIN(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x13|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x33<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x53</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="TMC5041__Register_8h_1a1f384851b992b8a3ac1eb21cc91237ba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_SWMODE(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x14|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x34<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x54</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC5041__Register_8h_1a265faff52851eb1ffaa556ca877d657d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_RAMPSTAT(motor)<sp/><sp/><sp/><sp/>(0x15|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x35<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x55</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC5041__Register_8h_1aa7b93d272f77c3946cdddc4136cc3d80" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_XLATCH(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x16|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x36<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x56</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC5041__Register_8h_1a4cef841f94235cb7ed25296c8f120929" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_ENC_CONST(motor)<sp/><sp/><sp/>(0x1A|TMC5041_MOTOR_ADDR(motor))<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x3A<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x5A<sp/>//<sp/>todo<sp/>CHECK<sp/>REM<sp/>3:<sp/>should<sp/>be<sp/>removable,<sp/>TMC5041<sp/>doesn&apos;t<sp/>have<sp/>encoder<sp/>features.<sp/>Still<sp/>used<sp/>though<sp/>(LH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>motor<sp/>=<sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC5041__Register_8h_1a3838056cbe218955138f10ecb4e04ff8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUT0(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x60|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x60<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x70</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC5041__Register_8h_1a02fb3ad0d10d87562761c1c336b67825" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUT1(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x61|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x61<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x71</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC5041__Register_8h_1a728d69279efc106adba40d030c8cf3f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUT2(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x62|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x62<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x72</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC5041__Register_8h_1ac603a7ff816f5edcf1e3c1a43894408f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUT3(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x63|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x63<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x73</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="TMC5041__Register_8h_1af8c8f696b33d6b26fb3afe957126f12b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUT4(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x64|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x64<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x74</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC5041__Register_8h_1a4792d063f9fdf1ccc2540db7881fa1ce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUT5(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x65|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x65<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x75</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC5041__Register_8h_1a929f8109ce9b9fc03cc829ad65d44f9f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUT6(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x66|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x66<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x76</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC5041__Register_8h_1afffe6040227c6fa24a030c0e7a57ac4e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUT7(motor)<sp/><sp/><sp/><sp/><sp/><sp/>(0x67|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x67<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x77</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC5041__Register_8h_1ae12fab340ab5914e872a783d54929f81" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUTSEL(motor)<sp/><sp/><sp/><sp/>(0x68|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x68<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x78</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC5041__Register_8h_1a0c3eb432ceb596d467f331fdf3701c09" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSLUTSTART(motor)<sp/><sp/>(0x69|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x69<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x79</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC5041__Register_8h_1abfd0ef2314f3956c9f50bc6cb15d3af8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSCNT(motor)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x6A|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x6A<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC5041__Register_8h_1a639c6f871beaf60bf6d80454ad301730" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_MSCURACT(motor)<sp/><sp/><sp/><sp/>(0x6B|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x6B<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC5041__Register_8h_1a7be51130b9e7cf568bbdf1a5328256bb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_CHOPCONF(motor)<sp/><sp/><sp/><sp/>(0x6C|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x6C<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC5041__Register_8h_1a519c9f4f3a24c57ecc3947dae1f549a4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_COOLCONF(motor)<sp/><sp/><sp/><sp/>(0x6D|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x6D<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="TMC5041__Register_8h_1a72ffd3e0e0d38f3f13261267963c00ae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5041_DRVSTATUS(motor)<sp/><sp/><sp/>(0x6F|TMC5041_MOTOR_ADDR_DRV(motor))<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0x6F<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC5041_REGISTER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5041/TMC5041_Register.h"/>
+  </compounddef>
+</doxygen>

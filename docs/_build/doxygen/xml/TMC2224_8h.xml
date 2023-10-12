@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2224_8h" kind="file" language="C++">
+    <compoundname>TMC2224.h</compoundname>
+    <includes refid="API__Header_8h" local="yes">tmc/helpers/API_Header.h</includes>
+    <includes refid="TMC2224__Register_8h" local="yes">TMC2224_Register.h</includes>
+    <includedby refid="TMC2224_8c" local="yes">TMC2224.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="11">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="9">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="12">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="5">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2224.h</label>
+        <link refid="TMC2224_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TMC2224_Register.h</label>
+        <link refid="TMC2224__Register_8h"/>
+      </node>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>TMC2224.c</label>
+        <link refid="TMC2224_8c"/>
+      </node>
+      <node id="1">
+        <label>TMC2224.h</label>
+        <link refid="TMC2224_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structTMC2224TypeDef" prot="public">TMC2224TypeDef</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2224_8h_1a2c8eccfeb5edd90324c3fa44a31ff737" prot="public" static="no">
+        <name>TMC2224_MOTORS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2224_8h_1ae0c2b91e5c1b898d22003ca2a0451d68" prot="public" static="no">
+        <name>TMC2224_REGISTER_COUNT</name>
+        <initializer><ref refid="Constants_8h_1a8ac38932318be2eeb26a7d35a110e074" kindref="member">TMC_REGISTER_COUNT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2224_8h_1adf1d910a7da150881b4e0081c56f7f70" prot="public" static="no">
+        <name>TMC2224_WRITE_BIT</name>
+        <initializer><ref refid="Constants_8h_1aa432cd9074eb257b2c69561eae5ecda0" kindref="member">TMC_WRITE_BIT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2224_8h_1ac37db8603053894711e44fe730b27a5d" prot="public" static="no">
+        <name>TMC2224_ADDRESS_MASK</name>
+        <initializer><ref refid="Constants_8h_1a08695e21b3868da01ba4598384304390" kindref="member">TMC_ADDRESS_MASK</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2224_8h_1a508a9fd564ae97416927217aa4731352" prot="public" static="no">
+        <name>TMC2224_MAX_VELOCITY</name>
+        <initializer><ref refid="Types_8h_1a664040685cc46e45906fdd8659e7a94e" kindref="member">s32_MAX</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2224_8h_1a8c33224979dff19aee4dbb9e9ceec262" prot="public" static="no">
+        <name>TMC2224_MAX_ACCELERATION</name>
+        <initializer><ref refid="Types_8h_1ad1c77184d7e382acdef7ae738260408d" kindref="member">u24_MAX</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC2224_8h_1a56252dccfb7e5b7bb2d08a56abe0208a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2224_initConfig</definition>
+        <argsstring>(TMC2224TypeDef *TMC2224)</argsstring>
+        <name>tmc2224_initConfig</name>
+        <param>
+          <type><ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref> *</type>
+          <declname>TMC2224</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="34" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.c" bodystart="64" bodyend="77" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" declline="34" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2224_8h_1a4df5f706eb34341065bae56c5b5a5d4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2224_periodicJob</definition>
+        <argsstring>(uint8_t motor, uint32_t tick, TMC2224TypeDef *TMC2224, ConfigurationTypeDef *TMC2224_config)</argsstring>
+        <name>tmc2224_periodicJob</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tick</declname>
+        </param>
+        <param>
+          <type><ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref> *</type>
+          <declname>TMC2224</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC2224_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="35" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.c" bodystart="98" bodyend="107" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" declline="35" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2224_8h_1a9cfa17e1c97dce57fe108368eeaabcb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2224_reset</definition>
+        <argsstring>(TMC2224TypeDef *tmc2224, ConfigurationTypeDef *TMC2224_config)</argsstring>
+        <name>tmc2224_reset</name>
+        <param>
+          <type><ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref> *</type>
+          <declname>tmc2224</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC2224_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.c" bodystart="109" bodyend="124" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" declline="36" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2224_8h_1a1d9d48510bdb06c8a21f2f9ffa20dbbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2224_restore</definition>
+        <argsstring>(ConfigurationTypeDef *TMC2224_config)</argsstring>
+        <name>tmc2224_restore</name>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>TMC2224_config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.c" bodystart="126" bodyend="135" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" declline="37" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2224_8h_1af110249dd9d13a586c7b8ed6baf841e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2224_get_slave</definition>
+        <argsstring>(TMC2224TypeDef *tmc2224)</argsstring>
+        <name>tmc2224_get_slave</name>
+        <param>
+          <type><ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref> *</type>
+          <declname>tmc2224</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.c" bodystart="137" bodyend="140" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" declline="39" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2224_8h_1ae3bf5c4ede166f0f00c4c285a3c94bbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2224_set_slave</definition>
+        <argsstring>(TMC2224TypeDef *tmc2224, uint8_t slave)</argsstring>
+        <name>tmc2224_set_slave</name>
+        <param>
+          <type><ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref> *</type>
+          <declname>tmc2224</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>slave</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" line="40" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.c" bodystart="142" bodyend="145" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h" declline="40" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2017<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC2224_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC2224_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="API__Header_8h" kindref="compound">tmc/helpers/API_Header.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2224__Register_8h" kindref="compound">TMC2224_Register.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC2224_8h_1a2c8eccfeb5edd90324c3fa44a31ff737" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2224_MOTORS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC2224_8h_1ae0c2b91e5c1b898d22003ca2a0451d68" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2224_REGISTER_COUNT<sp/><sp/><sp/>TMC_REGISTER_COUNT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC2224_8h_1adf1d910a7da150881b4e0081c56f7f70" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2224_WRITE_BIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC_WRITE_BIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC2224_8h_1ac37db8603053894711e44fe730b27a5d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2224_ADDRESS_MASK<sp/><sp/><sp/><sp/><sp/>TMC_ADDRESS_MASK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC2224_8h_1a508a9fd564ae97416927217aa4731352" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2224_MAX_VELOCITY<sp/><sp/><sp/><sp/><sp/>s32_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC2224_8h_1a8c33224979dff19aee4dbb9e9ceec262" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2224_MAX_ACCELERATION<sp/>u24_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Usage<sp/>note:<sp/>use<sp/>1<sp/>TypeDef<sp/>per<sp/>IC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="structTMC2224TypeDef" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25" refid="structTMC2224TypeDef_1a96ad94382516d64d3e851d944aa33c50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structTMC2224TypeDef_1a96ad94382516d64d3e851d944aa33c50" kindref="member">velocity</ref>;</highlight></codeline>
+<codeline lineno="26" refid="structTMC2224TypeDef_1ab7cc97aeb2941186f051c96357214df7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structTMC2224TypeDef_1ab7cc97aeb2941186f051c96357214df7" kindref="member">oldX</ref>;</highlight></codeline>
+<codeline lineno="27" refid="structTMC2224TypeDef_1a085c009d34b39d614e06afd3add6398e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structTMC2224TypeDef_1a085c009d34b39d614e06afd3add6398e" kindref="member">oldTick</ref>;</highlight></codeline>
+<codeline lineno="28" refid="structTMC2224TypeDef_1a62af6bcb714621683cfc6d43100be6d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>registerResetState[<ref refid="TMC2224_8h_1ae0c2b91e5c1b898d22003ca2a0451d68" kindref="member">TMC2224_REGISTER_COUNT</ref>];</highlight></codeline>
+<codeline lineno="29" refid="structTMC2224TypeDef_1a735372987f3464f71049d8e9f70b4006" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>registerAccess[<ref refid="TMC2224_8h_1ae0c2b91e5c1b898d22003ca2a0451d68" kindref="member">TMC2224_REGISTER_COUNT</ref>];</highlight></codeline>
+<codeline lineno="30" refid="structTMC2224TypeDef_1ab2184f3acb7545ffa860343afb64ea8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structTMC2224TypeDef_1ab2184f3acb7545ffa860343afb64ea8c" kindref="member">vMaxModified</ref>;</highlight></codeline>
+<codeline lineno="31" refid="structTMC2224TypeDef_1a55a39f3b14e50ae20c8a6c6b50a41862" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMC2224TypeDef_1a55a39f3b14e50ae20c8a6c6b50a41862" kindref="member">slave</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}<sp/><ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2224_8h_1a56252dccfb7e5b7bb2d08a56abe0208a" kindref="member">tmc2224_initConfig</ref>(<ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref><sp/>*TMC2224);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2224_8h_1a4df5f706eb34341065bae56c5b5a5d4e" kindref="member">tmc2224_periodicJob</ref>(uint8_t<sp/>motor,<sp/>uint32_t<sp/>tick,<sp/><ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref><sp/>*TMC2224,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC2224_config);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">uint8_t<sp/><ref refid="TMC2224_8h_1a9cfa17e1c97dce57fe108368eeaabcb8" kindref="member">tmc2224_reset</ref>(<ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref><sp/>*tmc2224,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC2224_config);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">uint8_t<sp/><ref refid="TMC2224_8h_1a1d9d48510bdb06c8a21f2f9ffa20dbbe" kindref="member">tmc2224_restore</ref>(<ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*TMC2224_config);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">uint8_t<sp/><ref refid="TMC2224_8h_1af110249dd9d13a586c7b8ed6baf841e7" kindref="member">tmc2224_get_slave</ref>(<ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref><sp/>*tmc2224);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2224_8h_1ae3bf5c4ede166f0f00c4c285a3c94bbb" kindref="member">tmc2224_set_slave</ref>(<ref refid="structTMC2224TypeDef" kindref="compound">TMC2224TypeDef</ref><sp/>*tmc2224,<sp/>uint8_t<sp/>slave);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC2224_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2224/TMC2224.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,841 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC43xx_8c" kind="file" language="C++">
+    <compoundname>TMC43xx.c</compoundname>
+    <includes refid="TMC43xx_8h" local="yes">TMC43xx.h</includes>
+    <includes refid="TMC43xx_2TMC4361A__Register_8h" local="yes">TMC4361A_Register.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="12">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="10">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="13">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="6">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>TMC4361A_Register.h</label>
+        <link refid="TMC43xx_2TMC4361A__Register_8h"/>
+      </node>
+      <node id="1">
+        <label>TMC43xx.c</label>
+        <link refid="TMC43xx_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TMC43xx.h</label>
+        <link refid="TMC43xx_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC43xx_8c_1ad9b1a0aa44c69b6a8d99da77ce96c17b" prot="public" static="no">
+        <name>TMC4361A</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC43xx_8c_1a78b03560caaaa1edb423ce3daae052ce" prot="public" static="no">
+        <name>DRVTYPE_TMC5130</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="TMC43xx_8c_1af3a88c1d82841d671b524325e65b8af6" prot="public" static="no" extern="yes" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc43xx_VMaxModified</definition>
+        <argsstring></argsstring>
+        <name>tmc43xx_VMaxModified</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="29" column="16" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" declline="29" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="variable" id="TMC43xx_8c_1add6a14e10594eac8de0bd935a947f85c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structTMotorConfig" kindref="compound">TMotorConfig</ref></type>
+        <definition>const TMotorConfig MotorConfig</definition>
+        <argsstring></argsstring>
+        <name>MotorConfig</name>
+        <initializer>=
+{
+	64,   
+	8,    
+	200,  
+	0     
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="41" column="20" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="41" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="variable" id="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structTClosedLoopConfig" kindref="compound">TClosedLoopConfig</ref></type>
+        <definition>const TClosedLoopConfig ClosedLoopConfig</definition>
+        <argsstring></argsstring>
+        <name>ClosedLoopConfig</name>
+        <initializer>=
+{
+	0,           
+	300000,      
+	600000,      
+	255,         
+	256,         
+	0,           
+	100,         
+	240,         
+	0,           
+	1000,        
+	10000,       
+	10000,       
+	20,          
+	10,          
+	0,           
+	1073741823,  
+	65536,       
+	100,         
+	100,         
+	0,           
+	7,           
+	500,         
+	0,           
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="49" column="25" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="49" bodyend="74"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC43xx_8c_1af3fd15874f0d176ac54d45a6d3c9493a" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc43xx_spi_readInt</definition>
+        <argsstring>(uint8_t axis, uint8_t address)</argsstring>
+        <name>tmc43xx_spi_readInt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="35" column="16" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" declline="35" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1a4572a6d8bfed2a12da605208c130bd77" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc43xx_spi_writeInt</definition>
+        <argsstring>(uint8_t axis, uint8_t address, int32_t value)</argsstring>
+        <name>tmc43xx_spi_writeInt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="36" column="13" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" declline="36" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1a87edf49a29255b83214ce722acb80373" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc43xx_writeBytes</definition>
+        <argsstring>(uint8_t Axis, uint8_t Address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)</argsstring>
+        <name>tmc43xx_writeBytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x3</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x4</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="85" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="85" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc43xx_writeInt</definition>
+        <argsstring>(uint8_t Axis, uint8_t Address, int32_t Value)</argsstring>
+        <name>tmc43xx_writeInt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="107" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="107" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc43xx_readInt</definition>
+        <argsstring>(uint8_t Axis, uint8_t Address)</argsstring>
+        <name>tmc43xx_readInt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="121" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="121" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1a8e199e5c3c0a7929ab0b006eb4ea4ff5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc43xx_setBits</definition>
+        <argsstring>(uint8_t Axis, uint8_t Address, uint32_t BitMask)</argsstring>
+        <name>tmc43xx_setBits</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>BitMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="128" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="128" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1aa39d93ea35c7718d494ee5367d48d721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc43xx_clearBits</definition>
+        <argsstring>(uint8_t Axis, uint8_t Address, uint32_t BitMask)</argsstring>
+        <name>tmc43xx_clearBits</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>BitMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="138" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="138" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1a497efb035b811b01531046f3b90b2877" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc43xx_writeBits</definition>
+        <argsstring>(uint8_t Axis, uint8_t Address, uint32_t Value, uint8_t Start, uint8_t Size)</argsstring>
+        <name>tmc43xx_writeBits</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>Value</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Start</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="148" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="148" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1abd6a0e5d5fbf8f3f24252b9d07025705" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t tmc43xx_peekEvents</definition>
+        <argsstring>(uint8_t Axis)</argsstring>
+        <name>tmc43xx_peekEvents</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="166" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="166" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1a0b8bb3d2a68059e0859cff9ad591ee93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t tmc43xx_readAndClearEvents</definition>
+        <argsstring>(uint8_t Axis, uint32_t EventMask)</argsstring>
+        <name>tmc43xx_readAndClearEvents</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>EventMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="173" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="173" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1ab178526bc93778bb9e8b82bc17acf27b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc43xx_hardStop</definition>
+        <argsstring>(uint8_t Axis)</argsstring>
+        <name>tmc43xx_hardStop</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="187" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="187" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1aa76ad54371195b1d849c52a1160267b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc43xx_init</definition>
+        <argsstring>(uint8_t numberOfMotors)</argsstring>
+        <name>tmc43xx_init</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>numberOfMotors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="202" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="202" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1a2a3b43d12bbf0187eed79773effbbe28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc43xx_getHomeInput</definition>
+        <argsstring>(uint8_t Motor)</argsstring>
+        <name>tmc43xx_getHomeInput</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="281" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="281" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC43xx_8c_1a16ccc477386a0cda233e7818eb27e08b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc43xx_moveToNextFullstep</definition>
+        <argsstring>(uint8_t Axis)</argsstring>
+        <name>tmc43xx_moveToNextFullstep</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" line="296" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c" bodystart="296" bodyend="318"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2017<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC43xx_8h" kindref="compound">TMC43xx.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC43xx_2TMC4361A__Register_8h" kindref="compound">TMC4361A_Register.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Comment<sp/>out<sp/>your<sp/>module<sp/>//<sp/>todo<sp/>API<sp/>2:<sp/>decide<sp/>if<sp/>these<sp/>variables<sp/>go<sp/>here<sp/>(API)<sp/>or<sp/>in<sp/>Evalboard/Module</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC4330A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC4331A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TMC4361</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC4361A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>TMC4330A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;TMC4330A_Register.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Comment<sp/>out<sp/>the<sp/>type<sp/>of<sp/>driver<sp/>//<sp/>todo<sp/>API<sp/>2:<sp/>decide<sp/>if<sp/>these<sp/>variables<sp/>go<sp/>here<sp/>(API)<sp/>or<sp/>in<sp/>Evalboard/Module</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>DRVTYPE_TMC262</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DRVTYPE_TMC5130</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>Shared<sp/>variables<sp/>//<sp/>todo<sp/>API<sp/>2:<sp/>decide<sp/>if<sp/>these<sp/>variables<sp/>go<sp/>here<sp/>(API)<sp/>or<sp/>in<sp/>Evalboard/Module</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//extern<sp/>int32_t<sp/>tmc43xx_VMax;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="TMC43xx_8c_1af3a88c1d82841d671b524325e65b8af6" kindref="member">tmc43xx_VMaxModified</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//extern<sp/>int32_t<sp/>tmc43xx_AMax;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//extern<sp/>uint8_t<sp/>tmc43xx_AMaxModified;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>Shared<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>SPI<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="TMC43xx_8c_1af3fd15874f0d176ac54d45a6d3c9493a" kindref="member">tmc43xx_spi_readInt</ref>(uint8_t<sp/>axis,<sp/>uint8_t<sp/>address);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1a4572a6d8bfed2a12da605208c130bd77" kindref="member">tmc43xx_spi_writeInt</ref>(uint8_t<sp/>axis,<sp/>uint8_t<sp/>address,<sp/>int32_t<sp/>value);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//extern<sp/>uint16_t<sp/>tmc43xx_spi_readRegister16BitValue(uint8_t<sp/>axis,<sp/>uint8_t<sp/>address,<sp/>uint8_t<sp/>channel);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//extern<sp/>void<sp/>tmc43xx_spi_writeRegister16BitValue(uint8_t<sp/>axis,<sp/>uint8_t<sp/>address,<sp/>uint8_t<sp/>channel,<sp/>uint16_t<sp/>value);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>SPI<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structTMotorConfig" kindref="compound">TMotorConfig</ref><sp/><ref refid="TMC43xx_8c_1add6a14e10594eac8de0bd935a947f85c" kindref="member">MotorConfig</ref>=</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>64,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IRun</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>8,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IStandby</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>200,<sp/><sp/></highlight><highlight class="comment">//<sp/>Setting<sp/>Delay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>BoostCurrent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structTClosedLoopConfig" kindref="compound">TClosedLoopConfig</ref><sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>=</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ClosedLoopMode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>300000,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GammaVMin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>600000,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GammaVAdd</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>255,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Gamma</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>256,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Beta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Offset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>100,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CurrentScalerMinimum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>240,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CurrentScalerMaximum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CurrentScalerStartUp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>1000,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>UpscaleDelay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>10000,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>DownscaleDelay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>10000,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CorrectionVelocityP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>20,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CorrectionVelocityI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>10,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CorrectionVelocityIClip</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CorrectionVelocityDClk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>1073741823,<sp/><sp/></highlight><highlight class="comment">//<sp/>CorrectionVelocityDClip</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>65536,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PositionCorrectionP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>100,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PositionCorrectionTolerance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>100,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PositionWindow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>EncVMeanWait</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>7,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>EncVMeanFilter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>500,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>EncVMeanInt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>EncoderCorrectionYOffset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Function:<sp/>tmc43xx_writeBytes()</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Parameter:<sp/>Address:<sp/>Register<sp/>address</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x1,<sp/>x2,<sp/>x3,<sp/>x4:<sp/>bytes<sp/>to<sp/>be<sp/>written</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"></highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Returns:<sp/>---</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"></highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Purpose:<sp/>Write<sp/>4<sp/>bytes<sp/>in<sp/>a<sp/>TMC43xx<sp/>register</highlight></codeline>
+<codeline lineno="84"><highlight class="comment">********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1a87edf49a29255b83214ce722acb80373" kindref="member">tmc43xx_writeBytes</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>Address,<sp/>uint8_t<sp/>x1,<sp/>uint8_t<sp/>x2,<sp/>uint8_t<sp/>x3,<sp/>uint8_t<sp/>x4)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>Value;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>Value<sp/><sp/>=<sp/>(uint32_t)x1<sp/>&lt;&lt;<sp/>24;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>Value<sp/>|=<sp/>(uint32_t)x2<sp/>&lt;&lt;<sp/>16;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>Value<sp/>|=<sp/>x3<sp/>&lt;&lt;<sp/>8;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>Value<sp/>|=<sp/>x4;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a4572a6d8bfed2a12da605208c130bd77" kindref="member">tmc43xx_spi_writeInt</ref>(Axis,<sp/>Address|<ref refid="TMC43xx_8h_1ada218a9f85a4c214b33b24deef1ab8f0" kindref="member">TMC43xx_WRITE</ref>,<sp/>Value);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Function:<sp/>tmc43xx_writeInt()</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Parameter:<sp/>Address:<sp/>Register<sp/>address</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Value:<sp/>value<sp/>to<sp/>be<sp/>written</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"></highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Returns:<sp/>---</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"></highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Purpose:<sp/>Write<sp/>a<sp/>32-Bit<sp/>value<sp/>in<sp/>a<sp/>TMC43xx<sp/>register.</highlight></codeline>
+<codeline lineno="106"><highlight class="comment">********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>Address,<sp/>int32_t<sp/>Value)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a4572a6d8bfed2a12da605208c130bd77" kindref="member">tmc43xx_spi_writeInt</ref>(Axis,<sp/>Address|<ref refid="TMC43xx_8h_1ada218a9f85a4c214b33b24deef1ab8f0" kindref="member">TMC43xx_WRITE</ref>,<sp/>Value);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Function:<sp/>tmc43xx_readInt()</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Parameter:<sp/>Address:<sp/>Register<sp/>address</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"></highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Returns:<sp/>read<sp/>value</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"></highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Purpose:<sp/>Read<sp/>a<sp/>32-bit<sp/>value<sp/>from<sp/>a<sp/>TMC43xx<sp/>register</highlight></codeline>
+<codeline lineno="120"><highlight class="comment">********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">int32_t<sp/><ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>Address)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1af3fd15874f0d176ac54d45a6d3c9493a" kindref="member">tmc43xx_spi_readInt</ref>(Axis,<sp/>Address);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1af3fd15874f0d176ac54d45a6d3c9493a" kindref="member">tmc43xx_spi_readInt</ref>(Axis,<sp/>Address);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1a8e199e5c3c0a7929ab0b006eb4ea4ff5" kindref="member">tmc43xx_setBits</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>Address,<sp/>uint32_t<sp/>BitMask)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>Value;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>Value<sp/>=<sp/><ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Axis,<sp/>Address);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>Value<sp/>|=<sp/>BitMask;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/>Address,<sp/>Value);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1aa39d93ea35c7718d494ee5367d48d721" kindref="member">tmc43xx_clearBits</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>Address,<sp/>uint32_t<sp/>BitMask)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>Value;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>Value<sp/>=<sp/><ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Axis,<sp/>Address);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>Value<sp/>&amp;=<sp/>~BitMask;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/>Address,<sp/>Value);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1a497efb035b811b01531046f3b90b2877" kindref="member">tmc43xx_writeBits</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>Address,<sp/>uint32_t<sp/>Value,<sp/>uint8_t<sp/>Start,<sp/>uint8_t<sp/>Size)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>RegVal;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>Mask;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>RegVal<sp/>=<sp/><ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Axis,<sp/>Address);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>Mask<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>i;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>Start;<sp/>i<sp/>&lt;<sp/>Start+Size;<sp/>i++)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mask<sp/>|=<sp/>(1&lt;&lt;i);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>RegVal<sp/>&amp;=<sp/>~Mask;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>RegVal<sp/>|=<sp/>(Value<sp/>&lt;&lt;<sp/>Start)<sp/>&amp;<sp/>Mask;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/>Address,<sp/>RegVal);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">uint32_t<sp/><ref refid="TMC43xx_8c_1abd6a0e5d5fbf8f3f24252b9d07025705" kindref="member">tmc43xx_peekEvents</ref>(uint8_t<sp/>Axis)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a0453a9debebbbfa12f0d5a5c3a096d88" kindref="member">TMC4361A_EVENT_CLEAR_CONF</ref>,<sp/>0xFFFFFFFF);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1aa7b8e76d6de539b0401d509383722e83" kindref="member">TMC4361A_EVENTS</ref>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">uint32_t<sp/><ref refid="TMC43xx_8c_1a0b8bb3d2a68059e0859cff9ad591ee93" kindref="member">tmc43xx_readAndClearEvents</ref>(uint8_t<sp/>Axis,<sp/>uint32_t<sp/>EventMask)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a0453a9debebbbfa12f0d5a5c3a096d88" kindref="member">TMC4361A_EVENT_CLEAR_CONF</ref>,<sp/>~EventMask);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1aa7b8e76d6de539b0401d509383722e83" kindref="member">TMC4361A_EVENTS</ref>);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Function:<sp/>tmc43xx_hardStop()</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Parameter:<sp/>---</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Returns:<sp/>---</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"></highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Purpose:<sp/>Stop<sp/>the<sp/>motor<sp/>immediately</highlight></codeline>
+<codeline lineno="186"><highlight class="comment">********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1ab178526bc93778bb9e8b82bc17acf27b" kindref="member">tmc43xx_hardStop</ref>(uint8_t<sp/>Axis)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1af3a88c1d82841d671b524325e65b8af6" kindref="member">tmc43xx_VMaxModified</ref><sp/>=<sp/><ref refid="Types_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a76a04d02e5debb5c9ac8179892d18254" kindref="member">TMC4361A_RAMPMODE</ref>,<sp/><ref refid="TMC43xx_8h_1a2795d15c6810a6c285eb898f0cadc4b7" kindref="member">TMC43xx_RAMPMODE_VEL_HOLD</ref>);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a7ac5a934361a8952759d68b80dd7f0e7" kindref="member">TMC4361A_VMAX</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Function:<sp/>tmc43xx_init</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Parameter:<sp/>---</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Returns:<sp/>---</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"></highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Purpose:<sp/>Initialize<sp/>TMC43xx</highlight></codeline>
+<codeline lineno="201"><highlight class="comment">********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC43xx_8c_1aa76ad54371195b1d849c52a1160267b3" kindref="member">tmc43xx_init</ref>(uint8_t<sp/>numberOfMotors)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Axis;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(Axis<sp/>=<sp/>0;<sp/>Axis<sp/>&lt;<sp/>numberOfMotors;<sp/>Axis++)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1aff8e8260bdcaeb56c6b47d710f28ede6" kindref="member">TMC4361A_GENERAL_CONF</ref>,<sp/><ref refid="TMC43xx_8h_1a77b17b76b559f361da0e08025d523c15" kindref="member">TMC43xx_GCONF_ENC_INC</ref>|<ref refid="TMC43xx_8h_1a528f9491ca1542bf0aaa7b9c23783eb3" kindref="member">TMC43xx_GCONF_ENC_DIFF_DIS</ref>);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(DRVTYPE_TMC262)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#if<sp/>defined(TMC4331A)<sp/>||<sp/>defined(TMC4361)<sp/>||<sp/>defined(TMC4361A)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1aeb9a1db65d3aa43743da59e6751a7b2e" kindref="member">TMC4361A_SPIOUT_CONF</ref>,<sp/><ref refid="TMC43xx_8h_1a1e2811e74c45b37ad654a19e10b8e086" kindref="member">TMC43xx_SPIOUT_TMC26x_389</ref></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="TMC43xx_8h_1a392d722e7fa478687ec9b32357a26bd5" kindref="member">TMC43xx_SPIOUT_ENABLE_SHADOW_DATAGRAMS</ref>);<sp/><sp/></highlight><highlight class="comment">//<sp/>TMC26x<sp/>SPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(DRVTYPE_TMC5130)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a6d2d2ca23b77dd142577daff235a1f7d" kindref="member">TMC4361A_STP_LENGTH_ADD</ref>,<sp/>0x00050005);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#if<sp/>defined(TMC4331A)<sp/>||<sp/>defined(TMC4361)<sp/>||<sp/>defined(TMC4361A)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1aeb9a1db65d3aa43743da59e6751a7b2e" kindref="member">TMC4361A_SPIOUT_CONF</ref>,<sp/>0x83300000|<ref refid="TMC43xx_8h_1a66cad8c6a800f790f9d095bc7a656b6b" kindref="member">TMC43xx_SPIOUT_TMC21xx</ref></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="TMC43xx_8h_1a27f676d57c030496cc0ae8bdeb8bc10f" kindref="member">TMC43xx_SPIOUT_POLL_BLOCK_MULTI</ref>(2)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//|TMC43xx_SPIOUT_DISABLE_POLLING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="TMC43xx_8h_1a392d722e7fa478687ec9b32357a26bd5" kindref="member">TMC43xx_SPIOUT_ENABLE_SHADOW_DATAGRAMS</ref></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="TMC43xx_8h_1ae5c548a1330993e983e88c3c6a808158" kindref="member">TMC43xx_SPIOUT_COVER_DONE_NOT_FOR_CURRENT</ref></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a0453a9debebbbfa12f0d5a5c3a096d88" kindref="member">TMC4361A_EVENT_CLEAR_CONF</ref>,<sp/>~<ref refid="TMC43xx_8h_1ac5c21c8cc41771d81cf03ab5623df005" kindref="member">TMC43xx_EV_COVER_DONE</ref>);<sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>event<sp/>register<sp/>deletes<sp/>only<sp/>the<sp/>cover-done<sp/>bit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1aa7b8e76d6de539b0401d509383722e83" kindref="member">TMC4361A_EVENTS</ref>);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a87edf49a29255b83214ce722acb80373" kindref="member">tmc43xx_writeBytes</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1ae2b0906b4f26744b586c660504dc2fa0" kindref="member">TMC4361A_COVER_HIGH_WR</ref>,<sp/>0,<sp/>0,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1ad8b7e6ce41d53f27136c95783a3eb040" kindref="member">TMC4361A_COVER_LOW_WR</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;Driver<sp/>type<sp/>not<sp/>supported&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(TMC4331A)<sp/>||<sp/>defined(TMC4361)<sp/>||<sp/>defined(TMC4361A)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1ae3181aca20e3cdf071b99a35e14ba6ec" kindref="member">TMC4361A_CURRENT_CONF</ref>,<sp/><ref refid="TMC43xx_8h_1a4c8e912bdaf7055b5e643d46ae301067" kindref="member">TMC43xx_CURCONF_HOLD_EN</ref>|<ref refid="TMC43xx_8h_1aebd376cc94d868d4b71806bff4ab6860" kindref="member">TMC43xx_CURCONF_DRIVE_EN</ref>);<sp/><sp/></highlight><highlight class="comment">//<sp/>Current<sp/>settings<sp/>through<sp/>TMC43xx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a76a04d02e5debb5c9ac8179892d18254" kindref="member">TMC4361A_RAMPMODE</ref>,<sp/><ref refid="TMC43xx_8h_1a60e380697f7608027b5a46652f98b095" kindref="member">TMC43xx_RAMPMODE_POS_HOLD</ref>);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a552d7113d37a8b50ae346e841855b1ae" kindref="member">TMC4361A_X_TARGET</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a4da22f61ff05095eb1694269e98e8293" kindref="member">TMC4361A_XACTUAL</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a7ac5a934361a8952759d68b80dd7f0e7" kindref="member">TMC4361A_VMAX</ref>,<sp/>51200<sp/>&lt;&lt;<sp/>8);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1ae633120ccaf47c73cb36f19bf8527dea" kindref="member">TMC4361A_AMAX</ref>,<sp/>51200<sp/>&lt;&lt;<sp/>2);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1aeec92f4b353089c541748946a544c451" kindref="member">TMC4361A_DMAX</ref>,<sp/>51200<sp/>&lt;&lt;<sp/>2);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a87edf49a29255b83214ce722acb80373" kindref="member">tmc43xx_writeBytes</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1aa0a0176bd07f8a5f9aaf5af93754de20" kindref="member">TMC4361A_SCALE_VALUES</ref>,<sp/><ref refid="TMC43xx_8c_1add6a14e10594eac8de0bd935a947f85c" kindref="member">MotorConfig</ref>.<ref refid="structTMotorConfig_1af65433312873bd0f2ef341522b3d11f4" kindref="member">IStandby</ref>,<sp/>0,<sp/><ref refid="TMC43xx_8c_1add6a14e10594eac8de0bd935a947f85c" kindref="member">MotorConfig</ref>.<ref refid="structTMotorConfig_1aeafa8121d04c377d5aa1e6d636bfc3e4" kindref="member">IRun</ref>,<sp/><ref refid="TMC43xx_8c_1add6a14e10594eac8de0bd935a947f85c" kindref="member">MotorConfig</ref>.<ref refid="structTMotorConfig_1ab86fb1b861654e8f1fe939c259ff99ac" kindref="member">BoostCurrent</ref>);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a7c23dd271bb50d587027da4c4d49574c" kindref="member">TMC4361A_STDBY_DELAY</ref>,<sp/><ref refid="TMC43xx_8c_1add6a14e10594eac8de0bd935a947f85c" kindref="member">MotorConfig</ref>.<ref refid="structTMotorConfig_1a7bb402fadb867fc4cde0c18b5d7cb9b5" kindref="member">SettingDelay</ref>*160000);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(TMC4361)<sp/>||<sp/>defined(TMC4361A)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1adb13d827ebeeccb7c1c00ad1c29a505a" kindref="member">TMC4361A_CL_VMIN_EMF_WR</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a932631e7f58184e6bf5b9a8b96a0ec67" kindref="member">GammaVMin</ref>);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a40b44acc9a6c4c7bd310e95622e97ae7" kindref="member">TMC4361A_CL_VADD_EMF</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a30eb898d417f230f37a3c8001d3efb68" kindref="member">GammaVAdd</ref>);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a4f03c842a506d000cfc7a05d3c579331" kindref="member">TMC4361A_CL_BETA</ref>,<sp/>(<ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a52e8ab5ec261032a6a7366360631456c" kindref="member">Gamma</ref>&lt;&lt;16)|<ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1ad3e7c5f9b7b529dc1ce5d6c13d378d7b" kindref="member">Beta</ref>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1ab76d3eaae59b675820d00b4ea88cc8d2" kindref="member">TMC4361A_CL_OFFSET</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a3f0c9e2f9e97065161d073f29f7e819c" kindref="member">Offset</ref>);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a46579453ccc4a15955ce29a3439c810a" kindref="member">TMC4361A_CL_VMAX_CALC_P_WR</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1ace643b1f08fed6c93d9de491f4771064" kindref="member">CorrectionVelocityP</ref>);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1ae08a4c75220bac3eb86bd4ede7171027" kindref="member">TMC4361A_CL_VMAX_CALC_I_WR</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a07be7dc7075fbcb1a8ca8a535d660a93" kindref="member">CorrectionVelocityI</ref>);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a87edf49a29255b83214ce722acb80373" kindref="member">tmc43xx_writeBytes</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a37a929a8fb5dc15288d3503e2bc4b3c1" kindref="member">TMC4361A_PID_I_CLIP_WR</ref>,<sp/>0,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a446d54f675cb6dc1660515fd2fce54ab" kindref="member">CorrectionVelocityDClk</ref>,</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1ad5cac7dc2b35f04a4fb5bceacb9b15c7" kindref="member">CorrectionVelocityIClip</ref><sp/>&gt;&gt;<sp/>8,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1ad5cac7dc2b35f04a4fb5bceacb9b15c7" kindref="member">CorrectionVelocityIClip</ref><sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a5d30fdcd0fd17a295a7d02c438526b09" kindref="member">TMC4361A_PID_DV_CLIP_WR</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a8a99253980e75c25b916acb7f86bed4a" kindref="member">CorrectionVelocityDClip</ref>);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a03b40edfa668f23b1f86063fb1f3c666" kindref="member">TMC4361A_CL_UPSCALE_DELAY</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a7563584e48e87f430ef6f4714a6420c6" kindref="member">UpscaleDelay</ref>);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a7d402c4acf1cb3be93ee585e12dd639f" kindref="member">TMC4361A_CL_DOWNSCALE_DELAY</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a4c70289b2e58e79ff88509f2a42e19c5" kindref="member">DownscaleDelay</ref>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a5fe9cda914eeb6457ec924840aa853c5" kindref="member">TMC4361A_CL_DELTA_P_WR</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1af4a4d19080c92ca9a6ca648ee97c429a" kindref="member">PositionCorrectionP</ref>);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1aed821575a751df2b9a0403fc750f1246" kindref="member">TMC4361A_PID_TOLERANCE_WR</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a52045becc1829df2a95f3c084089bb1c" kindref="member">PositionCorrectionTolerance</ref>);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a6e0b43d2c9083f2d601ddde7ee2fa903" kindref="member">TMC4361A_CL_TR_TOLERANCE_WR</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a6ae6268da891761af808d53e5e3ccaac" kindref="member">PositionWindow</ref>);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a87edf49a29255b83214ce722acb80373" kindref="member">tmc43xx_writeBytes</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a50537d9fe934f5a4bef26219ee4d4a1e" kindref="member">TMC4361A_ENC_VMEAN_WAIT_WR</ref>,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1abc24290b03834acaac4bfd8ed553a5de" kindref="member">EncVMeanInt</ref><sp/>&gt;&gt;<sp/>8,</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1abc24290b03834acaac4bfd8ed553a5de" kindref="member">EncVMeanInt</ref><sp/>&amp;<sp/>0xFF,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a9c833543a63e2f0d414ab530defc7fac" kindref="member">EncVMeanFilter</ref>,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a219c6625b5088bd44ccf945b1d658dda" kindref="member">EncVMeanWait</ref>);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a87edf49a29255b83214ce722acb80373" kindref="member">tmc43xx_writeBytes</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1afe1738a1873deef3036cd45978f75289" kindref="member">TMC4361A_ENC_COMP_XOFFSET</ref>,<sp/>0,<sp/><ref refid="TMC43xx_8c_1a310b1e2b94805c589f82301849b33cd7" kindref="member">ClosedLoopConfig</ref>.<ref refid="structTClosedLoopConfig_1a98b8375d3530ab4c5e6e78bf26d11c1e" kindref="member">EncoderCorrectionYOffset</ref>,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Für<sp/>Home-Switch-Abfrage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a4e0fbf87dca290094494233d2a8fde01" kindref="member">TMC4361A_REFERENCE_CONF</ref>,<sp/><ref refid="Bits_8h_1a27fe52b845a36280f50414ab4a00f74f" kindref="member">BIT17</ref>|<ref refid="Bits_8h_1a7c55b9d74a6a1b129397792053cf08d5" kindref="member">BIT16</ref>);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1ac956d344e6fc87e27f91d42a007b9ddc" kindref="member">TMC4361A_X_HOME</ref>,<sp/>0x7FFFFFFF);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Function:<sp/>tmc43xx_getHomeInput</highlight></codeline>
+<codeline lineno="275"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Parameter:<sp/>---</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Returns:<sp/>State<sp/>of<sp/>home<sp/>input</highlight></codeline>
+<codeline lineno="277"><highlight class="comment"></highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Purpose:<sp/>Polls<sp/>home-input.<sp/>Works<sp/>only<sp/>if<sp/>bits<sp/>17<sp/>and<sp/>16<sp/>in</highlight></codeline>
+<codeline lineno="279"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>REFERENCE_CONF<sp/>are<sp/>set<sp/>and<sp/>XHOME<sp/>of<sp/>INT_MAX<sp/>as<sp/>well<sp/>(trick)</highlight></codeline>
+<codeline lineno="280"><highlight class="comment">********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal">uint8_t<sp/><ref refid="TMC43xx_8c_1a2a3b43d12bbf0187eed79773effbbe28" kindref="member">tmc43xx_getHomeInput</ref>(uint8_t<sp/>Motor)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Motor,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1af188c9c588656443b131e14f1ad88b19" kindref="member">TMC4361A_STATUS</ref>)<sp/>&amp;<sp/><ref refid="TMC43xx_8h_1ae8bfc00cf8e5c411170e44d56dcc6a50" kindref="member">TMC43xx_ST_HOME_ERROR</ref>)</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Types_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Types_8h_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************</highlight></codeline>
+<codeline lineno="290"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Function:<sp/>tmc43xx_moveToNextFullstep</highlight></codeline>
+<codeline lineno="291"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Parameter:<sp/>---</highlight></codeline>
+<codeline lineno="292"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Returns:<sp/>0<sp/>-<sp/>moving<sp/>to<sp/>fullstep,<sp/>1<sp/>-<sp/>already<sp/>fullstep</highlight></codeline>
+<codeline lineno="293"><highlight class="comment"></highlight></codeline>
+<codeline lineno="294"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Purpose:<sp/>Moves<sp/>from<sp/>the<sp/>current<sp/>position<sp/>to<sp/>the<sp/>next<sp/>fullstep</highlight></codeline>
+<codeline lineno="295"><highlight class="comment">********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal">uint8_t<sp/><ref refid="TMC43xx_8c_1a16ccc477386a0cda233e7818eb27e08b" kindref="member">tmc43xx_moveToNextFullstep</ref>(uint8_t<sp/>Axis)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>value;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>mscnt;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1ae8228695e8e6f997d784fae21133237c" kindref="member">TMC4361A_VACTUAL</ref>)<sp/>!=<sp/>0)<sp/></highlight><highlight class="comment">//<sp/>motor<sp/>must<sp/>be<sp/>stopped</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a76a04d02e5debb5c9ac8179892d18254" kindref="member">TMC4361A_RAMPMODE</ref>,<sp/><ref refid="TMC43xx_8h_1a60e380697f7608027b5a46652f98b095" kindref="member">TMC43xx_RAMPMODE_POS_HOLD</ref>);<sp/><sp/></highlight><highlight class="comment">//<sp/>positioning<sp/>&amp;<sp/>hold<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a7ac5a934361a8952759d68b80dd7f0e7" kindref="member">TMC4361A_VMAX</ref>,<sp/>10000&lt;&lt;8);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>low<sp/>velocity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>mscnt<sp/>=<sp/><ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a0743a04b42a382fd9845b246304fe425" kindref="member">TMC4361A_MSCNT_RD</ref>)<sp/>&amp;<sp/>0x3FF;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>position<sp/>in<sp/>microstep<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>=<sp/>mscnt<sp/>&amp;<sp/>0xFF;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>last<sp/>8<sp/>bits<sp/>are<sp/>0<sp/>its<sp/>a<sp/>multiple<sp/>of<sp/>256</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>=<sp/>128-value;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>assuming<sp/>256<sp/>µsteps<sp/>fullsteps<sp/>are<sp/>128+n*256</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!value)<sp/></highlight><highlight class="comment">//<sp/>fullstep<sp/>position<sp/>reached</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>=<sp/><ref refid="TMC43xx_8c_1a874deaba131caa3b0cbea760d389c840" kindref="member">tmc43xx_readInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a4da22f61ff05095eb1694269e98e8293" kindref="member">TMC4361A_XACTUAL</ref>)<sp/>+<sp/>value;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>distance<sp/>to<sp/>next<sp/>fullstep,<sp/>assume<sp/>256<sp/>µsteps<sp/>resolution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC43xx_8c_1a3cffe835b7ba587c02134db040732198" kindref="member">tmc43xx_writeInt</ref>(Axis,<sp/><ref refid="TMC4361A_2TMC4361A__Register_8h_1a552d7113d37a8b50ae346e841855b1ae" kindref="member">TMC4361A_X_TARGET</ref>,<sp/>value);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>move<sp/>to<sp/>next<sp/>fullstep</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC43xx.c"/>
+  </compounddef>
+</doxygen>

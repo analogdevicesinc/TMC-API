@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_b1edac66bc5591d7cbf2d3001d4fad93" kind="dir">
+    <compoundname>ramp</compoundname>
+    <innerfile refid="LinearRamp_8c">LinearRamp.c</innerfile>
+    <innerfile refid="LinearRamp_8h">LinearRamp.h</innerfile>
+    <innerfile refid="LinearRamp1_8c">LinearRamp1.c</innerfile>
+    <innerfile refid="LinearRamp1_8h">LinearRamp1.h</innerfile>
+    <innerfile refid="Ramp_8c">Ramp.c</innerfile>
+    <innerfile refid="Ramp_8h">Ramp.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/"/>
+  </compounddef>
+</doxygen>

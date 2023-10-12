@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2226__Constants_8h" kind="file" language="C++">
+    <compoundname>TMC2226_Constants.h</compoundname>
+    <includedby refid="TMC2226_8h" local="yes">TMC2226.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC2226.c</label>
+        <link refid="TMC2226_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC2226.h</label>
+        <link refid="TMC2226_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2226_Constants.h</label>
+        <link refid="TMC2226__Constants_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2226__Constants_8h_1aa79d0852cce8d6615c02b8ec5c833ebd" prot="public" static="no">
+        <name>TMC2226_MOTORS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" line="13" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226__Constants_8h_1aebcd1e70bd671ee4595e987b02c5ed95" prot="public" static="no">
+        <name>TMC2226_REGISTER_COUNT</name>
+        <initializer><ref refid="Constants_8h_1a8ac38932318be2eeb26a7d35a110e074" kindref="member">TMC_REGISTER_COUNT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" line="14" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226__Constants_8h_1a8baa3f1c1029902ef28b7b12e5dafc87" prot="public" static="no">
+        <name>TMC2226_WRITE_BIT</name>
+        <initializer><ref refid="Constants_8h_1aa432cd9074eb257b2c69561eae5ecda0" kindref="member">TMC_WRITE_BIT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226__Constants_8h_1a82deafa32c45a03485466332deff41ad" prot="public" static="no">
+        <name>TMC2226_ADDRESS_MASK</name>
+        <initializer><ref refid="Constants_8h_1a08695e21b3868da01ba4598384304390" kindref="member">TMC_ADDRESS_MASK</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226__Constants_8h_1aaf3e6e9068f6969a0ffbd5d39b6aa226" prot="public" static="no">
+        <name>TMC2226_MAX_VELOCITY</name>
+        <initializer><ref refid="Types_8h_1a664040685cc46e45906fdd8659e7a94e" kindref="member">s32_MAX</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226__Constants_8h_1ae84906e7a001ccc3caae68f8de3dd844" prot="public" static="no">
+        <name>TMC2226_MAX_ACCELERATION</name>
+        <initializer><ref refid="Types_8h_1ad1c77184d7e382acdef7ae738260408d" kindref="member">u24_MAX</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2020<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC2226_TMC2226_CONSTANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC2226_TMC2226_CONSTANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="TMC2226__Constants_8h_1aa79d0852cce8d6615c02b8ec5c833ebd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2226_MOTORS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="TMC2226__Constants_8h_1aebcd1e70bd671ee4595e987b02c5ed95" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2226_REGISTER_COUNT<sp/><sp/><sp/>TMC_REGISTER_COUNT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC2226__Constants_8h_1a8baa3f1c1029902ef28b7b12e5dafc87" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2226_WRITE_BIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC_WRITE_BIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC2226__Constants_8h_1a82deafa32c45a03485466332deff41ad" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2226_ADDRESS_MASK<sp/><sp/><sp/><sp/><sp/>TMC_ADDRESS_MASK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC2226__Constants_8h_1aaf3e6e9068f6969a0ffbd5d39b6aa226" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2226_MAX_VELOCITY<sp/><sp/><sp/><sp/><sp/>s32_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC2226__Constants_8h_1ae84906e7a001ccc3caae68f8de3dd844" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2226_MAX_ACCELERATION<sp/>u24_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC2226_TMC2226_CONSTANTS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226_Constants.h"/>
+  </compounddef>
+</doxygen>

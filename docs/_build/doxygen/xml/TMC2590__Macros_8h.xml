@@ -1,0 +1,1075 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2590__Macros_8h" kind="file" language="C++">
+    <compoundname>TMC2590_Macros.h</compoundname>
+    <includes refid="TMC2590__Constants_8h" local="yes">TMC2590_Constants.h</includes>
+    <includedby refid="TMC2590_8h" local="yes">TMC2590.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>tmc/helpers/Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="2">
+        <label>TMC2590_Constants.h</label>
+        <link refid="TMC2590__Constants_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2590_Macros.h</label>
+        <link refid="TMC2590__Macros_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC2590.c</label>
+        <link refid="TMC2590_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC2590.h</label>
+        <link refid="TMC2590_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2590_Macros.h</label>
+        <link refid="TMC2590__Macros_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a504242db594c57000d495749b8cef298" prot="public" static="no">
+        <name>TMC2590_VALUE</name>
+        <param><defname>x</defname></param>
+        <initializer>((x) &amp; 0x000FFFFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a7ba961872328ae1a3e6024eb3a1d4971" prot="public" static="no">
+        <name>TMC2590_GET_ADDRESS</name>
+        <param><defname>X</defname></param>
+        <initializer>((uint8_t) ((((X) &gt;&gt; (<ref refid="TMC2590__Constants_8h_1a5e66088e71791825788614a0b8ef72f0" kindref="member">TMC2590_ADDRESS_SHIFT</ref> + 1)) ? ((X) &gt;&gt; <ref refid="TMC2590__Constants_8h_1a5e66088e71791825788614a0b8ef72f0" kindref="member">TMC2590_ADDRESS_SHIFT</ref>) : 0) &amp; <ref refid="TMC2590__Constants_8h_1a605f74e9e0b036ddea34b2943a8900c3" kindref="member">TMC2590_ADDRESS_MASK</ref>))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1abc34c335b0ad43415f7f86396169e958" prot="public" static="no">
+        <name>TMC2590_SET_CB</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0xFF) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ad0e83e9f0f42ebe70d79a484bca4a648" prot="public" static="no">
+        <name>TMC2590_SET_PHB</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a0e509df7f6e43503a2e56c1eeafa6d3d" prot="public" static="no">
+        <name>TMC2590_SET_CA</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0xFF) &lt;&lt; 9)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ae77bb9b2960a0b0db7afbe943e90003f" prot="public" static="no">
+        <name>TMC2590_SET_PHA</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0xFF) &lt;&lt; 17)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a9a59136af1dae1acb7d20e7d93a2e85a" prot="public" static="no">
+        <name>TMC2590_SET_MRES</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ae5f97375c1bff913dad551cb8065199c" prot="public" static="no">
+        <name>TMC2590_SET_DEDGE</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a251606625fdcc262b33754e16e95b4e3" prot="public" static="no">
+        <name>TMC2590_SET_INTERPOL</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 9)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a9b33175c89713f2632e7365575f6633c" prot="public" static="no">
+        <name>TMC2590_SET_TOFF</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a62b29de5a9488759e96c46420d4def8f" prot="public" static="no">
+        <name>TMC2590_SET_HSTRT</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x07) &lt;&lt; 4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1abe4dca7e23971186f4a2a9664c3dc332" prot="public" static="no">
+        <name>TMC2590_SET_HEND</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 7)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a67b279a13dcaa4e152c2181db34cd0c0" prot="public" static="no">
+        <name>TMC2590_SET_HDEC</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 11)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1afaa9c8e9aa19f6afbc85a1bc6f251da4" prot="public" static="no">
+        <name>TMC2590_SET_RNDTF</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 13)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1aeff29d5292cdc46cbc03b7f610144f07" prot="public" static="no">
+        <name>TMC2590_SET_CHM</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 14)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1aad54891d8b7a314b854aaacf2319b2ce" prot="public" static="no">
+        <name>TMC2590_SET_TBL</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 15)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a4b4ef7c762838375c298ab6dc56c2e01" prot="public" static="no">
+        <name>TMC2590_SET_SEMIN</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a1ddab7f3641266a30b40ea0d86d6b5f3" prot="public" static="no">
+        <name>TMC2590_SET_SEUP</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="46" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a6d0884e78d5e320baa50888c664422b8" prot="public" static="no">
+        <name>TMC2590_SET_SEMAX</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x0F) &lt;&lt; 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a9221cf46491c8c6a065e9a16aad18723" prot="public" static="no">
+        <name>TMC2590_SET_SEDN</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 13)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a38e5733607958dd0463cfe13fbc84ede" prot="public" static="no">
+        <name>TMC2590_SET_SEIMIN</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 15)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ada6fd9e700fb9a042cb5fe2d5921befd" prot="public" static="no">
+        <name>TMC2590_SET_CS</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x1F) &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a0aed76de7dc8b2a4044ad440aa1b7a07" prot="public" static="no">
+        <name>TMC2590_SET_SGT</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x7F) &lt;&lt; 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ac5f8c51ddd2066292ef7af3489dc12e4" prot="public" static="no">
+        <name>TMC2590_SET_SFILT</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 16)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a570d761ce574556389ef6ea743f16a49" prot="public" static="no">
+        <name>TMC2590_SET_RDSEL</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="58" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a131a923a7d913c4dffac9582a66f81c0" prot="public" static="no">
+        <name>TMC2590_SET_VSENSE</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 6)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ad51924ec3ff03ccd69a23db8ceb68be5" prot="public" static="no">
+        <name>TMC2590_SET_SDOFF</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 7)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1aad1480e8186c5ff4ea28135aba7d962b" prot="public" static="no">
+        <name>TMC2590_SET_TS2G</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a9bfc1e05b9e58c0fae077450f83f1c9a" prot="public" static="no">
+        <name>TMC2590_SET_DISS2G</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 10)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="62" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a0895dbb5c4948b851191f9a9cbfc4a7f" prot="public" static="no">
+        <name>TMC2590_SET_SLPL</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 12)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="63" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1aa32b3edb83d99332c3aa9f587bae32f5" prot="public" static="no">
+        <name>TMC2590_SET_SLPH</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x03) &lt;&lt; 14)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="64" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a1136378a53ea0077bddd9445ccac9ae2" prot="public" static="no">
+        <name>TMC2590_SET_TST</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 0x01) &lt;&lt; 16)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1af8efafeecec23d05fc3596271aa8096b" prot="public" static="no">
+        <name>TMC2590_GET_CB</name>
+        <param><defname>X</defname></param>
+        <initializer>(0xFF &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="72" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ab8a2694c636bf9a03a991a777f956bf4" prot="public" static="no">
+        <name>TMC2590_GET_PHB</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="73" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a4c20e8e60292d19fc00a9d864d097788" prot="public" static="no">
+        <name>TMC2590_GET_CA</name>
+        <param><defname>X</defname></param>
+        <initializer>(0xFF &amp; ((X) &gt;&gt; 9))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="74" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1af6fc27ddf78ee18b49249381d3659570" prot="public" static="no">
+        <name>TMC2590_GET_PHA</name>
+        <param><defname>X</defname></param>
+        <initializer>(0xFF &amp; ((X) &gt;&gt; 17))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="75" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a6c276a9c8381a6db2d730c1828615278" prot="public" static="no">
+        <name>TMC2590_GET_MRES</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="76" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a662ff7af9cf334f1392515e02f8f6a81" prot="public" static="no">
+        <name>TMC2590_GET_DEDGE</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="78" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a106c1710c01ab5b79804b3c823a6c1bd" prot="public" static="no">
+        <name>TMC2590_GET_INTERPOL</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 9))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="79" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1abbefc3c2afd1cc0d7f6a4ffb1ddeae9f" prot="public" static="no">
+        <name>TMC2590_GET_TOFF</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="82" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1af7152b0e32a3ccad04886589eb598d40" prot="public" static="no">
+        <name>TMC2590_GET_HSTRT</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x07 &amp; ((X) &gt;&gt; 4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="83" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a40def4746ee80ea082438d0019aa07d5" prot="public" static="no">
+        <name>TMC2590_GET_HEND</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 7))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="84" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a79050f8a989bcb4e3ff67185efd105c4" prot="public" static="no">
+        <name>TMC2590_GET_HDEC</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 11))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="85" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ad4f8d205d4bc32a9e112ee72c0f06664" prot="public" static="no">
+        <name>TMC2590_GET_RNDTF</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 13))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="86" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a27ad42e67e9c960fa496dc9b62871408" prot="public" static="no">
+        <name>TMC2590_GET_CHM</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 14))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="87" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a1ece051a66ea3bad84512c8d8f2ec6b3" prot="public" static="no">
+        <name>TMC2590_GET_TBL</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 15))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="88" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a3bdf481539e9675e3b8957510f16cad1" prot="public" static="no">
+        <name>TMC2590_GET_SEMIN</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="91" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1af3d7a095ade2dcedfb3f779eb7bde16b" prot="public" static="no">
+        <name>TMC2590_GET_SEUP</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 5))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="92" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a21c9661cf76615bea0902ae87ba8929d" prot="public" static="no">
+        <name>TMC2590_GET_SEMAX</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x0F &amp; ((X) &gt;&gt; 8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="93" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a24580f5541b223268ab5e64370c35a5f" prot="public" static="no">
+        <name>TMC2590_GET_SEDN</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 13))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="94" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a347e7cbf109c5dc1ac5a6a51b1ce3f8f" prot="public" static="no">
+        <name>TMC2590_GET_SEIMIN</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 15))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="95" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a663aedf2848c0190ff0e71efdd1cfd76" prot="public" static="no">
+        <name>TMC2590_GET_CS</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x1F &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="98" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a6ae181c949c010757a3e59c80c87001d" prot="public" static="no">
+        <name>TMC2590_GET_SGT</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x7F &amp; ((X) &gt;&gt; 8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="99" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a05f18d24563a302c3ca7a24013f8d679" prot="public" static="no">
+        <name>TMC2590_GET_SFILT</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 16))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="100" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a6ca1bad5f4f3833792d9640f538bde90" prot="public" static="no">
+        <name>TMC2590_GET_RDSEL</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="103" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1afbe0bbe95b966f46cb8b56e930df4463" prot="public" static="no">
+        <name>TMC2590_GET_VSENSE</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 6))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="104" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a4011766c7628b13fb83229cab26e8013" prot="public" static="no">
+        <name>TMC2590_GET_SDOFF</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 7))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="105" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ad3e449bcf9a9fc9e0e69f84eac9f4588" prot="public" static="no">
+        <name>TMC2590_GET_TS2G</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="106" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a495afc0dc6ff98b807bbdc175571dbcb" prot="public" static="no">
+        <name>TMC2590_GET_DISS2G</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="107" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a1c1ff7b531ce24924872ac81dc2a4461" prot="public" static="no">
+        <name>TMC2590_GET_SLPL</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 12))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="108" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a5c8d145bc1f5f213606633bca834d6e0" prot="public" static="no">
+        <name>TMC2590_GET_SLPH</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x03 &amp; ((X) &gt;&gt; 14))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="109" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a1dce4741d36b4d618331b15b57402586" prot="public" static="no">
+        <name>TMC2590_GET_TST</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 16))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="110" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a3d9b3dd17d78fa04aa6c718f1b8bd72d" prot="public" static="no">
+        <name>TMC2590_GET_MSTEP</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x3FF &amp; ((X) &gt;&gt; 10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="115" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a6603fbb78f7117477a150062d51e8f84" prot="public" static="no">
+        <name>TMC2590_GET_SG</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x3FF &amp; ((X) &gt;&gt; 10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="118" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a59666e996cf353669647786982230af7" prot="public" static="no">
+        <name>TMC2590_GET_SGU</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x1F &amp; ((X) &gt;&gt; 15))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="121" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1ae78df08645e175b48b9b6e55841751b7" prot="public" static="no">
+        <name>TMC2590_GET_SE</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x1F &amp; ((X) &gt;&gt; 10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="122" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1af7936a3899dcdd9fc9dfafc668c7c687" prot="public" static="no">
+        <name>TMC2590_GET_STST</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 7))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="125" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a6c0b6255161371288c2526a0e13a3625" prot="public" static="no">
+        <name>TMC2590_GET_OLB</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 6))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="126" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a3a7575ff5c5aeb0bef37e4c400866fdc" prot="public" static="no">
+        <name>TMC2590_GET_OLA</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 5))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="127" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1aae11c791dc39f73a591ab96512c0eb9b" prot="public" static="no">
+        <name>TMC2590_GET_S2GB</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="128" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a2bfe1aff14b1d726e6705db0f09b252d" prot="public" static="no">
+        <name>TMC2590_GET_S2GA</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 3))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="129" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a5a0c839263597e30fbdbe08f7bc23eda" prot="public" static="no">
+        <name>TMC2590_GET_OTPW</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 2))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="130" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1a88b74dc1c986d044d4ffeab7e1d05d8d" prot="public" static="no">
+        <name>TMC2590_GET_OT</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 1))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="131" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2590__Macros_8h_1aafaeeff206956af0601ce4383038fa3c" prot="public" static="no">
+        <name>TMC2590_GET_SGF</name>
+        <param><defname>X</defname></param>
+        <initializer>(0x01 &amp; ((X) &gt;&gt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" line="132" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC2590_TMC2590_MACROS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC2590_TMC2590_MACROS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2590__Constants_8h" kindref="compound">TMC2590_Constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC2590__Macros_8h_1a504242db594c57000d495749b8cef298" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_VALUE(x)<sp/>((x)<sp/>&amp;<sp/>0x000FFFFF)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>makro<sp/>function<sp/>to<sp/>determine<sp/>register<sp/>address<sp/>out<sp/>of<sp/>write<sp/>datagram</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC2590__Macros_8h_1a7ba961872328ae1a3e6024eb3a1d4971" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_ADDRESS(X)<sp/>((uint8_t)<sp/>((((X)<sp/>&gt;&gt;<sp/>(TMC2590_ADDRESS_SHIFT<sp/>+<sp/>1))<sp/>?<sp/>((X)<sp/>&gt;&gt;<sp/>TMC2590_ADDRESS_SHIFT)<sp/>:<sp/>0)<sp/>&amp;<sp/>TMC2590_ADDRESS_MASK))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>makro<sp/>function<sp/>to<sp/>shift<sp/>register<sp/>data<sp/>fields<sp/>to<sp/>correct<sp/>position<sp/>with<sp/>masking<sp/>to<sp/>add<sp/>them<sp/>to<sp/>a<sp/>write<sp/>datagram<sp/>like<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>write<sp/>&amp;=<sp/>~TMC2590_SET_CB(-1);<sp/>//<sp/>clearing<sp/>CB<sp/>field<sp/>of<sp/>write<sp/>datagram<sp/>to<sp/>DRVCTRL<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>write<sp/>|=<sp/>TMC2590_SET_CB(5);<sp/>//<sp/>setting<sp/>value<sp/>5<sp/>to<sp/>CB<sp/>field<sp/>of<sp/><sp/>write<sp/>datagram<sp/>to<sp/>DRVCTRL<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>for<sp/>clearing<sp/>use:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC2590__Macros_8h_1abc34c335b0ad43415f7f86396169e958" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_CB(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0xFF)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC2590__Macros_8h_1ad0e83e9f0f42ebe70d79a484bca4a648" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_PHB(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC2590__Macros_8h_1a0e509df7f6e43503a2e56c1eeafa6d3d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_CA(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0xFF)<sp/>&lt;&lt;<sp/>9)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC2590__Macros_8h_1ae77bb9b2960a0b0db7afbe943e90003f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_PHA(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0xFF)<sp/>&lt;&lt;<sp/>17)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC2590__Macros_8h_1a9a59136af1dae1acb7d20e7d93a2e85a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_MRES(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC2590__Macros_8h_1ae5f97375c1bff913dad551cb8065199c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_DEDGE(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC2590__Macros_8h_1a251606625fdcc262b33754e16e95b4e3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_INTERPOL(X)<sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>9)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_CHOPCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC2590__Macros_8h_1a9b33175c89713f2632e7365575f6633c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_TOFF(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC2590__Macros_8h_1a62b29de5a9488759e96c46420d4def8f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_HSTRT(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x07)<sp/>&lt;&lt;<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC2590__Macros_8h_1abe4dca7e23971186f4a2a9664c3dc332" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_HEND(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>7)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC2590__Macros_8h_1a67b279a13dcaa4e152c2181db34cd0c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_HDEC(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>11)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC2590__Macros_8h_1afaa9c8e9aa19f6afbc85a1bc6f251da4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_RNDTF(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>13)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC2590__Macros_8h_1aeff29d5292cdc46cbc03b7f610144f07" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_CHM(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>14)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="TMC2590__Macros_8h_1aad54891d8b7a314b854aaacf2319b2ce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_TBL(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>15)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_SMARTEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC2590__Macros_8h_1a4b4ef7c762838375c298ab6dc56c2e01" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SEMIN(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC2590__Macros_8h_1a1ddab7f3641266a30b40ea0d86d6b5f3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SEUP(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>5)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="TMC2590__Macros_8h_1a6d0884e78d5e320baa50888c664422b8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SEMAX(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC2590__Macros_8h_1a9221cf46491c8c6a065e9a16aad18723" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SEDN(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>13)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC2590__Macros_8h_1a38e5733607958dd0463cfe13fbc84ede" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SEIMIN(X)<sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>15)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_SGCSCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC2590__Macros_8h_1ada6fd9e700fb9a042cb5fe2d5921befd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_CS(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x1F)<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC2590__Macros_8h_1a0aed76de7dc8b2a4044ad440aa1b7a07" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SGT(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x7F)<sp/>&lt;&lt;<sp/>8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC2590__Macros_8h_1ac5f8c51ddd2066292ef7af3489dc12e4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SFILT(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>16)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_DRVCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC2590__Macros_8h_1a570d761ce574556389ef6ea743f16a49" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_RDSEL(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC2590__Macros_8h_1a131a923a7d913c4dffac9582a66f81c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_VSENSE(X)<sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>6)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC2590__Macros_8h_1ad51924ec3ff03ccd69a23db8ceb68be5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SDOFF(X)<sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>7)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC2590__Macros_8h_1aad1480e8186c5ff4ea28135aba7d962b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_TS2G(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC2590__Macros_8h_1a9bfc1e05b9e58c0fae077450f83f1c9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_DISS2G(X)<sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC2590__Macros_8h_1a0895dbb5c4948b851191f9a9cbfc4a7f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SLPL(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>12)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC2590__Macros_8h_1aa32b3edb83d99332c3aa9f587bae32f5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_SLPH(X)<sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x03)<sp/>&lt;&lt;<sp/>14)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC2590__Macros_8h_1a1136378a53ea0077bddd9445ccac9ae2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_SET_TST(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((X)<sp/>&amp;<sp/>0x01)<sp/>&lt;&lt;<sp/>16)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>makro<sp/>function<sp/>to<sp/>shift<sp/>register<sp/>data<sp/>fields<sp/>to<sp/>correct<sp/>position<sp/>with<sp/>masking<sp/>to<sp/>read<sp/>out<sp/>values<sp/>out<sp/>of<sp/>write<sp/>datagram</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//<sp/>cb<sp/>=<sp/>TMC2590_GET_CB(write);<sp/>//<sp/>reading<sp/>CB<sp/>field<sp/>of<sp/>write<sp/>datagram<sp/>to<sp/>DRVCTRL<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_DRVCTRL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="TMC2590__Macros_8h_1af8efafeecec23d05fc3596271aa8096b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_CB(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="TMC2590__Macros_8h_1ab8a2694c636bf9a03a991a777f956bf4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_PHB(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="TMC2590__Macros_8h_1a4c20e8e60292d19fc00a9d864d097788" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_CA(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>9))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="TMC2590__Macros_8h_1af6fc27ddf78ee18b49249381d3659570" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_PHA(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>17))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="TMC2590__Macros_8h_1a6c276a9c8381a6db2d730c1828615278" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_MRES(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="TMC2590__Macros_8h_1a662ff7af9cf334f1392515e02f8f6a81" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_DEDGE(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="TMC2590__Macros_8h_1a106c1710c01ab5b79804b3c823a6c1bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_INTERPOL(X)<sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>9))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_CHOPCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="TMC2590__Macros_8h_1abbefc3c2afd1cc0d7f6a4ffb1ddeae9f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_TOFF(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="TMC2590__Macros_8h_1af7152b0e32a3ccad04886589eb598d40" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_HSTRT(X)<sp/><sp/><sp/><sp/><sp/>(0x07<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>4))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="TMC2590__Macros_8h_1a40def4746ee80ea082438d0019aa07d5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_HEND(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>7))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="TMC2590__Macros_8h_1a79050f8a989bcb4e3ff67185efd105c4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_HDEC(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>11))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="TMC2590__Macros_8h_1ad4f8d205d4bc32a9e112ee72c0f06664" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_RNDTF(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>13))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="TMC2590__Macros_8h_1a27ad42e67e9c960fa496dc9b62871408" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_CHM(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>14))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="TMC2590__Macros_8h_1a1ece051a66ea3bad84512c8d8f2ec6b3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_TBL(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>15))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_SMARTEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="TMC2590__Macros_8h_1a3bdf481539e9675e3b8957510f16cad1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SEMIN(X)<sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="TMC2590__Macros_8h_1af3d7a095ade2dcedfb3f779eb7bde16b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SEUP(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>5))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="TMC2590__Macros_8h_1a21c9661cf76615bea0902ae87ba8929d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SEMAX(X)<sp/><sp/><sp/><sp/><sp/>(0x0F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="TMC2590__Macros_8h_1a24580f5541b223268ab5e64370c35a5f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SEDN(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>13))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="TMC2590__Macros_8h_1a347e7cbf109c5dc1ac5a6a51b1ce3f8f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SEIMIN(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>15))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_SGCSCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="TMC2590__Macros_8h_1a663aedf2848c0190ff0e71efdd1cfd76" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_CS(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x1F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="TMC2590__Macros_8h_1a6ae181c949c010757a3e59c80c87001d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SGT(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x7F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="TMC2590__Macros_8h_1a05f18d24563a302c3ca7a24013f8d679" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SFILT(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>16))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_DRVCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="TMC2590__Macros_8h_1a6ca1bad5f4f3833792d9640f538bde90" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_RDSEL(X)<sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>4))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="TMC2590__Macros_8h_1afbe0bbe95b966f46cb8b56e930df4463" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_VSENSE(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>6))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="TMC2590__Macros_8h_1a4011766c7628b13fb83229cab26e8013" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SDOFF(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>7))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="TMC2590__Macros_8h_1ad3e449bcf9a9fc9e0e69f84eac9f4588" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_TS2G(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="TMC2590__Macros_8h_1a495afc0dc6ff98b807bbdc175571dbcb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_DISS2G(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>10))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="TMC2590__Macros_8h_1a1c1ff7b531ce24924872ac81dc2a4461" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SLPL(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>12))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="TMC2590__Macros_8h_1a5c8d145bc1f5f213606633bca834d6e0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SLPH(X)<sp/><sp/><sp/><sp/><sp/><sp/>(0x03<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>14))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="TMC2590__Macros_8h_1a1dce4741d36b4d618331b15b57402586" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_TST(X)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>16))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment">//<sp/>makro<sp/>function<sp/>to<sp/>shift<sp/>register<sp/>data<sp/>fields<sp/>to<sp/>correct<sp/>position<sp/>with<sp/>masking<sp/>to<sp/>read<sp/>out<sp/>values<sp/>out<sp/>of<sp/>read<sp/>datagram</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_RESPONSE0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="TMC2590__Macros_8h_1a3d9b3dd17d78fa04aa6c718f1b8bd72d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_MSTEP(X)<sp/><sp/>(0x3FF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>10))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_RESPONSE1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="TMC2590__Macros_8h_1a6603fbb78f7117477a150062d51e8f84" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SG(X)<sp/><sp/><sp/><sp/><sp/>(0x3FF<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>10))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_RESPONSE2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="TMC2590__Macros_8h_1a59666e996cf353669647786982230af7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SGU(X)<sp/><sp/><sp/><sp/>(0x1F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>15))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="TMC2590__Macros_8h_1ae78df08645e175b48b9b6e55841751b7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SE(X)<sp/><sp/><sp/><sp/><sp/>(0x1F<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>10))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TMC2590_RESPONSE_LATEST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="TMC2590__Macros_8h_1af7936a3899dcdd9fc9dfafc668c7c687" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_STST(X)<sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>7))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="TMC2590__Macros_8h_1a6c0b6255161371288c2526a0e13a3625" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_OLB(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>6))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="TMC2590__Macros_8h_1a3a7575ff5c5aeb0bef37e4c400866fdc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_OLA(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>5))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="TMC2590__Macros_8h_1aae11c791dc39f73a591ab96512c0eb9b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_S2GB(X)<sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>4))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="TMC2590__Macros_8h_1a2bfe1aff14b1d726e6705db0f09b252d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_S2GA(X)<sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>3))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="TMC2590__Macros_8h_1a5a0c839263597e30fbdbe08f7bc23eda" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_OTPW(X)<sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>2))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="TMC2590__Macros_8h_1a88b74dc1c986d044d4ffeab7e1d05d8d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_OT(X)<sp/><sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>1))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="TMC2590__Macros_8h_1aafaeeff206956af0601ce4383038fa3c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2590_GET_SGF(X)<sp/><sp/><sp/><sp/>(0x01<sp/>&amp;<sp/>((X)<sp/>&gt;&gt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC2590_TMC2590_MACROS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590_Macros.h"/>
+  </compounddef>
+</doxygen>

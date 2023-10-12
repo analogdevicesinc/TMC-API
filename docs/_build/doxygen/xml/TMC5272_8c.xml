@@ -1,0 +1,643 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC5272_8c" kind="file" language="C++">
+    <compoundname>TMC5272.c</compoundname>
+    <includes refid="TMC5272_8h" local="yes">TMC5272.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="12">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="10">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="13">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="6">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC5272.c</label>
+        <link refid="TMC5272_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TMC5272.h</label>
+        <link refid="TMC5272_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>TMC5272_Constants.h</label>
+        <link refid="TMC5272__Constants_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>../TMC5272/TMC5272_Fields.h</label>
+        <link refid="TMC5272__Fields_8h"/>
+      </node>
+      <node id="15">
+        <label>../TMC5272/TMC5272_Register.h</label>
+        <link refid="TMC5272__Register_8h"/>
+      </node>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC5272_8c_1a8207d76cb1bf095f3dad3451c5038745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_init</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, uint8_t channel, ConfigurationTypeDef *config)</argsstring>
+        <name>tmc5272_init</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="19" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="19" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1ae3363b2b0c30d963744b388d23cc2fa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc5272_reset</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272)</argsstring>
+        <name>tmc5272_reset</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="36" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1aa86c64ac2be1564ea46b8b75b88c163c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc5272_restore</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272)</argsstring>
+        <name>tmc5272_restore</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="50" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1a0c8759dadfdb85bc1ee7f684071e7ae7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_setRegisterResetState</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, const int32_t *resetState)</argsstring>
+        <name>tmc5272_setRegisterResetState</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>const int32_t *</type>
+          <declname>resetState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="62" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="62" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1a1ba83e3d2f8e70b5bd4e374b25049896" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_setCallback</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, tmc5272_callback callback)</argsstring>
+        <name>tmc5272_setCallback</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type><ref refid="TMC5272_8h_1a6a85bb164582ef78d5d3d47b0e10d11e" kindref="member">tmc5272_callback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="69" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1acde1ab45a5f5c448f7fa11b7c3597952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc5272_getSlaveAddress</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272)</argsstring>
+        <name>tmc5272_getSlaveAddress</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="73" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1a842fc1a79926e841b4c13398b46587f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_setSlaveAddress</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, uint8_t slaveAddress)</argsstring>
+        <name>tmc5272_setSlaveAddress</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>slaveAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="78" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1a1feff547495a4a772ce2ec38479c981b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void writeConfiguration</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272)</argsstring>
+        <name>writeConfiguration</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="83" column="13" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1aebed7152f40eb14f310fa61157697cb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_periodicJob</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, uint32_t tick)</argsstring>
+        <name>tmc5272_periodicJob</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="89" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="89" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1ab9e2e9f73a0272c9904267b35f0648a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_rotate</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t velocity)</argsstring>
+        <name>tmc5272_rotate</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>velocity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="115" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="115" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1a616ec96add9a5bfb16f3e4c5c490c41c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_right</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t velocity)</argsstring>
+        <name>tmc5272_right</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>velocity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="128" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="128" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1a56a2ae3b27c09402d6fd2dccd6353690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_left</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t velocity)</argsstring>
+        <name>tmc5272_left</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>velocity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="133" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1a9447443634ab6f29316242c5ea7a2e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_stop</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, uint8_t motor)</argsstring>
+        <name>tmc5272_stop</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="138" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1ac078081987ec00271418396550461148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_moveTo</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t position, uint32_t velocityMax)</argsstring>
+        <name>tmc5272_moveTo</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>velocityMax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="143" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="143" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1aa553a65efbd0699ce5f66bf798c8146b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc5272_moveBy</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272, uint8_t motor, uint32_t velocityMax, int32_t *ticks)</argsstring>
+        <name>tmc5272_moveBy</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>velocityMax</declname>
+        </param>
+        <param>
+          <type>int32_t *</type>
+          <declname>ticks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="157" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="157" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC5272_8c_1a647cc2d7de6ad96cbf40e74712f898e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc5272_consistencyCheck</definition>
+        <argsstring>(TMC5272TypeDef *tmc5272)</argsstring>
+        <name>tmc5272_consistencyCheck</name>
+        <param>
+          <type><ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref> *</type>
+          <declname>tmc5272</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" line="166" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c" bodystart="166" bodyend="171"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2017<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC5272_8h" kindref="compound">TMC5272.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Initialize<sp/>a<sp/>TMC5272<sp/>IC.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>function<sp/>requires:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>-<sp/>tmc5272:<sp/>The<sp/>pointer<sp/>to<sp/>a<sp/>TMC5272TypeDef<sp/>struct,<sp/>which<sp/>represents<sp/>one<sp/>IC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>-<sp/>channel:<sp/>The<sp/>channel<sp/>index,<sp/>which<sp/>will<sp/>be<sp/>sent<sp/>back<sp/>in<sp/>the<sp/>SPI<sp/>callback</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>-<sp/>config:<sp/>A<sp/>ConfigurationTypeDef<sp/>struct,<sp/>which<sp/>will<sp/>be<sp/>used<sp/>by<sp/>the<sp/>IC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>-<sp/>registerResetState:<sp/>An<sp/>int32_t<sp/>array<sp/>with<sp/>128<sp/>elements.<sp/>This<sp/>holds<sp/>the<sp/>values<sp/>to<sp/>be<sp/>used<sp/>for<sp/>a<sp/>reset.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1a8207d76cb1bf095f3dad3451c5038745" kindref="member">tmc5272_init</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/>uint8_t<sp/>channel,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*config)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(uint8_t<sp/>motor<sp/>=<sp/>0;<sp/>motor<sp/>&lt;<sp/><ref refid="TMC5272__Constants_8h_1abac8a011a48e07aa1f4c3be0a08ada71" kindref="member">TMC5272_MOTORS</ref>;<sp/>motor++)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1aaaaf6a7fe3cdb5b023e3a57643002033" kindref="member">velocity</ref>[motor]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1a53918c27dbae14f866fc199607b49407" kindref="member">oldX</ref>[motor]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>config;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Types_8h_1a070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a85862109a7b056b2697830e98029a3c1" kindref="member">channel</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>channel;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>TMC5272.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">uint8_t<sp/><ref refid="TMC5272_8c_1ae3363b2b0c30d963744b388d23cc2fa9" kindref="member">tmc5272_reset</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Restore<sp/>the<sp/>TMC5272<sp/>to<sp/>the<sp/>state<sp/>stored<sp/>in<sp/>the<sp/>shadow<sp/>registers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>can<sp/>be<sp/>used<sp/>to<sp/>recover<sp/>the<sp/>IC<sp/>configuration<sp/>after<sp/>a<sp/>VM<sp/>power<sp/>loss.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">uint8_t<sp/><ref refid="TMC5272_8c_1aa86c64ac2be1564ea46b8b75b88c163c" kindref="member">tmc5272_restore</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa7554d7ac751dd29b0f06634cdbafdcc6" kindref="member">CONFIG_RESTORE</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Change<sp/>the<sp/>values<sp/>the<sp/>IC<sp/>will<sp/>be<sp/>configured<sp/>with<sp/>when<sp/>performing<sp/>a<sp/>reset.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1a0c8759dadfdb85bc1ee7f684071e7ae7" kindref="member">tmc5272_setRegisterResetState</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*resetState)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(tmc5272);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(resetState);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Register<sp/>a<sp/>function<sp/>to<sp/>be<sp/>called<sp/>after<sp/>completion<sp/>of<sp/>the<sp/>configuration<sp/>mechanism</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1a1ba83e3d2f8e70b5bd4e374b25049896" kindref="member">tmc5272_setCallback</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/><ref refid="TMC5272_8h_1a6a85bb164582ef78d5d3d47b0e10d11e" kindref="member">tmc5272_callback</ref><sp/>callback)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref><sp/>=<sp/>(<ref refid="Config_8h_1a4f94914f5c7a97833e65a3d10eedfdee" kindref="member">tmc_callback_config</ref>)<sp/>callback;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">uint8_t<sp/><ref refid="TMC5272_8c_1acde1ab45a5f5c448f7fa11b7c3597952" kindref="member">tmc5272_getSlaveAddress</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1a0865b341616ed5e061d19d445882aed8" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1a842fc1a79926e841b4c13398b46587f5" kindref="member">tmc5272_setSlaveAddress</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/>uint8_t<sp/>slaveAddress)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1a0865b341616ed5e061d19d445882aed8" kindref="member">slaveAddress</ref><sp/>=<sp/>slaveAddress;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Helper<sp/>function:<sp/>Configure<sp/>the<sp/>next<sp/>register.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1a1feff547495a4a772ce2ec38479c981b" kindref="member">writeConfiguration</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(tmc5272);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Call<sp/>this<sp/>periodically</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1aebed7152f40eb14f310fa61157697cb2" kindref="member">tmc5272_periodicJob</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/>uint32_t<sp/>tick)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tickDiff;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC5272_8c_1a1feff547495a4a772ce2ec38479c981b" kindref="member">writeConfiguration</ref>(tmc5272);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>x;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>velocity<sp/>v<sp/>=<sp/>dx/dt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((tickDiff<sp/>=<sp/>tick<sp/>-<sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1a3f811048396d9e19b51f02c296176a26" kindref="member">oldTick</ref>)<sp/>&gt;=<sp/>5)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(uint8_t<sp/>motor<sp/>=<sp/>0;<sp/>motor<sp/>&lt;<sp/><ref refid="TMC5272__Constants_8h_1abac8a011a48e07aa1f4c3be0a08ada71" kindref="member">TMC5272_MOTORS</ref>;<sp/>motor++)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="TMC5272_8h_1ade588f7d7f928e3d0506bdd93ac872c0" kindref="member">tmc5272_readInt</ref>(tmc5272,<sp/><ref refid="TMC5272__Register_8h_1a54c72e6430a89c13b29e988e5ac00bd5" kindref="member">TMC5272_XACTUAL</ref>(motor));</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1aaaaf6a7fe3cdb5b023e3a57643002033" kindref="member">velocity</ref>[motor]<sp/>=<sp/>(uint32_t)<sp/>((<ref refid="Types_8h_1a4611b605e45ab401f02cab15c5e38715" kindref="member">float32_t</ref>)<sp/>(abs(x<sp/>-<sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1a53918c27dbae14f866fc199607b49407" kindref="member">oldX</ref>[motor])<sp/>/<sp/>(<ref refid="Types_8h_1a4611b605e45ab401f02cab15c5e38715" kindref="member">float32_t</ref>)<sp/>tickDiff)<sp/>*<sp/>(<ref refid="Types_8h_1a4611b605e45ab401f02cab15c5e38715" kindref="member">float32_t</ref>)<sp/>1048.576);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1a53918c27dbae14f866fc199607b49407" kindref="member">oldX</ref>[motor]<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc5272-&gt;<ref refid="structTMC5272TypeDef_1a3f811048396d9e19b51f02c296176a26" kindref="member">oldTick</ref><sp/><sp/>=<sp/>tick;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1ab9e2e9f73a0272c9904267b35f0648a1" kindref="member">tmc5272_rotate</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/>uint8_t<sp/>motor,<sp/>int32_t<sp/>velocity)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(motor<sp/>&gt;=<sp/><ref refid="TMC5272__Constants_8h_1abac8a011a48e07aa1f4c3be0a08ada71" kindref="member">TMC5272_MOTORS</ref>)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC5272_8h_1a3fcd0ddb529a8166bdc9b801a40d7e22" kindref="member">tmc5272_writeInt</ref>(tmc5272,<sp/><ref refid="TMC5272__Register_8h_1a553b25bf3923cc55a187cc2a606fce0e" kindref="member">TMC5272_VMAX</ref>(motor),<sp/>abs(velocity));</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC5272_8h_1abc4f1ba1ff5f636d5df22c2ba537e128" kindref="member">TMC5272_FIELD_WRITE</ref>(tmc5272,<sp/><ref refid="TMC5272__Register_8h_1a526588111d2b6342b6821596c0be052d" kindref="member">TMC5272_RAMPMODE</ref>,<sp/><ref refid="TMC5272__Fields_8h_1a8828026b73f67cab97f136703e2f9646" kindref="member">TMC5272_RAMPMODE_M0_RAMPMODE_MASK</ref>,<sp/><ref refid="TMC5272__Fields_8h_1a2c07f68b7ec11e85b8afe31d3870d635" kindref="member">TMC5272_RAMPMODE_M0_RAMPMODE_SHIFT</ref>,<sp/><sp/>(velocity<sp/>&gt;=<sp/>0)<sp/>?<sp/><ref refid="TMC5272__Constants_8h_1a7095a38e5482083b059f42a51c59c97d" kindref="member">TMC5272_MODE_VELPOS</ref><sp/>:<sp/><ref refid="TMC5272__Constants_8h_1a2b9d7ff31a4f899a62fea01c4833b6fe" kindref="member">TMC5272_MODE_VELNEG</ref>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(motor<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC5272_8h_1abc4f1ba1ff5f636d5df22c2ba537e128" kindref="member">TMC5272_FIELD_WRITE</ref>(tmc5272,<sp/><ref refid="TMC5272__Register_8h_1a526588111d2b6342b6821596c0be052d" kindref="member">TMC5272_RAMPMODE</ref>,<sp/><ref refid="TMC5272__Fields_8h_1ad2d66055debcfcec997ef9502789d9c0" kindref="member">TMC5272_RAMPMODE_M1_RAMPMODE_MASK</ref>,<sp/><ref refid="TMC5272__Fields_8h_1a5a7e95481e5ffb753c24da85ae8bb8d7" kindref="member">TMC5272_RAMPMODE_M1_RAMPMODE_SHIFT</ref>,<sp/><sp/>(velocity<sp/>&gt;=<sp/>0)<sp/>?<sp/><ref refid="TMC5272__Constants_8h_1a7095a38e5482083b059f42a51c59c97d" kindref="member">TMC5272_MODE_VELPOS</ref><sp/>:<sp/><ref refid="TMC5272__Constants_8h_1a2b9d7ff31a4f899a62fea01c4833b6fe" kindref="member">TMC5272_MODE_VELNEG</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1a616ec96add9a5bfb16f3e4c5c490c41c" kindref="member">tmc5272_right</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/>uint8_t<sp/>motor,<sp/>int32_t<sp/>velocity)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1ab9e2e9f73a0272c9904267b35f0648a1" kindref="member">tmc5272_rotate</ref>(tmc5272,<sp/>motor,<sp/>velocity);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1a56a2ae3b27c09402d6fd2dccd6353690" kindref="member">tmc5272_left</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/>uint8_t<sp/>motor,<sp/>int32_t<sp/>velocity)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1ab9e2e9f73a0272c9904267b35f0648a1" kindref="member">tmc5272_rotate</ref>(tmc5272,<sp/>motor,<sp/>-velocity);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1a9447443634ab6f29316242c5ea7a2e5c" kindref="member">tmc5272_stop</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/>uint8_t<sp/>motor)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1ab9e2e9f73a0272c9904267b35f0648a1" kindref="member">tmc5272_rotate</ref>(tmc5272,<sp/>motor,<sp/>0);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1ac078081987ec00271418396550461148" kindref="member">tmc5272_moveTo</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/>uint8_t<sp/>motor,<sp/>int32_t<sp/>position,<sp/>uint32_t<sp/>velocityMax)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(motor<sp/>&gt;=<sp/><ref refid="TMC5272__Constants_8h_1abac8a011a48e07aa1f4c3be0a08ada71" kindref="member">TMC5272_MOTORS</ref>)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC5272_8h_1abc4f1ba1ff5f636d5df22c2ba537e128" kindref="member">TMC5272_FIELD_WRITE</ref>(tmc5272,<sp/><ref refid="TMC5272__Register_8h_1a526588111d2b6342b6821596c0be052d" kindref="member">TMC5272_RAMPMODE</ref>,<sp/><ref refid="TMC5272__Fields_8h_1a8828026b73f67cab97f136703e2f9646" kindref="member">TMC5272_RAMPMODE_M0_RAMPMODE_MASK</ref>,<sp/><ref refid="TMC5272__Fields_8h_1a2c07f68b7ec11e85b8afe31d3870d635" kindref="member">TMC5272_RAMPMODE_M0_RAMPMODE_SHIFT</ref>,<sp/><ref refid="TMC5272__Constants_8h_1aa6c0fc10c0cdbadf37c9943743605067" kindref="member">TMC5272_MODE_POSITION</ref>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(motor<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC5272_8h_1abc4f1ba1ff5f636d5df22c2ba537e128" kindref="member">TMC5272_FIELD_WRITE</ref>(tmc5272,<sp/><ref refid="TMC5272__Register_8h_1a526588111d2b6342b6821596c0be052d" kindref="member">TMC5272_RAMPMODE</ref>,<sp/><ref refid="TMC5272__Fields_8h_1ad2d66055debcfcec997ef9502789d9c0" kindref="member">TMC5272_RAMPMODE_M1_RAMPMODE_MASK</ref>,<sp/><ref refid="TMC5272__Fields_8h_1a5a7e95481e5ffb753c24da85ae8bb8d7" kindref="member">TMC5272_RAMPMODE_M1_RAMPMODE_SHIFT</ref>,<sp/><ref refid="TMC5272__Constants_8h_1aa6c0fc10c0cdbadf37c9943743605067" kindref="member">TMC5272_MODE_POSITION</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC5272_8h_1a3fcd0ddb529a8166bdc9b801a40d7e22" kindref="member">tmc5272_writeInt</ref>(tmc5272,<sp/><ref refid="TMC5272__Register_8h_1a553b25bf3923cc55a187cc2a606fce0e" kindref="member">TMC5272_VMAX</ref>(motor),<sp/>velocityMax);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC5272_8h_1a3fcd0ddb529a8166bdc9b801a40d7e22" kindref="member">tmc5272_writeInt</ref>(tmc5272,<sp/><ref refid="TMC5272__Register_8h_1a8bd97fe0d142dd2b798062e72cc1e7ad" kindref="member">TMC5272_XTARGET</ref>(motor),<sp/>position);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1aa553a65efbd0699ce5f66bf798c8146b" kindref="member">tmc5272_moveBy</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272,<sp/>uint8_t<sp/>motor,<sp/>uint32_t<sp/>velocityMax,<sp/>int32_t<sp/>*ticks)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>determine<sp/>actual<sp/>position<sp/>and<sp/>add<sp/>numbers<sp/>of<sp/>ticks<sp/>to<sp/>move</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>*ticks<sp/>+=<sp/><ref refid="TMC5272_8h_1ade588f7d7f928e3d0506bdd93ac872c0" kindref="member">tmc5272_readInt</ref>(tmc5272,<sp/><ref refid="TMC5272__Register_8h_1a54c72e6430a89c13b29e988e5ac00bd5" kindref="member">TMC5272_XACTUAL</ref>(motor));</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="TMC5272_8c_1ac078081987ec00271418396550461148" kindref="member">tmc5272_moveTo</ref>(tmc5272,<sp/>motor,<sp/>*ticks,<sp/>velocityMax);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">uint8_t<sp/><ref refid="TMC5272_8c_1a647cc2d7de6ad96cbf40e74712f898e2" kindref="member">tmc5272_consistencyCheck</ref>(<ref refid="structTMC5272TypeDef" kindref="compound">TMC5272TypeDef</ref><sp/>*tmc5272)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tmc5272-&gt;<ref refid="structTMC5272TypeDef_1ad6ee6a08220d91383a9ddfff5f5c3294" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5272/TMC5272.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC5130__Constants_8h" kind="file" language="C++">
+    <compoundname>TMC5130_Constants.h</compoundname>
+    <includes refid="Constants_8h" local="yes">tmc/helpers/Constants.h</includes>
+    <includedby refid="TMC5130_8h" local="yes">TMC5130.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>tmc/helpers/Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="1">
+        <label>TMC5130_Constants.h</label>
+        <link refid="TMC5130__Constants_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC5130.c</label>
+        <link refid="TMC5130_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC5130.h</label>
+        <link refid="TMC5130_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC5130_Constants.h</label>
+        <link refid="TMC5130__Constants_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a2b9c9bf25180060c66f685e213021767" prot="public" static="no">
+        <name>TMC5130_REGISTER_COUNT</name>
+        <initializer><ref refid="Constants_8h_1a8ac38932318be2eeb26a7d35a110e074" kindref="member">TMC_REGISTER_COUNT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a433c1337d3663a65c760b6cc3859e60b" prot="public" static="no">
+        <name>TMC5130_MOTORS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a31cd72f3866a37a4a10e434ee2d160d0" prot="public" static="no">
+        <name>TMC5130_WRITE_BIT</name>
+        <initializer><ref refid="Constants_8h_1aa432cd9074eb257b2c69561eae5ecda0" kindref="member">TMC_WRITE_BIT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a5a388ff6cfced608ac19709f39a0b7a8" prot="public" static="no">
+        <name>TMC5130_ADDRESS_MASK</name>
+        <initializer><ref refid="Constants_8h_1a08695e21b3868da01ba4598384304390" kindref="member">TMC_ADDRESS_MASK</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1ab543e3344e7253e07a2d264e0c69dd83" prot="public" static="no">
+        <name>TMC5130_MAX_VELOCITY</name>
+        <initializer>8388096</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a0f24c29981e2340bca883273f06230d9" prot="public" static="no">
+        <name>TMC5130_MAX_ACCELERATION</name>
+        <initializer><ref refid="Types_8h_1a859f1af2da9918bd81d8f8aedd21f118" kindref="member">u16_MAX</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1ab193557ca8f052ceea3b43c27623acb3" prot="public" static="no">
+        <name>TMC5130_MODE_POSITION</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1ab603eee4fdee09a6fad829af40b0eaa7" prot="public" static="no">
+        <name>TMC5130_MODE_VELPOS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1aea64e508b661c2528b271b33e434652f" prot="public" static="no">
+        <name>TMC5130_MODE_VELNEG</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a4d23694a8c376a1bcd4c7be76dc59a5e" prot="public" static="no">
+        <name>TMC5130_MODE_HOLD</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a7aeb94ac55900988fa0107dd8116b73c" prot="public" static="no">
+        <name>TMC5130_SW_STOPL_ENABLE</name>
+        <initializer>0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a31d774d77b8a6e3ed406fd15b329d0e8" prot="public" static="no">
+        <name>TMC5130_SW_STOPR_ENABLE</name>
+        <initializer>0x0002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1aa6a5d14dde195d431a85e4fe44227bb5" prot="public" static="no">
+        <name>TMC5130_SW_STOPL_POLARITY</name>
+        <initializer>0x0004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a3e32df5c18368a620514b9b130360209" prot="public" static="no">
+        <name>TMC5130_SW_STOPR_POLARITY</name>
+        <initializer>0x0008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a859505a0006967291fe486a50bcbd909" prot="public" static="no">
+        <name>TMC5130_SW_SWAP_LR</name>
+        <initializer>0x0010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a7faf9997a9756deb5286547722c9dfb9" prot="public" static="no">
+        <name>TMC5130_SW_LATCH_L_ACT</name>
+        <initializer>0x0020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a569c4e622c2af3d4a0519a5817b45f77" prot="public" static="no">
+        <name>TMC5130_SW_LATCH_L_INACT</name>
+        <initializer>0x0040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1aa8850e5830e9ef2fbb80d26c58b1fa31" prot="public" static="no">
+        <name>TMC5130_SW_LATCH_R_ACT</name>
+        <initializer>0x0080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1aac4d80c047487f966a7be25146e002d5" prot="public" static="no">
+        <name>TMC5130_SW_LATCH_R_INACT</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1ad9db1ed93ae2a14fbb624693314ef8bf" prot="public" static="no">
+        <name>TMC5130_SW_LATCH_ENC</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1acf5e87199df8f21c7703beb7fd562f50" prot="public" static="no">
+        <name>TMC5130_SW_SG_STOP</name>
+        <initializer>0x0400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a9ce4d991d8deedc4b2181f97dbb3d5dc" prot="public" static="no">
+        <name>TMC5130_SW_SOFTSTOP</name>
+        <initializer>0x0800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1ae91adf1b2a4bd813208779eeb9221064" prot="public" static="no">
+        <name>TMC5130_RS_STOPL</name>
+        <initializer>0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a13e8d9fc1038a3c15005702a2ad08cbc" prot="public" static="no">
+        <name>TMC5130_RS_STOPR</name>
+        <initializer>0x0002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a72dd4ba51489113e2fccc490c36b0b30" prot="public" static="no">
+        <name>TMC5130_RS_LATCHL</name>
+        <initializer>0x0004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1ade69fefd7285b25611fe11e52e562be1" prot="public" static="no">
+        <name>TMC5130_RS_LATCHR</name>
+        <initializer>0x0008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="46" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1afb72ffa127f69f0808295c462c91bfcf" prot="public" static="no">
+        <name>TMC5130_RS_EV_STOPL</name>
+        <initializer>0x0010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1acf6e7c0182313cd977f341e9dd963df3" prot="public" static="no">
+        <name>TMC5130_RS_EV_STOPR</name>
+        <initializer>0x0020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1aed6423086b18b4f8e16cee07a60015de" prot="public" static="no">
+        <name>TMC5130_RS_EV_STOP_SG</name>
+        <initializer>0x0040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a4cd329f5728a8bd340de680aa175c786" prot="public" static="no">
+        <name>TMC5130_RS_EV_POSREACHED</name>
+        <initializer>0x0080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a35466d13e9311a51440636ba286cb064" prot="public" static="no">
+        <name>TMC5130_RS_VELREACHED</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a84a5058f57385a8d1b7f6d87559c02b4" prot="public" static="no">
+        <name>TMC5130_RS_POSREACHED</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1af725c0f9e377446863131e3b29d75adb" prot="public" static="no">
+        <name>TMC5130_RS_VZERO</name>
+        <initializer>0x0400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a34ed687b0badb7c4ec4d382ce2b2b0c6" prot="public" static="no">
+        <name>TMC5130_RS_ZEROWAIT</name>
+        <initializer>0x0800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a8ffcbeb38a56a74d5ab0d0620a132396" prot="public" static="no">
+        <name>TMC5130_RS_SECONDMOVE</name>
+        <initializer>0x1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a0b3230ef9a56fed2dc68dd1262cb7476" prot="public" static="no">
+        <name>TMC5130_RS_SG</name>
+        <initializer>0x2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a086f4f7b5d3f41454ffd1261c70c897c" prot="public" static="no">
+        <name>TMC5130_EM_DECIMAL</name>
+        <initializer>0x0400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1af382e98e6bd51baafc587072b551a215" prot="public" static="no">
+        <name>TMC5130_EM_LATCH_XACT</name>
+        <initializer>0x0200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a0afbd9ecb112f65b22a8dbffc412df06" prot="public" static="no">
+        <name>TMC5130_EM_CLR_XENC</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a5a6cd5754328753e90b328786480a203" prot="public" static="no">
+        <name>TMC5130_EM_NEG_EDGE</name>
+        <initializer>0x0080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="62" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1aa02d2bdac491c7e32a7beff8559c34bd" prot="public" static="no">
+        <name>TMC5130_EM_POS_EDGE</name>
+        <initializer>0x0040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="63" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a26a354ffa35a16f1fbe95cfc6f8f4969" prot="public" static="no">
+        <name>TMC5130_EM_CLR_ONCE</name>
+        <initializer>0x0020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="64" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a479a2172c4bfebbaae6d19fb0d8a71ba" prot="public" static="no">
+        <name>TMC5130_EM_CLR_CONT</name>
+        <initializer>0x0010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1ae9db2e5395fd0873e820d08785dbe2d6" prot="public" static="no">
+        <name>TMC5130_EM_IGNORE_AB</name>
+        <initializer>0x0008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a074eeee5c677fba09448008e4f577d91" prot="public" static="no">
+        <name>TMC5130_EM_POL_N</name>
+        <initializer>0x0004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="67" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a1a1faae1fddd841a110c8bc803451614" prot="public" static="no">
+        <name>TMC5130_EM_POL_B</name>
+        <initializer>0x0002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="68" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC5130__Constants_8h_1a1058b946b132c2cb5d90633258b8bded" prot="public" static="no">
+        <name>TMC5130_EM_POL_A</name>
+        <initializer>0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" line="69" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2018<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC5130_TMC5130_CONSTANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC5130_TMC5130_CONSTANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Constants_8h" kindref="compound">tmc/helpers/Constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC5130__Constants_8h_1a2b9c9bf25180060c66f685e213021767" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_REGISTER_COUNT<sp/><sp/><sp/>TMC_REGISTER_COUNT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC5130__Constants_8h_1a433c1337d3663a65c760b6cc3859e60b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_MOTORS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC5130__Constants_8h_1a31cd72f3866a37a4a10e434ee2d160d0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_WRITE_BIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMC_WRITE_BIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC5130__Constants_8h_1a5a388ff6cfced608ac19709f39a0b7a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_ADDRESS_MASK<sp/><sp/><sp/><sp/><sp/>TMC_ADDRESS_MASK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC5130__Constants_8h_1ab543e3344e7253e07a2d264e0c69dd83" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_MAX_VELOCITY<sp/><sp/><sp/><sp/><sp/>8388096</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC5130__Constants_8h_1a0f24c29981e2340bca883273f06230d9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_MAX_ACCELERATION<sp/>u16_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ramp<sp/>modes<sp/>(Register<sp/>TMC5161_RAMPMODE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC5130__Constants_8h_1ab193557ca8f052ceea3b43c27623acb3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_MODE_POSITION<sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC5130__Constants_8h_1ab603eee4fdee09a6fad829af40b0eaa7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_MODE_VELPOS<sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC5130__Constants_8h_1aea64e508b661c2528b271b33e434652f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_MODE_VELNEG<sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC5130__Constants_8h_1a4d23694a8c376a1bcd4c7be76dc59a5e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_MODE_HOLD<sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limit<sp/>switch<sp/>mode<sp/>bits<sp/>(Register<sp/>TMC5130_SWMODE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC5130__Constants_8h_1a7aeb94ac55900988fa0107dd8116b73c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_STOPL_ENABLE<sp/><sp/><sp/><sp/>0x0001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC5130__Constants_8h_1a31d774d77b8a6e3ed406fd15b329d0e8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_STOPR_ENABLE<sp/><sp/><sp/><sp/>0x0002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC5130__Constants_8h_1aa6a5d14dde195d431a85e4fe44227bb5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_STOPL_POLARITY<sp/><sp/>0x0004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC5130__Constants_8h_1a3e32df5c18368a620514b9b130360209" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_STOPR_POLARITY<sp/><sp/>0x0008</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC5130__Constants_8h_1a859505a0006967291fe486a50bcbd909" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_SWAP_LR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC5130__Constants_8h_1a7faf9997a9756deb5286547722c9dfb9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_LATCH_L_ACT<sp/><sp/><sp/><sp/><sp/>0x0020</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC5130__Constants_8h_1a569c4e622c2af3d4a0519a5817b45f77" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_LATCH_L_INACT<sp/><sp/><sp/>0x0040</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC5130__Constants_8h_1aa8850e5830e9ef2fbb80d26c58b1fa31" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_LATCH_R_ACT<sp/><sp/><sp/><sp/><sp/>0x0080</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC5130__Constants_8h_1aac4d80c047487f966a7be25146e002d5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_LATCH_R_INACT<sp/><sp/><sp/>0x0100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC5130__Constants_8h_1ad9db1ed93ae2a14fbb624693314ef8bf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_LATCH_ENC<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC5130__Constants_8h_1acf5e87199df8f21c7703beb7fd562f50" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_SG_STOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC5130__Constants_8h_1a9ce4d991d8deedc4b2181f97dbb3d5dc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_SW_SOFTSTOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0800</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Status<sp/>bits<sp/>(Register<sp/>TMC5130_RAMPSTAT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="TMC5130__Constants_8h_1ae91adf1b2a4bd813208779eeb9221064" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_STOPL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC5130__Constants_8h_1a13e8d9fc1038a3c15005702a2ad08cbc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_STOPR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC5130__Constants_8h_1a72dd4ba51489113e2fccc490c36b0b30" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_LATCHL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC5130__Constants_8h_1ade69fefd7285b25611fe11e52e562be1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_LATCHR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0008</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="TMC5130__Constants_8h_1afb72ffa127f69f0808295c462c91bfcf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_EV_STOPL<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC5130__Constants_8h_1acf6e7c0182313cd977f341e9dd963df3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_EV_STOPR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0020</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC5130__Constants_8h_1aed6423086b18b4f8e16cee07a60015de" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_EV_STOP_SG<sp/><sp/><sp/><sp/><sp/>0x0040</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC5130__Constants_8h_1a4cd329f5728a8bd340de680aa175c786" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_EV_POSREACHED<sp/><sp/>0x0080</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="TMC5130__Constants_8h_1a35466d13e9311a51440636ba286cb064" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_VELREACHED<sp/><sp/><sp/><sp/><sp/>0x0100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC5130__Constants_8h_1a84a5058f57385a8d1b7f6d87559c02b4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_POSREACHED<sp/><sp/><sp/><sp/><sp/>0x0200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC5130__Constants_8h_1af725c0f9e377446863131e3b29d75adb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_VZERO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC5130__Constants_8h_1a34ed687b0badb7c4ec4d382ce2b2b0c6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_ZEROWAIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0800</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC5130__Constants_8h_1a8ffcbeb38a56a74d5ab0d0620a132396" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_SECONDMOVE<sp/><sp/><sp/><sp/><sp/>0x1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC5130__Constants_8h_1a0b3230ef9a56fed2dc68dd1262cb7476" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_RS_SG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Encoderbits<sp/>(Register<sp/>TMC5130_ENCMODE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC5130__Constants_8h_1a086f4f7b5d3f41454ffd1261c70c897c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_DECIMAL<sp/><sp/><sp/><sp/><sp/>0x0400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC5130__Constants_8h_1af382e98e6bd51baafc587072b551a215" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_LATCH_XACT<sp/><sp/>0x0200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC5130__Constants_8h_1a0afbd9ecb112f65b22a8dbffc412df06" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_CLR_XENC<sp/><sp/><sp/><sp/>0x0100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC5130__Constants_8h_1a5a6cd5754328753e90b328786480a203" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_NEG_EDGE<sp/><sp/><sp/><sp/>0x0080</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC5130__Constants_8h_1aa02d2bdac491c7e32a7beff8559c34bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_POS_EDGE<sp/><sp/><sp/><sp/>0x0040</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC5130__Constants_8h_1a26a354ffa35a16f1fbe95cfc6f8f4969" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_CLR_ONCE<sp/><sp/><sp/><sp/>0x0020</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC5130__Constants_8h_1a479a2172c4bfebbaae6d19fb0d8a71ba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_CLR_CONT<sp/><sp/><sp/><sp/>0x0010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC5130__Constants_8h_1ae9db2e5395fd0873e820d08785dbe2d6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_IGNORE_AB<sp/><sp/><sp/>0x0008</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="TMC5130__Constants_8h_1a074eeee5c677fba09448008e4f577d91" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_POL_N<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="TMC5130__Constants_8h_1a1a1faae1fddd841a110c8bc803451614" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_POL_B<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="TMC5130__Constants_8h_1a1058b946b132c2cb5d90633258b8bded" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC5130_EM_POL_A<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC5130_TMC5130_CONSTANTS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC5130/TMC5130_Constants.h"/>
+  </compounddef>
+</doxygen>

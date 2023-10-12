@@ -1,0 +1,1920 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2300__Fields_8h" kind="file" language="C++">
+    <compoundname>TMC2300_Fields.h</compoundname>
+    <includedby refid="TMC2300_8h" local="yes">TMC2300.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC2300.c</label>
+        <link refid="TMC2300_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC2300.h</label>
+        <link refid="TMC2300_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2300_Fields.h</label>
+        <link refid="TMC2300__Fields_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a03a7f740021e8b138a78259725b55751" prot="public" static="no">
+        <name>TMC2300_PWM_DIRECT_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="13" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a6bd1bc872012cf1120033a419d8b7da0" prot="public" static="no">
+        <name>TMC2300_PWM_DIRECT_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="14" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ab7a540c07d716e5e533ffce762c084a6" prot="public" static="no">
+        <name>TMC2300_EXTCAP_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ab1d2ab7625667cce7009e1a399e95f55" prot="public" static="no">
+        <name>TMC2300_EXTCAP_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a93d4028b5dfa081d1b33a0d3fe051bf0" prot="public" static="no">
+        <name>TMC2300_EN_SPREADCYCLE_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a48dd4f3dfdba85aa9cc27dd0324193d2" prot="public" static="no">
+        <name>TMC2300_EN_SPREADCYCLE_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a7c17a933aadc8dc7ebd8d69aca8b2ac6" prot="public" static="no">
+        <name>TMC2300_SHAFT_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a2dfb4230c02a35a717a75791302f57c7" prot="public" static="no">
+        <name>TMC2300_SHAFT_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ab6acc46b013d441b88a18fb1c997e854" prot="public" static="no">
+        <name>TMC2300_DIAG_INDEX_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ad2f964cc06620525993e78b2b3535ae5" prot="public" static="no">
+        <name>TMC2300_DIAG_INDEX_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a13395ff46fe3f10c2409addc29285769" prot="public" static="no">
+        <name>TMC2300_DIAG_STEP_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a62335dab3d430622a35845b5f2b08408" prot="public" static="no">
+        <name>TMC2300_DIAG_STEP_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="24" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a73b37f28c50e2f10ddf444fff27fff27" prot="public" static="no">
+        <name>TMC2300_PDN_DISABLE_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1af283dcfe3ebc69b6261410b526e0ef66" prot="public" static="no">
+        <name>TMC2300_PDN_DISABLE_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac28d79dbae05f8acc456e2f09dd921bc" prot="public" static="no">
+        <name>TMC2300_MSTEP_REG_SELECT_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1abdf25c666de8c113a13989809f1c4c11" prot="public" static="no">
+        <name>TMC2300_MSTEP_REG_SELECT_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a265dc7c31a1219da22c5a481eaa44707" prot="public" static="no">
+        <name>TMC2300_MULTISTEP_FILT_MASK</name>
+        <initializer>0x100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aa5ec51a0bf6c6448b435e4ef1d430e15" prot="public" static="no">
+        <name>TMC2300_MULTISTEP_FILT_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac07266733c864490a89834d464184dc7" prot="public" static="no">
+        <name>TMC2300_TEST_MODE_MASK</name>
+        <initializer>0x200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac9e50c443d0a525275c4d6d39cf1b1bb" prot="public" static="no">
+        <name>TMC2300_TEST_MODE_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="32" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aa8e9bad4f5629083830d3bde6e9fb69c" prot="public" static="no">
+        <name>TMC2300_RESET_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="33" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aa618c3d1051c447459d3fbb419fb24a8" prot="public" static="no">
+        <name>TMC2300_RESET_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a9db31c56e7e0ce53937e41146ceb1a21" prot="public" static="no">
+        <name>TMC2300_DRV_ERR_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a081987386ee40d64f6ecc8905cc256d7" prot="public" static="no">
+        <name>TMC2300_DRV_ERR_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a49b742e4deb71f4c4fb496030abeedf2" prot="public" static="no">
+        <name>TMC2300_U3V5_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="37" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a062621591e211fdc9d1d94768dd60142" prot="public" static="no">
+        <name>TMC2300_U3V5_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a6bdf69b3a0c2ae88d63cbe18ee542720" prot="public" static="no">
+        <name>TMC2300_IFCNT_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a95e7b68772511d65b9c7721b963b0792" prot="public" static="no">
+        <name>TMC2300_IFCNT_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aa6c089adec0c484704d7730a8a728495" prot="public" static="no">
+        <name>TMC2300_SLAVECONF_MASK</name>
+        <initializer>0xF00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a17e7f5102f3c9ac7741f0c73374e7f03" prot="public" static="no">
+        <name>TMC2300_SLAVECONF_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ae22ed172d73f397d9b6e248b8d6388cb" prot="public" static="no">
+        <name>TMC2300_EN_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a4b0b8b820ce4b57831cf62ea1c286e11" prot="public" static="no">
+        <name>TMC2300_EN_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="44" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a05fc3b242bf9a5a6952dd617d552607a" prot="public" static="no">
+        <name>TMC2300_NSTDBY_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="45" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5724ca8975aa21bf0499af250b33c689" prot="public" static="no">
+        <name>TMC2300_NSTDBY_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="46" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a57a2ba5cc7864d9cf660ab1eb3f2cb5f" prot="public" static="no">
+        <name>TMC2300_MS1_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a7839d3f7a1172593759786ff602d0662" prot="public" static="no">
+        <name>TMC2300_MS1_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a7a015b994ffa4ead89feb52f7d0ba84e" prot="public" static="no">
+        <name>TMC2300_MS2_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="49" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a13291aae08e00d72dfa70c8febc6ec84" prot="public" static="no">
+        <name>TMC2300_MS2_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="50" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a009f6069b47ab8daa03bfffd754fc049" prot="public" static="no">
+        <name>TMC2300_DIAG_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a0174cfc14fe98a7a371217bfa1573215" prot="public" static="no">
+        <name>TMC2300_DIAG_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a06c1c663779f6cfecc1b4ac9afed5e1f" prot="public" static="no">
+        <name>TMC2300_STEPPERCLK_INPUT_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a40f7d69ae61e899ef4a5100f4fbcfdc5" prot="public" static="no">
+        <name>TMC2300_STEPPERCLK_INPUT_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a648f3eebd8aa296e788abd8237ea2b29" prot="public" static="no">
+        <name>TMC2300_PDN_UART_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a1d697667c241bac015c7bc6fe75bdcf3" prot="public" static="no">
+        <name>TMC2300_PDN_UART_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a51a308ea36c9aa80b994dce1a76381ad" prot="public" static="no">
+        <name>TMC2300_MODE_INPUT_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a46d26ebfb66485866057d09b14814e65" prot="public" static="no">
+        <name>TMC2300_MODE_INPUT_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="58" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a9d82fd4463e3ec1c76924ade347b845e" prot="public" static="no">
+        <name>TMC2300_STEP_MASK</name>
+        <initializer>0x100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="59" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a934896f4e24e5abae50b3d02019fbdbb" prot="public" static="no">
+        <name>TMC2300_STEP_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="60" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a6d3b3cf72d35064b7b9589185c248d03" prot="public" static="no">
+        <name>TMC2300_DIR_MASK</name>
+        <initializer>0x200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="61" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a64972a14732c4f003c204ce3e4ddabfb" prot="public" static="no">
+        <name>TMC2300_DIR_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="62" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1adafc6bfe1f73c1f5ef5db050e624ca2f" prot="public" static="no">
+        <name>TMC2300_COMP_A1A2_MASK</name>
+        <initializer>0x400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="63" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1afa7c409c65be6bcaa3fbc446d54e24cb" prot="public" static="no">
+        <name>TMC2300_COMP_A1A2_SHIFT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="64" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a8ba104d1c87fdab284b3238a8d1d970a" prot="public" static="no">
+        <name>TMC2300_COMP_B1B2_MASK</name>
+        <initializer>0x800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="65" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a54fc703bef54a7c44be65e237d249d70" prot="public" static="no">
+        <name>TMC2300_COMP_B1B2_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac33c0537f6fc21b6e5bb83022a41852e" prot="public" static="no">
+        <name>TMC2300_VERSION_MASK</name>
+        <initializer>0xFF000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="67" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a0a9ee9d7e4da9bd1248b3fcb91908bea" prot="public" static="no">
+        <name>TMC2300_VERSION_SHIFT</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="68" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aa5f1297ec36557436328ed892b6f590b" prot="public" static="no">
+        <name>TMC2300_IHOLD_MASK</name>
+        <initializer>0x1F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="69" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a1408939825e3e351f8e2d4a17be729cb" prot="public" static="no">
+        <name>TMC2300_IHOLD_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="70" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a611b520dd731218ca0f7d2d57bd38426" prot="public" static="no">
+        <name>TMC2300_IRUN_MASK</name>
+        <initializer>0x1F00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="71" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aedfe23ab96a4efb98978494b435e5ee4" prot="public" static="no">
+        <name>TMC2300_IRUN_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="72" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a552b1f502d04d8da86ad4e887dafc5af" prot="public" static="no">
+        <name>TMC2300_IHOLDDELAY_MASK</name>
+        <initializer>0xF0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="73" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1abc58cde532ea1914c7851db00fec4a9b" prot="public" static="no">
+        <name>TMC2300_IHOLDDELAY_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="74" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac9c486484a67aff8e987957a7c4c12ee" prot="public" static="no">
+        <name>TMC2300_TPOWERDOWN_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="75" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1abb71e34ae4720fa7b621fa98b3b3f15c" prot="public" static="no">
+        <name>TMC2300_TPOWERDOWN_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="76" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ad499216e580a3173e930924c9e22c40e" prot="public" static="no">
+        <name>TMC2300_TSTEP_MASK</name>
+        <initializer>0xFFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="77" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a94f2a69af99c90ecff089868a3aa6f5d" prot="public" static="no">
+        <name>TMC2300_TSTEP_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="78" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ade1e68c3003671b7c067fc2a6ccfef81" prot="public" static="no">
+        <name>TMC2300_TCOOLTHRS_MASK</name>
+        <initializer>0xFFFFFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="79" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aa42a77cb386f72e9a7549d5a6f627c7f" prot="public" static="no">
+        <name>TMC2300_TCOOLTHRS_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="80" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1acf136f1d0a3e7043cb314d7f52d1d21c" prot="public" static="no">
+        <name>TMC2300_VACTUAL_MASK</name>
+        <initializer>0xFFFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="81" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a30c0b5f86c02a26365bbd5c9546f4b83" prot="public" static="no">
+        <name>TMC2300_VACTUAL_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="82" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a0f0fc66dd026faef86c149952c57f3be" prot="public" static="no">
+        <name>TMC2300_SGTHRS_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="83" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a4ea81fbdd47e060fd945b8017c65ae7d" prot="public" static="no">
+        <name>TMC2300_SGTHRS_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="84" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a35971c0625c04bc7deb56485148a81c2" prot="public" static="no">
+        <name>TMC2300_SG_VALUE_MASK</name>
+        <initializer>0x3FF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="85" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a3147b77c0c1ac9444eba2b7d9476ad6c" prot="public" static="no">
+        <name>TMC2300_SG_VALUE_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="86" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a70d2bb409d11c7621b12cc987f94cb28" prot="public" static="no">
+        <name>TMC2300_SEMIN_MASK</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="87" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ae810bcc6497785209d01445f1fc38c76" prot="public" static="no">
+        <name>TMC2300_SEMIN_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="88" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aa62f13d558c9726e597b64e4b2decae0" prot="public" static="no">
+        <name>TMC2300_SEUP_MASK</name>
+        <initializer>0x60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="89" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a713f0d2d866199649c28b203d75ed852" prot="public" static="no">
+        <name>TMC2300_SEUP_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="90" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5f4866349ee01e92d87f7bf03511621b" prot="public" static="no">
+        <name>TMC2300_SEMAX_MASK</name>
+        <initializer>0xF00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="91" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a3847136acd560e95011d2edfb0120f55" prot="public" static="no">
+        <name>TMC2300_SEMAX_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="92" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a4af887de301335fae87043e96a796f0f" prot="public" static="no">
+        <name>TMC2300_SEDN_MASK</name>
+        <initializer>0x6000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="93" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a20e3db8c655976b1e1ecc1d2c4da655a" prot="public" static="no">
+        <name>TMC2300_SEDN_SHIFT</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="94" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aa36eb29bc4f73a380e66b8e73215302d" prot="public" static="no">
+        <name>TMC2300_SEIMIN_MASK</name>
+        <initializer>0x8000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="95" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5f88467768313b355b298a03516a4bf0" prot="public" static="no">
+        <name>TMC2300_SEIMIN_SHIFT</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="96" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a08b100c98b2eb99cf8a95a2a37bd827f" prot="public" static="no">
+        <name>TMC2300_MSCNT_MASK</name>
+        <initializer>0x3FF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="97" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a17a5a64bc7f2fb681b9bfa8f589193aa" prot="public" static="no">
+        <name>TMC2300_MSCNT_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="98" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a701b1891ac5d852518382881c411481c" prot="public" static="no">
+        <name>TMC2300_CUR_A_MASK</name>
+        <initializer>0x1FF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="99" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a18f145d8aa380c0dd5f6a7270fab843a" prot="public" static="no">
+        <name>TMC2300_CUR_A_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="100" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5a8a1d2c9bb3d0b6a5c17f98c083015b" prot="public" static="no">
+        <name>TMC2300_CUR_B_MASK</name>
+        <initializer>0x1FF0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="101" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1af11b93b15eca262df77fad6e8fca4a0d" prot="public" static="no">
+        <name>TMC2300_CUR_B_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="102" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1af6ac3d93014924fe1ee01c63dc8921ae" prot="public" static="no">
+        <name>TMC2300_ENABLEDRV_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="103" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac6d10f2c0829f9b661de3a574092ea64" prot="public" static="no">
+        <name>TMC2300_ENABLEDRV_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="104" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a4e7a8b32f0e781f34c4a62efb0dad5c5" prot="public" static="no">
+        <name>TMC2300_TBL_MASK</name>
+        <initializer>0x18000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="105" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a823125b0e4f3ab1cd818c7cc93f88182" prot="public" static="no">
+        <name>TMC2300_TBL_SHIFT</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="106" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5a45492ad2d7d3577cc129bf0e99affa" prot="public" static="no">
+        <name>TMC2300_MRES_MASK</name>
+        <initializer>0xF000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="107" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5c21241d80a463485cb693212a0cbd9d" prot="public" static="no">
+        <name>TMC2300_MRES_SHIFT</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="108" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5e9effc701dabb5e3d4fee304b12512e" prot="public" static="no">
+        <name>TMC2300_INTPOL_MASK</name>
+        <initializer>0x10000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="109" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a61ace0f686d70a7e7dd204d0d6d0893b" prot="public" static="no">
+        <name>TMC2300_INTPOL_SHIFT</name>
+        <initializer>28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="110" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ab34877e410eb12fbb228474f5d19057f" prot="public" static="no">
+        <name>TMC2300_DEDGE_MASK</name>
+        <initializer>0x20000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="111" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ae8dd6448c6344b5a54b5cba772a2a009" prot="public" static="no">
+        <name>TMC2300_DEDGE_SHIFT</name>
+        <initializer>29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="112" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a216bfba685e99f73c293325d3552e2c9" prot="public" static="no">
+        <name>TMC2300_DISS2G_MASK</name>
+        <initializer>0x40000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="113" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a449560ac0529018b0db79ed28d8adc7b" prot="public" static="no">
+        <name>TMC2300_DISS2G_SHIFT</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="114" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac333d26289529dba6913a08b42f48355" prot="public" static="no">
+        <name>TMC2300_DISS2VS_MASK</name>
+        <initializer>0x80000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="115" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a3ec8e1933ff3f9f3fa2a5b3720fff20c" prot="public" static="no">
+        <name>TMC2300_DISS2VS_SHIFT</name>
+        <initializer>31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="116" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1abdd77a4efd4b33af36cc64ae194ce7d0" prot="public" static="no">
+        <name>TMC2300_OTPW_MASK</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="117" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a8b0cf1e3cb3b09667f0b2b74ebc4ee9e" prot="public" static="no">
+        <name>TMC2300_OTPW_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="118" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a18db3d371a2891b6cf61e3ae9ac7c4bd" prot="public" static="no">
+        <name>TMC2300_OT_MASK</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="119" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5c1983a6ff7c0c96755eb18ae91aecc8" prot="public" static="no">
+        <name>TMC2300_OT_SHIFT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="120" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ab401a7079ab22af4f029183688ec5cb5" prot="public" static="no">
+        <name>TMC2300_S2GA_MASK</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="121" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a074ad95b514d8f6a5588683c68f56e70" prot="public" static="no">
+        <name>TMC2300_S2GA_SHIFT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="122" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aee5512c42c8717d04ce6ac53a962a49d" prot="public" static="no">
+        <name>TMC2300_S2GB_MASK</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="123" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac2a699c7ce0ec9d581ed4dc5ed523821" prot="public" static="no">
+        <name>TMC2300_S2GB_SHIFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="124" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a589bfff841974e6ee1cf95d0fb0acc18" prot="public" static="no">
+        <name>TMC2300_S2VSA_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="125" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a255eee21011f10085f96af52a7384381" prot="public" static="no">
+        <name>TMC2300_S2VSA_SHIFT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="126" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac7b650417a5326341307221736c5fe4f" prot="public" static="no">
+        <name>TMC2300_S2VSB_MASK</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="127" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ad78491e0d4ea92a31fb3ec8ced3dd433" prot="public" static="no">
+        <name>TMC2300_S2VSB_SHIFT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="128" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a354707344ca7a796f9a73a1820e8d0e6" prot="public" static="no">
+        <name>TMC2300_OLA_MASK</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="129" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1acdb3a5e856084383b69caa398ef14997" prot="public" static="no">
+        <name>TMC2300_OLA_SHIFT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="130" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a9830c99606a795bf42de14a301d83487" prot="public" static="no">
+        <name>TMC2300_OLB_MASK</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="131" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a0068f61d3c14671a62b51f8e064fa5d4" prot="public" static="no">
+        <name>TMC2300_OLB_SHIFT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="132" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1adf73f22c140844fae93f1a71bf36dfd4" prot="public" static="no">
+        <name>TMC2300_T120_MASK</name>
+        <initializer>0x100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="133" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aeb9065ebdbe8e17f48e13a33c0402266" prot="public" static="no">
+        <name>TMC2300_T120_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="134" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aba85c8bae6a499ab3e46fc07031d2422" prot="public" static="no">
+        <name>TMC2300_T143_MASK</name>
+        <initializer>0x200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="135" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a71e5616ae5a958a2f16a7232843a7ab8" prot="public" static="no">
+        <name>TMC2300_T143_SHIFT</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="136" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a2e1b8c827331878b974996ebd2c0f696" prot="public" static="no">
+        <name>TMC2300_T150_MASK</name>
+        <initializer>0x400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="137" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a30e300c74bba099265a4a1463386489f" prot="public" static="no">
+        <name>TMC2300_T150_SHIFT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="138" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a60bcb862365e326a4693206eb8828ed9" prot="public" static="no">
+        <name>TMC2300_T157_MASK</name>
+        <initializer>0x800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="139" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5844e44489eaa3040d9a27a62647e631" prot="public" static="no">
+        <name>TMC2300_T157_SHIFT</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="140" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1af0fcf429732da524ba22118dd853280c" prot="public" static="no">
+        <name>TMC2300_CS_ACTUAL_MASK</name>
+        <initializer>0x1F0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="141" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a101566f952d71a85e9b619d25ad430fb" prot="public" static="no">
+        <name>TMC2300_CS_ACTUAL_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="142" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ada0d139f2d4e3cf5c15e656486bd0c5f" prot="public" static="no">
+        <name>TMC2300_STST_MASK</name>
+        <initializer>0x80000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="143" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a735622f1fb5a41f4eb4193e533aeee71" prot="public" static="no">
+        <name>TMC2300_STST_SHIFT</name>
+        <initializer>31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="144" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a9cfe15d9c7f6030bf339a21fbf4fe93e" prot="public" static="no">
+        <name>TMC2300_PWM_OFS_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="145" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a2ebc8c5efb1ac184e79f8eeb72465938" prot="public" static="no">
+        <name>TMC2300_PWM_OFS_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="146" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a4cd03fb6db327e10fb1bea7686a736f5" prot="public" static="no">
+        <name>TMC2300_PWM_GRAD_MASK</name>
+        <initializer>0xFF00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="147" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a77a6987bda8da27753dee22a190be523" prot="public" static="no">
+        <name>TMC2300_PWM_GRAD_SHIFT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="148" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1afd1d205cc0877c5e2e54a13e61505205" prot="public" static="no">
+        <name>TMC2300_PWM_FREQ_MASK</name>
+        <initializer>0x30000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="149" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ae028b91f87c98679a3b4225909c9fea5" prot="public" static="no">
+        <name>TMC2300_PWM_FREQ_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="150" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a2168ffd9fb9b2af6684d86a0466d68fa" prot="public" static="no">
+        <name>TMC2300_PWM_AUTOSCALE_MASK</name>
+        <initializer>0x40000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="151" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a749de1d81aff237b8f83de9b619d40b6" prot="public" static="no">
+        <name>TMC2300_PWM_AUTOSCALE_SHIFT</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="152" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ae6e1cd5765261939b48290884a5ce561" prot="public" static="no">
+        <name>TMC2300_PWM_AUTOGRAD_MASK</name>
+        <initializer>0x80000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="153" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ac66cfcb2fdd65d0642fd4300ce180e10" prot="public" static="no">
+        <name>TMC2300_PWM_AUTOGRAD_SHIFT</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="154" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ab9edfe6a13eab4dbea756ab8cac1d88a" prot="public" static="no">
+        <name>TMC2300_FREEWHEEL_MASK</name>
+        <initializer>0x300000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="155" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a3047a908e5027b0671af93d043891be3" prot="public" static="no">
+        <name>TMC2300_FREEWHEEL_SHIFT</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="156" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1aa3c284ace1fc606a063e70a262ff5cb5" prot="public" static="no">
+        <name>TMC2300_PWM_REG_MASK</name>
+        <initializer>0xF000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="157" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a2f68f367a60d304de8c61c332a018083" prot="public" static="no">
+        <name>TMC2300_PWM_REG_SHIFT</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="158" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a5a0219a6f9a57aceb5644effe62d5805" prot="public" static="no">
+        <name>TMC2300_PWM_LIM_MASK</name>
+        <initializer>0xF0000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="159" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1ad3ff0251b19f2984f6ceedbb0a66db8d" prot="public" static="no">
+        <name>TMC2300_PWM_LIM_SHIFT</name>
+        <initializer>28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="160" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a7d0a2335b5e7cbbe65c42eeac326f449" prot="public" static="no">
+        <name>TMC2300_PWM_SCALE_SUM_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="161" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a689b039465cefc9255d22ed8da39b7d2" prot="public" static="no">
+        <name>TMC2300_PWM_SCALE_SUM_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="162" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a59e29e21eaec527274152a1fe3f677b1" prot="public" static="no">
+        <name>TMC2300_PWM_SCALE_AUTO_MASK</name>
+        <initializer>0x1FF0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="163" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a9d12572c6fe855c85f80d2fb21c4e8e5" prot="public" static="no">
+        <name>TMC2300_PWM_SCALE_AUTO_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="164" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1adcf3204a5a06542f283bd73d7cef6978" prot="public" static="no">
+        <name>TMC2300_PWM_OFS_AUTO_MASK</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="165" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a9cdc884744d4a0cb2b6ec5009c6d670a" prot="public" static="no">
+        <name>TMC2300_PWM_OFS_AUTO_SHIFT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="166" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a54dbc628578fa735e4564b3f1e374f90" prot="public" static="no">
+        <name>TMC2300_PWM_GRAD_AUTO_MASK</name>
+        <initializer>0xFF0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="167" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2300__Fields_8h_1a11cda69686e72408ffdfdd0f665e98bc" prot="public" static="no">
+        <name>TMC2300_PWM_GRAD_AUTO_SHIFT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" line="168" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC2300_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_FIELDS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="TMC2300__Fields_8h_1a03a7f740021e8b138a78259725b55751" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_DIRECT_MASK<sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>PWM_direct<sp/>(Reset<sp/>default=0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="TMC2300__Fields_8h_1a6bd1bc872012cf1120033a419d8b7da0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_DIRECT_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>PWM_direct<sp/>(Reset<sp/>default=0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC2300__Fields_8h_1ab7a540c07d716e5e533ffce762c084a6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_EXTCAP_MASK<sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>extcap<sp/>(Reset<sp/>default=0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC2300__Fields_8h_1ab1d2ab7625667cce7009e1a399e95f55" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_EXTCAP_SHIFT<sp/>1<sp/></highlight><highlight class="comment">//<sp/>extcap<sp/>(Reset<sp/>default=0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC2300__Fields_8h_1a93d4028b5dfa081d1b33a0d3fe051bf0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_EN_SPREADCYCLE_MASK<sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>par_mode<sp/>(Reset<sp/>default=0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC2300__Fields_8h_1a48dd4f3dfdba85aa9cc27dd0324193d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_EN_SPREADCYCLE_SHIFT<sp/>2<sp/></highlight><highlight class="comment">//<sp/>par_mode<sp/>(Reset<sp/>default=0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC2300__Fields_8h_1a7c17a933aadc8dc7ebd8d69aca8b2ac6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SHAFT_MASK<sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>Inverse<sp/>motor<sp/>direction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC2300__Fields_8h_1a2dfb4230c02a35a717a75791302f57c7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SHAFT_SHIFT<sp/>3<sp/></highlight><highlight class="comment">//<sp/>Inverse<sp/>motor<sp/>direction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC2300__Fields_8h_1ab6acc46b013d441b88a18fb1c997e854" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DIAG_INDEX_MASK<sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>diag_index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC2300__Fields_8h_1ad2f964cc06620525993e78b2b3535ae5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DIAG_INDEX_SHIFT<sp/>4<sp/></highlight><highlight class="comment">//<sp/>diag_index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC2300__Fields_8h_1a13395ff46fe3f10c2409addc29285769" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DIAG_STEP_MASK<sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>diag_step</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC2300__Fields_8h_1a62335dab3d430622a35845b5f2b08408" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DIAG_STEP_SHIFT<sp/>5<sp/></highlight><highlight class="comment">//<sp/>diag_step</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC2300__Fields_8h_1a73b37f28c50e2f10ddf444fff27fff27" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PDN_DISABLE_MASK<sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>pdn_disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC2300__Fields_8h_1af283dcfe3ebc69b6261410b526e0ef66" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PDN_DISABLE_SHIFT<sp/>6<sp/></highlight><highlight class="comment">//<sp/>pdn_disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC2300__Fields_8h_1ac28d79dbae05f8acc456e2f09dd921bc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MSTEP_REG_SELECT_MASK<sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>mstep_reg_select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC2300__Fields_8h_1abdf25c666de8c113a13989809f1c4c11" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MSTEP_REG_SELECT_SHIFT<sp/>7<sp/></highlight><highlight class="comment">//<sp/>mstep_reg_select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC2300__Fields_8h_1a265dc7c31a1219da22c5a481eaa44707" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MULTISTEP_FILT_MASK<sp/>0x100<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>multistep_filt<sp/>(Reset<sp/>default=1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC2300__Fields_8h_1aa5ec51a0bf6c6448b435e4ef1d430e15" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MULTISTEP_FILT_SHIFT<sp/>8<sp/></highlight><highlight class="comment">//<sp/>multistep_filt<sp/>(Reset<sp/>default=1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC2300__Fields_8h_1ac07266733c864490a89834d464184dc7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TEST_MODE_MASK<sp/>0x200<sp/></highlight><highlight class="comment">//<sp/>GCONF<sp/>//<sp/>test_mode<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC2300__Fields_8h_1ac9e50c443d0a525275c4d6d39cf1b1bb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TEST_MODE_SHIFT<sp/>9<sp/></highlight><highlight class="comment">//<sp/>test_mode<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC2300__Fields_8h_1aa8e9bad4f5629083830d3bde6e9fb69c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_RESET_MASK<sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>reset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC2300__Fields_8h_1aa618c3d1051c447459d3fbb419fb24a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_RESET_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>reset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC2300__Fields_8h_1a9db31c56e7e0ce53937e41146ceb1a21" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DRV_ERR_MASK<sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>drv_err</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC2300__Fields_8h_1a081987386ee40d64f6ecc8905cc256d7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DRV_ERR_SHIFT<sp/>1<sp/></highlight><highlight class="comment">//<sp/>drv_err</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC2300__Fields_8h_1a49b742e4deb71f4c4fb496030abeedf2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_U3V5_MASK<sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>GSTAT<sp/>//<sp/>Actual<sp/>state<sp/>of<sp/>the<sp/>supply<sp/>voltage<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC2300__Fields_8h_1a062621591e211fdc9d1d94768dd60142" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_U3V5_SHIFT<sp/>2<sp/></highlight><highlight class="comment">//<sp/>Actual<sp/>state<sp/>of<sp/>the<sp/>supply<sp/>voltage<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC2300__Fields_8h_1a6bdf69b3a0c2ae88d63cbe18ee542720" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IFCNT_MASK<sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>IFCNT<sp/>//<sp/>Interface<sp/>transmission<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC2300__Fields_8h_1a95e7b68772511d65b9c7721b963b0792" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IFCNT_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>Interface<sp/>transmission<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC2300__Fields_8h_1aa6c089adec0c484704d7730a8a728495" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SLAVECONF_MASK<sp/>0xF00<sp/></highlight><highlight class="comment">//<sp/>SLAVECONF<sp/>//<sp/>SENDDELAY<sp/>for<sp/>read<sp/>access</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="TMC2300__Fields_8h_1a17e7f5102f3c9ac7741f0c73374e7f03" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SLAVECONF_SHIFT<sp/>8<sp/></highlight><highlight class="comment">//<sp/>SENDDELAY<sp/>for<sp/>read<sp/>access</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="TMC2300__Fields_8h_1ae22ed172d73f397d9b6e248b8d6388cb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_EN_MASK<sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>EN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC2300__Fields_8h_1a4b0b8b820ce4b57831cf62ea1c286e11" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_EN_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>EN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC2300__Fields_8h_1a05fc3b242bf9a5a6952dd617d552607a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_NSTDBY_MASK<sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>NSTDBY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC2300__Fields_8h_1a5724ca8975aa21bf0499af250b33c689" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_NSTDBY_SHIFT<sp/>1<sp/></highlight><highlight class="comment">//<sp/>NSTDBY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="TMC2300__Fields_8h_1a57a2ba5cc7864d9cf660ab1eb3f2cb5f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MS1_MASK<sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>MS1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC2300__Fields_8h_1a7839d3f7a1172593759786ff602d0662" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MS1_SHIFT<sp/>2<sp/></highlight><highlight class="comment">//<sp/>MS1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC2300__Fields_8h_1a7a015b994ffa4ead89feb52f7d0ba84e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MS2_MASK<sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>MS2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC2300__Fields_8h_1a13291aae08e00d72dfa70c8febc6ec84" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MS2_SHIFT<sp/>3<sp/></highlight><highlight class="comment">//<sp/>MS2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="TMC2300__Fields_8h_1a009f6069b47ab8daa03bfffd754fc049" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DIAG_MASK<sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>DIAG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC2300__Fields_8h_1a0174cfc14fe98a7a371217bfa1573215" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DIAG_SHIFT<sp/>4<sp/></highlight><highlight class="comment">//<sp/>DIAG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC2300__Fields_8h_1a06c1c663779f6cfecc1b4ac9afed5e1f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_STEPPERCLK_INPUT_MASK<sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>STEPPER/CLK<sp/>Input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC2300__Fields_8h_1a40f7d69ae61e899ef4a5100f4fbcfdc5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_STEPPERCLK_INPUT_SHIFT<sp/>5<sp/></highlight><highlight class="comment">//<sp/>STEPPER/CLK<sp/>Input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC2300__Fields_8h_1a648f3eebd8aa296e788abd8237ea2b29" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PDN_UART_MASK<sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>PDN_UART</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC2300__Fields_8h_1a1d697667c241bac015c7bc6fe75bdcf3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PDN_UART_SHIFT<sp/>6<sp/></highlight><highlight class="comment">//<sp/>PDN_UART</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="TMC2300__Fields_8h_1a51a308ea36c9aa80b994dce1a76381ad" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MODE_INPUT_MASK<sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>MODE<sp/>Input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC2300__Fields_8h_1a46d26ebfb66485866057d09b14814e65" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MODE_INPUT_SHIFT<sp/>7<sp/></highlight><highlight class="comment">//<sp/>MODE<sp/>Input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC2300__Fields_8h_1a9d82fd4463e3ec1c76924ade347b845e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_STEP_MASK<sp/>0x100<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>STEP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC2300__Fields_8h_1a934896f4e24e5abae50b3d02019fbdbb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_STEP_SHIFT<sp/>8<sp/></highlight><highlight class="comment">//<sp/>STEP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC2300__Fields_8h_1a6d3b3cf72d35064b7b9589185c248d03" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DIR_MASK<sp/>0x200<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>DIR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC2300__Fields_8h_1a64972a14732c4f003c204ce3e4ddabfb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DIR_SHIFT<sp/>9<sp/></highlight><highlight class="comment">//<sp/>DIR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC2300__Fields_8h_1adafc6bfe1f73c1f5ef5db050e624ca2f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_COMP_A1A2_MASK<sp/>0x400<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>COMP_A1A2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC2300__Fields_8h_1afa7c409c65be6bcaa3fbc446d54e24cb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_COMP_A1A2_SHIFT<sp/>10<sp/></highlight><highlight class="comment">//<sp/>COMP_A1A2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC2300__Fields_8h_1a8ba104d1c87fdab284b3238a8d1d970a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_COMP_B1B2_MASK<sp/>0x800<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>COMP_B1B2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC2300__Fields_8h_1a54fc703bef54a7c44be65e237d249d70" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_COMP_B1B2_SHIFT<sp/>7<sp/></highlight><highlight class="comment">//<sp/>COMP_B1B2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="TMC2300__Fields_8h_1ac33c0537f6fc21b6e5bb83022a41852e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_VERSION_MASK<sp/>0xFF000000<sp/></highlight><highlight class="comment">//<sp/>IOIN<sp/>//<sp/>VERSION:<sp/>0x40=first<sp/>version<sp/>of<sp/>the<sp/>IC<sp/>Identical<sp/>numbers<sp/>mean<sp/>full<sp/>digital<sp/>compatibility.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="TMC2300__Fields_8h_1a0a9ee9d7e4da9bd1248b3fcb91908bea" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_VERSION_SHIFT<sp/>24<sp/></highlight><highlight class="comment">//<sp/>VERSION:<sp/>0x40=first<sp/>version<sp/>of<sp/>the<sp/>IC<sp/>Identical<sp/>numbers<sp/>mean<sp/>full<sp/>digital<sp/>compatibility.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="TMC2300__Fields_8h_1aa5f1297ec36557436328ed892b6f590b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IHOLD_MASK<sp/>0x1F<sp/></highlight><highlight class="comment">//<sp/>IHOLD_IRUN<sp/>//<sp/>Standstill<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="TMC2300__Fields_8h_1a1408939825e3e351f8e2d4a17be729cb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IHOLD_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>Standstill<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="TMC2300__Fields_8h_1a611b520dd731218ca0f7d2d57bd38426" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IRUN_MASK<sp/>0x1F00<sp/></highlight><highlight class="comment">//<sp/>IHOLD_IRUN<sp/>//<sp/>Motor<sp/>run<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="TMC2300__Fields_8h_1aedfe23ab96a4efb98978494b435e5ee4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IRUN_SHIFT<sp/>8<sp/></highlight><highlight class="comment">//<sp/>Motor<sp/>run<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="TMC2300__Fields_8h_1a552b1f502d04d8da86ad4e887dafc5af" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IHOLDDELAY_MASK<sp/>0xF0000<sp/></highlight><highlight class="comment">//<sp/>IHOLD_IRUN<sp/>//<sp/>Controls<sp/>the<sp/>number<sp/>of<sp/>clock<sp/>cycles<sp/>for<sp/>motor<sp/>power<sp/>down<sp/>after<sp/>standstill<sp/>is<sp/>detected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="TMC2300__Fields_8h_1abc58cde532ea1914c7851db00fec4a9b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_IHOLDDELAY_SHIFT<sp/>16<sp/></highlight><highlight class="comment">//<sp/>Controls<sp/>the<sp/>number<sp/>of<sp/>clock<sp/>cycles<sp/>for<sp/>motor<sp/>power<sp/>down<sp/>after<sp/>standstill<sp/>is<sp/>detected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="TMC2300__Fields_8h_1ac9c486484a67aff8e987957a7c4c12ee" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TPOWERDOWN_MASK<sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>TPOWERDOWN<sp/>//<sp/>Delay<sp/>time<sp/>from<sp/>stand<sp/>still<sp/>(stst)<sp/>detection<sp/>to<sp/>motor<sp/>current<sp/>power<sp/>down</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="TMC2300__Fields_8h_1abb71e34ae4720fa7b621fa98b3b3f15c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TPOWERDOWN_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>Delay<sp/>time<sp/>from<sp/>stand<sp/>still<sp/>(stst)<sp/>detection<sp/>to<sp/>motor<sp/>current<sp/>power<sp/>down</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="TMC2300__Fields_8h_1ad499216e580a3173e930924c9e22c40e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TSTEP_MASK<sp/>0xFFFFF<sp/></highlight><highlight class="comment">//<sp/>TSTEP<sp/>//<sp/>Actual<sp/>measured<sp/>time<sp/>between<sp/>two<sp/>1/256<sp/>microsteps</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="TMC2300__Fields_8h_1a94f2a69af99c90ecff089868a3aa6f5d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TSTEP_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>Actual<sp/>measured<sp/>time<sp/>between<sp/>two<sp/>1/256<sp/>microsteps</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="TMC2300__Fields_8h_1ade1e68c3003671b7c067fc2a6ccfef81" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TCOOLTHRS_MASK<sp/>0xFFFFFFFF<sp/></highlight><highlight class="comment">//<sp/>TCOOLTHRS<sp/>//<sp/>This<sp/>is<sp/>the<sp/>lower<sp/>threshold<sp/>velocity<sp/>for<sp/>switching<sp/>on<sp/>smart<sp/>energy<sp/>coolStep<sp/>and<sp/>stallGuard<sp/>feature.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="TMC2300__Fields_8h_1aa42a77cb386f72e9a7549d5a6f627c7f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TCOOLTHRS_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>the<sp/>lower<sp/>threshold<sp/>velocity<sp/>for<sp/>switching<sp/>on<sp/>smart<sp/>energy<sp/>coolStep<sp/>and<sp/>stallGuard<sp/>feature.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="TMC2300__Fields_8h_1acf136f1d0a3e7043cb314d7f52d1d21c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_VACTUAL_MASK<sp/>0xFFFFFF<sp/></highlight><highlight class="comment">//<sp/>VACTUAL<sp/>//<sp/>VACTUAL<sp/>allows<sp/>moving<sp/>the<sp/>motor<sp/>by<sp/>UART<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="TMC2300__Fields_8h_1a30c0b5f86c02a26365bbd5c9546f4b83" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_VACTUAL_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>VACTUAL<sp/>allows<sp/>moving<sp/>the<sp/>motor<sp/>by<sp/>UART<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="TMC2300__Fields_8h_1a0f0fc66dd026faef86c149952c57f3be" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SGTHRS_MASK<sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>SGTHRS<sp/>//<sp/>Detection<sp/>threshold<sp/>for<sp/>stall.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="TMC2300__Fields_8h_1a4ea81fbdd47e060fd945b8017c65ae7d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SGTHRS_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>Detection<sp/>threshold<sp/>for<sp/>stall.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="TMC2300__Fields_8h_1a35971c0625c04bc7deb56485148a81c2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SG_VALUE_MASK<sp/>0x3FF<sp/></highlight><highlight class="comment">//<sp/>SG_VALUE<sp/>//<sp/>SG_VALUE<sp/>result.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="TMC2300__Fields_8h_1a3147b77c0c1ac9444eba2b7d9476ad6c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SG_VALUE_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>SG_VALUE<sp/>result.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="TMC2300__Fields_8h_1a70d2bb409d11c7621b12cc987f94cb28" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEMIN_MASK<sp/>0x0F<sp/></highlight><highlight class="comment">//<sp/>COOLCONF<sp/>//<sp/>minimum<sp/>stallGuard2<sp/>value<sp/>-<sp/>If<sp/>the<sp/>stallGuard2<sp/>result<sp/>falls<sp/>below<sp/>SEMIN*32,<sp/>the<sp/>motor<sp/>current<sp/>becomes<sp/>increased<sp/>to<sp/>reduce<sp/>motor<sp/>load<sp/>angle.<sp/>0:<sp/>smart<sp/>current<sp/>control<sp/>coolStep<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="TMC2300__Fields_8h_1ae810bcc6497785209d01445f1fc38c76" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEMIN_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>minimum<sp/>stallGuard2<sp/>value<sp/>-<sp/>If<sp/>the<sp/>stallGuard2<sp/>result<sp/>falls<sp/>below<sp/>SEMIN*32,<sp/>the<sp/>motor<sp/>current<sp/>becomes<sp/>increased<sp/>to<sp/>reduce<sp/>motor<sp/>load<sp/>angle.<sp/>0:<sp/>smart<sp/>current<sp/>control<sp/>coolStep<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="TMC2300__Fields_8h_1aa62f13d558c9726e597b64e4b2decae0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEUP_MASK<sp/>0x60<sp/></highlight><highlight class="comment">//<sp/>COOLCONF<sp/>//<sp/>Current<sp/>increment<sp/>steps<sp/>per<sp/>measured<sp/>stallGuard2<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="TMC2300__Fields_8h_1a713f0d2d866199649c28b203d75ed852" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEUP_SHIFT<sp/>5<sp/></highlight><highlight class="comment">//<sp/>Current<sp/>increment<sp/>steps<sp/>per<sp/>measured<sp/>stallGuard2<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="TMC2300__Fields_8h_1a5f4866349ee01e92d87f7bf03511621b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEMAX_MASK<sp/>0xF00<sp/></highlight><highlight class="comment">//<sp/>COOLCONF<sp/>//<sp/>stallGuard2<sp/>hysteresis<sp/>value<sp/>-<sp/>If<sp/>the<sp/>stallGuard2<sp/>result<sp/>is<sp/>equal<sp/>to<sp/>or<sp/>above<sp/>(SEMIN+SEMAX+1)*32,<sp/>the<sp/>motor<sp/>current<sp/>becomes<sp/>decreased<sp/>to<sp/>save<sp/>energy.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="TMC2300__Fields_8h_1a3847136acd560e95011d2edfb0120f55" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEMAX_SHIFT<sp/>8<sp/></highlight><highlight class="comment">//<sp/>stallGuard2<sp/>hysteresis<sp/>value<sp/>-<sp/>If<sp/>the<sp/>stallGuard2<sp/>result<sp/>is<sp/>equal<sp/>to<sp/>or<sp/>above<sp/>(SEMIN+SEMAX+1)*32,<sp/>the<sp/>motor<sp/>current<sp/>becomes<sp/>decreased<sp/>to<sp/>save<sp/>energy.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="TMC2300__Fields_8h_1a4af887de301335fae87043e96a796f0f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEDN_MASK<sp/>0x6000<sp/></highlight><highlight class="comment">//<sp/>COOLCONF<sp/>//<sp/>Current<sp/>down<sp/>step<sp/>speed;<sp/>For<sp/>each<sp/>n<sp/>stallGuard2<sp/>values<sp/>decrease<sp/>by<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="TMC2300__Fields_8h_1a20e3db8c655976b1e1ecc1d2c4da655a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEDN_SHIFT<sp/>13<sp/></highlight><highlight class="comment">//<sp/>Current<sp/>down<sp/>step<sp/>speed;<sp/>For<sp/>each<sp/>n<sp/>stallGuard2<sp/>values<sp/>decrease<sp/>by<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="TMC2300__Fields_8h_1aa36eb29bc4f73a380e66b8e73215302d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEIMIN_MASK<sp/>0x8000<sp/></highlight><highlight class="comment">//<sp/>COOLCONF<sp/>//<sp/>minimum<sp/>current<sp/>for<sp/>smart<sp/>current<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="TMC2300__Fields_8h_1a5f88467768313b355b298a03516a4bf0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_SEIMIN_SHIFT<sp/>15<sp/></highlight><highlight class="comment">//<sp/>minimum<sp/>current<sp/>for<sp/>smart<sp/>current<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="TMC2300__Fields_8h_1a08b100c98b2eb99cf8a95a2a37bd827f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MSCNT_MASK<sp/>0x3FF<sp/></highlight><highlight class="comment">//<sp/>MSCNT<sp/>//<sp/>Microstep<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="TMC2300__Fields_8h_1a17a5a64bc7f2fb681b9bfa8f589193aa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MSCNT_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>Microstep<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="TMC2300__Fields_8h_1a701b1891ac5d852518382881c411481c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_CUR_A_MASK<sp/>0x1FF<sp/></highlight><highlight class="comment">//<sp/>MSCURACT<sp/>//<sp/>Actual<sp/><sp/>microstep<sp/>current<sp/>for<sp/>motor<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="TMC2300__Fields_8h_1a18f145d8aa380c0dd5f6a7270fab843a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_CUR_A_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>Actual<sp/><sp/>microstep<sp/>current<sp/>for<sp/>motor<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="TMC2300__Fields_8h_1a5a8a1d2c9bb3d0b6a5c17f98c083015b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_CUR_B_MASK<sp/>0x1FF0000<sp/></highlight><highlight class="comment">//<sp/>MSCURACT<sp/>//<sp/>Actual<sp/><sp/>microstep<sp/>current<sp/>for<sp/>motor<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="TMC2300__Fields_8h_1af11b93b15eca262df77fad6e8fca4a0d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_CUR_B_SHIFT<sp/>16<sp/></highlight><highlight class="comment">//<sp/>Actual<sp/><sp/>microstep<sp/>current<sp/>for<sp/>motor<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="TMC2300__Fields_8h_1af6ac3d93014924fe1ee01c63dc8921ae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_ENABLEDRV_MASK<sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>driver<sp/>enable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="TMC2300__Fields_8h_1ac6d10f2c0829f9b661de3a574092ea64" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_ENABLEDRV_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>driver<sp/>enable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="TMC2300__Fields_8h_1a4e7a8b32f0e781f34c4a62efb0dad5c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TBL_MASK<sp/>0x18000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>blank<sp/>time<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="TMC2300__Fields_8h_1a823125b0e4f3ab1cd818c7cc93f88182" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_TBL_SHIFT<sp/>15<sp/></highlight><highlight class="comment">//<sp/>blank<sp/>time<sp/>select</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="TMC2300__Fields_8h_1a5a45492ad2d7d3577cc129bf0e99affa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MRES_MASK<sp/>0xF000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>MRES<sp/>micro<sp/>step<sp/>resolution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="TMC2300__Fields_8h_1a5c21241d80a463485cb693212a0cbd9d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_MRES_SHIFT<sp/>24<sp/></highlight><highlight class="comment">//<sp/>MRES<sp/>micro<sp/>step<sp/>resolution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="TMC2300__Fields_8h_1a5e9effc701dabb5e3d4fee304b12512e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_INTPOL_MASK<sp/>0x10000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>interpolation<sp/>to<sp/>256<sp/>microsteps</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="TMC2300__Fields_8h_1a61ace0f686d70a7e7dd204d0d6d0893b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_INTPOL_SHIFT<sp/>28<sp/></highlight><highlight class="comment">//<sp/>interpolation<sp/>to<sp/>256<sp/>microsteps</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="TMC2300__Fields_8h_1ab34877e410eb12fbb228474f5d19057f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DEDGE_MASK<sp/>0x20000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>enable<sp/>double<sp/>edge<sp/>step<sp/>pulses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="TMC2300__Fields_8h_1ae8dd6448c6344b5a54b5cba772a2a009" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DEDGE_SHIFT<sp/>29<sp/></highlight><highlight class="comment">//<sp/>enable<sp/>double<sp/>edge<sp/>step<sp/>pulses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="TMC2300__Fields_8h_1a216bfba685e99f73c293325d3552e2c9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DISS2G_MASK<sp/>0x40000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>short<sp/>to<sp/>GND<sp/>protection<sp/>disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="TMC2300__Fields_8h_1a449560ac0529018b0db79ed28d8adc7b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DISS2G_SHIFT<sp/>30<sp/></highlight><highlight class="comment">//<sp/>short<sp/>to<sp/>GND<sp/>protection<sp/>disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="TMC2300__Fields_8h_1ac333d26289529dba6913a08b42f48355" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DISS2VS_MASK<sp/>0x80000000<sp/></highlight><highlight class="comment">//<sp/>CHOPCONF<sp/>//<sp/>Low<sp/>side<sp/>short<sp/>protection<sp/>disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="TMC2300__Fields_8h_1a3ec8e1933ff3f9f3fa2a5b3720fff20c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_DISS2VS_SHIFT<sp/>31<sp/></highlight><highlight class="comment">//<sp/>Low<sp/>side<sp/>short<sp/>protection<sp/>disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="TMC2300__Fields_8h_1abdd77a4efd4b33af36cc64ae194ce7d0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_OTPW_MASK<sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>overtemperature<sp/>prewarning<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="TMC2300__Fields_8h_1a8b0cf1e3cb3b09667f0b2b74ebc4ee9e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_OTPW_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>overtemperature<sp/>prewarning<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="TMC2300__Fields_8h_1a18db3d371a2891b6cf61e3ae9ac7c4bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_OT_MASK<sp/>0x02<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>overtemperature<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="TMC2300__Fields_8h_1a5c1983a6ff7c0c96755eb18ae91aecc8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_OT_SHIFT<sp/>1<sp/></highlight><highlight class="comment">//<sp/>overtemperature<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="TMC2300__Fields_8h_1ab401a7079ab22af4f029183688ec5cb5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_S2GA_MASK<sp/>0x04<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>short<sp/>to<sp/>ground<sp/>indicator<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="TMC2300__Fields_8h_1a074ad95b514d8f6a5588683c68f56e70" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_S2GA_SHIFT<sp/>2<sp/></highlight><highlight class="comment">//<sp/>short<sp/>to<sp/>ground<sp/>indicator<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="TMC2300__Fields_8h_1aee5512c42c8717d04ce6ac53a962a49d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_S2GB_MASK<sp/>0x08<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>short<sp/>to<sp/>ground<sp/>indicator<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="TMC2300__Fields_8h_1ac2a699c7ce0ec9d581ed4dc5ed523821" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_S2GB_SHIFT<sp/>3<sp/></highlight><highlight class="comment">//<sp/>short<sp/>to<sp/>ground<sp/>indicator<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="TMC2300__Fields_8h_1a589bfff841974e6ee1cf95d0fb0acc18" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_S2VSA_MASK<sp/>0x10<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>low<sp/>side<sp/>short<sp/>indicator<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="TMC2300__Fields_8h_1a255eee21011f10085f96af52a7384381" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_S2VSA_SHIFT<sp/>4<sp/></highlight><highlight class="comment">//<sp/>low<sp/>side<sp/>short<sp/>indicator<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="TMC2300__Fields_8h_1ac7b650417a5326341307221736c5fe4f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_S2VSB_MASK<sp/>0x20<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>low<sp/>side<sp/>short<sp/>indicator<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="TMC2300__Fields_8h_1ad78491e0d4ea92a31fb3ec8ced3dd433" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_S2VSB_SHIFT<sp/>5<sp/></highlight><highlight class="comment">//<sp/>low<sp/>side<sp/>short<sp/>indicator<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="TMC2300__Fields_8h_1a354707344ca7a796f9a73a1820e8d0e6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_OLA_MASK<sp/>0x40<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>open<sp/>load<sp/>indicator<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="TMC2300__Fields_8h_1acdb3a5e856084383b69caa398ef14997" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_OLA_SHIFT<sp/>6<sp/></highlight><highlight class="comment">//<sp/>open<sp/>load<sp/>indicator<sp/>phase<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="TMC2300__Fields_8h_1a9830c99606a795bf42de14a301d83487" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_OLB_MASK<sp/>0x80<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>open<sp/>load<sp/>indicator<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="TMC2300__Fields_8h_1a0068f61d3c14671a62b51f8e064fa5d4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_OLB_SHIFT<sp/>7<sp/></highlight><highlight class="comment">//<sp/>open<sp/>load<sp/>indicator<sp/>phase<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="TMC2300__Fields_8h_1adf73f22c140844fae93f1a71bf36dfd4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_T120_MASK<sp/>0x100<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>120�C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="TMC2300__Fields_8h_1aeb9065ebdbe8e17f48e13a33c0402266" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_T120_SHIFT<sp/>8<sp/></highlight><highlight class="comment">//<sp/>120�C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="TMC2300__Fields_8h_1aba85c8bae6a499ab3e46fc07031d2422" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_T143_MASK<sp/>0x200<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>143�C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="TMC2300__Fields_8h_1a71e5616ae5a958a2f16a7232843a7ab8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_T143_SHIFT<sp/>9<sp/></highlight><highlight class="comment">//<sp/>143�C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="TMC2300__Fields_8h_1a2e1b8c827331878b974996ebd2c0f696" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_T150_MASK<sp/>0x400<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>150�C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="TMC2300__Fields_8h_1a30e300c74bba099265a4a1463386489f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_T150_SHIFT<sp/>10<sp/></highlight><highlight class="comment">//<sp/>150�C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="TMC2300__Fields_8h_1a60bcb862365e326a4693206eb8828ed9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_T157_MASK<sp/>0x800<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>157�C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="TMC2300__Fields_8h_1a5844e44489eaa3040d9a27a62647e631" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_T157_SHIFT<sp/>11<sp/></highlight><highlight class="comment">//<sp/>157�C<sp/>comparator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="TMC2300__Fields_8h_1af0fcf429732da524ba22118dd853280c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_CS_ACTUAL_MASK<sp/>0x1F0000<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>actual<sp/>motor<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="TMC2300__Fields_8h_1a101566f952d71a85e9b619d25ad430fb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_CS_ACTUAL_SHIFT<sp/>16<sp/></highlight><highlight class="comment">//<sp/>actual<sp/>motor<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="TMC2300__Fields_8h_1ada0d139f2d4e3cf5c15e656486bd0c5f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_STST_MASK<sp/>0x80000000<sp/></highlight><highlight class="comment">//<sp/>DRV_STATUS<sp/>//<sp/>standstill<sp/>indicator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="TMC2300__Fields_8h_1a735622f1fb5a41f4eb4193e533aeee71" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_STST_SHIFT<sp/>31<sp/></highlight><highlight class="comment">//<sp/>standstill<sp/>indicator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="TMC2300__Fields_8h_1a9cfe15d9c7f6030bf339a21fbf4fe93e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_OFS_MASK<sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>User<sp/>defined<sp/>PWM<sp/>amplitude<sp/>offset<sp/>(0-255)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="TMC2300__Fields_8h_1a2ebc8c5efb1ac184e79f8eeb72465938" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_OFS_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>User<sp/>defined<sp/>PWM<sp/>amplitude<sp/>offset<sp/>(0-255)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="TMC2300__Fields_8h_1a4cd03fb6db327e10fb1bea7686a736f5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_GRAD_MASK<sp/>0xFF00<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>Velocity<sp/>dependent<sp/>gradient<sp/>for<sp/>PWM<sp/>amplitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="TMC2300__Fields_8h_1a77a6987bda8da27753dee22a190be523" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_GRAD_SHIFT<sp/>8<sp/></highlight><highlight class="comment">//<sp/>Velocity<sp/>dependent<sp/>gradient<sp/>for<sp/>PWM<sp/>amplitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="TMC2300__Fields_8h_1afd1d205cc0877c5e2e54a13e61505205" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_FREQ_MASK<sp/>0x30000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>%00:<sp/>fPWM=2/1024<sp/>fCLK;<sp/>%01:<sp/>fPWM=2/683<sp/>fCLK;<sp/>%10:<sp/>fPWM=2/512<sp/>fCLK;<sp/>%11:<sp/>fPWM=2/410<sp/>fCLK;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="TMC2300__Fields_8h_1ae028b91f87c98679a3b4225909c9fea5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_FREQ_SHIFT<sp/>16<sp/></highlight><highlight class="comment">//<sp/>%00:<sp/>fPWM=2/1024<sp/>fCLK;<sp/>%01:<sp/>fPWM=2/683<sp/>fCLK;<sp/>%10:<sp/>fPWM=2/512<sp/>fCLK;<sp/>%11:<sp/>fPWM=2/410<sp/>fCLK;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="TMC2300__Fields_8h_1a2168ffd9fb9b2af6684d86a0466d68fa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_AUTOSCALE_MASK<sp/>0x40000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="TMC2300__Fields_8h_1a749de1d81aff237b8f83de9b619d40b6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_AUTOSCALE_SHIFT<sp/>18<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="TMC2300__Fields_8h_1ae6e1cd5765261939b48290884a5ce561" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_AUTOGRAD_MASK<sp/>0x80000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="TMC2300__Fields_8h_1ac66cfcb2fdd65d0642fd4300ce180e10" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_AUTOGRAD_SHIFT<sp/>19<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="TMC2300__Fields_8h_1ab9edfe6a13eab4dbea756ab8cac1d88a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_FREEWHEEL_MASK<sp/>0x300000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>Stand<sp/>still<sp/>option<sp/>when<sp/>motor<sp/>current<sp/>setting<sp/>is<sp/>zero<sp/>(I_HOLD=0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="TMC2300__Fields_8h_1a3047a908e5027b0671af93d043891be3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_FREEWHEEL_SHIFT<sp/>20<sp/></highlight><highlight class="comment">//<sp/>Stand<sp/>still<sp/>option<sp/>when<sp/>motor<sp/>current<sp/>setting<sp/>is<sp/>zero<sp/>(I_HOLD=0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="TMC2300__Fields_8h_1aa3c284ace1fc606a063e70a262ff5cb5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_REG_MASK<sp/>0xF000000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>User<sp/>defined<sp/>maximum<sp/>PWM<sp/>amplitude<sp/>change<sp/>per<sp/>half<sp/>wave<sp/>when<sp/>using<sp/>pwm_autoscale=1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="TMC2300__Fields_8h_1a2f68f367a60d304de8c61c332a018083" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_REG_SHIFT<sp/>24<sp/></highlight><highlight class="comment">//<sp/>User<sp/>defined<sp/>maximum<sp/>PWM<sp/>amplitude<sp/>change<sp/>per<sp/>half<sp/>wave<sp/>when<sp/>using<sp/>pwm_autoscale=1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="TMC2300__Fields_8h_1a5a0219a6f9a57aceb5644effe62d5805" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_LIM_MASK<sp/>0xF0000000<sp/></highlight><highlight class="comment">//<sp/>PWMCONF<sp/>//<sp/>Limit<sp/><sp/>for<sp/><sp/>PWM_SCALE_AUTO<sp/><sp/>when<sp/><sp/>switching<sp/><sp/>back<sp/><sp/>from<sp/>spreadCycle<sp/>to<sp/>stealthChop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="TMC2300__Fields_8h_1ad3ff0251b19f2984f6ceedbb0a66db8d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_LIM_SHIFT<sp/>28<sp/></highlight><highlight class="comment">//<sp/>Limit<sp/><sp/>for<sp/><sp/>PWM_SCALE_AUTO<sp/><sp/>when<sp/><sp/>switching<sp/><sp/>back<sp/><sp/>from<sp/>spreadCycle<sp/>to<sp/>stealthChop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="TMC2300__Fields_8h_1a7d0a2335b5e7cbbe65c42eeac326f449" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_SCALE_SUM_MASK<sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>PWM_SCALE<sp/>//<sp/>Actual<sp/><sp/>PWM<sp/><sp/>duty<sp/><sp/>cycle.<sp/><sp/>This<sp/>value<sp/><sp/>is<sp/><sp/>used<sp/><sp/>for<sp/><sp/>scaling<sp/><sp/>the<sp/>values<sp/><sp/>CUR_A<sp/><sp/>and<sp/><sp/>CUR_B<sp/><sp/>read<sp/>from<sp/>the<sp/>sine<sp/>wave<sp/>table.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="TMC2300__Fields_8h_1a689b039465cefc9255d22ed8da39b7d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_SCALE_SUM_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>Actual<sp/><sp/>PWM<sp/><sp/>duty<sp/><sp/>cycle.<sp/><sp/>This<sp/>value<sp/><sp/>is<sp/><sp/>used<sp/><sp/>for<sp/><sp/>scaling<sp/><sp/>the<sp/>values<sp/><sp/>CUR_A<sp/><sp/>and<sp/><sp/>CUR_B<sp/><sp/>read<sp/>from<sp/>the<sp/>sine<sp/>wave<sp/>table.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="TMC2300__Fields_8h_1a59e29e21eaec527274152a1fe3f677b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_SCALE_AUTO_MASK<sp/>0x1FF0000<sp/></highlight><highlight class="comment">//<sp/>PWM_SCALE<sp/>//<sp/>9<sp/>Bit<sp/>signed<sp/>offset<sp/>added<sp/>to<sp/>the<sp/>calculated<sp/><sp/>PWM<sp/><sp/>duty<sp/><sp/>cycle.<sp/><sp/>This<sp/>is<sp/><sp/>the<sp/><sp/>result<sp/><sp/>of<sp/><sp/>the<sp/><sp/>automatic<sp/>amplitude<sp/><sp/>regulation<sp/><sp/>based<sp/><sp/>on<sp/>current<sp/>measurement.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="TMC2300__Fields_8h_1a9d12572c6fe855c85f80d2fb21c4e8e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_SCALE_AUTO_SHIFT<sp/>16<sp/></highlight><highlight class="comment">//<sp/>9<sp/>Bit<sp/>signed<sp/>offset<sp/>added<sp/>to<sp/>the<sp/>calculated<sp/><sp/>PWM<sp/><sp/>duty<sp/><sp/>cycle.<sp/><sp/>This<sp/>is<sp/><sp/>the<sp/><sp/>result<sp/><sp/>of<sp/><sp/>the<sp/><sp/>automatic<sp/>amplitude<sp/><sp/>regulation<sp/><sp/>based<sp/><sp/>on<sp/>current<sp/>measurement.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="TMC2300__Fields_8h_1adcf3204a5a06542f283bd73d7cef6978" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_OFS_AUTO_MASK<sp/>0xFF<sp/></highlight><highlight class="comment">//<sp/>PWM_AUTO<sp/>//<sp/>Automatically<sp/><sp/>determined<sp/><sp/>offset<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="TMC2300__Fields_8h_1a9cdc884744d4a0cb2b6ec5009c6d670a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_OFS_AUTO_SHIFT<sp/>0<sp/></highlight><highlight class="comment">//<sp/>Automatically<sp/><sp/>determined<sp/><sp/>offset<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="TMC2300__Fields_8h_1a54dbc628578fa735e4564b3f1e374f90" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_GRAD_AUTO_MASK<sp/>0xFF0000<sp/></highlight><highlight class="comment">//<sp/>PWM_AUTO<sp/>//<sp/>Automatically<sp/><sp/>determined<sp/>gradient<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="TMC2300__Fields_8h_1a11cda69686e72408ffdfdd0f665e98bc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2300_PWM_GRAD_AUTO_SHIFT<sp/>16<sp/></highlight><highlight class="comment">//<sp/>Automatically<sp/><sp/>determined<sp/>gradient<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC2300_FIELDS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300_Fields.h"/>
+  </compounddef>
+</doxygen>

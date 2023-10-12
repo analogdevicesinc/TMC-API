@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_d823f24eef5775bdf39bd90bae1a6b9a" kind="dir">
+    <compoundname>TMC457</compoundname>
+    <innerfile refid="TMC457_8c">TMC457.c</innerfile>
+    <innerfile refid="TMC457_8h">TMC457.h</innerfile>
+    <innerfile refid="TMC457__Register_8h">TMC457_Register.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="MAX22216_8c" kind="file" language="C++">
+    <compoundname>MAX22216.c</compoundname>
+    <includes refid="MAX22216_8h" local="yes">MAX22216.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="12">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="10">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="13">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="6">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MAX22216.c</label>
+        <link refid="MAX22216_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MAX22216.h</label>
+        <link refid="MAX22216_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>MAX22216_Constants.h</label>
+        <link refid="MAX22216__Constants_8h"/>
+      </node>
+      <node id="15">
+        <label>MAX22216_Fields.h</label>
+        <link refid="MAX22216__Fields_8h"/>
+      </node>
+      <node id="16">
+        <label>MAX22216_Register.h</label>
+        <link refid="MAX22216__Register_8h"/>
+      </node>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="MAX22216_8c_1a687de8486fb76ed657e29554fe29a8e8" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void max22216_readWriteArray</definition>
+        <argsstring>(uint8_t channel, uint8_t *data, size_t length)</argsstring>
+        <name>max22216_readWriteArray</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="13" column="13" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" declline="13" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1ae8de00118b62d342feba9276fed6ed23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t max22216_CRC</definition>
+        <argsstring>(uint8_t *data, size_t length)</argsstring>
+        <name>max22216_CRC</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="21" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1aadb98884d123bac30dd1937ea9951b7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void max22216_writeDatagram</definition>
+        <argsstring>(MAX22216TypeDef *max22216, uint8_t address, uint8_t x1, uint8_t x2)</argsstring>
+        <name>max22216_writeDatagram</name>
+        <param>
+          <type><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="38" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="38" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1ad9c4a90c063c8ca541195e4cbb8f9e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void max22216_writeInt</definition>
+        <argsstring>(MAX22216TypeDef *max22216, uint8_t address, int16_t value)</argsstring>
+        <name>max22216_writeInt</name>
+        <param>
+          <type><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int16_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="49" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1af1a8b5119271645cd07c2c38eeb0a0f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t max22216_readInt</definition>
+        <argsstring>(MAX22216TypeDef *max22216, uint8_t address)</argsstring>
+        <name>max22216_readInt</name>
+        <param>
+          <type><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="54" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1a2179715e40cccf660df7771366fe0f42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void max22216_writeInt_UART</definition>
+        <argsstring>(MAX22216TypeDef *max22216, uint8_t address, int32_t value)</argsstring>
+        <name>max22216_writeInt_UART</name>
+        <param>
+          <type><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="73" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="73" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1ae1eb8fb05715be9efda09a34b6d9e134" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t max22216_readInt_UART</definition>
+        <argsstring>(MAX22216TypeDef *max22216, uint8_t address)</argsstring>
+        <name>max22216_readInt_UART</name>
+        <param>
+          <type><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="89" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="89" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1ad6a34206e49c11d1befd9b05a3c1ad8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void max22216_writeIntDep</definition>
+        <argsstring>(MAX22216TypeDef *max22216, uint8_t address, int32_t value, uint8_t dep_address, int32_t dep_value)</argsstring>
+        <name>max22216_writeIntDep</name>
+        <param>
+          <type><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>dep_address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>dep_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="119" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="119" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1aa44e87958d0f209711d50b997b5d1468" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t max22216_readIntDep</definition>
+        <argsstring>(MAX22216TypeDef *max22216, uint8_t address, uint8_t dep_address, int32_t dep_value)</argsstring>
+        <name>max22216_readIntDep</name>
+        <param>
+          <type><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>dep_address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>dep_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="127" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="127" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1abbf70a0f21401f816849ac9b75df6790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void max22216_init</definition>
+        <argsstring>(MAX22216TypeDef *max22216, uint8_t channel)</argsstring>
+        <name>max22216_init</name>
+        <param>
+          <type><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="136" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="136" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1a23b7c7c50958f3f8c94e53d367bb76c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t max22216_getSlaveAddress</definition>
+        <argsstring>(const MAX22216TypeDef *max22216)</argsstring>
+        <name>max22216_getSlaveAddress</name>
+        <param>
+          <type>const <ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="143" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1aa0cfc25e3ce64836d6b67ced9c2838ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void max22216_setSlaveAddress</definition>
+        <argsstring>(MAX22216TypeDef *max22216, uint8_t slaveAddress)</argsstring>
+        <name>max22216_setSlaveAddress</name>
+        <param>
+          <type><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref> *</type>
+          <declname>max22216</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>slaveAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="148" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="MAX22216_8c_1a4511276a1223a27d0a03ffa7e6e74a5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int16_t</type>
+        <definition>int16_t max22216_getS16CircleDifference</definition>
+        <argsstring>(int16_t newValue, int16_t oldValue)</argsstring>
+        <name>max22216_getS16CircleDifference</name>
+        <param>
+          <type>int16_t</type>
+          <declname>newValue</declname>
+        </param>
+        <param>
+          <type>int16_t</type>
+          <declname>oldValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" line="153" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c" bodystart="153" bodyend="156"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2018<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MAX22216_8h" kindref="compound">MAX22216.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>UART<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="MAX22216_8c_1a687de8486fb76ed657e29554fe29a8e8" kindref="member">max22216_readWriteArray</ref>(uint8_t<sp/>channel,<sp/>uint8_t<sp/>*data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>UART<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>CRC<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//extern<sp/>uint8_t<sp/>max22216_CRC8(uint8_t<sp/>*data,<sp/>size_t<sp/>length);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>CRC<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>length<sp/>in<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">uint8_t<sp/><ref refid="MAX22216_8c_1ae8de00118b62d342feba9276fed6ed23" kindref="member">max22216_CRC</ref>(uint8_t<sp/>*data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>crc<sp/>=<sp/>0b11111;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>crc_old;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc_old<sp/>=<sp/>crc;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/><ref refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" kindref="member">FIELD_SET</ref>(crc,<sp/>(1<sp/>&lt;&lt;<sp/>5),<sp/>5,<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(crc_old,<sp/>(1<sp/>&lt;&lt;<sp/>4),<sp/>4));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/><ref refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" kindref="member">FIELD_SET</ref>(crc,<sp/>(1<sp/>&lt;&lt;<sp/>4),<sp/>4,<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(crc_old,<sp/>(1<sp/>&lt;&lt;<sp/>3),<sp/>3)<sp/>^<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(crc_old,<sp/>(1<sp/>&lt;&lt;<sp/>4),<sp/>4)<sp/>^<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(data[i<sp/>/<sp/>8],<sp/>(1<sp/>&lt;&lt;<sp/>(7<sp/>-<sp/>(i<sp/>%<sp/>8))),<sp/>7<sp/>-<sp/>(i<sp/>%<sp/>8)));</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/><ref refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" kindref="member">FIELD_SET</ref>(crc,<sp/>(1<sp/>&lt;&lt;<sp/>3),<sp/>3,<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(crc_old,<sp/>(1<sp/>&lt;&lt;<sp/>2),<sp/>2));</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/><ref refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" kindref="member">FIELD_SET</ref>(crc,<sp/>(1<sp/>&lt;&lt;<sp/>2),<sp/>2,<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(crc_old,<sp/>(1<sp/>&lt;&lt;<sp/>1),<sp/>1)<sp/>^<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(crc_old,<sp/>(1<sp/>&lt;&lt;<sp/>4),<sp/>4)<sp/>^<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(data[i<sp/>/<sp/>8],<sp/>(1<sp/>&lt;&lt;<sp/>(7<sp/>-<sp/>(i<sp/>%<sp/>8))),<sp/>7<sp/>-<sp/>(i<sp/>%<sp/>8)));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/><ref refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" kindref="member">FIELD_SET</ref>(crc,<sp/>(1<sp/>&lt;&lt;<sp/>1),<sp/>1,<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(crc_old,<sp/>1,<sp/>0));</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crc<sp/>=<sp/><ref refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" kindref="member">FIELD_SET</ref>(crc,<sp/>1,<sp/>0,<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(crc_old,<sp/>(1<sp/>&lt;&lt;<sp/>4),<sp/>4)<sp/>^<sp/><ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(data[i<sp/>/<sp/>8],<sp/>(1<sp/>&lt;&lt;<sp/>(7<sp/>-<sp/>(i<sp/>%<sp/>8))),<sp/>7<sp/>-<sp/>(i<sp/>%<sp/>8)));</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(crc<sp/>&amp;<sp/>0x1F);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Writes<sp/>(x1<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>(x2<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(x3<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>x4<sp/>to<sp/>the<sp/>given<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="MAX22216_8c_1aadb98884d123bac30dd1937ea9951b7c" kindref="member">max22216_writeDatagram</ref>(<ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216,<sp/>uint8_t<sp/>address,<sp/>uint8_t<sp/>x1,<sp/>uint8_t<sp/>x2)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data[4];</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>data[0]<sp/>=<sp/>address<sp/>|<sp/><ref refid="Constants_8h_1aa432cd9074eb257b2c69561eae5ecda0" kindref="member">TMC_WRITE_BIT</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>data[1]<sp/>=<sp/>x1;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>data[2]<sp/>=<sp/>x2;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(max22216-&gt;<ref refid="structMAX22216TypeDef_1addeb1797fa007ef87de4591dab9e4bb7" kindref="member">crc_en</ref>)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[3]<sp/>=<sp/><ref refid="MAX22216_8c_1ae8de00118b62d342feba9276fed6ed23" kindref="member">max22216_CRC</ref>(&amp;data[0],<sp/>27);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1a687de8486fb76ed657e29554fe29a8e8" kindref="member">max22216_readWriteArray</ref>(max22216-&gt;<ref refid="structMAX22216TypeDef_1af96f081ab894cc56686c57ed36690dba" kindref="member">channel</ref>,<sp/>&amp;data[0],<sp/>(max22216-&gt;<ref refid="structMAX22216TypeDef_1addeb1797fa007ef87de4591dab9e4bb7" kindref="member">crc_en</ref>)<sp/>?<sp/>4<sp/>:<sp/>3);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="MAX22216_8c_1ad9c4a90c063c8ca541195e4cbb8f9e92" kindref="member">max22216_writeInt</ref>(<ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216,<sp/>uint8_t<sp/>address,<sp/>int16_t<sp/>value)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1aadb98884d123bac30dd1937ea9951b7c" kindref="member">max22216_writeDatagram</ref>(max22216,<sp/>address,<sp/><ref refid="Bits_8h_1a9b7073baad817bd76a33a6ea18d20dcb" kindref="member">BYTE</ref>(value,<sp/>1),<sp/><ref refid="Bits_8h_1a9b7073baad817bd76a33a6ea18d20dcb" kindref="member">BYTE</ref>(value,<sp/>0));</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">int32_t<sp/><ref refid="MAX22216_8c_1af1a8b5119271645cd07c2c38eeb0a0f9" kindref="member">max22216_readInt</ref>(<ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216,<sp/>uint8_t<sp/>address)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>address<sp/>=<sp/><ref refid="Macros_8h_1a25b929527496d1e227906cb8e2b2f01a" kindref="member">TMC_ADDRESS</ref>(address);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data[4]<sp/>=<sp/>{<sp/>0,<sp/>0,<sp/>0,<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>data[0]<sp/>=<sp/>address;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(max22216-&gt;<ref refid="structMAX22216TypeDef_1addeb1797fa007ef87de4591dab9e4bb7" kindref="member">crc_en</ref>)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[3]<sp/>=<sp/><ref refid="MAX22216_8c_1ae8de00118b62d342feba9276fed6ed23" kindref="member">max22216_CRC</ref>(&amp;data[0],<sp/>27);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1a687de8486fb76ed657e29554fe29a8e8" kindref="member">max22216_readWriteArray</ref>(max22216-&gt;<ref refid="structMAX22216TypeDef_1af96f081ab894cc56686c57ed36690dba" kindref="member">channel</ref>,<sp/>&amp;data[0],<sp/>(max22216-&gt;<ref refid="structMAX22216TypeDef_1addeb1797fa007ef87de4591dab9e4bb7" kindref="member">crc_en</ref>)<sp/>?<sp/>4<sp/>:<sp/>3);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>data[0]<sp/>=<sp/>address;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(max22216-&gt;<ref refid="structMAX22216TypeDef_1addeb1797fa007ef87de4591dab9e4bb7" kindref="member">crc_en</ref>)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[3]<sp/>=<sp/><ref refid="MAX22216_8c_1ae8de00118b62d342feba9276fed6ed23" kindref="member">max22216_CRC</ref>(&amp;data[0],<sp/>27);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1a687de8486fb76ed657e29554fe29a8e8" kindref="member">max22216_readWriteArray</ref>(max22216-&gt;<ref refid="structMAX22216TypeDef_1af96f081ab894cc56686c57ed36690dba" kindref="member">channel</ref>,<sp/>&amp;data[0],<sp/>(max22216-&gt;<ref refid="structMAX22216TypeDef_1addeb1797fa007ef87de4591dab9e4bb7" kindref="member">crc_en</ref>)<sp/>?<sp/>4<sp/>:<sp/>3);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Bits_8h_1ae515e3bdbb04c86b8ffa98c3216f952a" kindref="member">_8_16</ref>(data[1],<sp/>data[2]);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="MAX22216_8c_1a2179715e40cccf660df7771366fe0f42" kindref="member">max22216_writeInt_UART</ref>(<ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216,<sp/>uint8_t<sp/>address,<sp/>int32_t<sp/>value)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data[8];</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>data[0]<sp/>=<sp/><ref refid="MAX22216__Constants_8h_1ae6ea3255b92fc1b5f47b4dc3e91a4999" kindref="member">MAX22216_SYNC_BYTE</ref>;<sp/></highlight><highlight class="comment">//<sp/>sync<sp/>byte</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>data[1]<sp/>=<sp/>max22216-&gt;<ref refid="structMAX22216TypeDef_1a0c8dfe6c4dcffe3d1c3c45f2c646f5b3" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>data[2]<sp/>=<sp/>address<sp/>|<sp/><ref refid="Constants_8h_1aa432cd9074eb257b2c69561eae5ecda0" kindref="member">TMC_WRITE_BIT</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>data[3]<sp/>=<sp/>(value<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>data[4]<sp/>=<sp/>(value<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>data[5]<sp/>=<sp/>(value<sp/>&gt;&gt;<sp/>8<sp/>)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>data[6]<sp/>=<sp/>(value<sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>data[7]<sp/>=<sp/><ref refid="MAX22216_8c_1ae8de00118b62d342feba9276fed6ed23" kindref="member">max22216_CRC</ref>(data,<sp/>7);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1a687de8486fb76ed657e29554fe29a8e8" kindref="member">max22216_readWriteArray</ref>(max22216-&gt;<ref refid="structMAX22216TypeDef_1af96f081ab894cc56686c57ed36690dba" kindref="member">channel</ref>,<sp/>&amp;data[0],<sp/>8);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">int32_t<sp/><ref refid="MAX22216_8c_1ae1eb8fb05715be9efda09a34b6d9e134" kindref="member">max22216_readInt_UART</ref>(<ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216,<sp/>uint8_t<sp/>address)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data[8]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>data[0]<sp/>=<sp/><ref refid="MAX22216__Constants_8h_1ae6ea3255b92fc1b5f47b4dc3e91a4999" kindref="member">MAX22216_SYNC_BYTE</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>data[1]<sp/>=<sp/>max22216-&gt;<ref refid="structMAX22216TypeDef_1a0c8dfe6c4dcffe3d1c3c45f2c646f5b3" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>data[2]<sp/>=<sp/>address;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>data[7]<sp/>=<sp/><ref refid="MAX22216_8c_1ae8de00118b62d342feba9276fed6ed23" kindref="member">max22216_CRC</ref>(data,<sp/>3);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1a687de8486fb76ed657e29554fe29a8e8" kindref="member">max22216_readWriteArray</ref>(max22216-&gt;<ref refid="structMAX22216TypeDef_1af96f081ab894cc56686c57ed36690dba" kindref="member">channel</ref>,<sp/>&amp;data[0],<sp/>8);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>0:<sp/>Sync<sp/>byte<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[0]<sp/>!=<sp/><ref refid="MAX22216__Constants_8h_1ae6ea3255b92fc1b5f47b4dc3e91a4999" kindref="member">MAX22216_SYNC_BYTE</ref>)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>1:<sp/>Master<sp/>address<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[1]<sp/>!=<sp/><ref refid="MAX22216__Constants_8h_1a4f1a8db01116bc5e74ac633f2eb0ea8c" kindref="member">MAX22216_MASTER_ADDRESS</ref>)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>2:<sp/>Address<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[2]<sp/>!=<sp/>address)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>7:<sp/>CRC<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>if<sp/>(data[7]<sp/>!=<sp/>max22216_CRC8(data,<sp/>7))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Bits_8h_1ad298b5c8a7b364b5145a5471934f5946" kindref="member">_8_32</ref>(data[3],<sp/>data[4],<sp/>data[5],<sp/>data[6]);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="MAX22216_8c_1ad6a34206e49c11d1befd9b05a3c1ad8e" kindref="member">max22216_writeIntDep</ref>(<ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216,<sp/>uint8_t<sp/>address,<sp/>int32_t<sp/>value,<sp/>uint8_t<sp/>dep_address,<sp/>int32_t<sp/>dep_value)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>old<sp/>=<sp/><ref refid="MAX22216_8c_1af1a8b5119271645cd07c2c38eeb0a0f9" kindref="member">max22216_readInt</ref>(max22216,<sp/>dep_address);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1ad9c4a90c063c8ca541195e4cbb8f9e92" kindref="member">max22216_writeInt</ref>(max22216,<sp/>dep_address,<sp/>dep_value);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1ad9c4a90c063c8ca541195e4cbb8f9e92" kindref="member">max22216_writeInt</ref>(max22216,<sp/>address,<sp/>value);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1ad9c4a90c063c8ca541195e4cbb8f9e92" kindref="member">max22216_writeInt</ref>(max22216,<sp/>dep_address,<sp/>old);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">int32_t<sp/><ref refid="MAX22216_8c_1aa44e87958d0f209711d50b997b5d1468" kindref="member">max22216_readIntDep</ref>(<ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216,<sp/>uint8_t<sp/>address,<sp/>uint8_t<sp/>dep_address,<sp/>int32_t<sp/>dep_value)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>old<sp/>=<sp/><ref refid="MAX22216_8c_1af1a8b5119271645cd07c2c38eeb0a0f9" kindref="member">max22216_readInt</ref>(max22216,<sp/>dep_address);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1ad9c4a90c063c8ca541195e4cbb8f9e92" kindref="member">max22216_writeInt</ref>(max22216,<sp/>dep_address,<sp/>dep_value);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>value<sp/>=<sp/><ref refid="MAX22216_8c_1af1a8b5119271645cd07c2c38eeb0a0f9" kindref="member">max22216_readInt</ref>(max22216,<sp/>address);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MAX22216_8c_1ad9c4a90c063c8ca541195e4cbb8f9e92" kindref="member">max22216_writeInt</ref>(max22216,<sp/>dep_address,<sp/>old);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="MAX22216_8c_1abbf70a0f21401f816849ac9b75df6790" kindref="member">max22216_init</ref>(<ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216,<sp/>uint8_t<sp/>channel)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>max22216-&gt;<ref refid="structMAX22216TypeDef_1a0c8dfe6c4dcffe3d1c3c45f2c646f5b3" kindref="member">slaveAddress</ref><sp/>=<sp/>channel;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>max22216-&gt;<ref refid="structMAX22216TypeDef_1af96f081ab894cc56686c57ed36690dba" kindref="member">channel</ref><sp/>=<sp/>channel;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>max22216-&gt;<ref refid="structMAX22216TypeDef_1addeb1797fa007ef87de4591dab9e4bb7" kindref="member">crc_en</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">uint8_t<sp/><ref refid="MAX22216_8c_1a23b7c7c50958f3f8c94e53d367bb76c9" kindref="member">max22216_getSlaveAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>max22216-&gt;<ref refid="structMAX22216TypeDef_1a0c8dfe6c4dcffe3d1c3c45f2c646f5b3" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="MAX22216_8c_1aa0cfc25e3ce64836d6b67ced9c2838ce" kindref="member">max22216_setSlaveAddress</ref>(<ref refid="structMAX22216TypeDef" kindref="compound">MAX22216TypeDef</ref><sp/>*max22216,<sp/>uint8_t<sp/>slaveAddress)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>max22216-&gt;<ref refid="structMAX22216TypeDef_1a0c8dfe6c4dcffe3d1c3c45f2c646f5b3" kindref="member">slaveAddress</ref><sp/>=<sp/>slaveAddress;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">int16_t<sp/><ref refid="MAX22216_8c_1a4511276a1223a27d0a03ffa7e6e74a5f" kindref="member">max22216_getS16CircleDifference</ref>(int16_t<sp/>newValue,<sp/>int16_t<sp/>oldValue)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(newValue<sp/>-<sp/>oldValue);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/MAX22216/MAX22216.c"/>
+  </compounddef>
+</doxygen>

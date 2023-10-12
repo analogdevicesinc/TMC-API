@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTMCRegisterConstant" kind="struct" language="C++" prot="public">
+    <compoundname>TMCRegisterConstant</compoundname>
+    <includes refid="RegisterAccess_8h" local="no">RegisterAccess.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTMCRegisterConstant_1ab42037c24f4b4c46ce305a2c1686b603" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMCRegisterConstant::address</definition>
+        <argsstring></argsstring>
+        <name>address</name>
+        <qualifiedname>TMCRegisterConstant::address</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="66" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMCRegisterConstant_1a8ee397638840f4461cd9b559fde7fc30" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMCRegisterConstant::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>TMCRegisterConstant::value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="67" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" line="64" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/RegisterAccess.h" bodystart="65" bodyend="68"/>
+    <listofallmembers>
+      <member refid="structTMCRegisterConstant_1ab42037c24f4b4c46ce305a2c1686b603" prot="public" virt="non-virtual"><scope>TMCRegisterConstant</scope><name>address</name></member>
+      <member refid="structTMCRegisterConstant_1a8ee397638840f4461cd9b559fde7fc30" prot="public" virt="non-virtual"><scope>TMCRegisterConstant</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

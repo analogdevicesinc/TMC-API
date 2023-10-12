@@ -1,0 +1,736 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2300_8c" kind="file" language="C++">
+    <compoundname>TMC2300.c</compoundname>
+    <includes refid="TMC2300_8h" local="yes">TMC2300.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="12">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tmc/helpers/Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="10">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="13">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="6">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2300.c</label>
+        <link refid="TMC2300_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TMC2300.h</label>
+        <link refid="TMC2300_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>TMC2300_Constants.h</label>
+        <link refid="TMC2300__Constants_8h"/>
+      </node>
+      <node id="17">
+        <label>TMC2300_Fields.h</label>
+        <link refid="TMC2300__Fields_8h"/>
+      </node>
+      <node id="16">
+        <label>TMC2300_Register.h</label>
+        <link refid="TMC2300__Register_8h"/>
+      </node>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC2300_8c_1a881110b153ac3dee45735209dfde5e8d" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2300_readWriteArray</definition>
+        <argsstring>(uint8_t channel, uint8_t *data, size_t writeLength, size_t readLength)</argsstring>
+        <name>tmc2300_readWriteArray</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>writeLength</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>readLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="13" column="13" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" declline="13" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1ac6a3066c2c7ff45f82761e528121d545" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2300_CRC8</definition>
+        <argsstring>(uint8_t *data, size_t length)</argsstring>
+        <name>tmc2300_CRC8</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="17" column="16" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" declline="17" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a1bbc2647e6c170a52caaefbb3eae1523" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2300_writeInt</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300, uint8_t address, int32_t value)</argsstring>
+        <name>tmc2300_writeInt</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="20" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="20" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a585762c1745ff1a10e2c9e252aa2fbe3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc2300_readInt</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300, uint8_t address)</argsstring>
+        <name>tmc2300_readInt</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="48" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a39020300e6b95559236d043ec1ce34d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2300_init</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300, uint8_t channel, ConfigurationTypeDef *tmc2300_config, const int32_t *registerResetState)</argsstring>
+        <name>tmc2300_init</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>tmc2300_config</declname>
+        </param>
+        <param>
+          <type>const int32_t *</type>
+          <declname>registerResetState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="85" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="85" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a3038f4fb09e2818d0df00901df243e3b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void fillShadowRegisters</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300)</argsstring>
+        <name>fillShadowRegisters</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="110" column="13" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="110" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a3ccd14c6473d672a76343f9852f184b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void writeConfiguration</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300)</argsstring>
+        <name>writeConfiguration</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="144" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="144" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a49643112da9ff49ed3d08a1cde73bdb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2300_setRegisterResetState</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300, const int32_t *resetState)</argsstring>
+        <name>tmc2300_setRegisterResetState</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <param>
+          <type>const int32_t *</type>
+          <declname>resetState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="202" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="202" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a10c72f1a723efc8eb36907daa373822c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2300_setCallback</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300, tmc2300_callback callback)</argsstring>
+        <name>tmc2300_setCallback</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <param>
+          <type><ref refid="TMC2300_8h_1a01f938b434385bfe0156ebccee258cbb" kindref="member">tmc2300_callback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="211" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="211" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a23e767f8facb158c66526a4878510ceb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2300_periodicJob</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300, uint32_t tick)</argsstring>
+        <name>tmc2300_periodicJob</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="216" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="216" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a4ee55e1f0ef09c4282ec1515dabb86c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2300_reset</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300)</argsstring>
+        <name>tmc2300_reset</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="227" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="227" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1aa311ce3be877df6b590762262750fffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2300_restore</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300)</argsstring>
+        <name>tmc2300_restore</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="246" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="246" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a8ab3b8147eeb37e9e071d3d10865a7af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2300_getSlaveAddress</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300)</argsstring>
+        <name>tmc2300_getSlaveAddress</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="259" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="259" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a8cef2b71f9367fc7d899b3d411ba043d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2300_setSlaveAddress</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300, uint8_t slaveAddress)</argsstring>
+        <name>tmc2300_setSlaveAddress</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>slaveAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="264" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="264" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a853b4a29d168d586a9f9d87509669024" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2300_getStandby</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300)</argsstring>
+        <name>tmc2300_getStandby</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="269" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="269" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2300_8c_1a06e715de8572d6796b566b9d16322361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2300_setStandby</definition>
+        <argsstring>(TMC2300TypeDef *tmc2300, uint8_t standbyState)</argsstring>
+        <name>tmc2300_setStandby</name>
+        <param>
+          <type><ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref> *</type>
+          <declname>tmc2300</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>standbyState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" line="274" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c" bodystart="274" bodyend="282"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2300_8h" kindref="compound">TMC2300.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>UART<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a881110b153ac3dee45735209dfde5e8d" kindref="member">tmc2300_readWriteArray</ref>(uint8_t<sp/>channel,<sp/>uint8_t<sp/>*data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>writeLength,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>readLength);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>UART<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=&gt;<sp/>CRC<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="TMC2300_8c_1ac6a3066c2c7ff45f82761e528121d545" kindref="member">tmc2300_CRC8</ref>(uint8_t<sp/>*data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;=<sp/>CRC<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a1bbc2647e6c170a52caaefbb3eae1523" kindref="member">tmc2300_writeInt</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300,<sp/>uint8_t<sp/>address,<sp/>int32_t<sp/>value)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>we<sp/>are<sp/>in<sp/>standby<sp/>or<sp/>in<sp/>the<sp/>reset<sp/>procedure<sp/>we<sp/>do<sp/>not<sp/>actually<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>the<sp/>IC<sp/>-<sp/>we<sp/>only<sp/>update<sp/>the<sp/>shadow<sp/>registers.<sp/>After<sp/>exiting<sp/>standby<sp/>or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>completing<sp/>a<sp/>reset<sp/>we<sp/>transition<sp/>into<sp/>a<sp/>restore,<sp/>which<sp/>pushes<sp/>the<sp/>shadow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>register<sp/>contents<sp/>into<sp/>the<sp/>chip.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a45ba8a6f09ef1d1a48d03b2ed6168d22" kindref="member">standbyEnabled</ref><sp/>||<sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>data[8];</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[0]<sp/>=<sp/>0x05;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[1]<sp/>=<sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1acd696dae33aefe9f3985494cde14c12f" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[2]<sp/>=<sp/>address<sp/>|<sp/><ref refid="Constants_8h_1aa432cd9074eb257b2c69561eae5ecda0" kindref="member">TMC_WRITE_BIT</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[3]<sp/>=<sp/>(value<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[4]<sp/>=<sp/>(value<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[5]<sp/>=<sp/>(value<sp/>&gt;&gt;<sp/>8<sp/>)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[6]<sp/>=<sp/>(value<sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[7]<sp/>=<sp/><ref refid="TMC2300_8c_1ac6a3066c2c7ff45f82761e528121d545" kindref="member">tmc2300_CRC8</ref>(data,<sp/>7);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC2300_8c_1a881110b153ac3dee45735209dfde5e8d" kindref="member">tmc2300_readWriteArray</ref>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a85862109a7b056b2697830e98029a3c1" kindref="member">channel</ref>,<sp/>&amp;data[0],<sp/>8,<sp/>0);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Write<sp/>to<sp/>the<sp/>shadow<sp/>register<sp/>and<sp/>mark<sp/>the<sp/>register<sp/>dirty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>address<sp/>=<sp/><ref refid="Macros_8h_1a25b929527496d1e227906cb8e2b2f01a" kindref="member">TMC_ADDRESS</ref>(address);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>[address]<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a69d0744d9d70e98f29fa59923517fd8b" kindref="member">registerAccess</ref>[address]<sp/>|=<sp/><ref refid="RegisterAccess_8h_1ab7bf3c3ea0569faa301549892d541c37" kindref="member">TMC_ACCESS_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">int32_t<sp/><ref refid="TMC2300_8c_1a585762c1745ff1a10e2c9e252aa2fbe3" kindref="member">tmc2300_readInt</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300,<sp/>uint8_t<sp/>address)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data[8]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>address<sp/>=<sp/><ref refid="Macros_8h_1a25b929527496d1e227906cb8e2b2f01a" kindref="member">TMC_ADDRESS</ref>(address);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>the<sp/>chip<sp/>is<sp/>in<sp/>standby<sp/>or<sp/>when<sp/>accessing<sp/>a<sp/>write-only<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>use<sp/>the<sp/>shadow<sp/>register<sp/>content<sp/>instead.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a45ba8a6f09ef1d1a48d03b2ed6168d22" kindref="member">standbyEnabled</ref><sp/>||<sp/>!<ref refid="RegisterAccess_8h_1af08f0d12a2110808e943d969103914a8" kindref="member">TMC_IS_READABLE</ref>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a69d0744d9d70e98f29fa59923517fd8b" kindref="member">registerAccess</ref>[address]))</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>[address];</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>data[0]<sp/>=<sp/>0x05;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>data[1]<sp/>=<sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1acd696dae33aefe9f3985494cde14c12f" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>data[2]<sp/>=<sp/>address;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>data[3]<sp/>=<sp/><ref refid="TMC2300_8c_1ac6a3066c2c7ff45f82761e528121d545" kindref="member">tmc2300_CRC8</ref>(data,<sp/>3);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC2300_8c_1a881110b153ac3dee45735209dfde5e8d" kindref="member">tmc2300_readWriteArray</ref>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a85862109a7b056b2697830e98029a3c1" kindref="member">channel</ref>,<sp/>data,<sp/>4,<sp/>8);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>0:<sp/>Sync<sp/>nibble<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[0]<sp/>!=<sp/>0x05)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>1:<sp/>Master<sp/>address<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[1]<sp/>!=<sp/>0xFF)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>2:<sp/>Address<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[2]<sp/>!=<sp/>address)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byte<sp/>7:<sp/>CRC<sp/>correct?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data[7]<sp/>!=<sp/><ref refid="TMC2300_8c_1ac6a3066c2c7ff45f82761e528121d545" kindref="member">tmc2300_CRC8</ref>(data,<sp/>7))</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((uint32_t)data[3]<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>((uint32_t)data[4]<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(data[5]<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>data[6];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a39020300e6b95559236d043ec1ce34d6" kindref="member">tmc2300_init</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300,<sp/>uint8_t<sp/>channel,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*tmc2300_config,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*registerResetState)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>tmc2300_config;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Types_8h_1a070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a85862109a7b056b2697830e98029a3c1" kindref="member">channel</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>channel;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>slave<sp/>address:<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1acd696dae33aefe9f3985494cde14c12f" kindref="member">slaveAddress</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>in<sp/>standby</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a45ba8a6f09ef1d1a48d03b2ed6168d22" kindref="member">standbyEnabled</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="TMC2300__Constants_8h_1a18e127840e86062a81014aa555a7a531" kindref="member">TMC2300_REGISTER_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a69d0744d9d70e98f29fa59923517fd8b" kindref="member">registerAccess</ref>[i]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="TMC2300_8h_1a6c9e1528b213903c02482b55b44a53eb" kindref="member">tmc2300_defaultRegisterAccess</ref>[i];</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a2351ef2d79442c7a4613e7bab95b936c" kindref="member">registerResetState</ref>[i]<sp/><sp/>=<sp/>registerResetState[i];</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fill<sp/>the<sp/>shadow<sp/>registers<sp/>of<sp/>hardware<sp/>preset<sp/>registers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Only<sp/>needed<sp/>if<sp/>you<sp/>want<sp/>to<sp/>read<sp/>out<sp/>those<sp/>registers<sp/>to<sp/>display<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(e.g.<sp/>for<sp/>the<sp/>TMCL<sp/>IDE<sp/>register<sp/>browser)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a3038f4fb09e2818d0df00901df243e3b" kindref="member">fillShadowRegisters</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>we<sp/>have<sp/>constants<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="Macros_8h_1a6242a25f9d996f0cc4f4cdb911218b75" kindref="member">ARRAY_SIZE</ref>(<ref refid="TMC2300_8h_1a8164b1a7a4dc1411ebeeb97b663c20f0" kindref="member">tmc2300_RegisterConstants</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i,<sp/>j<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="TMC2300__Constants_8h_1a18e127840e86062a81014aa555a7a531" kindref="member">TMC2300_REGISTER_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>only<sp/>need<sp/>to<sp/>worry<sp/>about<sp/>hardware<sp/>preset<sp/>registers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>that<sp/>have<sp/>not<sp/>yet<sp/>been<sp/>written<sp/>(no<sp/>dirty<sp/>bit)<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="RegisterAccess_8h_1abc4e7617dbd4a66c3efe62ed34ca6d33" kindref="member">TMC_IS_PRESET</ref>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a69d0744d9d70e98f29fa59923517fd8b" kindref="member">registerAccess</ref>[i])<sp/>||<sp/><ref refid="RegisterAccess_8h_1a693219534d53ab0222781336324fa9af" kindref="member">TMC_IS_DIRTY</ref>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a69d0744d9d70e98f29fa59923517fd8b" kindref="member">registerAccess</ref>[i]))</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Search<sp/>the<sp/>constant<sp/>list<sp/>for<sp/>the<sp/>current<sp/>address.<sp/>With<sp/>the<sp/>constant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>list<sp/>being<sp/>sorted<sp/>in<sp/>ascended<sp/>order,<sp/>we<sp/>can<sp/>walk<sp/>through<sp/>the<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>until<sp/>the<sp/>entry<sp/>with<sp/>an<sp/>address<sp/>equal<sp/>or<sp/>greater<sp/>than<sp/>i</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(j<sp/>&lt;<sp/><ref refid="Macros_8h_1a6242a25f9d996f0cc4f4cdb911218b75" kindref="member">ARRAY_SIZE</ref>(<ref refid="TMC2300_8h_1a8164b1a7a4dc1411ebeeb97b663c20f0" kindref="member">tmc2300_RegisterConstants</ref>)<sp/>&amp;&amp;<sp/>(<ref refid="TMC2300_8h_1a8164b1a7a4dc1411ebeeb97b663c20f0" kindref="member">tmc2300_RegisterConstants</ref>[j].address<sp/>&lt;<sp/>i))</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j++;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Abort<sp/>when<sp/>we<sp/>reach<sp/>the<sp/>end<sp/>of<sp/>the<sp/>constant<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j<sp/>==<sp/><ref refid="Macros_8h_1a6242a25f9d996f0cc4f4cdb911218b75" kindref="member">ARRAY_SIZE</ref>(<ref refid="TMC2300_8h_1a8164b1a7a4dc1411ebeeb97b663c20f0" kindref="member">tmc2300_RegisterConstants</ref>))</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>we<sp/>have<sp/>an<sp/>entry<sp/>for<sp/>our<sp/>current<sp/>address,<sp/>write<sp/>the<sp/>constant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="TMC2300_8h_1a8164b1a7a4dc1411ebeeb97b663c20f0" kindref="member">tmc2300_RegisterConstants</ref>[j].address<sp/>==<sp/>i)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>[i]<sp/>=<sp/><ref refid="TMC2300_8h_1a8164b1a7a4dc1411ebeeb97b663c20f0" kindref="member">tmc2300_RegisterConstants</ref>[j].<ref refid="structTMCRegisterConstant_1a8ee397638840f4461cd9b559fde7fc30" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a3ccd14c6473d672a76343f9852f184b9" kindref="member">writeConfiguration</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*ptr<sp/>=<sp/>&amp;tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*settings;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>==<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>settings<sp/>=<sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a2351ef2d79442c7a4613e7bab95b936c" kindref="member">registerResetState</ref>;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>next<sp/>resettable<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((*ptr<sp/>&lt;<sp/><ref refid="TMC2300__Constants_8h_1a18e127840e86062a81014aa555a7a531" kindref="member">TMC2300_REGISTER_COUNT</ref>)<sp/>&amp;&amp;<sp/>!<ref refid="RegisterAccess_8h_1a08cbb9fb1db72595e25b38131ee3dba0" kindref="member">TMC_IS_RESETTABLE</ref>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a69d0744d9d70e98f29fa59923517fd8b" kindref="member">registerAccess</ref>[*ptr]))</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*ptr)++;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>restore<sp/>while<sp/>in<sp/>standby</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a45ba8a6f09ef1d1a48d03b2ed6168d22" kindref="member">standbyEnabled</ref>)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>settings<sp/>=<sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>next<sp/>restorable<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((*ptr<sp/>&lt;<sp/><ref refid="TMC2300__Constants_8h_1a18e127840e86062a81014aa555a7a531" kindref="member">TMC2300_REGISTER_COUNT</ref>)<sp/>&amp;&amp;<sp/>!<ref refid="RegisterAccess_8h_1a70866cbed8c69a330b4aebc9a1e8287e" kindref="member">TMC_IS_RESTORABLE</ref>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a69d0744d9d70e98f29fa59923517fd8b" kindref="member">registerAccess</ref>[*ptr]))</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*ptr)++;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*ptr<sp/>&lt;<sp/><ref refid="TMC2300__Constants_8h_1a18e127840e86062a81014aa555a7a531" kindref="member">TMC2300_REGISTER_COUNT</ref>)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset/restore<sp/>the<sp/>found<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC2300_8c_1a1bbc2647e6c170a52caaefbb3eae1523" kindref="member">tmc2300_writeInt</ref>(tmc2300,<sp/>*ptr,<sp/>settings[*ptr]);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*ptr)++;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC2300_8c_1a3038f4fb09e2818d0df00901df243e3b" kindref="member">fillShadowRegisters</ref>(tmc2300);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset/restore<sp/>complete<sp/>-&gt;<sp/>call<sp/>the<sp/>callback<sp/>if<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref>)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((<ref refid="TMC2300_8h_1a01f938b434385bfe0156ebccee258cbb" kindref="member">tmc2300_callback</ref>)tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref>)(tmc2300,<sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref>);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>==<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>done<sp/>-&gt;<sp/>Perform<sp/>a<sp/>restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa7554d7ac751dd29b0f06634cdbafdcc6" kindref="member">CONFIG_RESTORE</ref>;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Restore<sp/>done<sp/>-&gt;<sp/>configuration<sp/>complete</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a49643112da9ff49ed3d08a1cde73bdb1" kindref="member">tmc2300_setRegisterResetState</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*resetState)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="TMC2300__Constants_8h_1a18e127840e86062a81014aa555a7a531" kindref="member">TMC2300_REGISTER_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a2351ef2d79442c7a4613e7bab95b936c" kindref="member">registerResetState</ref>[i]<sp/>=<sp/>resetState[i];</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a10c72f1a723efc8eb36907daa373822c" kindref="member">tmc2300_setCallback</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300,<sp/><ref refid="TMC2300_8h_1a01f938b434385bfe0156ebccee258cbb" kindref="member">tmc2300_callback</ref><sp/>callback)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a713aded8358c7eaf78b3f97d4c5b7d9e" kindref="member">callback</ref><sp/>=<sp/>(<ref refid="Config_8h_1a4f94914f5c7a97833e65a3d10eedfdee" kindref="member">tmc_callback_config</ref>)<sp/>callback;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a23e767f8facb158c66526a4878510ceb" kindref="member">tmc2300_periodicJob</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300,<sp/>uint32_t<sp/>tick)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Macros_8h_1a86d500a34c624c2cae56bc25a31b12f3" kindref="member">UNUSED</ref>(tick);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>!=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa777ae2d946201c3a85df1f361c1de095" kindref="member">CONFIG_READY</ref>)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC2300_8c_1a3ccd14c6473d672a76343f9852f184b9" kindref="member">writeConfiguration</ref>(tmc2300);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal">uint8_t<sp/><ref refid="TMC2300_8c_1a4ee55e1f0ef09c4282ec1515dabb86c2" kindref="member">tmc2300_reset</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>reset<sp/>can<sp/>always<sp/>happen<sp/>-<sp/>even<sp/>during<sp/>another<sp/>reset<sp/>or<sp/>restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>dirty<sp/>bits<sp/>and<sp/>wipe<sp/>the<sp/>shadow<sp/>registers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="TMC2300__Constants_8h_1a18e127840e86062a81014aa555a7a531" kindref="member">TMC2300_REGISTER_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a69d0744d9d70e98f29fa59923517fd8b" kindref="member">registerAccess</ref>[i]<sp/>&amp;=<sp/>~TMC_ACCESS_DIRTY;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1ab7eb5b6432147d0ca5471e1f128ba503" kindref="member">shadowRegister</ref>[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Activate<sp/>the<sp/>reset<sp/>config<sp/>mechanism</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal">uint8_t<sp/><ref refid="TMC2300_8c_1aa311ce3be877df6b590762262750fffa" kindref="member">tmc2300_restore</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>interrupt<sp/>a<sp/>reset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>reset<sp/>will<sp/>transition<sp/>into<sp/>a<sp/>restore<sp/>anyways</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/>==<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837faf4b7eabf7d198b2f9b47d8c7a36c7d0f" kindref="member">CONFIG_RESET</ref>)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a66620734852c25fd9e1a3e33f5b4535b" kindref="member">state</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837fa7554d7ac751dd29b0f06634cdbafdcc6" kindref="member">CONFIG_RESTORE</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1afa6c3ff54c0f8f7ab6ff52e00e9a5544" kindref="member">config</ref>-&gt;<ref refid="structConfigurationTypeDef_1a03e747ab5e07e7cca760bd15b4ee0743" kindref="member">configIndex</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal">uint8_t<sp/><ref refid="TMC2300_8c_1a8ab3b8147eeb37e9e071d3d10865a7af" kindref="member">tmc2300_getSlaveAddress</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300)</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1acd696dae33aefe9f3985494cde14c12f" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a8cef2b71f9367fc7d899b3d411ba043d" kindref="member">tmc2300_setSlaveAddress</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300,<sp/>uint8_t<sp/>slaveAddress)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1acd696dae33aefe9f3985494cde14c12f" kindref="member">slaveAddress</ref><sp/>=<sp/>slaveAddress;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal">uint8_t<sp/><ref refid="TMC2300_8c_1a853b4a29d168d586a9f9d87509669024" kindref="member">tmc2300_getStandby</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300)</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a45ba8a6f09ef1d1a48d03b2ed6168d22" kindref="member">standbyEnabled</ref>;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2300_8c_1a06e715de8572d6796b566b9d16322361" kindref="member">tmc2300_setStandby</ref>(<ref refid="structTMC2300TypeDef" kindref="compound">TMC2300TypeDef</ref><sp/>*tmc2300,<sp/>uint8_t<sp/>standbyState)</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a45ba8a6f09ef1d1a48d03b2ed6168d22" kindref="member">standbyEnabled</ref><sp/>&amp;&amp;<sp/>!standbyState)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Just<sp/>exited<sp/>standby<sp/>-&gt;<sp/>call<sp/>the<sp/>restore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC2300_8c_1aa311ce3be877df6b590762262750fffa" kindref="member">tmc2300_restore</ref>(tmc2300);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>tmc2300-&gt;<ref refid="structTMC2300TypeDef_1a45ba8a6f09ef1d1a48d03b2ed6168d22" kindref="member">standbyEnabled</ref><sp/>=<sp/>standbyState;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2300/TMC2300.c"/>
+  </compounddef>
+</doxygen>

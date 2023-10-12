@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTMC2590TypeDef" kind="struct" language="C++" prot="public">
+    <compoundname>TMC2590TypeDef</compoundname>
+    <includes refid="TMC2590_8h" local="no">TMC2590.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTMC2590TypeDef_1a1891bac40b9e9e9a5f40ed7950bea879" prot="public" static="no" mutable="no">
+        <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+        <definition>ConfigurationTypeDef* TMC2590TypeDef::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <qualifiedname>TMC2590TypeDef::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="26" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1ad1a8f1394d7f36ea4217858c743f2662" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2590TypeDef::continuousModeEnable</definition>
+        <argsstring></argsstring>
+        <name>continuousModeEnable</name>
+        <qualifiedname>TMC2590TypeDef::continuousModeEnable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="28" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1ac8d5abb2883f4fa5f00a0c3b38e6339e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2590TypeDef::coolStepInactiveValue</definition>
+        <argsstring></argsstring>
+        <name>coolStepInactiveValue</name>
+        <qualifiedname>TMC2590TypeDef::coolStepInactiveValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1a1d0a84ead5681737675ae6e9c306106f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2590TypeDef::coolStepActiveValue</definition>
+        <argsstring></argsstring>
+        <name>coolStepActiveValue</name>
+        <qualifiedname>TMC2590TypeDef::coolStepActiveValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1af928edae55eeaf5190a6330a18b513f4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC2590TypeDef::coolStepThreshold</definition>
+        <argsstring></argsstring>
+        <name>coolStepThreshold</name>
+        <qualifiedname>TMC2590TypeDef::coolStepThreshold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="32" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1a8b6ace1b1ab359563a52154bee56e807" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2590TypeDef::isStandStillCurrent</definition>
+        <argsstring></argsstring>
+        <name>isStandStillCurrent</name>
+        <qualifiedname>TMC2590TypeDef::isStandStillCurrent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="34" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1a941bc0342cfa576e8a97979aab0a950a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2590TypeDef::runCurrentScale</definition>
+        <argsstring></argsstring>
+        <name>runCurrentScale</name>
+        <qualifiedname>TMC2590TypeDef::runCurrentScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1a9909a51a7b5e76d470bfef0c09642d43" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2590TypeDef::standStillCurrentScale</definition>
+        <argsstring></argsstring>
+        <name>standStillCurrentScale</name>
+        <qualifiedname>TMC2590TypeDef::standStillCurrentScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="36" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1a14b84aa72be7bda666f08eb65718df43" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC2590TypeDef::standStillTimeout</definition>
+        <argsstring></argsstring>
+        <name>standStillTimeout</name>
+        <qualifiedname>TMC2590TypeDef::standStillTimeout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="37" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1a4cc17644f516c86c5e5406deb2933907" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC2590TypeDef::standStillTick</definition>
+        <argsstring></argsstring>
+        <name>standStillTick</name>
+        <qualifiedname>TMC2590TypeDef::standStillTick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="38" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1a8f5475ee0c9d34cd9fde61a861c8b100" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC2590TypeDef::registerAccess[TMC2590_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2590_REGISTER_COUNT]</argsstring>
+        <name>registerAccess</name>
+        <qualifiedname>TMC2590TypeDef::registerAccess</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC2590TypeDef_1abfcc82f74154a5c1ab7c3a4e86dfecd2" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC2590TypeDef::registerResetState[TMC2590_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2590_REGISTER_COUNT]</argsstring>
+        <name>registerResetState</name>
+        <qualifiedname>TMC2590TypeDef::registerResetState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ConfigurationTypeDef</label>
+        <link refid="structConfigurationTypeDef"/>
+      </node>
+      <node id="1">
+        <label>TMC2590TypeDef</label>
+        <link refid="structTMC2590TypeDef"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" line="25" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2590/TMC2590.h" bodystart="25" bodyend="42"/>
+    <listofallmembers>
+      <member refid="structTMC2590TypeDef_1a1891bac40b9e9e9a5f40ed7950bea879" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>config</name></member>
+      <member refid="structTMC2590TypeDef_1ad1a8f1394d7f36ea4217858c743f2662" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>continuousModeEnable</name></member>
+      <member refid="structTMC2590TypeDef_1a1d0a84ead5681737675ae6e9c306106f" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>coolStepActiveValue</name></member>
+      <member refid="structTMC2590TypeDef_1ac8d5abb2883f4fa5f00a0c3b38e6339e" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>coolStepInactiveValue</name></member>
+      <member refid="structTMC2590TypeDef_1af928edae55eeaf5190a6330a18b513f4" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>coolStepThreshold</name></member>
+      <member refid="structTMC2590TypeDef_1a8b6ace1b1ab359563a52154bee56e807" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>isStandStillCurrent</name></member>
+      <member refid="structTMC2590TypeDef_1a8f5475ee0c9d34cd9fde61a861c8b100" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>registerAccess</name></member>
+      <member refid="structTMC2590TypeDef_1abfcc82f74154a5c1ab7c3a4e86dfecd2" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>registerResetState</name></member>
+      <member refid="structTMC2590TypeDef_1a941bc0342cfa576e8a97979aab0a950a" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>runCurrentScale</name></member>
+      <member refid="structTMC2590TypeDef_1a9909a51a7b5e76d470bfef0c09642d43" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>standStillCurrentScale</name></member>
+      <member refid="structTMC2590TypeDef_1a4cc17644f516c86c5e5406deb2933907" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>standStillTick</name></member>
+      <member refid="structTMC2590TypeDef_1a14b84aa72be7bda666f08eb65718df43" prot="public" virt="non-virtual"><scope>TMC2590TypeDef</scope><name>standStillTimeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

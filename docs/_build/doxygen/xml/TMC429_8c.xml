@@ -1,0 +1,979 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC429_8c" kind="file" language="C++">
+    <compoundname>TMC429.c</compoundname>
+    <includes refid="TMC429_8h" local="yes">TMC429.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="12">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="10">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="13">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="6">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC429.c</label>
+        <link refid="TMC429_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TMC429.h</label>
+        <link refid="TMC429_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>TMC429_Register.h</label>
+        <link refid="TMC429__Register_8h"/>
+      </node>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ReadWrite429</definition>
+        <argsstring>(uint8_t *Read, uint8_t *Write)</argsstring>
+        <name>ReadWrite429</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Read</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Write</declname>
+        </param>
+        <briefdescription>
+<para>32 bit SPI communication with TMC429 </para>
+        </briefdescription>
+        <detaileddescription>
+<para>40 bit SPI communication with TMC457</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Read</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>four byte array holding the data read from the TMC428 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Write</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>four byte array holding the data to write to the TMC428</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This is the low-level function that does all SPI communication with the TMC429. It sends a 32 bit SPI telegramme to the TMC429 and receives the 32 bit answer telegramme from the TMC429.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Read</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>five byte array holding the data read from the TMC457 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Write</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>five byte array holding the data to write to the TMC457</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This is the low-level function that does all SPI communication with the TMC457. It sends a 40 bit SPI telegramme to the TMC457 and receives the 40 bit answer telegramme from the TMC457. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="38" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="38" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1add141f7054185a52f8fa2042573f264a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write429Bytes</definition>
+        <argsstring>(uint8_t Address, uint8_t *Bytes)</argsstring>
+        <name>Write429Bytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Bytes</declname>
+        </param>
+        <briefdescription>
+<para>TMC429 write access. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see also <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array holding three bytes to be written to the TMC429 register.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function writes an array of three bytes to a TMC429 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="55" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="55" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1a4dce99fa8ca376b8cc2f6bdd44869f54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write429Datagram</definition>
+        <argsstring>(uint8_t Address, uint8_t HighByte, uint8_t MidByte, uint8_t LowByte)</argsstring>
+        <name>Write429Datagram</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>HighByte</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>MidByte</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>LowByte</declname>
+        </param>
+        <briefdescription>
+<para>TMC429 write access. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>HighByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MSB of the TMC429 register </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MidByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mid byte of the TMC429 register </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>LowByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LSB of the TMC429 register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function write three bytes to a TMC429 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="76" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="76" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1ab6acf3a3d79906aca170abafb0940681" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write429Zero</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Write429Zero</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Write zero to a TMC429 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function sets a TMC429 register to zero. This can be useful e.g. to stop a motor quickly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="95" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="95" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1a641340d10ced3b281cc2bcb32df745a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write429Short</definition>
+        <argsstring>(uint8_t Address, int32_t Value)</argsstring>
+        <name>Write429Short</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+<para>Write 16 bit value to a TMC429 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be written</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function writes a 16 bit value to a TMC429 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="114" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="114" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1af77a0009b6390e82249bd3a718f47bfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Write429Int</definition>
+        <argsstring>(uint8_t Address, int32_t Value)</argsstring>
+        <name>Write429Int</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+<para>Write 24 bit value to a TMC429 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be written</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function writes a 24 bit value to a TMC429 register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="133" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="133" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1aa297c3b9bdadc2d895462b083c1299a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>Read429Status</definition>
+        <argsstring>(void)</argsstring>
+        <name>Read429Status</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Read TMC429 status byte. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>TMC429 status byte</para>
+</simplesect>
+This functions reads just the status byte of the TMC429 using a single byte SPI access which makes this a little bit faster. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="153" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="153" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1a4b2bfa107d08177590a1ae96fe6f0510" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>Read429Bytes</definition>
+        <argsstring>(uint8_t Address, uint8_t *Bytes)</argsstring>
+        <name>Read429Bytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>Bytes</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC429 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer at array of three bytes</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TMC429 status byte</para>
+</simplesect>
+This functions reads a TMC429 register and puts the result into an array of bytes. It also returns the TMC429 status bytes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="169" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="169" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1a11fabd2f3dca1173578af187d8297e03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>Read429SingleByte</definition>
+        <argsstring>(uint8_t Address, uint8_t Index)</argsstring>
+        <name>Read429SingleByte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Index</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC429 register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register byte to be returned (0..3)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TM429 register byte</para>
+</simplesect>
+This functions reads a TMC429 register and returns the desired byte of that register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="194" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="194" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1a287deb13905d04ac7d88db335e2ca4e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>Read429Int12</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Read429Int12</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC429 register (12 bit) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TMC429 register value (sign extended)</para>
+</simplesect>
+This functions reads a TMC429 12 bit register and sign-extends the register value to 32 bit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="214" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="214" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1a011c562edfd1ef104a90b1ebb37e020c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>Read429Int24</definition>
+        <argsstring>(uint8_t Address)</argsstring>
+        <name>Read429Int24</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Address</declname>
+        </param>
+        <briefdescription>
+<para>Read TMC429 register (24 bit) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TMC429 register address (see <ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TMC429 register value (sign extended)</para>
+</simplesect>
+This functions reads a TMC429 24 bit register and sign-extends the register value to 32 bit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="239" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="239" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1a7946f369c3a0583daf19678fbc141e8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Set429RampMode</definition>
+        <argsstring>(uint8_t Axis, uint8_t RampMode)</argsstring>
+        <name>Set429RampMode</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>RampMode</declname>
+        </param>
+        <briefdescription>
+<para>Set the ramping mode of an axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Motor number (0, 1 or 2) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>RampMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ramping mode (RM_RAMP/RM_SOFT/RM_VELOCITY/RM_HOLD)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This functions changes the ramping mode of a motor in the TMC429. It is some TMC429 register bit twiddling. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="263" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="263" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1a6fcd5d96cedb32df7c4728bc8c62fa2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Set429SwitchMode</definition>
+        <argsstring>(uint8_t Axis, uint8_t SwitchMode)</argsstring>
+        <name>Set429SwitchMode</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Axis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>SwitchMode</declname>
+        </param>
+        <briefdescription>
+<para>Set the end switch mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Motor number (0, 1 or 2) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SwitchMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>end switch mode</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This functions changes the end switch mode of a motor in the TMC429. It is some TMC429 register bit twiddling. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="286" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="286" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1ab5017c0e5f0de1a6fe34f6510bab206e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>SetAMax</definition>
+        <argsstring>(uint8_t Motor, uint32_t AMax)</argsstring>
+        <name>SetAMax</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Motor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>AMax</declname>
+        </param>
+        <briefdescription>
+<para>Set the maximum acceleration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Motor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>motor number (0, 1, 2) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>AMax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum acceleration (1..2047)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function sets the maximum acceleration and also calculates the PMUL and PDIV value according to all other parameters (please see the TMC429 data sheet for more info about PMUL and PDIV values). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="311" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="311" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1a0f8e7942502b644a1a914a4b5ac1adf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>HardStop</definition>
+        <argsstring>(uint32_t Motor)</argsstring>
+        <name>HardStop</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>Motor</declname>
+        </param>
+        <briefdescription>
+<para>Stop a motor immediately. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Motor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>motor number (0, 1, 2)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function stops a motor immediately (hard stop) by switching to velocity mode and then zeroing the V_TARGT and V_ACTUAL registers of that axis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="367" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="367" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC429_8c_1aac7187dbf2d407e834cec7ad061fe480" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Init429</definition>
+        <argsstring>(void)</argsstring>
+        <name>Init429</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>TMC429 initialization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function does all necessary initializations of the TMC429 to operate in step/direction mode. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" line="381" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c" bodystart="381" bodyend="403"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>provides<sp/>all<sp/>functions<sp/>needed<sp/>for<sp/>easy</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>access<sp/>to<sp/>the<sp/>TMC429<sp/>motion<sp/>control<sp/>IC.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>Please<sp/>not<sp/>that<sp/>functions<sp/>for<sp/>communication<sp/>over<sp/>SPI<sp/>must<sp/>be<sp/>added<sp/>by<sp/>the<sp/>user,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>because<sp/>this<sp/>is<sp/>specific<sp/>to<sp/>the<sp/>MCU<sp/>that<sp/>is<sp/>to<sp/>be<sp/>used.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>The<sp/>ReadWriteSPI<sp/>function<sp/>with<sp/>the<sp/>following<sp/>parameters<sp/>and<sp/>functionality:</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/>First<sp/>parameter:<sp/>indentifies<sp/>the<sp/>SPI<sp/>device</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>Second<sp/>parameter:<sp/>byte<sp/>to<sp/>be<sp/>sent<sp/>to<sp/>the<sp/>SPI<sp/>device</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>Third<sp/>parameter:<sp/>FALSE<sp/>means<sp/>that<sp/>more<sp/>bytes<sp/>will<sp/>follow,<sp/>so<sp/>do<sp/>not<sp/>relase<sp/>the</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>chip<sp/>select<sp/>line.<sp/>TRUE<sp/>means<sp/>that<sp/>this<sp/>was<sp/>the<sp/>last<sp/>byte,<sp/>so<sp/>release<sp/>the<sp/>chip</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>select<sp/>line<sp/>after<sp/>this<sp/>byte<sp/>has<sp/>been<sp/>sent<sp/>and<sp/>the<sp/>answer<sp/>has<sp/>been<sp/>fully<sp/>received.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/>The<sp/>function<sp/>shall<sp/>return<sp/>the<sp/>byte<sp/>that<sp/>has<sp/>been<sp/>received<sp/>via<sp/>SPI.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC429_8h" kindref="compound">TMC429.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(uint8_t<sp/>*Read,<sp/>uint8_t<sp/>*Write)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>Read[0]<sp/>=<sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC429,<sp/>Write[0],<sp/><ref refid="Types_8h_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>Read[1]<sp/>=<sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC429,<sp/>Write[1],<sp/><ref refid="Types_8h_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Read[2]<sp/>=<sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC429,<sp/>Write[2],<sp/><ref refid="Types_8h_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>Read[3]<sp/>=<sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC429,<sp/>Write[3],<sp/><ref refid="Types_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8c_1add141f7054185a52f8fa2042573f264a" kindref="member">Write429Bytes</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>*Bytes)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>Bytes[0];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>Bytes[1];</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>Bytes[2];</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8c_1a4dce99fa8ca376b8cc2f6bdd44869f54" kindref="member">Write429Datagram</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>HighByte,<sp/>uint8_t<sp/>MidByte,<sp/>uint8_t<sp/>LowByte)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>HighByte;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>MidByte;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>LowByte;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8c_1ab6acf3a3d79906aca170abafb0940681" kindref="member">Write429Zero</ref>(uint8_t<sp/>Address)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8c_1a641340d10ced3b281cc2bcb32df745a2" kindref="member">Write429Short</ref>(uint8_t<sp/>Address,<sp/>int32_t<sp/>Value)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>Value<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>Value<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8c_1af77a0009b6390e82249bd3a718f47bfb" kindref="member">Write429Int</ref>(uint8_t<sp/>Address,<sp/>int32_t<sp/>Value)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>Value<sp/>&gt;&gt;<sp/>16;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>Value<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>Value<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">uint8_t<sp/><ref refid="TMC429_8c_1aa297c3b9bdadc2d895462b083c1299a4" kindref="member">Read429Status</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="TMC429_8h_1a41ad442f5b8bd6cbc9f85525097a4554" kindref="member">ReadWriteSPI</ref>(SPI_DEV_TMC429,<sp/>0x01,<sp/><ref refid="Types_8h_1aa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">uint8_t<sp/><ref refid="TMC429_8c_1a4b2bfa107d08177590a1ae96fe6f0510" kindref="member">Read429Bytes</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>*Bytes)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Read[4],<sp/>Write[4];</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address<sp/>|<sp/><ref refid="TMC429__Register_8h_1afb8d8008486b5eba9aec305d2db9522f" kindref="member">TMC429_READ</ref>;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>Bytes[0]<sp/>=<sp/>Read[1];</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>Bytes[1]<sp/>=<sp/>Read[2];</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>Bytes[2]<sp/>=<sp/>Read[3];</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Read[0];</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">uint8_t<sp/><ref refid="TMC429_8c_1a11fabd2f3dca1173578af187d8297e03" kindref="member">Read429SingleByte</ref>(uint8_t<sp/>Address,<sp/>uint8_t<sp/>Index)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Read[4],<sp/>Write[4];</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address<sp/>|<sp/><ref refid="TMC429__Register_8h_1afb8d8008486b5eba9aec305d2db9522f" kindref="member">TMC429_READ</ref>;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Read[Index+1];</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal">int32_t<sp/><ref refid="TMC429_8c_1a287deb13905d04ac7d88db335e2ca4e2" kindref="member">Read429Int12</ref>(uint8_t<sp/>Address)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Read[4],<sp/>Write[4];</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Result;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address<sp/>|<sp/><ref refid="TMC429__Register_8h_1afb8d8008486b5eba9aec305d2db9522f" kindref="member">TMC429_READ</ref>;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>Result<sp/>=<sp/>(Read[2]&lt;&lt;8)<sp/>|<sp/>Read[3];</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(Result<sp/>&amp;<sp/>0x00000800)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Result<sp/>|=<sp/>0xFFFFF000;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Result;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal">int32_t<sp/><ref refid="TMC429_8c_1a011c562edfd1ef104a90b1ebb37e020c" kindref="member">Read429Int24</ref>(uint8_t<sp/>Address)</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Read[4],<sp/>Write[4];</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Result;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/>Address<sp/>|<sp/><ref refid="TMC429__Register_8h_1afb8d8008486b5eba9aec305d2db9522f" kindref="member">TMC429_READ</ref>;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>Result<sp/>=<sp/>(Read[1]&lt;&lt;16)<sp/>|<sp/>(Read[2]&lt;&lt;8)<sp/>|<sp/>(Read[3]);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(Result<sp/>&amp;<sp/>0x00800000)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Result<sp/>|=<sp/>0xFF000000;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Result;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8c_1a7946f369c3a0583daf19678fbc141e8a" kindref="member">Set429RampMode</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>RampMode)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/><ref refid="TMC429__Register_8h_1a4ce4da26e655ece410cb39c1f22df333" kindref="member">TMC429_IDX_REFCONF_RM</ref>(Axis)|<ref refid="TMC429__Register_8h_1afb8d8008486b5eba9aec305d2db9522f" kindref="member">TMC429_READ</ref>;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/><ref refid="TMC429__Register_8h_1a4ce4da26e655ece410cb39c1f22df333" kindref="member">TMC429_IDX_REFCONF_RM</ref>(Axis);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>Read[1];</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>Read[2];</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>RampMode;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8c_1a6fcd5d96cedb32df7c4728bc8c62fa2d" kindref="member">Set429SwitchMode</ref>(uint8_t<sp/>Axis,<sp/>uint8_t<sp/>SwitchMode)</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Write[4],<sp/>Read[4];</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/><ref refid="TMC429__Register_8h_1a4ce4da26e655ece410cb39c1f22df333" kindref="member">TMC429_IDX_REFCONF_RM</ref>(Axis)<sp/>|<sp/><ref refid="TMC429__Register_8h_1afb8d8008486b5eba9aec305d2db9522f" kindref="member">TMC429_READ</ref>;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[0]<sp/>=<sp/><ref refid="TMC429__Register_8h_1a4ce4da26e655ece410cb39c1f22df333" kindref="member">TMC429_IDX_REFCONF_RM</ref>(Axis);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[1]<sp/>=<sp/>Read[1];</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[2]<sp/>=<sp/>SwitchMode;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>Write[3]<sp/>=<sp/>Read[3];</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1adc4aa1d09f7004250bdd96f036ee6b47" kindref="member">ReadWrite429</ref>(Read,<sp/>Write);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal">uint8_t<sp/><ref refid="TMC429_8c_1ab5017c0e5f0de1a6fe34f6510bab206e" kindref="member">SetAMax</ref>(uint8_t<sp/>Motor,<sp/>uint32_t<sp/>AMax)</highlight></codeline>
+<codeline lineno="312"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>pm,<sp/>pd;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>p,<sp/>p_reduced;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>ramp_div;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>pulse_div;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>PulseRampDiv;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Data[3];</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>AMax<sp/>&amp;=<sp/>0x000007FF;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1a4b2bfa107d08177590a1ae96fe6f0510" kindref="member">Read429Bytes</ref>(<ref refid="TMC429__Register_8h_1a52c4c55d8bd1835809f4e430771f2d99" kindref="member">TMC429_IDX_PULSEDIV_RAMPDIV</ref>(Motor),<sp/>Data);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>PulseRampDiv<sp/>=<sp/>Data[1];</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>pulse_div<sp/>=<sp/>PulseRampDiv<sp/>&gt;&gt;<sp/>4;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>ramp_div<sp/>=<sp/>PulseRampDiv<sp/>&amp;<sp/>0x0F;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-1<sp/>indicates<sp/>:<sp/>no<sp/>valid<sp/>pair<sp/>found</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>pm<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>pd<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ramp_div<sp/>&gt;=<sp/>pulse_div)</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>AMax<sp/>/<sp/>(<sp/>128.0<sp/>*<sp/>(1&lt;&lt;(ramp_div-pulse_div)));<sp/><sp/></highlight><highlight class="comment">//<sp/>Exponent<sp/>positive<sp/>or<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>AMax<sp/>/<sp/>(<sp/>128.0<sp/>/<sp/>(1&lt;&lt;(pulse_div-ramp_div)));<sp/><sp/></highlight><highlight class="comment">//<sp/>Exponent<sp/>negative</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>p_reduced<sp/>=<sp/>p*0.988;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>pdiv;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(pdiv<sp/>=<sp/>0;<sp/>pdiv<sp/>&lt;=<sp/>13;<sp/>pdiv++)</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/>pmul<sp/>=<sp/>(int32_t)<sp/>(p_reduced<sp/>*<sp/>8.0<sp/>*<sp/>(1&lt;&lt;pdiv))<sp/>-<sp/>128;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((0<sp/>&lt;=<sp/>pmul)<sp/>&amp;&amp;<sp/>(pmul<sp/>&lt;=<sp/>127))</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pm<sp/>=<sp/>pmul<sp/>+<sp/>128;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pd<sp/>=<sp/>pdiv;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>Data[0]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>Data[1]<sp/>=<sp/>(uint8_t)<sp/>pm;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>Data[2]<sp/>=<sp/>(uint8_t)<sp/>pd;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1add141f7054185a52f8fa2042573f264a" kindref="member">Write429Bytes</ref>(<ref refid="TMC429__Register_8h_1a3b5303f67b06e5ae963a36eae223a89d" kindref="member">TMC429_IDX_PMUL_PDIV</ref>(Motor),<sp/>Data);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8h_1a6e28b51e524ce6f005bdf13ede8b8046" kindref="member">Write429U16</ref>(<ref refid="TMC429__Register_8h_1af25c155cccef0630b3e342eff336dee9" kindref="member">TMC429_IDX_AMAX</ref>(Motor),<sp/>AMax);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC4210_8c_1aac6b7f2765168cb00956d73607e19831" kindref="member">HardStop</ref>(uint32_t<sp/>Motor)</highlight></codeline>
+<codeline lineno="368"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1a7946f369c3a0583daf19678fbc141e8a" kindref="member">Set429RampMode</ref>(Motor,<sp/><ref refid="TMC429__Register_8h_1a55c2d313940a080b88bcfb784d629379" kindref="member">TMC429_RM_VELOCITY</ref>);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1ab6acf3a3d79906aca170abafb0940681" kindref="member">Write429Zero</ref>(<ref refid="TMC429__Register_8h_1a730d91f114cffcd5935cbd7c35fef7c1" kindref="member">TMC429_IDX_VTARGET</ref>(Motor));</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1ab6acf3a3d79906aca170abafb0940681" kindref="member">Write429Zero</ref>(<ref refid="TMC429__Register_8h_1af56697e23160548e2d47749cdbf4d03b" kindref="member">TMC429_IDX_VACTUAL</ref>(Motor));</highlight></codeline>
+<codeline lineno="372"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC429_8c_1aac7187dbf2d407e834cec7ad061fe480" kindref="member">Init429</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="382"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>motor;</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(motor<sp/>=<sp/>0;<sp/>motor<sp/>&lt;<sp/>3;<sp/>motor++)</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>addr;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(addr<sp/>=<sp/>0;<sp/>addr<sp/>&lt;=<sp/><ref refid="TMC429__Register_8h_1a765aa87e3c2e9ed5b95aeb8762825164" kindref="member">TMC429_IDX_XLATCHED</ref>(motor);<sp/>addr++)</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1ab6acf3a3d79906aca170abafb0940681" kindref="member">Write429Zero</ref>(addr<sp/>|<sp/><ref refid="TMC429__Register_8h_1aeb4db736215e475b7ca3ef9b4d791498" kindref="member">TMC429_MOTOR</ref>(motor));</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8h_1a209e12b85077c5053fee2b3a6bcc5734" kindref="member">Write429U24</ref>(<ref refid="TMC429__Register_8h_1ad64e0e6ff98896371e91647a35a3322f" kindref="member">TMC429_IDX_IF_CONFIG_429</ref>,<sp/><ref refid="TMC429__Register_8h_1a0a88ac90b9a4a43f11cf9784ade8bcf2" kindref="member">TMC429_IFCONF_EN_SD</ref><sp/>|<sp/><ref refid="TMC429__Register_8h_1abc1bbc14651c1112dd7d1435c3ae8a66" kindref="member">TMC429_IFCONF_EN_REFR</ref><sp/>|<sp/><ref refid="TMC429__Register_8h_1ae3eb7f33a8a35e906a4f4dcfe7b83bb2" kindref="member">TMC429_IFCONF_SDO_INT</ref>);</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1a4dce99fa8ca376b8cc2f6bdd44869f54" kindref="member">Write429Datagram</ref>(<ref refid="TMC429__Register_8h_1ac12c3284ebfa31bc86ab2e1b93f4750e" kindref="member">TMC429_IDX_SMGP</ref>,<sp/>0x00,<sp/>0x00,<sp/>0x02);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(motor<sp/>=<sp/>0;<sp/>motor<sp/>&lt;<sp/>3;<sp/>motor++)</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1a4dce99fa8ca376b8cc2f6bdd44869f54" kindref="member">Write429Datagram</ref>(<ref refid="TMC429__Register_8h_1a52c4c55d8bd1835809f4e430771f2d99" kindref="member">TMC429_IDX_PULSEDIV_RAMPDIV</ref>(motor),<sp/>0x00,<sp/>0x37,<sp/>0x06);</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1a4dce99fa8ca376b8cc2f6bdd44869f54" kindref="member">Write429Datagram</ref>(<ref refid="TMC429__Register_8h_1a4ce4da26e655ece410cb39c1f22df333" kindref="member">TMC429_IDX_REFCONF_RM</ref>(motor),<sp/>0x00,<sp/><ref refid="TMC429__Register_8h_1a5343fa2ded9397c6219f529eb2826089" kindref="member">TMC429_NO_REF</ref>,<sp/>0x00);</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC429_8h_1a6e28b51e524ce6f005bdf13ede8b8046" kindref="member">Write429U16</ref>(<ref refid="TMC429__Register_8h_1aa2c65d05dfd11e1894a5e176a157c110" kindref="member">TMC429_IDX_VMIN</ref>(motor),<sp/>1);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC429_8h_1a209e12b85077c5053fee2b3a6bcc5734" kindref="member">Write429U24</ref>(<ref refid="TMC429__Register_8h_1a8c200761b1c6268a0dd1e6f1f2ba7b0d" kindref="member">TMC429_IDX_VMAX</ref>(motor),<sp/>1000);</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TMC429_8c_1ab5017c0e5f0de1a6fe34f6510bab206e" kindref="member">SetAMax</ref>(motor,<sp/>1000);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="403"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC429/TMC429.c"/>
+  </compounddef>
+</doxygen>

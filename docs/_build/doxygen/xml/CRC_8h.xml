@@ -1,0 +1,671 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="CRC_8h" kind="file" language="C++">
+    <compoundname>CRC.h</compoundname>
+    <includes refid="Types_8h" local="yes">Types.h</includes>
+    <includedby refid="API__Header_8h" local="yes">API_Header.h</includedby>
+    <includedby refid="CRC_8c" local="yes">CRC.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>CRC.c</label>
+        <link refid="CRC_8c"/>
+      </node>
+      <node id="1">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Functions.c</label>
+        <link refid="Functions_8c"/>
+      </node>
+      <node id="3">
+        <label>Functions.h</label>
+        <link refid="Functions_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>MAX22216.c</label>
+        <link refid="MAX22216_8c"/>
+      </node>
+      <node id="11">
+        <label>MAX22216.h</label>
+        <link refid="MAX22216_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TMC2130.c</label>
+        <link refid="TMC2130_8c"/>
+      </node>
+      <node id="13">
+        <label>TMC2130.h</label>
+        <link refid="TMC2130_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>TMC2160.c</label>
+        <link refid="TMC2160_8c"/>
+      </node>
+      <node id="15">
+        <label>TMC2160.h</label>
+        <link refid="TMC2160_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>TMC2208.c</label>
+        <link refid="TMC2208_8c"/>
+      </node>
+      <node id="17">
+        <label>TMC2208.h</label>
+        <link refid="TMC2208_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>TMC2209.c</label>
+        <link refid="TMC2209_8c"/>
+      </node>
+      <node id="19">
+        <label>TMC2209.h</label>
+        <link refid="TMC2209_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>TMC2224.c</label>
+        <link refid="TMC2224_8c"/>
+      </node>
+      <node id="21">
+        <label>TMC2224.h</label>
+        <link refid="TMC2224_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>TMC2225.c</label>
+        <link refid="TMC2225_8c"/>
+      </node>
+      <node id="23">
+        <label>TMC2225.h</label>
+        <link refid="TMC2225_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>TMC2226.c</label>
+        <link refid="TMC2226_8c"/>
+      </node>
+      <node id="25">
+        <label>TMC2226.h</label>
+        <link refid="TMC2226_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>TMC2240.c</label>
+        <link refid="TMC2240_8c"/>
+      </node>
+      <node id="27">
+        <label>TMC2240.h</label>
+        <link refid="TMC2240_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>TMC2300.c</label>
+        <link refid="TMC2300_8c"/>
+      </node>
+      <node id="29">
+        <label>TMC2300.h</label>
+        <link refid="TMC2300_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>TMC2590.c</label>
+        <link refid="TMC2590_8c"/>
+      </node>
+      <node id="31">
+        <label>TMC2590.h</label>
+        <link refid="TMC2590_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>TMC262.c</label>
+        <link refid="TMC262_8c"/>
+      </node>
+      <node id="33">
+        <label>TMC262.h</label>
+        <link refid="TMC262_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>TMC2660.c</label>
+        <link refid="TMC2660_8c"/>
+      </node>
+      <node id="35">
+        <label>TMC2660.h</label>
+        <link refid="TMC2660_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>TMC4210.c</label>
+        <link refid="TMC4210_8c"/>
+      </node>
+      <node id="37">
+        <label>TMC4210.h</label>
+        <link refid="TMC4210_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>TMC424.c</label>
+        <link refid="TMC424_8c"/>
+      </node>
+      <node id="39">
+        <label>TMC424.h</label>
+        <link refid="TMC424_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>TMC429.c</label>
+        <link refid="TMC429_8c"/>
+      </node>
+      <node id="41">
+        <label>TMC429.h</label>
+        <link refid="TMC429_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>TMC4330.c</label>
+        <link refid="TMC4330_8c"/>
+      </node>
+      <node id="43">
+        <label>TMC4330.h</label>
+        <link refid="TMC4330_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>TMC4331.c</label>
+        <link refid="TMC4331_8c"/>
+      </node>
+      <node id="45">
+        <label>TMC4331.h</label>
+        <link refid="TMC4331_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>TMC4361A.c</label>
+        <link refid="TMC4361A_8c"/>
+      </node>
+      <node id="47">
+        <label>TMC4361A.h</label>
+        <link refid="TMC4361A_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>TMC43xx.c</label>
+        <link refid="TMC43xx_8c"/>
+      </node>
+      <node id="49">
+        <label>TMC43xx.h</label>
+        <link refid="TMC43xx_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>TMC457.c</label>
+        <link refid="TMC457_8c"/>
+      </node>
+      <node id="51">
+        <label>TMC457.h</label>
+        <link refid="TMC457_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>TMC4671.c</label>
+        <link refid="TMC4671_8c"/>
+      </node>
+      <node id="53">
+        <label>TMC4671.h</label>
+        <link refid="TMC4671_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>TMC5031.c</label>
+        <link refid="TMC5031_8c"/>
+      </node>
+      <node id="55">
+        <label>TMC5031.h</label>
+        <link refid="TMC5031_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>TMC5041.c</label>
+        <link refid="TMC5041_8c"/>
+      </node>
+      <node id="57">
+        <label>TMC5041.h</label>
+        <link refid="TMC5041_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>TMC5062.c</label>
+        <link refid="TMC5062_8c"/>
+      </node>
+      <node id="59">
+        <label>TMC5062.h</label>
+        <link refid="TMC5062_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>TMC5072.c</label>
+        <link refid="TMC5072_8c"/>
+      </node>
+      <node id="61">
+        <label>TMC5072.h</label>
+        <link refid="TMC5072_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>TMC5130.c</label>
+        <link refid="TMC5130_8c"/>
+      </node>
+      <node id="63">
+        <label>TMC5130.h</label>
+        <link refid="TMC5130_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>TMC5160.c</label>
+        <link refid="TMC5160_8c"/>
+      </node>
+      <node id="65">
+        <label>TMC5160.h</label>
+        <link refid="TMC5160_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>TMC5240.c</label>
+        <link refid="TMC5240_8c"/>
+      </node>
+      <node id="67">
+        <label>TMC5240.h</label>
+        <link refid="TMC5240_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>TMC5271.c</label>
+        <link refid="TMC5271_8c"/>
+      </node>
+      <node id="69">
+        <label>TMC5271.h</label>
+        <link refid="TMC5271_8h"/>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>TMC5272.c</label>
+        <link refid="TMC5272_8c"/>
+      </node>
+      <node id="71">
+        <label>TMC5272.h</label>
+        <link refid="TMC5272_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>TMC6100.c</label>
+        <link refid="TMC6100_8c"/>
+      </node>
+      <node id="73">
+        <label>TMC6100.h</label>
+        <link refid="TMC6100_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>TMC6200.c</label>
+        <link refid="TMC6200_8c"/>
+      </node>
+      <node id="75">
+        <label>TMC6200.h</label>
+        <link refid="TMC6200_8h"/>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>TMC7300.c</label>
+        <link refid="TMC7300_8c"/>
+      </node>
+      <node id="77">
+        <label>TMC7300.h</label>
+        <link refid="TMC7300_8h"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>TMC8461.c</label>
+        <link refid="TMC8461_8c"/>
+      </node>
+      <node id="79">
+        <label>TMC8461.h</label>
+        <link refid="TMC8461_8h"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>TMC8462.c</label>
+        <link refid="TMC8462_8c"/>
+      </node>
+      <node id="81">
+        <label>TMC8462.h</label>
+        <link refid="TMC8462_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>LinearRamp.c</label>
+        <link refid="LinearRamp_8c"/>
+      </node>
+      <node id="5">
+        <label>LinearRamp.h</label>
+        <link refid="LinearRamp_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>LinearRamp1.c</label>
+        <link refid="LinearRamp1_8c"/>
+      </node>
+      <node id="8">
+        <label>LinearRamp1.h</label>
+        <link refid="LinearRamp1_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Ramp.c</label>
+        <link refid="Ramp_8c"/>
+      </node>
+      <node id="9">
+        <label>Ramp.h</label>
+        <link refid="Ramp_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="CRC_8h_1a36a8b3d0206bdd790776cb2f99712e52" prot="public" static="no">
+        <name>CRC_TABLE_COUNT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" line="17" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="CRC_8h_1a3957cbc0926e9aae37f98f4b58774b82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc_fillCRC8Table</definition>
+        <argsstring>(uint8_t polynomial, bool isReflected, uint8_t index)</argsstring>
+        <name>tmc_fillCRC8Table</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>polynomial</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isReflected</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.c" bodystart="89" bodyend="142" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" declline="19" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="CRC_8h_1a0baf2b855f268eb52d46547acda09f73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc_CRC8</definition>
+        <argsstring>(uint8_t *data, uint32_t bytes, uint8_t index)</argsstring>
+        <name>tmc_CRC8</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bytes</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.c" bodystart="151" bodyend="165" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" declline="20" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="CRC_8h_1a3c65e4fd39c6ffb52ab18a9040d05797" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc_tableGetPolynomial</definition>
+        <argsstring>(uint8_t index)</argsstring>
+        <name>tmc_tableGetPolynomial</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.c" bodystart="167" bodyend="173" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" declline="22" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="CRC_8h_1a704ddb41c4336498b349f742ebff63a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tmc_tableIsReflected</definition>
+        <argsstring>(uint8_t index)</argsstring>
+        <name>tmc_tableIsReflected</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" line="23" column="7" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.c" bodystart="175" bodyend="181" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h" declline="23" declcolumn="7"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2017<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_HELPERS_CRC_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_HELPERS_CRC_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="Types_8h" kindref="compound">Types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Amount<sp/>of<sp/>CRC<sp/>tables<sp/>available</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Each<sp/>table<sp/>takes<sp/>~260<sp/>bytes<sp/>(257<sp/>bytes,<sp/>one<sp/>bool<sp/>and<sp/>structure<sp/>padding)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="CRC_8h_1a36a8b3d0206bdd790776cb2f99712e52" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>CRC_TABLE_COUNT<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="CRC_8h_1a3957cbc0926e9aae37f98f4b58774b82" kindref="member">tmc_fillCRC8Table</ref>(uint8_t<sp/>polynomial,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isReflected,<sp/>uint8_t<sp/>index);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="CRC_8h_1a0baf2b855f268eb52d46547acda09f73" kindref="member">tmc_CRC8</ref>(uint8_t<sp/>*data,<sp/>uint32_t<sp/>bytes,<sp/>uint8_t<sp/>index);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="CRC_8h_1a3c65e4fd39c6ffb52ab18a9040d05797" kindref="member">tmc_tableGetPolynomial</ref>(uint8_t<sp/>index);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><ref refid="CRC_8h_1a704ddb41c4336498b349f742ebff63a0" kindref="member">tmc_tableIsReflected</ref>(uint8_t<sp/>index);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_HELPERS_CRC_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/helpers/CRC.h"/>
+  </compounddef>
+</doxygen>

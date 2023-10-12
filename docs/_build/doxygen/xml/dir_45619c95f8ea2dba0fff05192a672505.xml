@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_45619c95f8ea2dba0fff05192a672505" kind="dir">
+    <compoundname>tmc</compoundname>
+    <innerdir refid="dir_03dc401a70c8cd2ed79449c2943285a8">helpers</innerdir>
+    <innerdir refid="dir_14999fcc547feaddda8fb41dbe95d334">ic</innerdir>
+    <innerdir refid="dir_b1edac66bc5591d7cbf2d3001d4fad93">ramp</innerdir>
+    <innerdir refid="dir_0f5f0cb339cc8baeb16aacd8d89ef371">test</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/"/>
+  </compounddef>
+</doxygen>

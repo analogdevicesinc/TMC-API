@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_14999fcc547feaddda8fb41dbe95d334" kind="dir">
+    <compoundname>ic</compoundname>
+    <innerdir refid="dir_13e88ccaf4ef2e056e35142111c67520">MAX22216</innerdir>
+    <innerdir refid="dir_d4b66a808e01b007b4c6ba1576a54bd9">TMC2130</innerdir>
+    <innerdir refid="dir_9d3107aadcc5483625322f11fc5a3744">TMC2160</innerdir>
+    <innerdir refid="dir_042044897db385fc73f258e79caf20af">TMC2208</innerdir>
+    <innerdir refid="dir_c38459d87408992033db6c6980ea9e08">TMC2209</innerdir>
+    <innerdir refid="dir_dd66faf3fb57f3883fbedbef8830d8ee">TMC2224</innerdir>
+    <innerdir refid="dir_19f4edfa27c18a1abcb1ec22c4827dda">TMC2225</innerdir>
+    <innerdir refid="dir_ffe61397710e0bcff71747de09a81c1f">TMC2226</innerdir>
+    <innerdir refid="dir_da7658a039d6c904fd669b79adecc74d">TMC2240</innerdir>
+    <innerdir refid="dir_3c80952088ca18bb6325de5e911a3df2">TMC2300</innerdir>
+    <innerdir refid="dir_fd18099f5969654fe8418ce6ba5ead89">TMC2590</innerdir>
+    <innerdir refid="dir_f29bb830a365105a61f8b49feacb33ca">TMC262</innerdir>
+    <innerdir refid="dir_fb36625705c38b58670a430c3717055b">TMC2660</innerdir>
+    <innerdir refid="dir_6cf92853e2ff30e840ab739facb5ed94">TMC389</innerdir>
+    <innerdir refid="dir_e4c43b1f470f00582ac53d5ba5b04c7c">TMC4210</innerdir>
+    <innerdir refid="dir_7696d81d05bdba27b1b81e98c3f60f72">TMC424</innerdir>
+    <innerdir refid="dir_b98d41a2d068d8db123be82cc0e47bfc">TMC429</innerdir>
+    <innerdir refid="dir_70e4cc1d0744f39e667e2e1b65d24174">TMC4330</innerdir>
+    <innerdir refid="dir_cfc3615eb144d00f79c5b851871a75fe">TMC4331</innerdir>
+    <innerdir refid="dir_49efd360e0caabef811646b1d2089f0b">TMC4361A</innerdir>
+    <innerdir refid="dir_bf0115f7d1c8bbc502695d6566754ba2">TMC43xx</innerdir>
+    <innerdir refid="dir_d823f24eef5775bdf39bd90bae1a6b9a">TMC457</innerdir>
+    <innerdir refid="dir_1bb2fa5f6d5b1b769db234b1d69505b2">TMC4671</innerdir>
+    <innerdir refid="dir_1ef0c184a3611deaa6f296dda6e9c90c">TMC5031</innerdir>
+    <innerdir refid="dir_5c9706cbd21fc8947f1b7fd1767d09fd">TMC5041</innerdir>
+    <innerdir refid="dir_5103b1308c8a96ac40373526af763f08">TMC5062</innerdir>
+    <innerdir refid="dir_d1ea7589869d2a8593cc85be3c5d6e59">TMC5072</innerdir>
+    <innerdir refid="dir_89f591a10993868cc0d63b0599fa2082">TMC5130</innerdir>
+    <innerdir refid="dir_f2bd537003a92a57a43e9598390e7fce">TMC5160</innerdir>
+    <innerdir refid="dir_57997acf3901c53178fa094e2d7dbaea">TMC5240</innerdir>
+    <innerdir refid="dir_8b312d6b786f03cbdd51a52e56fff54a">TMC5271</innerdir>
+    <innerdir refid="dir_f9f8b6249fd3aec70e6d367fc5905ac6">TMC5272</innerdir>
+    <innerdir refid="dir_412037d2307ec94faea072968777ee5b">TMC6100</innerdir>
+    <innerdir refid="dir_bdad08fba637c9db82274c5993f174f0">TMC6200</innerdir>
+    <innerdir refid="dir_6096be5a2b088963c6aec7d7af02ad84">TMC7300</innerdir>
+    <innerdir refid="dir_498beb48d62a251067b7c07e6569b59a">TMC8461</innerdir>
+    <innerdir refid="dir_d60b58d1014fff578a76d56f2af81452">TMC8462</innerdir>
+    <innerdir refid="dir_830de397a8ce5ff3e68606c093f7873e">TMC846x</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTMotorConfig" kind="struct" language="C++" prot="public">
+    <compoundname>TMotorConfig</compoundname>
+    <includes refid="Configs_8h" local="no">Configs.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTMotorConfig_1aeafa8121d04c377d5aa1e6d636bfc3e4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMotorConfig::IRun</definition>
+        <argsstring></argsstring>
+        <name>IRun</name>
+        <qualifiedname>TMotorConfig::IRun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMotorConfig_1af65433312873bd0f2ef341522b3d11f4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMotorConfig::IStandby</definition>
+        <argsstring></argsstring>
+        <name>IStandby</name>
+        <qualifiedname>TMotorConfig::IStandby</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMotorConfig_1a7bb402fadb867fc4cde0c18b5d7cb9b5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t TMotorConfig::SettingDelay</definition>
+        <argsstring></argsstring>
+        <name>SettingDelay</name>
+        <qualifiedname>TMotorConfig::SettingDelay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="17" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMotorConfig_1ab86fb1b861654e8f1fe939c259ff99ac" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMotorConfig::BoostCurrent</definition>
+        <argsstring></argsstring>
+        <name>BoostCurrent</name>
+        <qualifiedname>TMotorConfig::BoostCurrent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="18" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="13" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="14" bodyend="19"/>
+    <listofallmembers>
+      <member refid="structTMotorConfig_1ab86fb1b861654e8f1fe939c259ff99ac" prot="public" virt="non-virtual"><scope>TMotorConfig</scope><name>BoostCurrent</name></member>
+      <member refid="structTMotorConfig_1aeafa8121d04c377d5aa1e6d636bfc3e4" prot="public" virt="non-virtual"><scope>TMotorConfig</scope><name>IRun</name></member>
+      <member refid="structTMotorConfig_1af65433312873bd0f2ef341522b3d11f4" prot="public" virt="non-virtual"><scope>TMotorConfig</scope><name>IStandby</name></member>
+      <member refid="structTMotorConfig_1a7bb402fadb867fc4cde0c18b5d7cb9b5" prot="public" virt="non-virtual"><scope>TMotorConfig</scope><name>SettingDelay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

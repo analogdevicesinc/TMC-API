@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTStepDirConfig" kind="struct" language="C++" prot="public">
+    <compoundname>TStepDirConfig</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTStepDirConfig_1aaf539ff255a429bfce4e007a4a12edef" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TStepDirConfig::Intpol</definition>
+        <argsstring></argsstring>
+        <name>Intpol</name>
+        <qualifiedname>TStepDirConfig::Intpol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="15" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTStepDirConfig_1a17df9dd74c3f3d3570cf1c85831638ca" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TStepDirConfig::DEdge</definition>
+        <argsstring></argsstring>
+        <name>DEdge</name>
+        <qualifiedname>TStepDirConfig::DEdge</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="16" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTStepDirConfig_1a908d4497b8fa4437084ec49dca719961" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TStepDirConfig::MRes</definition>
+        <argsstring></argsstring>
+        <name>MRes</name>
+        <qualifiedname>TStepDirConfig::MRes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="17" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="13" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="14" bodyend="18"/>
+    <listofallmembers>
+      <member refid="structTStepDirConfig_1a17df9dd74c3f3d3570cf1c85831638ca" prot="public" virt="non-virtual"><scope>TStepDirConfig</scope><name>DEdge</name></member>
+      <member refid="structTStepDirConfig_1aaf539ff255a429bfce4e007a4a12edef" prot="public" virt="non-virtual"><scope>TStepDirConfig</scope><name>Intpol</name></member>
+      <member refid="structTStepDirConfig_1a908d4497b8fa4437084ec49dca719961" prot="public" virt="non-virtual"><scope>TStepDirConfig</scope><name>MRes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTClosedLoopConfig" kind="struct" language="C++" prot="public">
+    <compoundname>TClosedLoopConfig</compoundname>
+    <includes refid="Configs_8h" local="no">Configs.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a2a080df84ef63b5e17d4f542cd814b63" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TClosedLoopConfig::ClosedLoopMode</definition>
+        <argsstring></argsstring>
+        <name>ClosedLoopMode</name>
+        <qualifiedname>TClosedLoopConfig::ClosedLoopMode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a932631e7f58184e6bf5b9a8b96a0ec67" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::GammaVMin</definition>
+        <argsstring></argsstring>
+        <name>GammaVMin</name>
+        <qualifiedname>TClosedLoopConfig::GammaVMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="24" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a30eb898d417f230f37a3c8001d3efb68" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::GammaVAdd</definition>
+        <argsstring></argsstring>
+        <name>GammaVAdd</name>
+        <qualifiedname>TClosedLoopConfig::GammaVAdd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="25" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a52e8ab5ec261032a6a7366360631456c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TClosedLoopConfig::Gamma</definition>
+        <argsstring></argsstring>
+        <name>Gamma</name>
+        <qualifiedname>TClosedLoopConfig::Gamma</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1ad3e7c5f9b7b529dc1ce5d6c13d378d7b" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t TClosedLoopConfig::Beta</definition>
+        <argsstring></argsstring>
+        <name>Beta</name>
+        <qualifiedname>TClosedLoopConfig::Beta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="27" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a3f0c9e2f9e97065161d073f29f7e819c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::Offset</definition>
+        <argsstring></argsstring>
+        <name>Offset</name>
+        <qualifiedname>TClosedLoopConfig::Offset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="28" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a490fd3c6654be1ac7ae52a18d8ab7c7c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TClosedLoopConfig::CurrentScalerMinimum</definition>
+        <argsstring></argsstring>
+        <name>CurrentScalerMinimum</name>
+        <qualifiedname>TClosedLoopConfig::CurrentScalerMinimum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="29" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a78e123c6d8ff6f993c5318b7dfcd72eb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TClosedLoopConfig::CurrentScalerMaximum</definition>
+        <argsstring></argsstring>
+        <name>CurrentScalerMaximum</name>
+        <qualifiedname>TClosedLoopConfig::CurrentScalerMaximum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="30" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1aee9195af9f3e5f7df26b47c38cc0af4e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TClosedLoopConfig::CurrentScalerStartUp</definition>
+        <argsstring></argsstring>
+        <name>CurrentScalerStartUp</name>
+        <qualifiedname>TClosedLoopConfig::CurrentScalerStartUp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="31" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a7563584e48e87f430ef6f4714a6420c6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::UpscaleDelay</definition>
+        <argsstring></argsstring>
+        <name>UpscaleDelay</name>
+        <qualifiedname>TClosedLoopConfig::UpscaleDelay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="32" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a4c70289b2e58e79ff88509f2a42e19c5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::DownscaleDelay</definition>
+        <argsstring></argsstring>
+        <name>DownscaleDelay</name>
+        <qualifiedname>TClosedLoopConfig::DownscaleDelay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="33" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1ace643b1f08fed6c93d9de491f4771064" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::CorrectionVelocityP</definition>
+        <argsstring></argsstring>
+        <name>CorrectionVelocityP</name>
+        <qualifiedname>TClosedLoopConfig::CorrectionVelocityP</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="34" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a07be7dc7075fbcb1a8ca8a535d660a93" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::CorrectionVelocityI</definition>
+        <argsstring></argsstring>
+        <name>CorrectionVelocityI</name>
+        <qualifiedname>TClosedLoopConfig::CorrectionVelocityI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="35" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1ad5cac7dc2b35f04a4fb5bceacb9b15c7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::CorrectionVelocityIClip</definition>
+        <argsstring></argsstring>
+        <name>CorrectionVelocityIClip</name>
+        <qualifiedname>TClosedLoopConfig::CorrectionVelocityIClip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="36" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a446d54f675cb6dc1660515fd2fce54ab" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::CorrectionVelocityDClk</definition>
+        <argsstring></argsstring>
+        <name>CorrectionVelocityDClk</name>
+        <qualifiedname>TClosedLoopConfig::CorrectionVelocityDClk</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="37" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a8a99253980e75c25b916acb7f86bed4a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::CorrectionVelocityDClip</definition>
+        <argsstring></argsstring>
+        <name>CorrectionVelocityDClip</name>
+        <qualifiedname>TClosedLoopConfig::CorrectionVelocityDClip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="38" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1af4a4d19080c92ca9a6ca648ee97c429a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::PositionCorrectionP</definition>
+        <argsstring></argsstring>
+        <name>PositionCorrectionP</name>
+        <qualifiedname>TClosedLoopConfig::PositionCorrectionP</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="39" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a52045becc1829df2a95f3c084089bb1c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::PositionCorrectionTolerance</definition>
+        <argsstring></argsstring>
+        <name>PositionCorrectionTolerance</name>
+        <qualifiedname>TClosedLoopConfig::PositionCorrectionTolerance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="40" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a6ae6268da891761af808d53e5e3ccaac" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::PositionWindow</definition>
+        <argsstring></argsstring>
+        <name>PositionWindow</name>
+        <qualifiedname>TClosedLoopConfig::PositionWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="41" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a219c6625b5088bd44ccf945b1d658dda" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TClosedLoopConfig::EncVMeanWait</definition>
+        <argsstring></argsstring>
+        <name>EncVMeanWait</name>
+        <qualifiedname>TClosedLoopConfig::EncVMeanWait</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="42" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a9c833543a63e2f0d414ab530defc7fac" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TClosedLoopConfig::EncVMeanFilter</definition>
+        <argsstring></argsstring>
+        <name>EncVMeanFilter</name>
+        <qualifiedname>TClosedLoopConfig::EncVMeanFilter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="43" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1abc24290b03834acaac4bfd8ed553a5de" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TClosedLoopConfig::EncVMeanInt</definition>
+        <argsstring></argsstring>
+        <name>EncVMeanInt</name>
+        <qualifiedname>TClosedLoopConfig::EncVMeanInt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="44" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTClosedLoopConfig_1a98b8375d3530ab4c5e6e78bf26d11c1e" prot="public" static="no" mutable="no">
+        <type>int8_t</type>
+        <definition>int8_t TClosedLoopConfig::EncoderCorrectionYOffset</definition>
+        <argsstring></argsstring>
+        <name>EncoderCorrectionYOffset</name>
+        <qualifiedname>TClosedLoopConfig::EncoderCorrectionYOffset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="45" column="8" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" line="21" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/Configs.h" bodystart="22" bodyend="46"/>
+    <listofallmembers>
+      <member refid="structTClosedLoopConfig_1ad3e7c5f9b7b529dc1ce5d6c13d378d7b" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>Beta</name></member>
+      <member refid="structTClosedLoopConfig_1a2a080df84ef63b5e17d4f542cd814b63" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>ClosedLoopMode</name></member>
+      <member refid="structTClosedLoopConfig_1a8a99253980e75c25b916acb7f86bed4a" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>CorrectionVelocityDClip</name></member>
+      <member refid="structTClosedLoopConfig_1a446d54f675cb6dc1660515fd2fce54ab" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>CorrectionVelocityDClk</name></member>
+      <member refid="structTClosedLoopConfig_1a07be7dc7075fbcb1a8ca8a535d660a93" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>CorrectionVelocityI</name></member>
+      <member refid="structTClosedLoopConfig_1ad5cac7dc2b35f04a4fb5bceacb9b15c7" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>CorrectionVelocityIClip</name></member>
+      <member refid="structTClosedLoopConfig_1ace643b1f08fed6c93d9de491f4771064" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>CorrectionVelocityP</name></member>
+      <member refid="structTClosedLoopConfig_1a78e123c6d8ff6f993c5318b7dfcd72eb" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>CurrentScalerMaximum</name></member>
+      <member refid="structTClosedLoopConfig_1a490fd3c6654be1ac7ae52a18d8ab7c7c" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>CurrentScalerMinimum</name></member>
+      <member refid="structTClosedLoopConfig_1aee9195af9f3e5f7df26b47c38cc0af4e" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>CurrentScalerStartUp</name></member>
+      <member refid="structTClosedLoopConfig_1a4c70289b2e58e79ff88509f2a42e19c5" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>DownscaleDelay</name></member>
+      <member refid="structTClosedLoopConfig_1a98b8375d3530ab4c5e6e78bf26d11c1e" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>EncoderCorrectionYOffset</name></member>
+      <member refid="structTClosedLoopConfig_1a9c833543a63e2f0d414ab530defc7fac" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>EncVMeanFilter</name></member>
+      <member refid="structTClosedLoopConfig_1abc24290b03834acaac4bfd8ed553a5de" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>EncVMeanInt</name></member>
+      <member refid="structTClosedLoopConfig_1a219c6625b5088bd44ccf945b1d658dda" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>EncVMeanWait</name></member>
+      <member refid="structTClosedLoopConfig_1a52e8ab5ec261032a6a7366360631456c" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>Gamma</name></member>
+      <member refid="structTClosedLoopConfig_1a30eb898d417f230f37a3c8001d3efb68" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>GammaVAdd</name></member>
+      <member refid="structTClosedLoopConfig_1a932631e7f58184e6bf5b9a8b96a0ec67" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>GammaVMin</name></member>
+      <member refid="structTClosedLoopConfig_1a3f0c9e2f9e97065161d073f29f7e819c" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>Offset</name></member>
+      <member refid="structTClosedLoopConfig_1af4a4d19080c92ca9a6ca648ee97c429a" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>PositionCorrectionP</name></member>
+      <member refid="structTClosedLoopConfig_1a52045becc1829df2a95f3c084089bb1c" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>PositionCorrectionTolerance</name></member>
+      <member refid="structTClosedLoopConfig_1a6ae6268da891761af808d53e5e3ccaac" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>PositionWindow</name></member>
+      <member refid="structTClosedLoopConfig_1a7563584e48e87f430ef6f4714a6420c6" prot="public" virt="non-virtual"><scope>TClosedLoopConfig</scope><name>UpscaleDelay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

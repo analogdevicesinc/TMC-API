@@ -1,0 +1,1002 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC457__Register_8h" kind="file" language="C++">
+    <compoundname>TMC457_Register.h</compoundname>
+    <includedby refid="TMC457_8h" local="yes">TMC457.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>TMC457.c</label>
+        <link refid="TMC457_8c"/>
+      </node>
+      <node id="2">
+        <label>TMC457.h</label>
+        <link refid="TMC457_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC457_Register.h</label>
+        <link refid="TMC457__Register_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC457__Register_8h_1a43f8ed68508a5d6bfefbf083e0b52b23" prot="public" static="no">
+        <name>TMC457_MODE</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="14" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a5b31293bd3b0826a5bf1d025be658439" prot="public" static="no">
+        <name>TMC457_XACTUAL</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="15" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a739a45f502b9e24b03ddfaa89f34f8d5" prot="public" static="no">
+        <name>TMC457_VACTUAL</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="16" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1af7bbba29b5f08d483a0c51d9547a1a23" prot="public" static="no">
+        <name>TMC457_VMAX</name>
+        <initializer>0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="17" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a7b0d34285c753a2f8ea9e75a8a52aad3" prot="public" static="no">
+        <name>TMC457_VTARGET</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="18" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1abf4c98737320891af7d7cf86b8302ea5" prot="public" static="no">
+        <name>TMC457_AMAX</name>
+        <initializer>0x05</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="19" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a3ca0a79b79d2201c1d9f41944bda6945" prot="public" static="no">
+        <name>TMC457_DMAX</name>
+        <initializer>0x06</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="20" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ac6706dd45140c217e0c9905d52994e7f" prot="public" static="no">
+        <name>TMC457_DSTOP</name>
+        <initializer>0x07</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="21" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a01abb6425693d21e5a61b76931eeba9f" prot="public" static="no">
+        <name>TMC457_BOWMAX</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="22" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a6d5b8845ac1cea329bb364100e386371" prot="public" static="no">
+        <name>TMC457_XTARGET</name>
+        <initializer>0x09</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="23" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a5b01e9b6403aa0cd5fe33f6e60de7d72" prot="public" static="no">
+        <name>TMC457_XCOMPARE</name>
+        <initializer>0x0A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="24" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a49108a14c779bb8fff2aad05fbf9f11d" prot="public" static="no">
+        <name>TMC457_STATUS</name>
+        <initializer>0x0B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="25" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ad32f6c7b947fad242d639c2877f3c276" prot="public" static="no">
+        <name>TMC457_AACTUAL</name>
+        <initializer>0x0C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="26" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1aa7a53e1c919459d93434d29c2d0fb996" prot="public" static="no">
+        <name>TMC457_SDSCALE</name>
+        <initializer>0x0D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="27" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a8895bb39bbf36cf3b2a7306e6854c4e1" prot="public" static="no">
+        <name>TMC457_AMAX_DMAX</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="28" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1abe562b11cd1844eb55626a7790c21d17" prot="public" static="no">
+        <name>TMC457_ENC_CONST</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="30" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a4b41d31a835cc6f7ad8bf9cb6e5df7c0" prot="public" static="no">
+        <name>TMC457_ENC_X</name>
+        <initializer>0x11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="31" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a82ca82a522bbd3e29783b5143bf082e0" prot="public" static="no">
+        <name>TMC457_ENC_CLRMODE</name>
+        <initializer>0x12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="32" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a4d05aa43da7899f257f8d83d1b38a992" prot="public" static="no">
+        <name>TMC457_ENC_STATUS</name>
+        <initializer>0x13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="33" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1aaa9ccbb8ca04cb781ec041d189318ff0" prot="public" static="no">
+        <name>TMC457_ENC_LATCH</name>
+        <initializer>0x14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="34" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a88298ec331e8fd1b7c0418826fae2d51" prot="public" static="no">
+        <name>TMC457_XLATCH</name>
+        <initializer>0x15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="35" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a807a30c64eea70b3b85cd7d16f13d793" prot="public" static="no">
+        <name>TMC457_ENC_WARNDIST</name>
+        <initializer>0x16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="36" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ac40510c3e280ae598bcdf4d925943caa" prot="public" static="no">
+        <name>TMC457_VENC_US_CONST</name>
+        <initializer>0x17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="38" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a5efb4c74d8d91620cc8d45168ed7160f" prot="public" static="no">
+        <name>TMC457_VENC_US_POS</name>
+        <initializer>0x18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="39" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a83701d37eba9d7f9ad431d54f45bd855" prot="public" static="no">
+        <name>TMC457_VENC_US_SEL</name>
+        <initializer>0x19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="40" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1afe16c539718b7e80ac0acc30f466feb1" prot="public" static="no">
+        <name>TMC457_PID_P</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="42" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a06f164b9b6ddcdfc3d62f95f32eb4b24" prot="public" static="no">
+        <name>TMC457_PID_I</name>
+        <initializer>0x21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="43" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a7d7d94bd1095b206dee8a49c5cda9674" prot="public" static="no">
+        <name>TMC457_PID_D</name>
+        <initializer>0x22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="44" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a994dfdac38707570b2b128a2a1876934" prot="public" static="no">
+        <name>TMC457_PID_ICLIP</name>
+        <initializer>0x23</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="45" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ac9841a5d35de9d0b6da46121a7518d93" prot="public" static="no">
+        <name>TMC457_PID_ISUM</name>
+        <initializer>0x24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="46" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a3d5b73681603e2d6e97594ec84461de2" prot="public" static="no">
+        <name>TMC457_PID_DCLKDIV</name>
+        <initializer>0x25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="47" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a9a0abd8aaaa72d15eb823adf6fee1e93" prot="public" static="no">
+        <name>TMC457_PID_DV_CPU</name>
+        <initializer>0x26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="48" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ad0ecf36269161d7f904857c6c9a45818" prot="public" static="no">
+        <name>TMC457_PID_DV_CLIP</name>
+        <initializer>0x27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="49" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1aae17bd832740f0f423c3f96c40d89624" prot="public" static="no">
+        <name>TMC457_PID_E</name>
+        <initializer>0x28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="50" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ab22a8d2821d36df3887c90b20d3a4f02" prot="public" static="no">
+        <name>TMC457_PID_VACTUAL</name>
+        <initializer>0x29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="51" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a0d4c219b1c5ccd0a5987ff7374ff1caf" prot="public" static="no">
+        <name>TMC457_PID_TOLERANCE</name>
+        <initializer>0x2A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="52" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a06b4e158291af0a1d91dbdfb1fec684a" prot="public" static="no">
+        <name>TMC457_PULSE_MAX</name>
+        <initializer>0x30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="54" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a399a6b9550f553e8a20bd3c34453a419" prot="public" static="no">
+        <name>TMC457_PULSE_XSTEP_DIV</name>
+        <initializer>0x31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="55" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ad3334fe258f5f96cc971497c438e951e" prot="public" static="no">
+        <name>TMC457_STEP_DIR_MODE</name>
+        <initializer>0x32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="56" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1aa2acd6e0e2234cd85063d1ff61b2e178" prot="public" static="no">
+        <name>TMC457_MICROSTEP_POS</name>
+        <initializer>0x33</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="57" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ad8be2aaca45a1bd5d1e3711d7febef50" prot="public" static="no">
+        <name>TMC457_STDBY_DELAY</name>
+        <initializer>0x34</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="58" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ae78579581f8d162d4477008a66fd4b2a" prot="public" static="no">
+        <name>TMC457_PULSE_LENGTH</name>
+        <initializer>0x35</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="59" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a5c8aae66c2dbec1b8641780b8ca5ea4e" prot="public" static="no">
+        <name>TMC457_SWITCH_MODE</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="61" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a13679009433d9b052f6dabc130803b70" prot="public" static="no">
+        <name>TMC457_SWITCH_STATUS</name>
+        <initializer>0x41</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="62" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a4ac9493cdc23537c309c73ae75258c61" prot="public" static="no">
+        <name>TMC457_POSLIM_LEFT</name>
+        <initializer>0x42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="63" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1afd6baff21e82e8bfa906f46a90811fc0" prot="public" static="no">
+        <name>TMC457_POSLIM_RIGHT</name>
+        <initializer>0x43</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="64" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1af7d0330c81ca6906de2facfa2942341b" prot="public" static="no">
+        <name>TMC457_SEQ_MODE</name>
+        <initializer>0x54</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="66" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a1608b61f0c74c29f6df79da8563aa81b" prot="public" static="no">
+        <name>TMC457_SEQ_DAC_SCALE</name>
+        <initializer>0x55</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="67" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1aac37a0db66d4992540f174506d4cc5e7" prot="public" static="no">
+        <name>TMC457_SEQ_STALL_THRESHOLD</name>
+        <initializer>0x56</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="68" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1abbcd185d98aee1c3688e6014ba321c6f" prot="public" static="no">
+        <name>TMC457_SEQ_DRIVER_STATUS</name>
+        <initializer>0x57</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="69" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1af261979aec85a4ad3ee8384af7c9ae66" prot="public" static="no">
+        <name>TMC457_CHOP_CLK_DIV</name>
+        <initializer>0x59</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="70" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ac9b3e38f01fd8207cd462f7aec730f82" prot="public" static="no">
+        <name>TMC457_VERSION</name>
+        <initializer>0x60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="72" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a4944b240ba41dcdef2c1c05c44b9cb5e" prot="public" static="no">
+        <name>TMC457_INT_MASK</name>
+        <initializer>0x61</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="73" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1acdcb8388ac22ebbad6341e3fe9be74cf" prot="public" static="no">
+        <name>TMC457_INT_FLAGS</name>
+        <initializer>0x62</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="74" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1abb610ef1466c47eab465fa8b3872b4c3" prot="public" static="no">
+        <name>TMC457_WAVETAB</name>
+        <initializer>0x7F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="75" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1af108b97386a9b7dedb87baa4a6c5b9a7" prot="public" static="no">
+        <name>TMC457_WRITE</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="78" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1adf912f0bea3bb4a5edacdf0e2e3f3285" prot="public" static="no">
+        <name>TMC457_RM_POSITION</name>
+        <initializer>0x00000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="81" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ae0ce625c2d345289bc2973bdbc5962f9" prot="public" static="no">
+        <name>TMC457_RM_RESERVED</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="82" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ab38bc1bd38ad1c58ede230fa753180c8" prot="public" static="no">
+        <name>TMC457_RM_VELOCITY</name>
+        <initializer>0x00000002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="83" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ab3d60946e3ce94411231d94004eecf23" prot="public" static="no">
+        <name>TMC457_RM_HOLD</name>
+        <initializer>0x00000003</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="84" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ad87df463e8013daa66e9776c84e60a33" prot="public" static="no">
+        <name>TMC457_RM_SHAFT</name>
+        <initializer>0x00000010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="85" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a71e31c83be1371ccad37d75a01072ebb" prot="public" static="no">
+        <name>TMC457_RM_PID</name>
+        <initializer>0x00000100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="86" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a64d5ee3c2d15088cdaeefde2d9d074c8" prot="public" static="no">
+        <name>TMC457_RM_PID_BASE</name>
+        <initializer>0x00000200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="87" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a4ab1b52954c24e6b4bd863cade0b6c63" prot="public" static="no">
+        <name>TMC457_ST_X_REACHED</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="90" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a35bbca38fad19d52730018a3eeb7e0ce" prot="public" static="no">
+        <name>TMC457_ST_V_REACHED</name>
+        <initializer>0x00000002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="91" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a2d7300e093ca0e9c0e64f3bef863650c" prot="public" static="no">
+        <name>TMC457_ST_V_ZERO</name>
+        <initializer>0x00000004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="92" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1afecbd9bfc400533d3040f11c951340ba" prot="public" static="no">
+        <name>TMC457_ST_ENC_WARN</name>
+        <initializer>0x00000010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="93" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ad89d650b82d92ae8d422106246ba22ce" prot="public" static="no">
+        <name>TMC457_IRQ_TARGET</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="96" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a89117808b226deee0294280678bf2dd6" prot="public" static="no">
+        <name>TMC457_IRQ_DEVIATION</name>
+        <initializer>0x00000002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="97" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a7b20962ee9e1f6c19e93b6c661cfcead" prot="public" static="no">
+        <name>TMC457_IRQ_ENCN</name>
+        <initializer>0x00000004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="98" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1afef0998fb09c522b9346629b1144a9c5" prot="public" static="no">
+        <name>TMC457_IRQ_STOP</name>
+        <initializer>0x00000008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="99" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a3e6d405514e3d78a26c9216985dd579c" prot="public" static="no">
+        <name>TMC457_IRQ_DRVSTATUS</name>
+        <initializer>0x00000010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="100" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1af0eb10238ee42d1cbee80f9496878036" prot="public" static="no">
+        <name>TMC457_IRQ_REFL</name>
+        <initializer>0x00000020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="101" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a759423f10ee64e9ed9f0c219e3f07928" prot="public" static="no">
+        <name>TMC457_IRQ_REFR</name>
+        <initializer>0x00000040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="102" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a6ea6d1ccc31a79abc45b26aba8df52c0" prot="public" static="no">
+        <name>TMC457_IRQ_XCOMP</name>
+        <initializer>0x00000080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="103" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1af18a01cf4d6914fd4a566a52d55793bd" prot="public" static="no">
+        <name>TMC457_DRV_ERROR</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="106" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1ac946856d5b96f3d809ba81947edd9665" prot="public" static="no">
+        <name>TMC457_DRV_OTPW</name>
+        <initializer>0x00000002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="107" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC457__Register_8h_1a227c7ecfd573dda0b3b1499e3e9bd7ba" prot="public" static="no">
+        <name>TMC457_DRV_STALL</name>
+        <initializer>0x00000004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" line="108" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC457_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC457_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TMC475<sp/>Register<sp/>Set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="TMC457__Register_8h_1a43f8ed68508a5d6bfefbf083e0b52b23" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_MODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC457__Register_8h_1a5b31293bd3b0826a5bf1d025be658439" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_XACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC457__Register_8h_1a739a45f502b9e24b03ddfaa89f34f8d5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_VACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC457__Register_8h_1af7bbba29b5f08d483a0c51d9547a1a23" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_VMAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x03</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC457__Register_8h_1a7b0d34285c753a2f8ea9e75a8a52aad3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_VTARGET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC457__Register_8h_1abf4c98737320891af7d7cf86b8302ea5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_AMAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x05</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC457__Register_8h_1a3ca0a79b79d2201c1d9f41944bda6945" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_DMAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x06</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC457__Register_8h_1ac6706dd45140c217e0c9905d52994e7f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_DSTOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x07</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC457__Register_8h_1a01abb6425693d21e5a61b76931eeba9f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_BOWMAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC457__Register_8h_1a6d5b8845ac1cea329bb364100e386371" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_XTARGET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x09</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC457__Register_8h_1a5b01e9b6403aa0cd5fe33f6e60de7d72" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_XCOMPARE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC457__Register_8h_1a49108a14c779bb8fff2aad05fbf9f11d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_STATUS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="TMC457__Register_8h_1ad32f6c7b947fad242d639c2877f3c276" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_AACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC457__Register_8h_1aa7a53e1c919459d93434d29c2d0fb996" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_SDSCALE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC457__Register_8h_1a8895bb39bbf36cf3b2a7306e6854c4e1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_AMAX_DMAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC457__Register_8h_1abe562b11cd1844eb55626a7790c21d17" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ENC_CONST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC457__Register_8h_1a4b41d31a835cc6f7ad8bf9cb6e5df7c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ENC_X<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC457__Register_8h_1a82ca82a522bbd3e29783b5143bf082e0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ENC_CLRMODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC457__Register_8h_1a4d05aa43da7899f257f8d83d1b38a992" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ENC_STATUS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC457__Register_8h_1aaa9ccbb8ca04cb781ec041d189318ff0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ENC_LATCH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC457__Register_8h_1a88298ec331e8fd1b7c0418826fae2d51" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_XLATCH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC457__Register_8h_1a807a30c64eea70b3b85cd7d16f13d793" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ENC_WARNDIST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC457__Register_8h_1ac40510c3e280ae598bcdf4d925943caa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_VENC_US_CONST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC457__Register_8h_1a5efb4c74d8d91620cc8d45168ed7160f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_VENC_US_POS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC457__Register_8h_1a83701d37eba9d7f9ad431d54f45bd855" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_VENC_US_SEL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="TMC457__Register_8h_1afe16c539718b7e80ac0acc30f466feb1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_P<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="TMC457__Register_8h_1a06f164b9b6ddcdfc3d62f95f32eb4b24" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_I<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x21</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC457__Register_8h_1a7d7d94bd1095b206dee8a49c5cda9674" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_D<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x22</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC457__Register_8h_1a994dfdac38707570b2b128a2a1876934" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_ICLIP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x23</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC457__Register_8h_1ac9841a5d35de9d0b6da46121a7518d93" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_ISUM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="TMC457__Register_8h_1a3d5b73681603e2d6e97594ec84461de2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_DCLKDIV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x25</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC457__Register_8h_1a9a0abd8aaaa72d15eb823adf6fee1e93" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_DV_CPU<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x26</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC457__Register_8h_1ad0ecf36269161d7f904857c6c9a45818" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_DV_CLIP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC457__Register_8h_1aae17bd832740f0f423c3f96c40d89624" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_E<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x28</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="TMC457__Register_8h_1ab22a8d2821d36df3887c90b20d3a4f02" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_VACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x29</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC457__Register_8h_1a0d4c219b1c5ccd0a5987ff7374ff1caf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PID_TOLERANCE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC457__Register_8h_1a06b4e158291af0a1d91dbdfb1fec684a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PULSE_MAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC457__Register_8h_1a399a6b9550f553e8a20bd3c34453a419" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PULSE_XSTEP_DIV<sp/><sp/><sp/><sp/><sp/><sp/>0x31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC457__Register_8h_1ad3334fe258f5f96cc971497c438e951e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_STEP_DIR_MODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="TMC457__Register_8h_1aa2acd6e0e2234cd85063d1ff61b2e178" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_MICROSTEP_POS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x33</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC457__Register_8h_1ad8be2aaca45a1bd5d1e3711d7febef50" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_STDBY_DELAY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x34</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC457__Register_8h_1ae78579581f8d162d4477008a66fd4b2a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_PULSE_LENGTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x35</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC457__Register_8h_1a5c8aae66c2dbec1b8641780b8ca5ea4e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_SWITCH_MODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC457__Register_8h_1a13679009433d9b052f6dabc130803b70" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_SWITCH_STATUS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x41</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC457__Register_8h_1a4ac9493cdc23537c309c73ae75258c61" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_POSLIM_LEFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x42</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC457__Register_8h_1afd6baff21e82e8bfa906f46a90811fc0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_POSLIM_RIGHT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x43</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC457__Register_8h_1af7d0330c81ca6906de2facfa2942341b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_SEQ_MODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x54</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="TMC457__Register_8h_1a1608b61f0c74c29f6df79da8563aa81b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_SEQ_DAC_SCALE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x55</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="TMC457__Register_8h_1aac37a0db66d4992540f174506d4cc5e7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_SEQ_STALL_THRESHOLD<sp/><sp/>0x56</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="TMC457__Register_8h_1abbcd185d98aee1c3688e6014ba321c6f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_SEQ_DRIVER_STATUS<sp/><sp/><sp/><sp/>0x57</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="TMC457__Register_8h_1af261979aec85a4ad3ee8384af7c9ae66" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_CHOP_CLK_DIV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x59</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="TMC457__Register_8h_1ac9b3e38f01fd8207cd462f7aec730f82" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_VERSION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x60</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="TMC457__Register_8h_1a4944b240ba41dcdef2c1c05c44b9cb5e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_INT_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x61</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="TMC457__Register_8h_1acdcb8388ac22ebbad6341e3fe9be74cf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_INT_FLAGS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x62</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="TMC457__Register_8h_1abb610ef1466c47eab465fa8b3872b4c3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_WAVETAB<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Write<sp/>Bit<sp/>(to<sp/>be<sp/>combined<sp/>with<sp/>any<sp/>register<sp/>address<sp/>for<sp/>write<sp/>access)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="TMC457__Register_8h_1af108b97386a9b7dedb87baa4a6c5b9a7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_WRITE<sp/>0x80</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TMC457<sp/>modes<sp/>(for<sp/>TMC457_MODE<sp/>register)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="TMC457__Register_8h_1adf912f0bea3bb4a5edacdf0e2e3f3285" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_RM_POSITION<sp/><sp/>0x00000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="TMC457__Register_8h_1ae0ce625c2d345289bc2973bdbc5962f9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_RM_RESERVED<sp/><sp/>0x00000001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="TMC457__Register_8h_1ab38bc1bd38ad1c58ede230fa753180c8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_RM_VELOCITY<sp/><sp/>0x00000002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="TMC457__Register_8h_1ab3d60946e3ce94411231d94004eecf23" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_RM_HOLD<sp/><sp/><sp/><sp/><sp/><sp/>0x00000003</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="TMC457__Register_8h_1ad87df463e8013daa66e9776c84e60a33" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_RM_SHAFT<sp/><sp/><sp/><sp/><sp/>0x00000010<sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>be<sp/>combined<sp/>with<sp/>the<sp/>other<sp/>modes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="TMC457__Register_8h_1a71e31c83be1371ccad37d75a01072ebb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_RM_PID<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000100<sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>be<sp/>combined<sp/>with<sp/>the<sp/>other<sp/>modes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="TMC457__Register_8h_1a64d5ee3c2d15088cdaeefde2d9d074c8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_RM_PID_BASE<sp/><sp/>0x00000200<sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>be<sp/>combined<sp/>with<sp/>the<sp/>other<sp/>modes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Status<sp/>bits<sp/>(TMC457_STATUS<sp/>register)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="TMC457__Register_8h_1a4ab1b52954c24e6b4bd863cade0b6c63" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ST_X_REACHED<sp/><sp/>0x00000001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="TMC457__Register_8h_1a35bbca38fad19d52730018a3eeb7e0ce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ST_V_REACHED<sp/><sp/>0x00000002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="TMC457__Register_8h_1a2d7300e093ca0e9c0e64f3bef863650c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ST_V_ZERO<sp/><sp/><sp/><sp/><sp/>0x00000004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="TMC457__Register_8h_1afecbd9bfc400533d3040f11c951340ba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_ST_ENC_WARN<sp/><sp/><sp/>0x00000010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Interrupt<sp/>bits<sp/>(TMC457_INT_MASK<sp/>and<sp/>TMC457_INT_FLAGS<sp/>registers)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="TMC457__Register_8h_1ad89d650b82d92ae8d422106246ba22ce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_IRQ_TARGET<sp/><sp/><sp/><sp/><sp/>0x00000001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="TMC457__Register_8h_1a89117808b226deee0294280678bf2dd6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_IRQ_DEVIATION<sp/><sp/>0x00000002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="TMC457__Register_8h_1a7b20962ee9e1f6c19e93b6c661cfcead" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_IRQ_ENCN<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="TMC457__Register_8h_1afef0998fb09c522b9346629b1144a9c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_IRQ_STOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000008</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="TMC457__Register_8h_1a3e6d405514e3d78a26c9216985dd579c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_IRQ_DRVSTATUS<sp/><sp/>0x00000010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="TMC457__Register_8h_1af0eb10238ee42d1cbee80f9496878036" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_IRQ_REFL<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000020</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="TMC457__Register_8h_1a759423f10ee64e9ed9f0c219e3f07928" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_IRQ_REFR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000040</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="TMC457__Register_8h_1a6ea6d1ccc31a79abc45b26aba8df52c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_IRQ_XCOMP<sp/><sp/><sp/><sp/><sp/><sp/>0x00000080</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Driver<sp/>status<sp/>bits<sp/>(TMC457_SEQ_DRIVER_STATUS<sp/>register)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="TMC457__Register_8h_1af18a01cf4d6914fd4a566a52d55793bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_DRV_ERROR<sp/><sp/>0x00000001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="TMC457__Register_8h_1ac946856d5b96f3d809ba81947edd9665" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_DRV_OTPW<sp/><sp/><sp/>0x00000002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="TMC457__Register_8h_1a227c7ecfd573dda0b3b1499e3e9bd7ba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC457_DRV_STALL<sp/><sp/>0x00000004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC457_REGISTER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC457/TMC457_Register.h"/>
+  </compounddef>
+</doxygen>

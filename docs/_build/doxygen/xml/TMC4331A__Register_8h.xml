@@ -1,0 +1,1552 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC4331A__Register_8h" kind="file" language="C++">
+    <compoundname>TMC4331A_Register.h</compoundname>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a1772a90cadb36b65cafd3b5e48dc9e7c" prot="public" static="no">
+        <name>TMC4331A_GENERAL_CONF</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="13" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a701024c6c89a09a7e2c42e5b2d8de8d8" prot="public" static="no">
+        <name>TMC4331A_REFERENCE_CONF</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="14" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a694d36ed475ecce3fc22b86b9d364868" prot="public" static="no">
+        <name>TMC4331A_START_CONF</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="15" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a56e5e47943abc5eb74c40f682b8813a1" prot="public" static="no">
+        <name>TMC4331A_INPUT_FILT_CONF</name>
+        <initializer>0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="16" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1adcc14d08886cbe2916c62c6c2bc91695" prot="public" static="no">
+        <name>TMC4331A_SPIOUT_CONF</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="17" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a7d5d1ae746b90bd92f021ab5007bacbf" prot="public" static="no">
+        <name>TMC4331A_CURRENT_CONF</name>
+        <initializer>0x05</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="18" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a686ff6f453f5283984c38020c18dc2dd" prot="public" static="no">
+        <name>TMC4331A_SCALE_VALUES</name>
+        <initializer>0x06</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="19" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1adb39164a2fc1cd5d8989d230771059f8" prot="public" static="no">
+        <name>TMC4331A_STEP_CONF</name>
+        <initializer>0x0A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="20" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a9db5c41620d41bd8ecc135c0ea89cbfd" prot="public" static="no">
+        <name>TMC4331A_SPI_STATUS_SELECTION</name>
+        <initializer>0x0B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="21" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1adcc8ec12ab82eb6e0815f27f0e09040b" prot="public" static="no">
+        <name>TMC4331A_EVENT_CLEAR_CONF</name>
+        <initializer>0x0C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="22" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a3f800a169d22bd049bc59c8b19bc65f7" prot="public" static="no">
+        <name>TMC4331A_INTR_CONF</name>
+        <initializer>0x0D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="23" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a7a6d52c70abfadd3287a7a0b7c71704d" prot="public" static="no">
+        <name>TMC4331A_EVENTS</name>
+        <initializer>0x0E</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="24" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a1c444b96da5d15067b8c38af91114a92" prot="public" static="no">
+        <name>TMC4331A_STATUS</name>
+        <initializer>0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="25" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a1f177100ebd82df67315c066cfbb088f" prot="public" static="no">
+        <name>TMC4331A_STP_LENGTH_ADD</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="27" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a63cd82513d679ae3142dc55c86fe8bea" prot="public" static="no">
+        <name>TMC4331A_DIR_SETUP_TIME</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="28" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a842e84fde433b4db3bf138b318693ee2" prot="public" static="no">
+        <name>TMC4331A_START_OUT_ADD</name>
+        <initializer>0x11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="29" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a38a8abfa4bd2eecdd15cd9b574e78607" prot="public" static="no">
+        <name>TMC4331A_GEAR_RATIO</name>
+        <initializer>0x12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="30" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a740cb39d763402ac8ffe87e7c6bd442f" prot="public" static="no">
+        <name>TMC4331A_START_DELAY</name>
+        <initializer>0x13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="31" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ac2539381cfa8cfee20c9b185f3bbcf38" prot="public" static="no">
+        <name>TMC4331A_CLK_GATING_DELAY</name>
+        <initializer>0x14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="32" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ace4230866d0e20426cbb261fd8e3e643" prot="public" static="no">
+        <name>TMC4331A_STDBY_DELAY</name>
+        <initializer>0x15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="33" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a8356bedf518b39f74f02270763a09424" prot="public" static="no">
+        <name>TMC4331A_FREEWHEEL_DELAY</name>
+        <initializer>0x16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="34" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a9cafc359814514adc0e3569d3c82ce2d" prot="public" static="no">
+        <name>TMC4331A_VDRV_SCALE_LIMIT</name>
+        <initializer>0x17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="35" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a3a5b465a961800fc61cc788740f054fc" prot="public" static="no">
+        <name>TMC4331A_PWM_VMAX</name>
+        <initializer>0x17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="36" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a6a672b8c7f9ea5eefe8ace21ff61e426" prot="public" static="no">
+        <name>TMC4331A_UP_SCALE_DELAY</name>
+        <initializer>0x18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="37" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a9240e4eb97ff5f5f03d979d2ad3195be" prot="public" static="no">
+        <name>TMC4331A_HOLD_SCALE_DELAY</name>
+        <initializer>0x19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="38" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a1c2ae89ff5efbb38cd31495503847680" prot="public" static="no">
+        <name>TMC4331A_DRV_SCALE_DELAY</name>
+        <initializer>0x1A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="39" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a0e3b4ea43135ab4bed009462370c4562" prot="public" static="no">
+        <name>TMC4331A_BOOST_TIME</name>
+        <initializer>0x1B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="40" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a303514a9b3ef42ccbf4bbe3a542e63b6" prot="public" static="no">
+        <name>TMC4331A_DAC_ADDR_A</name>
+        <initializer>0x1D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="41" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a5709a0fb5c08fd2c1ef0bc2ebea6b6c1" prot="public" static="no">
+        <name>TMC4331A_DAC_ADDR_B</name>
+        <initializer>0x1D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="42" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a237ec737875a9abcc4a08ed2226c94f0" prot="public" static="no">
+        <name>TMC4331A_SPI_SWITCH_VEL</name>
+        <initializer>0x1D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="43" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a615b9317d4b65bc5cd410ff35046786e" prot="public" static="no">
+        <name>TMC4331A_HOME_SAFETY_MARGIN</name>
+        <initializer>0x1E</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="44" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a272bc8b593162dda933bf3ee626e988d" prot="public" static="no">
+        <name>TMC4331A_PWM_FREQ</name>
+        <initializer>0x1F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="45" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aaa9cef7d79b06c997913d3710355d6fc" prot="public" static="no">
+        <name>TMC4331A_CHOPSYNC_DIV</name>
+        <initializer>0x1F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="46" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a2e8f29504c0c048abefcaa59926a1870" prot="public" static="no">
+        <name>TMC4331A_RAMPMODE</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="48" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1af856d2b827ae86738c3f43427e102791" prot="public" static="no">
+        <name>TMC4331A_XACTUAL</name>
+        <initializer>0x21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="49" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aa655eb06c2dbc3ddcd22825b7b83b973" prot="public" static="no">
+        <name>TMC4331A_VACTUAL</name>
+        <initializer>0x22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="50" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a23bfdc732af93cfce74f398bc89dcc32" prot="public" static="no">
+        <name>TMC4331A_AACTUAL</name>
+        <initializer>0x23</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="51" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a60bb64109aa1587c4428553da80ddaaf" prot="public" static="no">
+        <name>TMC4331A_VMAX</name>
+        <initializer>0x24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="52" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ae64e5b3ae8904cd23057d6f636ce73a7" prot="public" static="no">
+        <name>TMC4331A_VSTART</name>
+        <initializer>0x25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="53" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a22627abe886360bbe7e01b8f6d7f319a" prot="public" static="no">
+        <name>TMC4331A_VSTOP</name>
+        <initializer>0x26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="54" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a3a2e9e7d603dd3053f3e66cf776dfc8c" prot="public" static="no">
+        <name>TMC4331A_VBREAK</name>
+        <initializer>0x27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="55" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aed32b970fb7fbc6e517330f86f6cf10c" prot="public" static="no">
+        <name>TMC4331A_AMAX</name>
+        <initializer>0x28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="56" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ad80c62560e411382878dddded11908d0" prot="public" static="no">
+        <name>TMC4331A_DMAX</name>
+        <initializer>0x29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="57" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a02061cd2ba7a1ff3f04d44a727c058bb" prot="public" static="no">
+        <name>TMC4331A_ASTART</name>
+        <initializer>0x2A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="58" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a21710a585657381cb029b200cda597ed" prot="public" static="no">
+        <name>TMC4331A_SIGN_AACT</name>
+        <initializer>0x2A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="59" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aee8922b78531b17e7b412d6b6c1cc090" prot="public" static="no">
+        <name>TMC4331A_DFINAL</name>
+        <initializer>0x2B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="60" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aa5d673c63a55c0516b954b4c4fa8bea0" prot="public" static="no">
+        <name>TMC4331A_DSTOP</name>
+        <initializer>0x2C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="61" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1af31a64690eb308373c329c18e45b1afe" prot="public" static="no">
+        <name>TMC4331A_BOW1</name>
+        <initializer>0x2D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="62" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a852c2e76db654f0ccac1b527a4d2c2e6" prot="public" static="no">
+        <name>TMC4331A_BOW2</name>
+        <initializer>0x2E</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="63" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a88d02ce09d12a3d4cd6d0534ce8c7485" prot="public" static="no">
+        <name>TMC4331A_BOW3</name>
+        <initializer>0x2F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="64" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a73326677cc42095dc9564afde05468fb" prot="public" static="no">
+        <name>TMC4331A_BOW4</name>
+        <initializer>0x30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="65" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a46446021a92be3b6eae9f4fa8d108162" prot="public" static="no">
+        <name>TMC4331A_CLK_FREQ</name>
+        <initializer>0x31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="66" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a0b96ac7a20f10baac2913dcf7836aace" prot="public" static="no">
+        <name>TMC4331A_POS_COMP</name>
+        <initializer>0x32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="68" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a2be38b98027d8fb868330e3d8025d452" prot="public" static="no">
+        <name>TMC4331A_VIRT_STOP_LEFT</name>
+        <initializer>0x33</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="69" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a607caf1dafd666e7776bd69017b38533" prot="public" static="no">
+        <name>TMC4331A_VIRT_STOP_RIGHT</name>
+        <initializer>0x34</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="70" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a8ecbf09f91fff7e51784f6fe383b6486" prot="public" static="no">
+        <name>TMC4331A_X_HOME</name>
+        <initializer>0x35</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="71" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a796121ebef8e3f6ee1d6994c98abbeab" prot="public" static="no">
+        <name>TMC4331A_X_LATCH_RD</name>
+        <initializer>0x36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="72" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a9523d89cb6326391bba1f46ba5313829" prot="public" static="no">
+        <name>TMC4331A_REV_CNT_RD</name>
+        <initializer>0x36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="73" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a5f25c7d11943d439ba689639abc334a3" prot="public" static="no">
+        <name>TMC4331A_X_RANGE_WR</name>
+        <initializer>0x36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="74" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a704bb7219039a09684c766878529be10" prot="public" static="no">
+        <name>TMC4331A_X_TARGET</name>
+        <initializer>0x37</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="75" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a1e2bedbad969266cd9f63612a0a08995" prot="public" static="no">
+        <name>TMC4331A_X_PIPE0</name>
+        <initializer>0x38</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="77" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ac9fc85891c1ce6ca248d08d8d86a69c7" prot="public" static="no">
+        <name>TMC4331A_X_PIPE1</name>
+        <initializer>0x39</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="78" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ac6dc68d1469e5f2f345f7a793ac92315" prot="public" static="no">
+        <name>TMC4331A_X_PIPE2</name>
+        <initializer>0x3A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="79" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1af026dd641537061796605e448c0df21f" prot="public" static="no">
+        <name>TMC4331A_X_PIPE3</name>
+        <initializer>0x3B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="80" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a74db705d17d7c4f08b34945070c0fd70" prot="public" static="no">
+        <name>TMC4331A_X_PIPE4</name>
+        <initializer>0x3C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="81" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1acf119516d0dd5f3764ab56970e44af2d" prot="public" static="no">
+        <name>TMC4331A_X_PIPE5</name>
+        <initializer>0x3D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="82" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ab19038fb5f20564425d96ac19d6d7cc3" prot="public" static="no">
+        <name>TMC4331A_X_PIPE6</name>
+        <initializer>0x3E</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="83" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a78667707b7cad4f84f92bf3b68ebe29a" prot="public" static="no">
+        <name>TMC4331A_X_PIPE7</name>
+        <initializer>0x3F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="84" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a416159c2e28b20b3d97cf8d04e682566" prot="public" static="no">
+        <name>TMC4331A_SH_REG0</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="86" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a2f2c1ca0f844e735bcacf02ac5f9de8b" prot="public" static="no">
+        <name>TMC4331A_SH_REG1</name>
+        <initializer>0x41</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="87" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ac367c482339328cb5e297151d1e73426" prot="public" static="no">
+        <name>TMC4331A_SH_REG2</name>
+        <initializer>0x42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="88" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ab375bc21d15907f7948a83cb45498c4b" prot="public" static="no">
+        <name>TMC4331A_SH_REG3</name>
+        <initializer>0x43</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="89" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ab993b3525a228a2dc55d204e7f603904" prot="public" static="no">
+        <name>TMC4331A_SH_REG4</name>
+        <initializer>0x44</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="90" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a47fe6a8f6ed15601fef966578e9716b2" prot="public" static="no">
+        <name>TMC4331A_SH_REG5</name>
+        <initializer>0x45</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="91" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ab4303d192fb995113b105d5f2e2e82a3" prot="public" static="no">
+        <name>TMC4331A_SH_REG6</name>
+        <initializer>0x46</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="92" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1af54b52261f8619a397103d069d702a44" prot="public" static="no">
+        <name>TMC4331A_SH_REG7</name>
+        <initializer>0x47</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="93" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a4b4fddbd6b2418d68655e7a678273283" prot="public" static="no">
+        <name>TMC4331A_SH_REG8</name>
+        <initializer>0x48</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="94" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a3b9c0b4702811958aa2c91e343d2ddfa" prot="public" static="no">
+        <name>TMC4331A_SH_REG9</name>
+        <initializer>0x49</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="95" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a3adc7dd50555ab9a6db3989c0c1d5021" prot="public" static="no">
+        <name>TMC4331A_SH_REG10</name>
+        <initializer>0x4A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="96" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a1c00d9d4ee2eb6a333f0276605202c99" prot="public" static="no">
+        <name>TMC4331A_SH_REG11</name>
+        <initializer>0x4B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="97" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ad3e7939a533bce356c41ae0ec5b7c212" prot="public" static="no">
+        <name>TMC4331A_SH_REG12</name>
+        <initializer>0x4C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="98" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aba9087c91c6cd6ee96bc65a3eaa20cc5" prot="public" static="no">
+        <name>TMC4331A_SH_REG13</name>
+        <initializer>0x4D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="99" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a2856de19a350face28a4815908f98c42" prot="public" static="no">
+        <name>TMC4331A_CLK_GATING_REG</name>
+        <initializer>0x4F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="101" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1abaaa788411d45fdc63cf990ff99c2713" prot="public" static="no">
+        <name>TMC4331A_RESET_REG</name>
+        <initializer>0x4F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="102" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ae8527350d11c0dbe53ac8f404f1ac04e" prot="public" static="no">
+        <name>TMC4331A_FS_VEL_WR</name>
+        <initializer>0x60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="104" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ade87f5b194c74c623cd611f5c8a90974" prot="public" static="no">
+        <name>TMC4331A_DC_VEL_WR</name>
+        <initializer>0x60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="105" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a61e6fc224de595d6e0252f1ee74d5d57" prot="public" static="no">
+        <name>TMC4331A_DC_TIME_WR</name>
+        <initializer>0x61</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="106" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a4f0582eb742a8e073ac6e73a1f3d2050" prot="public" static="no">
+        <name>TMC4331A_DC_SG_WR</name>
+        <initializer>0x61</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="107" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aa55e6929df4f8b00e209cf140c75be71" prot="public" static="no">
+        <name>TMC4331A_DC_BLKTIME_WR</name>
+        <initializer>0x61</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="108" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a3a04cdbc48224d706ab85f15b9ab0822" prot="public" static="no">
+        <name>TMC4331A_DC_LSPTM_WR</name>
+        <initializer>0x62</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="109" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a585baba53124a6204b8354021ba896f8" prot="public" static="no">
+        <name>TMC4331A_SYNCHRO_SET</name>
+        <initializer>0x64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="110" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a3575bbfce2aaa634be6ff1e334a5d8b6" prot="public" static="no">
+        <name>TMC4331A_VSTALL_LIMIT_WR</name>
+        <initializer>0x67</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="111" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1af3616f2bd45ab7d756cf87fa8a0fc4ed" prot="public" static="no">
+        <name>TMC4331A_COVER_LOW_WR</name>
+        <initializer>0x6C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="113" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1abea61a80aeddff2a792ecde1a83bba3f" prot="public" static="no">
+        <name>TMC4331A_POLLING_STATUS_RD</name>
+        <initializer>0x6C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="114" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a03c4049f36ac97a92f9528770a159758" prot="public" static="no">
+        <name>TMC4331A_COVER_HIGH_WR</name>
+        <initializer>0x6D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="115" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a3b0535f10e325bf3cc99667a777c45f7" prot="public" static="no">
+        <name>TMC4331A_POLLING_REG_WR</name>
+        <initializer>0x6D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="116" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aa22b5caf2e8d7f3e6c7fee6a08a93162" prot="public" static="no">
+        <name>TMC4331A_COVER_DRV_LOW_RD</name>
+        <initializer>0x6E</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="117" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a66a2d0143a94365255fe59ea04088e08" prot="public" static="no">
+        <name>TMC4331A_COVER_DRV_HIGH_RD</name>
+        <initializer>0x6F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="118" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a65c684ffebb8644d320552df6daf3573" prot="public" static="no">
+        <name>TMC4331A_MSLUT_0_WR</name>
+        <initializer>0x70</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="120" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a3d4a637071dc85936146a58a5766036c" prot="public" static="no">
+        <name>TMC4331A_MSLUT_1_WR</name>
+        <initializer>0x71</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="121" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a180fa8f34989480f07290f0a6b27ec3f" prot="public" static="no">
+        <name>TMC4331A_MSLUT_2_WR</name>
+        <initializer>0x72</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="122" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a07e528fd15497d02d2c0a1966d82be41" prot="public" static="no">
+        <name>TMC4331A_MSLUT_3_WR</name>
+        <initializer>0x73</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="123" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aed4c789c0672a8ac8ad01ee3c0feb962" prot="public" static="no">
+        <name>TMC4331A_MSLUT_4_WR</name>
+        <initializer>0x74</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="124" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a0acd82d54d9534f83c0fe1868762673a" prot="public" static="no">
+        <name>TMC4331A_MSLUT_5_WR</name>
+        <initializer>0x75</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="125" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a811c078ca7d5499323c3a7308e13d1b2" prot="public" static="no">
+        <name>TMC4331A_MSLUT_6_WR</name>
+        <initializer>0x76</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="126" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1add8b9f6eacf76ec142b7b683a25b51e5" prot="public" static="no">
+        <name>TMC4331A_MSLUT_7_WR</name>
+        <initializer>0x77</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="127" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a564a0c71fe61f1a83509daa4287db32e" prot="public" static="no">
+        <name>TMC4331A_MSLUTSEL_WR</name>
+        <initializer>0x78</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="128" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a5deb450a10119fa8a05758eaaae57770" prot="public" static="no">
+        <name>TMC4331A_MSCNT_RD</name>
+        <initializer>0x79</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="129" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1acec3d01ef6311cb37ba951e2a404bf77" prot="public" static="no">
+        <name>TMC4331A_MSOFFSET_WR</name>
+        <initializer>0x79</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="130" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a25f1b4fe8fab3409e59508627fb209c5" prot="public" static="no">
+        <name>TMC4331A_CURRENTA_RD</name>
+        <initializer>0x7A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="131" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a7ad00c5af459778f062bcf01aee0cc26" prot="public" static="no">
+        <name>TMC4331A_CURRENTB_RD</name>
+        <initializer>0x7A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="132" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a741dc7221fbaec10156038d85ae450cb" prot="public" static="no">
+        <name>TMC4331A_CURRENTA_SPI_RD</name>
+        <initializer>0x7B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="133" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1ab9a38579018f5dbe474fe616bf8057ca" prot="public" static="no">
+        <name>TMC4331A_CURRENTB_SPI_RD</name>
+        <initializer>0x7B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="134" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a6bf5f7e95ff004120da9f24b09786812" prot="public" static="no">
+        <name>TMC4331A_TZEROWAIT_WR</name>
+        <initializer>0x7B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="135" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1af4fcb63fefd66c5420a599d7ac848378" prot="public" static="no">
+        <name>TMC4331A_SCALE_PARAM_RD</name>
+        <initializer>0x7C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="136" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a2c6fd75ec318098490317e98f2bc9913" prot="public" static="no">
+        <name>TMC4331A_CIRCULAR_DEC_WR</name>
+        <initializer>0x7C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="137" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a5ddaa3d822a9177087d4cdc542154b83" prot="public" static="no">
+        <name>TMC4331A_START_SIN_WR</name>
+        <initializer>0x7E</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="138" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a4fd817e296e85936c076d18f1eaca802" prot="public" static="no">
+        <name>TMC4331A_START_SIN90_120_WR</name>
+        <initializer>0x7E</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="139" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aa26e7b53bb37046778abfca81580a37d" prot="public" static="no">
+        <name>TMC4331A_DAC_OFFSET_WR</name>
+        <initializer>0x7E</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="140" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a760b1e08f7d2e6d9aafac7741ab9f521" prot="public" static="no">
+        <name>TMC4331A_VERSION_NO_RD</name>
+        <initializer>0x7F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="141" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a6528519cafc0a956d6bf0354b328d258" prot="public" static="no">
+        <name>TMC4331A_COVER_DONE</name>
+        <initializer>(1&lt;&lt;25)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="143" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a9731f797fca4d6844c0ea79eb9921f17" prot="public" static="no">
+        <name>TMC4331A_RAMP_HOLD</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="145" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a32a9993436ea7c7a5737e7e965e5624a" prot="public" static="no">
+        <name>TMC4331A_RAMP_TRAPEZ</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="146" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a45b77045f4e113ad33ec8c9419e518cd" prot="public" static="no">
+        <name>TMC4331A_RAMP_SSHAPE</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="147" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1aa06250a8312ffebd91a8e396cfa15000" prot="public" static="no">
+        <name>TMC4331A_RAMP_POSITION</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="148" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC4331A__Register_8h_1a9731f797fca4d6844c0ea79eb9921f17" prot="public" static="no">
+        <name>TMC4331A_RAMP_HOLD</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" line="149" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2019<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC4331A_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC4331A_REGISTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="TMC4331A__Register_8h_1a1772a90cadb36b65cafd3b5e48dc9e7c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_GENERAL_CONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="TMC4331A__Register_8h_1a701024c6c89a09a7e2c42e5b2d8de8d8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_REFERENCE_CONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="TMC4331A__Register_8h_1a694d36ed475ecce3fc22b86b9d364868" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_START_CONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="TMC4331A__Register_8h_1a56e5e47943abc5eb74c40f682b8813a1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_INPUT_FILT_CONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x03</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="TMC4331A__Register_8h_1adcc14d08886cbe2916c62c6c2bc91695" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SPIOUT_CONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="TMC4331A__Register_8h_1a7d5d1ae746b90bd92f021ab5007bacbf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CURRENT_CONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x05</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="TMC4331A__Register_8h_1a686ff6f453f5283984c38020c18dc2dd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SCALE_VALUES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x06</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC4331A__Register_8h_1adb39164a2fc1cd5d8989d230771059f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_STEP_CONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="TMC4331A__Register_8h_1a9db5c41620d41bd8ecc135c0ea89cbfd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SPI_STATUS_SELECTION<sp/><sp/>0x0B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC4331A__Register_8h_1adcc8ec12ab82eb6e0815f27f0e09040b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_EVENT_CLEAR_CONF<sp/><sp/><sp/><sp/><sp/><sp/>0x0C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="TMC4331A__Register_8h_1a3f800a169d22bd049bc59c8b19bc65f7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_INTR_CONF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="TMC4331A__Register_8h_1a7a6d52c70abfadd3287a7a0b7c71704d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_EVENTS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="TMC4331A__Register_8h_1a1c444b96da5d15067b8c38af91114a92" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_STATUS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="TMC4331A__Register_8h_1a1f177100ebd82df67315c066cfbb088f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_STP_LENGTH_ADD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="TMC4331A__Register_8h_1a63cd82513d679ae3142dc55c86fe8bea" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DIR_SETUP_TIME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="TMC4331A__Register_8h_1a842e84fde433b4db3bf138b318693ee2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_START_OUT_ADD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="TMC4331A__Register_8h_1a38a8abfa4bd2eecdd15cd9b574e78607" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_GEAR_RATIO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="TMC4331A__Register_8h_1a740cb39d763402ac8ffe87e7c6bd442f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_START_DELAY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="TMC4331A__Register_8h_1ac2539381cfa8cfee20c9b185f3bbcf38" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CLK_GATING_DELAY<sp/><sp/><sp/><sp/><sp/><sp/>0x14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="TMC4331A__Register_8h_1ace4230866d0e20426cbb261fd8e3e643" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_STDBY_DELAY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="TMC4331A__Register_8h_1a8356bedf518b39f74f02270763a09424" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_FREEWHEEL_DELAY<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC4331A__Register_8h_1a9cafc359814514adc0e3569d3c82ce2d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VDRV_SCALE_LIMIT<sp/><sp/><sp/><sp/><sp/><sp/>0x17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="TMC4331A__Register_8h_1a3a5b465a961800fc61cc788740f054fc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_PWM_VMAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="TMC4331A__Register_8h_1a6a672b8c7f9ea5eefe8ace21ff61e426" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_UP_SCALE_DELAY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC4331A__Register_8h_1a9240e4eb97ff5f5f03d979d2ad3195be" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_HOLD_SCALE_DELAY<sp/><sp/><sp/><sp/><sp/><sp/>0x19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC4331A__Register_8h_1a1c2ae89ff5efbb38cd31495503847680" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DRV_SCALE_DELAY<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC4331A__Register_8h_1a0e3b4ea43135ab4bed009462370c4562" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_BOOST_TIME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC4331A__Register_8h_1a303514a9b3ef42ccbf4bbe3a542e63b6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DAC_ADDR_A<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="TMC4331A__Register_8h_1a5709a0fb5c08fd2c1ef0bc2ebea6b6c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DAC_ADDR_B<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="TMC4331A__Register_8h_1a237ec737875a9abcc4a08ed2226c94f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SPI_SWITCH_VEL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="TMC4331A__Register_8h_1a615b9317d4b65bc5cd410ff35046786e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_HOME_SAFETY_MARGIN<sp/><sp/><sp/><sp/>0x1E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="TMC4331A__Register_8h_1a272bc8b593162dda933bf3ee626e988d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_PWM_FREQ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="TMC4331A__Register_8h_1aaa9cef7d79b06c997913d3710355d6fc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CHOPSYNC_DIV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="TMC4331A__Register_8h_1a2e8f29504c0c048abefcaa59926a1870" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_RAMPMODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="TMC4331A__Register_8h_1af856d2b827ae86738c3f43427e102791" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_XACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x21</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="TMC4331A__Register_8h_1aa655eb06c2dbc3ddcd22825b7b83b973" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x22</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="TMC4331A__Register_8h_1a23bfdc732af93cfce74f398bc89dcc32" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_AACTUAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x23</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC4331A__Register_8h_1a60bb64109aa1587c4428553da80ddaaf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VMAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="TMC4331A__Register_8h_1ae64e5b3ae8904cd23057d6f636ce73a7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VSTART<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x25</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="TMC4331A__Register_8h_1a22627abe886360bbe7e01b8f6d7f319a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VSTOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x26</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="TMC4331A__Register_8h_1a3a2e9e7d603dd3053f3e66cf776dfc8c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VBREAK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="TMC4331A__Register_8h_1aed32b970fb7fbc6e517330f86f6cf10c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_AMAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x28</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="TMC4331A__Register_8h_1ad80c62560e411382878dddded11908d0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DMAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x29</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="TMC4331A__Register_8h_1a02061cd2ba7a1ff3f04d44a727c058bb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_ASTART<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="TMC4331A__Register_8h_1a21710a585657381cb029b200cda597ed" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SIGN_AACT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="TMC4331A__Register_8h_1aee8922b78531b17e7b412d6b6c1cc090" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DFINAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="TMC4331A__Register_8h_1aa5d673c63a55c0516b954b4c4fa8bea0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DSTOP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="TMC4331A__Register_8h_1af31a64690eb308373c329c18e45b1afe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_BOW1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="TMC4331A__Register_8h_1a852c2e76db654f0ccac1b527a4d2c2e6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_BOW2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="TMC4331A__Register_8h_1a88d02ce09d12a3d4cd6d0534ce8c7485" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_BOW3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC4331A__Register_8h_1a73326677cc42095dc9564afde05468fb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_BOW4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="TMC4331A__Register_8h_1a46446021a92be3b6eae9f4fa8d108162" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CLK_FREQ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="TMC4331A__Register_8h_1a0b96ac7a20f10baac2913dcf7836aace" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_POS_COMP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="TMC4331A__Register_8h_1a2be38b98027d8fb868330e3d8025d452" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VIRT_STOP_LEFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x33</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="TMC4331A__Register_8h_1a607caf1dafd666e7776bd69017b38533" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VIRT_STOP_RIGHT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x34</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="TMC4331A__Register_8h_1a8ecbf09f91fff7e51784f6fe383b6486" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_HOME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x35</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="TMC4331A__Register_8h_1a796121ebef8e3f6ee1d6994c98abbeab" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_LATCH_RD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x36</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="TMC4331A__Register_8h_1a9523d89cb6326391bba1f46ba5313829" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_REV_CNT_RD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x36</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="TMC4331A__Register_8h_1a5f25c7d11943d439ba689639abc334a3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_RANGE_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x36</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="TMC4331A__Register_8h_1a704bb7219039a09684c766878529be10" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_TARGET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x37</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="TMC4331A__Register_8h_1a1e2bedbad969266cd9f63612a0a08995" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_PIPE0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x38</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="TMC4331A__Register_8h_1ac9fc85891c1ce6ca248d08d8d86a69c7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_PIPE1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x39</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="TMC4331A__Register_8h_1ac6dc68d1469e5f2f345f7a793ac92315" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_PIPE2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="TMC4331A__Register_8h_1af026dd641537061796605e448c0df21f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_PIPE3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="TMC4331A__Register_8h_1a74db705d17d7c4f08b34945070c0fd70" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_PIPE4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="TMC4331A__Register_8h_1acf119516d0dd5f3764ab56970e44af2d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_PIPE5<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="TMC4331A__Register_8h_1ab19038fb5f20564425d96ac19d6d7cc3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_PIPE6<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="TMC4331A__Register_8h_1a78667707b7cad4f84f92bf3b68ebe29a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_X_PIPE7<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="TMC4331A__Register_8h_1a416159c2e28b20b3d97cf8d04e682566" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="TMC4331A__Register_8h_1a2f2c1ca0f844e735bcacf02ac5f9de8b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x41</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="TMC4331A__Register_8h_1ac367c482339328cb5e297151d1e73426" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x42</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="TMC4331A__Register_8h_1ab375bc21d15907f7948a83cb45498c4b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x43</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="TMC4331A__Register_8h_1ab993b3525a228a2dc55d204e7f603904" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x44</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="TMC4331A__Register_8h_1a47fe6a8f6ed15601fef966578e9716b2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG5<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x45</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="TMC4331A__Register_8h_1ab4303d192fb995113b105d5f2e2e82a3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG6<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x46</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="TMC4331A__Register_8h_1af54b52261f8619a397103d069d702a44" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG7<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x47</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="TMC4331A__Register_8h_1a4b4fddbd6b2418d68655e7a678273283" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG8<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x48</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="TMC4331A__Register_8h_1a3b9c0b4702811958aa2c91e343d2ddfa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG9<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x49</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="TMC4331A__Register_8h_1a3adc7dd50555ab9a6db3989c0c1d5021" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG10<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="TMC4331A__Register_8h_1a1c00d9d4ee2eb6a333f0276605202c99" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="TMC4331A__Register_8h_1ad3e7939a533bce356c41ae0ec5b7c212" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG12<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="TMC4331A__Register_8h_1aba9087c91c6cd6ee96bc65a3eaa20cc5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SH_REG13<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="TMC4331A__Register_8h_1a2856de19a350face28a4815908f98c42" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CLK_GATING_REG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="TMC4331A__Register_8h_1abaaa788411d45fdc63cf990ff99c2713" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_RESET_REG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="TMC4331A__Register_8h_1ae8527350d11c0dbe53ac8f404f1ac04e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_FS_VEL_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x60</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="TMC4331A__Register_8h_1ade87f5b194c74c623cd611f5c8a90974" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DC_VEL_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x60</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="TMC4331A__Register_8h_1a61e6fc224de595d6e0252f1ee74d5d57" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DC_TIME_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x61</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="TMC4331A__Register_8h_1a4f0582eb742a8e073ac6e73a1f3d2050" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DC_SG_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x61</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="TMC4331A__Register_8h_1aa55e6929df4f8b00e209cf140c75be71" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DC_BLKTIME_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x61</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="TMC4331A__Register_8h_1a3a04cdbc48224d706ab85f15b9ab0822" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DC_LSPTM_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x62</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="TMC4331A__Register_8h_1a585baba53124a6204b8354021ba896f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SYNCHRO_SET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="TMC4331A__Register_8h_1a3575bbfce2aaa634be6ff1e334a5d8b6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VSTALL_LIMIT_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x67</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="TMC4331A__Register_8h_1af3616f2bd45ab7d756cf87fa8a0fc4ed" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_COVER_LOW_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x6C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="TMC4331A__Register_8h_1abea61a80aeddff2a792ecde1a83bba3f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_POLLING_STATUS_RD<sp/><sp/><sp/><sp/><sp/>0x6C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="TMC4331A__Register_8h_1a03c4049f36ac97a92f9528770a159758" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_COVER_HIGH_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x6D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="TMC4331A__Register_8h_1a3b0535f10e325bf3cc99667a777c45f7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_POLLING_REG_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x6D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="TMC4331A__Register_8h_1aa22b5caf2e8d7f3e6c7fee6a08a93162" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_COVER_DRV_LOW_RD<sp/><sp/><sp/><sp/><sp/><sp/>0x6E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="TMC4331A__Register_8h_1a66a2d0143a94365255fe59ea04088e08" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_COVER_DRV_HIGH_RD<sp/><sp/><sp/><sp/><sp/>0x6F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="TMC4331A__Register_8h_1a65c684ffebb8644d320552df6daf3573" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSLUT_0_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x70</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="TMC4331A__Register_8h_1a3d4a637071dc85936146a58a5766036c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSLUT_1_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x71</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="TMC4331A__Register_8h_1a180fa8f34989480f07290f0a6b27ec3f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSLUT_2_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x72</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="TMC4331A__Register_8h_1a07e528fd15497d02d2c0a1966d82be41" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSLUT_3_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x73</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="TMC4331A__Register_8h_1aed4c789c0672a8ac8ad01ee3c0feb962" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSLUT_4_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x74</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="TMC4331A__Register_8h_1a0acd82d54d9534f83c0fe1868762673a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSLUT_5_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x75</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="TMC4331A__Register_8h_1a811c078ca7d5499323c3a7308e13d1b2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSLUT_6_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x76</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="TMC4331A__Register_8h_1add8b9f6eacf76ec142b7b683a25b51e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSLUT_7_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x77</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="TMC4331A__Register_8h_1a564a0c71fe61f1a83509daa4287db32e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSLUTSEL_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x78</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="TMC4331A__Register_8h_1a5deb450a10119fa8a05758eaaae57770" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSCNT_RD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x79</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="TMC4331A__Register_8h_1acec3d01ef6311cb37ba951e2a404bf77" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_MSOFFSET_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x79</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="TMC4331A__Register_8h_1a25f1b4fe8fab3409e59508627fb209c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CURRENTA_RD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="TMC4331A__Register_8h_1a7ad00c5af459778f062bcf01aee0cc26" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CURRENTB_RD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="TMC4331A__Register_8h_1a741dc7221fbaec10156038d85ae450cb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CURRENTA_SPI_RD<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="TMC4331A__Register_8h_1ab9a38579018f5dbe474fe616bf8057ca" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CURRENTB_SPI_RD<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="TMC4331A__Register_8h_1a6bf5f7e95ff004120da9f24b09786812" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_TZEROWAIT_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="TMC4331A__Register_8h_1af4fcb63fefd66c5420a599d7ac848378" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_SCALE_PARAM_RD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="TMC4331A__Register_8h_1a2c6fd75ec318098490317e98f2bc9913" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_CIRCULAR_DEC_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="TMC4331A__Register_8h_1a5ddaa3d822a9177087d4cdc542154b83" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_START_SIN_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="TMC4331A__Register_8h_1a4fd817e296e85936c076d18f1eaca802" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_START_SIN90_120_WR<sp/><sp/><sp/><sp/>0x7E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="TMC4331A__Register_8h_1aa26e7b53bb37046778abfca81580a37d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_DAC_OFFSET_WR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="TMC4331A__Register_8h_1a760b1e08f7d2e6d9aafac7741ab9f521" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_VERSION_NO_RD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="TMC4331A__Register_8h_1a6528519cafc0a956d6bf0354b328d258" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_COVER_DONE<sp/><sp/>(1&lt;&lt;25)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="TMC4331A__Register_8h_1a9731f797fca4d6844c0ea79eb9921f17" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_RAMP_HOLD<sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="TMC4331A__Register_8h_1a32a9993436ea7c7a5737e7e965e5624a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_RAMP_TRAPEZ<sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="TMC4331A__Register_8h_1a45b77045f4e113ad33ec8c9419e518cd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_RAMP_SSHAPE<sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="TMC4331A__Register_8h_1aa06250a8312ffebd91a8e396cfa15000" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_RAMP_POSITION<sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TMC4331A_RAMP_HOLD<sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC4331A_REGISTER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC43xx/TMC4331A_Register.h"/>
+  </compounddef>
+</doxygen>

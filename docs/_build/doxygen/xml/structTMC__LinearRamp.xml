@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTMC__LinearRamp" kind="struct" language="C++" prot="public">
+    <compoundname>TMC_LinearRamp</compoundname>
+    <includes refid="LinearRamp_8h" local="no">LinearRamp.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a6ad4b77eb22f23e19227d43c76a054b6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC_LinearRamp::maxVelocity</definition>
+        <argsstring></argsstring>
+        <name>maxVelocity</name>
+        <qualifiedname>TMC_LinearRamp::maxVelocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="18" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a72229b1359cec3515a993fdae83f47fa" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::targetPosition</definition>
+        <argsstring></argsstring>
+        <name>targetPosition</name>
+        <qualifiedname>TMC_LinearRamp::targetPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="19" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a91fc84d3a0ce09bb0ee2dadccd4c731e" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::rampPosition</definition>
+        <argsstring></argsstring>
+        <name>rampPosition</name>
+        <qualifiedname>TMC_LinearRamp::rampPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a873636f5f69940df6f199978b75378b8" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::targetVelocity</definition>
+        <argsstring></argsstring>
+        <name>targetVelocity</name>
+        <qualifiedname>TMC_LinearRamp::targetVelocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="21" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a0aa2232e6ddac3535c5e0f9b4879e37a" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::rampVelocity</definition>
+        <argsstring></argsstring>
+        <name>rampVelocity</name>
+        <qualifiedname>TMC_LinearRamp::rampVelocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a9b3bf9a0f3dde00f440edd5f1bd6c0c0" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::acceleration</definition>
+        <argsstring></argsstring>
+        <name>acceleration</name>
+        <qualifiedname>TMC_LinearRamp::acceleration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="23" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a974fd86f8eb6d0c1629f6a2ffe4813d8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t TMC_LinearRamp::encoderSteps</definition>
+        <argsstring></argsstring>
+        <name>encoderSteps</name>
+        <qualifiedname>TMC_LinearRamp::encoderSteps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="24" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a087cdb4fbb91899cd97bbe7e3130e707" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::lastdVRest</definition>
+        <argsstring></argsstring>
+        <name>lastdVRest</name>
+        <qualifiedname>TMC_LinearRamp::lastdVRest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="25" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a9821047fcad8ea3bfa2823484b468341" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::lastdXRest</definition>
+        <argsstring></argsstring>
+        <name>lastdXRest</name>
+        <qualifiedname>TMC_LinearRamp::lastdXRest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="26" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1abfc4ad3d560d857dd5a4d130a9fa3486" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TMC_LinearRamp::rampEnabled</definition>
+        <argsstring></argsstring>
+        <name>rampEnabled</name>
+        <qualifiedname>TMC_LinearRamp::rampEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="27" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a5a0cd3df7cb2c5f39f44e81e016ceefe" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TMC_LinearRamp::rampEnabled</definition>
+        <argsstring></argsstring>
+        <name>rampEnabled</name>
+        <qualifiedname>TMC_LinearRamp::rampEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" line="46" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a6d65cc49ddb40e15288999442b6d0c39" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::accumulatorVelocity</definition>
+        <argsstring></argsstring>
+        <name>accumulatorVelocity</name>
+        <qualifiedname>TMC_LinearRamp::accumulatorVelocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" line="47" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a6feb0809ba253c85b78e575ddac1b490" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::accumulatorPosition</definition>
+        <argsstring></argsstring>
+        <name>accumulatorPosition</name>
+        <qualifiedname>TMC_LinearRamp::accumulatorPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" line="48" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a6a2ca614366622e702c83e4cab5fc29e" prot="public" static="no" mutable="no">
+        <type><ref refid="LinearRamp1_8h_1a12af13b50931d268dfbe76d39234e02c" kindref="member">TMC_LinearRamp_Mode</ref></type>
+        <definition>TMC_LinearRamp_Mode TMC_LinearRamp::rampMode</definition>
+        <argsstring></argsstring>
+        <name>rampMode</name>
+        <qualifiedname>TMC_LinearRamp::rampMode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" line="49" column="21" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1aff852c22d41d7b8bfa6e47e69b140b80" prot="public" static="no" mutable="no">
+        <type><ref refid="LinearRamp1_8h_1a45bb9a99b1fd7cc060d81f63b5b61c72" kindref="member">TMC_LinearRamp_State</ref></type>
+        <definition>TMC_LinearRamp_State TMC_LinearRamp::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <qualifiedname>TMC_LinearRamp::state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" line="50" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a0c8ab62cce8a472f50857907bdf4c9f7" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TMC_LinearRamp::accelerationSteps</definition>
+        <argsstring></argsstring>
+        <name>accelerationSteps</name>
+        <qualifiedname>TMC_LinearRamp::accelerationSteps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a24784cec0e93298d5d7a48f09c6f624d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC_LinearRamp::precision</definition>
+        <argsstring></argsstring>
+        <name>precision</name>
+        <qualifiedname>TMC_LinearRamp::precision</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" line="52" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1ae789caea6fa4106f0f8f668a51a9be27" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC_LinearRamp::homingDistance</definition>
+        <argsstring></argsstring>
+        <name>homingDistance</name>
+        <qualifiedname>TMC_LinearRamp::homingDistance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" line="53" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTMC__LinearRamp_1a3356af380cc043d70b2fd4d8aae98610" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TMC_LinearRamp::stopVelocity</definition>
+        <argsstring></argsstring>
+        <name>stopVelocity</name>
+        <qualifiedname>TMC_LinearRamp::stopVelocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" line="54" column="10" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp1.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" line="16" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ramp/LinearRamp.h" bodystart="17" bodyend="28"/>
+    <listofallmembers>
+      <member refid="structTMC__LinearRamp_1a9b3bf9a0f3dde00f440edd5f1bd6c0c0" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>acceleration</name></member>
+      <member refid="structTMC__LinearRamp_1a0c8ab62cce8a472f50857907bdf4c9f7" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>accelerationSteps</name></member>
+      <member refid="structTMC__LinearRamp_1a6feb0809ba253c85b78e575ddac1b490" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>accumulatorPosition</name></member>
+      <member refid="structTMC__LinearRamp_1a6d65cc49ddb40e15288999442b6d0c39" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>accumulatorVelocity</name></member>
+      <member refid="structTMC__LinearRamp_1a974fd86f8eb6d0c1629f6a2ffe4813d8" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>encoderSteps</name></member>
+      <member refid="structTMC__LinearRamp_1ae789caea6fa4106f0f8f668a51a9be27" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>homingDistance</name></member>
+      <member refid="structTMC__LinearRamp_1a087cdb4fbb91899cd97bbe7e3130e707" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>lastdVRest</name></member>
+      <member refid="structTMC__LinearRamp_1a9821047fcad8ea3bfa2823484b468341" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>lastdXRest</name></member>
+      <member refid="structTMC__LinearRamp_1a6ad4b77eb22f23e19227d43c76a054b6" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>maxVelocity</name></member>
+      <member refid="structTMC__LinearRamp_1a24784cec0e93298d5d7a48f09c6f624d" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>precision</name></member>
+      <member refid="structTMC__LinearRamp_1abfc4ad3d560d857dd5a4d130a9fa3486" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>rampEnabled</name></member>
+      <member refid="structTMC__LinearRamp_1a5a0cd3df7cb2c5f39f44e81e016ceefe" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>rampEnabled</name></member>
+      <member refid="structTMC__LinearRamp_1a6a2ca614366622e702c83e4cab5fc29e" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>rampMode</name></member>
+      <member refid="structTMC__LinearRamp_1a91fc84d3a0ce09bb0ee2dadccd4c731e" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>rampPosition</name></member>
+      <member refid="structTMC__LinearRamp_1a0aa2232e6ddac3535c5e0f9b4879e37a" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>rampVelocity</name></member>
+      <member refid="structTMC__LinearRamp_1aff852c22d41d7b8bfa6e47e69b140b80" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>state</name></member>
+      <member refid="structTMC__LinearRamp_1a3356af380cc043d70b2fd4d8aae98610" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>stopVelocity</name></member>
+      <member refid="structTMC__LinearRamp_1a72229b1359cec3515a993fdae83f47fa" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>targetPosition</name></member>
+      <member refid="structTMC__LinearRamp_1a873636f5f69940df6f199978b75378b8" prot="public" virt="non-virtual"><scope>TMC_LinearRamp</scope><name>targetVelocity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

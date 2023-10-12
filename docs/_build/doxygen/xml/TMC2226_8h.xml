@@ -1,0 +1,622 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="TMC2226_8h" kind="file" language="C++">
+    <compoundname>TMC2226.h</compoundname>
+    <includes refid="Constants_8h" local="yes">tmc/helpers/Constants.h</includes>
+    <includes refid="API__Header_8h" local="yes">tmc/helpers/API_Header.h</includes>
+    <includes refid="TMC2226__Register_8h" local="yes">TMC2226_Register.h</includes>
+    <includes refid="TMC2226__Constants_8h" local="yes">TMC2226_Constants.h</includes>
+    <includes refid="TMC2226__Fields_8h" local="yes">TMC2226_Fields.h</includes>
+    <includedby refid="TMC2226_8c" local="yes">TMC2226.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>tmc/helpers/API_Header.h</label>
+        <link refid="API__Header_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Bits.h</label>
+        <link refid="Bits_8h"/>
+      </node>
+      <node id="11">
+        <label>CRC.h</label>
+        <link refid="CRC_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tmc/helpers/Constants.h</label>
+        <link refid="Constants_8h"/>
+      </node>
+      <node id="9">
+        <label>Macros.h</label>
+        <link refid="Macros_8h"/>
+      </node>
+      <node id="12">
+        <label>RegisterAccess.h</label>
+        <link refid="RegisterAccess_8h"/>
+      </node>
+      <node id="5">
+        <label>Types.h</label>
+        <link refid="Types_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TMC2226.h</label>
+        <link refid="TMC2226_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>TMC2226_Constants.h</label>
+        <link refid="TMC2226__Constants_8h"/>
+      </node>
+      <node id="16">
+        <label>TMC2226_Fields.h</label>
+        <link refid="TMC2226__Fields_8h"/>
+      </node>
+      <node id="14">
+        <label>TMC2226_Register.h</label>
+        <link refid="TMC2226__Register_8h"/>
+      </node>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>TMC2226.c</label>
+        <link refid="TMC2226_8c"/>
+      </node>
+      <node id="1">
+        <label>TMC2226.h</label>
+        <link refid="TMC2226_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structTMC2226TypeDef" prot="public">TMC2226TypeDef</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="TMC2226_8h_1a55b036fec07e93cb7a2a23782e8e478c" prot="public" static="no">
+        <name>TMC2226_FIELD_READ</name>
+        <param><defname>tdef</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <initializer>	<ref refid="Macros_8h_1afc21f29c5cf2d76aab227e33233cf357" kindref="member">FIELD_GET</ref>(<ref refid="TMC2226_8c_1ad700542b89d5b6deaadd01ba4e289be1" kindref="member">tmc2226_readInt</ref>(tdef, address), mask, shift)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="20" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="20" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226_8h_1a3129423c7da24529253ac9af9f37cf39" prot="public" static="no">
+        <name>TMC2226_FIELD_UPDATE</name>
+        <param><defname>tdef</defname></param>
+        <param><defname>address</defname></param>
+        <param><defname>mask</defname></param>
+        <param><defname>shift</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>	(<ref refid="TMC2226_8c_1a8e12bc609ac87389870ee0917bbd8d0d" kindref="member">tmc2226_writeInt</ref>(tdef, address, <ref refid="Macros_8h_1a39ccda3204632fdd991deed3c65cf568" kindref="member">FIELD_SET</ref>(<ref refid="TMC2226_8c_1ad700542b89d5b6deaadd01ba4e289be1" kindref="member">tmc2226_readInt</ref>(tdef, address), mask, shift, value)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="22" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="22" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226_8h_1a2131e64583dbc393ccd167bb228d4c85" prot="public" static="no">
+        <name>R00</name>
+        <initializer>0x000001C1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="38" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226_8h_1a48106da52f76c4ac1faceeff79eb1949" prot="public" static="no">
+        <name>R10</name>
+        <initializer>0x00071703</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="39" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226_8h_1a013e4296fbb7ad84bcf4def3205402b3" prot="public" static="no">
+        <name>R6C</name>
+        <initializer>0x10000053</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="40" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="TMC2226_8h_1a27e742937d6fb6b74dc8d5dfb9fd56a4" prot="public" static="no">
+        <name>R70</name>
+        <initializer>0xC10D0024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="41" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="TMC2226_8h_1a86cde6899f496239114ef05131d94124" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* tmc2226_callback) (TMC2226TypeDef *, ConfigState)</definition>
+        <argsstring>)(TMC2226TypeDef *, ConfigState)</argsstring>
+        <name>tmc2226_callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="35" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="TMC2226_8h_1a5e8231d55e926fe7fbb665491128109b" prot="public" static="yes" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t tmc2226_defaultRegisterAccess[TMC2226_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2226_REGISTER_COUNT]</argsstring>
+        <name>tmc2226_defaultRegisterAccess</name>
+        <initializer>=
+{
+
+	0x03, 0x23, 0x01, 0x02, 0x02, 0x01, 0x01, 0x43, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, 
+	0x02, 0x42, 0x01, 0x42, 0x02, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, 
+	<ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, 0x02, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, 
+	<ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, 
+	0x02, 0x01, 0x02, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, 
+	<ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, 
+	<ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, 0x01, 0x01, 0x43, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, 0x01, 
+	0x03, 0x01, 0x01, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>, <ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>  
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="52" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="52" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="variable" id="TMC2226_8h_1a075873fa8281871d53ba56630ba3b2a3" prot="public" static="yes" mutable="no">
+        <type>const int32_t</type>
+        <definition>const int32_t tmc2226_defaultRegisterResetState[TMC2226_REGISTER_COUNT]</definition>
+        <argsstring>[TMC2226_REGISTER_COUNT]</argsstring>
+        <name>tmc2226_defaultRegisterResetState</name>
+        <initializer>=
+{
+
+	<ref refid="TMC2208_8h_1a2131e64583dbc393ccd167bb228d4c85" kindref="member">R00</ref>, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	<ref refid="TMC2130_8h_1a48106da52f76c4ac1faceeff79eb1949" kindref="member">R10</ref>, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 
+	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   <ref refid="TMC2130_8h_1a013e4296fbb7ad84bcf4def3205402b3" kindref="member">R6C</ref>, 0,   0,   0, 
+	<ref refid="TMC2160_8h_1a27e742937d6fb6b74dc8d5dfb9fd56a4" kindref="member">R70</ref>, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="65" column="22" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="65" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="variable" id="TMC2226_8h_1a6fce9ac5ed2856de5d6bbf573995cb59" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structTMCRegisterConstant" kindref="compound">TMCRegisterConstant</ref></type>
+        <definition>const TMCRegisterConstant tmc2226_RegisterConstants[]</definition>
+        <argsstring>[]</argsstring>
+        <name>tmc2226_RegisterConstants</name>
+        <initializer>=
+{		
+		{ 0x11, 0x00000014 }, 
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="89" column="34" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" bodystart="89" bodyend="92"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TMC2226_8h_1a8e12bc609ac87389870ee0917bbd8d0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2226_writeInt</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226, uint8_t address, int32_t value)</argsstring>
+        <name>tmc2226_writeInt</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="100" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="20" bodyend="39" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="100" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2226_8h_1ad700542b89d5b6deaadd01ba4e289be1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t tmc2226_readInt</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226, uint8_t address)</argsstring>
+        <name>tmc2226_readInt</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="101" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="41" bodyend="74" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="101" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2226_8h_1aaff1388d6b139a9ceadd89ea9631ef6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2226_init</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226, uint8_t channel, uint8_t slaveAddress, ConfigurationTypeDef *tmc2226_config, const int32_t *registerResetState)</argsstring>
+        <name>tmc2226_init</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>slaveAddress</declname>
+        </param>
+        <param>
+          <type><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref> *</type>
+          <declname>tmc2226_config</declname>
+        </param>
+        <param>
+          <type>const int32_t *</type>
+          <declname>registerResetState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="103" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="76" bodyend="91" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="103" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2226_8h_1ad40890efad1feeb9e83908449f6bf002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2226_reset</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226)</argsstring>
+        <name>tmc2226_reset</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="104" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="155" bodyend="171" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="104" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2226_8h_1a160566c13518612bd04de80098e3af67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2226_restore</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226)</argsstring>
+        <name>tmc2226_restore</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="105" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="173" bodyend="182" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="105" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2226_8h_1a53f312a02a64a1b75e97d65331dd1763" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2226_setRegisterResetState</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226, const int32_t *resetState)</argsstring>
+        <name>tmc2226_setRegisterResetState</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <param>
+          <type>const int32_t *</type>
+          <declname>resetState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="106" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="144" bodyend="148" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="106" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2226_8h_1aed01da2e0bc5022245a4cf1566bb295a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2226_setCallback</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226, tmc2226_callback callback)</argsstring>
+        <name>tmc2226_setCallback</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <param>
+          <type><ref refid="TMC2226_8h_1a86cde6899f496239114ef05131d94124" kindref="member">tmc2226_callback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="107" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="150" bodyend="153" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="107" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2226_8h_1ac35099e59a7f8b4a06b0f50f305bbb3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2226_periodicJob</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226, uint32_t tick)</argsstring>
+        <name>tmc2226_periodicJob</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="108" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="133" bodyend="142" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="108" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2226_8h_1a0c53ecee9f70f1188ed4f8bb455afbbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t tmc2226_getSlaveAddress</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226)</argsstring>
+        <name>tmc2226_getSlaveAddress</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="110" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="184" bodyend="187" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="110" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="TMC2226_8h_1a253e0ed37385af71a2347bf6a18b8779" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tmc2226_setSlaveAddress</definition>
+        <argsstring>(TMC2226TypeDef *tmc2226, uint8_t slaveAddress)</argsstring>
+        <name>tmc2226_setSlaveAddress</name>
+        <param>
+          <type><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref> *</type>
+          <declname>tmc2226</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>slaveAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" line="111" column="6" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.c" bodystart="189" bodyend="192" declfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h" declline="111" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2020<sp/>TRINAMIC<sp/>Motion<sp/>Control<sp/>GmbH<sp/>&amp;<sp/>Co.<sp/>KG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/>(now<sp/>owned<sp/>by<sp/>Analog<sp/>Devices<sp/>Inc.),</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>Copyright<sp/>©<sp/>2023<sp/>Analog<sp/>Devices<sp/>Inc.<sp/>All<sp/>Rights<sp/>Reserved.<sp/>This<sp/>software<sp/>is</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>proprietary<sp/>&amp;<sp/>confidential<sp/>to<sp/>Analog<sp/>Devices,<sp/>Inc.<sp/>and<sp/>its<sp/>licensors.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TMC_IC_TMC2226_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC_IC_TMC2226_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Constants_8h" kindref="compound">tmc/helpers/Constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="API__Header_8h" kindref="compound">tmc/helpers/API_Header.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2226__Register_8h" kindref="compound">TMC2226_Register.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2226__Constants_8h" kindref="compound">TMC2226_Constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TMC2226__Fields_8h" kindref="compound">TMC2226_Fields.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Helper<sp/>macros</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="TMC2226_8h_1a55b036fec07e93cb7a2a23782e8e478c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2226_FIELD_READ(tdef,<sp/>address,<sp/>mask,<sp/>shift)<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>FIELD_GET(tmc2226_readInt(tdef,<sp/>address),<sp/>mask,<sp/>shift)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="TMC2226_8h_1a3129423c7da24529253ac9af9f37cf39" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TMC2226_FIELD_UPDATE(tdef,<sp/>address,<sp/>mask,<sp/>shift,<sp/>value)<sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(tmc2226_writeInt(tdef,<sp/>address,<sp/>FIELD_SET(tmc2226_readInt(tdef,<sp/>address),<sp/>mask,<sp/>shift,<sp/>value)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Usage<sp/>note:<sp/>use<sp/>1<sp/>TypeDef<sp/>per<sp/>IC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structTMC2226TypeDef" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27" refid="structTMC2226TypeDef_1a2b45efedcae332b9c724ece097fff6e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*<ref refid="structTMC2226TypeDef_1a2b45efedcae332b9c724ece097fff6e1" kindref="member">config</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="structTMC2226TypeDef_1a0d44ad924cf94bdccce8a4efa3111a7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>registerResetState[<ref refid="TMC2226__Constants_8h_1aebcd1e70bd671ee4595e987b02c5ed95" kindref="member">TMC2226_REGISTER_COUNT</ref>];</highlight></codeline>
+<codeline lineno="30" refid="structTMC2226TypeDef_1a27b8f6fbd94b576e3107f32c73a0c2da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>registerAccess[<ref refid="TMC2226__Constants_8h_1aebcd1e70bd671ee4595e987b02c5ed95" kindref="member">TMC2226_REGISTER_COUNT</ref>];</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structTMC2226TypeDef_1a076062f03252c1e1ae99c342a26bc7c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structTMC2226TypeDef_1a076062f03252c1e1ae99c342a26bc7c8" kindref="member">slaveAddress</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}<sp/><ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="TMC2226_8h_1a86cde6899f496239114ef05131d94124" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="TMC2226_8h_1a86cde6899f496239114ef05131d94124" kindref="member">tmc2226_callback</ref>)(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref>*,<sp/><ref refid="Config_8h_1a68a217514c80f15824fb5b28c25c837f" kindref="member">ConfigState</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Default<sp/>Register<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="TMC2226_8h_1a2131e64583dbc393ccd167bb228d4c85" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R00<sp/>0x000001C1<sp/><sp/></highlight><highlight class="comment">//<sp/>GCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="TMC2226_8h_1a48106da52f76c4ac1faceeff79eb1949" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R10<sp/>0x00071703<sp/><sp/></highlight><highlight class="comment">//<sp/>IHOLD_IRUN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="TMC2226_8h_1a013e4296fbb7ad84bcf4def3205402b3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R6C<sp/>0x10000053<sp/><sp/></highlight><highlight class="comment">//<sp/>CHOPCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="TMC2226_8h_1a27e742937d6fb6b74dc8d5dfb9fd56a4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>R70<sp/>0xC10D0024<sp/><sp/></highlight><highlight class="comment">//<sp/>PWMCONF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Register<sp/>access<sp/>permissions:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>0x00:<sp/>none<sp/>(reserved)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>0x01:<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>0x02:<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>0x03:<sp/>read/write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>0x13:<sp/>read/write,<sp/>separate<sp/>functions/values<sp/>for<sp/>reading<sp/>or<sp/>writing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>0x23:<sp/>read/write,<sp/>flag<sp/>register<sp/>(write<sp/>to<sp/>clear)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>0x42:<sp/>write,<sp/>has<sp/>hardware<sp/>presets<sp/>on<sp/>reset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>0x42:<sp/>read/write,<sp/>has<sp/>hardware<sp/>presets<sp/>on<sp/>reset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="TMC2226_8h_1a5e8231d55e926fe7fbb665491128109b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="TMC2226_8h_1a5e8231d55e926fe7fbb665491128109b" kindref="member">tmc2226_defaultRegisterAccess</ref>[<ref refid="TMC2226__Constants_8h_1aebcd1e70bd671ee4595e987b02c5ed95" kindref="member">TMC2226_REGISTER_COUNT</ref>]<sp/>=</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>0<sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/>2<sp/><sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/><sp/>4<sp/><sp/><sp/><sp/><sp/>5<sp/><sp/><sp/><sp/><sp/>6<sp/><sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/><sp/>8<sp/><sp/><sp/><sp/><sp/>9<sp/><sp/><sp/><sp/><sp/>A<sp/><sp/><sp/><sp/><sp/>B<sp/><sp/><sp/><sp/><sp/>C<sp/><sp/><sp/><sp/><sp/>D<sp/><sp/><sp/><sp/><sp/>E<sp/><sp/><sp/><sp/><sp/>F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>0x03,<sp/>0x23,<sp/>0x01,<sp/>0x02,<sp/>0x02,<sp/>0x01,<sp/>0x01,<sp/>0x43,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/></highlight><highlight class="comment">//<sp/>0x00<sp/>-<sp/>0x0F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>0x02,<sp/>0x42,<sp/>0x01,<sp/>0x42,<sp/>0x02,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/></highlight><highlight class="comment">//<sp/>0x10<sp/>-<sp/>0x1F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/>0x02,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/></highlight><highlight class="comment">//<sp/>0x20<sp/>-<sp/>0x2F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/></highlight><highlight class="comment">//<sp/>0x30<sp/>-<sp/>0x3F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>0x02,<sp/>0x01,<sp/>0x02,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/></highlight><highlight class="comment">//<sp/>0x40<sp/>-<sp/>0x4F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/></highlight><highlight class="comment">//<sp/>0x50<sp/>-<sp/>0x5F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/>0x01,<sp/>0x01,<sp/>0x43,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/>0x01,<sp/></highlight><highlight class="comment">//<sp/>0x60<sp/>-<sp/>0x6F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>0x03,<sp/>0x01,<sp/>0x01,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref>,<sp/><ref refid="RegisterAccess_8h_1a0b4daa7b938d40350dfc124df5dde591" kindref="member">____</ref><sp/><sp/></highlight><highlight class="comment">//<sp/>0x70<sp/>-<sp/>0x7F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="TMC2226_8h_1a075873fa8281871d53ba56630ba3b2a3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="TMC2226_8h_1a075873fa8281871d53ba56630ba3b2a3" kindref="member">tmc2226_defaultRegisterResetState</ref>[<ref refid="TMC2226__Constants_8h_1aebcd1e70bd671ee4595e987b02c5ed95" kindref="member">TMC2226_REGISTER_COUNT</ref>]<sp/>=</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>0<sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/>2<sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/>4<sp/><sp/><sp/><sp/>5<sp/><sp/><sp/><sp/>6<sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/>8<sp/><sp/><sp/><sp/>9<sp/><sp/><sp/><sp/>A<sp/><sp/><sp/><sp/>B<sp/><sp/><sp/><sp/>C<sp/><sp/><sp/><sp/>D<sp/><sp/><sp/><sp/>E<sp/><sp/><sp/><sp/>F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC2226_8h_1a2131e64583dbc393ccd167bb228d4c85" kindref="member">R00</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x00<sp/>-<sp/>0x0F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC2226_8h_1a48106da52f76c4ac1faceeff79eb1949" kindref="member">R10</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x10<sp/>-<sp/>0x1F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x20<sp/>-<sp/>0x2F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x30<sp/>-<sp/>0x3F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x40<sp/>-<sp/>0x4F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x50<sp/>-<sp/>0x5F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/><ref refid="TMC2226_8h_1a013e4296fbb7ad84bcf4def3205402b3" kindref="member">R6C</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/></highlight><highlight class="comment">//<sp/>0x60<sp/>-<sp/>0x6F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TMC2226_8h_1a27e742937d6fb6b74dc8d5dfb9fd56a4" kindref="member">R70</ref>,<sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0,<sp/><sp/><sp/>0<sp/><sp/></highlight><highlight class="comment">//<sp/>0x70<sp/>-<sp/>0x7F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Undefine<sp/>the<sp/>default<sp/>register<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>prevents<sp/>warnings<sp/>in<sp/>case<sp/>multiple<sp/>TMC-API<sp/>chip<sp/>headers<sp/>are<sp/>included<sp/>at<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R6C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R70</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Register<sp/>constants<sp/>(only<sp/>required<sp/>for<sp/>0x42<sp/>registers,<sp/>since<sp/>we<sp/>do<sp/>not<sp/>have</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/>any<sp/>way<sp/>to<sp/>find<sp/>out<sp/>the<sp/>content<sp/>but<sp/>want<sp/>to<sp/>hold<sp/>the<sp/>actual<sp/>value<sp/>in<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/>shadow<sp/>register<sp/>so<sp/>an<sp/>application<sp/>(i.e.<sp/>the<sp/>TMCL<sp/>IDE)<sp/>can<sp/>still<sp/>display</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>values.<sp/>This<sp/>only<sp/>works<sp/>when<sp/>the<sp/>register<sp/>content<sp/>is<sp/>constant.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="TMC2226_8h_1a6fce9ac5ed2856de5d6bbf573995cb59" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structTMCRegisterConstant" kindref="compound">TMCRegisterConstant</ref><sp/><ref refid="TMC2226_8h_1a6fce9ac5ed2856de5d6bbf573995cb59" kindref="member">tmc2226_RegisterConstants</ref>[]<sp/>=</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>ascending<sp/>addresses!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>0x11,<sp/>0x00000014<sp/>},<sp/></highlight><highlight class="comment">//<sp/>TPOWERDOWN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R6C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>R70</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Communication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2226_8h_1a8e12bc609ac87389870ee0917bbd8d0d" kindref="member">tmc2226_writeInt</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226,<sp/>uint8_t<sp/>address,<sp/>int32_t<sp/>value);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">int32_t<sp/><ref refid="TMC2226_8h_1ad700542b89d5b6deaadd01ba4e289be1" kindref="member">tmc2226_readInt</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226,<sp/>uint8_t<sp/>address);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2226_8h_1aaff1388d6b139a9ceadd89ea9631ef6c" kindref="member">tmc2226_init</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226,<sp/>uint8_t<sp/>channel,<sp/>uint8_t<sp/>slaveAddress,<sp/><ref refid="structConfigurationTypeDef" kindref="compound">ConfigurationTypeDef</ref><sp/>*tmc2226_config,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*registerResetState);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">uint8_t<sp/><ref refid="TMC2226_8h_1ad40890efad1feeb9e83908449f6bf002" kindref="member">tmc2226_reset</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">uint8_t<sp/><ref refid="TMC2226_8h_1a160566c13518612bd04de80098e3af67" kindref="member">tmc2226_restore</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2226_8h_1a53f312a02a64a1b75e97d65331dd1763" kindref="member">tmc2226_setRegisterResetState</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>*resetState);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2226_8h_1aed01da2e0bc5022245a4cf1566bb295a" kindref="member">tmc2226_setCallback</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226,<sp/><ref refid="TMC2226_8h_1a86cde6899f496239114ef05131d94124" kindref="member">tmc2226_callback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2226_8h_1ac35099e59a7f8b4a06b0f50f305bbb3c" kindref="member">tmc2226_periodicJob</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226,<sp/>uint32_t<sp/>tick);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">uint8_t<sp/><ref refid="TMC2226_8h_1a0c53ecee9f70f1188ed4f8bb455afbbd" kindref="member">tmc2226_getSlaveAddress</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TMC2226_8h_1a253e0ed37385af71a2347bf6a18b8779" kindref="member">tmc2226_setSlaveAddress</ref>(<ref refid="structTMC2226TypeDef" kindref="compound">TMC2226TypeDef</ref><sp/>*tmc2226,<sp/>uint8_t<sp/>slaveAddress);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TMC_IC_TMC2226_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC2226/TMC2226.h"/>
+  </compounddef>
+</doxygen>

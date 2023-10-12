@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structTDriverConfig" kind="struct" language="C++" prot="public">
+    <compoundname>TDriverConfig</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTDriverConfig_1ad6127e10ec71a93351fef33df0a3ec9f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TDriverConfig::SlopeHighSide</definition>
+        <argsstring></argsstring>
+        <name>SlopeHighSide</name>
+        <qualifiedname>TDriverConfig::SlopeHighSide</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="51" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTDriverConfig_1a3c55a7504965634ac0c47fd16dce815a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TDriverConfig::SlopeLowSide</definition>
+        <argsstring></argsstring>
+        <name>SlopeLowSide</name>
+        <qualifiedname>TDriverConfig::SlopeLowSide</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="52" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTDriverConfig_1a4c6428cae046f963a565db6c59f99ee4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TDriverConfig::ProtectionDisable</definition>
+        <argsstring></argsstring>
+        <name>ProtectionDisable</name>
+        <qualifiedname>TDriverConfig::ProtectionDisable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="53" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTDriverConfig_1a9b6a7282f1b669af648cd73e3947175e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TDriverConfig::ProtectionTimer</definition>
+        <argsstring></argsstring>
+        <name>ProtectionTimer</name>
+        <qualifiedname>TDriverConfig::ProtectionTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="54" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTDriverConfig_1a374ea239e3785591ca85ba1f91844a13" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TDriverConfig::StepDirectionDisable</definition>
+        <argsstring></argsstring>
+        <name>StepDirectionDisable</name>
+        <qualifiedname>TDriverConfig::StepDirectionDisable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="55" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTDriverConfig_1a73d182b104d9c39d48dc9700ccf93526" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TDriverConfig::VSenseScale</definition>
+        <argsstring></argsstring>
+        <name>VSenseScale</name>
+        <qualifiedname>TDriverConfig::VSenseScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="56" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTDriverConfig_1addaa0c5b92b92477f3b7d59a5c9ea723" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TDriverConfig::ReadBackSelect</definition>
+        <argsstring></argsstring>
+        <name>ReadBackSelect</name>
+        <qualifiedname>TDriverConfig::ReadBackSelect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="57" column="9" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" line="49" column="1" bodyfile="/home/fabian/Documents/GitHub/TMC-API/tmc/ic/TMC262/TMC262.c" bodystart="50" bodyend="58"/>
+    <listofallmembers>
+      <member refid="structTDriverConfig_1a4c6428cae046f963a565db6c59f99ee4" prot="public" virt="non-virtual"><scope>TDriverConfig</scope><name>ProtectionDisable</name></member>
+      <member refid="structTDriverConfig_1a9b6a7282f1b669af648cd73e3947175e" prot="public" virt="non-virtual"><scope>TDriverConfig</scope><name>ProtectionTimer</name></member>
+      <member refid="structTDriverConfig_1addaa0c5b92b92477f3b7d59a5c9ea723" prot="public" virt="non-virtual"><scope>TDriverConfig</scope><name>ReadBackSelect</name></member>
+      <member refid="structTDriverConfig_1ad6127e10ec71a93351fef33df0a3ec9f" prot="public" virt="non-virtual"><scope>TDriverConfig</scope><name>SlopeHighSide</name></member>
+      <member refid="structTDriverConfig_1a3c55a7504965634ac0c47fd16dce815a" prot="public" virt="non-virtual"><scope>TDriverConfig</scope><name>SlopeLowSide</name></member>
+      <member refid="structTDriverConfig_1a374ea239e3785591ca85ba1f91844a13" prot="public" virt="non-virtual"><scope>TDriverConfig</scope><name>StepDirectionDisable</name></member>
+      <member refid="structTDriverConfig_1a73d182b104d9c39d48dc9700ccf93526" prot="public" virt="non-virtual"><scope>TDriverConfig</scope><name>VSenseScale</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
