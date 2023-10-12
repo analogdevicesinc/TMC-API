@@ -23,6 +23,10 @@
 	(tmc2300_writeInt(tdef, address, FIELD_SET(tmc2300_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
+
+/**
+ * @brief configuration struct for TMC2300
+*/
 typedef struct {
 	ConfigurationTypeDef *config;
 
