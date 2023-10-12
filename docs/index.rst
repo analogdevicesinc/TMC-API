@@ -23,3 +23,6 @@ Indices and tables
 DOCS
 ====
 
+.. doxygenindex::
+   :project: TMC-API
+   :path: _build/doxygen/xml

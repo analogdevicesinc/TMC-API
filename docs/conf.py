@@ -17,9 +17,13 @@ release = '0.1'
 extensions = [ "breathe" ]
 breathe_default_project = "TMC-API"
 
-breath_projects = {
-    "TMC-API": "_build/doxigen/xml"
+breathe_projects = {
+    "TMC-API": "_build/doxygen/xml"
 }
+
+# breathe_projects_source = {
+#     "auto" : ( "../tmc/test", "test.h")
+# }
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
