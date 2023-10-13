@@ -28,7 +28,10 @@ def setup(app):
     # Add hook for building doxygen xml when needed
     app.connect("builder-inited", generate_doxygen_xml)
 
-extensions = [ "breathe" ]
+extensions = [ 
+    "breathe", 'sphinx_rtd_theme' 
+]
+
 breathe_default_project = "TMC2300"
 
 breathe_projects = {
