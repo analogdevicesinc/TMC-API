@@ -17,6 +17,15 @@
 #include "TMC2300_Fields.h"
 
 // Helper macros
+/**
+ * @brief TMC2300_FIELD_READ
+ * @param tdef\
+ * @param address\
+ * @param mask\
+ * @param shift\
+ * 
+ * @details helper macro to use tmc2300_readInt with TMC2300_FIELD_READ
+ */
 #define TMC2300_FIELD_READ(tdef, address, mask, shift) \
 	FIELD_GET(tmc2300_readInt(tdef, address), mask, shift)
 #define TMC2300_FIELD_WRITE(tdef, address, mask, shift, value) \
@@ -26,6 +35,7 @@
 
 /**
  * @brief configuration struct for TMC2300
+ * 
 */
 typedef struct {
 	ConfigurationTypeDef *config;
@@ -46,6 +56,11 @@ typedef void (*tmc2300_callback)(TMC2300TypeDef*, ConfigState);
 //   0x23: read/write, flag register (write to clear)
 //   0x42: write, has hardware presets on reset
 //   0x43: read/write, has hardware presets on reset
+
+/**
+ * @brief default register access permissions
+ * 
+ */
 static const uint8_t tmc2300_defaultRegisterAccess[TMC2300_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
@@ -77,6 +92,11 @@ static const int32_t tmc2300_defaultRegisterResetState[TMC2300_REGISTER_COUNT] =
 // any way to find out the content. For 0x43 registers, it is not necessary to
 // load the constant values this way, but this allows users to directly see the
 // contents while still in standby.
+
+/**
+ * @brief register constants for TMC2300
+ * @details Register address of the TMC2300 IC 
+ */
 static const TMCRegisterConstant tmc2300_RegisterConstants[] =
 {		// Use ascending addresses!
 		{ 0x00, 0x00000040 }, // GCONF
@@ -86,10 +106,32 @@ static const TMCRegisterConstant tmc2300_RegisterConstants[] =
 		{ 0x70, 0xC40D1024 }, // PWMCONF
 };
 
-
+/**
+ * @brief write value to the specified TMC2300 register
+ * 
+ * @param tmc2300 
+ * @param address 
+ * @param value
+ */
 void tmc2300_writeInt(TMC2300TypeDef *tmc2300, uint8_t address, int32_t value);
+
+/**
+ * @brief read the content of the TMC2300 register
+ * 
+ * @param tmc2300 
+ * @param address 
+ * @return int32_t
+ */
 int32_t tmc2300_readInt(TMC2300TypeDef *tmc2300, uint8_t address);
 
+/**
+ * @brief initialize the TMC2300 IC
+ * 
+ * @param tmc2300 
+ * @param channel 
+ * @param tmc2300_config 
+ * @param registerResetState 
+ */
 void tmc2300_init(TMC2300TypeDef *tmc2300, uint8_t channel, ConfigurationTypeDef *tmc2300_config, const int32_t *registerResetState);
 uint8_t tmc2300_reset(TMC2300TypeDef *tmc2300);
 uint8_t tmc2300_restore(TMC2300TypeDef *tmc2300);

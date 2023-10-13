@@ -1,37 +1,51 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+import subprocess, sys, os
 
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+def run_doxygen(folder):
+    """Run the doxygen make command in the designated folder"""
 
-project = 'TMC-API'
-copyright = '2023, FM'
-author = 'FM'
-release = '0.1'
+    try:
+        retcode = subprocess.call("cd %s; make" % folder, shell=True)
+        if retcode < 0:
+            sys.stderr.write("doxygen terminated by signal %s" % (-retcode))
+    except OSError as e:
+        sys.stderr.write("doxygen execution failed: %s" % e)
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+
+def generate_doxygen_xml(app):
+    """Run the doxygen make commands if we're on the ReadTheDocs server"""
+
+    read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
+
+    if read_the_docs_build:
+
+        #run_doxygen("../tmc/test")
+        run_doxygen("../tmc/ic/tmc2300")
+        #run_doxygen("../tmc/helpers")
+
+
+def setup(app):
+
+    # Add hook for building doxygen xml when needed
+    app.connect("builder-inited", generate_doxygen_xml)
 
 extensions = [ "breathe" ]
-breathe_default_project = "TMC-API"
+breathe_default_project = "TMC2300"
 
 breathe_projects = {
-    "TMC-API": "_build/doxygen/xml"
+    # "TMC-API": "_build/doxygen/xml",
+    "TMC2300": "_build/doxygen/TMC2300/xml",
+    "TMC2240": "_build/doxygen/TMC2240/xml"
 }
 
-# breathe_projects_source = {
-#     "auto" : ( "../tmc/test", "test.h")
-# }
+breathe_projects_source = {
+    "TMC2300" : ( "../tmc/ic/TMC2300", [ "TMC2300.h", "TMC2300.c", "TMC2300_Constants.h", "TMC2300_Fields.h", "TMC2300_Register.h" ]),
+    "TMC2240" : ( "../tmc/ic/TMC2240", [ "TMC2240.h", "TMC2240.c","TMC2240_Constants.h", "TMC2240_Fields.h", "TMC2240_Register.h" ])
+}
+
+breathe_implementation_filename_extensions = ['.c', '.cpp']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
-
-
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']

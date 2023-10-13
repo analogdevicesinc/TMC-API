@@ -1,0 +1,5 @@
+TMC2240
+=======
+
+.. autodoxygenfile:: TMC2240.c
+   :project: TMC2240

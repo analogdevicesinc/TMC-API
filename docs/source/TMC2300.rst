@@ -1,0 +1,10 @@
+TMC2300
+=======
+
+.. autodoxygenindex:: 
+    :project: TMC2300
+
+
+.. doxygendefine:: TMC2300_Fields.h
+    :path: /tmc/ic/TMC2300
+
