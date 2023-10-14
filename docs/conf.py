@@ -29,7 +29,8 @@ def setup(app):
     app.connect("builder-inited", generate_doxygen_xml)
 
 extensions = [ 
-    "breathe", 'sphinx_rtd_theme' 
+    'breathe', 
+    'sphinx_rtd_theme' 
 ]
 
 breathe_default_project = "TMC2300"
@@ -50,5 +51,5 @@ breathe_implementation_filename_extensions = ['.c', '.cpp']
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_rtd_theme"
 html_static_path = ['_static']
