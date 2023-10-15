@@ -1,10 +1,16 @@
 TMC2300
 =======
 
-.. autodoxygenindex:: 
+
+.. autodoxygenfile:: TMC2300.h
     :project: TMC2300
 
+.. autodoxygenfile:: TMC2300_Register.h
+    :project: TMC2300
 
-.. doxygendefine:: TMC2300_Fields.h
-    :path: /tmc/ic/TMC2300
+.. autodoxygenfile:: TMC2300_Constants.h
+    :project: TMC2300
 
+.. autodoxygenfile:: TMC2300_Fields.h
+    :project: TMC2300
+    

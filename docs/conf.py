@@ -30,7 +30,8 @@ def setup(app):
 
 extensions = [ 
     'breathe', 
-    'sphinx_rtd_theme' 
+    'sphinx_rtd_theme', 
+    'sphinx.ext.autodoc',
 ]
 
 breathe_default_project = "TMC2300"

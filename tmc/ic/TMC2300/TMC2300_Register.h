@@ -10,7 +10,11 @@
 #ifndef TMC2300_REGISTER_H
 #define TMC2300_REGISTER_H
 
-// ===== TMC2300 register set =====
+/*! \file TMC2300_Register.h
+    \brief
+        Generated register interface header file for TMC2300 IC
+        See TMC2300_Register.h for generated register interface header file.
+*/
 
 #define TMC2300_GCONF         0x00
 #define TMC2300_GSTAT         0x01
