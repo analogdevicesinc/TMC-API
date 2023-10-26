@@ -49,9 +49,6 @@ int32_t tmc5160_readInt(TMC5160TypeDef *tmc5160, uint8_t address)
 	data[0] = address;
 	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
 
-	data[0] = address;
-	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
-
 	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
 }
 
