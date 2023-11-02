@@ -192,7 +192,16 @@ static void writeConfiguration(TMC5160TypeDef *tmc5160)
 
 	if(*ptr < TMC5160_REGISTER_COUNT)
 	{
-		tmc5160_writeInt(tmc5160, *ptr, settings[*ptr]);
+		if(*ptr == TMC5160_FACTORY_CONF){
+
+			// Reading reset default value for FCLKTRIM (otp0.0 to otp0.4)
+			int32_t otpFclkTrim = tmc5160_readInt(tmc5160, TMC5160_OTP_READ) & TMC5160_OTP_FCLKTRIM_MASK;
+			// Writing the reset default value to FCLKTRIM
+			tmc5160_writeInt(tmc5160, *ptr, otpFclkTrim);
+
+		}else{
+			tmc5160_writeInt(tmc5160, *ptr, settings[*ptr]);
+		}
 		(*ptr)++;
 	}
 	else // Finished configuration

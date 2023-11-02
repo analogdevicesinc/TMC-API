@@ -39,7 +39,6 @@ typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
 
 // Default Register values
 #define R00 0x00000008  // GCONF
-#define R08 0x0000000E  // FACTORY_CONF
 #define R09 0x00010606  // SHORTCONF
 #define R0A 0x00080400  // DRVCONF
 #define R10 0x00070A03  // IHOLD_IRUN
@@ -52,7 +51,7 @@ typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
 static const int32_t tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
 {
 //	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
-	R00, 0,   0,   0,   0,   0,   0,   0,   R08,   R09, R0A, 0,   0,   0,   0,   0, // 0x00 - 0x0F
+	R00, 0,   0,   0,   0,   0,   0,   0,   0,   R09, R0A, 0,   0,   0,   0,   0, // 0x00 - 0x0F
 	R10, R11, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R2B, 0,   0,   0,   0, // 0x20 - 0x2F
 	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x30 - 0x3F
