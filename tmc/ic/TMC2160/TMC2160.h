@@ -114,6 +114,10 @@ static const TMCRegisterConstant tmc2160_RegisterConstants[] =
 		{ 0x69, 0x00F70000 }  // MSLUTSTART
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc2160_writeDatagram(TMC2160TypeDef *tmc2160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc2160_writeInt(TMC2160TypeDef *tmc2160, uint8_t address, int32_t value);
 int32_t tmc2160_readInt(TMC2160TypeDef *tmc2160, uint8_t address);
@@ -125,5 +129,9 @@ uint8_t tmc2160_restore(TMC2160TypeDef *tmc2160);
 void tmc2160_setRegisterResetState(TMC2160TypeDef *tmc2160, const int32_t *resetState);
 void tmc2160_setCallback(TMC2160TypeDef *tmc2160, tmc2160_callback callback);
 void tmc2160_periodicJob(TMC2160TypeDef *tmc2160, uint32_t tick);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC2160_H_ */

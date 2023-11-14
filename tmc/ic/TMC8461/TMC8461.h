@@ -27,6 +27,10 @@ typedef struct {
 	ConfigurationTypeDef *config_mfc;
 } TMC8461TypeDef;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Preparation functions to prepare r/w access on specific registers
 void tmc8461_esc_read(TMC8461TypeDef *tmc8461, uint16_t address);
 void tmc8461_esc_write(TMC8461TypeDef *tmc8461, uint16_t address);
@@ -58,5 +62,9 @@ void tmc8461_mfc_write_auto(TMC8461TypeDef *tmc8461, uint16_t address, uint8_t *
  * @param tmc8461_config_mfc The configuration for the MFC block
  */
 void tmc8461_initConfig(TMC8461TypeDef *tmc8461, ConfigurationTypeDef *tmc8461_config_esc, ConfigurationTypeDef *tmc8461_config_mfc);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC8461_H_ */

@@ -27,6 +27,10 @@
 #define TMC262_FLAG_OT    0x02
 #define TMC262_FLAG_SG    0x01
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Access functions for TMC262
 void tmc262_initMotorDrivers(void);
 void tmc262_setStepDirMStepRes(uint8_t MicrostepResolution);
@@ -90,5 +94,9 @@ void tmc262_enable();
 void tmc262_readState(uint8_t *Phases, uint8_t *MStep, uint32_t *StallGuard, uint8_t *SmartEnergy, uint8_t *Flags);
 
 void tmc262_getSPIData(uint8_t Index, int32_t *Data);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC262_H_ */

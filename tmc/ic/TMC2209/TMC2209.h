@@ -83,6 +83,10 @@ static const int32_t tmc2209_defaultRegisterResetState[TMC2209_REGISTER_COUNT] =
 #undef R6C
 #undef R70
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Communication
 void tmc2209_writeInt(TMC2209TypeDef *tmc2209, uint8_t address, int32_t value);
 int32_t tmc2209_readInt(TMC2209TypeDef *tmc2209, uint8_t address);
@@ -96,5 +100,9 @@ void tmc2209_periodicJob(TMC2209TypeDef *tmc2209, uint32_t tick);
 
 uint8_t tmc2209_get_slave(TMC2209TypeDef *tmc2209);
 void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slaveAddress);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC2209_H_ */

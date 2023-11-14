@@ -110,6 +110,10 @@ static const TMCRegisterConstant tmc5062_RegisterConstants[] =
 		{ 0x79, 0x00F70000 }  // MSLUTSTART_M2
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address, int32_t value);
 int32_t tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address);
 
@@ -164,5 +168,9 @@ uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t channel, TMC5062_Micr
 
 // Encoder
 uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t channel, uint32_t motorFullSteps, uint32_t microSteps, uint32_t encoderResolution);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC5062_H_ */

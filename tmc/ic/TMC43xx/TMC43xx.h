@@ -188,6 +188,10 @@
 #define TMC43xx_REFCONF_DRV_AFTER_STALL    0x08000000
 #define TMC43xx_REFCONF_CIRCULAR_ENC_EN    0x80000000
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // TMC43xx access functions
 void tmc43xx_writeBytes(uint8_t Axis, uint8_t Address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc43xx_writeInt(uint8_t Axis, uint8_t Address, int32_t Value);
@@ -201,6 +205,10 @@ uint8_t tmc43xx_getHomeInput(uint8_t Motor);
 uint8_t tmc43xx_moveToNextFullstep(uint8_t Axis);
 void tmc43xx_hardStop(uint8_t Axis);
 void tmc43xx_init(uint8_t numberOfMotors);
+
+#ifdef __cplusplus
+}
+#endif
 
 typedef struct
 {

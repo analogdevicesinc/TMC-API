@@ -18,6 +18,10 @@
 #include "tmc/helpers/API_Header.h"
 #include "TMC4210_Registers.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // TMC4210 library functions
 void Init4210(void);
 void ReadWrite4210(uint8_t *Read, uint8_t *Write);
@@ -35,5 +39,9 @@ void Set4210RampMode(uint8_t RampMode);
 void Set4210SwitchMode(uint8_t SwitchMode);
 uint8_t SetAMax(uint32_t AMax);
 void HardStop(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC4210_H_ */

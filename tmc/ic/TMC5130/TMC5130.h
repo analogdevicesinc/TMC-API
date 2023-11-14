@@ -97,6 +97,10 @@ static const TMCRegisterConstant tmc5130_RegisterConstants[] =
 		{ 0x70, 0x00050480 }  // PWMCONF
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // API Functions
 // All functions act on one IC identified by the TMC5130TypeDef pointer
 
@@ -118,5 +122,9 @@ void tmc5130_left(TMC5130TypeDef *tmc5130, uint32_t velocity);
 void tmc5130_stop(TMC5130TypeDef *tmc5130);
 void tmc5130_moveTo(TMC5130TypeDef *tmc5130, int32_t position, uint32_t velocityMax);
 void tmc5130_moveBy(TMC5130TypeDef *tmc5130, int32_t *ticks, uint32_t velocityMax);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC5130_H_ */

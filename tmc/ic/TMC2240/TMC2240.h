@@ -99,6 +99,10 @@ static const TMCRegisterConstant tmc2240_RegisterConstants[] =
 		///
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc2240_init(TMC2240TypeDef *tmc2240, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 //void tmc2240_fillShadowRegisters(TMC2240TypeDef *tmc2240);
 uint8_t tmc2240_reset(TMC2240TypeDef *tmc2240);
@@ -110,5 +114,9 @@ void tmc2240_setCallback(TMC2240TypeDef *tmc2240, tmc2240_callback callback);
 void tmc2240_periodicJob(TMC2240TypeDef *tmc2240, uint32_t tick);
 
 uint8_t tmc2240_consistencyCheck(TMC2240TypeDef *tmc2240);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC2240_H_ */

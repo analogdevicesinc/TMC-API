@@ -62,6 +62,9 @@ typedef void (*tmc5272_callback)(TMC5272TypeDef*, ConfigState);
 #define R70 0xC44C001E  // PWMCONF
 #define R74 0x00000000  // PWMCONF
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 //void tmc5272_writeDatagram(TMC5272TypeDef *tmc5272, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5272_writeInt(TMC5272TypeDef *tmc5272, uint8_t address, int32_t value);
@@ -86,5 +89,9 @@ void tmc5272_moveBy(TMC5272TypeDef *tmc5272, uint8_t motor, uint32_t velocityMax
 
 
 uint8_t tmc5272_consistencyCheck(TMC5272TypeDef *tmc5272);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC5272_H_ */

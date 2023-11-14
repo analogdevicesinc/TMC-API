@@ -109,6 +109,10 @@ static const TMCRegisterConstant tmc5240_RegisterConstants[] =
 		///
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 //void tmc5240_writeDatagram(TMC5240TypeDef *tmc5240, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5240_writeInt(TMC5240TypeDef *tmc5240, uint8_t address, int32_t value);
 int32_t tmc5240_readInt(TMC5240TypeDef *tmc5240, uint8_t address);
@@ -129,5 +133,9 @@ void tmc5240_left(TMC5240TypeDef *tmc5240, uint32_t velocity);
 void tmc5240_stop(TMC5240TypeDef *tmc5240);
 void tmc5240_moveTo(TMC5240TypeDef *tmc5240, int32_t position, uint32_t velocityMax);
 void tmc5240_moveBy(TMC5240TypeDef *tmc5240, int32_t *ticks, uint32_t velocityMax);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC5240_H_ */

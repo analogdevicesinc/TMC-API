@@ -84,6 +84,10 @@ static const TMCRegisterConstant tmc7300_registerConstants[] =
 };
 
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc7300_writeInt(TMC7300TypeDef *tmc7300, uint8_t address, int32_t value);
 int32_t tmc7300_readInt(TMC7300TypeDef *tmc7300, uint8_t address);
 
@@ -101,5 +105,9 @@ uint8_t tmc7300_getStandby(TMC7300TypeDef *tmc7300);
 void tmc7300_setStandby(TMC7300TypeDef *tmc7300, uint8_t standbyState);
 
 uint8_t tmc7300_consistencyCheck(TMC7300TypeDef *tmc7300);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC7300_H_ */

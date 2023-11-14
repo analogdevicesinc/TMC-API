@@ -95,6 +95,10 @@ static const TMCRegisterConstant tmc2130_RegisterConstants[] =
 #undef R10
 #undef R6C
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // API Functions
 // All functions act on one IC identified by the TMC2130TypeDef pointer
 
@@ -109,5 +113,9 @@ uint8_t tmc2130_restore(TMC2130TypeDef *tmc2130);
 void tmc2130_setRegisterResetState(TMC2130TypeDef *tmc2130, const int32_t *resetState);
 void tmc2130_setCallback(TMC2130TypeDef *tmc2130, tmc2130_callback callback);
 void tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32_t tick);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC2130_H_ */

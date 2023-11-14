@@ -96,6 +96,10 @@ static const TMCRegisterConstant tmc2226_RegisterConstants[] =
 #undef R6C
 #undef R70
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Communication
 void tmc2226_writeInt(TMC2226TypeDef *tmc2226, uint8_t address, int32_t value);
 int32_t tmc2226_readInt(TMC2226TypeDef *tmc2226, uint8_t address);
@@ -109,5 +113,9 @@ void tmc2226_periodicJob(TMC2226TypeDef *tmc2226, uint32_t tick);
 
 uint8_t tmc2226_getSlaveAddress(TMC2226TypeDef *tmc2226);
 void tmc2226_setSlaveAddress(TMC2226TypeDef *tmc2226, uint8_t slaveAddress);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC2226_H_ */

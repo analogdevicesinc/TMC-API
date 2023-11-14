@@ -100,6 +100,10 @@ static const TMCRegisterConstant tmc5072_RegisterConstants[] =
 		{ 0x69, 0x00F70000 }  // MSLUTSTART
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8_t address, int32_t value);
 int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address);
@@ -118,5 +122,9 @@ void tmc5072_left(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity);
 void tmc5072_stop(TMC5072TypeDef *tmc5072, uint8_t motor);
 void tmc5072_moveTo(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t position, uint32_t velocityMax);
 void tmc5072_moveBy(TMC5072TypeDef *tmc5072, uint8_t motor, uint32_t velocityMax, int32_t *ticks);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC5072_H_ */

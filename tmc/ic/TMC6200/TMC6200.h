@@ -21,7 +21,15 @@
 #define TMC6200_FIELD_UPDATE(tdef, address, mask, shift, value) \
 	(tmc6200_writeInt(tdef, address, FIELD_SET(tmc6200_readInt(tdef, address), mask, shift, value)))
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 int32_t tmc6200_readInt(uint8_t motor, uint8_t address);
 void tmc6200_writeInt(uint8_t motor, uint8_t address, int32_t value);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC6630_H_ */
