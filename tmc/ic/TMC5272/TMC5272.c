@@ -182,10 +182,7 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 	return result;
 }
 
-
-
-
-
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 // Initialize a TMC5272 IC.
 // This function requires:
@@ -346,3 +343,4 @@ uint8_t tmc5272_consistencyCheck(TMC5272TypeDef *tmc5272)
 		return 0;
 	return 0;
 }
+/*******************************************************************************************************************************************************************/

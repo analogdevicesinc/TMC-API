@@ -14,7 +14,6 @@
 // and put the table into your own .c file
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
 
-
 #include "tmc/helpers/Constants.h"
 #include <stdint.h>
 #include <stdbool.h>
@@ -37,7 +36,6 @@ int32_t tmc5272_readRegister(uint16_t icID, uint8_t address);
 void tmc5272_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 void tmc5272_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
-
 typedef struct
 {
     uint32_t mask;
@@ -45,7 +43,6 @@ typedef struct
     uint8_t address;
     bool isSigned;
 } RegisterField;
-
 
 static inline uint32_t field_extract(uint32_t data, RegisterField field)
 {
@@ -83,14 +80,9 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
     tmc5272_writeRegister(icID, field.address, regValue);
 }
 
-
-
-
-
-
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 #include "tmc/helpers/API_Header.h"
-
 
 // Typedefs
 typedef struct
@@ -133,7 +125,6 @@ typedef void (*tmc5272_callback)(TMC5272TypeDef*, ConfigState);
 #define R70 0xC44C001E  // PWMCONF
 #define R74 0x00000000  // PWMCONF
 
-
 //void tmc5272_writeDatagram(TMC5272TypeDef *tmc5272, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5272_writeInt(TMC5272TypeDef *tmc5272, uint8_t address, int32_t value);
 int32_t tmc5272_readInt(TMC5272TypeDef *tmc5272, uint8_t address);
@@ -155,7 +146,7 @@ void tmc5272_stop(TMC5272TypeDef *tmc5272, uint8_t motor);
 void tmc5272_moveTo(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t position, uint32_t velocityMax);
 void tmc5272_moveBy(TMC5272TypeDef *tmc5272, uint8_t motor, uint32_t velocityMax, int32_t *ticks);
 
-
 uint8_t tmc5272_consistencyCheck(TMC5272TypeDef *tmc5272);
 
+/*******************************************************************************************************************************************************************/
 #endif /* TMC_IC_TMC5272_H_ */
