@@ -13,14 +13,16 @@ To set up your project to use the TMC-API-Internal, simply copy the source files
 - **tmc/ramp/** contains simple software linear ramp functions that can be used in applications. Copy them if needed by your project.
 
 ## Dependency graph
+![screenshot](uml-tmc-api.png)
 
 ## Usage
 **For a reference usage of the TMC-API**, visit the [TMC-Evalsystem](https://github.com/trinamic/TMC-EvalSystem)
 
 **To use the TMC-API**, include the chip headers and implement the following functions and add them to your code:
 - The function **tmcXXXX_readWriteSPI()** and/or **tmcXXXX_readWriteUART()**, depending on which communication protocols are supported by the IC. These functions provides the necessary hardware access to the TMC-API.
+- Set the **icID**, which is used to identify different chips, and pass it to the relevant functions. It could be any unsigned 16 bit number.
 - If the chip supports more than one communication protocol then implement **tmcXXXX_getBusType()** that returns the active bus type.
-- If UART is also suppoted by the IC then implement **tmcXXXX_getNodeAddress()** that returns the node/slave address. You also need to copy the CRC table stored in **tmcCRCTable_Poly7Reflected[256]** from the **TMCXXXX** source file to your code or add your own CRC table.
+- If UART is also suppoted by the IC then implement **tmcXXXX_getNodeAddress()** that returns the node/slave address. Node address could be set in NODECONF (0x3) register and the address could be incremented as defined by AD0, AD1 and AD2. (Node address + ADx) must be less than 255. For further details please consult the datasheet of the particular IC. You also need to copy the CRC table stored in **tmcCRCTable_Poly7Reflected[256]** from the **TMCXXXX** source file to your code or add your own CRC table.
 
 ## Changelog
 **Version 3.06: (Beta)**
