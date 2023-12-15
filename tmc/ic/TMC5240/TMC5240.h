@@ -10,6 +10,10 @@
 #ifndef TMC_IC_TMC5240_H_
 #define TMC_IC_TMC5240_H_
 
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC5272_EXTERNAL_CRC_TABLE 1
+
 #include "tmc/helpers/API_Header.h"
 #include "tmc/helpers/Constants.h"
 #include "../TMC5240/TMC5240_Register.h"
@@ -26,6 +30,30 @@
 //#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
 // TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
 
+/*
+// Amount of CRC tables available
+// Each table takes ~260 bytes (257 bytes, one bool and structure padding)
+#define CRC_TABLE_COUNT 2
+
+typedef enum {
+    IC_BUS_SPI,
+    IC_BUS_UART,
+    IC_BUS_WLAN
+} TMC5240BusType;
+/*
+// => TMC-API wrapper
+extern void tmc5240_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern void tmc5240_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5240BusType tmc5240_getBusType(uint16_t icID);
+extern uint8_t tmc5240_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+int32_t tmc5240_readRegister(uint16_t icID, uint8_t address);
+void tmc5240_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+*/
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+#include "tmc/helpers/API_Header.h"
+
 // Typedefs
 typedef struct
 {
@@ -36,6 +64,7 @@ typedef struct
 	uint8_t registerAccess[TMC5240_REGISTER_COUNT];
 	uint8_t slaveAddress;
 } TMC5240TypeDef;
+
 
 typedef void (*tmc5240_callback)(TMC5240TypeDef*, ConfigState);
 
@@ -130,4 +159,50 @@ void tmc5240_stop(TMC5240TypeDef *tmc5240);
 void tmc5240_moveTo(TMC5240TypeDef *tmc5240, int32_t position, uint32_t velocityMax);
 void tmc5240_moveBy(TMC5240TypeDef *tmc5240, int32_t *ticks, uint32_t velocityMax);
 
+/*******************************************************************************************************************************************************************/
+//////////
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+
+static inline uint32_t field_extract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply sign conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t field_read(TMC5240TypeDef *tmc5240, RegisterField field)
+{
+    uint32_t value = tmc5240_readInt(tmc5240, field.address);
+    return field_extract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void field_write(TMC5240TypeDef *tmc5240, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc5240_readInt(tmc5240, field.address);
+
+    regValue = field_update(regValue, field, value);
+
+    tmc5240_writeInt(tmc5240, field.address, regValue);
+}
+///
 #endif /* TMC_IC_TMC5240_H_ */
