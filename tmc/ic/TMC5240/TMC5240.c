@@ -8,7 +8,7 @@
 
 
 #include "TMC5240.h"
-/*
+
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];
 #else
@@ -69,20 +69,6 @@ void tmc5240_writeRegister(uint16_t icID, uint8_t address, int32_t value)
     }
 }
 
-void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
-{
-    uint8_t data[5] = { 0 };
-
-    data[0] = address | TMC_WRITE_BIT;
-    data[1] = 0xFF & (value>>24);
-    data[2] = 0xFF & (value>>16);
-    data[3] = 0xFF & (value>>8);
-    data[4] = 0xFF & (value>>0);
-
-    // Send the write request
-    tmc5240_readWriteSPI(icID, &data[0], sizeof(data));
-}
-
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 {
     uint8_t data[5] = { 0 };
@@ -100,6 +86,20 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
     tmc5240_readWriteSPI(icID, &data[0], sizeof(data));
 
     return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
+}
+
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
+{
+    uint8_t data[5] = { 0 };
+
+    data[0] = address | TMC_WRITE_BIT;
+    data[1] = 0xFF & (value>>24);
+    data[2] = 0xFF & (value>>16);
+    data[3] = 0xFF & (value>>8);
+    data[4] = 0xFF & (value>>0);
+
+    // Send the write request
+    tmc5240_readWriteSPI(icID, &data[0], sizeof(data));
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
@@ -151,6 +151,15 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
     tmc5240_readWriteUART(icID, &data[0], 8, 0);
 }
 
+void tmc5240_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
+{
+  if(motor >= TMC5240_MOTORS)
+        return;
+
+    tmc5240_writeRegister(icID, TMC5240_VMAX, (velocity >= 0) ? -velocity : velocity);
+    field_write(icID, TMC5240_RAMPMODE_FIELD, (velocity >= 0) ? TMC5240_MODE_VELPOS : TMC5240_MODE_VELNEG);
+}
+
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
     uint8_t result = 0;
@@ -169,7 +178,7 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 
     return result;
 }
-*/
+
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 // Initialize a TMC5240 IC.
 // This function requires:
@@ -263,7 +272,7 @@ static void writeConfiguration(TMC5240TypeDef *tmc5240)
 
 	if(*ptr < TMC5240_REGISTER_COUNT)
 	{
-		tmc5240_writeInt(tmc5240, *ptr, settings[*ptr]);
+		tmc5240_writeRegister(DEFAULT_MOTOR, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration
@@ -292,7 +301,7 @@ void tmc5240_periodicJob(TMC5240TypeDef *tmc5240, uint32_t tick)
 	// Calculate velocity v = dx/dt
 	if((tickDiff = tick - tmc5240->oldTick) >= 5)
 	{
-		XActual = tmc5240_readInt(tmc5240, TMC5240_XACTUAL);
+		XActual = tmc5240_readRegister(DEFAULT_MOTOR, TMC5240_XACTUAL);
 		// ToDo CHECK 2: API Compatibility - write alternative algorithm w/o floating point? (LH)
 		tmc5240->velocity = (uint32_t) ((float32_t) ((XActual - tmc5240->oldX) / (float32_t) tickDiff) * (float32_t) 1048.576);
 
@@ -305,9 +314,9 @@ void tmc5240_periodicJob(TMC5240TypeDef *tmc5240, uint32_t tick)
 void tmc5240_rotate(TMC5240TypeDef *tmc5240, int32_t velocity)
 {
 	// Set absolute velocity
-	tmc5240_writeInt(tmc5240, TMC5240_VMAX, abs(velocity));
+	tmc5240_writeRegister(DEFAULT_MOTOR, TMC5240_VMAX, abs(velocity));
 	// Set direction
-	tmc5240_writeInt(tmc5240, TMC5240_RAMPMODE, (velocity >= 0) ? TMC5240_MODE_VELPOS : TMC5240_MODE_VELNEG);
+	tmc5240_writeRegister(DEFAULT_MOTOR, TMC5240_RAMPMODE, (velocity >= 0) ? TMC5240_MODE_VELPOS : TMC5240_MODE_VELNEG);
 }
 
 // Rotate to the right
@@ -331,13 +340,13 @@ void tmc5240_stop(TMC5240TypeDef *tmc5240)
 // Move to a specified position with a given velocity
 void tmc5240_moveTo(TMC5240TypeDef *tmc5240, int32_t position, uint32_t velocityMax)
 {
-	tmc5240_writeInt(tmc5240, TMC5240_RAMPMODE, TMC5240_MODE_POSITION);
+    tmc5240_writeRegister(DEFAULT_MOTOR, TMC5240_RAMPMODE, TMC5240_MODE_POSITION);
 
 	// VMAX also holds the target velocity in velocity mode.
 	// Re-write the position mode maximum velocity here.
-	tmc5240_writeInt(tmc5240, TMC5240_VMAX, velocityMax);
+    tmc5240_writeRegister(DEFAULT_MOTOR, TMC5240_VMAX, velocityMax);
 
-	tmc5240_writeInt(tmc5240, TMC5240_XTARGET, position);
+	tmc5240_writeRegister(DEFAULT_MOTOR, TMC5240_XTARGET, position);
 }
 
 // Move by a given amount with a given velocity
@@ -345,7 +354,7 @@ void tmc5240_moveTo(TMC5240TypeDef *tmc5240, int32_t position, uint32_t velocity
 void tmc5240_moveBy(TMC5240TypeDef *tmc5240, int32_t *ticks, uint32_t velocityMax)
 {
 	// determine actual position and add numbers of ticks to move
-	*ticks += tmc5240_readInt(tmc5240, TMC5240_XACTUAL);
+	*ticks += tmc5240_readRegister(DEFAULT_MOTOR, TMC5240_XACTUAL);
 
 	tmc5240_moveTo(tmc5240, *ticks, velocityMax);
 }
