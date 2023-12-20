@@ -40,7 +40,6 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
 int32_t tmc5240_readRegister(uint16_t icID, uint8_t address)
 {
-
     TMC5240BusType bus = tmc5240_getBusType(icID);
 
     if(bus == IC_BUS_SPI)
@@ -56,7 +55,6 @@ int32_t tmc5240_readRegister(uint16_t icID, uint8_t address)
 
 void tmc5240_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
-
     TMC5240BusType bus = tmc5240_getBusType(icID);
 
     if(bus == IC_BUS_SPI)
@@ -163,7 +161,6 @@ void tmc5240_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
     uint8_t result = 0;
-    uint8_t *table;
 
     while(bytes--)
         result = tmcCRCTable_Poly7Reflected[result ^ *data++];
@@ -313,7 +310,8 @@ void tmc5240_periodicJob(TMC5240TypeDef *tmc5240, uint32_t tick)
 // Rotate with a given velocity (to the right)
 void tmc5240_rotate(TMC5240TypeDef *tmc5240, int32_t velocity)
 {
-	// Set absolute velocity
+	UNUSED(tmc5240);
+    // Set absolute velocity
 	tmc5240_writeRegister(DEFAULT_MOTOR, TMC5240_VMAX, abs(velocity));
 	// Set direction
 	tmc5240_writeRegister(DEFAULT_MOTOR, TMC5240_RAMPMODE, (velocity >= 0) ? TMC5240_MODE_VELPOS : TMC5240_MODE_VELNEG);
@@ -340,6 +338,7 @@ void tmc5240_stop(TMC5240TypeDef *tmc5240)
 // Move to a specified position with a given velocity
 void tmc5240_moveTo(TMC5240TypeDef *tmc5240, int32_t position, uint32_t velocityMax)
 {
+    UNUSED(tmc5240);
     tmc5240_writeRegister(DEFAULT_MOTOR, TMC5240_RAMPMODE, TMC5240_MODE_POSITION);
 
 	// VMAX also holds the target velocity in velocity mode.
@@ -356,6 +355,6 @@ void tmc5240_moveBy(TMC5240TypeDef *tmc5240, int32_t *ticks, uint32_t velocityMa
 	// determine actual position and add numbers of ticks to move
 	*ticks += tmc5240_readRegister(DEFAULT_MOTOR, TMC5240_XACTUAL);
 
-	tmc5240_moveTo(tmc5240, *ticks, velocityMax);
+	 tmc5240_moveTo(tmc5240, *ticks, velocityMax);
 }
 

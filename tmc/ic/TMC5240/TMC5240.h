@@ -15,12 +15,7 @@
 //#define TMC5272_EXTERNAL_CRC_TABLE 1
 
 #include "tmc/helpers/API_Header.h"
-#include "tmc/helpers/Constants.h"
-#include "../TMC5240/TMC5240_Register.h"
-#include "TMC5240_Constants.h"
-#include "../TMC5240/TMC5240_Fields.h"
-
-#define DEFAULT_MOTOR  0
+#include "TMC5240_HW_Abstraction.h"
 
 // Factor between 10ms units and internal units for 16MHz
 //#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
