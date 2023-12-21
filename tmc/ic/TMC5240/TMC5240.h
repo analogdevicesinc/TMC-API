@@ -6,7 +6,6 @@
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
-
 #ifndef TMC_IC_TMC5240_H_
 #define TMC_IC_TMC5240_H_
 
@@ -20,7 +19,6 @@
 // Factor between 10ms units and internal units for 16MHz
 //#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
 // TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
-
 
 // Amount of CRC tables available
 // Each table takes ~260 bytes (257 bytes, one bool and structure padding)
@@ -100,7 +98,6 @@ typedef struct
 	uint8_t registerAccess[TMC5240_REGISTER_COUNT];
 	uint8_t slaveAddress;
 } TMC5240TypeDef;
-
 
 typedef void (*tmc5240_callback)(TMC5240TypeDef*, ConfigState);
 

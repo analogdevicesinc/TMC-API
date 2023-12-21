@@ -6,7 +6,6 @@
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
-
 #include "TMC5240.h"
 
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
@@ -104,7 +103,6 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 {
     uint8_t data[8] = { 0 };
 
-    //address = TMC_ADDRESS(address);
     registerAddress = registerAddress & TMC_ADDRESS_MASK;
 
     data[0] = 0x05;
@@ -112,7 +110,8 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
     data[2] = registerAddress;
     data[3] = CRC8(data, 3);
 
-    tmc5240_readWriteUART(icID, data, 4, 8);
+    if (!tmc5240_readWriteUART(icID, &data[0], 4, 8))
+        return 0;
 
     // Byte 0: Sync nibble correct?
     if (data[0] != 0x05)
@@ -262,9 +261,9 @@ static void writeConfiguration(TMC5240TypeDef *tmc5240)
 	settings = tmc5240->registerResetState;
 	// Find the next resettable register
 	while((*ptr < TMC5240_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc5240->registerAccess[*ptr]))
-		{
+    {
 		(*ptr)++;
-		}
+    }
 //	}
 
 	if(*ptr < TMC5240_REGISTER_COUNT)
@@ -357,4 +356,3 @@ void tmc5240_moveBy(TMC5240TypeDef *tmc5240, int32_t *ticks, uint32_t velocityMa
 
 	 tmc5240_moveTo(tmc5240, *ticks, velocityMax);
 }
-
