@@ -11,7 +11,7 @@
 
 // Uncomment if you want to save space.....
 // and put the table into your own .c file
-//#define TMC5272_EXTERNAL_CRC_TABLE 1
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
 
 #include "tmc/helpers/API_Header.h"
 #include "TMC5240_HW_Abstraction.h"
