@@ -10,17 +10,54 @@
 #ifndef TMC_IC_TMC2209_H_
 #define TMC_IC_TMC2209_H_
 
-#include "tmc/helpers/Constants.h"
-#include "tmc/helpers/API_Header.h"
-#include "TMC2209_Register.h"
-#include "TMC2209_Constants.h"
-#include "TMC2209_Fields.h"
+#include "TMC2209_HW_Abstraction.h"
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
 
-// Helper macros
-#define TMC2209_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc2209_readInt(tdef, address), mask, shift)
-#define TMC2209_FIELD_UPDATE(tdef, address, mask, shift, value) \
-	(tmc2209_writeInt(tdef, address, FIELD_SET(tmc2209_readInt(tdef, address), mask, shift, value)))
+static inline uint32_t field_extract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t field_read(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc2209_readRegister(icID, field.address);
+
+    return field_extract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void field_write(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc2209_readRegister(icID, field.address);
+
+    regValue = field_update(regValue, field, value);
+
+    tmc2209_writeRegister(icID, field.address, regValue);
+}
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
+#include "tmc/helpers/API_Header.h"
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
