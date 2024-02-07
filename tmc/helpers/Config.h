@@ -10,6 +10,10 @@
 #ifndef TMC_HELPERS_CONFIG_H_
 #define TMC_HELPERS_CONFIG_H_
 
+// CONFIG_RESET is also a zephyr config macro.
+// Undefine it so it doesn't conflict with the ConfigState enum below
+#undef CONFIG_RESET
+
 #include "Constants.h"
 #include "Types.h"
 
