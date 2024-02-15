@@ -295,7 +295,7 @@
 #define TMC5240_VERSION_FIELD                   ((RegisterField) { TMC5240_VERSION_MASK,  TMC5240_VERSION_SHIFT,  TMC5240_INP_OUT, false })
 #define TMC5240_X_COMPARE_MASK                  0xFFFFFFFF // X_COMPARE // Position comparison register for motion controller position strobe.; X_COMPARE is an absolute position.; The Position pulse is available on output SWP_DIAG1.; XACTUAL = X_COMPARE: Output signal PP (position pulse) becomes high.; It returns to a low state, if the positions mismatch.; If X_COMPARE_REPEAT is >1, X_COMPARE is the position reference for; the periodic position strobe trigger output.
 #define TMC5240_X_COMPARE_SHIFT                 0 // Position comparison register for motion controller position strobe.; X_COMPARE is an absolute position.; The Position pulse is available on output SWP_DIAG1.; XACTUAL = X_COMPARE: Output signal PP (position pulse) becomes high.; It returns to a low state, if the positions mismatch.; If X_COMPARE_REPEAT is >1, X_COMPARE is the position reference for; the periodic position strobe trigger output.
-#define TMC5240_X_COMPARE_FIELD                 ((RegisterField) { TMC5240_X_COMPARE_MASK,  TMC5240_X_COMPARE_SHIFT,  TMC5240_X_COMPARE, false })
+#define TMC5240_X_COMPARE_FIELD                 ((RegisterField) { TMC5240_X_COMPARE_MASK,  TMC5240_X_COMPARE_SHIFT,  TMC5240_X_COMPARE, true })
 #define TMC5240_X_COMPARE_REPEAT_MASK           0xFFFFFF // X_COMPARE_REPEAT // This register defines a relative distance in microsteps (based on MRES confguration).; If set to >1, the position compare pulse is raised every time a multiple of X_PDISTANCE µsteps have been made.; Thereby, the X_COMPARE register defines the base position for the modulo calculation of X_PDISTANCE steps have been made into positive or negative direction.
 #define TMC5240_X_COMPARE_REPEAT_SHIFT          0 // This register defines a relative distance in microsteps (based on MRES confguration).; If set to >1, the position compare pulse is raised every time a multiple of X_PDISTANCE µsteps have been made.; Thereby, the X_COMPARE register defines the base position for the modulo calculation of X_PDISTANCE steps have been made into positive or negative direction.
 #define TMC5240_X_COMPARE_REPEAT_FIELD          ((RegisterField) { TMC5240_X_COMPARE_REPEAT_MASK,  TMC5240_X_COMPARE_REPEAT_SHIFT,  TMC5240_X_COMPARE_REPEAT, false })
@@ -346,10 +346,10 @@
 #define TMC5240_RAMPMODE_FIELD                  ((RegisterField) { TMC5240_RAMPMODE_MASK,  TMC5240_RAMPMODE_SHIFT,  TMC5240_RAMPMODE, false })
 #define TMC5240_XACTUAL_MASK                    0xFFFFFFFF // XACTUAL // Actual motor position (signed); Hint: This value normally should only be modified, when homing the drive. In positioning mode, modifying the register content will start a motion.
 #define TMC5240_XACTUAL_SHIFT                   0 // Actual motor position (signed); Hint: This value normally should only be modified, when homing the drive. In positioning mode, modifying the register content will start a motion.
-#define TMC5240_XACTUAL_FIELD                  ((RegisterField) { TMC5240_XACTUAL_MASK,  TMC5240_XACTUAL_SHIFT,  TMC5240_XACTUAL, false })
+#define TMC5240_XACTUAL_FIELD                  ((RegisterField) { TMC5240_XACTUAL_MASK,  TMC5240_XACTUAL_SHIFT,  TMC5240_XACTUAL, true })
 #define TMC5240_VACTUAL_MASK                    0xFFFFFF // VACTUAL // Actual motor velocity from ramp generator (signed); The sign matches the motion direction. A negative sign means motion to lower XACTUAL.; +-(2^23)-1; [µsteps / t]
 #define TMC5240_VACTUAL_SHIFT                   0 // Actual motor velocity from ramp generator (signed); The sign matches the motion direction. A negative sign means motion to lower XACTUAL.; +-(2^23)-1; [µsteps / t]
-#define TMC5240_VACTUAL_FIELD                   ((RegisterField) { TMC5240_VACTUAL_MASK,  TMC5240_VACTUAL_SHIFT,  TMC5240_VACTUAL, false })
+#define TMC5240_VACTUAL_FIELD                   ((RegisterField) { TMC5240_VACTUAL_MASK,  TMC5240_VACTUAL_SHIFT,  TMC5240_VACTUAL, true })
 #define TMC5240_VSTART_MASK                     0x3FFFF // VSTART // Motor start velocity (unsigned); For universal use, set VSTOP = VSTART. This is not required if the motion distance is sufficient to ensure deceleration from VSTART to VSTOP.; 0…(2^18)-1; [µsteps / t]
 #define TMC5240_VSTART_SHIFT                    0 // Motor start velocity (unsigned); For universal use, set VSTOP = VSTART. This is not required if the motion distance is sufficient to ensure deceleration from VSTART to VSTOP.; 0…(2^18)-1; [µsteps / t]
 #define TMC5240_VSTART_FIELD                    ((RegisterField) { TMC5240_VSTART_MASK,  TMC5240_VSTART_SHIFT,  TMC5240_VSTART, false })
@@ -382,7 +382,7 @@
 #define TMC5240_TZEROWAIT_FIELD                 ((RegisterField) { TMC5240_TZEROWAIT_MASK,  TMC5240_TZEROWAIT_SHIFT,  TMC5240_TZEROWAIT, false })
 #define TMC5240_XTARGET_MASK                    0xFFFFFFFF // XTARGET // Target position for ramp mode (signed). Write a new target position to this register in order to activate the ramp generator positioning in RAMPMODE=0. Initialize all velocity, acceleration and deceleration parameters before.; Hint: The position is allowed to wrap around, thus, XTARGET value optionally can be treated as an unsigned number.; Hint: The maximum possible displacement is +/-((2^31)-1).; Hint: When increasing V1, D1 or DMAX during a motion, rewrite XTARGET afterwards in order to trigger a second acceleration phase, if desired.; -2^31…; +(2^31)-1
 #define TMC5240_XTARGET_SHIFT                   0 // Target position for ramp mode (signed). Write a new target position to this register in order to activate the ramp generator positioning in RAMPMODE=0. Initialize all velocity, acceleration and deceleration parameters before.; Hint: The position is allowed to wrap around, thus, XTARGET value optionally can be treated as an unsigned number.; Hint: The maximum possible displacement is +/-((2^31)-1).; Hint: When increasing V1, D1 or DMAX during a motion, rewrite XTARGET afterwards in order to trigger a second acceleration phase, if desired.; -2^31…; +(2^31)-1
-#define TMC5240_XTARGET_FIELD                   ((RegisterField) { TMC5240_XTARGET_MASK,  TMC5240_XTARGET_SHIFT,  TMC5240_XTARGET, false })
+#define TMC5240_XTARGET_FIELD                   ((RegisterField) { TMC5240_XTARGET_MASK,  TMC5240_XTARGET_SHIFT,  TMC5240_XTARGET, true })
 #define TMC5240_V2_MASK                         0xFFFFF // V2 // Velocity difference from VMAX for activation of acceleration segments with AMAX/2 and DMAX/2.; 0: Disables AMAX/2 and DMAX/2 phase, use AMAX, DMAX only; 0…(2^20)-1; [µsteps / t]
 #define TMC5240_V2_SHIFT                        0 // Velocity difference from VMAX for activation of acceleration segments with AMAX/2 and DMAX/2.; 0: Disables AMAX/2 and DMAX/2 phase, use AMAX, DMAX only; 0…(2^20)-1; [µsteps / t]
 #define TMC5240_V2_FIELD                        ((RegisterField) { TMC5240_V2_MASK,  TMC5240_V2_SHIFT,  TMC5240_V2, false })
@@ -394,7 +394,7 @@
 #define TMC5240_D2_FIELD                        ((RegisterField) { TMC5240_D2_MASK,  TMC5240_D2_SHIFT,  TMC5240_D2, false })
 #define TMC5240_AACTUAL_MASK                    0xFFFFFF // AACTUAL // Current acceleration used by the rampgenerator
 #define TMC5240_AACTUAL_SHIFT                   0 // Current acceleration used by the rampgenerator
-#define TMC5240_AACTUAL_FIELD                   ((RegisterField) { TMC5240_AACTUAL_MASK,  TMC5240_AACTUAL_SHIFT,  TMC5240_AACTUAL, false })
+#define TMC5240_AACTUAL_FIELD                   ((RegisterField) { TMC5240_AACTUAL_MASK,  TMC5240_AACTUAL_SHIFT,  TMC5240_AACTUAL, true })
 #define TMC5240_VDCMIN_MASK                     0x7FFF00 // VDCMIN // Automatic commutation DcStep becomes enabled above velocity VDCMIN (unsigned) (only when using internal ramp generator, not for STEP/DIR interface modes – in STEP/DIR mode, DcStep is not available); In this mode, the actual position is determined by the sensor­less motor commutation and becomes fed back to XACTUAL. In case the motor becomes heavily loaded, VDCMIN also is used as the minimum step velocity. Activate stop on stall (sg_stop) to detect step loss.; 0: Disable, DcStep off; |VACT| = VDCMIN = 256:; Triggers the same actions as exceeding THIGH setting.; Switches on automatic commutation DcStep; Hint: Also set DCCTRL parameters in order to operate DcStep.; (Only bits 22… 8 are used for value and for comparison)
 #define TMC5240_VDCMIN_SHIFT                    8 // Automatic commutation DcStep becomes enabled above velocity VDCMIN (unsigned) (only when using internal ramp generator, not for STEP/DIR interface modes – in STEP/DIR mode, DcStep is not available); In this mode, the actual position is determined by the sensor­less motor commutation and becomes fed back to XACTUAL. In case the motor becomes heavily loaded, VDCMIN also is used as the minimum step velocity. Activate stop on stall (sg_stop) to detect step loss.; 0: Disable, DcStep off; |VACT| = VDCMIN = 256:; Triggers the same actions as exceeding THIGH setting.; Switches on automatic commutation DcStep; Hint: Also set DCCTRL parameters in order to operate DcStep.; (Only bits 22… 8 are used for value and for comparison)
 #define TMC5240_VDCMIN_FIELD                    ((RegisterField) { TMC5240_VDCMIN_MASK,  TMC5240_VDCMIN_SHIFT,  TMC5240_VDCMIN, false })
@@ -493,7 +493,7 @@
 #define TMC5240_STATUS_VIRTUAL_STOP_R_FIELD     ((RegisterField) { TMC5240_STATUS_VIRTUAL_STOP_R_MASK, TMC5240_STATUS_VIRTUAL_STOP_R_SHIFT, TMC5240_RAMPSTAT, false})
 #define TMC5240_XLATCH_MASK                     0xFFFFFFFF // XLATCH // Ramp generator latch position, latches XACTUAL upon a programmable switch event (see SW_MODE).; Hint: The encoder position can be latched to ENC_LATCH together with XLATCH to allow consistency checks.
 #define TMC5240_XLATCH_SHIFT                    0 // Ramp generator latch position, latches XACTUAL upon a programmable switch event (see SW_MODE).; Hint: The encoder position can be latched to ENC_LATCH together with XLATCH to allow consistency checks.
-#define TMC5240_XLATCH_FIELD                    ((RegisterField) { TMC5240_XLATCH_MASK, TMC5240_XLATCH_SHIFT, TMC5240_XLATCH, false})
+#define TMC5240_XLATCH_FIELD                    ((RegisterField) { TMC5240_XLATCH_MASK, TMC5240_XLATCH_SHIFT, TMC5240_XLATCH, true})
 #define TMC5240_POL_A_MASK                      0x01 // ENCMODE // Required A polarity for an N channel event
 #define TMC5240_POL_A_SHIFT                     0 // Required A polarity for an N channel event
 #define TMC5240_POL_A_FIELD                     ((RegisterField) { TMC5240_POL_A_MASK, TMC5240_POL_A_SHIFT, TMC5240_ENCMODE, false})
@@ -526,10 +526,10 @@
 #define TMC5240_ENC_SEL_DECIMAL_FIELD           ((RegisterField) { TMC5240_ENC_SEL_DECIMAL_MASK, TMC5240_ENC_SEL_DECIMAL_SHIFT, TMC5240_ENCMODE, false})
 #define TMC5240_X_ENC_MASK                      0xFFFFFFFF // X_ENC // Actual encoder position (signed)
 #define TMC5240_X_ENC_SHIFT                     0 // Actual encoder position (signed)
-#define TMC5240_X_ENC_FIELD                     ((RegisterField) { TMC5240_X_ENC_MASK, TMC5240_X_ENC_SHIFT, TMC5240_XENC, false})
+#define TMC5240_X_ENC_FIELD                     ((RegisterField) { TMC5240_X_ENC_MASK, TMC5240_X_ENC_SHIFT, TMC5240_XENC, true})
 #define TMC5240_ENC_CONST_MASK                  0xFFFFFFFF // ENC_CONST // Accumulation constant (signed); 16 bit integer part, 16 bit fractional part; X_ENC accumulates; +/- ENC_CONST / (2^16*X_ENC) (binary); or; +/-ENC_CONST / (10^4*X_ENC) (decimal); ENCMODE bit enc_sel_decimal switches between decimal and binary setting.; Use the sign, to match rotation direction!; binary:; ± [µsteps/2^16]; ±(0 …; 32767.999847); decimal:; ±(0.0 … 32767.9999); reset default = 1.0 (=65536)
 #define TMC5240_ENC_CONST_SHIFT                 0 // Accumulation constant (signed); 16 bit integer part, 16 bit fractional part; X_ENC accumulates; +/- ENC_CONST / (2^16*X_ENC) (binary); or; +/-ENC_CONST / (10^4*X_ENC) (decimal); ENCMODE bit enc_sel_decimal switches between decimal and binary setting.; Use the sign, to match rotation direction!; binary:; ± [µsteps/2^16]; ±(0 …; 32767.999847); decimal:; ±(0.0 … 32767.9999); reset default = 1.0 (=65536)
-#define TMC5240_ENC_CONST_FIELD                 ((RegisterField) { TMC5240_ENC_CONST_MASK, TMC5240_ENC_CONST_SHIFT, TMC5240_ENC_CONST, false})
+#define TMC5240_ENC_CONST_FIELD                 ((RegisterField) { TMC5240_ENC_CONST_MASK, TMC5240_ENC_CONST_SHIFT, TMC5240_ENC_CONST, true})
 #define TMC5240_N_EVENT_MASK                    0x01 // ENC_STATUS // #type=COW
 #define TMC5240_N_EVENT_SHIFT                   0 // #type=COW
 #define TMC5240_N_EVENT_FIELD                   ((RegisterField) { TMC5240_N_EVENT_MASK, TMC5240_N_EVENT_SHIFT, TMC5240_ENC_STATUS, false})
@@ -544,19 +544,19 @@
 #define TMC5240_ENC_DEVIATION_FIELD             ((RegisterField) { TMC5240_ENC_DEVIATION_MASK, TMC5240_ENC_DEVIATION_SHIFT, TMC5240_ENC_DEVIATION, false})
 #define TMC5240_VIRTUAL_STOP_L_MASK             0xFFFFFFFF // VIRTUAL_STOP_L // Virtual stop switch based on encoder or ramp position. A stop is raised, based on the signed comparison; virtual_stop_enc = 1:; X_ENC VIRTUAL_STOP_L; virtual_stop_enc = 0:; XACTUAL VIRTUAL_STOP_L; -2^31…; +(2^31)-1
 #define TMC5240_VIRTUAL_STOP_L_SHIFT            0 // Virtual stop switch based on encoder or ramp position. A stop is raised, based on the signed comparison; virtual_stop_enc = 1:; X_ENC VIRTUAL_STOP_L; virtual_stop_enc = 0:; XACTUAL VIRTUAL_STOP_L; -2^31…; +(2^31)-1
-#define TMC5240_VIRTUAL_STOP_L_FIELD            ((RegisterField) { TMC5240_VIRTUAL_STOP_L_MASK, TMC5240_VIRTUAL_STOP_L_SHIFT, TMC5240_VIRTUAL_STOP_L, false})
+#define TMC5240_VIRTUAL_STOP_L_FIELD            ((RegisterField) { TMC5240_VIRTUAL_STOP_L_MASK, TMC5240_VIRTUAL_STOP_L_SHIFT, TMC5240_VIRTUAL_STOP_L, true})
 #define TMC5240_VIRTUAL_STOP_R_MASK             0xFFFFFFFF // VIRTUAL_STOP_R // Virtual Stop Switch based on Encoder. A stop is raised, based on the signed comparison; virtual_stop_enc = 1:; X_ENC >= VIRTUAL_STOP_R; virtual_stop_enc = 0:; XACTUAL >= VIRTUAL_STOP_R; -2^31…; +(2^31)-1
 #define TMC5240_VIRTUAL_STOP_R_SHIFT            0 // Virtual Stop Switch based on Encoder. A stop is raised, based on the signed comparison; virtual_stop_enc = 1:; X_ENC >= VIRTUAL_STOP_R; virtual_stop_enc = 0:; XACTUAL >= VIRTUAL_STOP_R; -2^31…; +(2^31)-1
-#define TMC5240_VIRTUAL_STOP_R_FIELD            ((RegisterField) { TMC5240_VIRTUAL_STOP_R_MASK, TMC5240_VIRTUAL_STOP_R_SHIFT, TMC5240_VIRTUAL_STOP_R, false})
+#define TMC5240_VIRTUAL_STOP_R_FIELD            ((RegisterField) { TMC5240_VIRTUAL_STOP_R_MASK, TMC5240_VIRTUAL_STOP_R_SHIFT, TMC5240_VIRTUAL_STOP_R, true})
 #define TMC5240_ADC_VSUPPLY_MASK                0x1FFF // ADC_VSUPPLY_AIN // Actual Value of voltage on VS (filtered with low pass filter), update rate: each 2048 clocks [als Plan für alle 3 Werte, den Rest schicken wir den ADC ins idle]
 #define TMC5240_ADC_VSUPPLY_SHIFT               0 // Actual Value of voltage on VS (filtered with low pass filter), update rate: each 2048 clocks [als Plan für alle 3 Werte, den Rest schicken wir den ADC ins idle]
-#define TMC5240_ADC_VSUPPLY_FIELD               ((RegisterField) { TMC5240_ADC_VSUPPLY_MASK, TMC5240_ADC_VSUPPLY_SHIFT, TMC5240_ADC_VSUPPLY_AIN, false})
+#define TMC5240_ADC_VSUPPLY_FIELD               ((RegisterField) { TMC5240_ADC_VSUPPLY_MASK, TMC5240_ADC_VSUPPLY_SHIFT, TMC5240_ADC_VSUPPLY_AIN, true})
 #define TMC5240_ADC_AIN_MASK                    0x1FFF0000 // ADC_VSUPPLY_AIN // Value of voltage on ADC_AIN pin in integer
 #define TMC5240_ADC_AIN_SHIFT                   16 // Value of voltage on ADC_AIN pin in integer
-#define TMC5240_ADC_AIN_FIELD                   ((RegisterField) { TMC5240_ADC_AIN_MASK, TMC5240_ADC_AIN_SHIFT, TMC5240_ADC_VSUPPLY_AIN, false})
+#define TMC5240_ADC_AIN_FIELD                   ((RegisterField) { TMC5240_ADC_AIN_MASK, TMC5240_ADC_AIN_SHIFT, TMC5240_ADC_VSUPPLY_AIN, true})
 #define TMC5240_ADC_TEMP_MASK                   0x1FFF // ADC_TEMP // Analog voltage on general purpose input AIN [zu klären ist der Range – ggf. 0-1.25V ist m.E. der native Bereich des ADCs]
 #define TMC5240_ADC_TEMP_SHIFT                  0 // Analog voltage on general purpose input AIN [zu klären ist der Range – ggf. 0-1.25V ist m.E. der native Bereich des ADCs]
-#define TMC5240_ADC_TEMP_FIELD                  ((RegisterField) { TMC5240_ADC_TEMP_MASK, TMC5240_ADC_TEMP_SHIFT, TMC5240_ADC_TEMP, false})
+#define TMC5240_ADC_TEMP_FIELD                  ((RegisterField) { TMC5240_ADC_TEMP_MASK, TMC5240_ADC_TEMP_SHIFT, TMC5240_ADC_TEMP, true})
 #define TMC5240_OVERVOLTAGE_VTH_MASK            0x1FFF // OTW_OV_VTH // Overvoltage threshold for output OV. Default: 38V, 36 V equals 1.125 V at ADC inputs
 #define TMC5240_OVERVOLTAGE_VTH_SHIFT           0 // Overvoltage threshold for output OV. Default: 38V, 36 V equals 1.125 V at ADC inputs
 #define TMC5240_OVERVOLTAGE_VTH_FIELD           ((RegisterField) { TMC5240_OVERVOLTAGE_VTH_MASK, TMC5240_OVERVOLTAGE_VTH_SHIFT, TMC5240_OTW_OV_VTH, false})
@@ -622,10 +622,10 @@
 #define TMC5240_MSCNT_FIELD                     ((RegisterField) { TMC5240_MSCNT_MASK, TMC5240_MSCNT_SHIFT, TMC5240_MSCNT, false})
 #define TMC5240_CUR_B_MASK                      0x1FF // MSCURACT // Actual microstep current for motor phase B (sine wave) as read from MSLUT (not scaled by current)
 #define TMC5240_CUR_B_SHIFT                     0 // Actual microstep current for motor phase B (sine wave) as read from MSLUT (not scaled by current)
-#define TMC5240_CUR_B_FIELD                     ((RegisterField) { TMC5240_CUR_B_MASK, TMC5240_CUR_B_SHIFT, TMC5240_MSCURACT, false})
+#define TMC5240_CUR_B_FIELD                     ((RegisterField) { TMC5240_CUR_B_MASK, TMC5240_CUR_B_SHIFT, TMC5240_MSCURACT, true})
 #define TMC5240_CUR_A_MASK                      0x1FF0000 // MSCURACT // Actual microstep current for motor phase A (co-sine wave) as read from MSLUT (not scaled by current)
 #define TMC5240_CUR_A_SHIFT                     16 // Actual microstep current for motor phase A (co-sine wave) as read from MSLUT (not scaled by current)
-#define TMC5240_CUR_A_FIELD                     ((RegisterField) { TMC5240_CUR_A_MASK, TMC5240_CUR_A_SHIFT, TMC5240_MSCURACT, false})
+#define TMC5240_CUR_A_FIELD                     ((RegisterField) { TMC5240_CUR_A_MASK, TMC5240_CUR_A_SHIFT, TMC5240_MSCURACT, true})
 #define TMC5240_TOFF_MASK                       0x0F // CHOPCONF // TOFF off time and driver enable; Off time setting controls duration of slow decay phase; NCLK= 24 + 32*TOFF; %0000: Driver disable, all bridges off; %0001: 1 – use only with TBL = 2; %0010 … %1111: 2 … 15
 #define TMC5240_TOFF_SHIFT                      0 // TOFF off time and driver enable; Off time setting controls duration of slow decay phase; NCLK= 24 + 32*TOFF; %0000: Driver disable, all bridges off; %0001: 1 – use only with TBL = 2; %0010 … %1111: 2 … 15
 #define TMC5240_TOFF_FIELD                      ((RegisterField) { TMC5240_TOFF_MASK, TMC5240_TOFF_SHIFT, TMC5240_CHOPCONF, false})
