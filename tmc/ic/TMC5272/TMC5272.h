@@ -15,6 +15,22 @@
 #include "TMC5272_Constants.h"
 #include "TMC5272_Fields.h"
 
+typedef enum {
+	IC_BUS_SPI,
+	IC_BUS_UART,
+} TMC5272BusType;
+
+// => TMC-API wrapper
+extern void tmc5272_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc5272_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5272BusType tmc5272_getBusType(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc5272_readRegister(uint16_t icID, uint8_t address);
+void tmc5272_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
+
+
 // Helper macros
 #define TMC5272_FIELD_READ(tdef, address, mask, shift) \
 		FIELD_GET(tmc5272_readInt(tdef, address), mask, shift)
