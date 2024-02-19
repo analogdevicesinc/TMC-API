@@ -11,15 +11,15 @@
 
 #include "tmc/helpers/API_Header.h"
 #include "tmc/helpers/Constants.h"
-#include "../TMC5272/TMC5272_Register.h"
+#include "TMC5272_Register.h"
 #include "TMC5272_Constants.h"
-#include "../TMC5272/TMC5272_Fields.h"
+#include "TMC5272_Fields.h"
 
 // Helper macros
 #define TMC5272_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc5272_readInt(tdef, address), mask, shift)
+		FIELD_GET(tmc5272_readInt(tdef, address), mask, shift)
 #define TMC5272_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc5272_writeInt(tdef, address, FIELD_SET(tmc5272_readInt(tdef, address), mask, shift, value)))
+		(tmc5272_writeInt(tdef, address, FIELD_SET(tmc5272_readInt(tdef, address), mask, shift, value)))
 
 // Typedefs
 typedef struct
