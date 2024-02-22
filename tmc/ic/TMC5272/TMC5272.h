@@ -9,6 +9,11 @@
 
 #ifndef TMC_IC_TMC5272_H_
 
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+
 #include "tmc/helpers/API_Header.h"
 #include "tmc/helpers/Constants.h"
 #include "TMC5272_Register.h"
@@ -47,7 +52,7 @@ typedef struct
 	uint32_t oldTick;
 	int32_t registerResetState[TMC5272_REGISTER_COUNT];
 	uint8_t registerAccess[TMC5272_REGISTER_COUNT];
-	uint8_t slaveAddress;
+	uint8_t slaveAddress; //Functionality replaced by callback => can be replaced
 } TMC5272TypeDef;
 
 typedef void (*tmc5272_callback)(TMC5272TypeDef*, ConfigState);
