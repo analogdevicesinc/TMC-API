@@ -14,8 +14,8 @@
 
 static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
-static int32_t readRegisterUART(uint16_t icID, uint8_t address);
-static void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value);
+static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
+static void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value);
 
 
 int32_t tmc5272_readRegister(uint16_t icID, uint8_t address)
@@ -81,15 +81,15 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 	tmc5272_readWriteSPI(icID, &data[0], sizeof(data));
 }
 
-int32_t readRegisterUART(uint16_t icID, uint8_t address)
+int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 {
 	uint8_t data[8] = { 0 };
 
-	address = address & TMC5272_ADDRESS_MASK;
+	registerAddress = registerAddress & TMC5272_ADDRESS_MASK;
 
 	data[0] = 0x05;
 	data[1] = tmc5272_getNodeAddress(icID);
-	data[2] = address;
+	data[2] = registerAddress;
 	data[3] = tmc_CRC8(data, 3, 1);
 
 	if (!tmc5272_readWriteUART(icID, &data[0], 4, 8))
@@ -104,7 +104,7 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address)
 		return 0;
 
 	// Byte 2: Address correct?
-	if (data[2] != address)
+	if (data[2] != registerAddress)
 		return 0;
 
 	// Byte 7: CRC correct?
@@ -114,13 +114,13 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address)
 	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
 }
 
-void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
+void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 {
 	uint8_t data[8];
 
 	data[0] = 0x05;
 	data[1] = tmc5272_getNodeAddress(icID);
-	data[2] = address | TMC5272_WRITE_BIT;
+	data[2] = registerAddress | TMC5272_WRITE_BIT;
 	data[3] = (value >> 24) & 0xFF;
 	data[4] = (value >> 16) & 0xFF;
 	data[5] = (value >> 8 ) & 0xFF;
@@ -226,7 +226,7 @@ void tmc5272_periodicJob(TMC5272TypeDef *tmc5272, uint32_t tick)
 	{
 		for(uint8_t motor = 0; motor < TMC5272_MOTORS; motor++)
 		{
-			x = tmc5272_readInt(tmc5272, TMC5272_XACTUAL(motor));
+			x = tmc5272_readRegister(motor, TMC5272_XACTUAL(motor));
 			tmc5272->velocity[motor] = (uint32_t) ((float32_t) (abs(x - tmc5272->oldX[motor]) / (float32_t) tickDiff) * (float32_t) 1048.576);
 			tmc5272->oldX[motor] = x;
 		}
@@ -240,11 +240,11 @@ void tmc5272_rotate(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t velocity)
 	if(motor >= TMC5272_MOTORS)
 		return;
 
-	tmc5272_writeInt(tmc5272, TMC5272_VMAX(motor), abs(velocity));
+	tmc5272_writeRegister(motor, TMC5272_VMAX(motor), abs(velocity));
 	if (motor == 0)
-		TMC5272_FIELD_WRITE(tmc5272, TMC5272_RAMPMODE, TMC5272_RAMPMODE_M0_RAMPMODE_MASK, TMC5272_RAMPMODE_M0_RAMPMODE_SHIFT,  (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
+		TMC5272_FIELD_WRITE(motor, TMC5272_RAMPMODE, TMC5272_RAMPMODE_M0_RAMPMODE_MASK, TMC5272_RAMPMODE_M0_RAMPMODE_SHIFT,  (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
 	else if(motor == 1)
-		TMC5272_FIELD_WRITE(tmc5272, TMC5272_RAMPMODE, TMC5272_RAMPMODE_M1_RAMPMODE_MASK, TMC5272_RAMPMODE_M1_RAMPMODE_SHIFT,  (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
+		TMC5272_FIELD_WRITE(motor, TMC5272_RAMPMODE, TMC5272_RAMPMODE_M1_RAMPMODE_MASK, TMC5272_RAMPMODE_M1_RAMPMODE_SHIFT,  (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
 
 }
 
@@ -269,18 +269,18 @@ void tmc5272_moveTo(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t position, ui
 		return;
 
 	if (motor == 0)
-		TMC5272_FIELD_WRITE(tmc5272, TMC5272_RAMPMODE, TMC5272_RAMPMODE_M0_RAMPMODE_MASK, TMC5272_RAMPMODE_M0_RAMPMODE_SHIFT, TMC5272_MODE_POSITION);
+		TMC5272_FIELD_WRITE(motor, TMC5272_RAMPMODE, TMC5272_RAMPMODE_M0_RAMPMODE_MASK, TMC5272_RAMPMODE_M0_RAMPMODE_SHIFT, TMC5272_MODE_POSITION);
 	else if (motor == 1)
-		TMC5272_FIELD_WRITE(tmc5272, TMC5272_RAMPMODE, TMC5272_RAMPMODE_M1_RAMPMODE_MASK, TMC5272_RAMPMODE_M1_RAMPMODE_SHIFT, TMC5272_MODE_POSITION);
+		TMC5272_FIELD_WRITE(motor, TMC5272_RAMPMODE, TMC5272_RAMPMODE_M1_RAMPMODE_MASK, TMC5272_RAMPMODE_M1_RAMPMODE_SHIFT, TMC5272_MODE_POSITION);
 
-	tmc5272_writeInt(tmc5272, TMC5272_VMAX(motor), velocityMax);
-	tmc5272_writeInt(tmc5272, TMC5272_XTARGET(motor), position);
+	tmc5272_writeRegister(motor, TMC5272_VMAX(motor), velocityMax);
+	tmc5272_writeRegister(motor, TMC5272_XTARGET(motor), position);
 }
 
 void tmc5272_moveBy(TMC5272TypeDef *tmc5272, uint8_t motor, uint32_t velocityMax, int32_t *ticks)
 {
 	// determine actual position and add numbers of ticks to move
-	*ticks += tmc5272_readInt(tmc5272, TMC5272_XACTUAL(motor));
+	*ticks += tmc5272_readRegister(motor, TMC5272_XACTUAL(motor));
 
 	return tmc5272_moveTo(tmc5272, motor, *ticks, velocityMax);
 }

@@ -33,10 +33,10 @@ void tmc5272_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
 
 // Helper macros
-#define TMC5272_FIELD_READ(tdef, address, mask, shift) \
-		FIELD_GET(tmc5272_readInt(tdef, address), mask, shift)
-#define TMC5272_FIELD_WRITE(tdef, address, mask, shift, value) \
-		(tmc5272_writeInt(tdef, address, FIELD_SET(tmc5272_readInt(tdef, address), mask, shift, value)))
+#define TMC5272_FIELD_READ(icID, address, mask, shift) \
+		FIELD_GET(tmc5272_readRegister(icID, address), mask, shift)
+#define TMC5272_FIELD_WRITE(icID, address, mask, shift, value) \
+		(tmc5272_writeRegister(icID, address, FIELD_SET(tmc5272_readRegister(icID, address), mask, shift, value)))
 
 // Typedefs
 typedef struct
