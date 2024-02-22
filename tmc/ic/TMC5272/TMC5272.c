@@ -88,7 +88,7 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address)
 	address = address & TMC5272_ADDRESS_MASK;
 
 	data[0] = 0x05;
-	data[1] = 0; // ToDo: Chip address
+	data[1] = tmc5272_getNodeAddress(icID);
 	data[2] = address;
 	data[3] = tmc_CRC8(data, 3, 1);
 
@@ -119,7 +119,7 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
 	uint8_t data[8];
 
 	data[0] = 0x05;
-	data[1] = 0; // ToDo: Chip address
+	data[1] = tmc5272_getNodeAddress(icID);
 	data[2] = address | TMC5272_WRITE_BIT;
 	data[3] = (value >> 24) & 0xFF;
 	data[4] = (value >> 16) & 0xFF;
