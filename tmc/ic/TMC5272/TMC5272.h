@@ -14,8 +14,10 @@
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
 
 
-#include "tmc/helpers/API_Header.h"
 #include "tmc/helpers/Constants.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 #include "TMC5272_HW_Abstraction.h"
 
 typedef enum {
@@ -83,6 +85,8 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
 
 
+
+#include "tmc/helpers/API_Header.h"
 
 
 // Typedefs
