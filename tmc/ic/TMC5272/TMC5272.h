@@ -16,9 +16,7 @@
 
 #include "tmc/helpers/API_Header.h"
 #include "tmc/helpers/Constants.h"
-#include "TMC5272_Register.h"
-#include "TMC5272_Constants.h"
-#include "TMC5272_Fields.h"
+#include "TMC5272_HW_Abstraction.h"
 
 typedef enum {
 	IC_BUS_SPI,
@@ -35,13 +33,57 @@ extern uint8_t tmc5272_getNodeAddress(uint16_t icID);
 int32_t tmc5272_readRegister(uint16_t icID, uint8_t address);
 void tmc5272_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
 
 
-// Helper macros
-#define TMC5272_FIELD_READ(icID, address, mask, shift) \
-		FIELD_GET(tmc5272_readRegister(icID, address), mask, shift)
-#define TMC5272_FIELD_WRITE(icID, address, mask, shift, value) \
-		(tmc5272_writeRegister(icID, address, FIELD_SET(tmc5272_readRegister(icID, address), mask, shift, value)))
+static inline uint32_t field_extract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t field_read(uint16_t icID, RegisterField field)
+{
+	uint32_t value = tmc5272_readRegister(icID, field.address);
+
+    return field_extract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void field_write(uint16_t icID, RegisterField field, uint32_t value)
+{
+	uint32_t regValue = tmc5272_readRegister(icID, field.address);
+
+	regValue = field_update(regValue, field, value);
+
+    tmc5272_writeRegister(icID, field.address, regValue);
+}
+
+
+
+
+
+
+
 
 // Typedefs
 typedef struct
