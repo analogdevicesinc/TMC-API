@@ -8,6 +8,7 @@
 
 
 #ifndef TMC_IC_TMC5272_H_
+#define TMC_IC_TMC5272_H_
 
 // Uncomment if you want to save space.....
 // and put the table into your own .c file
@@ -34,6 +35,8 @@ extern uint8_t tmc5272_getNodeAddress(uint16_t icID);
 
 int32_t tmc5272_readRegister(uint16_t icID, uint8_t address);
 void tmc5272_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5272_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
 
 typedef struct
 {

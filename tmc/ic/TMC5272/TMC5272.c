@@ -154,6 +154,15 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 	tmc5272_readWriteUART(icID, &data[0], 8, 0);
 }
 
+void tmc5272_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
+{
+  if(motor >= TMC5272_MOTORS)
+		return;
+
+	tmc5272_writeRegister(icID, TMC5272_VMAX(motor), (velocity >= 0)? velocity : -velocity);
+	field_write(icID, TMC5272_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
+}
+
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
 	uint8_t result = 0;
@@ -172,6 +181,10 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 
 	return result;
 }
+
+
+
+
 
 
 // Initialize a TMC5272 IC.
