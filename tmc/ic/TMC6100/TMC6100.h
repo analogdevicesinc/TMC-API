@@ -15,7 +15,15 @@
 #include "TMC6100_Register.h"
 #include "TMC6100_Fields.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 int32_t tmc6100_readInt(uint8_t motor, uint8_t address);
 void tmc6100_writeInt(uint8_t motor, uint8_t address, int32_t value);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC6630_H_ */

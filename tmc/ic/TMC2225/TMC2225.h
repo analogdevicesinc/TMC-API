@@ -80,6 +80,10 @@ static const int32_t tmc2225_defaultRegisterResetState[TMC2225_REGISTER_COUNT] =
 #undef R6C
 #undef R70
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc2225_writeInt(TMC2225TypeDef *tmc2225, uint8_t address, int32_t value);
 int32_t tmc2225_readInt(TMC2225TypeDef *tmc2225, uint8_t address);
 
@@ -92,5 +96,9 @@ void tmc2225_periodicJob(TMC2225TypeDef *tmc2225, uint32_t tick);
 
 uint8_t tmc2225_get_slave(TMC2225TypeDef *tmc2225);
 void tmc2225_set_slave(TMC2225TypeDef *tmc2225, uint8_t slave);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC2225_H_ */

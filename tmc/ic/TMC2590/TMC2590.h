@@ -65,11 +65,19 @@ static const int32_t tmc2590_defaultRegisterResetState[TMC2590_REGISTER_COUNT] =
 	0x000EF040   // 7: DRVCONF
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc2590_init(TMC2590TypeDef *tmc2590, uint8_t channel, ConfigurationTypeDef *tmc2590_config, const int32_t *registerResetState);
 void tmc2590_periodicJob(TMC2590TypeDef *tmc2590, uint32_t tick);
 void tmc2590_writeInt(TMC2590TypeDef *tmc2590, uint8_t address, int32_t value);
 uint32_t tmc2590_readInt(TMC2590TypeDef *tmc2590, uint8_t address);
 uint8_t tmc2590_reset(TMC2590TypeDef *tmc2590);
 uint8_t tmc2590_restore(TMC2590TypeDef *tmc2590);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC2590_H_ */

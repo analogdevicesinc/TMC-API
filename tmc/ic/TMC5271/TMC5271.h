@@ -105,6 +105,10 @@ static const TMCRegisterConstant tmc5271_RegisterConstants[] =
 		///
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 //void tmc5271_writeDatagram(TMC5271TypeDef *tmc5271, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5271_writeInt(TMC5271TypeDef *tmc5271, uint8_t address, int32_t value);
 int32_t tmc5271_readInt(TMC5271TypeDef *tmc5271, uint8_t address);
@@ -128,5 +132,9 @@ void tmc5271_moveBy(TMC5271TypeDef *tmc5271, uint8_t motor, uint32_t velocityMax
 
 
 uint8_t tmc5271_consistencyCheck(TMC5271TypeDef *tmc5271);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC5271_H_ */

@@ -18,6 +18,10 @@
 	#include "tmc/helpers/API_Header.h"
 	#include "TMC457_Register.h"
 
+	#ifdef __cplusplus
+	extern "C" {
+	#endif
+
 	void Write457Zero(uint8_t Address);
 	void Write457Int(uint8_t Address, int32_t Value);
 	void Write457Wavetable(uint16_t RAMAddress, uint16_t Value);
@@ -27,6 +31,10 @@
 	void Init457Wavetable(uint32_t Resolution, int32_t Offset);
 	void Init457(void);
 	void HardStop();
+
+	#ifdef __cplusplus
+	}
+	#endif
 
 #endif /* TMC_IC_TMC457_H_ */
 

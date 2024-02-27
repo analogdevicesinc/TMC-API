@@ -54,6 +54,10 @@ typedef struct
 	uint32_t stopVelocity;
 } TMC_LinearRamp;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc_ramp_linear_init(TMC_LinearRamp *linearRamp);
 int32_t tmc_ramp_linear_compute(TMC_LinearRamp *linearRamp);
 int32_t tmc_ramp_linear_compute_velocity(TMC_LinearRamp *linearRamp);
@@ -85,5 +89,9 @@ uint32_t tmc_ramp_linear_get_acceleration_limit(TMC_LinearRamp *linearRamp);
 uint32_t tmc_ramp_linear_get_velocity_limit(TMC_LinearRamp *linearRamp);
 uint32_t tmc_ramp_linear_get_homingDistance(TMC_LinearRamp *linearRamp);
 uint32_t tmc_ramp_linear_get_stopVelocity(TMC_LinearRamp *linearRamp);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_RAMP_LINEARRAMP1_H_ */

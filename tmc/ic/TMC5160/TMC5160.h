@@ -113,6 +113,10 @@ static const TMCRegisterConstant tmc5160_RegisterConstants[] =
 		{ 0x70, 0xC40C001E }  // PWMCONF
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc5160_writeDatagram(TMC5160TypeDef *tmc5160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5160_writeInt(TMC5160TypeDef *tmc5160, uint8_t address, int32_t value);
 int32_t tmc5160_readInt(TMC5160TypeDef *tmc5160, uint8_t address);
@@ -133,5 +137,9 @@ void tmc5160_moveTo(TMC5160TypeDef *tmc5160, int32_t position, uint32_t velocity
 void tmc5160_moveBy(TMC5160TypeDef *tmc5160, int32_t *ticks, uint32_t velocityMax);
 
 uint8_t tmc5160_consistencyCheck(TMC5160TypeDef *tmc5160);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC5160_H_ */

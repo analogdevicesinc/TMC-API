@@ -81,6 +81,9 @@ static const uint8_t tmc4331_defaultRegisterAccess[TMC4331_REGISTER_COUNT] =
 	0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x53, 0x13, ____, 0x42, 0x01  // 0x70 - 0x7F
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 // API Functions
 // All functions act on one IC given by the TMC4331TypeDef struct
@@ -110,5 +113,9 @@ void tmc4331_moveBy(TMC4331TypeDef *tmc4331, int32_t *ticks, uint32_t velocityMa
 // Helper functions
 int32_t tmc4331_discardVelocityDecimals(int32_t value);
 uint8_t tmc4331_calibrateClosedLoop(TMC4331TypeDef *tmc4331, uint8_t worker0master1);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC4331_H_ */

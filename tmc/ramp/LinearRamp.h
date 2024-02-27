@@ -27,8 +27,16 @@
 		uint8_t rampEnabled;
 	} TMC_LinearRamp;
 
+	#ifdef __cplusplus
+	extern "C" {
+	#endif
+
 	void tmc_linearRamp_init(TMC_LinearRamp *linearRamp);
 	void tmc_linearRamp_computeRampVelocity(TMC_LinearRamp *linearRamp);
 	void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp);
+
+	#ifdef __cplusplus
+	}
+	#endif
 
 #endif /* TMC_LINEAR_RAMP_H_ */

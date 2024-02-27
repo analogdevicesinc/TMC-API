@@ -16,6 +16,10 @@ typedef enum {
 	TMC_RAMP_TYPE_LINEAR
 } TMC_RampType;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Initializes ramp parameters for given type
 void tmc_ramp_init(void *ramp, TMC_RampType type);
 
@@ -36,5 +40,9 @@ int32_t tmc_ramp_get_rampPosition(void *ramp, TMC_RampType type);
 bool tmc_ramp_get_enabled(void *ramp, TMC_RampType type);
 void tmc_ramp_set_enabled(void *ramp, TMC_RampType type, bool enabled);
 void tmc_ramp_toggle_enabled(void *ramp, TMC_RampType type);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_RAMP_RAMP_H_ */

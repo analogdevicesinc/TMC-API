@@ -82,6 +82,9 @@ static const TMCRegisterConstant tmc2300_RegisterConstants[] =
 		{ 0x70, 0xC40D1024 }, // PWMCONF
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 void tmc2300_writeInt(TMC2300TypeDef *tmc2300, uint8_t address, int32_t value);
 int32_t tmc2300_readInt(TMC2300TypeDef *tmc2300, uint8_t address);
@@ -98,5 +101,9 @@ void tmc2300_setSlaveAddress(TMC2300TypeDef *tmc2300, uint8_t slaveAddress);
 
 uint8_t tmc2300_getStandby(TMC2300TypeDef *tmc2300);
 void tmc2300_setStandby(TMC2300TypeDef *tmc2300, uint8_t standbyState);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC2300_H_ */

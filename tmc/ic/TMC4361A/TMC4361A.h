@@ -106,6 +106,10 @@ static const TMCRegisterConstant tmc4361A_RegisterConstants[] =
 		{ 0x7E, 0x00F70000 }, // START_SIN, START_SIN_90_120, DAC_OFFSET
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // API Functions
 // All functions act on one IC given by the TMC4361ATypeDef struct
 
@@ -135,5 +139,9 @@ void tmc4361A_moveBy(TMC4361ATypeDef *tmc4361A, int32_t *ticks, uint32_t velocit
 // Helper functions
 int32_t tmc4361A_discardVelocityDecimals(int32_t value);
 uint8_t tmc4361A_calibrateClosedLoop(TMC4361ATypeDef *tmc4361A, uint8_t worker0master1);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC4361A_H_ */

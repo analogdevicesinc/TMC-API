@@ -31,9 +31,17 @@ typedef struct {
 	bool vMaxModified[2];
 } TMC5031TypeDef;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc5031_initConfig(TMC5031TypeDef *TMC5031);
 void tmc5031_periodicJob(uint8_t motor, uint32_t tick, TMC5031TypeDef *TMC5031, ConfigurationTypeDef *TMC5031_config);
 uint8_t tmc5031_reset(ConfigurationTypeDef *TMC5031_config);
 uint8_t tmc5031_restore(ConfigurationTypeDef *TMC5031_config);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC5031_H_ */

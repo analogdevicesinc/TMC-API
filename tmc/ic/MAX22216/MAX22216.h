@@ -28,6 +28,10 @@ typedef struct {
 	uint8_t crc_en;
 } MAX22216TypeDef;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 uint8_t max22216_CRC(uint8_t *data, size_t length);
 
 void max22216_writeDatagram(MAX22216TypeDef *max22216, uint8_t address, uint8_t x1, uint8_t x2);
@@ -41,5 +45,9 @@ void max22216_init(MAX22216TypeDef *max22216, uint8_t channel);
 
 uint8_t max22216_getSlaveAddress(const MAX22216TypeDef *max22216);
 void max22216_setSlaveAddress(MAX22216TypeDef *max22216, uint8_t slaveAddress);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* API_IC_MAX22216_H */

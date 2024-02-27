@@ -37,9 +37,17 @@ typedef struct {
 	int32_t registerResetState[TMC2660_REGISTER_COUNT];
 } TMC2660TypeDef;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc2660_initConfig(TMC2660TypeDef *TMC2660);
 void tmc2660_periodicJob(uint8_t motor, uint32_t tick, TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config);
 uint8_t tmc2660_reset(TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config);
 uint8_t tmc2660_restore(ConfigurationTypeDef *TMC2660_config);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC2660_H_ */

@@ -18,6 +18,10 @@
 	#include "tmc/helpers/API_Header.h"
 	#include "TMC429_Register.h"
 
+	#ifdef __cplusplus
+	extern "C" {
+	#endif
+
 	// user must provide this function
 	uint8_t ReadWriteSPI(void* p_SPI_DeviceHandle, uint8_t data,bool endTransaction);
 
@@ -38,5 +42,9 @@
 	void Set429SwitchMode(uint8_t Axis, uint8_t SwitchMode);
 	uint8_t SetAMax(uint8_t Motor, uint32_t AMax);
 	void HardStop(uint32_t Motor);
+
+	#ifdef __cplusplus
+	}
+	#endif
 
 #endif /* TMC_IC_TMC429_H_ */

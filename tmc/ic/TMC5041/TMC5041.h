@@ -101,6 +101,10 @@ static const int32_t tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] =
 #undef R6C
 #undef R7C
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void tmc5041_writeDatagram(TMC5041TypeDef *tmc5041, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
 void tmc5041_writeInt(TMC5041TypeDef *tmc5041, uint8_t address, int32_t value);
 int32_t tmc5041_readInt(TMC5041TypeDef *tmc5041, uint8_t address);
@@ -109,5 +113,9 @@ void tmc5041_init(TMC5041TypeDef *tmc5041, uint8_t channel, ConfigurationTypeDef
 void tmc5041_periodicJob(TMC5041TypeDef *tmc5041, uint32_t tick);
 uint8_t tmc5041_reset(TMC5041TypeDef *tmc5041);
 uint8_t tmc5041_restore(TMC5041TypeDef *tmc5041);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TMC_IC_TMC5041_H_ */
