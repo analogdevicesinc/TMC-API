@@ -18,7 +18,7 @@ To set up your project, first consult the README page of the particular IC. For 
 - **tmc/ic/** contains all the files for different ICs. For each IC you want to use, copy the corresponding folder.
 - **tmc/ramp/** contains simple software linear ramp functions that can be used in applications. Copy them if needed by your project.
 
-For the ICs with the new implementation, please consult their [README](https://github.com/analogdevicesinc/TMC-API-Internal/blob/master/tmc/ic/TMC5272/README.md) page.
+For the ICs with the new implementation, please consult their [README](https://github.com/analogdevicesinc/TMC-API/blob/master/tmc/ic/TMC5272/README.md) page.
 
 ## Usage
 **For a reference usage of the TMC-API**, visit the [TMC-Evalsystem](https://github.com/analogdevicesinc/TMC-EvalSystem)
@@ -33,14 +33,7 @@ For the ICs with the new implementation, please consult their [README](https://g
 - Once the IC configuration is completed, you can use tmcXXXX_readInt() and tmcXXXX_writeInt() to read and write registers.
 
 ## Changelog
-**Version 3.06: (Beta)**
-- Full TMC2160 support
-- Begin TMC7531 support
-- Begin TMC4672 support
-- Begin TMC2590 support
-- Added new software ramp generator (linear)
-- TMC2041 fixed missing register fields
+**Version 3.10: (Released)**
+- Added TMC2262 and TMC5262
+- Added simpler register Read/Write mechanism for TMC5272
 - Various bugfixes
-- Internal optimizations
-
-**Version 3.05: (Released)**
