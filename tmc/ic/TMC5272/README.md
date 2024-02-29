@@ -9,7 +9,7 @@ The following diagram depicts how to access the TMC5272 using the TMC-API.
 The description of the functions that the user needs are as follows:
 - The functions tmc5272_readRegister and tmc5272_writeRegister are used to read and write the registers respectively. These functions check the current active bus and calls the bus-specific function e.g readRegisterUART, etc.
 - The bus specific function constructs the datagram and further calls the bus specific callback.
-- The user needs to externally implement this callback or HAL wrapper function that should further call the hardware sepecific read/write function for that particular bus type.
+- The user needs to externally implement this callback or HAL wrapper function that should further call the hardware specific read/write function for that particular bus type.
 
 ### How to use
 
@@ -20,7 +20,7 @@ Each of these functions takes in an **icID**, which is used to identify the IC s
 
 - Add all the files of the TMC-API/ic/tmc/TMC5272 folder into your project.
 - Include the TMC5272.h file in your source code.
-- Implement the necessarz callback functions (see below).
+- Implement the necessary callback functions (see below).
 - (optional): Take a look at the Examples subfolder for ready-made examples of the TMC-API usage.
 
 #### How to integrate: Callback functions
