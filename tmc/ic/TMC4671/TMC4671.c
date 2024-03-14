@@ -467,14 +467,14 @@ void tmc4671_doEncoderInitializationMode3(uint8_t motor, uint8_t *initState, uin
 		(*actualInitWaitTime)++;
 		if(*actualInitWaitTime >= initWaitTime)
 		{
-            // save actual DECODER_PHI_E as -DECODER_PHI_E_OFFSET
-            int32_t offset_raw = tmc4671_readRegister16BitValue(motor, TMC4671_AENC_DECODER_PHI_E_PHI_M, BIT_16_TO_31);
+            // save actual DECODER_PHI_M as -DECODER_PHI_M_OFFSET
+            int32_t offset_raw = tmc4671_readRegister16BitValue(motor, TMC4671_AENC_DECODER_PHI_E_PHI_M, BIT_0_TO_15);
             if (offset_raw > 32767)
                 offset_raw -= 32767;
 
-            // update PHI_E and keep PHI_M and PH_A at zero
-            tmc4671_writeRegister16BitValue(motor, TMC4671_AENC_DECODER_PHI_E_PHI_M_OFFSET, BIT_16_TO_31,  -offset_raw);
-            tmc4671_writeRegister16BitValue(motor, TMC4671_AENC_DECODER_PHI_E_PHI_M_OFFSET, BIT_0_TO_15, 0);
+            // update PHI_M and keep PHI_E and PH_A at zero
+            tmc4671_writeRegister16BitValue(motor, TMC4671_AENC_DECODER_PHI_E_PHI_M_OFFSET, BIT_16_TO_31,  0);
+            tmc4671_writeRegister16BitValue(motor, TMC4671_AENC_DECODER_PHI_E_PHI_M_OFFSET, BIT_0_TO_15, -offset_raw);
             tmc4671_writeRegister16BitValue(motor, TMC4671_AENC_DECODER_PHI_A_OFFSET, BIT_0_TO_15, 0);
 
 			// switch back to last used UQ_UD_EXT setting
