@@ -8,20 +8,13 @@
 
 
 #ifndef TMC_IC_TMC5271_H_
+#define TMC_IC_TMC5271_H_
 
-#include "tmc/helpers/API_Header.h"
-#include "tmc/helpers/Constants.h"
-#include "../TMC5271/TMC5271_Register.h"
-#include <tmc/ic/TMC5271/TMC5271_Constants.h>
-#include "../TMC5271/TMC5271_Fields.h"
 
-// Helper macros
-#define TMC5271_FIELD_READ(tdef, address, mask, shift) \
-    FIELD_GET(tmc5271_readInt(tdef, address), mask, shift)
-#define TMC5271_FIELD_WRITE(tdef, address, mask, shift, value) \
-    (tmc5271_writeInt(tdef, address, FIELD_SET(tmc5271_readInt(tdef, address), mask, shift, value)))
-
-// Typedefs
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include "TMC5271_HW_Abstraction.h"
 
 // Amount of CRC tables available
 // Each table takes ~260 bytes (257 bytes, one bool and structure padding)

@@ -16,7 +16,6 @@ static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
 static void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value);
 
 
-
 int32_t tmc5271_readRegister(uint16_t icID, uint8_t address)
 {
     TMC5271BusType bus = tmc5271_getBusType(icID);
@@ -203,7 +202,7 @@ void tmc5271_periodicJob(TMC5271TypeDef *tmc5271, uint32_t tick)
 	{
 		for(uint8_t motor = 0; motor < TMC5271_MOTORS; motor++)
 		{
-			x = tmc5271_readInt(tmc5271, TMC5271_XACTUAL);
+			x = tmc5271_readRegister(motor, TMC5271_XACTUAL);
 			tmc5271->velocity[motor] = (uint32_t) ((float32_t) (abs(x - tmc5271->oldX[motor]) / (float32_t) tickDiff) * (float32_t) 1048.576);
 			tmc5271->oldX[motor] = x;
 		}
@@ -217,8 +216,8 @@ void tmc5271_rotate(TMC5271TypeDef *tmc5271, uint8_t motor, int32_t velocity)
 	if(motor >= TMC5271_MOTORS)
 		return;
 
-	tmc5271_writeInt(tmc5271, TMC5271_VMAX, abs(velocity));
-	TMC5271_FIELD_WRITE(tmc5271, TMC5271_RAMPMODE, TMC5271_RAMPMODE_MASK, TMC5271_RAMPMODE_SHIFT,  (velocity >= 0) ? TMC5271_MODE_VELPOS : TMC5271_MODE_VELNEG);
+	tmc5271_writeRegister(motor, TMC5271_VMAX, abs(velocity));
+	field_write(motor, TMC5271_RAMPMODE_FIELD,  (velocity >= 0) ? TMC5271_MODE_VELPOS : TMC5271_MODE_VELNEG);
 
 }
 
@@ -242,16 +241,16 @@ void tmc5271_moveTo(TMC5271TypeDef *tmc5271, uint8_t motor, int32_t position, ui
 	if(motor >= TMC5271_MOTORS)
 		return;
 
-	TMC5271_FIELD_WRITE(tmc5271, TMC5271_RAMPMODE, TMC5271_RAMPMODE_MASK, TMC5271_RAMPMODE_SHIFT, TMC5271_MODE_POSITION);
+	field_write(motor, TMC5271_RAMPMODE_FIELD, TMC5271_MODE_POSITION);
 
-	tmc5271_writeInt(tmc5271, TMC5271_VMAX, velocityMax);
-	tmc5271_writeInt(tmc5271, TMC5271_XTARGET, position);
+	tmc5271_writeRegister(motor, TMC5271_VMAX, velocityMax);
+	tmc5271_writeRegister(motor, TMC5271_XTARGET, position);
 }
 
 void tmc5271_moveBy(TMC5271TypeDef *tmc5271, uint8_t motor, uint32_t velocityMax, int32_t *ticks)
 {
 	// determine actual position and add numbers of ticks to move
-	*ticks += tmc5271_readInt(tmc5271, TMC5271_XACTUAL);
+	*ticks += tmc5271_readRegister(motor, TMC5271_XACTUAL);
 
 	return tmc5271_moveTo(tmc5271, motor, *ticks, velocityMax);
 }
