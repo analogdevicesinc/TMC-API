@@ -84,7 +84,7 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
     tmc5240_writeRegister(icID, field.address, regValue);
 }
-///
+
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 #include "tmc/helpers/API_Header.h"
 
