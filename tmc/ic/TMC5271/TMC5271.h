@@ -10,6 +10,9 @@
 #ifndef TMC_IC_TMC5271_H_
 #define TMC_IC_TMC5271_H_
 
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
 
 #include <stdint.h>
 #include <stdbool.h>
