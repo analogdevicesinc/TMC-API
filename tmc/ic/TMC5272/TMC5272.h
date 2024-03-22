@@ -14,7 +14,6 @@
 // and put the table into your own .c file
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
 
-#include "tmc/helpers/Constants.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
