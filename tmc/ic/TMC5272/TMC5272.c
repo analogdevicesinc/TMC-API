@@ -257,6 +257,7 @@ void tmc5272_setSlaveAddress(TMC5272TypeDef *tmc5272, uint8_t slaveAddress)
 static void writeConfiguration(TMC5272TypeDef *tmc5272)
 {
 	UNUSED(tmc5272);
+	tmc5272->config->state = CONFIG_READY;
 }
 
 // Call this periodically
