@@ -14,7 +14,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-///
+
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_UART,
@@ -30,7 +30,7 @@ extern uint8_t tmc5160_getNodeAddress(uint16_t icID);
 int32_t tmc5160_readRegister(uint16_t icID, uint8_t address);
 void tmc5160_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
-///
+
 typedef struct
 {
     uint32_t mask;
@@ -92,7 +92,7 @@ typedef struct
 	uint8_t registerAccess[TMC5160_REGISTER_COUNT];
 } TMC5160TypeDef;
 
-TMC5160TypeDef TMC5160;
+extern TMC5160TypeDef TMC5160;
 
 typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
 
