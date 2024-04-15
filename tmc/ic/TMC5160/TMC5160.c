@@ -9,6 +9,152 @@
 
 #include "TMC5160.h"
 
+
+static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
+static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
+static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
+static void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value);
+
+int32_t tmc5160_readRegister(uint16_t icID, uint8_t address)
+{
+    TMC5160BusType bus = tmc5160_getBusType(icID);
+
+    if(bus == IC_BUS_SPI)
+    {
+        return readRegisterSPI(icID, address);
+    }
+   else if (bus == IC_BUS_UART)
+   {
+       return readRegisterUART(icID, address);
+   }
+
+    //ToDo: Error handling
+    return -1;
+}
+
+void tmc5160_writeRegister(uint16_t icID, uint8_t address, int32_t value)
+{
+    TMC5160BusType bus = tmc5160_getBusType(icID);
+
+    if(bus == IC_BUS_SPI)
+    {
+        writeRegisterSPI(icID, address, value);
+    }
+    else if(bus == IC_BUS_UART)
+    {
+        writeRegisterUART(icID, address, value);
+
+    }
+}
+
+int32_t readRegisterSPI(uint16_t icID, uint8_t address)
+{
+    address = TMC_ADDRESS(address);
+
+
+    // register not readable -> shadow register copy
+    if(!TMC_IS_READABLE(TMC5160.registerAccess[address]))
+        return TMC5160.config->shadowRegister[address];
+
+    uint8_t data[5] = { 0 };
+
+    // clear write bit
+    data[0] = address;
+
+    // Send the read request
+    tmc5160_readWriteSPI(icID, &data[0], sizeof(data));
+
+    // Rewrite address and clear write bit
+    data[0] = address;
+
+    // Send another request to receive the read reply
+    tmc5160_readWriteSPI(icID, &data[0], sizeof(data));
+
+    return ((uint32_t)data[1] << 24) | ((uint32_t) data[2] << 16) | ( data[3] <<  8) | ( data[4]);
+}
+
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
+{
+    uint8_t data[5] = { 0 };
+
+    data[0] = address | TMC_WRITE_BIT;
+    data[1] = 0xFF & (value>>24);
+    data[2] = 0xFF & (value>>16);
+    data[3] = 0xFF & (value>>8);
+    data[4] = 0xFF & (value>>0);
+
+    // Send the write request
+    tmc5160_readWriteSPI(icID, &data[0], sizeof(data));
+
+    // Write to the shadow register and mark the register dirty
+    address = TMC_ADDRESS(address);
+    TMC5160.config->shadowRegister[address] = value;
+    TMC5160.registerAccess[address] |= TMC_ACCESS_DIRTY;
+}
+
+int32_t readRegisterUART(uint16_t icID, uint8_t address)
+{
+    uint8_t data[8] = { 0 };
+
+    address = address & TMC_ADDRESS_MASK;
+
+    if (!TMC_IS_READABLE(TMC5160.registerAccess[address]))
+        return TMC5160.config->shadowRegister[address];
+
+    data[0] = 0x05;
+    data[1] = tmc5160_getNodeAddress(icID); //targetAddressUart;
+    data[2] = address;
+    data[3] = tmc_CRC8(data, 3, 1);
+
+   if (!tmc5160_readWriteUART(icID, &data[0], 4, 8))
+       return 0;
+
+   // Byte 0: Sync nibble correct?
+   if (data[0] != 0x05)
+       return 0;
+
+   // Byte 1: Master address correct?
+   if (data[1] != 0xFF)
+       return 0;
+
+   // Byte 2: Address correct?
+   if (data[2] != address)
+       return 0;
+
+   // Byte 7: CRC correct?
+   if (data[7] != tmc_CRC8(data, 7, 1))
+       return 0;
+
+    return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
+}
+
+void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
+{
+    uint8_t data[8];
+
+    data[0] = 0x05;
+    data[1] = (uint8_t)tmc5160_getNodeAddress(icID); //targetAddressUart;
+    data[2] = address | TMC_WRITE_BIT;
+    data[3] = (value >> 24) & 0xFF;
+    data[4] = (value >> 16) & 0xFF;
+    data[5] = (value >> 8 ) & 0xFF;
+    data[6] = (value      ) & 0xFF;
+    data[7] = tmc_CRC8(data, 7, 1);
+
+    tmc5160_readWriteUART(icID, &data[0], 8, 0);
+    // Write to the shadow register and mark the register dirty
+    address = TMC_ADDRESS(address);
+    TMC5160.config->shadowRegister[address] = value;
+    TMC5160.registerAccess[address] |= TMC_ACCESS_DIRTY;
+}
+
+void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
+{
+  if(motor >= TMC5160_MOTORS)
+        return;
+  StepDir_rotate(motor, velocity);
+}
+
 // => SPI wrapper
 // Send [length] bytes stored in the [data] array over SPI and overwrite [data]
 // with the reply. The first byte sent/received is data[0].
@@ -190,20 +336,21 @@ static void writeConfiguration(TMC5160TypeDef *tmc5160)
 		}
 	}
 
-	if(*ptr < TMC5160_REGISTER_COUNT)
-	{
-		if(*ptr == TMC5160_FACTORY_CONF){
 
-			// Reading reset default value for FCLKTRIM (otp0.0 to otp0.4)
-			int32_t otpFclkTrim = tmc5160_readInt(tmc5160, TMC5160_OTP_READ) & TMC5160_OTP_FCLKTRIM_MASK;
-			// Writing the reset default value to FCLKTRIM
-			tmc5160_writeInt(tmc5160, *ptr, otpFclkTrim);
+    if(*ptr < TMC5160_REGISTER_COUNT)
+    {
+        if(*ptr == TMC5160_FACTORY_CONF){
 
-		}else{
-			tmc5160_writeInt(tmc5160, *ptr, settings[*ptr]);
-		}
-		(*ptr)++;
-	}
+            // Reading reset default value for FCLKTRIM (otp0.0 to otp0.4)
+            int32_t otpFclkTrim = tmc5160_readInt(tmc5160, TMC5160_OTP_READ) & TMC5160_OTP_FCLKTRIM_MASK;
+            // Writing the reset default value to FCLKTRIM
+            tmc5160_writeInt(tmc5160, *ptr, otpFclkTrim);
+
+        }else{
+            tmc5160_writeRegister(tmc5160, *ptr, settings[*ptr]);
+        }
+        (*ptr)++;
+    }
 	else // Finished configuration
 	{
 		if(tmc5160->config->callback)

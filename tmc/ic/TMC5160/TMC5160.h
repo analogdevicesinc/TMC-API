@@ -10,10 +10,73 @@
 #ifndef TMC_IC_TMC5160_H_
 #define TMC_IC_TMC5160_H_
 
+#include "TMC5160_HW_Abstraction.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+///
+typedef enum {
+    IC_BUS_SPI,
+    IC_BUS_UART,
+} TMC5160BusType;
+
+// => TMC-API wrapper
+extern void tmc5160_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc5160_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5160BusType tmc5160_getBusType(uint16_t icID);
+extern uint8_t tmc5160_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc5160_readRegister(uint16_t icID, uint8_t address);
+void tmc5160_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+///
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t field_extract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t field_read(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc5160_readRegister(icID, field.address);
+
+    return field_extract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void field_write(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc5160_readRegister(icID, field.address);
+
+    regValue = field_update(regValue, field, value);
+
+    tmc5160_writeRegister(icID, field.address, regValue);
+}
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 #include "tmc/helpers/API_Header.h"
-#include "TMC5160_Register.h"
-#include "TMC5160_Constants.h"
-#include "TMC5160_Fields.h"
 
 // Helper macros
 #define TMC5160_FIELD_READ(tdef, address, mask, shift) \
@@ -72,6 +135,8 @@ static const int32_t tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
 #undef R3A
 #undef R6C
 #undef R70
+
+TMC5160TypeDef TMC5160;
 
 // Register access permissions:
 //   0x00: none (reserved)
