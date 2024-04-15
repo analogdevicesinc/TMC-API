@@ -77,7 +77,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 {
     uint8_t data[5] = { 0 };
 
-    data[0] = address | TMC_WRITE_BIT;
+    data[0] = address | TMC5160_WRITE_BIT;
     data[1] = 0xFF & (value>>24);
     data[2] = 0xFF & (value>>16);
     data[3] = 0xFF & (value>>8);
@@ -134,7 +134,7 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
 
     data[0] = 0x05;
     data[1] = (uint8_t)tmc5160_getNodeAddress(icID); //targetAddressUart;
-    data[2] = address | TMC_WRITE_BIT;
+    data[2] = address | TMC5160_WRITE_BIT;
     data[3] = (value >> 24) & 0xFF;
     data[4] = (value >> 16) & 0xFF;
     data[5] = (value >> 8 ) & 0xFF;
@@ -155,52 +155,8 @@ void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
   StepDir_rotate(motor, velocity);
 }
 
-// => SPI wrapper
-// Send [length] bytes stored in the [data] array over SPI and overwrite [data]
-// with the reply. The first byte sent/received is data[0].
-extern void tmc5160_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-// <= SPI wrapper
 
-// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc5160_writeDatagram(TMC5160TypeDef *tmc5160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
-{
-	uint8_t data[5] = { address | TMC5160_WRITE_BIT, x1, x2, x3, x4 };
-	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
-
-	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
-
-	// Write to the shadow register and mark the register dirty
-	address = TMC_ADDRESS(address);
-	tmc5160->config->shadowRegister[address] = value;
-	tmc5160->registerAccess[address] |= TMC_ACCESS_DIRTY;
-}
-
-// Write an integer to the given address
-void tmc5160_writeInt(TMC5160TypeDef *tmc5160, uint8_t address, int32_t value)
-{
-	tmc5160_writeDatagram(tmc5160, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
-}
-
-// Read an integer from the given address
-int32_t tmc5160_readInt(TMC5160TypeDef *tmc5160, uint8_t address)
-{
-	address = TMC_ADDRESS(address);
-
-	// register not readable -> shadow register copy
-	if(!TMC_IS_READABLE(tmc5160->registerAccess[address]))
-		return tmc5160->config->shadowRegister[address];
-
-	uint8_t data[5] = { 0, 0, 0, 0, 0 };
-
-	data[0] = address;
-	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
-
-	data[0] = address;
-	tmc5160_readWriteArray(tmc5160->config->channel, &data[0], 5);
-
-	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
-}
-
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 // Initialize a TMC5160 IC.
 // This function requires:
 //     - tmc5160: The pointer to a TMC5160TypeDef struct, which represents one IC
@@ -312,7 +268,7 @@ void tmc5160_setCallback(TMC5160TypeDef *tmc5160, tmc5160_callback callback)
 }
 
 // Helper function: Configure the next register.
-static void writeConfiguration(TMC5160TypeDef *tmc5160)
+static void writeConfiguration(TMC5160TypeDef *tmc5160, uint8_t motor)
 {
 	uint8_t *ptr = &tmc5160->config->configIndex;
 	const int32_t *settings;
@@ -342,12 +298,12 @@ static void writeConfiguration(TMC5160TypeDef *tmc5160)
         if(*ptr == TMC5160_FACTORY_CONF){
 
             // Reading reset default value for FCLKTRIM (otp0.0 to otp0.4)
-            int32_t otpFclkTrim = tmc5160_readInt(tmc5160, TMC5160_OTP_READ) & TMC5160_OTP_FCLKTRIM_MASK;
+            int32_t otpFclkTrim = tmc5160_readRegister(motor, TMC5160_OTP_READ) & TMC5160_OTP_FCLKTRIM_MASK;
             // Writing the reset default value to FCLKTRIM
-            tmc5160_writeInt(tmc5160, *ptr, otpFclkTrim);
+            tmc5160_writeRegister(motor, *ptr, otpFclkTrim);
 
         }else{
-            tmc5160_writeRegister(tmc5160, *ptr, settings[*ptr]);
+            tmc5160_writeRegister(motor, *ptr, settings[*ptr]);
         }
         (*ptr)++;
     }
@@ -363,11 +319,11 @@ static void writeConfiguration(TMC5160TypeDef *tmc5160)
 }
 
 // Call this periodically
-void tmc5160_periodicJob(TMC5160TypeDef *tmc5160, uint32_t tick)
+void tmc5160_periodicJob(TMC5160TypeDef *tmc5160, uint8_t motor, uint32_t tick)
 {
 	if(tmc5160->config->state != CONFIG_READY)
 	{
-		writeConfiguration(tmc5160);
+		writeConfiguration(tmc5160, motor);
 		return;
 	}
 
@@ -377,7 +333,7 @@ void tmc5160_periodicJob(TMC5160TypeDef *tmc5160, uint32_t tick)
 	// Calculate velocity v = dx/dt
 	if((tickDiff = tick - tmc5160->oldTick) >= 5)
 	{
-		XActual = tmc5160_readInt(tmc5160, TMC5160_XACTUAL);
+		XActual = tmc5160_readRegister(motor, TMC5160_XACTUAL);
 		// ToDo CHECK 2: API Compatibility - write alternative algorithm w/o floating point? (LH)
 		tmc5160->velocity = (uint32_t) ((float32_t) ((XActual - tmc5160->oldX) / (float32_t) tickDiff) * (float32_t) 1048.576);
 
@@ -387,55 +343,55 @@ void tmc5160_periodicJob(TMC5160TypeDef *tmc5160, uint32_t tick)
 }
 
 // Rotate with a given velocity (to the right)
-void tmc5160_rotate(TMC5160TypeDef *tmc5160, int32_t velocity)
+void tmc5160_rotate(TMC5160TypeDef *tmc5160, uint8_t motor, int32_t velocity)
 {
 	// Set absolute velocity
-	tmc5160_writeInt(tmc5160, TMC5160_VMAX, abs(velocity));
+	tmc5160_writeRegister(motor, TMC5160_VMAX, abs(velocity));
 	// Set direction
-	tmc5160_writeInt(tmc5160, TMC5160_RAMPMODE, (velocity >= 0) ? TMC5160_MODE_VELPOS : TMC5160_MODE_VELNEG);
+	tmc5160_writeRegister(motor, TMC5160_RAMPMODE, (velocity >= 0) ? TMC5160_MODE_VELPOS : TMC5160_MODE_VELNEG);
 }
 
 // Rotate to the right
-void tmc5160_right(TMC5160TypeDef *tmc5160, uint32_t velocity)
+void tmc5160_right(TMC5160TypeDef *tmc5160, uint8_t motor, uint32_t velocity)
 {
-	tmc5160_rotate(tmc5160, velocity);
+	tmc5160_rotate(tmc5160, motor, velocity);
 }
 
 // Rotate to the left
-void tmc5160_left(TMC5160TypeDef *tmc5160, uint32_t velocity)
+void tmc5160_left(TMC5160TypeDef *tmc5160, uint8_t motor, uint32_t velocity)
 {
-	tmc5160_rotate(tmc5160, -velocity);
+	tmc5160_rotate(tmc5160, motor, -velocity);
 }
 
 // Stop moving
-void tmc5160_stop(TMC5160TypeDef *tmc5160)
+void tmc5160_stop(TMC5160TypeDef *tmc5160, uint8_t motor)
 {
-	tmc5160_rotate(tmc5160, 0);
+	tmc5160_rotate(tmc5160, motor, 0);
 }
 
 // Move to a specified position with a given velocity
-void tmc5160_moveTo(TMC5160TypeDef *tmc5160, int32_t position, uint32_t velocityMax)
+void tmc5160_moveTo(TMC5160TypeDef *tmc5160, uint8_t motor, int32_t position, uint32_t velocityMax)
 {
-	tmc5160_writeInt(tmc5160, TMC5160_RAMPMODE, TMC5160_MODE_POSITION);
+	tmc5160_writeRegister(motor, TMC5160_RAMPMODE, TMC5160_MODE_POSITION);
 
 	// VMAX also holds the target velocity in velocity mode.
 	// Re-write the position mode maximum velocity here.
-	tmc5160_writeInt(tmc5160, TMC5160_VMAX, velocityMax);
+	tmc5160_writeRegister(motor, TMC5160_VMAX, velocityMax);
 
-	tmc5160_writeInt(tmc5160, TMC5160_XTARGET, position);
+	tmc5160_writeRegister(motor, TMC5160_XTARGET, position);
 }
 
 // Move by a given amount with a given velocity
 // This function will write the absolute target position to *ticks
-void tmc5160_moveBy(TMC5160TypeDef *tmc5160, int32_t *ticks, uint32_t velocityMax)
+void tmc5160_moveBy(TMC5160TypeDef *tmc5160, uint8_t motor, int32_t *ticks, uint32_t velocityMax)
 {
 	// determine actual position and add numbers of ticks to move
-	*ticks += tmc5160_readInt(tmc5160, TMC5160_XACTUAL);
+	*ticks += tmc5160_readRegister(motor, TMC5160_XACTUAL);
 
-	tmc5160_moveTo(tmc5160, *ticks, velocityMax);
+	tmc5160_moveTo(tmc5160, motor, *ticks, velocityMax);
 }
 
-uint8_t tmc5160_consistencyCheck(TMC5160TypeDef *tmc5160)
+uint8_t tmc5160_consistencyCheck(TMC5160TypeDef *tmc5160, uint8_t motor)
 {
 	// Config has not yet been written -> it cant be consistent
 	if(tmc5160->config->state != CONFIG_READY)
@@ -443,7 +399,7 @@ uint8_t tmc5160_consistencyCheck(TMC5160TypeDef *tmc5160)
 
 	// Check constant shadow registers consistent with actual registers
 	for(size_t i = 0; i < TMC5160_REGISTER_COUNT; i++)
-		if(tmc5160->config->shadowRegister[i] != tmc5160_readInt(tmc5160, i))
+		if(tmc5160->config->shadowRegister[i] != tmc5160_readRegister(motor, i))
 			return 1;
 
 	// No inconsistency detected

@@ -78,12 +78,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 #include "tmc/helpers/API_Header.h"
 
-// Helper macros
-#define TMC5160_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc5160_readInt(tdef, address), mask, shift)
-#define TMC5160_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc5160_writeInt(tdef, address, FIELD_SET(tmc5160_readInt(tdef, address), mask, shift, value)))
-
 // Factor between 10ms units and internal units for 16MHz
 //#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
 // TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
@@ -97,6 +91,8 @@ typedef struct
 	int32_t registerResetState[TMC5160_REGISTER_COUNT];
 	uint8_t registerAccess[TMC5160_REGISTER_COUNT];
 } TMC5160TypeDef;
+
+TMC5160TypeDef TMC5160;
 
 typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
 
@@ -136,7 +132,6 @@ static const int32_t tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
 #undef R6C
 #undef R70
 
-TMC5160TypeDef TMC5160;
 
 // Register access permissions:
 //   0x00: none (reserved)
@@ -178,9 +173,6 @@ static const TMCRegisterConstant tmc5160_RegisterConstants[] =
 		{ 0x70, 0xC40C001E }  // PWMCONF
 };
 
-void tmc5160_writeDatagram(TMC5160TypeDef *tmc5160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc5160_writeInt(TMC5160TypeDef *tmc5160, uint8_t address, int32_t value);
-int32_t tmc5160_readInt(TMC5160TypeDef *tmc5160, uint8_t address);
 
 void tmc5160_init(TMC5160TypeDef *tmc5160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc5160_fillShadowRegisters(TMC5160TypeDef *tmc5160);
@@ -188,15 +180,15 @@ uint8_t tmc5160_reset(TMC5160TypeDef *tmc5160);
 uint8_t tmc5160_restore(TMC5160TypeDef *tmc5160);
 void tmc5160_setRegisterResetState(TMC5160TypeDef *tmc5160, const int32_t *resetState);
 void tmc5160_setCallback(TMC5160TypeDef *tmc5160, tmc5160_callback callback);
-void tmc5160_periodicJob(TMC5160TypeDef *tmc5160, uint32_t tick);
+void tmc5160_periodicJob(TMC5160TypeDef *tmc5160, uint8_t motor, uint32_t tick);
 
-void tmc5160_rotate(TMC5160TypeDef *tmc5160, int32_t velocity);
-void tmc5160_right(TMC5160TypeDef *tmc5160, uint32_t velocity);
-void tmc5160_left(TMC5160TypeDef *tmc5160, uint32_t velocity);
-void tmc5160_stop(TMC5160TypeDef *tmc5160);
-void tmc5160_moveTo(TMC5160TypeDef *tmc5160, int32_t position, uint32_t velocityMax);
-void tmc5160_moveBy(TMC5160TypeDef *tmc5160, int32_t *ticks, uint32_t velocityMax);
+void tmc5160_rotate(TMC5160TypeDef *tmc5160, uint8_t motor, int32_t velocity);
+void tmc5160_right(TMC5160TypeDef *tmc5160, uint8_t motor, uint32_t velocity);
+void tmc5160_left(TMC5160TypeDef *tmc5160, uint8_t motor, uint32_t velocity);
+void tmc5160_stop(TMC5160TypeDef *tmc5160, uint8_t motor);
+void tmc5160_moveTo(TMC5160TypeDef *tmc5160, uint8_t motor, int32_t position, uint32_t velocityMax);
+void tmc5160_moveBy(TMC5160TypeDef *tmc5160, uint8_t motor, int32_t *ticks, uint32_t velocityMax);
 
-uint8_t tmc5160_consistencyCheck(TMC5160TypeDef *tmc5160);
+uint8_t tmc5160_consistencyCheck(TMC5160TypeDef *tmc5160, uint8_t motor);
 
 #endif /* TMC_IC_TMC5160_H_ */
