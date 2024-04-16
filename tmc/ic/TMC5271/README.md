@@ -1,36 +1,46 @@
 # TMC5271
 
 
-## Accessing the TMC5271
-The following diagram depicts how to access the TMC5271 using the TMC-API.
+## Accessing the TMC5271 via UART
+The following diagram depicts how to access the TMC5271 via UART using the TMC-API.
 
-![screenshot](registercall_hierarchy_flowchart.png)
+![screenshot](registercall_hierarchy_flowchar_UART.png)
 
 The description of the functions that the user needs are as follows:
-- The functions tmc5271_readRegister and tmc5271_writeRegister are used to read and write the registers respectively. These functions check the current active bus and calls the bus-specific function e.g readRegisterUART, etc.
-- The bus specific function constructs the datagram and further calls the bus specific callback.
-- The user needs to externally implement this callback or HAL wrapper function that should further call the hardware specific read/write function for that particular bus type.
+- The functions tmc5271_readRegister and tmc5271_writeRegister are used to read and write the registers respectively. These functions check the current active bus and calls the bus-specific function i.e readRegisterUART or writeRegisterUART.
+- These bus specific functions constructs the datagram and further calls the bus specific callback 'tmcXXXX_readWriteUART.
+- The user needs to externally implement this callback function that should further call the hardware specific read/write function for UART.
+
+## Accessing the TMC5271 via SPI
+The following diagram depicts how to access the TMC5271 via SPI using the TMC-API.
+
+![screenshot](registercall_hierarchy_flowchar_SPI.png)
+
+The description of the functions that the user needs are as follows:
+- The functions tmc5271_readRegister and tmc5271_writeRegister are used to read and write the registers respectively. These functions check the current active bus and calls the bus-specific function i.e readRegisterSPI or writeRegisterSPI.
+- These bus specific functions constructs the datagram and further calls the bus specific callback 'tmcXXXX_readWriteSPI.
+- The user needs to externally implement this callback function that should further call the hardware specific read/write function for SPI.
 
 ### How to use
 
 To access the TMC5271's registers, the TMC-API offers two functions: **tmc5271_readRegister** and **tmc5271_writeRegister**.
-Each of these functions takes in an **icID**, which is used to identify the IC should you have multiple ICs connected. This identifier simply gets passed down to the callback functions (see How to Integrate).
+Each of these functions takes in an **icID**, which is used to identify the IC when you have multiple ICs connected. This identifier simply gets passed down to the callback functions (see How to Integrate).
 
 ### How to integrate: overview
 
-- Add all the files of the TMC-API/ic/tmc/TMC5271 folder into your project.
-- Include the TMC5271.h file in your source code.
-- Implement the necessary callback functions (see below).
-- (optional): Take a look at the Examples subfolder for ready-made examples of the TMC-API usage.
+1. Add all the files of the TMC-API/ic/tmc/TMC5271 folder into your project.
+2. Include the TMC5271.h file in your source code.
+3. Implement the necessary callback functions (see below).
+4. (optional): Take a look at the Examples subfolder for ready-made examples of the TMC-API usage.
 
 #### How to integrate: Callback functions
 To communicate with a TMC5271 , the TMC-API needs to know which bus (UART, SPI) it shall use. For that you must implement the **tmc5271_getBusType()** callback function.
-If you want to access the chip using UART, also implement these callback functions:
-- **tmc5271_readWriteUART()**, which is a HAL wrapper function that provides the necessary hardware access.
-- **tmc5271_getNodeAddress()**, that returns the node/slave address. Node address could be set in NODECONF (0x3) register and the address could be incremented as defined by AD0, AD1 and AD2. (Node address + ADx) must be less than 255. For further details please consult the datasheet of TMC5271.
+If you want to access the chip using UART, implement these callback functions also:
+1. **tmc5271_readWriteUART()**, which is a HAL wrapper function that provides the necessary hardware access.
+2. **tmc5271_getNodeAddress()**, that returns the node/slave address. Node address could be set in NODECONF (0x3) register and the address could be incremented as defined by AD0, AD1 and AD2. (Node address + ADx) must be less than 255. For further details please consult the datasheet of TMC5271.
 
-If you want to access the chip using SPI, also implement this callback function:
-- **tmc5271_readWriteSPI()**, which is a HAL wrapper function that provides the necessary hardware access.
+If you want to access the chip using SPI, implement this callback function too:
+1. **tmc5271_readWriteSPI()**, which is a HAL wrapper function that provides the necessary hardware access. This function should also set the chip select pin CSN to low before starting the data transfer and set to high upon completion. Please refer to the datasheet of the IC for further details.
 
 #### Sharing the CRC table with other TMC-API chips
 The TMC5271 UART protocol uses an 8 bit CRC. For calculating this, a table-based algorithm is used. This table (tmcCRCTable_Poly7Reflected[256]) is 256 bytes big and identical across multiple different Trinamic chips (i.e. TMC2209).
