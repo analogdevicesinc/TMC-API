@@ -2,7 +2,7 @@
 * Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved. This software is
 * proprietary & confidential to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -116,9 +116,6 @@ void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp)
 			linearRamp->rampVelocity -= dV / 1000;
 		}
 
-		// limit positionRampTargetVelocity to maxRampTargetVelocity
-		//linearRamp->rampVelocity = tmc_limitInt(linearRamp->rampVelocity, -abs(maxRampTargetVelocity), abs(maxRampTargetVelocity));
-
 		// do position ramping using actual ramp velocity to update dX
 		int64_t dX = ((int64_t)linearRamp->rampVelocity * (int64_t)linearRamp->encoderSteps) / ((int64_t)60) + linearRamp->lastdXRest;
 
@@ -126,7 +123,7 @@ void tmc_linearRamp_computeRampPosition(TMC_LinearRamp *linearRamp)
 		int64_t tempActualTargetPosition = (int64_t)linearRamp->rampPosition * 1000;
 
 		// reset helper variables if ramp position reached target position
-		if (abs(linearRamp->targetPosition - linearRamp->rampPosition) <= 10) /*abs(dX)*/
+		if (abs(linearRamp->targetPosition - linearRamp->rampPosition) < abs((int32_t)dX/1000))
 		{
 			// sync ramp position with target position on small deviations
 			linearRamp->rampPosition = linearRamp->targetPosition;
