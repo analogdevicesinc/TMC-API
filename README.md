@@ -33,6 +33,11 @@ For the ICs with the new implementation, please consult their [README](https://g
 - Once the IC configuration is completed, you can use tmcXXXX_readInt() and tmcXXXX_writeInt() to read and write registers.
 
 ## Changelog
+**Version 3.10.1: (Released)**
+- Removed obselete ICs i.e; TMC846X,TMC389,TMC457,TMC4210,TMC424,TMC429,TMC4330,TMC4331 & TMC43XX.
+- Added simpler register Read/Write mechanism for TMC5271
+- Various bugfixes
+
 **Version 3.10: (Released)**
 - Added TMC2262 and TMC5262
 - Added simpler register Read/Write mechanism for TMC5272
