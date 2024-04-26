@@ -15,11 +15,38 @@
 #include "TMC5130_Constants.h"
 #include "TMC5130_Fields.h"
 
+#define DEFAULT_MOTOR  0
+
 // Helper macros
 #define TMC5130_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc5130_readInt(tdef, address), mask, shift)
+	FIELD_GET(tmc5130_readRegister(DEFAULT_MOTOR, address), mask, shift)
 #define TMC5130_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc5130_writeInt(tdef, address, FIELD_SET(tmc5130_readInt(tdef, address), mask, shift, value)))
+	(tmc5130_writeRegister(DEFAULT_MOTOR, address, FIELD_SET(tmc5130_readRegister(DEFAULT_MOTOR, address), mask, shift, value)))
+
+// ////////// new definition ///////////////////////////
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#define TMC5130_ADDRESS_MASK     0x7F
+
+
+typedef enum {
+	IC_BUS_SPI,
+	IC_BUS_UART,
+} TMC5130BusType;
+
+// => TMC-API wrapper
+extern void tmc5130_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc5130_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5130BusType tmc5130_getBusType(uint16_t icID);
+extern uint8_t tmc5130_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc5130_readRegister(uint16_t icID, uint8_t address);
+void tmc5130_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+//void tmc5130_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
+////////////// old definition //////////////////////////
 
 // Typedefs
 typedef struct
@@ -30,7 +57,7 @@ typedef struct
 	int32_t registerResetState[TMC5130_REGISTER_COUNT];
 	uint8_t registerAccess[TMC5130_REGISTER_COUNT];
 } TMC5130TypeDef;
-
+extern TMC5130TypeDef TMC5130;
 typedef void (*tmc5130_callback)(TMC5130TypeDef*, ConfigState);
 
 // Default Register values
@@ -100,10 +127,6 @@ static const TMCRegisterConstant tmc5130_RegisterConstants[] =
 // API Functions
 // All functions act on one IC identified by the TMC5130TypeDef pointer
 
-void tmc5130_writeDatagram(TMC5130TypeDef *tmc5130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc5130_writeInt(TMC5130TypeDef *tmc5130, uint8_t address, int32_t value);
-int32_t tmc5130_readInt(TMC5130TypeDef *tmc5130, uint8_t address);
-
 void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130);
 uint8_t tmc5130_reset(TMC5130TypeDef *tmc5130);
@@ -112,11 +135,11 @@ void tmc5130_setRegisterResetState(TMC5130TypeDef *tmc5130, const int32_t *reset
 void tmc5130_setCallback(TMC5130TypeDef *tmc5130, tmc5130_callback callback);
 void tmc5130_periodicJob(TMC5130TypeDef *tmc5130, uint32_t tick);
 
-void tmc5130_rotate(TMC5130TypeDef *tmc5130, int32_t velocity);
-void tmc5130_right(TMC5130TypeDef *tmc5130, uint32_t velocity);
-void tmc5130_left(TMC5130TypeDef *tmc5130, uint32_t velocity);
-void tmc5130_stop(TMC5130TypeDef *tmc5130);
-void tmc5130_moveTo(TMC5130TypeDef *tmc5130, int32_t position, uint32_t velocityMax);
-void tmc5130_moveBy(TMC5130TypeDef *tmc5130, int32_t *ticks, uint32_t velocityMax);
+void tmc5130_rotate(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t velocity);
+void tmc5130_right(TMC5130TypeDef *tmc5130, uint8_t motor, uint32_t velocity);
+void tmc5130_left(TMC5130TypeDef *tmc5130, uint8_t motor, uint32_t velocity);
+void tmc5130_stop(TMC5130TypeDef *tmc5130,uint8_t motor);
+void tmc5130_moveTo(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t position, uint32_t velocityMax);
+void tmc5130_moveBy(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t *ticks, uint32_t velocityMax);
 
 #endif /* TMC_IC_TMC5130_H_ */

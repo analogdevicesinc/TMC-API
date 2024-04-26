@@ -9,51 +9,188 @@
 
 #include "TMC5130.h"
 
-// => SPI wrapper
-// Send [length] bytes stored in the [data] array over SPI and overwrite [data]
-// with the reply. The first byte sent/received is data[0].
-extern void tmc5130_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-// <= SPI wrapper
 
-// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc5130_writeDatagram(TMC5130TypeDef *tmc5130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
+//new implementation ///////////////////////////////////////////////////////
+
+TMC5130TypeDef TMC5130;
+
+#ifdef TMC_API_EXTERNAL_CRC_TABLE
+extern const uint8_t tmcCRCTable_Poly7Reflected[256];
+#else
+const uint8_t tmcCRCTable_Poly7Reflected[256] = {
+			0x00, 0x91, 0xE3, 0x72, 0x07, 0x96, 0xE4, 0x75, 0x0E, 0x9F, 0xED, 0x7C, 0x09, 0x98, 0xEA, 0x7B,
+			0x1C, 0x8D, 0xFF, 0x6E, 0x1B, 0x8A, 0xF8, 0x69, 0x12, 0x83, 0xF1, 0x60, 0x15, 0x84, 0xF6, 0x67,
+			0x38, 0xA9, 0xDB, 0x4A, 0x3F, 0xAE, 0xDC, 0x4D, 0x36, 0xA7, 0xD5, 0x44, 0x31, 0xA0, 0xD2, 0x43,
+			0x24, 0xB5, 0xC7, 0x56, 0x23, 0xB2, 0xC0, 0x51, 0x2A, 0xBB, 0xC9, 0x58, 0x2D, 0xBC, 0xCE, 0x5F,
+			0x70, 0xE1, 0x93, 0x02, 0x77, 0xE6, 0x94, 0x05, 0x7E, 0xEF, 0x9D, 0x0C, 0x79, 0xE8, 0x9A, 0x0B,
+			0x6C, 0xFD, 0x8F, 0x1E, 0x6B, 0xFA, 0x88, 0x19, 0x62, 0xF3, 0x81, 0x10, 0x65, 0xF4, 0x86, 0x17,
+			0x48, 0xD9, 0xAB, 0x3A, 0x4F, 0xDE, 0xAC, 0x3D, 0x46, 0xD7, 0xA5, 0x34, 0x41, 0xD0, 0xA2, 0x33,
+			0x54, 0xC5, 0xB7, 0x26, 0x53, 0xC2, 0xB0, 0x21, 0x5A, 0xCB, 0xB9, 0x28, 0x5D, 0xCC, 0xBE, 0x2F,
+			0xE0, 0x71, 0x03, 0x92, 0xE7, 0x76, 0x04, 0x95, 0xEE, 0x7F, 0x0D, 0x9C, 0xE9, 0x78, 0x0A, 0x9B,
+			0xFC, 0x6D, 0x1F, 0x8E, 0xFB, 0x6A, 0x18, 0x89, 0xF2, 0x63, 0x11, 0x80, 0xF5, 0x64, 0x16, 0x87,
+			0xD8, 0x49, 0x3B, 0xAA, 0xDF, 0x4E, 0x3C, 0xAD, 0xD6, 0x47, 0x35, 0xA4, 0xD1, 0x40, 0x32, 0xA3,
+			0xC4, 0x55, 0x27, 0xB6, 0xC3, 0x52, 0x20, 0xB1, 0xCA, 0x5B, 0x29, 0xB8, 0xCD, 0x5C, 0x2E, 0xBF,
+			0x90, 0x01, 0x73, 0xE2, 0x97, 0x06, 0x74, 0xE5, 0x9E, 0x0F, 0x7D, 0xEC, 0x99, 0x08, 0x7A, 0xEB,
+			0x8C, 0x1D, 0x6F, 0xFE, 0x8B, 0x1A, 0x68, 0xF9, 0x82, 0x13, 0x61, 0xF0, 0x85, 0x14, 0x66, 0xF7,
+			0xA8, 0x39, 0x4B, 0xDA, 0xAF, 0x3E, 0x4C, 0xDD, 0xA6, 0x37, 0x45, 0xD4, 0xA1, 0x30, 0x42, 0xD3,
+			0xB4, 0x25, 0x57, 0xC6, 0xB3, 0x22, 0x50, 0xC1, 0xBA, 0x2B, 0x59, 0xC8, 0xBD, 0x2C, 0x5E, 0xCF,
+};
+#endif
+
+
+static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
+static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
+static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
+static void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value);
+static uint8_t CRC8(uint8_t *data, uint32_t bytes);
+
+
+// Checks which BUS type is use and then forwards it to the corresponding read function. See below.
+int32_t tmc5130_readRegister(uint16_t icID, uint8_t address)
 {
-	uint8_t data[5] = { address | TMC5130_WRITE_BIT, x1, x2, x3, x4 };
-	tmc5130_readWriteArray(tmc5130->config->channel, &data[0], 5);
+    // register not readable -> shadow register copy
+	if(!TMC_IS_READABLE(TMC5130.registerAccess[address]))
+		return TMC5130.config->shadowRegister[address];
 
-	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
+	TMC5130BusType bus = tmc5130_getBusType(icID);
+
+	if(bus == IC_BUS_SPI)
+	{
+		return readRegisterSPI(icID, address);
+	}
+	else if (bus == IC_BUS_UART)
+	{
+		return readRegisterUART(icID, address);
+	}
+
+	// ToDo: Error handling
+	return -1;
+}
+
+// Checks which BUS type is use and then forwards it to the corresponding write function. See below.
+void tmc5130_writeRegister(uint16_t icID, uint8_t address, int32_t value)
+{
+	TMC5130BusType bus = tmc5130_getBusType(icID);
+
+	if(bus == IC_BUS_SPI)
+	{
+		writeRegisterSPI(icID, address, value);
+	}
+	else if(bus == IC_BUS_UART)
+	{
+		writeRegisterUART(icID, address, value);
+	}
 
 	// Write to the shadow register and mark the register dirty
 	address = TMC_ADDRESS(address);
-	tmc5130->config->shadowRegister[address] = value;
-	tmc5130->registerAccess[address] |= TMC_ACCESS_DIRTY;
+	TMC5130.config->shadowRegister[address] = value;
+	TMC5130.registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
-// Write an integer to the given address
-void tmc5130_writeInt(TMC5130TypeDef *tmc5130, uint8_t address, int32_t value)
+int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 {
-	tmc5130_writeDatagram(tmc5130, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
+	uint8_t data[5] = { 0 };
+
+	// clear write bit
+	data[0] = address & TMC5130_ADDRESS_MASK;
+
+	// Send the read request
+	tmc5130_readWriteSPI(icID, &data[0], sizeof(data));
+
+	// Rewrite address and clear write bit
+	data[0] = address & TMC5130_ADDRESS_MASK;
+
+	// Send another request to receive the read reply
+	tmc5130_readWriteSPI(icID, &data[0], sizeof(data));
+
+	return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
 }
 
-// Read an integer from the given address
-int32_t tmc5130_readInt(TMC5130TypeDef *tmc5130, uint8_t address)
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 {
-	address = TMC_ADDRESS(address);
+	uint8_t data[5] = { 0 };
 
-	// register not readable -> shadow register copy
-	if(!TMC_IS_READABLE(tmc5130->registerAccess[address]))
-		return tmc5130->config->shadowRegister[address];
 
-	uint8_t data[5] = { 0, 0, 0, 0, 0 };
+	data[0] = address | TMC5130_WRITE_BIT;
+	data[1] = 0xFF & (value>>24);
+	data[2] = 0xFF & (value>>16);
+	data[3] = 0xFF & (value>>8);
+	data[4] = 0xFF & (value>>0);
 
-	data[0] = address;
-	tmc5130_readWriteArray(tmc5130->config->channel, &data[0], 5);
-
-	data[0] = address;
-	tmc5130_readWriteArray(tmc5130->config->channel, &data[0], 5);
-
-	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
+	// Send the write request
+	tmc5130_readWriteSPI(icID, &data[0], sizeof(data));
 }
+
+int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
+{
+	uint8_t data[8] = { 0 };
+
+	registerAddress = registerAddress & TMC5130_ADDRESS_MASK;
+
+	data[0] = 0x05;
+	data[1] = tmc5130_getNodeAddress(icID);
+	data[2] = registerAddress;
+	data[3] = CRC8(data, 3);
+
+	if (!tmc5130_readWriteUART(icID, &data[0], 4, 8))
+		return 0;
+
+	// Byte 0: Sync nibble correct?
+	if (data[0] != 0x05)
+		return 0;
+
+	// Byte 1: Master address correct?
+	if (data[1] != 0xFF)
+		return 0;
+
+	// Byte 2: Address correct?
+	if (data[2] != registerAddress)
+		return 0;
+
+	// Byte 7: CRC correct?
+	if (data[7] != CRC8(data, 7))
+		return 0;
+
+	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
+}
+
+void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
+{
+	uint8_t data[8];
+
+	data[0] = 0x05;
+	data[1] = tmc5130_getNodeAddress(icID);
+	data[2] = registerAddress | TMC5130_WRITE_BIT;
+	data[3] = (value >> 24) & 0xFF;
+	data[4] = (value >> 16) & 0xFF;
+	data[5] = (value >> 8 ) & 0xFF;
+	data[6] = (value      ) & 0xFF;
+	data[7] = CRC8(data, 7);
+
+	tmc5130_readWriteUART(icID, &data[0], 8, 0);
+}
+
+static uint8_t CRC8(uint8_t *data, uint32_t bytes)
+{
+	uint8_t result = 0;
+	uint8_t *table;
+
+	while(bytes--)
+		result = tmcCRCTable_Poly7Reflected[result ^ *data++];
+
+	// Flip the result around
+	// swap odd and even bits
+	result = ((result >> 1) & 0x55) | ((result & 0x55) << 1);
+	// swap consecutive pairs
+	result = ((result >> 2) & 0x33) | ((result & 0x33) << 2);
+	// swap nibbles ...
+	result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
+
+	return result;
+}
+
+// old implementation ///////////////////////////////////////////////////////
+
 
 // Initialize a TMC5130 IC.
 // This function requires:
@@ -192,7 +329,7 @@ static void writeConfiguration(TMC5130TypeDef *tmc5130)
 
 	if(*ptr < TMC5130_REGISTER_COUNT)
 	{
-		tmc5130_writeInt(tmc5130, *ptr, settings[*ptr]);
+		tmc5130_writeRegister(DEFAULT_MOTOR, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration
@@ -221,7 +358,7 @@ void tmc5130_periodicJob(TMC5130TypeDef *tmc5130, uint32_t tick)
 	// Calculate velocity v = dx/dt
 	if((tickDiff = tick - tmc5130->oldTick) >= 5)
 	{
-		XActual = tmc5130_readInt(tmc5130, TMC5130_XACTUAL);
+		XActual = tmc5130_readRegister(DEFAULT_MOTOR, TMC5130_XACTUAL);
 		// ToDo CHECK 2: API Compatibility - write alternative algorithm w/o floating point? (LH)
 		tmc5130->velocity = (uint32_t) ((float32_t) ((XActual - tmc5130->oldX) / (float32_t) tickDiff) * (float32_t) 1048.576);
 
@@ -231,50 +368,50 @@ void tmc5130_periodicJob(TMC5130TypeDef *tmc5130, uint32_t tick)
 }
 
 // Rotate with a given velocity (to the right)
-void tmc5130_rotate(TMC5130TypeDef *tmc5130, int32_t velocity)
+void tmc5130_rotate(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t velocity)
 {
 	// Set absolute velocity
-	tmc5130_writeInt(tmc5130, TMC5130_VMAX, abs(velocity));
+	tmc5130_writeRegister(motor, TMC5130_VMAX, abs(velocity));
 	// Set direction
-	tmc5130_writeInt(tmc5130, TMC5130_RAMPMODE, (velocity >= 0) ? TMC5130_MODE_VELPOS : TMC5130_MODE_VELNEG);
+	tmc5130_writeRegister(motor, TMC5130_RAMPMODE, (velocity >= 0) ? TMC5130_MODE_VELPOS : TMC5130_MODE_VELNEG);
 }
 
 // Rotate to the right
-void tmc5130_right(TMC5130TypeDef *tmc5130, uint32_t velocity)
+void tmc5130_right(TMC5130TypeDef *tmc5130, uint8_t motor, uint32_t velocity)
 {
-	tmc5130_rotate(tmc5130, velocity);
+	tmc5130_rotate(tmc5130, motor, velocity);
 }
 
 // Rotate to the left
-void tmc5130_left(TMC5130TypeDef *tmc5130, uint32_t velocity)
+void tmc5130_left(TMC5130TypeDef *tmc5130, uint8_t motor, uint32_t velocity)
 {
-	tmc5130_rotate(tmc5130, -velocity);
+	tmc5130_rotate(tmc5130, motor, -velocity);
 }
 
 // Stop moving
-void tmc5130_stop(TMC5130TypeDef *tmc5130)
+void tmc5130_stop(TMC5130TypeDef *tmc5130, uint8_t motor)
 {
-	tmc5130_rotate(tmc5130, 0);
+	tmc5130_rotate(tmc5130,motor, 0);
 }
 
 // Move to a specified position with a given velocity
-void tmc5130_moveTo(TMC5130TypeDef *tmc5130, int32_t position, uint32_t velocityMax)
+void tmc5130_moveTo(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t position, uint32_t velocityMax)
 {
-	tmc5130_writeInt(tmc5130, TMC5130_RAMPMODE, TMC5130_MODE_POSITION);
+	tmc5130_writeRegister(motor, TMC5130_RAMPMODE, TMC5130_MODE_POSITION);
 
 	// VMAX also holds the target velocity in velocity mode.
 	// Re-write the position mode maximum velocity here.
-	tmc5130_writeInt(tmc5130, TMC5130_VMAX, velocityMax);
+	tmc5130_writeRegister(motor, TMC5130_VMAX, velocityMax);
 
-	tmc5130_writeInt(tmc5130, TMC5130_XTARGET, position);
+	tmc5130_writeRegister(motor, TMC5130_XTARGET, position);
 }
 
 // Move by a given amount with a given velocity
 // This function will write the absolute target position to *ticks
-void tmc5130_moveBy(TMC5130TypeDef *tmc5130, int32_t *ticks, uint32_t velocityMax)
+void tmc5130_moveBy(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t *ticks, uint32_t velocityMax)
 {
 	// determine actual position and add numbers of ticks to move
-	*ticks += tmc5130_readInt(tmc5130, TMC5130_XACTUAL);
+	*ticks += tmc5130_readRegister(motor, TMC5130_XACTUAL);
 
-	tmc5130_moveTo(tmc5130, *ticks, velocityMax);
+	tmc5130_moveTo(tmc5130, motor, *ticks, velocityMax);
 }
