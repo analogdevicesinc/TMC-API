@@ -89,6 +89,7 @@ typedef struct {
 
     uint8_t slaveAddress;
 } TMC2209TypeDef;
+extern TMC2209TypeDef TMC2209;
 
 typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
 

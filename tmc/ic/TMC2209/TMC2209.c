@@ -37,6 +37,7 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address);
 void writeRegisterUART(uint16_t icID ,uint8_t address, int32_t value);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
+TMC2209TypeDef TMC2209;
 
 void tmc2209_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
@@ -53,6 +54,9 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address)
     uint8_t data[8] = { 0 };
 
     address = address & TMC_ADDRESS_MASK;
+
+    if (!TMC_IS_READABLE(TMC2209.registerAccess[address]))
+        return TMC2209.config->shadowRegister[address];
 
     data[0] = 0x05;
     data[1] = tmc2209_getNodeAddress(icID); //targetAddressUart;
@@ -95,6 +99,10 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
     data[7] = CRC8(data, 7);
 
     tmc2209_readWriteUART(icID, &data[0], 8, 0);
+    // Write to the shadow register and mark the register dirty
+    address = TMC_ADDRESS(address);
+    TMC2209.config->shadowRegister[address] = value;
+    TMC2209.registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
 void tmc2209_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
