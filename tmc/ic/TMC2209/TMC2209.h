@@ -23,6 +23,8 @@
 // Each table takes ~260 bytes (257 bytes, one bool and structure padding)
 #define CRC_TABLE_COUNT 2
 
+#define DEFAULT_MOTOR  0
+
 // => TMC-API wrapper
 extern bool tmc2209_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
 extern uint8_t tmc2209_getNodeAddress(uint16_t icID);
@@ -31,6 +33,7 @@ extern uint8_t tmc2209_getNodeAddress(uint16_t icID);
 int32_t tmc2209_readRegister(uint16_t icID, uint8_t address);
 void tmc2209_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 void tmc2209_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
 
 typedef struct
 {

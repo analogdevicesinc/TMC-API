@@ -151,7 +151,6 @@ void tmc2209_init(TMC2209TypeDef *tmc2209, uint8_t channel, uint8_t slaveAddress
 
 static void writeConfiguration(TMC2209TypeDef *tmc2209)
 {
-		tmc2209_writeRegister(tmc2209, *ptr, settings[*ptr]);
     uint8_t *ptr = &tmc2209->config->configIndex;
     const int32_t *settings;
 
@@ -176,6 +175,7 @@ static void writeConfiguration(TMC2209TypeDef *tmc2209)
 
     if(*ptr < TMC2209_REGISTER_COUNT)
     {
+        tmc2209_writeRegister(DEFAULT_MOTOR, *ptr, settings[*ptr]);
         (*ptr)++;
     }
     else // Finished configuration
