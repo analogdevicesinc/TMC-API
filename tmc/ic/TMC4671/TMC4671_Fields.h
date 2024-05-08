@@ -400,8 +400,6 @@
 #define TMC4671_PIDOUT_UQ_UD_LIMITS_SHIFT                    0 // min.: 0, max.: 32767, default: 0
 #define TMC4671_PID_TORQUE_FLUX_LIMITS_MASK                  0xFFFF // PID_TORQUE_FLUX_LIMITS // PID torque limt and PID flux limit, limits the target values coming from the target registers.
 #define TMC4671_PID_TORQUE_FLUX_LIMITS_SHIFT                 0 // min.: 0, max.: 32767, default: 0
-#define TMC4671_PID_ACCELERATION_LIMIT_MASK                  0xFFFFFFFF // PID_ACCELERATION_LIMIT // Acceleration limit.
-#define TMC4671_PID_ACCELERATION_LIMIT_SHIFT                 0 // min.: 0, max.: 4294967295, default: 0
 #define TMC4671_PID_VELOCITY_LIMIT_MASK                      0xFFFFFFFF // PID_VELOCITY_LIMIT // Velocity limit.
 #define TMC4671_PID_VELOCITY_LIMIT_SHIFT                     0 // min.: 0, max.: 4294967295, default: 0
 #define TMC4671_PID_POSITION_LIMIT_LOW_MASK                  0xFFFFFFFF // PID_POSITION_LIMIT_LOW // Position limit low, programmable positon barrier.
