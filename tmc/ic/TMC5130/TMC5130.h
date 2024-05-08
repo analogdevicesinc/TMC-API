@@ -2,7 +2,7 @@
 * Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -14,14 +14,15 @@
 #include "TMC5130_Register.h"
 #include "TMC5130_Constants.h"
 #include "TMC5130_Fields.h"
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
 
 #define DEFAULT_MOTOR  0
 
-// ////////// new definition ///////////////////////////
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-#define TMC5130_ADDRESS_MASK     0x7F
 
 
 typedef enum {
@@ -38,7 +39,7 @@ extern uint8_t tmc5130_getNodeAddress(uint16_t icID);
 
 int32_t tmc5130_readRegister(uint16_t icID, uint8_t address);
 void tmc5130_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-//void tmc5130_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+void tmc5130_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 
 typedef struct
@@ -48,8 +49,6 @@ typedef struct
     uint8_t address;
     bool isSigned;
 } RegisterField;
-
-
 
 static inline uint32_t field_extract(uint32_t data, RegisterField field)
 {
@@ -87,7 +86,9 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
     tmc5130_writeRegister(icID, field.address, regValue);
 }
 
-////////////// old definition //////////////////////////
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino *****************************/
+
+#include "tmc/helpers/API_Header.h"
 
 // Typedefs
 typedef struct

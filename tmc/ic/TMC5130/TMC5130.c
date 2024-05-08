@@ -2,15 +2,12 @@
 * Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
 
 #include "TMC5130.h"
-
-
-//new implementation ///////////////////////////////////////////////////////
 
 TMC5130TypeDef TMC5130;
 
@@ -36,7 +33,6 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 			0xB4, 0x25, 0x57, 0xC6, 0xB3, 0x22, 0x50, 0xC1, 0xBA, 0x2B, 0x59, 0xC8, 0xBD, 0x2C, 0x5E, 0xCF,
 };
 #endif
-
 
 static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
@@ -67,7 +63,7 @@ int32_t tmc5130_readRegister(uint16_t icID, uint8_t address)
 	return -1;
 }
 
-// Checks which BUS type is use and then forwards it to the corresponding write function. See below.
+// Checks which BUS type is use and then forwards it to the corresponding write function.
 void tmc5130_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
 	TMC5130BusType bus = tmc5130_getBusType(icID);
@@ -170,6 +166,15 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 	tmc5130_readWriteUART(icID, &data[0], 8, 0);
 }
 
+void tmc5130_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
+{
+  if(motor >= TMC5130_MOTORS)
+		return;
+
+	tmc5130_writeRegister(icID, TMC5130_VMAX, (velocity >= 0)? velocity : -velocity);
+	field_write(icID, TMC5130_RAMPMODE_FIELD, (velocity >= 0) ? TMC5130_MODE_VELPOS : TMC5130_MODE_VELNEG);
+}
+
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
 	uint8_t result = 0;
@@ -189,7 +194,7 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 	return result;
 }
 
-// old implementation ///////////////////////////////////////////////////////
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 
 // Initialize a TMC5130 IC.
@@ -415,3 +420,4 @@ void tmc5130_moveBy(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t *ticks, uint
 
 	tmc5130_moveTo(tmc5130, motor, *ticks, velocityMax);
 }
+/*******************************************************************************************************************************************************************/
