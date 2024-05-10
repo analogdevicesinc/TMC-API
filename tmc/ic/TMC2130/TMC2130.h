@@ -10,6 +10,28 @@
 #ifndef TMC_IC_TMC2130_H_
 #define TMC_IC_TMC2130_H_
 
+// new //////
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+
+typedef enum {
+	IC_BUS_SPI,
+} TMC2130BusType;
+
+// => TMC-API wrapper
+extern void tmc2130_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern TMC2130BusType tmc2130_getBusType(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc2130_readRegister(uint16_t icID, uint8_t address);
+void tmc2130_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+//void tmc2130_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
+
+// old //////
+
+
 #include "tmc/helpers/API_Header.h"
 #include "TMC2130_Register.h"
 #include "TMC2130_Constants.h"
@@ -28,6 +50,13 @@ typedef struct
 	int32_t registerResetState[TMC2130_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2130_REGISTER_COUNT];
 } TMC2130TypeDef;
+
+//new ////
+
+extern TMC2130TypeDef TMC2130;
+
+
+// old ///
 
 typedef void (*tmc2130_callback)(TMC2130TypeDef*, ConfigState);
 

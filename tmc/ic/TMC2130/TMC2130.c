@@ -9,6 +9,61 @@
 
 #include "TMC2130.h"
 
+// new /////////////
+
+TMC2130TypeDef TMC2130;
+
+static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
+static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
+
+
+int32_t tmc2130_readRegister(uint16_t icID, uint8_t address)
+{
+	return readRegisterSPI(icID, address);
+}
+void tmc2130_writeRegister(uint16_t icID, uint8_t address, int32_t value)
+{
+	writeRegisterSPI(icID, address, value);
+}
+
+int32_t readRegisterSPI(uint16_t icID, uint8_t address)
+{
+	uint8_t data[5] = { 0 };
+
+	// clear write bit
+	data[0] = address & TMC2130_ADDRESS_MASK;
+
+	// Send the read request
+	tmc2130_readWriteSPI(icID, &data[0], sizeof(data));
+
+	// Rewrite address and clear write bit
+	data[0] = address & TMC2130_ADDRESS_MASK;
+
+	// Send another request to receive the read reply
+	tmc2130_readWriteSPI(icID, &data[0], sizeof(data));
+
+	return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
+}
+
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
+{
+	uint8_t data[5] = { 0 };
+
+	data[0] = address | TMC2130_WRITE_BIT;
+	data[1] = 0xFF & (value>>24);
+	data[2] = 0xFF & (value>>16);
+	data[3] = 0xFF & (value>>8);
+	data[4] = 0xFF & (value>>0);
+
+	// Send the write request
+	tmc2130_readWriteSPI(icID, &data[0], sizeof(data));
+}
+
+
+// old //////////////////
+
+
+
 // => SPI wrapper
 // Send [length] bytes stored in the [data] array over SPI and overwrite [data]
 // with the reply. The first byte sent/received is data[0].
@@ -28,6 +83,7 @@ void tmc2130_writeDatagram(TMC2130TypeDef *tmc2130, uint8_t address, uint8_t x1,
 	tmc2130->config->shadowRegister[address] = value;
 	tmc2130->registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
+
 
 // Write an integer to the given address
 void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8_t address, int32_t value)
