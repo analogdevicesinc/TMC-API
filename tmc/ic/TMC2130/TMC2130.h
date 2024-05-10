@@ -76,9 +76,8 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
 
 #include "tmc/helpers/API_Header.h"
-#include "TMC2130_Register.h"
-#include "TMC2130_Constants.h"
-#include "TMC2130_Mask_Shift.h"
+#include "TMC2130_Mask_Shift.h"		//old definition
+#include "TMC2130_HW_Abstraction.h"
 
 // Helper macros
 #define TMC2130_FIELD_READ(tdef, address, mask, shift) \
