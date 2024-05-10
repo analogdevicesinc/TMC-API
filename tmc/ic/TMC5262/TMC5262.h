@@ -11,10 +11,62 @@
 #define TMC_IC_TMC5262_H_
 
 #include "tmc/helpers/API_Header.h"
-#include "tmc/helpers/Constants.h"
-#include "TMC5262_Constants.h"
-#include "TMC5262_fields.h"
-#include "TMC5262_registers.h"
+#include "TMC5262_HW_Abstraction.h"
+
+//New Code
+// => TMC-API wrapper
+extern void tmc5262_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern uint8_t tmc5262_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc5262_readRegister(uint16_t icID, uint8_t address);
+void tmc5262_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5262_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+///
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t field_extract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t field_read(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc5262_readRegister(icID, field.address);
+
+    return field_extract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void field_write(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc5262_readRegister(icID, field.address);
+
+    regValue = field_update(regValue, field, value);
+
+    tmc5262_writeRegister(icID, field.address, regValue);
+}
+//New Code_ END
 
 // Helper macros
 #define TMC5262_FIELD_READ(tdef, address, mask, shift) \
