@@ -28,7 +28,13 @@ void tmc2130_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 {
+
 	uint8_t data[5] = { 0 };
+
+	// register not readable -> shadow register copy
+	if(!TMC_IS_READABLE(TMC2130.registerAccess[address]))
+	return TMC2130.config->shadowRegister[address];
+
 
 	// clear write bit
 	data[0] = address & TMC2130_ADDRESS_MASK;
@@ -57,6 +63,11 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 
 	// Send the write request
 	tmc2130_readWriteSPI(icID, &data[0], sizeof(data));
+
+	// Write to the shadow register and mark the register dirty
+	address = TMC_ADDRESS(address);
+	TMC2130.config->shadowRegister[address] = value;
+	TMC2130.registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
 
@@ -167,7 +178,7 @@ void tmc2130_fillShadowRegisters(TMC2130TypeDef *tmc2130)
 	}
 }
 
-// Reset the TMC5130
+// Reset the TMC2130
 uint8_t tmc2130_reset(TMC2130TypeDef *tmc2130)
 {
 	if(tmc2130->config->state != CONFIG_READY)
@@ -187,7 +198,7 @@ uint8_t tmc2130_reset(TMC2130TypeDef *tmc2130)
 	return true;
 }
 
-// Restore the TMC5130 to the state stored in the shadow registers.
+// Restore the TMC2130 to the state stored in the shadow registers.
 // This can be used to recover the IC configuration after a VM power loss.
 uint8_t tmc2130_restore(TMC2130TypeDef *tmc2130)
 {
