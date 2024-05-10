@@ -10,10 +10,13 @@
 #ifndef TMC_IC_TMC5262_H_
 #define TMC_IC_TMC5262_H_
 
-#include "tmc/helpers/API_Header.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 #include "TMC5262_HW_Abstraction.h"
 
-//New Code
+#define DEFAULT_MOTOR  0
+
 // => TMC-API wrapper
 extern void tmc5262_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
 extern uint8_t tmc5262_getNodeAddress(uint16_t icID);
@@ -66,13 +69,9 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
     tmc5262_writeRegister(icID, field.address, regValue);
 }
-//New Code_ END
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-// Helper macros
-#define TMC5262_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc5262_readInt(tdef, address), mask, shift)
-#define TMC5262_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc5262_writeInt(tdef, address, FIELD_SET(tmc5262_readInt(tdef, address), mask, shift, value)))
+#include "tmc/helpers/API_Header.h"
 
 // Factor between 10ms units and internal units for 16MHz
 //#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
@@ -88,11 +87,7 @@ typedef struct
 } TMC5262TypeDef;
 
 // Default Register values
-#define R0B 0x65FF  // PLL
-
-void tmc5262_writeDatagram(TMC5262TypeDef *tmc5262, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc5262_writeInt(TMC5262TypeDef *tmc5262, uint8_t address, int32_t value);
-int32_t tmc5262_readInt(TMC5262TypeDef *tmc5262, uint8_t address);
+#define R0B 0x65FF  // PLLs
 
 void tmc5262_init(TMC5262TypeDef *tmc5262, uint8_t channel, ConfigurationTypeDef *config);
 //void tmc5262_fillShadowRegisters(TMC5262TypeDef *tmc5262);

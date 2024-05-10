@@ -9,7 +9,7 @@
 
 #include "TMC5262.h"
 
-//NEW CODE BEGIN
+
 static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
 
@@ -56,39 +56,8 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 	// Send the write request
 	tmc5262_readWriteSPI(icID, &data[0], sizeof(data));
 }
-//NEW CODE END
 
-extern void tmc5262_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-
-// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc5262_writeDatagram(TMC5262TypeDef *tmc5262, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
-{
-	uint8_t data[5] = { address | TMC5262_WRITE_BIT, x1, x2, x3, x4 };
-	tmc5262_readWriteArray(tmc5262->config->channel, &data[0], 5);
-}
-
-// Write an integer to the given address
-void tmc5262_writeInt(TMC5262TypeDef *tmc5262, uint8_t address, int32_t value)
-{
-	tmc5262_writeDatagram(tmc5262, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
-}
-
-// Read an integer from the given address
-int32_t tmc5262_readInt(TMC5262TypeDef *tmc5262, uint8_t address)
-{
-	address = TMC_ADDRESS(address);
-
-	uint8_t data[5] = { 0, 0, 0, 0, 0 };
-
-	data[0] = address;
-	tmc5262_readWriteArray(tmc5262->config->channel, &data[0], 5);
-
-	data[0] = address;
-	tmc5262_readWriteArray(tmc5262->config->channel, &data[0], 5);
-
-	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
-}
-
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 // Initialize a tmc5262 IC.
 // This function requires:
@@ -150,7 +119,7 @@ static void writeConfiguration(TMC5262TypeDef *tmc5262, uint32_t tick)
 	switch(*ptr){
 	case 0:
 		// Set PLL register to enable all the clocks and external oscillator
-		tmc5262_writeInt(tmc5262, TMC5262_PLL, 0x65FF);
+		tmc5262_writeRegister(DEFAULT_MOTOR, TMC5262_PLL, 0x65FF);
 		(*ptr)++;
 		prevTick = tick;
 		break;
@@ -158,10 +127,10 @@ static void writeConfiguration(TMC5262TypeDef *tmc5262, uint32_t tick)
 		if(tick - prevTick >= 1000)
 		{
 			// Clear the all the error flags by the PLL in [15:12]
-			tmc5262_writeInt(tmc5262, TMC5262_PLL, 0xF5FE);
+			tmc5262_writeRegister(DEFAULT_MOTOR, TMC5262_PLL, 0xF5FE);
 			// Read PLL back
-			readData = tmc5262_readInt(tmc5262, TMC5262_PLL);
-			readData = tmc5262_readInt(tmc5262, TMC5262_PLL);
+			readData = tmc5262_readRegister(DEFAULT_MOTOR, TMC5262_PLL);
+			readData = tmc5262_readRegister(DEFAULT_MOTOR, TMC5262_PLL);
 			if((readData & 0xF000) != 0)
 			{
 				*ptr = 0;
@@ -172,14 +141,14 @@ static void writeConfiguration(TMC5262TypeDef *tmc5262, uint32_t tick)
 		break;
 	case 2:
 		//Reading ChopConf register
-		readData = tmc5262_readInt(tmc5262, TMC5262_CHOPCONF);
+		readData = tmc5262_readRegister(DEFAULT_MOTOR, TMC5262_CHOPCONF);
 		// Set TOFF field to enable the driver
-		tmc5262_writeInt(tmc5262, TMC5262_CHOPCONF, (readData & 0xFFFFFFF0) | 0x3);
+		tmc5262_writeRegister(DEFAULT_MOTOR, TMC5262_CHOPCONF, (readData & 0xFFFFFFF0) | 0x3);
 		(*ptr)++;
 		break;
 	case 3:
 		// Write to GSTAT register to clear the flags
-		tmc5262_writeInt(tmc5262, TMC5262_GSTAT, 0x3F);
+		tmc5262_writeRegister(DEFAULT_MOTOR, TMC5262_GSTAT, 0x3F);
 		tmc5262->config->state = CONFIG_READY;
 		*ptr = 0;
 		break;
@@ -201,7 +170,7 @@ void tmc5262_periodicJob(TMC5262TypeDef *tmc5262, uint32_t tick)
 	// Calculate velocity v = dx/dt
 	if((tickDiff = tick - tmc5262->oldTick) >= 5)
 	{
-		XActual = tmc5262_readInt(tmc5262, TMC5262_XACTUAL);
+		XActual = tmc5262_readRegister(DEFAULT_MOTOR, TMC5262_XACTUAL);
 		// ToDo CHECK 2: API Compatibility - write alternative algorithm w/o floating point? (LH)
 		tmc5262->velocity = (int32_t) ((float32_t) ((XActual - tmc5262->oldX) / (float32_t) tickDiff) * (float32_t) 1048.576);
 
@@ -214,9 +183,9 @@ void tmc5262_periodicJob(TMC5262TypeDef *tmc5262, uint32_t tick)
 void tmc5262_rotate(TMC5262TypeDef *tmc5262, int32_t velocity)
 {
 	// Set absolute velocity
-	tmc5262_writeInt(tmc5262, TMC5262_VMAX, abs(velocity));
+	tmc5262_writeRegister(DEFAULT_MOTOR, TMC5262_VMAX, abs(velocity));
 	// Set direction
-	tmc5262_writeInt(tmc5262, TMC5262_RAMPMODE, (velocity >= 0) ? TMC5262_MODE_VELPOS : TMC5262_MODE_VELNEG);
+	tmc5262_writeRegister(DEFAULT_MOTOR, TMC5262_RAMPMODE, (velocity >= 0) ? TMC5262_MODE_VELPOS : TMC5262_MODE_VELNEG);
 }
 
 // Rotate to the right
@@ -240,13 +209,13 @@ void tmc5262_stop(TMC5262TypeDef *tmc5262)
 // Move to a specified position with a given velocity
 void tmc5262_moveTo(TMC5262TypeDef *tmc5262, int32_t position, uint32_t velocityMax)
 {
-	tmc5262_writeInt(tmc5262, TMC5262_RAMPMODE, TMC5262_MODE_POSITION);
+	tmc5262_writeRegister(DEFAULT_MOTOR, TMC5262_RAMPMODE, TMC5262_MODE_POSITION);
 
 	// VMAX also holds the target velocity in velocity mode.
 	// Re-write the position mode maximum velocity here.
-	tmc5262_writeInt(tmc5262, TMC5262_VMAX, velocityMax);
+	tmc5262_writeRegister(DEFAULT_MOTOR, TMC5262_VMAX, velocityMax);
 
-	tmc5262_writeInt(tmc5262, TMC5262_XTARGET, position);
+	tmc5262_writeRegister(DEFAULT_MOTOR, TMC5262_XTARGET, position);
 }
 
 // Move by a given amount with a given velocity
@@ -254,7 +223,7 @@ void tmc5262_moveTo(TMC5262TypeDef *tmc5262, int32_t position, uint32_t velocity
 void tmc5262_moveBy(TMC5262TypeDef *tmc5262, int32_t *ticks, uint32_t velocityMax)
 {
 	// determine actual position and add numbers of ticks to move
-	*ticks += tmc5262_readInt(tmc5262, TMC5262_XACTUAL);
+	*ticks += tmc5262_readRegister(DEFAULT_MOTOR, TMC5262_XACTUAL);
 
 	tmc5262_moveTo(tmc5262, *ticks, velocityMax);
 }
