@@ -15,6 +15,9 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#define DEFAULT_MOTOR  0
+
+
 typedef enum {
 	IC_BUS_SPI,
 } TMC2130BusType;
@@ -76,14 +79,7 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
 
 #include "tmc/helpers/API_Header.h"
-#include "TMC2130_Mask_Shift.h"		//old definition
 #include "TMC2130_HW_Abstraction.h"
-
-// Helper macros
-#define TMC2130_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc2130_readInt(tdef, address), mask, shift)
-#define TMC2130_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc2130_writeInt(tdef, address, FIELD_SET(tmc2130_readInt(tdef, address), mask, shift, value)))
 
 // Typedefs
 typedef struct
@@ -168,10 +164,6 @@ static const TMCRegisterConstant tmc2130_RegisterConstants[] =
 
 // API Functions
 // All functions act on one IC identified by the TMC2130TypeDef pointer
-
-void tmc2130_writeDatagram(TMC2130TypeDef *tmc2130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8_t address, int32_t value);
-int32_t tmc2130_readInt(TMC2130TypeDef *tmc2130, uint8_t address);
 
 void tmc2130_init(TMC2130TypeDef *tmc2130, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc2130_fillShadowRegisters(TMC2130TypeDef *tmc2130);

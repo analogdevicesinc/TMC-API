@@ -73,55 +73,6 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 
 // old //////////////////
 
-
-
-// => SPI wrapper
-// Send [length] bytes stored in the [data] array over SPI and overwrite [data]
-// with the reply. The first byte sent/received is data[0].
-extern void tmc2130_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-// <= SPI wrapper
-
-// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc2130_writeDatagram(TMC2130TypeDef *tmc2130, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
-{
-	uint8_t data[5] = { address | TMC2130_WRITE_BIT, x1, x2, x3, x4 };
-	tmc2130_readWriteArray(tmc2130->config->channel, &data[0], 5);
-
-	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
-
-	// Write to the shadow register and mark the register dirty
-	address = TMC_ADDRESS(address);
-	tmc2130->config->shadowRegister[address] = value;
-	tmc2130->registerAccess[address] |= TMC_ACCESS_DIRTY;
-}
-
-
-// Write an integer to the given address
-void tmc2130_writeInt(TMC2130TypeDef *tmc2130, uint8_t address, int32_t value)
-{
-	tmc2130_writeDatagram(tmc2130, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
-}
-
-// Read an integer from the given address
-int32_t tmc2130_readInt(TMC2130TypeDef *tmc2130, uint8_t address)
-{
-	address = TMC_ADDRESS(address);
-
-	// register not readable -> shadow register copy
-	if(!TMC_IS_READABLE(tmc2130->registerAccess[address]))
-		return tmc2130->config->shadowRegister[address];
-
-	uint8_t data[5] = { 0, 0, 0, 0, 0 };
-
-	data[0] = address;
-	tmc2130_readWriteArray(tmc2130->config->channel, &data[0], 5);
-
-	data[0] = address;
-	tmc2130_readWriteArray(tmc2130->config->channel, &data[0], 5);
-
-	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
-}
-
 // Initialize a TMC2130 IC.
 // This function requires:
 //     - channel: The channel index, which will be sent back in the SPI callback
@@ -254,7 +205,7 @@ static void writeConfiguration(TMC2130TypeDef *tmc2130)
 
 	if(*ptr < TMC2130_REGISTER_COUNT)
 	{
-		tmc2130_writeInt(tmc2130, *ptr, settings[*ptr]);
+		tmc2130_writeRegister(DEFAULT_MOTOR, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration
