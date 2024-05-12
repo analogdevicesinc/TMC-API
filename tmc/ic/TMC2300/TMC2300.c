@@ -141,7 +141,7 @@ static void fillShadowRegisters(TMC2300TypeDef *tmc2300)
 	}
 }
 
-void writeConfiguration(TMC2300TypeDef *tmc2300)
+static void writeConfiguration(TMC2300TypeDef *tmc2300)
 {
 	uint8_t *ptr = &tmc2300->config->configIndex;
 	const int32_t *settings;

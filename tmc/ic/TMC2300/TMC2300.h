@@ -55,7 +55,6 @@ static const uint8_t tmc2300_defaultRegisterAccess[TMC2300_REGISTER_COUNT] =
 	0x43, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-void writeConfiguration(TMC2300TypeDef *tmc2300);
 static const int32_t tmc2300_defaultRegisterResetState[TMC2300_REGISTER_COUNT] =
 {
 //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
