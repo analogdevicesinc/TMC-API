@@ -113,7 +113,6 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address);
 void writeRegisterUART(uint16_t icID ,uint8_t address, int32_t value);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
-TMC2209TypeDef TMC2209;
 
 void tmc2209_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {

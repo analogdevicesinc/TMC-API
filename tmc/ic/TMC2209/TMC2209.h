@@ -150,17 +150,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
 #include "tmc/helpers/API_Header.h"
 
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-    ConfigurationTypeDef *config;
-
-    int32_t registerResetState[TMC2209_REGISTER_COUNT];
-    uint8_t registerAccess[TMC2209_REGISTER_COUNT];
-
-    uint8_t slaveAddress;
-} TMC2209TypeDef;
-extern TMC2209TypeDef TMC2209;
-
 typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
 
 // Communication
