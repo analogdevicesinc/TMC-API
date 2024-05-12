@@ -12,11 +12,11 @@
 //constants
 
 #define TMC2209_MOTORS           1
-#define TMC2209_REGISTER_COUNT   TMC_REGISTER_COUNT
+#define TMC2209_REGISTER_COUNT   128
 #define TMC_WRITE_BIT            0x80
 #define TMC_ADDRESS_MASK         0x7F
-#define TMC2209_MAX_VELOCITY     s32_MAX
-#define TMC2209_MAX_ACCELERATION u24_MAX
+#define TMC2209_MAX_VELOCITY     (int32_t)  2147483647
+#define TMC2209_MAX_ACCELERATION (uint32_t)  16777215uL
 
 // ===== TMC2209 & 2202 & TMC2209 & 2220 & 2225 "Donkey Kong" family register set =====
 

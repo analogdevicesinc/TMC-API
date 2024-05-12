@@ -148,8 +148,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-#include "tmc/helpers/API_Header.h"
-
 typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
 
 
