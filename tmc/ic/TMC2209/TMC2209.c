@@ -113,7 +113,6 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address);
 void writeRegisterUART(uint16_t icID ,uint8_t address, int32_t value);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
-
 void tmc2209_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
     writeRegisterUART(icID, (uint8_t) address, value);
@@ -207,17 +206,4 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
     return result;
 }
 
-//void tmc2209_setRegisterResetState(TMC2209TypeDef *tmc2209, const int32_t *resetState)
-//{
-//    for(size_t i = 0; i < TMC2209_REGISTER_COUNT; i++)
-//        tmc2209->registerResetState[i] = resetState[i];
-//}
-//uint8_t tmc2209_get_slave(TMC2209TypeDef *tmc2209)
-//{
-//    return tmc2209->slaveAddress;
-//}
-//
-//void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slaveAddress)
-//{
-//    tmc2209->slaveAddress = slaveAddress;
-//}
+

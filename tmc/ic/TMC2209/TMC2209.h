@@ -35,9 +35,6 @@ typedef enum {
 #define TMC2209_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC2209_ACCESS_READ        0x01
 #define TMC2209_IS_READABLE(x)    ((x) & TMC2209_ACCESS_READ)
-// Amount of CRC tables available
-// Each table takes ~260 bytes (257 bytes, one bool and structure padding)
-#define CRC_TABLE_COUNT 2
 
 // Default Register values
 #define R00 0x00000040  // GCONF
@@ -146,13 +143,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
     tmc2209_writeRegister(icID, field.address, regValue);
 }
 
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
-
-
-//void tmc2209_setRegisterResetState(TMC2209TypeDef *tmc2209, const int32_t *resetState);
-//uint8_t tmc2209_get_slave(TMC2209TypeDef *tmc2209);
-//void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slaveAddress);
 
 #endif /* TMC_IC_TMC2209_H_ */
