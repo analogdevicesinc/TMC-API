@@ -152,15 +152,9 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
 typedef void (*tmc2209_callback)(TMC2209TypeDef*, ConfigState);
 
-// Communication
-void tmc2209_init(TMC2209TypeDef *tmc2209, uint8_t channel, uint8_t slaveAddress, ConfigurationTypeDef *tmc2209_config, const int32_t *registerResetState);
-uint8_t tmc2209_reset(TMC2209TypeDef *tmc2209);
-uint8_t tmc2209_restore(TMC2209TypeDef *tmc2209);
-void tmc2209_setRegisterResetState(TMC2209TypeDef *tmc2209, const int32_t *resetState);
-void tmc2209_setCallback(TMC2209TypeDef *tmc2209, tmc2209_callback callback);
-void tmc2209_periodicJob(TMC2209TypeDef *tmc2209, uint32_t tick);
 
-uint8_t tmc2209_get_slave(TMC2209TypeDef *tmc2209);
-void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slaveAddress);
+//void tmc2209_setRegisterResetState(TMC2209TypeDef *tmc2209, const int32_t *resetState);
+//uint8_t tmc2209_get_slave(TMC2209TypeDef *tmc2209);
+//void tmc2209_set_slave(TMC2209TypeDef *tmc2209, uint8_t slaveAddress);
 
 #endif /* TMC_IC_TMC2209_H_ */
