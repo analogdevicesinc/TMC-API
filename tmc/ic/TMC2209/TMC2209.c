@@ -180,13 +180,6 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
     tmc2209_cache(icID, TMC2209_WRITE, address, &value);
 }
 
-void tmc2209_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
-{
-  if(motor >= TMC2209_MOTORS)
-        return;
-  StepDir_rotate(motor, velocity);
-}
-
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
     uint8_t result = 0;
