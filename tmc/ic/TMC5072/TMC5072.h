@@ -10,6 +10,34 @@
 #ifndef TMC_IC_TMC5072_H_
 #define TMC_IC_TMC5072_H_
 
+// new /////
+
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+
+typedef enum {
+	IC_BUS_SPI,
+	IC_BUS_UART,
+} TMC5072BusType;
+
+// => TMC-API wrapper
+extern void tmc5072_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc5072_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5072BusType tmc5072_getBusType(uint16_t icID);
+extern uint8_t tmc5072_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc5072_readRegister(uint16_t icID, uint8_t address);
+void tmc5072_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+//void tmc5072_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
+//old //
+
 #include "tmc/helpers/API_Header.h"
 #include "TMC5072_Register.h"
 #include "TMC5072_Constants.h"
@@ -30,6 +58,8 @@ typedef struct {
 	int32_t registerResetState[TMC5072_REGISTER_COUNT];
 	uint8_t registerAccess[TMC5072_REGISTER_COUNT];
 } TMC5072TypeDef;
+
+extern TMC5072TypeDef TMC5072;
 
 typedef void (*tmc5072_callback)(TMC5072TypeDef*, ConfigState);
 
