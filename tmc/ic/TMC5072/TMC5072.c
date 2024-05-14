@@ -43,6 +43,10 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
 int32_t tmc5072_readRegister(uint16_t icID, uint8_t address)
 {
+	// register not readable -> shadow register copy
+		if(!TMC_IS_READABLE(TMC5072.registerAccess[address]))
+			return TMC5072.config->shadowRegister[address];
+
 	TMC5072BusType bus = tmc5072_getBusType(icID);
 
 	if(bus == IC_BUS_SPI)
@@ -69,6 +73,10 @@ void tmc5072_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 	{
 		writeRegisterUART(icID, address, value);
 	}
+	//Write to the shadow register and mark the register dirty
+	address = TMC_ADDRESS(address);
+	TMC5072.config->shadowRegister[address] = value;
+	TMC5072.registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
