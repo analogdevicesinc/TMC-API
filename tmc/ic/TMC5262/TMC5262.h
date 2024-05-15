@@ -19,7 +19,6 @@
 
 // => TMC-API wrapper
 extern void tmc5262_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
-extern uint8_t tmc5262_getNodeAddress(uint16_t icID);
 // => TMC-API wrapper
 
 int32_t tmc5262_readRegister(uint16_t icID, uint8_t address);
