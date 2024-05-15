@@ -19,6 +19,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include "TMC5072_HW_Abstraction.h"
 
 typedef enum {
 	IC_BUS_SPI,
