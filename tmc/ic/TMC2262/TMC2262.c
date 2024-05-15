@@ -6,7 +6,7 @@
 
 #include "TMC2262.h"
 
-//NEW_CODE_BEGIN
+
 static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
 
@@ -55,39 +55,6 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 }
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-//NEW_CODE_END
-
-extern void tmc2262_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-
-// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc2262_writeDatagram(TMC2262TypeDef *tmc2262, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
-{
-	uint8_t data[5] = { address | TMC2262_WRITE_BIT, x1, x2, x3, x4 };
-	tmc2262_readWriteArray(tmc2262->config->channel, &data[0], 5);
-}
-
-// Write an integer to the given address
-void tmc2262_writeInt(TMC2262TypeDef *tmc2262, uint8_t address, int32_t value)
-{
-	tmc2262_writeDatagram(tmc2262, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
-}
-
-// Read an integer from the given address
-int32_t tmc2262_readInt(TMC2262TypeDef *tmc2262, uint8_t address)
-{
-	address = TMC_ADDRESS(address);
-
-	uint8_t data[5] = { 0, 0, 0, 0, 0 };
-
-	data[0] = address;
-	tmc2262_readWriteArray(tmc2262->config->channel, &data[0], 5);
-
-	data[0] = address;
-	tmc2262_readWriteArray(tmc2262->config->channel, &data[0], 5);
-
-	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
-}
-
 
 // Initialize a tmc2262 IC.
 // This function requires:
@@ -149,7 +116,7 @@ static void writeConfiguration(TMC2262TypeDef *tmc2262, uint32_t tick)
 	switch(*ptr){
 	case 0:
 		// Set PLL register to enable all the clocks and external oscillator
-		tmc2262_writeInt(tmc2262, TMC2262_PLL, 0x65FF);
+		tmc2262_writeRegister(DEFAULT_MOTOR, TMC2262_PLL, 0x65FF);
 		(*ptr)++;
 		prevTick = tick;
 		break;
@@ -157,10 +124,10 @@ static void writeConfiguration(TMC2262TypeDef *tmc2262, uint32_t tick)
 		if(tick - prevTick >= 1000)
 		{
 			// Clear the all the error flags by the PLL in [15:12]
-			tmc2262_writeInt(tmc2262, TMC2262_PLL, 0xF5FE);
+			tmc2262_writeRegister(DEFAULT_MOTOR, TMC2262_PLL, 0xF5FE);
 			// Read PLL back
-			readData = tmc2262_readInt(tmc2262, TMC2262_PLL);
-			readData = tmc2262_readInt(tmc2262, TMC2262_PLL);
+			readData = tmc2262_readRegister(DEFAULT_MOTOR, TMC2262_PLL);
+			readData = tmc2262_readRegister(DEFAULT_MOTOR, TMC2262_PLL);
 			if((readData & 0xF000) != 0)
 			{
 				*ptr = 0;
@@ -171,14 +138,14 @@ static void writeConfiguration(TMC2262TypeDef *tmc2262, uint32_t tick)
 		break;
 	case 2:
 		//Reading ChopConf register
-		readData = tmc2262_readInt(tmc2262, TMC2262_CHOPCONF);
+		readData = tmc2262_readRegister(DEFAULT_MOTOR, TMC2262_CHOPCONF);
 		// Set TOFF field to enable the driver
-		tmc2262_writeInt(tmc2262, TMC2262_CHOPCONF, (readData & 0xFFFFFFF0) | 0x3);
+		tmc2262_writeRegister(DEFAULT_MOTOR, TMC2262_CHOPCONF, (readData & 0xFFFFFFF0) | 0x3);
 		(*ptr)++;
 		break;
 	case 3:
 		// Write to GSTAT register to clear the flags
-		tmc2262_writeInt(tmc2262, TMC2262_GSTAT, 0x3F);
+		tmc2262_writeRegister(DEFAULT_MOTOR, TMC2262_GSTAT, 0x3F);
 		tmc2262->config->state = CONFIG_READY;
 		*ptr = 0;
 		break;
