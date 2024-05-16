@@ -12,12 +12,12 @@
 
 #include "tmc/helpers/Constants.h"
 
-#define TMC5041_REGISTER_COUNT   TMC_REGISTER_COUNT
+#define TMC5041_REGISTER_COUNT   128 // Default register count
 #define TMC5041_MOTORS           2
-#define TMC5041_WRITE_BIT        TMC_WRITE_BIT
-#define TMC5041_ADDRESS_MASK     TMC_ADDRESS_MASK
+#define TMC5041_WRITE_BIT        0x80
+#define TMC5041_ADDRESS_MASK     0x7F
 #define TMC5041_MAX_VELOCITY     8388096
-#define TMC5041_MAX_ACCELERATION u16_MAX
+#define TMC5041_MAX_ACCELERATION 65535
 
 // Rampenmodi (Register TMC562_RAMPMODE)
 #define TMC5041_MODE_POSITION  0
