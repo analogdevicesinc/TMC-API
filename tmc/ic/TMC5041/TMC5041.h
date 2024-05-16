@@ -9,16 +9,29 @@
 
 #ifndef TMC_IC_TMC5041_H_
 #define TMC_IC_TMC5041_H_
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 
-#include "tmc/helpers/API_Header.h"
 #include "TMC5041_Register.h"
 #include "TMC5041_Constants.h"
 #include "TMC5041_Fields.h"
+
+
+// => TMC-API wrapper
+extern void tmc5041_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+// => TMC-API wrapper
+
+int32_t tmc5041_readRegister(uint16_t icID, uint8_t address);
+void tmc5041_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+//void tmc5041_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 #define TMC5041_FIELD_READ(tdef, address, mask, shift) \
 	FIELD_GET(tmc5041_readInt(tdef, address), mask, shift)
 #define TMC5041_FIELD_WRITE(tdef, address, mask, shift, value) \
 	(tmc5041_writeInt(tdef, address, FIELD_SET(tmc5041_readInt(tdef, address), mask, shift, value)))
+
+#include "tmc/helpers/API_Header.h"
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
@@ -31,6 +44,8 @@ typedef struct {
 	uint8_t registerAccess[TMC5041_REGISTER_COUNT];
 	bool vMaxModified[2];
 } TMC5041TypeDef;
+
+extern TMC5041TypeDef TMC5041;
 
 #define R30 0x00071703  // IHOLD_IRUN (Motor 1)
 #define R32 0x00FFFFFF  // VHIGH      (Motor 1)

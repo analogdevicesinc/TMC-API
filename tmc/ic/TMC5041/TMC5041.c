@@ -2,12 +2,76 @@
 * Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved. This software is
 * proprietary & confidential to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
 
 #include "TMC5041.h"
+
+TMC5041TypeDef TMC5041;
+
+static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
+static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
+
+int32_t tmc5041_readRegister(uint16_t icID, uint8_t address)
+{
+		return readRegisterSPI(icID, address);
+		// ToDo: Error handling
+}
+
+void tmc5041_writeRegister(uint16_t icID, uint8_t address, int32_t value)
+{
+		writeRegisterSPI(icID, address, value);
+}
+
+int32_t readRegisterSPI(uint16_t icID, uint8_t address)
+{
+	uint8_t data[5] = { 0 };
+
+	// clear write bit
+	data[0] = address & TMC5041_ADDRESS_MASK;
+
+	// Send the read request
+	tmc5041_readWriteSPI(icID, &data[0], sizeof(data));
+
+	// Rewrite address and clear write bit
+	data[0] = address & TMC5041_ADDRESS_MASK;
+
+	// Send another request to receive the read reply
+	tmc5041_readWriteSPI(icID, &data[0], sizeof(data));
+
+	return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
+}
+
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
+{
+	uint8_t data[5] = { 0 };
+
+	data[0] = address | TMC5041_WRITE_BIT;
+	data[1] = 0xFF & (value>>24);
+	data[2] = 0xFF & (value>>16);
+	data[3] = 0xFF & (value>>8);
+	data[4] = 0xFF & (value>>0);
+
+	// Send the write request
+	tmc5041_readWriteSPI(icID, &data[0], sizeof(data));
+}
+
+/*
+void tmc5041_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
+{
+  if(motor >= TMC5041_MOTORS)
+		return;
+
+	tmc5041_writeRegister(icID, TMC5041_VMAX(motor), (velocity >= 0)? velocity : -velocity);
+	field_write(icID, TMC5041_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5041_MODE_VELPOS : TMC5041_MODE_VELNEG);
+}
+
+*/
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
 
 // => SPI wrapper
 extern void tmc5041_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
