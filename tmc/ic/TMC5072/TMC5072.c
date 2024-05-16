@@ -180,98 +180,16 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 	return result;
 }
 
+void tmc5072_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
+{
+  if(motor >= TMC5072_MOTORS)
+		return;
+
+	tmc5072_writeRegister(icID, TMC5072_VMAX(motor), (velocity >= 0)? velocity : -velocity);
+	field_write(icID, TMC5072_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5072_MODE_VELPOS : TMC5072_MODE_VELNEG);
+}
+
 //old /////////////////
-
-// => SPI wrapper
-extern void tmc5072_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-// <= SPI wrapper
-
-void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
-{
-	uint8_t data[5] = { address | TMC5072_WRITE_BIT, x1, x2, x3, x4 };
-	tmc5072_readWriteArray(tmc5072->config->channel, &data[0], 5);
-
-	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
-
-	// Write to the shadow register and mark the register dirty
-	address = TMC_ADDRESS(address);
-	tmc5072->config->shadowRegister[address] = value;
-	tmc5072->registerAccess[address] |= TMC_ACCESS_DIRTY;
-}
-
-void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8_t address, int32_t value)
-{
-	tmc5072_writeDatagram(tmc5072, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
-}
-
-int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address)
-{
-	address = TMC_ADDRESS(address);
-
-	// register not readable -> shadow register copy
-	if(!TMC_IS_READABLE(tmc5072->registerAccess[address]))
-		return tmc5072->config->shadowRegister[address];
-
-	uint8_t data[5] = { 0, 0, 0, 0, 0 };
-
-	data[0] = address;
-	tmc5072_readWriteArray(tmc5072->config->channel, &data[0], 5);
-
-	data[0] = address;
-	tmc5072_readWriteArray(tmc5072->config->channel, &data[0], 5);
-
-	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
-}
-
-//void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
-//{
-//	tmc5072_readWrite(tmc5072->channel, address | TMC5072_WRITE_BIT, false);
-//	tmc5072_readWrite(tmc5072->channel, x1, false);
-//	tmc5072_readWrite(tmc5072->channel, x2, false);
-//	tmc5072_readWrite(tmc5072->channel, x3, false);
-//	tmc5072_readWrite(tmc5072->channel, x4, true);
-//
-//	int32_t value = x1;
-//	value <<= 8;
-//	value |= x2;
-//	value <<= 8;
-//	value |= x3;
-//	value <<= 8;
-//	value |= x4;
-//
-//	tmc5072->shadowRegister[address & 0x7F] = value;
-//}
-//
-//void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8_t address, int32_t value)
-//{
-//	tmc5072_writeDatagram(tmc5072,  address, 0xFF & (value>>24), 0xFF & (value>>16), 0xFF & (value>>8), 0xFF & (value>>0));
-//}
-//
-//int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address)
-//{
-//	address &= 0x7F;
-//
-//	// register not readable -> shadow register copy
-//	if(!TMC_IS_READABLE(tmc5072->registerAccess[address]))
-//		return tmc5072->shadowRegister[address];
-//
-//	tmc5072_readWrite(tmc5072->channel, address, false);
-//	tmc5072_readWrite(tmc5072->channel, 0, false);
-//	tmc5072_readWrite(tmc5072->channel, 0, false);
-//	tmc5072_readWrite(tmc5072->channel ,0, false);
-//	tmc5072_readWrite(tmc5072->channel, 0, true);
-//
-//	tmc5072_readWrite(tmc5072->channel, address, false);
-//	int32_t value = tmc5072_readWrite(tmc5072->channel, 0, false);
-//	value <<= 8;
-//	value |= tmc5072_readWrite(tmc5072->channel, 0, false);
-//	value <<= 8;
-//	value |= tmc5072_readWrite(tmc5072->channel, 0, false);
-//	value <<= 8;
-//	value |= tmc5072_readWrite(tmc5072->channel, 0, true);
-//
-//	return value;
-//}
 
 // Provide the init function with a channel index (sent back in the SPI callback), a pointer to a ConfigurationTypeDef struct
 // and a pointer to a int32_t array (size 128) holding the reset values that shall be used.
@@ -303,24 +221,6 @@ void tmc5072_init(TMC5072TypeDef *tmc5072, uint8_t channel, ConfigurationTypeDef
 		tmc5072->registerResetState[i]  = registerResetState[i];
 	}
 }
-
-//void tmc5072_initConfig(TMC5072TypeDef *tmc5072)
-//{
-//	tmc5072->velocity[0]      = 0;
-//	tmc5072->velocity[1]      = 0;
-//	tmc5072->oldTick          = 0;
-//	tmc5072->oldX[0]          = 0;
-//	tmc5072->oldX[1]          = 0;
-//	tmc5072->vMaxModified[0]  = false;
-//	tmc5072->vMaxModified[1]  = false;
-//
-//	int32_t i;
-//	for(i=0; i < TMC5072_REGISTER_COUNT; i++)
-//	{
-//		tmc5072->registerAccess[i]      = tmc5072_defaultRegisterAccess[i];
-//		tmc5072->registerResetState[i]  = tmc5072_defaultRegisterResetState[i];
-//	}
-//}
 
 void tmc5072_fillShadowRegisters(TMC5072TypeDef *tmc5072)
 {
@@ -375,7 +275,7 @@ static void writeConfiguration(TMC5072TypeDef *tmc5072)
 
 	if(*ptr < TMC5072_REGISTER_COUNT)
 	{
-		tmc5072_writeInt(tmc5072, *ptr, settings[*ptr]);
+		tmc5072_writeRegister(tmc5072, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration
@@ -426,7 +326,7 @@ void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32_t tick)
 	{
 		for(uint8_t motor = 0; motor < TMC5072_MOTORS; motor++)
 		{
-			x = tmc5072_readInt(tmc5072, TMC5072_XACTUAL(motor));
+			x = tmc5072_readRegister(motor, TMC5072_XACTUAL(motor));
 			tmc5072->velocity[motor] = (uint32_t) ((float32_t) (abs(x - tmc5072->oldX[motor]) / (float32_t) tickDiff) * (float32_t) 1048.576);
 			tmc5072->oldX[motor] = x;
 		}
@@ -522,10 +422,10 @@ void tmc5072_setCallback(TMC5072TypeDef *tmc5072, tmc5072_callback callback)
 void tmc5072_rotate(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity)
 {
 	if(motor >= TMC5072_MOTORS)
-		return;
+			return;
 
-	tmc5072_writeInt(tmc5072, TMC5072_VMAX(motor), abs(velocity));
-	tmc5072_writeDatagram(tmc5072, TMC5072_RAMPMODE(motor), 0, 0, 0, (velocity >= 0) ? TMC5072_MODE_VELPOS : TMC5072_MODE_VELNEG);
+		tmc5072_writeRegister(motor, TMC5072_VMAX(motor), (velocity >= 0)? velocity : -velocity);
+		field_write(motor, TMC5072_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5072_MODE_VELPOS : TMC5072_MODE_VELNEG);
 }
 
 void tmc5072_right(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity)
@@ -548,15 +448,15 @@ void tmc5072_moveTo(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t position, ui
 	if(motor >= TMC5072_MOTORS)
 		return;
 
-	tmc5072_writeInt(tmc5072, TMC5072_RAMPMODE(motor), TMC5072_MODE_POSITION);
-	tmc5072_writeInt(tmc5072, TMC5072_VMAX(motor), velocityMax);
-	tmc5072_writeInt(tmc5072, TMC5072_XTARGET(motor), position);
+	tmc5072_writeRegister(motor, TMC5072_RAMPMODE(motor), TMC5072_MODE_POSITION);
+	tmc5072_writeRegister(motor, TMC5072_VMAX(motor), velocityMax);
+	tmc5072_writeRegister(motor, TMC5072_XTARGET(motor), position);
 }
 
 void tmc5072_moveBy(TMC5072TypeDef *tmc5072, uint8_t motor, uint32_t velocityMax, int32_t *ticks)
 {
 	// determine actual position and add numbers of ticks to move
-	*ticks += tmc5072_readInt(tmc5072, TMC5072_XACTUAL(motor));
+	*ticks += tmc5072_readRegister(motor, TMC5072_XACTUAL(motor));
 
 	return tmc5072_moveTo(tmc5072, motor, *ticks, velocityMax);
 }

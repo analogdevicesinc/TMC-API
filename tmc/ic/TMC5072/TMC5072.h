@@ -35,7 +35,7 @@ extern uint8_t tmc5072_getNodeAddress(uint16_t icID);
 
 int32_t tmc5072_readRegister(uint16_t icID, uint8_t address);
 void tmc5072_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-//void tmc5072_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+void tmc5072_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 typedef struct
 {
@@ -83,15 +83,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 //old //
 
 #include "tmc/helpers/API_Header.h"
-#include "TMC5072_Register.h"
-#include "TMC5072_Constants.h"
-#include "TMC5072_Fields.h"
-
-// Helper macros
-#define TMC5072_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc5072_readInt(tdef, address), mask, shift)
-#define TMC5072_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc5072_writeInt(tdef, address, FIELD_SET(tmc5072_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
