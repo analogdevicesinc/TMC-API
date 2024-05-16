@@ -148,7 +148,7 @@ static void tmc5041_writeConfiguration(TMC5041TypeDef *tmc5041)
 
 	if(*ptr < TMC5041_REGISTER_COUNT)
 	{
-		tmc5041_writeInt(tmc5041, *ptr, settings[*ptr]);
+		tmc5041_writeRegister(tmc5041, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else
@@ -173,7 +173,7 @@ void tmc5041_periodicJob(TMC5041TypeDef *tmc5041, uint32_t tick)
 		int32_t i;
 		for (i = 0; i < TMC5041_MOTORS; i++)
 		{
-			xActual = tmc5041_readInt(tmc5041, TMC5041_XACTUAL(i));
+			xActual = tmc5041_readRegister(tmc5041, TMC5041_XACTUAL(i));
 			tmc5041->config->shadowRegister[TMC5041_XACTUAL(i)] = xActual;
 			tmc5041->velocity[i] = (int32_t) ((float) (abs(xActual-tmc5041->oldX[i]) / (float) tickDiff) * (float) 1048.576);
 			tmc5041->oldX[i] = xActual;
