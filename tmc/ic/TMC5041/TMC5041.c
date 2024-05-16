@@ -29,6 +29,10 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 {
 	uint8_t data[5] = { 0 };
 
+	// register not readable -> shadow register copy
+	if(!TMC_IS_READABLE(TMC5041.registerAccess[address]))
+		return TMC5041.config->shadowRegister[address];
+
 	// clear write bit
 	data[0] = address & TMC5041_ADDRESS_MASK;
 
@@ -56,6 +60,11 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 
 	// Send the write request
 	tmc5041_readWriteSPI(icID, &data[0], sizeof(data));
+
+	// Write to the shadow register and mark the register dirty
+	address = TMC_ADDRESS(address);
+	TMC5041.config->shadowRegister[address] = value;
+	TMC5041.registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
 /*
