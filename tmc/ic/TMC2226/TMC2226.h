@@ -10,10 +10,30 @@
 #ifndef TMC_IC_TMC2226_H_
 #define TMC_IC_TMC2226_H_
 
-#include "tmc/helpers/API_Header.h"
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+
 #include "TMC2226_Register.h"
 #include "TMC2226_Constants.h"
 #include "TMC2226_Fields.h"
+//#include "TMC2226_HW_Abstraction.h"
+
+// => TMC-API wrapper
+extern bool tmc2226_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern uint8_t tmc2226_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc2226_readRegister(uint16_t icID, uint8_t address);
+void tmc2226_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
+#include "tmc/helpers/API_Header.h"
 
 // Helper macros
 #define TMC2226_FIELD_READ(tdef, address, mask, shift) \
@@ -30,6 +50,8 @@ typedef struct {
 
 	uint8_t slaveAddress;
 } TMC2226TypeDef;
+
+extern TMC2226TypeDef TMC2226;
 
 typedef void (*tmc2226_callback)(TMC2226TypeDef*, ConfigState);
 
