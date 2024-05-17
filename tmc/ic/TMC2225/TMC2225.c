@@ -38,25 +38,27 @@ static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
 static void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
-/*
+
 int32_t tmc2225_readRegister(uint16_t icID, uint8_t address)
 {
 		return readRegisterUART(icID, address);
 
 	// ToDo: Error handling
-	return -1;
 }
 
 void tmc2225_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
 		writeRegisterUART(icID, address, value);
 }
-*/
+
 int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 {
 	uint8_t data[8] = { 0 };
 
 	registerAddress = registerAddress & TMC2225_ADDRESS_MASK;
+
+		if (!TMC_IS_READABLE(TMC2225.registerAccess[registerAddress]))
+			return TMC2225.config->shadowRegister[registerAddress];
 
 	data[0] = 0x05;
 	data[1] = tmc2225_getNodeAddress(icID);
@@ -99,6 +101,11 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 	data[7] = CRC8(data, 7);
 
 	tmc2225_readWriteUART(icID, &data[0], 8, 0);
+
+	// Write to the shadow register and mark the register dirty
+	registerAddress = TMC_ADDRESS(registerAddress);
+	TMC2225.config->shadowRegister[registerAddress] = value;
+	TMC2225.registerAccess[registerAddress] |= TMC_ACCESS_DIRTY;
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
@@ -239,7 +246,7 @@ static void writeConfiguration(TMC2225TypeDef *tmc2225)
 
 	if(*ptr < TMC2225_REGISTER_COUNT)
 	{
-		tmc2225_writeInt(tmc2225, *ptr, settings[*ptr]);
+		tmc2225_writeRegister(tmc2225, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration

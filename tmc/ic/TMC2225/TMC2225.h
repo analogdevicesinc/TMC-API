@@ -31,8 +31,8 @@ extern bool tmc2225_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLeng
 extern uint8_t tmc2225_getNodeAddress(uint16_t icID);
 // => TMC-API wrapper
 
-//int32_t tmc2225_readRegister(uint16_t icID, uint8_t address);
-//void tmc2225_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+int32_t tmc2225_readRegister(uint16_t icID, uint8_t address);
+void tmc2225_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 //void tmc2225_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 
