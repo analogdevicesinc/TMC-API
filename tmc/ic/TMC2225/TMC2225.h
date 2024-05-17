@@ -15,7 +15,6 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include "tmc/helpers/API_Header.h"
-#include "TMC2225_Fields.h"
 #include "TMC2225_HW_Abstraction.h"
 
 
@@ -80,12 +79,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-// Helper macros
-#define TMC2225_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc2225_readInt(tdef, address), mask, shift)
-#define TMC2225_FIELD_UPDATE(tdef, address, mask, shift, value) \
-	(tmc2225_writeInt(tdef, address, FIELD_SET(tmc2225_readInt(tdef, address), mask, shift, value)))
-
 // Usage note: use 1 TypeDef per IC
 typedef struct {
 	ConfigurationTypeDef *config;
@@ -146,9 +139,6 @@ static const int32_t tmc2225_defaultRegisterResetState[TMC2225_REGISTER_COUNT] =
 #undef R11
 #undef R6C
 #undef R70
-
-void tmc2225_writeInt(TMC2225TypeDef *tmc2225, uint8_t address, int32_t value);
-int32_t tmc2225_readInt(TMC2225TypeDef *tmc2225, uint8_t address);
 
 void tmc2225_init(TMC2225TypeDef *tmc2225, uint8_t channel, ConfigurationTypeDef *tmc2225_config, const int32_t *registerResetState);
 uint8_t tmc2225_reset(TMC2225TypeDef *tmc2225);

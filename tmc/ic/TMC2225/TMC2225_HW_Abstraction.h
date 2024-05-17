@@ -207,49 +207,49 @@
 #define TMC2225_DISS2VS_FIELD                ((RegisterField) {TMC2225_DISS2VS_MASK, TMC2225_DISS2VS_SHIFT, TMC2225_CHOPCONF, false})
 #define TMC2225_OTPW_MASK                    0x00000001
 #define TMC2225_OTPW_SHIFT                   0
-#define TMC2225_OTPW_FIELD                   ((RegisterField) {TMC2225_OTPW_MASK, TMC2225_OTPW_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_OTPW_FIELD                   ((RegisterField) {TMC2225_OTPW_MASK, TMC2225_OTPW_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_OT_MASK                      0x00000002
 #define TMC2225_OT_SHIFT                     1
-#define TMC2225_OT_FIELD                     ((RegisterField) {TMC2225_OT_MASK, TMC2225_OT_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_OT_FIELD                     ((RegisterField) {TMC2225_OT_MASK, TMC2225_OT_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_S2GA_MASK                    0x00000004
 #define TMC2225_S2GA_SHIFT                   2
-#define TMC2225_S2GA_FIELD                   ((RegisterField) {TMC2225_S2GA_MASK, TMC2225_S2GA_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_S2GA_FIELD                   ((RegisterField) {TMC2225_S2GA_MASK, TMC2225_S2GA_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_S2GB_MASK                    0x00000008
 #define TMC2225_S2GB_SHIFT                   3
-#define TMC2225_S2GB_FIELD                   ((RegisterField) {TMC2225_S2GB_MASK, TMC2225_S2GB_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_S2GB_FIELD                   ((RegisterField) {TMC2225_S2GB_MASK, TMC2225_S2GB_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_S2VSA_MASK                   0x00000010
 #define TMC2225_S2VSA_SHIFT                  4
-#define TMC2225_S2VSA_FIELD                  ((RegisterField) {TMC2225_S2VSA_MASK, TMC2225_S2VSA_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_S2VSA_FIELD                  ((RegisterField) {TMC2225_S2VSA_MASK, TMC2225_S2VSA_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_S2VSB_MASK                   0x00000020
 #define TMC2225_S2VSB_SHIFT                  5
-#define TMC2225_S2VSB_FIELD                  ((RegisterField) {TMC2225_S2VSB_MASK, TMC2225_S2VSB_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_S2VSB_FIELD                  ((RegisterField) {TMC2225_S2VSB_MASK, TMC2225_S2VSB_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_OLA_MASK                     0x00000040
 #define TMC2225_OLA_SHIFT                    6
-#define TMC2225_OLA_FIELD                    ((RegisterField) {TMC2225_OLA_MASK, TMC2225_OLA_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_OLA_FIELD                    ((RegisterField) {TMC2225_OLA_MASK, TMC2225_OLA_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_OLB_MASK                     0x00000080
 #define TMC2225_OLB_SHIFT                    7
-#define TMC2225_OLB_FIELD                    ((RegisterField) {TMC2225_OLB_MASK, TMC2225_OLB_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_OLB_FIELD                    ((RegisterField) {TMC2225_OLB_MASK, TMC2225_OLB_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_T120_MASK                    0x00000100
 #define TMC2225_T120_SHIFT                   8
-#define TMC2225_T120_FIELD                   ((RegisterField) {TMC2225_T120_MASK, TMC2225_T120_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_T120_FIELD                   ((RegisterField) {TMC2225_T120_MASK, TMC2225_T120_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_T143_MASK                    0x00000200
 #define TMC2225_T143_SHIFT                   9
-#define TMC2225_T143_FIELD                   ((RegisterField) {TMC2225_T143_MASK, TMC2225_T143_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_T143_FIELD                   ((RegisterField) {TMC2225_T143_MASK, TMC2225_T143_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_T150_MASK                    0x00000400
 #define TMC2225_T150_SHIFT                   10
-#define TMC2225_T150_FIELD                   ((RegisterField) {TMC2225_T150_MASK, TMC2225_T150_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_T150_FIELD                   ((RegisterField) {TMC2225_T150_MASK, TMC2225_T150_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_T157_MASK                    0x00000800
 #define TMC2225_T157_SHIFT                   11
-#define TMC2225_T157_FIELD                   ((RegisterField) {TMC2225_T157_MASK, TMC2225_T157_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_T157_FIELD                   ((RegisterField) {TMC2225_T157_MASK, TMC2225_T157_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_CS_ACTUAL_MASK               0x001F0000
 #define TMC2225_CS_ACTUAL_SHIFT              16
-#define TMC2225_CS_ACTUAL_FIELD              ((RegisterField) {TMC2225_CS_ACTUAL_MASK, TMC2225_CS_ACTUAL_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_CS_ACTUAL_FIELD              ((RegisterField) {TMC2225_CS_ACTUAL_MASK, TMC2225_CS_ACTUAL_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_STEALTH_MASK                 0x40000000
 #define TMC2225_STEALTH_SHIFT                30
-#define TMC2225_STEALTH_FIELD                ((RegisterField) {TMC2225_STEALTH_MASK, TMC2225_STEALTH_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_STEALTH_FIELD                ((RegisterField) {TMC2225_STEALTH_MASK, TMC2225_STEALTH_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_STST_MASK                    0x80000000
 #define TMC2225_STST_SHIFT                   31
-#define TMC2225_STST_FIELD                   ((RegisterField) {TMC2225_STST_MASK, TMC2225_STST_SHIFT, TMC2225_DRV_STATUS, false})
+#define TMC2225_STST_FIELD                   ((RegisterField) {TMC2225_STST_MASK, TMC2225_STST_SHIFT, TMC2225_DRVSTATUS, false})
 #define TMC2225_PWM_OFS_MASK                 0x000000FF
 #define TMC2225_PWM_OFS_SHIFT                0
 #define TMC2225_PWM_OFS_FIELD                ((RegisterField) {TMC2225_PWM_OFS_MASK, TMC2225_PWM_OFS_SHIFT, TMC2225_PWMCONF, false})
