@@ -15,10 +15,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include "tmc/helpers/API_Header.h"
-#include "TMC2225_Constants.h"
-#include "TMC2225_Register.h"
 #include "TMC2225_Fields.h"
-//#include "TMC2225_HW_Abstraction.h"
+#include "TMC2225_HW_Abstraction.h"
 
 
 // Uncomment if you want to save space.....
