@@ -10,7 +10,6 @@
 #ifndef TMC_IC_TMC2226_H_
 #define TMC_IC_TMC2226_H_
 
-#include "tmc/helpers/Constants.h"
 #include "tmc/helpers/API_Header.h"
 #include "TMC2226_Register.h"
 #include "TMC2226_Constants.h"
