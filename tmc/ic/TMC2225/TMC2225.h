@@ -14,7 +14,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include "tmc/helpers/API_Header.h"
 #include "TMC2225_HW_Abstraction.h"
 
 
@@ -30,8 +29,6 @@ extern uint8_t tmc2225_getNodeAddress(uint16_t icID);
 
 int32_t tmc2225_readRegister(uint16_t icID, uint8_t address);
 void tmc2225_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-//void tmc2225_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
-
 
 typedef struct
 {
@@ -78,6 +75,8 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 }
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
+#include "tmc/helpers/API_Header.h"
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {

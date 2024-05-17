@@ -127,17 +127,6 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 	return result;
 }
 
-/*
-void tmc2225_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
-{
-  if(motor >= TMC2225_MOTORS)
-		return;
-
-	tmc2225_writeRegister(icID, TMC2225_VMAX(motor), (velocity >= 0)? velocity : -velocity);
-	field_write(icID, TMC2225_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC2225_MODE_VELPOS : TMC2225_MODE_VELNEG);
-}
-*/
-
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 
