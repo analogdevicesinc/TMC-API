@@ -67,7 +67,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 	TMC5041.registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
-/*
+
 void tmc5041_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 {
   if(motor >= TMC5041_MOTORS)
@@ -77,7 +77,7 @@ void tmc5041_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 	field_write(icID, TMC5041_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5041_MODE_VELPOS : TMC5041_MODE_VELNEG);
 }
 
-*/
+
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 

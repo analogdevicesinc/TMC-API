@@ -2,7 +2,7 @@
 * Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved. This software is
 * proprietary & confidential to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -18,7 +18,7 @@
 
 int32_t tmc5041_readRegister(uint16_t icID, uint8_t address);
 void tmc5041_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-//void tmc5041_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+void tmc5041_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 typedef struct
 {
