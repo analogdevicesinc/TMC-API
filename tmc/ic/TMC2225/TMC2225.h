@@ -10,10 +10,33 @@
 #ifndef TMC_IC_TMC2225_H_
 #define TMC_IC_TMC2225_H_
 
+
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 #include "tmc/helpers/API_Header.h"
 #include "TMC2225_Constants.h"
 #include "TMC2225_Register.h"
 #include "TMC2225_Fields.h"
+//#include "TMC2225_HW_Abstraction.h"
+
+
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+
+// => TMC-API wrapper
+extern bool tmc2225_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern uint8_t tmc2225_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+//int32_t tmc2225_readRegister(uint16_t icID, uint8_t address);
+//void tmc2225_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+//void tmc2225_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 // Helper macros
 #define TMC2225_FIELD_READ(tdef, address, mask, shift) \
@@ -28,6 +51,8 @@ typedef struct {
 	uint8_t registerAccess[TMC2225_REGISTER_COUNT];
 	uint8_t slave_address;
 } TMC2225TypeDef;
+
+extern TMC2225TypeDef TMC2225;
 
 typedef void (*tmc2225_callback)(TMC2225TypeDef*, ConfigState);
 
