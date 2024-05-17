@@ -34,6 +34,50 @@ void tmc2225_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 //void tmc2225_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t field_extract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t field_read(uint16_t icID, RegisterField field)
+{
+	uint32_t value = tmc2225_readRegister(icID, field.address);
+
+    return field_extract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void field_write(uint16_t icID, RegisterField field, uint32_t value)
+{
+	uint32_t regValue = tmc2225_readRegister(icID, field.address);
+
+	regValue = field_update(regValue, field, value);
+
+    tmc2225_writeRegister(icID, field.address, regValue);
+}
+
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 // Helper macros
