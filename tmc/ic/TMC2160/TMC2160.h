@@ -2,7 +2,7 @@
 * Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved. This software is
 * proprietary & confidential to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -10,10 +10,24 @@
 #ifndef TMC_IC_TMC2160_H_
 #define TMC_IC_TMC2160_H_
 
-#include "tmc/helpers/API_Header.h"
 #include "TMC2160_Constants.h"
 #include "TMC2160_Fields.h"
 #include "TMC2160_Register.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+//#include "TMC2160_HW_Abstraction.h"
+
+// => TMC-API wrapper
+extern void tmc2160_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+// => TMC-API wrapper
+
+int32_t tmc2160_readRegister(uint16_t icID, uint8_t address);
+void tmc2160_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
+#include "tmc/helpers/API_Header.h"
 
 // Helper macros
 #define TMC2160_FIELD_READ(tdef, address, mask, shift) \
@@ -27,6 +41,8 @@ typedef struct
 	int32_t registerResetState[TMC2160_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2160_REGISTER_COUNT];
 } TMC2160TypeDef;
+
+extern TMC2160TypeDef TMC2160;
 
 typedef void (*tmc2160_callback)(TMC2160TypeDef*, ConfigState);
 

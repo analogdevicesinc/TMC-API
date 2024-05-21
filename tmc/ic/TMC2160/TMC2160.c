@@ -2,12 +2,76 @@
 * Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved. This software is
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved. This software is
 * proprietary & confidential to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
 
 #include "TMC2160.h"
+
+TMC2160TypeDef TMC2160;
+
+static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
+static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
+
+
+int32_t tmc2160_readRegister(uint16_t icID, uint8_t address)
+{
+		return readRegisterSPI(icID, address);
+
+	// ToDo: Error handling
+}
+void tmc2160_writeRegister(uint16_t icID, uint8_t address, int32_t value)
+{
+		writeRegisterSPI(icID, address, value);
+}
+
+int32_t readRegisterSPI(uint16_t icID, uint8_t address)
+{
+	uint8_t data[5] = { 0 };
+
+	// clear write bit
+	data[0] = address & TMC2160_ADDRESS_MASK;
+
+	if(!TMC_IS_READABLE(TMC2160.registerAccess[address]))
+		return TMC2160.config->shadowRegister[address];
+
+
+	// Send the read request
+	tmc2160_readWriteSPI(icID, &data[0], sizeof(data));
+
+	// Rewrite address and clear write bit
+	data[0] = address & TMC2160_ADDRESS_MASK;
+
+	// Send another request to receive the read reply
+	tmc2160_readWriteSPI(icID, &data[0], sizeof(data));
+
+	return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
+}
+
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
+{
+	uint8_t data[5] = { 0 };
+
+	data[0] = address | TMC2160_WRITE_BIT;
+	data[1] = 0xFF & (value>>24);
+	data[2] = 0xFF & (value>>16);
+	data[3] = 0xFF & (value>>8);
+	data[4] = 0xFF & (value>>0);
+
+	// Send the write request
+	tmc2160_readWriteSPI(icID, &data[0], sizeof(data));
+
+	// Write to the shadow register and mark the register dirty
+	address = TMC_ADDRESS(address);
+	TMC2160.config->shadowRegister[address] = value;
+	TMC2160.registerAccess[address] |= TMC_ACCESS_DIRTY;
+
+	}
+
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
 
 // => SPI wrapper
 extern void tmc2160_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
