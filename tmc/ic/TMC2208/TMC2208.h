@@ -10,9 +10,30 @@
 #ifndef TMC_IC_TMC2208_H_
 #define TMC_IC_TMC2208_H_
 
-#include "tmc/helpers/API_Header.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 #include "TMC2208_Register.h"
 #include "TMC2208_Constants.h"
+
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+
+//#include "TMC2208_HW_Abstraction.h"
+
+// => TMC-API wrapper
+extern bool tmc2208_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern uint8_t tmc2208_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc2208_readRegister(uint16_t icID, uint8_t address);
+void tmc2208_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
+#include "tmc/helpers/API_Header.h"
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
@@ -20,6 +41,8 @@ typedef struct {
 	int32_t registerResetState[TMC2208_REGISTER_COUNT];
 	uint8_t registerAccess[TMC2208_REGISTER_COUNT];
 } TMC2208TypeDef;
+
+extern TMC2208TypeDef TMC2208;
 
 typedef void (*tmc2208_callback)(TMC2208TypeDef*, ConfigState);
 
