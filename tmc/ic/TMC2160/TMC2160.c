@@ -224,7 +224,7 @@ static void writeConfiguration(TMC2160TypeDef *tmc2160)
 
 	if(*ptr < TMC2160_REGISTER_COUNT)
 	{
-		tmc2160_writeInt(tmc2160, *ptr, settings[*ptr]);
+		tmc2160_writeRegister(tmc2160, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration
