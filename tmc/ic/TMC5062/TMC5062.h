@@ -10,10 +10,79 @@
 #ifndef TMC_IC_TMC5062_H_
 #define TMC_IC_TMC5062_H_
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include "TMC5062_HW_Abstraction.h"
+
+//NEW_CODE_BEGIN
+// Amount of CRC tables available
+// Each table takes ~260 bytes (257 bytes, one bool and structure padding)
+#define CRC_TABLE_COUNT 2
+
+typedef enum {
+    IC_BUS_SPI,
+    IC_BUS_UART,
+} TMC5062BusType;
+
+// => TMC-API wrapper
+extern void tmc5062_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc5062_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5062BusType tmc5062_getBusType(uint16_t icID);
+extern uint8_t tmc5062_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc5062_readRegister(uint16_t icID, uint8_t address);
+void tmc5062_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5062_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t field_extract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t field_read(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc5062_readRegister(icID, field.address);
+
+    return field_extract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void field_write(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc5062_readRegister(icID, field.address);
+
+    regValue = field_update(regValue, field, value);
+
+    tmc5062_writeRegister(icID, field.address, regValue);
+}
+//NEW_CODE_END
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
 #include "tmc/helpers/API_Header.h"
-#include "TMC5062_Register.h"
-#include "TMC5062_Constants.h"
-#include "TMC5062_Fields.h"
 
 #define TMC5062_FIELD_READ(tmc5062_ptr, channel, address, mask, shift) \
 	FIELD_GET(tmc5062_readInt(tmc5062_ptr, channel, address), (mask), (shift))
@@ -38,6 +107,8 @@ typedef struct {
 	int32_t registerResetState[TMC5062_REGISTER_COUNT];
 	uint8_t registerAccess[TMC5062_REGISTER_COUNT];
 } TMC5062TypeDef;
+
+extern TMC5062TypeDef TMC5062;
 
 typedef void (*tmc5062_callback)(TMC5062TypeDef*, ConfigState);
 
@@ -74,6 +145,14 @@ static const int32_t tmc5062_defaultRegisterResetState[TMC5062_REGISTER_COUNT] =
 #undef R6C
 #undef R7C
 
+// Register access permissions:
+//   0x00: none (reserved)
+//   0x01: read
+//   0x02: write
+//   0x03: read/write
+//   0x13: read/write, separate functions/values for reading or writing
+//   0x23: read/write, flag register (write to clear)
+//   0x42: write, has hardware presets on reset
 static const uint8_t tmc5062_defaultRegisterAccess[TMC5062_REGISTER_COUNT] = {
 //	0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x01, 0x01, 0x02, 0x07, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
