@@ -172,9 +172,6 @@ static const TMCRegisterConstant tmc5271_RegisterConstants[] =
 		///
 };
 
-//void tmc5271_writeDatagram(TMC5271TypeDef *tmc5271, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc5271_writeInt(TMC5271TypeDef *tmc5271, uint8_t address, int32_t value);
-int32_t tmc5271_readInt(TMC5271TypeDef *tmc5271, uint8_t address);
 
 void tmc5271_init(TMC5271TypeDef *tmc5271, uint8_t channel, ConfigurationTypeDef *config);
 //void tmc5271_fillShadowRegisters(TMC5271TypeDef *tmc5271);
