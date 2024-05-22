@@ -9,7 +9,6 @@
 
 #include "TMC5062.h"
 
-//NEW_CODE_BEGIN
 TMC5062TypeDef TMC5062;
 
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
@@ -103,7 +102,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 {
     uint8_t data[5] = { 0 };
 
-    data[0] = address | TMC_WRITE_BIT;
+    data[0] = address | TMC5062_WRITE_BIT;
     data[1] = 0xFF & (value>>24);
     data[2] = 0xFF & (value>>16);
     data[3] = 0xFF & (value>>8);
@@ -120,54 +119,48 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 
 int32_t readRegisterUART(uint16_t icID, uint8_t address)
 {
-    uint8_t data[8] = { 0 };
+    uint8_t data[7] = { 0 };
 
-    address = address & TMC_ADDRESS_MASK;
+    address = address & TMC5062_ADDRESS_MASK;
 
     if (!TMC_IS_READABLE(TMC5062.registerAccess[address]))
         return TMC5062.config->shadowRegister[address];
 
     data[0] = 0x05;
-    data[1] = tmc5062_getNodeAddress(icID); //targetAddressUart;
-    data[2] = address;
-    data[3] = CRC8(data, 3);
+    data[1] = address;
+    data[2] = CRC8(data, 2);
 
-    if (!tmc5062_readWriteUART(icID, &data[0], 4, 8))
+    if (!tmc5062_readWriteUART(icID, &data[0], 3, 7))
         return 0;
 
     // Byte 0: Sync nibble correct?
-    if (data[0] != 0x05)
+    if (data[0] != 0xF5)
         return 0;
 
     // Byte 1: Master address correct?
-    if (data[1] != 0xFF)
-        return 0;
-
-    // Byte 2: Address correct?
-    if (data[2] != address)
+    if (data[1] != address)
         return 0;
 
     // Byte 7: CRC correct?
-    if (data[7] != CRC8(data, 7))
+    if (data[6] != CRC8(data, 6))
         return 0;
 
-    return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
+    return ((uint32_t)data[2] << 24) | ((uint32_t)data[3] << 16) | (data[4] << 8) | data[5];
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
 {
-    uint8_t data[8];
+    uint8_t data[7];
 
     data[0] = 0x05;
-    data[1] = tmc5062_getNodeAddress(icID); //targetAddressUart;
-    data[2] = address | TMC_WRITE_BIT;
-    data[3] = (value >> 24) & 0xFF;
-    data[4] = (value >> 16) & 0xFF;
-    data[5] = (value >> 8 ) & 0xFF;
-    data[6] = (value      ) & 0xFF;
-    data[7] = CRC8(data, 7);
+    data[1] = address | TMC5062_WRITE_BIT;
+    data[2] = (value >> 24) & 0xFF;
+    data[3] = (value >> 16) & 0xFF;
+    data[4] = (value >> 8 ) & 0xFF;
+    data[5] = (value      ) & 0xFF;
+    data[6] = CRC8(data, 6);
 
-    tmc5062_readWriteUART(icID, &data[0], 8, 0);
+    tmc5062_readWriteUART(icID, &data[0], 7, 0);
     // Write to the shadow register and mark the register dirty
     address = TMC_ADDRESS(address);
     TMC5062.config->shadowRegister[address] = value;
@@ -202,58 +195,10 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
     return result;
 }
 
-//NEW_CODE_END
-
-// => SPI wrapper
-extern uint8_t tmc5062_readWrite(uint8_t motor, uint8_t data, uint8_t lastTransfer);
-// <= SPI wrapper
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 static void measureVelocity(TMC5062TypeDef *tmc5062, uint32_t tick);
 static void writeConfiguration(TMC5062TypeDef *tmc5062);
-
-void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address, int32_t value)
-{
-	if(channel >= TMC5062_MOTORS)
-		return;
-
-	tmc5062_readWrite(tmc5062->motors[channel], address | TMC5062_WRITE_BIT, false);
-	tmc5062_readWrite(tmc5062->motors[channel], value >> 24, false);
-	tmc5062_readWrite(tmc5062->motors[channel], value >> 16, false);
-	tmc5062_readWrite(tmc5062->motors[channel], value >>  8, false);
-	tmc5062_readWrite(tmc5062->motors[channel], value,       true);
-
-	tmc5062->config->shadowRegister[TMC_ADDRESS(address)] = value;
-}
-
-int32_t tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address)
-{
-	if(channel >= TMC5062_MOTORS)
-		return 0;
-
-	if(!TMC_IS_READABLE(tmc5062->registerAccess[TMC_ADDRESS(address)]))
-		return tmc5062->config->shadowRegister[TMC_ADDRESS(address)];
-
-	tmc5062_readWrite(tmc5062->motors[channel], address, false);
-	tmc5062_readWrite(tmc5062->motors[channel], 0, false);
-	tmc5062_readWrite(tmc5062->motors[channel], 0, false);
-	tmc5062_readWrite(tmc5062->motors[channel], 0, false);
-	tmc5062_readWrite(tmc5062->motors[channel], 0, true);
-
-	int32_t value = 0;
-
-	tmc5062_readWrite(tmc5062->motors[channel], address, false);
-	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, false);
-	value <<= 8;
-	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, false);
-	value <<= 8;
-	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, false);
-	value <<= 8;
-	value |= tmc5062_readWrite(tmc5062->motors[channel], 0, true);
-
-	return value;
-}
-
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 void tmc5062_init(TMC5062TypeDef *tmc5062, ConfigurationTypeDef *tmc5062_config, const int32_t *registerResetState, uint8_t motorIndex0, uint8_t motorIndex1, uint32_t chipFrequency)
 {
@@ -346,7 +291,7 @@ static void writeConfiguration(TMC5062TypeDef *tmc5062)
 
 	if(*ptr < TMC5062_REGISTER_COUNT)
 	{
-		tmc5062_writeInt(tmc5062, 0, *ptr, settings[*ptr]);
+		tmc5062_writeRegister(0, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration
@@ -368,9 +313,9 @@ void tmc5062_periodicJob(TMC5062TypeDef *tmc5062, uint32_t tick)
 		return;
 	}
 
-	for(uint8_t channel = 0; channel < TMC5062_MOTORS; channel++)
+	for(uint8_t motor = 0; motor < TMC5062_MOTORS; motor++)
 	{
-		if(dcStepActive(tmc5062, channel))
+		if(dcStepActive(tmc5062, motor))
 		{
 			// Measure if any channel has active dcStep
 			measureVelocity(tmc5062, tick);
@@ -413,8 +358,8 @@ void tmc5062_rotate(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t velocity)
 	if(motor >= TMC5062_MOTORS)
 		return;
 
-	tmc5062_writeInt(tmc5062, motor, TMC5062_VMAX(motor), abs(velocity));
-	tmc5062_writeInt(tmc5062, motor, TMC5062_RAMPMODE(motor), (velocity >= 0) ? TMC5062_MODE_VELPOS : TMC5062_MODE_VELNEG);
+	tmc5062_writeRegister(motor, TMC5062_VMAX(motor), abs(velocity));
+	tmc5062_writeRegister(motor, TMC5062_RAMPMODE(motor), (velocity >= 0) ? TMC5062_MODE_VELPOS : TMC5062_MODE_VELNEG);
 }
 
 void tmc5062_right(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t velocity)
@@ -437,15 +382,15 @@ void tmc5062_moveTo(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t position, ui
 	if(motor >= TMC5062_MOTORS)
 		return;
 
-	tmc5062_writeInt(tmc5062, motor, TMC5062_RAMPMODE(motor), TMC5062_MODE_POSITION);
-	tmc5062_writeInt(tmc5062, motor, TMC5062_VMAX(motor), velocityMax);
-	tmc5062_writeInt(tmc5062, motor, TMC5062_XTARGET(motor), position);
+	tmc5062_writeRegister(motor, TMC5062_RAMPMODE(motor), TMC5062_MODE_POSITION);
+	tmc5062_writeRegister(motor, TMC5062_VMAX(motor), velocityMax);
+	tmc5062_writeRegister(motor, TMC5062_XTARGET(motor), position);
 }
 
 void tmc5062_moveBy(TMC5062TypeDef *tmc5062, uint8_t motor, uint32_t velocityMax, int32_t *ticks)
 {
 	// determine actual position and add numbers of ticks to move
-	*ticks += tmc5062_readInt(tmc5062, motor, TMC5062_XACTUAL(motor));
+	*ticks += tmc5062_readRegister(motor, TMC5062_XACTUAL(motor));
 
 	return tmc5062_moveTo(tmc5062, motor, *ticks, velocityMax);
 }
@@ -470,17 +415,17 @@ uint8_t calculateTOFF(uint32_t chopFreq, uint32_t clkFreq)
 // Coolstep
 
 // dcStep
-uint8_t dcStepActive(TMC5062TypeDef *tmc5062, uint8_t channel)
+uint8_t dcStepActive(TMC5062TypeDef *tmc5062, uint8_t motor)
 {
 
 	// vhighfs and vhighchm set?
-	int32_t chopConf = tmc5062_readInt(tmc5062, channel, TMC5062_CHOPCONF(channel));
+	int32_t chopConf = tmc5062_readRegister(motor, TMC5062_CHOPCONF(motor));
 	if((chopConf & (TMC5062_VHIGHFS_MASK | TMC5062_VHIGHCHM_MASK)) != (TMC5062_VHIGHFS_MASK | TMC5062_VHIGHCHM_MASK))
 		return 0;
 
 	// Velocity above dcStep velocity threshold?
-	int32_t vActual = tmc5062_readInt(tmc5062, channel, TMC5062_VACTUAL(channel));
-	int32_t vDCMin  = tmc5062_readInt(tmc5062, channel, TMC5062_VDCMIN(channel));
+	int32_t vActual = tmc5062_readRegister(motor, TMC5062_VACTUAL(motor));
+	int32_t vDCMin  = tmc5062_readRegister(motor, TMC5062_VDCMIN(motor));
 
 	return vActual >= vDCMin;
 }
@@ -492,41 +437,41 @@ static void measureVelocity(TMC5062TypeDef *tmc5062, uint32_t tick)
 
 	if((tickDiff = tick - tmc5062->oldTick) >= tmc5062->measurementInterval)
 	{
-		for(uint8_t channel = 0; channel < TMC5062_MOTORS; channel++)
+		for(uint8_t motor = 0; motor < TMC5062_MOTORS; motor++)
 		{
-			xActual = tmc5062_readInt(tmc5062, channel, TMC5062_XACTUAL(channel));
+			xActual = tmc5062_readRegister(motor, TMC5062_XACTUAL(motor));
 
 			// Position difference gets multiplied by 1000 to compensate ticks being in milliseconds
-			int32_t xDiff = (xActual - tmc5062->oldXActual[channel])* 1000;
-			tmc5062->velocity[channel] = (xDiff) / ((float) tickDiff) * ((1<<24) / (float) tmc5062->chipFrequency);
+			int32_t xDiff = (xActual - tmc5062->oldXActual[motor])* 1000;
+			tmc5062->velocity[motor] = (xDiff) / ((float) tickDiff) * ((1<<24) / (float) tmc5062->chipFrequency);
 
-			tmc5062->oldXActual[channel] = xActual;
+			tmc5062->oldXActual[motor] = xActual;
 		}
 		tmc5062->oldTick = tick;
 	}
 }
 
 // MSLUT
-uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t channel, TMC5062_MicroStepTable *table)
+uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t motor, TMC5062_MicroStepTable *table)
 {
-	if(channel >= TMC5062_MOTORS || table == 0 || tmc5062 == 0)
+	if(motor >= TMC5062_MOTORS || table == 0 || tmc5062 == 0)
 		return 0;
 
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT0(channel), table->LUT_0);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT1(channel), table->LUT_1);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT2(channel), table->LUT_2);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT3(channel), table->LUT_3);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT4(channel), table->LUT_4);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT5(channel), table->LUT_5);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT6(channel), table->LUT_6);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUT7(channel), table->LUT_7);
+	tmc5062_writeRegister(motor, TMC5062_MSLUT0(motor), table->LUT_0);
+	tmc5062_writeRegister(motor, TMC5062_MSLUT1(motor), table->LUT_1);
+	tmc5062_writeRegister(motor, TMC5062_MSLUT2(motor), table->LUT_2);
+	tmc5062_writeRegister(motor, TMC5062_MSLUT3(motor), table->LUT_3);
+	tmc5062_writeRegister(motor, TMC5062_MSLUT4(motor), table->LUT_4);
+	tmc5062_writeRegister(motor, TMC5062_MSLUT5(motor), table->LUT_5);
+	tmc5062_writeRegister(motor, TMC5062_MSLUT6(motor), table->LUT_6);
+	tmc5062_writeRegister(motor, TMC5062_MSLUT7(motor), table->LUT_7);
 
 	uint32_t tmp =   ((uint32_t)table->X3 << 24) | ((uint32_t)table->X2 << 16) | (table->X1 << 8)
 			     | (table->W3 <<  6) | (table->W2 <<  4) | (table->W1 << 2) | (table->W0);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUTSEL(channel), tmp);
+	tmc5062_writeRegister(motor, TMC5062_MSLUTSEL(motor), tmp);
 
 	tmp = ((uint32_t)table->START_SIN90 << 16) | (table->START_SIN);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_MSLUTSTART(channel), tmp);
+	tmc5062_writeRegister(motor, TMC5062_MSLUTSTART(motor), tmp);
 
 	return 1;
 }
@@ -538,7 +483,7 @@ uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t channel, TMC5062_Micr
  * Decimal:  Error = retVal / (10000 * encoderResolution)
  * (Check the enc_sel_decimal bit in the ENCMODE register to find out which mode is used)
  */
-uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t channel, uint32_t motorFullSteps, uint32_t microSteps, uint32_t encoderResolution)
+uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t motor, uint32_t motorFullSteps, uint32_t microSteps, uint32_t encoderResolution)
 {
 	int32_t numerator, denominator, remainder;
 	int32_t binaryError, decimalError;
@@ -598,8 +543,8 @@ uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t channel, uint32_t mot
 	}
 
 	uint32_t tmp = (numerator << 16) | (denominator & 0xFFFF);
-	tmc5062_writeInt(tmc5062, channel, TMC5062_ENC_CONST(channel), tmp);
-	TMC5062_FIELD_WRITE(tmc5062, channel, TMC5062_ENCMODE(channel), TMC5062_ENC_SEL_DECIMAL_MASK, TMC5062_ENC_SEL_DECIMAL_SHIFT, useDecimal);
+	tmc5062_writeRegister(motor, TMC5062_ENC_CONST(motor), tmp);
+	field_write(motor, TMC5062_ENC_SEL_DECIMAL_FIELD(motor), useDecimal);
 
 	return remainder;
 }

@@ -15,7 +15,6 @@
 #include <stddef.h>
 #include "TMC5062_HW_Abstraction.h"
 
-//NEW_CODE_BEGIN
 // Amount of CRC tables available
 // Each table takes ~260 bytes (257 bytes, one bool and structure padding)
 #define CRC_TABLE_COUNT 2
@@ -29,7 +28,6 @@ typedef enum {
 extern void tmc5062_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
 extern bool tmc5062_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
 extern TMC5062BusType tmc5062_getBusType(uint16_t icID);
-extern uint8_t tmc5062_getNodeAddress(uint16_t icID);
 // => TMC-API wrapper
 
 int32_t tmc5062_readRegister(uint16_t icID, uint8_t address);
@@ -79,16 +77,10 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
     tmc5062_writeRegister(icID, field.address, regValue);
 }
-//NEW_CODE_END
+
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 #include "tmc/helpers/API_Header.h"
-
-#define TMC5062_FIELD_READ(tmc5062_ptr, channel, address, mask, shift) \
-	FIELD_GET(tmc5062_readInt(tmc5062_ptr, channel, address), (mask), (shift))
-
-#define TMC5062_FIELD_WRITE(tmc5062_ptr, channel, address, mask, shift, value) \
-	tmc5062_writeInt((tmc5062_ptr), (channel), (address), FIELD_SET(tmc5062_readInt((tmc5062_ptr), (channel), (address)), (mask), (shift), (value)))
 
 // Usage note: use one TypeDef per IC
 typedef struct {
@@ -189,9 +181,6 @@ static const TMCRegisterConstant tmc5062_RegisterConstants[] =
 		{ 0x79, 0x00F70000 }  // MSLUTSTART_M2
 };
 
-void tmc5062_writeInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address, int32_t value);
-int32_t tmc5062_readInt(TMC5062TypeDef *tmc5062, uint8_t channel, uint8_t address);
-
 void tmc5062_init(TMC5062TypeDef *tmc5062, ConfigurationTypeDef *tmc5062_config, const int32_t *registerResetState, uint8_t motorIndex0, uint8_t motorIndex1, uint32_t chipFrequency);
 void tmc5062_fillShadowRegisters(TMC5062TypeDef *tmc5062);
 void tmc5062_setRegisterResetState(TMC5062TypeDef *tmc5062, const int32_t *resetState);
@@ -214,7 +203,7 @@ uint8_t calculateTOFF(uint32_t chopFreq, uint32_t clkFreq);
 // Stallguard
 // Coolstep
 // dcStep
-uint8_t dcStepActive(TMC5062TypeDef *tmc5062, uint8_t channel);
+uint8_t dcStepActive(TMC5062TypeDef *tmc5062, uint8_t motor);
 // MSLUT
 typedef struct {
 	uint32_t LUT_0;  // Bits   0 -  31
@@ -239,9 +228,9 @@ typedef struct {
 	uint8_t  START_SIN90;  // Absolute current at MSLUT[256]
 } TMC5062_MicroStepTable;
 
-uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t channel, TMC5062_MicroStepTable *table);
+uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t motor, TMC5062_MicroStepTable *table);
 
 // Encoder
-uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t channel, uint32_t motorFullSteps, uint32_t microSteps, uint32_t encoderResolution);
+uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t motor, uint32_t motorFullSteps, uint32_t microSteps, uint32_t encoderResolution);
 
 #endif /* TMC_IC_TMC5062_H_ */
