@@ -170,7 +170,7 @@ void tmc5031_writeConfiguration(TMC5031TypeDef *tmc5031, ConfigurationTypeDef *T
 
 	if(*ptr < TMC5031_REGISTER_COUNT)
 	{
-		tmc5031_writeInt(0, *ptr, settings[*ptr]);
+		tmc5031_writeRegister(0, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else
@@ -192,14 +192,14 @@ void tmc5031_periodicJob(uint8_t motor, uint32_t tick, TMC5031TypeDef *tmc5031, 
 
 	if((tickDiff = tick - tmc5031->oldTick) >= 5)
 	{
-		xActual = tmc5031_readInt(0, TMC5031_XACTUAL(motor));
+		xActual = tmc5031_readRegister(0, TMC5031_XACTUAL(motor));
 		TMC5031_config->shadowRegister[TMC5031_XACTUAL(motor)] = xActual;
 		tmc5031->velocity[motor] = (int32_t) ((float) (abs(xActual-tmc5031->oldX[motor]) / (float) tickDiff) * (float) 1048.576);
-		if(tmc5031_readInt(0, TMC5031_VACTUAL(motor))<0) tmc5031->velocity[motor] *= -1;
+		if(tmc5031_readRegister(0, TMC5031_VACTUAL(motor))<0) tmc5031->velocity[motor] *= -1;
 		tmc5031->oldX[motor] = xActual;
 
 		// Not per motor:
-		/*xActual = tmc5031_readInt(motor, TMC5031_XACTUAL_1);
+		/*xActual = tmc5031_readRegister(motor, TMC5031_XACTUAL_1);
 		TMC562v3_config->shadowRegister[TMC5031_XACTUAL_1] = xActual;
 		TMC562V3.velocityMotor1 = (int32_t) ((float) (abs(xActual-oldX[0]) / (float) t) * (float) 1048.576);
 		tmc5031->oldX = xActual;
