@@ -21,6 +21,8 @@ extern void tmc5031_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength
 
 int32_t tmc5031_readRegister(uint16_t icID, uint8_t address);
 void tmc5031_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5031_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
 
 typedef struct
 {
