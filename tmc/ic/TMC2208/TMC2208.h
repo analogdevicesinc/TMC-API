@@ -13,15 +13,12 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include "TMC2208_Register.h"
-#include "TMC2208_Constants.h"
+#include "TMC2208_HW_Abstraction.h"
+
 
 // Uncomment if you want to save space.....
 // and put the table into your own .c file
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
-
-
-//#include "TMC2208_HW_Abstraction.h"
 
 // => TMC-API wrapper
 extern bool tmc2208_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
@@ -30,6 +27,7 @@ extern uint8_t tmc2208_getNodeAddress(uint16_t icID);
 
 int32_t tmc2208_readRegister(uint16_t icID, uint8_t address);
 void tmc2208_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
