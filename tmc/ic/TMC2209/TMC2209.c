@@ -33,6 +33,82 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 };
 #endif
 
+#if TMC2209_CACHE == 0
+static inline bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uint32_t *value)
+{
+	UNUSED(icID);
+	UNUSED(address);
+	UNUSED(operation);
+	return false;
+}
+#else
+#ifdef TMC2209_ENABLE_TMC_CACHE
+uint8_t tmc2209_registerAccess[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT];
+int32_t tmc2209_shadowRegister[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT];
+
+static void initRegisterAccessArray(void)
+{
+	for(size_t icID = 0; icID < TMC2209_IC_CACHE_COUNT; icID++)
+	{
+	    for(size_t i = 0; i < TMC2209_REGISTER_COUNT; i++)
+	    {
+	        tmc2209_registerAccess[icID][i] = tmc2209_defaultRegisterAccess[i];
+	    }
+	}
+}
+
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uint32_t *value)
+{
+	static bool firstTime = true;
+	if(firstTime)
+	{
+		initRegisterAccessArray();
+		firstTime = false;
+	}
+
+	if (operation == TMC2209_CACHE_READ)
+	{
+		// Check if the value should come from cache
+
+		// Only supported chips have a cache
+		if (icID != 0)
+			return false;
+
+		// Only non-readable registers care about caching
+		// Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+		if (TMC2209_IS_READABLE(tmc2209_registerAccess[icID][address]))
+			return false;
+
+		// Grab the value from the cache
+		*value = tmc2209_shadowRegister[icID][address];
+		return true;
+	}
+	else if (operation == TMC2209_CACHE_WRITE)
+	{
+		// Fill the cache
+
+		// only supported chips have a cache
+		if (icID != 0)
+			return false;
+
+		// Write to the shadow register and mark the register dirty
+		tmc2209_shadowRegister[icID][address] = *value;
+		tmc2209_registerAccess[icID][address] |= TMC2209_ACCESS_DIRTY;
+
+		return true;
+	}
+	return false;
+}
+#else
+// User must implement their own cache
+extern bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
 int32_t readRegisterUART(uint16_t icID, uint8_t address);
 void writeRegisterUART(uint16_t icID ,uint8_t address, int32_t value);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
@@ -51,13 +127,15 @@ int32_t tmc2209_readRegister(uint16_t icID, uint8_t address)
 
 int32_t readRegisterUART(uint16_t icID, uint8_t address)
 {
+	 uint32_t value;
+
+	 // Read from cache for registers with write-only access
+	 if (tmc2209_cache(icID, TMC2209_READ, address, &value))
+	  return value;
+
     uint8_t data[8] = { 0 };
 
     address = address & TMC_ADDRESS_MASK;
-
-    if (!TMC_IS_READABLE(TMC2209.registerAccess[address]))
-        return TMC2209.config->shadowRegister[address];
-
     data[0] = 0x05;
     data[1] = tmc2209_getNodeAddress(icID); //targetAddressUart;
     data[2] = address;
@@ -99,10 +177,9 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
     data[7] = CRC8(data, 7);
 
     tmc2209_readWriteUART(icID, &data[0], 8, 0);
-    // Write to the shadow register and mark the register dirty
-    address = TMC_ADDRESS(address);
-    TMC2209.config->shadowRegister[address] = value;
-    TMC2209.registerAccess[address] |= TMC_ACCESS_DIRTY;
+
+    //Cache the registers with write-only access
+    tmc2209_cache(icID, TMC2209_WRITE, address, &value);
 }
 
 void tmc2209_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
@@ -130,7 +207,6 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 
     return result;
 }
-
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 void tmc2209_init(TMC2209TypeDef *tmc2209, uint8_t channel, uint8_t slaveAddress, ConfigurationTypeDef *tmc2209_config, const int32_t *registerResetState)
 {
