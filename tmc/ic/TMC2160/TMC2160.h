@@ -10,7 +10,6 @@
 #ifndef TMC_IC_TMC2160_H_
 #define TMC_IC_TMC2160_H_
 
-#include "TMC2160_Fields.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
@@ -23,15 +22,55 @@ extern void tmc2160_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength
 int32_t tmc2160_readRegister(uint16_t icID, uint8_t address);
 void tmc2160_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
+
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t field_extract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t field_read(uint16_t icID, RegisterField field)
+{
+	uint32_t value = tmc2160_readRegister(icID, field.address);
+
+    return field_extract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void field_write(uint16_t icID, RegisterField field, uint32_t value)
+{
+	uint32_t regValue = tmc2160_readRegister(icID, field.address);
+
+	regValue = field_update(regValue, field, value);
+
+    tmc2160_writeRegister(icID, field.address, regValue);
+}
+
+
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 #include "tmc/helpers/API_Header.h"
-
-// Helper macros
-#define TMC2160_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc2160_readInt(tdef, address), mask, shift)
-#define TMC2160_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc2160_writeInt(tdef, address, FIELD_SET(tmc2160_readInt(tdef, address), mask, shift, value)))
 
 typedef struct
 {
@@ -127,10 +166,6 @@ static const TMCRegisterConstant tmc2160_RegisterConstants[] =
 		{ 0x68, 0xFFFF8056 }, // MSLUTSEL
 		{ 0x69, 0x00F70000 }  // MSLUTSTART
 };
-
-void tmc2160_writeDatagram(TMC2160TypeDef *tmc2160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc2160_writeInt(TMC2160TypeDef *tmc2160, uint8_t address, int32_t value);
-int32_t tmc2160_readInt(TMC2160TypeDef *tmc2160, uint8_t address);
 
 void tmc2160_init(TMC2160TypeDef *tmc2160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc2160_fillShadowRegisters(TMC2160TypeDef *tmc2160);

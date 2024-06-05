@@ -72,49 +72,6 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-
-// => SPI wrapper
-extern void tmc2160_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-// <= SPI wrapper
-
-// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc2160_writeDatagram(TMC2160TypeDef *tmc2160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
-{
-	uint8_t data[5] = { address | TMC2160_WRITE_BIT, x1, x2, x3, x4 };
-	tmc2160_readWriteArray(tmc2160->config->channel, &data[0], 5);
-
-	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
-
-	// Write to the shadow register and mark the register dirty
-	address = TMC_ADDRESS(address);
-	tmc2160->config->shadowRegister[address] = value;
-	tmc2160->registerAccess[address] |= TMC_ACCESS_DIRTY;
-}
-
-void tmc2160_writeInt(TMC2160TypeDef *tmc2160, uint8_t address, int32_t value)
-{
-	tmc2160_writeDatagram(tmc2160, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
-}
-
-int32_t tmc2160_readInt(TMC2160TypeDef *tmc2160, uint8_t address)
-{
-	address = TMC_ADDRESS(address);
-
-	// register not readable -> shadow register copy
-	if(!TMC_IS_READABLE(tmc2160->registerAccess[address]))
-		return tmc2160->config->shadowRegister[address];
-
-	uint8_t data[5];
-
-	data[0] = address;
-	tmc2160_readWriteArray(tmc2160->config->channel, &data[0], 5);
-
-	data[0] = address;
-	tmc2160_readWriteArray(tmc2160->config->channel, &data[0], 5);
-
-	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
-}
-
 void tmc2160_init(TMC2160TypeDef *tmc2160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
 {
 	tmc2160->config = config;
