@@ -13,14 +13,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "TMC5041_Register.h"
-#include "TMC5041_Constants.h"
-#include "TMC5041_Fields.h"
+#include "TMC5041_HW_Abstraction.h"
 
-
-// => TMC-API wrapper
-extern void tmc5041_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
-// => TMC-API wrapper
 
 int32_t tmc5041_readRegister(uint16_t icID, uint8_t address);
 void tmc5041_writeRegister(uint16_t icID, uint8_t address, int32_t value);
@@ -71,11 +65,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 }
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-
-#define TMC5041_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc5041_readInt(tdef, address), mask, shift)
-#define TMC5041_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc5041_writeInt(tdef, address, FIELD_SET(tmc5041_readInt(tdef, address), mask, shift, value)))
 
 #include "tmc/helpers/API_Header.h"
 
@@ -161,10 +150,6 @@ static const int32_t tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] =
 #undef R69
 #undef R6C
 #undef R7C
-
-void tmc5041_writeDatagram(TMC5041TypeDef *tmc5041, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc5041_writeInt(TMC5041TypeDef *tmc5041, uint8_t address, int32_t value);
-int32_t tmc5041_readInt(TMC5041TypeDef *tmc5041, uint8_t address);
 
 void tmc5041_init(TMC5041TypeDef *tmc5041, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc5041_periodicJob(TMC5041TypeDef *tmc5041, uint32_t tick);
