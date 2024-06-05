@@ -10,13 +10,11 @@
 #ifndef TMC_IC_TMC2160_H_
 #define TMC_IC_TMC2160_H_
 
-#include "TMC2160_Constants.h"
 #include "TMC2160_Fields.h"
-#include "TMC2160_Register.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-//#include "TMC2160_HW_Abstraction.h"
+#include "TMC2160_HW_Abstraction.h"
 
 // => TMC-API wrapper
 extern void tmc2160_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
