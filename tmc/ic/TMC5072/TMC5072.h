@@ -2,15 +2,13 @@
 * Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
 
 #ifndef TMC_IC_TMC5072_H_
 #define TMC_IC_TMC5072_H_
-
-// new /////
 
 // Uncomment if you want to save space.....
 // and put the table into your own .c file
@@ -80,7 +78,8 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
     tmc5072_writeRegister(icID, field.address, regValue);
 }
-//old //
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
 
 #include "tmc/helpers/API_Header.h"
 
