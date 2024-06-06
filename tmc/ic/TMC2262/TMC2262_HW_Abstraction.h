@@ -1,14 +1,11 @@
 /*******************************************************************************
-* Copyright Â© 2019 TRINAMIC Motion Control GmbH & Co. KG
-* (now owned by Analog Devices Inc.),
-*
-* Copyright Â© 2023 Analog Devices Inc. All Rights Reserved. This software is
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved. This software is
 * proprietary & confidential to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
+
 #ifndef TMC2262_HW_ABSTRACTION
 #define TMC2262_HW_ABSTRACTION
-
 
 // Constants
 
