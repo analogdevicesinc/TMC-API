@@ -18,10 +18,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "TMC2226_Register.h"
-#include "TMC2226_Constants.h"
 #include "TMC2226_Fields.h"
-//#include "TMC2226_HW_Abstraction.h"
+#include "TMC2226_HW_Abstraction.h"
 
 // => TMC-API wrapper
 extern bool tmc2226_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
