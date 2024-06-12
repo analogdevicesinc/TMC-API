@@ -130,70 +130,6 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-// => UART wrapper
-extern void tmc2226_readWriteArray(uint8_t channel, uint8_t *data, size_t writeLength, size_t readLength);
-// <= UART wrapper
-
-// => CRC wrapper
-extern uint8_t tmc2226_CRC8(uint8_t *data, size_t length);
-// <= CRC wrapper
-
-void tmc2226_writeInt(TMC2226TypeDef *tmc2226, uint8_t address, int32_t value)
-{
-	uint8_t data[8];
-
-	data[0] = 0x05;
-	data[1] = tmc2226->slaveAddress;
-	data[2] = address | TMC_WRITE_BIT;
-	data[3] = (value >> 24) & 0xFF;
-	data[4] = (value >> 16) & 0xFF;
-	data[5] = (value >> 8 ) & 0xFF;
-	data[6] = (value      ) & 0xFF;
-	data[7] = tmc2226_CRC8(data, 7);
-
-	tmc2226_readWriteArray(tmc2226->config->channel, &data[0], 8, 0);
-
-	// Write to the shadow register and mark the register dirty
-	address = TMC_ADDRESS(address);
-	tmc2226->config->shadowRegister[address] = value;
-	tmc2226->registerAccess[address] |= TMC_ACCESS_DIRTY;
-}
-
-int32_t tmc2226_readInt(TMC2226TypeDef *tmc2226, uint8_t address)
-{
-	uint8_t data[8] = { 0 };
-
-	address = TMC_ADDRESS(address);
-
-	if (!TMC_IS_READABLE(tmc2226->registerAccess[address]))
-		return tmc2226->config->shadowRegister[address];
-
-	data[0] = 0x05;
-	data[1] = tmc2226->slaveAddress;
-	data[2] = address;
-	data[3] = tmc2226_CRC8(data, 3);
-
-	tmc2226_readWriteArray(tmc2226->config->channel, data, 4, 8);
-
-	// Byte 0: Sync nibble correct?
-	if (data[0] != 0x05)
-		return 0;
-
-	// Byte 1: Master address correct?
-	if (data[1] != 0xFF)
-		return 0;
-
-	// Byte 2: Address correct?
-	if (data[2] != address)
-		return 0;
-
-	// Byte 7: CRC correct?
-	if (data[7] != tmc2226_CRC8(data, 7))
-		return 0;
-
-	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
-}
-
 void tmc2226_init(TMC2226TypeDef *tmc2226, uint8_t channel, uint8_t slaveAddress, ConfigurationTypeDef *tmc2226_config, const int32_t *registerResetState)
 {
 	tmc2226->slaveAddress = slaveAddress;
@@ -237,7 +173,7 @@ static void writeConfiguration(TMC2226TypeDef *tmc2226)
 
 	if(*ptr < TMC2226_REGISTER_COUNT)
 	{
-		tmc2226_writeInt(tmc2226, *ptr, settings[*ptr]);
+		tmc2226_writeRegister(tmc2226, *ptr, settings[*ptr]);
 		(*ptr)++;
 	}
 	else // Finished configuration
@@ -300,14 +236,4 @@ uint8_t tmc2226_restore(TMC2226TypeDef *tmc2226)
 	tmc2226->config->configIndex  = 0;
 
 	return true;
-}
-
-uint8_t tmc2226_getSlaveAddress(TMC2226TypeDef *tmc2226)
-{
-	return tmc2226->slaveAddress;
-}
-
-void tmc2226_setSlaveAddress(TMC2226TypeDef *tmc2226, uint8_t slaveAddress)
-{
-	tmc2226->slaveAddress = slaveAddress;
 }

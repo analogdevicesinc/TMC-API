@@ -18,7 +18,6 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "TMC2226_Fields.h"
 #include "TMC2226_HW_Abstraction.h"
 
 // => TMC-API wrapper
@@ -29,15 +28,53 @@ extern uint8_t tmc2226_getNodeAddress(uint16_t icID);
 int32_t tmc2226_readRegister(uint16_t icID, uint8_t address);
 void tmc2226_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t field_extract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t field_read(uint16_t icID, RegisterField field)
+{
+	uint32_t value = tmc2226_readRegister(icID, field.address);
+
+    return field_extract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void field_write(uint16_t icID, RegisterField field, uint32_t value)
+{
+	uint32_t regValue = tmc2226_readRegister(icID, field.address);
+
+	regValue = field_update(regValue, field, value);
+
+    tmc2226_writeRegister(icID, field.address, regValue);
+}
+
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 #include "tmc/helpers/API_Header.h"
-
-// Helper macros
-#define TMC2226_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc2226_readInt(tdef, address), mask, shift)
-#define TMC2226_FIELD_UPDATE(tdef, address, mask, shift, value) \
-	(tmc2226_writeInt(tdef, address, FIELD_SET(tmc2226_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
@@ -115,18 +152,11 @@ static const TMCRegisterConstant tmc2226_RegisterConstants[] =
 #undef R6C
 #undef R70
 
-// Communication
-void tmc2226_writeInt(TMC2226TypeDef *tmc2226, uint8_t address, int32_t value);
-int32_t tmc2226_readInt(TMC2226TypeDef *tmc2226, uint8_t address);
-
 void tmc2226_init(TMC2226TypeDef *tmc2226, uint8_t channel, uint8_t slaveAddress, ConfigurationTypeDef *tmc2226_config, const int32_t *registerResetState);
 uint8_t tmc2226_reset(TMC2226TypeDef *tmc2226);
 uint8_t tmc2226_restore(TMC2226TypeDef *tmc2226);
 void tmc2226_setRegisterResetState(TMC2226TypeDef *tmc2226, const int32_t *resetState);
 void tmc2226_setCallback(TMC2226TypeDef *tmc2226, tmc2226_callback callback);
 void tmc2226_periodicJob(TMC2226TypeDef *tmc2226, uint32_t tick);
-
-uint8_t tmc2226_getSlaveAddress(TMC2226TypeDef *tmc2226);
-void tmc2226_setSlaveAddress(TMC2226TypeDef *tmc2226, uint8_t slaveAddress);
 
 #endif /* TMC_IC_TMC2226_H_ */
