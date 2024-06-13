@@ -172,7 +172,7 @@ void tmc5130_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 		return;
 
 	tmc5130_writeRegister(icID, TMC5130_VMAX, (velocity >= 0)? velocity : -velocity);
-	field_write(icID, TMC5130_RAMPMODE_FIELD, (velocity >= 0) ? TMC5130_MODE_VELPOS : TMC5130_MODE_VELNEG);
+	tmc5130_field_write(icID, TMC5130_RAMPMODE_FIELD, (velocity >= 0) ? TMC5130_MODE_VELPOS : TMC5130_MODE_VELNEG);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
