@@ -166,7 +166,7 @@ void tmc5072_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 		return;
 
 	tmc5072_writeRegister(icID, TMC5072_VMAX(motor), (velocity >= 0)? velocity : -velocity);
-	field_write(icID, TMC5072_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5072_MODE_VELPOS : TMC5072_MODE_VELNEG);
+	tmc5072_field_write(icID, TMC5072_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5072_MODE_VELPOS : TMC5072_MODE_VELNEG);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
@@ -425,7 +425,7 @@ void tmc5072_rotate(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity)
 			return;
 
 		tmc5072_writeRegister(motor, TMC5072_VMAX(motor), (velocity >= 0)? velocity : -velocity);
-		field_write(motor, TMC5072_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5072_MODE_VELPOS : TMC5072_MODE_VELNEG);
+		tmc5072_field_write(motor, TMC5072_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5072_MODE_VELPOS : TMC5072_MODE_VELNEG);
 }
 
 void tmc5072_right(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity)
