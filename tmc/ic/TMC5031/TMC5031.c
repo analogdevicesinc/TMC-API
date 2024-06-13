@@ -74,7 +74,7 @@ void tmc5031_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 		return;
 
 	tmc5031_writeRegister(icID, TMC5031_VMAX(motor), (velocity >= 0)? velocity : -velocity);
-	field_write(icID, TMC5031_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5031_MODE_VELPOS : TMC5031_MODE_VELNEG);
+	tmc5031_field_write(icID, TMC5031_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5031_MODE_VELPOS : TMC5031_MODE_VELNEG);
 }
 
 
