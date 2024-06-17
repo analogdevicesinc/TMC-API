@@ -14,11 +14,117 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include "tmc/helpers/API_Header.h"
 
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_UART,
 } TMC5160BusType;
+
+
+#define TMC5160_CACHE  1
+#define TMC5160_ENABLE_TMC_CACHE
+
+// By default, support one IC in the cache
+#ifndef TMC5160_IC_CACHE_COUNT
+#define TMC5160_IC_CACHE_COUNT 1
+#endif
+
+#ifdef TMC5160_ENABLE_TMC_CACHE
+typedef enum {
+   TMC5160_CACHE_READ,
+   TMC5160_CACHE_WRITE
+} TMC5160CacheOp;
+
+
+#define TMC5160_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
+#define TMC5160_ACCESS_READ        0x01
+#define TMC5160_IS_READABLE(x)    ((x) & TMC5160_ACCESS_READ)
+
+// Default Register values
+#define R00 0x00000008  // GCONF
+#define R09 0x00010606  // SHORTCONF
+#define R0A 0x00080400  // DRVCONF
+#define R10 0x00070A03  // IHOLD_IRUN
+#define R11 0x0000000A  // TPOWERDOWN
+#define R2B 0x00000001  // VSTOP
+#define R3A 0x00010000  // ENC_CONST
+#define R6C 0x00410153  // CHOPCONF
+#define R70 0xC40C001E  // PWMCONF
+
+#define ____ 0x00
+#define N_A 0x00
+
+static const int32_t tmc5160_sampleRegisterPreset[TMC5160_REGISTER_COUNT] =
+{
+//  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
+    R00, 0,   0,   0,   0,   0,   0,   0,   0,   R09, R0A, 0,   0,   0,   0,   0, // 0x00 - 0x0F
+    R10, R11, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R2B, 0,   0,   0,   0, // 0x20 - 0x2F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x30 - 0x3F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
+    N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
+    R70, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
+};
+
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R00
+#undef R09
+#undef R0A
+#undef R10
+#undef R11
+#undef R2B
+#undef R3A
+#undef R6C
+#undef R70
+
+
+// Register access permissions:
+//   0x00: none (reserved)
+//   0x01: read
+//   0x02: write
+//   0x03: read/write
+//   0x13: read/write, separate functions/values for reading or writing
+//   0x23: read/write, flag register (write to clear)
+//   0x42: write, has hardware presets on reset
+static const uint8_t tmc5160_defaultRegisterAccess[TMC5160_REGISTER_COUNT] =
+{
+//  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
+    0x03, 0x23, 0x01, 0x02, 0x13, 0x02, 0x02, 0x01, 0x03, 0x02, 0x02, 0x02, 0x01, ____, ____, ____, // 0x00 - 0x0F
+    0x02, 0x02, 0x01, 0x02, 0x02, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
+    0x03, 0x03, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, ____, 0x02, 0x02, 0x02, 0x03, ____, ____, // 0x20 - 0x2F
+    ____, ____, ____, 0x02, 0x03, 0x23, 0x01, ____, 0x03, 0x03, 0x02, 0x23, 0x01, 0x02, ____, ____, // 0x30 - 0x3F
+    ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x40 - 0x4F
+    ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x50 - 0x5F
+    0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01, // 0x60 - 0x6F
+    0x42, 0x01, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
+};
+
+// Register constants (only required for 0x42 registers, since we do not have
+// any way to find out the content but want to hold the actual value in the
+// shadow register so an application (i.e. the TMCL IDE) can still display
+// the values. This only works when the register content is constant.
+static const TMCRegisterConstant tmc5160_RegisterConstants[] =
+{       // Use ascending addresses!
+        { 0x60, 0xAAAAB554 }, // MSLUT[0]
+        { 0x61, 0x4A9554AA }, // MSLUT[1]
+        { 0x62, 0x24492929 }, // MSLUT[2]
+        { 0x63, 0x10104222 }, // MSLUT[3]
+        { 0x64, 0xFBFFFFFF }, // MSLUT[4]
+        { 0x65, 0xB5BB777D }, // MSLUT[5]
+        { 0x66, 0x49295556 }, // MSLUT[6]
+        { 0x67, 0x00404222 }, // MSLUT[7]
+        { 0x68, 0xFFFF8056 }, // MSLUTSEL
+        { 0x69, 0x00F70000 }, // MSLUTSTART
+        { 0x70, 0xC40C001E }  // PWMCONF
+};
+
+extern uint8_t tmc5160_registerAccess[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT];
+extern int32_t tmc5160_shadowRegister[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT];
+extern bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uint32_t *value);
+#endif
 
 // => TMC-API wrapper
 extern void tmc5160_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
@@ -95,84 +201,6 @@ typedef struct
 extern TMC5160TypeDef TMC5160;
 
 typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
-
-// Default Register values
-#define R00 0x00000008  // GCONF
-#define R09 0x00010606  // SHORTCONF
-#define R0A 0x00080400  // DRVCONF
-#define R10 0x00070A03  // IHOLD_IRUN
-#define R11 0x0000000A  // TPOWERDOWN
-#define R2B 0x00000001  // VSTOP
-#define R3A 0x00010000  // ENC_CONST
-#define R6C 0x00410153  // CHOPCONF
-#define R70 0xC40C001E  // PWMCONF
-
-static const int32_t tmc5160_defaultRegisterResetState[TMC5160_REGISTER_COUNT] =
-{
-//	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
-	R00, 0,   0,   0,   0,   0,   0,   0,   0,   R09, R0A, 0,   0,   0,   0,   0, // 0x00 - 0x0F
-	R10, R11, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R2B, 0,   0,   0,   0, // 0x20 - 0x2F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x30 - 0x3F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
-	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
-	R70, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x70 - 0x7F
-};
-
-// Undefine the default register values.
-// This prevents warnings in case multiple TMC-API chip headers are included at once
-#undef R00
-#undef R09
-#undef R0A
-#undef R10
-#undef R11
-#undef R2B
-#undef R3A
-#undef R6C
-#undef R70
-
-
-// Register access permissions:
-//   0x00: none (reserved)
-//   0x01: read
-//   0x02: write
-//   0x03: read/write
-//   0x13: read/write, separate functions/values for reading or writing
-//   0x23: read/write, flag register (write to clear)
-//   0x42: write, has hardware presets on reset
-static const uint8_t tmc5160_defaultRegisterAccess[TMC5160_REGISTER_COUNT] =
-{
-//	0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
-	0x03, 0x23, 0x01, 0x02, 0x13, 0x02, 0x02, 0x01, 0x03, 0x02, 0x02, 0x02, 0x01, ____, ____, ____, // 0x00 - 0x0F
-	0x02, 0x02, 0x01, 0x02, 0x02, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
-	0x03, 0x03, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, ____, 0x02, 0x02, 0x02, 0x03, ____, ____, // 0x20 - 0x2F
-	____, ____, ____, 0x02, 0x03, 0x23, 0x01, ____, 0x03, 0x03, 0x02, 0x23, 0x01, 0x02, ____, ____, // 0x30 - 0x3F
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x40 - 0x4F
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x50 - 0x5F
-	0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01, // 0x60 - 0x6F
-	0x42, 0x01, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
-};
-
-// Register constants (only required for 0x42 registers, since we do not have
-// any way to find out the content but want to hold the actual value in the
-// shadow register so an application (i.e. the TMCL IDE) can still display
-// the values. This only works when the register content is constant.
-static const TMCRegisterConstant tmc5160_RegisterConstants[] =
-{		// Use ascending addresses!
-		{ 0x60, 0xAAAAB554 }, // MSLUT[0]
-		{ 0x61, 0x4A9554AA }, // MSLUT[1]
-		{ 0x62, 0x24492929 }, // MSLUT[2]
-		{ 0x63, 0x10104222 }, // MSLUT[3]
-		{ 0x64, 0xFBFFFFFF }, // MSLUT[4]
-		{ 0x65, 0xB5BB777D }, // MSLUT[5]
-		{ 0x66, 0x49295556 }, // MSLUT[6]
-		{ 0x67, 0x00404222 }, // MSLUT[7]
-		{ 0x68, 0xFFFF8056 }, // MSLUTSEL
-		{ 0x69, 0x00F70000 }, // MSLUTSTART
-		{ 0x70, 0xC40C001E }  // PWMCONF
-};
-
 
 void tmc5160_init(TMC5160TypeDef *tmc5160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
 void tmc5160_fillShadowRegisters(TMC5160TypeDef *tmc5160);
