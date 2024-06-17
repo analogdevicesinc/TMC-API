@@ -173,7 +173,7 @@ void tmc5062_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
         return;
 
     tmc5062_writeRegister(icID, TMC5062_VMAX(motor), (velocity < 0) ? -velocity : velocity);
-    field_write(icID, TMC5062_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5062_MODE_VELPOS : TMC5062_MODE_VELNEG);
+    tmc5062_fieldWrite(icID, TMC5062_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5062_MODE_VELPOS : TMC5062_MODE_VELNEG);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
@@ -544,7 +544,7 @@ uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t motor, uint32_t motor
 
 	uint32_t tmp = (numerator << 16) | (denominator & 0xFFFF);
 	tmc5062_writeRegister(motor, TMC5062_ENC_CONST(motor), tmp);
-	field_write(motor, TMC5062_ENC_SEL_DECIMAL_FIELD(motor), useDecimal);
+	tmc5062_fieldWrite(motor, TMC5062_ENC_SEL_DECIMAL_FIELD(motor), useDecimal);
 
 	return remainder;
 }
