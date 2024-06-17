@@ -189,17 +189,6 @@ static inline void tmc5160_fieldWrite(uint16_t icID, RegisterField field, uint32
 // TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
 
 // Typedefs
-typedef struct
-{
-	ConfigurationTypeDef *config;
-	int32_t velocity, oldX;
-	uint32_t oldTick;
-	int32_t registerResetState[TMC5160_REGISTER_COUNT];
-	uint8_t registerAccess[TMC5160_REGISTER_COUNT];
-} TMC5160TypeDef;
-
-extern TMC5160TypeDef TMC5160;
-
 typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
 
 void tmc5160_init(TMC5160TypeDef *tmc5160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);

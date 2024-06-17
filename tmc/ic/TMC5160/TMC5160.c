@@ -9,8 +9,6 @@
 
 #include "TMC5160.h"
 
-TMC5160TypeDef TMC5160;
-
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];
 #else
