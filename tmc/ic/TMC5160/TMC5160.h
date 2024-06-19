@@ -14,7 +14,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include "tmc/helpers/API_Header.h"
+//#include "tmc/helpers/API_Header.h"
 
 typedef enum {
     IC_BUS_SPI,
@@ -181,31 +181,16 @@ static inline void tmc5160_fieldWrite(uint16_t icID, RegisterField field, uint32
     tmc5160_writeRegister(icID, field.address, regValue);
 }
 
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-#include "tmc/helpers/API_Header.h"
+///***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+//#include "tmc/helpers/API_Header.h"
 
 // Factor between 10ms units and internal units for 16MHz
 //#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
 // TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
 
 // Typedefs
-typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
+//typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
 
-void tmc5160_init(TMC5160TypeDef *tmc5160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-void tmc5160_fillShadowRegisters(TMC5160TypeDef *tmc5160);
-uint8_t tmc5160_reset(TMC5160TypeDef *tmc5160);
-uint8_t tmc5160_restore(TMC5160TypeDef *tmc5160);
-void tmc5160_setRegisterResetState(TMC5160TypeDef *tmc5160, const int32_t *resetState);
-void tmc5160_setCallback(TMC5160TypeDef *tmc5160, tmc5160_callback callback);
-void tmc5160_periodicJob(TMC5160TypeDef *tmc5160, uint8_t motor, uint32_t tick);
 
-void tmc5160_rotate(TMC5160TypeDef *tmc5160, uint8_t motor, int32_t velocity);
-void tmc5160_right(TMC5160TypeDef *tmc5160, uint8_t motor, uint32_t velocity);
-void tmc5160_left(TMC5160TypeDef *tmc5160, uint8_t motor, uint32_t velocity);
-void tmc5160_stop(TMC5160TypeDef *tmc5160, uint8_t motor);
-void tmc5160_moveTo(TMC5160TypeDef *tmc5160, uint8_t motor, int32_t position, uint32_t velocityMax);
-void tmc5160_moveBy(TMC5160TypeDef *tmc5160, uint8_t motor, int32_t *ticks, uint32_t velocityMax);
-
-uint8_t tmc5160_consistencyCheck(TMC5160TypeDef *tmc5160, uint8_t motor);
 
 #endif /* TMC_IC_TMC5160_H_ */
