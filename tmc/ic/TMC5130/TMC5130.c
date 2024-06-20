@@ -34,6 +34,130 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 };
 #endif
 
+/**************************************************************** Cache Implementation *************************************************************************/
+#if TMC5130_CACHE == 0
+static inline bool tmc5130_cache(uint16_t icID, TMC5130CacheOp operation, uint8_t address, uint32_t *value)
+{
+	UNUSED(icID);
+	UNUSED(address);
+	UNUSED(operation);
+	return false;
+}
+#else
+#if TMC5130_ENABLE_TMC_CACHE == 1
+
+uint8_t tmc5130_dirtyBits[TMC5130_IC_CACHE_COUNT][TMC5130_REGISTER_COUNT/8]= {0};
+int32_t tmc5130_shadowRegister[TMC5130_IC_CACHE_COUNT][TMC5130_REGISTER_COUNT];
+
+void tmc5130_setDirtyBit(uint16_t icID, uint8_t index, bool value)
+ {
+    if(index >= TMC5130_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp = &tmc5130_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
+}
+
+bool tmc5130_getDirtyBit(uint16_t icID, uint8_t index)
+{
+    if(index >= TMC5130_REGISTER_COUNT)
+        return false;
+
+    uint8_t *tmp = &tmc5130_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    return ((*tmp) >> shift) & 1;
+}
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+bool tmc5130_cache(uint16_t icID, TMC5130CacheOp operation, uint8_t address, uint32_t *value)
+{
+	if (operation == TMC5130_CACHE_READ)
+	{
+		// Check if the value should come from cache
+
+		// Only supported chips have a cache
+		if (icID >= TMC5130_IC_CACHE_COUNT)
+			return false;
+
+		// Only non-readable registers care about caching
+		// Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+		if (TMC5130_IS_READABLE(tmc5130_registerAccess[address]))
+			return false;
+
+		// Grab the value from the cache
+		*value = tmc5130_shadowRegister[icID][address];
+		return true;
+	}
+
+	else if (operation == TMC5130_CACHE_WRITE || operation == TMC5130_CACHE_FILL_DEFAULT)
+	{
+		// Fill the cache
+
+		// only supported chips have a cache
+		if (icID >= TMC5130_IC_CACHE_COUNT)
+			return false;
+
+		// Write to the shadow register.
+		tmc5130_shadowRegister[icID][address] = *value;
+		// For write operations, mark the register dirty
+		if (operation == TMC5130_CACHE_WRITE)
+		{
+			tmc5130_setDirtyBit(icID, address, true);
+		}
+
+		return true;
+	}
+	return false;
+}
+
+void tmc5130_initCache()
+{
+    // Check if we have constants defined
+    if(ARRAY_SIZE(tmc5130_RegisterConstants) == 0)
+        return;
+
+    size_t i, j, id;
+
+    for(i = 0, j = 0; i < TMC5130_REGISTER_COUNT; i++)
+    {
+        // We only need to worry about hardware preset, write-only registers
+        // that have not yet been written (no dirty bit) here.
+        if(tmc5130_registerAccess[i] != TMC5130_ACCESS_W_PRESET)
+            continue;
+
+        // Search the constant list for the current address. With the constant
+        // list being sorted in ascended order, we can walk through the list
+        // until the entry with an address equal or greater than i
+        while(j < ARRAY_SIZE(tmc5130_RegisterConstants) && (tmc5130_RegisterConstants[j].address < i))
+            j++;
+
+        // Abort when we reach the end of the constant list
+        if (j == ARRAY_SIZE(tmc5130_RegisterConstants))
+            break;
+
+        // If we have an entry for our current address, write the constant
+        if(tmc5130_RegisterConstants[j].address == i)
+        {
+            for (id = 0; id < TMC5130_IC_CACHE_COUNT; id++)
+            {
+            tmc5130_cache(id, TMC5130_CACHE_FILL_DEFAULT, i, &tmc5130_RegisterConstants[j].value);
+            }
+        }
+    }
+}
+
+#else
+// User must implement their own cache
+extern bool tmc5130_cache(uint16_t icID, TMC5130CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
+/************************************************************** read / write Implementation ******************************************************************/
+
 static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
 static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
@@ -44,11 +168,13 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 // Checks which BUS type is use and then forwards it to the corresponding read function. See below.
 int32_t tmc5130_readRegister(uint16_t icID, uint8_t address)
 {
-    // register not readable -> shadow register copy
-	if(!TMC_IS_READABLE(TMC5130.registerAccess[address]))
-		return TMC5130.config->shadowRegister[address];
-
 	TMC5130BusType bus = tmc5130_getBusType(icID);
+
+	 uint32_t value;
+
+	 // Read from cache for registers with write-only access
+	 if (tmc5130_cache(icID, TMC5130_CACHE_READ, address, &value))
+	  return value;
 
 	if(bus == IC_BUS_SPI)
 	{
@@ -76,11 +202,6 @@ void tmc5130_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 	{
 		writeRegisterUART(icID, address, value);
 	}
-
-	// Write to the shadow register and mark the register dirty
-	address = TMC_ADDRESS(address);
-	TMC5130.config->shadowRegister[address] = value;
-	TMC5130.registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
@@ -106,7 +227,6 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 {
 	uint8_t data[5] = { 0 };
 
-
 	data[0] = address | TMC5130_WRITE_BIT;
 	data[1] = 0xFF & (value>>24);
 	data[2] = 0xFF & (value>>16);
@@ -115,6 +235,9 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 
 	// Send the write request
 	tmc5130_readWriteSPI(icID, &data[0], sizeof(data));
+
+	//Cache the registers with write-only access
+	tmc5130_cache(icID, TMC5130_CACHE_WRITE, address, &value);
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
@@ -171,8 +294,8 @@ void tmc5130_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
   if(motor >= TMC5130_MOTORS)
 		return;
 
-	tmc5130_writeRegister(icID, TMC5130_VMAX, (velocity >= 0)? velocity : -velocity);
-	tmc5130_field_write(icID, TMC5130_RAMPMODE_FIELD, (velocity >= 0) ? TMC5130_MODE_VELPOS : TMC5130_MODE_VELNEG);
+	//Cache the registers with write-only access
+	tmc5130_cache(icID, TMC5130_CACHE_WRITE, registerAddress, &value);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
