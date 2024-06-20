@@ -75,7 +75,7 @@ bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uin
 		// Check if the value should come from cache
 
 		// Only supported chips have a cache
-		if (icID != 0)
+		if (icID >= TMC2209_IC_CACHE_COUNT)
 			return false;
 
 		// Only non-readable registers care about caching
@@ -92,7 +92,7 @@ bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uin
 		// Fill the cache
 
 		// only supported chips have a cache
-		if (icID != 0)
+		if (icID >= TMC2209_IC_CACHE_COUNT)
 			return false;
 
 		// Write to the shadow register and mark the register dirty
