@@ -14,7 +14,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-//#include "tmc/helpers/API_Header.h"
+
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
 
 typedef enum {
     IC_BUS_SPI,
@@ -36,6 +39,11 @@ typedef enum {
    TMC5160_CACHE_WRITE
 } TMC5160CacheOp;
 
+typedef struct
+{
+    uint8_t address;
+    uint32_t value;
+} TMCRegisterConstants;
 
 #define TMC5160_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC5160_ACCESS_READ        0x01
@@ -106,7 +114,7 @@ static const uint8_t tmc5160_defaultRegisterAccess[TMC5160_REGISTER_COUNT] =
 // any way to find out the content but want to hold the actual value in the
 // shadow register so an application (i.e. the TMCL IDE) can still display
 // the values. This only works when the register content is constant.
-static const TMCRegisterConstant tmc5160_RegisterConstants[] =
+static const TMCRegisterConstants tmc5160_RegisterConstants[] =
 {       // Use ascending addresses!
         { 0x60, 0xAAAAB554 }, // MSLUT[0]
         { 0x61, 0x4A9554AA }, // MSLUT[1]
@@ -180,17 +188,5 @@ static inline void tmc5160_fieldWrite(uint16_t icID, RegisterField field, uint32
 
     tmc5160_writeRegister(icID, field.address, regValue);
 }
-
-///***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-//#include "tmc/helpers/API_Header.h"
-
-// Factor between 10ms units and internal units for 16MHz
-//#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
-// TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
-
-// Typedefs
-//typedef void (*tmc5160_callback)(TMC5160TypeDef*, ConfigState);
-
-
 
 #endif /* TMC_IC_TMC5160_H_ */
