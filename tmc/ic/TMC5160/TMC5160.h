@@ -104,7 +104,9 @@ typedef struct
 
 #define TMC5160_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC5160_ACCESS_READ        0x01
-#define TMC5160_IS_READABLE(x)    ((x) & TMC5160_ACCESS_READ)
+#define TMC_ACCESS_W_PRESET        0x42
+#define TMC5160_IS_READABLE(x)     ((x) & TMC5160_ACCESS_READ)
+#define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
 
 // Default Register values
 #define R00 0x00000008  // GCONF
@@ -189,6 +191,7 @@ static const TMCRegisterConstants tmc5160_RegisterConstants[] =
 extern uint8_t tmc5160_registerAccess[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT];
 extern int32_t tmc5160_shadowRegister[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT];
 extern bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uint32_t *value);
+extern void tmc5160_initCache(void);
 #endif
 #endif
 
