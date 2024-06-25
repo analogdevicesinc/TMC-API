@@ -19,21 +19,78 @@
 // and put the table into your own .c file
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
 
+#define TMC5160_CACHE   1
+#define TMC5160_ENABLE_TMC_CACHE
+
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_UART,
 } TMC5160BusType;
 
+// => TMC-API wrapper
+extern void tmc5160_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc5160_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5160BusType tmc5160_getBusType(uint16_t icID);
+extern uint8_t tmc5160_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
 
-#define TMC5160_CACHE  1
-#define TMC5160_ENABLE_TMC_CACHE
+int32_t tmc5160_readRegister(uint16_t icID, uint8_t address);
+void tmc5160_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t tmc5160_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc5160_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc5160_readRegister(icID, field.address);
+
+    return tmc5160_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc5160_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc5160_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc5160_readRegister(icID, field.address);
+
+    regValue = tmc5160_fieldUpdate(regValue, field, value);
+
+    tmc5160_writeRegister(icID, field.address, regValue);
+}
+
+/**************************************************************** Cache Implementation *************************************************************************/
+#if TMC5160_CACHE == 1
+#ifdef TMC5160_ENABLE_TMC_CACHE
 
 // By default, support one IC in the cache
 #ifndef TMC5160_IC_CACHE_COUNT
 #define TMC5160_IC_CACHE_COUNT 1
 #endif
 
-#ifdef TMC5160_ENABLE_TMC_CACHE
 typedef enum {
    TMC5160_CACHE_READ,
    TMC5160_CACHE_WRITE
@@ -133,60 +190,8 @@ extern uint8_t tmc5160_registerAccess[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_C
 extern int32_t tmc5160_shadowRegister[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT];
 extern bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uint32_t *value);
 #endif
+#endif
 
-// => TMC-API wrapper
-extern void tmc5160_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
-extern bool tmc5160_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
-extern TMC5160BusType tmc5160_getBusType(uint16_t icID);
-extern uint8_t tmc5160_getNodeAddress(uint16_t icID);
-// => TMC-API wrapper
-
-int32_t tmc5160_readRegister(uint16_t icID, uint8_t address);
-void tmc5160_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
-
-typedef struct
-{
-    uint32_t mask;
-    uint8_t shift;
-    uint8_t address;
-    bool isSigned;
-} RegisterField;
-
-static inline uint32_t tmc5160_fieldExtract(uint32_t data, RegisterField field)
-{
-    uint32_t value = (data & field.mask) >> field.shift;
-
-    if (field.isSigned)
-    {
-        // Apply signedness conversion
-        uint32_t baseMask = field.mask >> field.shift;
-        uint32_t signMask = baseMask & (~baseMask >> 1);
-        value = (value ^ signMask) - signMask;
-    }
-
-    return value;
-}
-
-static inline uint32_t tmc5160_fieldRead(uint16_t icID, RegisterField field)
-{
-    uint32_t value = tmc5160_readRegister(icID, field.address);
-
-    return tmc5160_fieldExtract(value, field);
-}
-
-static inline uint32_t tmc5160_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
-{
-    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
-}
-
-static inline void tmc5160_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
-{
-    uint32_t regValue = tmc5160_readRegister(icID, field.address);
-
-    regValue = tmc5160_fieldUpdate(regValue, field, value);
-
-    tmc5160_writeRegister(icID, field.address, regValue);
-}
+/***************************************************************************************************************************************************/
 
 #endif /* TMC_IC_TMC5160_H_ */

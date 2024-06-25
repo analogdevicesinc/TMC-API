@@ -32,6 +32,7 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 };
 #endif
 
+/**************************************************************** Cache Implementation *************************************************************************/
 #if TMC5160_CACHE == 0
 static inline bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uint32_t *value)
 {
@@ -107,7 +108,7 @@ bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uin
 extern bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uint32_t *value);
 #endif
 #endif
-
+/************************************************************** Register read / write Implementation ******************************************************************/
 static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
 static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
