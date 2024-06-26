@@ -33,7 +33,121 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
             0xB4, 0x25, 0x57, 0xC6, 0xB3, 0x22, 0x50, 0xC1, 0xBA, 0x2B, 0x59, 0xC8, 0xBD, 0x2C, 0x5E, 0xCF,
 };
 #endif
+/**************************************************************** Cache Implementation *************************************************************************/
+#if TMC5062_CACHE == 0
+static inline bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uint32_t *value)
+{
+    UNUSED(icID);
+    UNUSED(address);
+    UNUSED(operation);
+    return false;
+}
+#else
+#ifdef TMC5062_ENABLE_TMC_CACHE
+uint8_t tmc5062_registerAccess[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
+int32_t tmc5062_shadowRegister[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
 
+static void initRegisterAccessArray(void)
+{
+    for(size_t icID = 0; icID < TMC5062_IC_CACHE_COUNT; icID++)
+    {
+        for(size_t i = 0; i < TMC5062_REGISTER_COUNT; i++)
+        {
+            tmc5062_registerAccess[icID][i] = tmc5062_defaultRegisterAccess[i];
+        }
+    }
+}
+
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uint32_t *value)
+{
+    static bool firstTime = true;
+    if(firstTime)
+    {
+        initRegisterAccessArray();
+        firstTime = false;
+    }
+
+    if (operation == TMC5062_CACHE_READ)
+    {
+        // Check if the value should come from cache
+
+        // Only supported chips have a cache
+        if (icID >= TMC5062_IC_CACHE_COUNT)
+            return false;
+
+        // Only non-readable registers care about caching
+        // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+        if (TMC5062_IS_READABLE(tmc5062_registerAccess[icID][address]))
+            return false;
+
+        // Grab the value from the cache
+        *value = tmc5062_shadowRegister[icID][address];
+        return true;
+    }
+    else if (operation == TMC5062_CACHE_WRITE)
+    {
+        // Fill the cache
+
+        // only supported chips have a cache
+        if (icID >= TMC5062_IC_CACHE_COUNT)
+            return false;
+
+        // Write to the shadow register and mark the register dirty
+        tmc5062_shadowRegister[icID][address] = *value;
+        tmc5062_registerAccess[icID][address] |= TMC5062_ACCESS_DIRTY;
+
+        return true;
+    }
+    return false;
+}
+void tmc5062_initCache()
+{
+    // Check if we have constants defined
+    if(ARRAY_SIZE(tmc5062_RegisterConstants) == 0)
+        return;
+
+    size_t i, j, id;
+
+    for (id = 0; id < TMC5062_IC_CACHE_COUNT; ++id)
+    {
+        for(i = 0, j = 0; i < TMC5062_REGISTER_COUNT; i++)
+        {
+            // We only need to worry about hardware preset, write-only registers
+            // that have not yet been written (no dirty bit) here.
+            if(tmc5062_registerAccess[id][i] != TMC_ACCESS_W_PRESET)
+                continue;
+
+            // Search the constant list for the current address. With the constant
+            // list being sorted in ascended order, we can walk through the list
+            // until the entry with an address equal or greater than i
+            while(j < ARRAY_SIZE(tmc5062_RegisterConstants) && (tmc5062_RegisterConstants[j].address < i))
+                j++;
+
+            // Abort when we reach the end of the constant list
+            if (j == ARRAY_SIZE(tmc5062_RegisterConstants))
+                break;
+
+            // If we have an entry for our current address, write the constant
+            if(tmc5062_RegisterConstants[j].address == i)
+            {
+                tmc5062_cache(id, TMC5062_CACHE_WRITE, i, &tmc5062_RegisterConstants[j].value);
+            }
+        }
+    }
+
+}
+
+#else
+// User must implement their own cache
+extern bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
+/************************************************************** Register read / write Implementation ******************************************************************/
 static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
 static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
@@ -43,6 +157,12 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
 int32_t tmc5062_readRegister(uint16_t icID, uint8_t address)
 {
+    uint32_t value;
+
+    // Read from cache for registers with write-only access
+    if (tmc5062_cache(icID, TMC5062_CACHE_READ, address, &value))
+        return value;
+
     TMC5062BusType bus = tmc5062_getBusType(icID);
 
     if(bus == IC_BUS_SPI)
@@ -74,12 +194,7 @@ void tmc5062_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 {
-    address = TMC_ADDRESS(address);
-
-
-    // register not readable -> shadow register copy
-    if(!TMC_IS_READABLE(TMC5062.registerAccess[address]))
-        return TMC5062.config->shadowRegister[address];
+    address = address & TMC5062_ADDRESS_MASK;
 
     uint8_t data[5] = { 0 };
 
@@ -111,10 +226,8 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
     // Send the write request
     tmc5062_readWriteSPI(icID, &data[0], sizeof(data));
 
-    // Write to the shadow register and mark the register dirty
-    address = TMC_ADDRESS(address);
-    TMC5062.config->shadowRegister[address] = value;
-    TMC5062.registerAccess[address] |= TMC_ACCESS_DIRTY;
+    //Cache the registers with write-only access
+    tmc5062_cache(icID, TMC5062_CACHE_WRITE, address, &value);
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t address)
@@ -122,9 +235,6 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address)
     uint8_t data[7] = { 0 };
 
     address = address & TMC5062_ADDRESS_MASK;
-
-    if (!TMC_IS_READABLE(TMC5062.registerAccess[address]))
-        return TMC5062.config->shadowRegister[address];
 
     data[0] = 0x05;
     data[1] = address;
@@ -161,10 +271,9 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
     data[6] = CRC8(data, 6);
 
     tmc5062_readWriteUART(icID, &data[0], 7, 0);
-    // Write to the shadow register and mark the register dirty
-    address = TMC_ADDRESS(address);
-    TMC5062.config->shadowRegister[address] = value;
-    TMC5062.registerAccess[address] |= TMC_ACCESS_DIRTY;
+
+    //Cache the registers with write-only access
+    tmc5062_cache(icID, TMC5062_CACHE_WRITE, address, &value);
 }
 
 void tmc5062_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)

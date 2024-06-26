@@ -14,6 +14,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include "TMC5062_HW_Abstraction.h"
+#include "tmc/helpers/API_Header.h"
 
 // Amount of CRC tables available
 // Each table takes ~260 bytes (257 bytes, one bool and structure padding)
@@ -24,6 +25,113 @@ typedef enum {
     IC_BUS_UART,
 } TMC5062BusType;
 
+#define TMC5062_CACHE  1
+#define TMC5062_ENABLE_TMC_CACHE
+
+// By default, support one IC in the cache
+#ifndef TMC5062_IC_CACHE_COUNT
+#define TMC5062_IC_CACHE_COUNT 1
+#endif
+
+#ifdef TMC5062_ENABLE_TMC_CACHE
+typedef enum {
+   TMC5062_CACHE_READ,
+   TMC5062_CACHE_WRITE
+} TMC5062CacheOp;
+
+typedef struct
+{
+    uint8_t address;
+    uint32_t value;
+} TMCRegisterConstants;
+
+#define TMC5062_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
+#define TMC5062_ACCESS_READ        0x01
+#define TMC_ACCESS_W_PRESET        0x42
+#define TMC5062_IS_READABLE(x)    ((x) & TMC5062_ACCESS_READ)
+#define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
+
+// Default Register Values
+#define R30 0x00071703  // IHOLD_IRUN
+#define R32 0x00FFFFFF  // VHIGH
+#define R3A 0x00010000  // ENC_CONST
+#define R50 R30
+#define R52 R32
+#define R5A R3A
+#define R6C 0x000101D5  // CHOPCONF
+#define R7C R6C
+
+static const int32_t tmc5062_sampleRegisterPreset[TMC5062_REGISTER_COUNT] = {
+//  0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
+    R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x30 - 0x3F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
+    R50, 0,   R52, 0,   0,   0,   0,   0,   0,   0,   R5A, 0,   0,   0,   0,   0, // 0x50 - 0x5F
+    N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
+    N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R7C, 0,   0,   0  // 0x70 - 0x7F
+};
+
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R30
+#undef R32
+#undef R3A
+#undef R50
+#undef R52
+#undef R5A
+#undef R6C
+#undef R7C
+
+// Register access permissions:
+//   0x00: none (reserved)
+//   0x01: read
+//   0x02: write
+//   0x03: read/write
+//   0x13: read/write, separate functions/values for reading or writing
+//   0x23: read/write, flag register (write to clear)
+//   0x42: write, has hardware presets on reset
+static const uint8_t tmc5062_defaultRegisterAccess[TMC5062_REGISTER_COUNT] = {
+//  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
+    0x03, 0x01, 0x01, 0x02, 0x07, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
+    0x02, 0x01, ____, ____, ____, ____, ____, ____, 0x02, 0x01, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
+    0x03, 0x03, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x03, ____, ____, // 0x20 - 0x2F
+    0x02, 0x02, 0x02, 0x02, 0x03, 0x01, 0x01, ____, 0x03, 0x03, 0x02, 0x01, 0x01, ____, ____, ____, // 0x30 - 0x3F
+    0x03, 0x03, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x03, ____, ____, // 0x40 - 0x4F
+    0x02, 0x02, 0x02, 0x02, 0x03, 0x01, 0x01, ____, 0x03, 0x03, 0x02, 0x01, 0x01, ____, ____, ____, // 0x50 - 0x5F
+    0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01, // 0x60 - 0x6F
+    0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01  // 0x70 - 0x7F
+};
+
+static const TMCRegisterConstants tmc5062_RegisterConstants[] =
+{       // Use ascending addresses!
+        { 0x60, 0xAAAAB554 }, // MSLUT[0]_M1
+        { 0x61, 0x4A9554AA }, // MSLUT[1]_M1
+        { 0x62, 0x24492929 }, // MSLUT[2]_M1
+        { 0x63, 0x10104222 }, // MSLUT[3]_M1
+        { 0x64, 0xFBFFFFFF }, // MSLUT[4]_M1
+        { 0x65, 0xB5BB777D }, // MSLUT[5]_M1
+        { 0x66, 0x49295556 }, // MSLUT[6]_M1
+        { 0x67, 0x00404222 }, // MSLUT[7]_M1
+        { 0x68, 0xFFFF8056 }, // MSLUTSEL_M1
+        { 0x69, 0x00F70000 }, // MSLUTSTART_M1
+        { 0x70, 0xAAAAB554 }, // MSLUT[0]_M2
+        { 0x71, 0x4A9554AA }, // MSLUT[1]_M2
+        { 0x72, 0x24492929 }, // MSLUT[2]_M2
+        { 0x73, 0x10104222 }, // MSLUT[3]_M2
+        { 0x74, 0xFBFFFFFF }, // MSLUT[4]_M2
+        { 0x75, 0xB5BB777D }, // MSLUT[5]_M2
+        { 0x76, 0x49295556 }, // MSLUT[6]_M2
+        { 0x77, 0x00404222 }, // MSLUT[7]_M2
+        { 0x78, 0xFFFF8056 }, // MSLUTSEL_M2
+        { 0x79, 0x00F70000 }  // MSLUTSTART_M2
+};
+
+extern uint8_t tmc5062_registerAccess[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
+extern int32_t tmc5062_shadowRegister[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
+extern bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uint32_t *value);
+#endif
 // => TMC-API wrapper
 extern void tmc5062_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
 extern bool tmc5062_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
@@ -80,8 +188,6 @@ static inline void tmc5062_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-#include "tmc/helpers/API_Header.h"
-
 // Usage note: use one TypeDef per IC
 typedef struct {
 	ConfigurationTypeDef *config;
@@ -104,82 +210,7 @@ extern TMC5062TypeDef TMC5062;
 
 typedef void (*tmc5062_callback)(TMC5062TypeDef*, ConfigState);
 
-// Default Register Values
-#define R30 0x00071703  // IHOLD_IRUN
-#define R32 0x00FFFFFF  // VHIGH
-#define R3A 0x00010000  // ENC_CONST
-#define R50 R30
-#define R52 R32
-#define R5A R3A
-#define R6C 0x000101D5  // CHOPCONF
-#define R7C R6C
 
-static const int32_t tmc5062_defaultRegisterResetState[TMC5062_REGISTER_COUNT] = {
-//	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
-	R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x30 - 0x3F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
-	R50, 0,   R52, 0,   0,   0,   0,   0,   0,   0,   R5A, 0,   0,   0,   0,   0, // 0x50 - 0x5F
-	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
-	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   R7C, 0,   0,   0  // 0x70 - 0x7F
-};
-
-// Undefine the default register values.
-// This prevents warnings in case multiple TMC-API chip headers are included at once
-#undef R30
-#undef R32
-#undef R3A
-#undef R50
-#undef R52
-#undef R5A
-#undef R6C
-#undef R7C
-
-// Register access permissions:
-//   0x00: none (reserved)
-//   0x01: read
-//   0x02: write
-//   0x03: read/write
-//   0x13: read/write, separate functions/values for reading or writing
-//   0x23: read/write, flag register (write to clear)
-//   0x42: write, has hardware presets on reset
-static const uint8_t tmc5062_defaultRegisterAccess[TMC5062_REGISTER_COUNT] = {
-//	0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
-	0x03, 0x01, 0x01, 0x02, 0x07, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
-	0x02, 0x01, ____, ____, ____, ____, ____, ____, 0x02, 0x01, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
-	0x03, 0x03, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x03, ____, ____, // 0x20 - 0x2F
-	0x02, 0x02, 0x02, 0x02, 0x03, 0x01, 0x01, ____, 0x03, 0x03, 0x02, 0x01, 0x01, ____, ____, ____, // 0x30 - 0x3F
-	0x03, 0x03, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x03, ____, ____, // 0x40 - 0x4F
-	0x02, 0x02, 0x02, 0x02, 0x03, 0x01, 0x01, ____, 0x03, 0x03, 0x02, 0x01, 0x01, ____, ____, ____, // 0x50 - 0x5F
-	0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01, // 0x60 - 0x6F
-	0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01  // 0x70 - 0x7F
-};
-
-static const TMCRegisterConstant tmc5062_RegisterConstants[] =
-{		// Use ascending addresses!
-		{ 0x60, 0xAAAAB554 }, // MSLUT[0]_M1
-		{ 0x61, 0x4A9554AA }, // MSLUT[1]_M1
-		{ 0x62, 0x24492929 }, // MSLUT[2]_M1
-		{ 0x63, 0x10104222 }, // MSLUT[3]_M1
-		{ 0x64, 0xFBFFFFFF }, // MSLUT[4]_M1
-		{ 0x65, 0xB5BB777D }, // MSLUT[5]_M1
-		{ 0x66, 0x49295556 }, // MSLUT[6]_M1
-		{ 0x67, 0x00404222 }, // MSLUT[7]_M1
-		{ 0x68, 0xFFFF8056 }, // MSLUTSEL_M1
-		{ 0x69, 0x00F70000 }, // MSLUTSTART_M1
-		{ 0x70, 0xAAAAB554 }, // MSLUT[0]_M2
-		{ 0x71, 0x4A9554AA }, // MSLUT[1]_M2
-		{ 0x72, 0x24492929 }, // MSLUT[2]_M2
-		{ 0x73, 0x10104222 }, // MSLUT[3]_M2
-		{ 0x74, 0xFBFFFFFF }, // MSLUT[4]_M2
-		{ 0x75, 0xB5BB777D }, // MSLUT[5]_M2
-		{ 0x76, 0x49295556 }, // MSLUT[6]_M2
-		{ 0x77, 0x00404222 }, // MSLUT[7]_M2
-		{ 0x78, 0xFFFF8056 }, // MSLUTSEL_M2
-		{ 0x79, 0x00F70000 }  // MSLUTSTART_M2
-};
 
 void tmc5062_init(TMC5062TypeDef *tmc5062, ConfigurationTypeDef *tmc5062_config, const int32_t *registerResetState, uint8_t motorIndex0, uint8_t motorIndex1, uint32_t chipFrequency);
 void tmc5062_fillShadowRegisters(TMC5062TypeDef *tmc5062);
