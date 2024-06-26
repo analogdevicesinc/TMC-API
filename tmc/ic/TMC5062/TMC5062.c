@@ -9,7 +9,6 @@
 
 #include "TMC5062.h"
 
-TMC5062TypeDef TMC5062;
 
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];
