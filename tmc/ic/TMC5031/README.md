@@ -18,7 +18,7 @@ The following diagram depicts how to access the TMC5031 via SPI using the TMC-AP
 
 ![screenshot](registercall_hierarchy_flowchar_SPI.png)
 
-The description of the functions, in the above flowchart, are as follows:
+###The description of the functions, in the above flowchart, are as follows:
 - The functions tmc5031_readRegister and tmc5031_writeRegister are used to read and write the registers respectively. These functions check the current active bus and calls the bus-specific function i.e readRegisterSPI or writeRegisterSPI.
 - These bus specific functions constructs the datagram and further calls the bus specific callback 'tmcXXXX_readWriteSPI.
 - This callback function further calls the hardware specific read/write function for SPI and needs to be implemented externally.
@@ -27,6 +27,10 @@ The description of the functions, in the above flowchart, are as follows:
 To communicate with TMC5031 IC, the TMC-API library needs to know which bus (UART, SPI) it shall use. For that, the callback function **'tmc5031_getBusType()'** needs to be implemented.
 Additionally, implement the following callback functions to access the chip via SPI:
 1. **tmc5031_readWriteSPI()**, which is a HAL wrapper function that provides the necessary hardware access. This function should also set the chip select pin CSN to low before starting the data transfer and set to high upon completion. Please refer to the datasheet of the IC for further details.
+
+### Option to use the cache logic for Write-Only registers
+The chip features write-only registers that are unable to be read, necessitating the creation of a shadow copy to cache their contents. This copy is automatically updated whenever data is written to these registers. This cache logic could be enabled by setting the macro **TMC5031_CACHE** to **'1'** or disabled by setting to **'0'** respectively. If this feature is enabled then there comes another option to use **tmc5031_cache** function, which is already implemeted in the API, by defining **TMC5031_ENABLE_TMC_CACHE** macro to **'1** or one can implement their own function. The function **tmc5031_cache** works for both reading from and writing to the shadow array. It first checks whether the register has write-only access and data needs to be read from the hadow copy. On the basis of that, it returns **true** or **false**. The shadowRegisters on the premade cache implementation need to be one per chip. **TMC5031_IC_CACHE_COUNT** is set to '1' by default and is user-overwritable. If multiple chips are being used in the same project, increment its value to the number of chips connected.
+
 
 ## Further info
 ### Dependency graph for the ICs with new register R/W mechanism
