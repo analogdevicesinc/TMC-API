@@ -84,8 +84,15 @@ static inline void tmc2209_fieldWrite(uint16_t icID, RegisterField field, uint32
 #endif
 
 typedef enum {
+	// Cache operations for chip read and write operations
 	TMC2209_CACHE_READ,
-	TMC2209_CACHE_WRITE
+	TMC2209_CACHE_WRITE,
+
+	// Special operation: Put content into the cache without marking the entry as dirty.
+	// Only used to initialize the cache with hardware defaults. This will allow reading
+	// from write-only registers that have a value inside them on reset. When using this
+	// operation, a restore will *not* rewrite that filled register!
+	TMC2209_CACHE_FILL_DEFAULT,
 } TMC2209CacheOp;
 
 #define TMC2209_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore

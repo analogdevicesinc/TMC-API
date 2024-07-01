@@ -99,7 +99,7 @@ bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uin
 		*value = tmc2209_shadowRegister[icID][address];
 		return true;
 	}
-	else if (operation == TMC2209_CACHE_WRITE)
+	else if (operation == TMC2209_CACHE_WRITE || operation == TMC2209_CACHE_FILL_DEFAULT)
 	{
 		// Fill the cache
 
@@ -107,9 +107,13 @@ bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uin
 		if (icID >= TMC2209_IC_CACHE_COUNT)
 			return false;
 
-		// Write to the shadow register and mark the register dirty
+		// Write to the shadow register.
 		tmc2209_shadowRegister[icID][address] = *value;
-		tmc2209_registerAccess[icID][address] |= TMC2209_ACCESS_DIRTY;
+		// For write operations, mark the register dirty
+		if (operation == TMC2209_CACHE_WRITE)
+		{
+			tmc2209_setDirtyBit(icID, address, true);
+		}
 
 		return true;
 	}
