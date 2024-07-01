@@ -95,7 +95,6 @@ typedef enum {
 	TMC2209_CACHE_FILL_DEFAULT,
 } TMC2209CacheOp;
 
-#define TMC2209_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC2209_ACCESS_READ        0x01
 #define TMC2209_IS_READABLE(x)    ((x) & TMC2209_ACCESS_READ)
 
