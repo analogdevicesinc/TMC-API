@@ -15,12 +15,31 @@
 #include <stddef.h>
 #include "TMC2209_HW_Abstraction.h"
 
+/*******************************************************************************
+* API Configuration Defines
+* These control optional features of the TMC-API implementation.
+* These can be commented in/out here or defined from the build system.
+*******************************************************************************/
+
 // Uncomment if you want to save space.....
 // and put the table into your own .c file
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
 
+// To enable the cache mechanism in order to keep the copy of all registers, set TMC2209_CACHE to '1'.
+// With this mechanism the value of write-only registers could be read from their shadow copies.
+#ifndef TMC2209_CACHE
 #define TMC2209_CACHE	1
-#define TMC2209_ENABLE_TMC_CACHE
+//#define TMC2209_CACHE   0
+#endif
+
+// To use the caching mechanism already implemented by the TMC-API, set TMC2209_ENABLE_TMC_CACHE to '1'.
+// Set TMC2209_ENABLE_TMC_CACHE to '0' if one wants to have their own cache implementation.
+#ifndef TMC2209_ENABLE_TMC_CACHE
+#define TMC2209_ENABLE_TMC_CACHE   1
+//#define TMC2209_ENABLE_TMC_CACHE   0
+#endif
+
+/******************************************************************************/
 
 // => TMC-API wrapper
 extern bool tmc2209_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
@@ -76,7 +95,7 @@ static inline void tmc2209_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 /**************************************************************** Cache Implementation *************************************************************************/
 #if TMC2209_CACHE == 1
-#ifdef TMC2209_ENABLE_TMC_CACHE
+#if TMC2209_ENABLE_TMC_CACHE == 1
 
 // By default, support one IC in the cache
 #ifndef TMC2209_IC_CACHE_COUNT

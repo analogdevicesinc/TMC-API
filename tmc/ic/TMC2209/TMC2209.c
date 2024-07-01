@@ -42,8 +42,7 @@ static inline bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_
 	return false;
 }
 #else
-#ifdef TMC2209_ENABLE_TMC_CACHE
-uint8_t tmc2209_registerAccess[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT];
+#if TMC2209_ENABLE_TMC_CACHE == 1
 
 uint8_t tmc2209_dirtyBits[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT/8]= {0};
 int32_t tmc2209_shadowRegister[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT];
