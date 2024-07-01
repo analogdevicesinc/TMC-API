@@ -44,17 +44,29 @@ static inline bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_
 #else
 #ifdef TMC2209_ENABLE_TMC_CACHE
 uint8_t tmc2209_registerAccess[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT];
+
+uint8_t tmc2209_dirtyBits[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT/8]= {0};
 int32_t tmc2209_shadowRegister[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT];
 
-static void initRegisterAccessArray(void)
+void tmc2209_setDirtyBit(uint16_t icID, uint8_t index, bool value)
 {
-	for(size_t icID = 0; icID < TMC2209_IC_CACHE_COUNT; icID++)
-	{
-	    for(size_t i = 0; i < TMC2209_REGISTER_COUNT; i++)
-	    {
-	        tmc2209_registerAccess[icID][i] = tmc2209_defaultRegisterAccess[i];
-	    }
-	}
+    if(index >= TMC2209_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp = &tmc2209_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
+}
+
+bool tmc2209_getDirtyBit(uint8_t index)
+{
+    if(index >= TMC2209_REGISTER_COUNT)
+        return false;
+
+    uint8_t *tmp = &tmc2209_dirtyBits[index / 8];
+    uint8_t shift = (index % 8);
+    return ((*tmp) >> shift) & 1;
 }
 
 /*

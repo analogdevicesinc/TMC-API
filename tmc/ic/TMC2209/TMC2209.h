@@ -141,8 +141,10 @@ static const int32_t tmc2209_sampleRegisterPreset[TMC2209_REGISTER_COUNT] =
 #undef R6C
 #undef R70
 
-extern uint8_t tmc2209_registerAccess[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT];
+extern uint8_t tmc2209_dirtyBits[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT/8];
 extern int32_t tmc2209_shadowRegister[TMC2209_IC_CACHE_COUNT][TMC2209_REGISTER_COUNT];
+void tmc2209_setDirtyBit(uint16_t icID, uint8_t index, bool value);
+bool tmc2209_getDirtyBit(uint8_t index);
 extern bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uint32_t *value);
 #endif
 #endif
