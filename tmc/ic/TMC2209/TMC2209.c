@@ -75,14 +75,7 @@ bool tmc2209_getDirtyBit(uint8_t index)
  */
 bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uint32_t *value)
 {
-	static bool firstTime = true;
-	if(firstTime)
-	{
-		initRegisterAccessArray();
-		firstTime = false;
-	}
-
-	if (operation == TMC2209_CACHE_READ)
+    if (operation == TMC2209_CACHE_READ)
 	{
 		// Check if the value should come from cache
 
@@ -92,7 +85,7 @@ bool tmc2209_cache(uint16_t icID, TMC2209CacheOp operation, uint8_t address, uin
 
 		// Only non-readable registers care about caching
 		// Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
-		if (TMC2209_IS_READABLE(tmc2209_registerAccess[icID][address]))
+		if (TMC2209_IS_READABLE(tmc2209_registerAccess[address]))
 			return false;
 
 		// Grab the value from the cache

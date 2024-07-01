@@ -114,7 +114,7 @@ typedef enum {
 //   0x02: write
 //   0x03: read/write
 //   0x23: read/write, flag register (write to clear)
-static const uint8_t tmc2209_defaultRegisterAccess[TMC2209_REGISTER_COUNT] =
+static const uint8_t tmc2209_registerAccess[TMC2209_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
     0x03, 0x23, 0x01, 0x02, 0x02, 0x01, 0x01, 0x03, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
