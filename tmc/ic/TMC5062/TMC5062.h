@@ -187,32 +187,8 @@ static inline void tmc5062_fieldWrite(uint16_t icID, RegisterField field, uint32
 }
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-typedef void (*tmc5062_callback)(TMC5062TypeDef*, ConfigState);
+typedef void (*tmc5062_callback)(ConfigState);
 
-void tmc5062_init(TMC5062TypeDef *tmc5062, ConfigurationTypeDef *tmc5062_config, const int32_t *registerResetState, uint8_t motorIndex0, uint8_t motorIndex1, uint32_t chipFrequency);
-void tmc5062_fillShadowRegisters(TMC5062TypeDef *tmc5062);
-void tmc5062_setRegisterResetState(TMC5062TypeDef *tmc5062, const int32_t *resetState);
-void tmc5062_setCallback(TMC5062TypeDef *tmc5062, tmc5062_callback callback);
-void tmc5062_periodicJob(TMC5062TypeDef *tmc5072, uint32_t tick);
-uint8_t tmc5062_reset(TMC5062TypeDef *tmc5062);
-uint8_t tmc5062_restore(TMC5062TypeDef *tmc5062);
-
-void tmc5062_rotate(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t velocity);
-void tmc5062_right(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t velocity);
-void tmc5062_left(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t velocity);
-void tmc5062_stop(TMC5062TypeDef *tmc5062, uint8_t motor);
-void tmc5062_moveTo(TMC5062TypeDef *tmc5062, uint8_t motor, int32_t position, uint32_t velocityMax);
-void tmc5062_moveBy(TMC5062TypeDef *tmc5062, uint8_t motor, uint32_t velocityMax, int32_t *ticks);
-
-// Chopper settings
-uint8_t calculateTOFF(uint32_t chopFreq, uint32_t clkFreq);
-// Diagnostics
-
-// Stallguard
-// Coolstep
-// dcStep
-uint8_t dcStepActive(TMC5062TypeDef *tmc5062, uint8_t motor);
-// MSLUT
 typedef struct {
 	uint32_t LUT_0;  // Bits   0 -  31
 	uint32_t LUT_1;  // Bits  32 -  63
@@ -236,9 +212,6 @@ typedef struct {
 	uint8_t  START_SIN90;  // Absolute current at MSLUT[256]
 } TMC5062_MicroStepTable;
 
-uint8_t setMicroStepTable(TMC5062TypeDef *tmc5062, uint8_t motor, TMC5062_MicroStepTable *table);
 
-// Encoder
-uint32_t setEncoderFactor(TMC5062TypeDef *tmc5062, uint8_t motor, uint32_t motorFullSteps, uint32_t microSteps, uint32_t encoderResolution);
 
 #endif /* TMC_IC_TMC5062_H_ */
