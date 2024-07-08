@@ -15,20 +15,104 @@
 #include <stddef.h>
 #include "TMC5062_HW_Abstraction.h"
 
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+#define TMC5062_CACHE  1
+#define TMC5062_ENABLE_TMC_CACHE
+
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_UART,
 } TMC5062BusType;
 
-#define TMC5062_CACHE  1
-#define TMC5062_ENABLE_TMC_CACHE
+// => TMC-API wrapper
+extern void tmc5062_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc5062_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5062BusType tmc5062_getBusType(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc5062_readRegister(uint16_t icID, uint8_t address);
+void tmc5062_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5062_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
+typedef struct {
+    uint32_t LUT_0;  // Bits   0 -  31
+    uint32_t LUT_1;  // Bits  32 -  63
+    uint32_t LUT_2;  // Bits  64 -  95
+    uint32_t LUT_3;  // Bits  96 - 127
+    uint32_t LUT_4;  // Bits 128 - 159
+    uint32_t LUT_5;  // Bits 160 - 191
+    uint32_t LUT_6;  // Bits 192 - 223
+    uint32_t LUT_7;  // Bits 224 - 255
+
+    uint8_t X1;     // Segment 1
+    uint8_t X2;     // Segment 2
+    uint8_t X3;     // Segment 3
+    // Segment width. Determines bit meaning (Actual bit value = (Wn - 1) + bit)
+    uint8_t W0 : 2; // Segment [ 0 : X1-1]
+    uint8_t W1 : 2; // Segment [X1 : X2-1]
+    uint8_t W2 : 2; // Segment [X2 : X3-1]
+    uint8_t W3 : 2; // Segment [X3 :  255]
+
+    uint8_t  START_SIN;    // Absolute current at MSLUT[0]
+    uint8_t  START_SIN90;  // Absolute current at MSLUT[256]
+} TMC5062_MicroStepTable;
+
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t tmc5062_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc5062_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc5062_readRegister(icID, field.address);
+
+    return tmc5062_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc5062_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc5062_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc5062_readRegister(icID, field.address);
+
+    regValue = tmc5062_fieldUpdate(regValue, field, value);
+
+    tmc5062_writeRegister(icID, field.address, regValue);
+}
+
+/**************************************************************** Cache Implementation *************************************************************************/
+#if TMC5062_CACHE == 1
+#ifdef TMC5062_ENABLE_TMC_CACHE
 
 // By default, support one IC in the cache
 #ifndef TMC5062_IC_CACHE_COUNT
 #define TMC5062_IC_CACHE_COUNT 1
 #endif
 
-#ifdef TMC5062_ENABLE_TMC_CACHE
 typedef enum {
    TMC5062_CACHE_READ,
    TMC5062_CACHE_WRITE
@@ -130,84 +214,8 @@ extern uint8_t tmc5062_registerAccess[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_C
 extern int32_t tmc5062_shadowRegister[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
 extern bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uint32_t *value);
 #endif
-// => TMC-API wrapper
-extern void tmc5062_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
-extern bool tmc5062_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
-extern TMC5062BusType tmc5062_getBusType(uint16_t icID);
+#endif
 // => TMC-API wrapper
 
-int32_t tmc5062_readRegister(uint16_t icID, uint8_t address);
-void tmc5062_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-void tmc5062_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
-
-typedef struct
-{
-    uint32_t mask;
-    uint8_t shift;
-    uint8_t address;
-    bool isSigned;
-} RegisterField;
-
-static inline uint32_t tmc5062_fieldExtract(uint32_t data, RegisterField field)
-{
-    uint32_t value = (data & field.mask) >> field.shift;
-
-    if (field.isSigned)
-    {
-        // Apply signedness conversion
-        uint32_t baseMask = field.mask >> field.shift;
-        uint32_t signMask = baseMask & (~baseMask >> 1);
-        value = (value ^ signMask) - signMask;
-    }
-
-    return value;
-}
-
-static inline uint32_t tmc5062_fieldRead(uint16_t icID, RegisterField field)
-{
-    uint32_t value = tmc5062_readRegister(icID, field.address);
-
-    return tmc5062_fieldExtract(value, field);
-}
-
-static inline uint32_t tmc5062_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
-{
-    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
-}
-
-static inline void tmc5062_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
-{
-    uint32_t regValue = tmc5062_readRegister(icID, field.address);
-
-    regValue = tmc5062_fieldUpdate(regValue, field, value);
-
-    tmc5062_writeRegister(icID, field.address, regValue);
-}
-
-
-typedef struct {
-	uint32_t LUT_0;  // Bits   0 -  31
-	uint32_t LUT_1;  // Bits  32 -  63
-	uint32_t LUT_2;  // Bits  64 -  95
-	uint32_t LUT_3;  // Bits  96 - 127
-	uint32_t LUT_4;  // Bits 128 - 159
-	uint32_t LUT_5;  // Bits 160 - 191
-	uint32_t LUT_6;  // Bits 192 - 223
-	uint32_t LUT_7;  // Bits 224 - 255
-
-	uint8_t X1;     // Segment 1
-	uint8_t X2;     // Segment 2
-	uint8_t X3;     // Segment 3
-	// Segment width. Determines bit meaning (Actual bit value = (Wn - 1) + bit)
-	uint8_t W0 : 2; // Segment [ 0 : X1-1]
-	uint8_t W1 : 2; // Segment [X1 : X2-1]
-	uint8_t W2 : 2; // Segment [X2 : X3-1]
-	uint8_t W3 : 2; // Segment [X3 :  255]
-
-	uint8_t  START_SIN;    // Absolute current at MSLUT[0]
-	uint8_t  START_SIN90;  // Absolute current at MSLUT[256]
-} TMC5062_MicroStepTable;
-
-
-
+/***************************************************************************************************************************************************/
 #endif /* TMC_IC_TMC5062_H_ */
