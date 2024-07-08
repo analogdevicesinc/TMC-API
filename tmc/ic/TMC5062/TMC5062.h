@@ -14,11 +14,6 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include "TMC5062_HW_Abstraction.h"
-#include "tmc/helpers/API_Header.h"
-
-// Amount of CRC tables available
-// Each table takes ~260 bytes (257 bytes, one bool and structure padding)
-#define CRC_TABLE_COUNT 2
 
 typedef enum {
     IC_BUS_SPI,
@@ -60,6 +55,9 @@ typedef struct
 #define R5A R3A
 #define R6C 0x000101D5  // CHOPCONF
 #define R7C R6C
+
+#define ____ 0x00
+#define N_A 0x00
 
 static const int32_t tmc5062_sampleRegisterPreset[TMC5062_REGISTER_COUNT] = {
 //  0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
@@ -186,8 +184,6 @@ static inline void tmc5062_fieldWrite(uint16_t icID, RegisterField field, uint32
     tmc5062_writeRegister(icID, field.address, regValue);
 }
 
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-typedef void (*tmc5062_callback)(ConfigState);
 
 typedef struct {
 	uint32_t LUT_0;  // Bits   0 -  31
