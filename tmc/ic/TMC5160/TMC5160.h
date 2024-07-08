@@ -163,7 +163,7 @@ static const int32_t tmc5160_sampleRegisterPreset[TMC5160_REGISTER_COUNT] =
 //   0x13: read/write, separate functions/values for reading or writing
 //   0x23: read/write, flag register (write to clear)
 //   0x42: write, has hardware presets on reset
-static const uint8_t tmc5160_defaultRegisterAccess[TMC5160_REGISTER_COUNT] =
+static const uint8_t tmc5160_registerAccess[TMC5160_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
     0x03, 0x23, 0x01, 0x02, 0x13, 0x02, 0x02, 0x01, 0x03, 0x02, 0x02, 0x02, 0x01, ____, ____, ____, // 0x00 - 0x0F

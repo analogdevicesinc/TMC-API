@@ -73,13 +73,6 @@ bool tmc5160_getDirtyBit(uint8_t index)
  */
 bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uint32_t *value)
 {
-    static bool firstTime = true;
-    if(firstTime)
-    {
-        initRegisterAccessArray();
-        firstTime = false;
-    }
-
     if (operation == TMC5160_CACHE_READ)
     {
         // Check if the value should come from cache
@@ -90,7 +83,7 @@ bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uin
 
         // Only non-readable registers care about caching
         // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
-        if (TMC5160_IS_READABLE(tmc5160_registerAccess[icID][address]))
+        if (TMC5160_IS_READABLE(tmc5160_registerAccess[address]))
             return false;
 
         // Grab the value from the cache
@@ -123,33 +116,32 @@ void tmc5160_initCache()
 
     size_t i, j, id;
 
-    for (id = 0; id < TMC5160_IC_CACHE_COUNT; ++id)
+    for(i = 0, j = 0; i < TMC5160_REGISTER_COUNT; i++)
     {
-        for(i = 0, j = 0; i < TMC5160_REGISTER_COUNT; i++)
+        // We only need to worry about hardware preset, write-only registers
+        // that have not yet been written (no dirty bit) here.
+        if(tmc5160_registerAccess[i] != TMC_ACCESS_W_PRESET)
+            continue;
+
+        // Search the constant list for the current address. With the constant
+        // list being sorted in ascended order, we can walk through the list
+        // until the entry with an address equal or greater than i
+        while(j < ARRAY_SIZE(tmc5160_RegisterConstants) && (tmc5160_RegisterConstants[j].address < i))
+            j++;
+
+        // Abort when we reach the end of the constant list
+        if (j == ARRAY_SIZE(tmc5160_RegisterConstants))
+            break;
+
+        // If we have an entry for our current address, write the constant
+        if(tmc5160_RegisterConstants[j].address == i)
         {
-            // We only need to worry about hardware preset, write-only registers
-            // that have not yet been written (no dirty bit) here.
-            if(tmc5160_registerAccess[id][i] != TMC_ACCESS_W_PRESET)
-                continue;
-
-            // Search the constant list for the current address. With the constant
-            // list being sorted in ascended order, we can walk through the list
-            // until the entry with an address equal or greater than i
-            while(j < ARRAY_SIZE(tmc5160_RegisterConstants) && (tmc5160_RegisterConstants[j].address < i))
-                j++;
-
-            // Abort when we reach the end of the constant list
-            if (j == ARRAY_SIZE(tmc5160_RegisterConstants))
-                break;
-
-            // If we have an entry for our current address, write the constant
-            if(tmc5160_RegisterConstants[j].address == i)
+            for (id = 0; id < TMC5160_IC_CACHE_COUNT; ++id)
             {
-                tmc5160_cache(id, TMC5160_CACHE_WRITE, i, &tmc5160_RegisterConstants[j].value);
+            tmc5160_cache(id, TMC5160_CACHE_FILL_DEFAULT, i, &tmc5160_RegisterConstants[j].value);
             }
         }
     }
-
 }
 #else
 // User must implement their own cache
