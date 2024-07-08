@@ -93,7 +93,14 @@ static inline void tmc5160_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 typedef enum {
    TMC5160_CACHE_READ,
-   TMC5160_CACHE_WRITE
+   TMC5160_CACHE_WRITE,
+
+   // Special operation: Put content into the cache without marking the entry as dirty.
+   // Only used to initialize the cache with hardware defaults. This will allow reading
+   // from write-only registers that have a value inside them on reset. When using this
+   // operation, a restore will *not* rewrite that filled register!
+   TMC5160_CACHE_FILL_DEFAULT
+
 } TMC5160CacheOp;
 
 typedef struct

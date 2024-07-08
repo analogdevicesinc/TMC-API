@@ -97,7 +97,7 @@ bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uin
         *value = tmc5160_shadowRegister[icID][address];
         return true;
     }
-    else if (operation == TMC5160_CACHE_WRITE)
+    else if (operation == TMC5160_CACHE_WRITE || operation == TMC5160_CACHE_FILL_DEFAULT)
     {
         // Fill the cache
 
@@ -107,8 +107,10 @@ bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uin
 
         // Write to the shadow register and mark the register dirty
         tmc5160_shadowRegister[icID][address] = *value;
-        tmc5160_registerAccess[icID][address] |= TMC5160_ACCESS_DIRTY;
-
+        if (operation == TMC5160_CACHE_WRITE)
+        {
+            tmc5160_setDirtyBit(icID, address, true);
+        }
         return true;
     }
     return false;
