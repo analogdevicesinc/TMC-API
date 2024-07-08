@@ -43,18 +43,28 @@ static inline bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_
 }
 #else
 #ifdef TMC5160_ENABLE_TMC_CACHE
-uint8_t tmc5160_registerAccess[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT];
+uint8_t tmc5160_dirtyBits[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT/8]= {0};
 int32_t tmc5160_shadowRegister[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT];
 
-static void initRegisterAccessArray(void)
+void tmc5160_setDirtyBit(uint16_t icID, uint8_t index, bool value)
 {
-    for(size_t icID = 0; icID < TMC5160_IC_CACHE_COUNT; icID++)
-    {
-        for(size_t i = 0; i < TMC5160_REGISTER_COUNT; i++)
-        {
-            tmc5160_registerAccess[icID][i] = tmc5160_defaultRegisterAccess[i];
-        }
-    }
+    if(index >= TMC5160_REGISTER_COUNT)
+       return;
+
+   uint8_t *tmp = &tmc5160_dirtyBits[icID][index / 8];
+   uint8_t shift = (index % 8);
+   uint8_t mask = 1 << shift;
+   *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
+}
+
+bool tmc5160_getDirtyBit(uint8_t index)
+{
+   if(index >= TMC5160_REGISTER_COUNT)
+       return false;
+
+   uint8_t *tmp = &tmc5160_dirtyBits[index / 8];
+   uint8_t shift = (index % 8);
+   return ((*tmp) >> shift) & 1;
 }
 
 /*
