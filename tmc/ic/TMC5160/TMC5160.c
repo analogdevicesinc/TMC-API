@@ -42,7 +42,7 @@ static inline bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_
     return false;
 }
 #else
-#ifdef TMC5160_ENABLE_TMC_CACHE
+#if TMC5160_ENABLE_TMC_CACHE == 1
 uint8_t tmc5160_dirtyBits[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT/8]= {0};
 int32_t tmc5160_shadowRegister[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT];
 

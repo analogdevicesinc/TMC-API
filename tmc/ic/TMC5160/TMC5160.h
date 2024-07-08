@@ -15,13 +15,29 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+/*******************************************************************************
+* API Configuration Defines
+* These control optional features of the TMC-API implementation.
+* These can be commented in/out here or defined from the build system.
+*******************************************************************************/
+
 // Uncomment if you want to save space.....
 // and put the table into your own .c file
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
 
+#ifndef TMC5160_CACHE
 #define TMC5160_CACHE   1
-#define TMC5160_ENABLE_TMC_CACHE
+//#define TMC5160_CACHE   0
+#endif
 
+// To use the caching mechanism already implemented by the TMC-API, set TMC5160_ENABLE_TMC_CACHE to '1'.
+// Set TMC5160_ENABLE_TMC_CACHE to '0' if one wants to have their own cache implementation.
+#ifndef TMC5160_ENABLE_TMC_CACHE
+#define TMC5160_ENABLE_TMC_CACHE   1
+//#define TMC5160_ENABLE_TMC_CACHE   0
+#endif
+
+/******************************************************************************/
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_UART,
@@ -84,7 +100,7 @@ static inline void tmc5160_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 /**************************************************************** Cache Implementation *************************************************************************/
 #if TMC5160_CACHE == 1
-#ifdef TMC5160_ENABLE_TMC_CACHE
+#if TMC5160_ENABLE_TMC_CACHE == 1
 
 // By default, support one IC in the cache
 #ifndef TMC5160_IC_CACHE_COUNT
