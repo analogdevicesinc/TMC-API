@@ -180,7 +180,7 @@ static const int32_t tmc5062_sampleRegisterPreset[TMC5062_REGISTER_COUNT] = {
 //   0x13: read/write, separate functions/values for reading or writing
 //   0x23: read/write, flag register (write to clear)
 //   0x42: write, has hardware presets on reset
-static const uint8_t tmc5062_defaultRegisterAccess[TMC5062_REGISTER_COUNT] = {
+static const uint8_t tmc5062_registerAccess[TMC5062_REGISTER_COUNT] = {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
     0x03, 0x01, 0x01, 0x02, 0x07, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
     0x02, 0x01, ____, ____, ____, ____, ____, ____, 0x02, 0x01, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F

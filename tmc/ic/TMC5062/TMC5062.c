@@ -73,13 +73,6 @@ bool tmc5062_getDirtyBit(uint16_t icID, uint8_t index)
  */
 bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uint32_t *value)
 {
-    static bool firstTime = true;
-    if(firstTime)
-    {
-        initRegisterAccessArray();
-        firstTime = false;
-    }
-
     if (operation == TMC5062_CACHE_READ)
     {
         // Check if the value should come from cache
@@ -90,7 +83,7 @@ bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uin
 
         // Only non-readable registers care about caching
         // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
-        if (TMC5062_IS_READABLE(tmc5062_registerAccess[icID][address]))
+        if (TMC5062_IS_READABLE(tmc5062_registerAccess[address]))
             return false;
 
         // Grab the value from the cache
@@ -125,32 +118,34 @@ void tmc5062_initCache()
 
     size_t i, j, id;
 
-    for (id = 0; id < TMC5062_IC_CACHE_COUNT; ++id)
+
+    for(i = 0, j = 0; i < TMC5062_REGISTER_COUNT; i++)
     {
-        for(i = 0, j = 0; i < TMC5062_REGISTER_COUNT; i++)
+        // We only need to worry about hardware preset, write-only registers
+        // that have not yet been written (no dirty bit) here.
+        if(tmc5062_registerAccess[i] != TMC_ACCESS_W_PRESET)
+            continue;
+
+        // Search the constant list for the current address. With the constant
+        // list being sorted in ascended order, we can walk through the list
+        // until the entry with an address equal or greater than i
+        while(j < ARRAY_SIZE(tmc5062_RegisterConstants) && (tmc5062_RegisterConstants[j].address < i))
+            j++;
+
+        // Abort when we reach the end of the constant list
+        if (j == ARRAY_SIZE(tmc5062_RegisterConstants))
+            break;
+
+        // If we have an entry for our current address, write the constant
+        if(tmc5062_RegisterConstants[j].address == i)
         {
-            // We only need to worry about hardware preset, write-only registers
-            // that have not yet been written (no dirty bit) here.
-            if(tmc5062_registerAccess[id][i] != TMC_ACCESS_W_PRESET)
-                continue;
-
-            // Search the constant list for the current address. With the constant
-            // list being sorted in ascended order, we can walk through the list
-            // until the entry with an address equal or greater than i
-            while(j < ARRAY_SIZE(tmc5062_RegisterConstants) && (tmc5062_RegisterConstants[j].address < i))
-                j++;
-
-            // Abort when we reach the end of the constant list
-            if (j == ARRAY_SIZE(tmc5062_RegisterConstants))
-                break;
-
-            // If we have an entry for our current address, write the constant
-            if(tmc5062_RegisterConstants[j].address == i)
+            for (id = 0; id < TMC5062_IC_CACHE_COUNT; ++id)
             {
                 tmc5062_cache(id, TMC5062_CACHE_FILL_DEFAULT, i, &tmc5062_RegisterConstants[j].value);
             }
         }
     }
+
 
 }
 
