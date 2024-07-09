@@ -58,12 +58,12 @@ void tmc2209_setDirtyBit(uint16_t icID, uint8_t index, bool value)
     *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
 }
 
-bool tmc2209_getDirtyBit(uint8_t index)
+bool tmc2209_getDirtyBit(uint16_t icID, uint8_t index)
 {
     if(index >= TMC2209_REGISTER_COUNT)
         return false;
 
-    uint8_t *tmp = &tmc2209_dirtyBits[index / 8];
+    uint8_t *tmp = &tmc2209_dirtyBits[icID][index / 8];
     uint8_t shift = (index % 8);
     return ((*tmp) >> shift) & 1;
 }
