@@ -97,7 +97,7 @@ bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uin
         *value = tmc5062_shadowRegister[icID][address];
         return true;
     }
-    else if (operation == TMC5062_CACHE_WRITE)
+    else if (operation == TMC5062_CACHE_WRITE || operation == TMC5062_CACHE_FILL_DEFAULT)
     {
         // Fill the cache
 
@@ -107,7 +107,11 @@ bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uin
 
         // Write to the shadow register and mark the register dirty
         tmc5062_shadowRegister[icID][address] = *value;
-        tmc5062_registerAccess[icID][address] |= TMC5062_ACCESS_DIRTY;
+
+        if (operation == TMC5062_CACHE_WRITE)
+        {
+            tmc5062_setDirtyBit(icID, address, true);
+        }
 
         return true;
     }
@@ -143,7 +147,7 @@ void tmc5062_initCache()
             // If we have an entry for our current address, write the constant
             if(tmc5062_RegisterConstants[j].address == i)
             {
-                tmc5062_cache(id, TMC5062_CACHE_WRITE, i, &tmc5062_RegisterConstants[j].value);
+                tmc5062_cache(id, TMC5062_CACHE_FILL_DEFAULT, i, &tmc5062_RegisterConstants[j].value);
             }
         }
     }
