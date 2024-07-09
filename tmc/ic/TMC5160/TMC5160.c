@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
 * Copyright © 2024 Analog Devices Inc. All Rights Reserved.
