@@ -43,19 +43,29 @@ static inline bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_
 }
 #else
 #ifdef TMC5062_ENABLE_TMC_CACHE
-uint8_t tmc5062_registerAccess[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
+uint8_t tmc5062_dirtyBits[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT/8]= {0};
 int32_t tmc5062_shadowRegister[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
 
-static void initRegisterAccessArray(void)
+void tmc5062_setDirtyBit(uint16_t icID, uint8_t index, bool value)
 {
-    for(size_t icID = 0; icID < TMC5062_IC_CACHE_COUNT; icID++)
-    {
-        for(size_t i = 0; i < TMC5062_REGISTER_COUNT; i++)
-        {
-            tmc5062_registerAccess[icID][i] = tmc5062_defaultRegisterAccess[i];
-        }
-    }
+    if(index >= TMC5062_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp = &tmc5062_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
 }
+
+bool tmc5062_getDirtyBit(uint16_t icID, uint8_t index)
+{
+   if(index >= TMC5062_REGISTER_COUNT)
+       return false;
+
+   uint8_t *tmp = &tmc5062_dirtyBits[icID][index / 8];
+   uint8_t shift = (index % 8);
+   return ((*tmp) >> shift) & 1;
+ }
 
 /*
  * This function is used to cache the value written to the Write-Only registers in the form of shadow array.

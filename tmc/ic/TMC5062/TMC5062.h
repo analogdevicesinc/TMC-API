@@ -210,8 +210,10 @@ static const TMCRegisterConstants tmc5062_RegisterConstants[] =
         { 0x79, 0x00F70000 }  // MSLUTSTART_M2
 };
 
-extern uint8_t tmc5062_registerAccess[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
+extern uint8_t tmc5062_dirtyBits[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT/8];
 extern int32_t tmc5062_shadowRegister[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
+void tmc5062_setDirtyBit(uint16_t icID, uint8_t index, bool value);
+bool tmc5062_getDirtyBit(uint16_t icID, uint8_t index);
 extern bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uint32_t *value);
 #endif
 #endif
