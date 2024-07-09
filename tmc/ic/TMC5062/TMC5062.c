@@ -42,7 +42,7 @@ static inline bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_
     return false;
 }
 #else
-#ifdef TMC5062_ENABLE_TMC_CACHE
+#if TMC5062_ENABLE_TMC_CACHE == 1
 uint8_t tmc5062_dirtyBits[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT/8]= {0};
 int32_t tmc5062_shadowRegister[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
 
