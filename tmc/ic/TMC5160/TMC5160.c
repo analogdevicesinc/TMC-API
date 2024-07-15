@@ -136,7 +136,7 @@ void tmc5160_initCache()
         // If we have an entry for our current address, write the constant
         if(tmc5160_RegisterConstants[j].address == i)
         {
-            for (id = 0; id < TMC5160_IC_CACHE_COUNT; ++id)
+            for (id = 0; id < TMC5160_IC_CACHE_COUNT; id++)
             {
                 tmc5160_cache(id, TMC5160_CACHE_FILL_DEFAULT, i, &tmc5160_RegisterConstants[j].value);
             }

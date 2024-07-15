@@ -218,7 +218,7 @@ extern int32_t tmc5160_shadowRegister[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_C
 void tmc5160_setDirtyBit(uint16_t icID, uint8_t index, bool value);
 bool tmc5160_getDirtyBit(uint16_t icID, uint8_t index);
 extern bool tmc5160_cache(uint16_t icID, TMC5160CacheOp operation, uint8_t address, uint32_t *value);
-extern void tmc5160_initCache(void);
+void tmc5160_initCache(void);
 #endif
 #endif
 
