@@ -51,6 +51,9 @@ To communicate with TMC5160 IC, the TMC-API library needs to know which bus (UAR
 Additionally, implement the following callback functions to access the chip via SPI:
 1. **tmc5160_readWriteSPI()**, which is a HAL wrapper function that provides the necessary hardware access. This function should also set the chip select pin CSN to low before starting the data transfer and set to high upon completion. Please refer to the datasheet of the IC for further details.
 
+### Option to use the cache logic for Write-Only registers
+The chip features write-only registers that are unable to be read, necessitating the creation of a shadow copy to cache their contents. This copy is automatically updated whenever data is written to these registers. This cache logic could be enabled by setting the macro **TMC5160_CACHE** to **'1'** or disabled by setting to **'0'** respectively. If this feature is enabled then there comes another option to use **tmc5160_cache** function, which is already implemeted in the API, by defining **TMC5160_ENABLE_TMC_CACHE** macro to **'1'** or one can implement their own function. The function **tmc5160_cache** works for both reading from and writing to the shadow array. It first checks whether the register has write-only access and data needs to be read from the hadow copy. On the basis of that, it returns **true** or **false**. The shadowRegisters on the premade cache implementation need to be one per chip. **TMC5160_IC_CACHE_COUNT** is set to '1' by default and is user-overwritable. If multiple chips are being used in the same project, increment its value to the number of chips connected.
+
 ## Further info
 ### Dependency graph for the ICs with new register R/W mechanism
 This graph illustrates the relationships between files within the TMC-API library, highlighting dependencies and identifying the files that are essential for integrating the library into the custom projects.
