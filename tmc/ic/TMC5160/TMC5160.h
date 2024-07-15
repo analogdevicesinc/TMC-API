@@ -38,10 +38,19 @@
 #endif
 
 /******************************************************************************/
+
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_UART,
 } TMC5160BusType;
+
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
 
 // => TMC-API wrapper
 extern void tmc5160_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
@@ -53,14 +62,6 @@ extern uint8_t tmc5160_getNodeAddress(uint16_t icID);
 int32_t tmc5160_readRegister(uint16_t icID, uint8_t address);
 void tmc5160_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
-
-typedef struct
-{
-    uint32_t mask;
-    uint8_t shift;
-    uint8_t address;
-    bool isSigned;
-} RegisterField;
 
 static inline uint32_t tmc5160_fieldExtract(uint32_t data, RegisterField field)
 {
@@ -99,6 +100,7 @@ static inline void tmc5160_fieldWrite(uint16_t icID, RegisterField field, uint32
 }
 
 /**************************************************************** Cache Implementation *************************************************************************/
+
 #if TMC5160_CACHE == 1
 #if TMC5160_ENABLE_TMC_CACHE == 1
 
@@ -123,7 +125,7 @@ typedef struct
 {
     uint8_t address;
     uint32_t value;
-} TMCRegisterConstants;
+} TMC5062RegisterConstants;
 
 #define TMC5160_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC5160_ACCESS_READ        0x01
@@ -196,19 +198,19 @@ static const uint8_t tmc5160_registerAccess[TMC5160_REGISTER_COUNT] =
 // any way to find out the content but want to hold the actual value in the
 // shadow register so an application (i.e. the TMCL IDE) can still display
 // the values. This only works when the register content is constant.
-static const TMCRegisterConstants tmc5160_RegisterConstants[] =
-{       // Use ascending addresses!
-        { 0x60, 0xAAAAB554 }, // MSLUT[0]
-        { 0x61, 0x4A9554AA }, // MSLUT[1]
-        { 0x62, 0x24492929 }, // MSLUT[2]
-        { 0x63, 0x10104222 }, // MSLUT[3]
-        { 0x64, 0xFBFFFFFF }, // MSLUT[4]
-        { 0x65, 0xB5BB777D }, // MSLUT[5]
-        { 0x66, 0x49295556 }, // MSLUT[6]
-        { 0x67, 0x00404222 }, // MSLUT[7]
-        { 0x68, 0xFFFF8056 }, // MSLUTSEL
-        { 0x69, 0x00F70000 }, // MSLUTSTART
-        { 0x70, 0xC40C001E }  // PWMCONF
+static const TMC5062RegisterConstants tmc5160_RegisterConstants[] =
+{   // Use ascending addresses!
+    { 0x60, 0xAAAAB554 }, // MSLUT[0]
+    { 0x61, 0x4A9554AA }, // MSLUT[1]
+    { 0x62, 0x24492929 }, // MSLUT[2]
+    { 0x63, 0x10104222 }, // MSLUT[3]
+    { 0x64, 0xFBFFFFFF }, // MSLUT[4]
+    { 0x65, 0xB5BB777D }, // MSLUT[5]
+    { 0x66, 0x49295556 }, // MSLUT[6]
+    { 0x67, 0x00404222 }, // MSLUT[7]
+    { 0x68, 0xFFFF8056 }, // MSLUTSEL
+    { 0x69, 0x00F70000 }, // MSLUTSTART
+    { 0x70, 0xC40C001E }  // PWMCONF
 };
 
 extern uint8_t tmc5160_dirtyBits[TMC5160_IC_CACHE_COUNT][TMC5160_REGISTER_COUNT/8];
