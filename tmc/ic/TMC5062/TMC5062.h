@@ -38,20 +38,11 @@
 #endif
 
 /******************************************************************************/
+
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_UART,
 } TMC5062BusType;
-
-// => TMC-API wrapper
-extern void tmc5062_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
-extern bool tmc5062_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
-extern TMC5062BusType tmc5062_getBusType(uint16_t icID);
-// => TMC-API wrapper
-
-int32_t tmc5062_readRegister(uint16_t icID, uint8_t address);
-void tmc5062_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-void tmc5062_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 typedef struct {
     uint32_t LUT_0;  // Bits   0 -  31
@@ -83,6 +74,16 @@ typedef struct
     uint8_t address;
     bool isSigned;
 } RegisterField;
+
+// => TMC-API wrapper
+extern void tmc5062_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc5062_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5062BusType tmc5062_getBusType(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc5062_readRegister(uint16_t icID, uint8_t address);
+void tmc5062_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5062_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 static inline uint32_t tmc5062_fieldExtract(uint32_t data, RegisterField field)
 {
@@ -121,6 +122,7 @@ static inline void tmc5062_fieldWrite(uint16_t icID, RegisterField field, uint32
 }
 
 /**************************************************************** Cache Implementation *************************************************************************/
+
 #if TMC5062_CACHE == 1
 #if TMC5062_ENABLE_TMC_CACHE == 1
 
@@ -144,7 +146,7 @@ typedef struct
 {
     uint8_t address;
     uint32_t value;
-} TMCRegisterConstants;
+} TMC5062RegisterConstants;
 
 #define TMC5062_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC5062_ACCESS_READ        0x01
@@ -208,7 +210,7 @@ static const uint8_t tmc5062_registerAccess[TMC5062_REGISTER_COUNT] = {
     0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x01, 0x01, 0x03, 0x02, 0x02, 0x01  // 0x70 - 0x7F
 };
 
-static const TMCRegisterConstants tmc5062_RegisterConstants[] =
+static const TMC5062RegisterConstants tmc5062_RegisterConstants[] =
 {       // Use ascending addresses!
         { 0x60, 0xAAAAB554 }, // MSLUT[0]_M1
         { 0x61, 0x4A9554AA }, // MSLUT[1]_M1
@@ -242,4 +244,5 @@ extern bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t addre
 // => TMC-API wrapper
 
 /***************************************************************************************************************************************************/
+
 #endif /* TMC_IC_TMC5062_H_ */
