@@ -160,7 +160,7 @@ void tmc5272_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 		return;
 
 	tmc5272_writeRegister(icID, TMC5272_VMAX(motor), (velocity >= 0)? velocity : -velocity);
-	field_write(icID, TMC5272_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
+	tmc5272_fieldWrite(icID, TMC5272_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
@@ -294,9 +294,9 @@ void tmc5272_rotate(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t velocity)
 
 	tmc5272_writeRegister(motor, TMC5272_VMAX(motor), abs(velocity));
 	if (motor == 0)
-		field_write(motor, TMC5272_RAMPMODE_M0_RAMPMODE_FIELD, (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
+		tmc5272_fieldWrite(motor, TMC5272_RAMPMODE_M0_RAMPMODE_FIELD, (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
 	else if(motor == 1)
-		field_write(motor, TMC5272_RAMPMODE_M1_RAMPMODE_FIELD, (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
+		tmc5272_fieldWrite(motor, TMC5272_RAMPMODE_M1_RAMPMODE_FIELD, (velocity >= 0) ? TMC5272_MODE_VELPOS : TMC5272_MODE_VELNEG);
 
 }
 
@@ -321,9 +321,9 @@ void tmc5272_moveTo(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t position, ui
 		return;
 
 	if (motor == 0)
-		field_write(motor, TMC5272_RAMPMODE_M0_RAMPMODE_FIELD, TMC5272_MODE_POSITION);
+		tmc5272_fieldWrite(motor, TMC5272_RAMPMODE_M0_RAMPMODE_FIELD, TMC5272_MODE_POSITION);
 	else if (motor == 1)
-		field_write(motor, TMC5272_RAMPMODE_M1_RAMPMODE_FIELD, TMC5272_MODE_POSITION);
+		tmc5272_fieldWrite(motor, TMC5272_RAMPMODE_M1_RAMPMODE_FIELD, TMC5272_MODE_POSITION);
 
 	tmc5272_writeRegister(motor, TMC5272_VMAX(motor), velocityMax);
 	tmc5272_writeRegister(motor, TMC5272_XTARGET(motor), position);
