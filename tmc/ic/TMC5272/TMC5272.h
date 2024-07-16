@@ -83,8 +83,6 @@ static inline void tmc5272_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 #include "tmc/helpers/API_Header.h"
 
-//typedef void (*tmc5272_callback)(TMC5272TypeDef*, ConfigState);
-
 // Default Register values
 #define R00 0x00000008  // GCONF
 #define R0A 0x00000020  // DRVCONF
@@ -111,29 +109,6 @@ static inline void tmc5272_fieldWrite(uint16_t icID, RegisterField field, uint32
 #define R6C 0x00410153  // CHOPCONF
 #define R70 0xC44C001E  // PWMCONF
 #define R74 0x00000000  // PWMCONF
-
-//void tmc5272_writeDatagram(TMC5272TypeDef *tmc5272, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc5272_writeInt(TMC5272TypeDef *tmc5272, uint8_t address, int32_t value);
-int32_t tmc5272_readInt(TMC5272TypeDef *tmc5272, uint8_t address);
-
-void tmc5272_init(TMC5272TypeDef *tmc5272, uint8_t channel, ConfigurationTypeDef *config);
-//void tmc5272_fillShadowRegisters(TMC5272TypeDef *tmc5272);
-uint8_t tmc5272_reset(TMC5272TypeDef *tmc5272);
-uint8_t tmc5272_restore(TMC5272TypeDef *tmc5272);
-uint8_t tmc5272_getSlaveAddress(TMC5272TypeDef *tmc5272);
-void tmc5272_setSlaveAddress(TMC5272TypeDef *tmc5272, uint8_t slaveAddress);
-void tmc5272_setRegisterResetState(TMC5272TypeDef *tmc5272, const int32_t *resetState);
-void tmc5272_setCallback(TMC5272TypeDef *tmc5272, tmc5272_callback callback);
-void tmc5272_periodicJob(TMC5272TypeDef *tmc5272, uint32_t tick);
-
-void tmc5272_rotate(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t velocity);
-void tmc5272_right(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t velocity);
-void tmc5272_left(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t velocity);
-void tmc5272_stop(TMC5272TypeDef *tmc5272, uint8_t motor);
-void tmc5272_moveTo(TMC5272TypeDef *tmc5272, uint8_t motor, int32_t position, uint32_t velocityMax);
-void tmc5272_moveBy(TMC5272TypeDef *tmc5272, uint8_t motor, uint32_t velocityMax, int32_t *ticks);
-
-uint8_t tmc5272_consistencyCheck(TMC5272TypeDef *tmc5272);
 
 /*******************************************************************************************************************************************************************/
 #endif /* TMC_IC_TMC5272_H_ */
