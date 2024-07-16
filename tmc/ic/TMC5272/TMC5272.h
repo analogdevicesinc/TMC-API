@@ -10,14 +10,47 @@
 #ifndef TMC_IC_TMC5272_H_
 #define TMC_IC_TMC5272_H_
 
-// Uncomment if you want to save space.....
-// and put the table into your own .c file
-//#define TMC_API_EXTERNAL_CRC_TABLE 1
-
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include "TMC5272_HW_Abstraction.h"
+
+/*******************************************************************************
+* API Configuration Defines
+* These control optional features of the TMC-API implementation.
+* These can be commented in/out here or defined from the build system.
+*******************************************************************************/
+
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+// Default Register values
+#define R00 0x00000008  // GCONF
+#define R0A 0x00000020  // DRVCONF
+#define R10 0x00070A03  // IHOLD_IRUN
+#define R11 0x0000000A  // TPOWERDOWN
+#define R2A 0x0000000A  // D1
+#define R2B 0x0000000A  // VSTOP
+#define R30 0x0000000A  // D2
+
+#define R3A 0x00010000  // ENC_CONST
+
+#define R52 0x0B920F25  // OTW_OV_VTH
+#define R60 0xAAAAB554  // MSLUT[0]
+#define R61 0x4A9554AA  // MSLUT[1]
+#define R62 0x24492929  // MSLUT[2]
+#define R63 0x10104222  // MSLUT[3]
+#define R64 0xFBFFFFFF  // MSLUT[4]
+#define R65 0xB5BB777D  // MSLUT[5]
+#define R66 0x49295556  // MSLUT[6]
+#define R67 0x00404222  // MSLUT[7]
+#define R68 0xFFFF8056  // MSLUT[8]
+#define R69 0x00F70000  // MSLUT[9]
+
+#define R6C 0x00410153  // CHOPCONF
+#define R70 0xC44C001E  // PWMCONF
+#define R74 0x00000000  // PWMCONF
 
 typedef enum {
 	IC_BUS_SPI,
@@ -79,36 +112,4 @@ static inline void tmc5272_fieldWrite(uint16_t icID, RegisterField field, uint32
     tmc5272_writeRegister(icID, field.address, regValue);
 }
 
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-
-#include "tmc/helpers/API_Header.h"
-
-// Default Register values
-#define R00 0x00000008  // GCONF
-#define R0A 0x00000020  // DRVCONF
-#define R10 0x00070A03  // IHOLD_IRUN
-#define R11 0x0000000A  // TPOWERDOWN
-#define R2A 0x0000000A  // D1
-#define R2B 0x0000000A  // VSTOP
-#define R30 0x0000000A  // D2
-
-#define R3A 0x00010000  // ENC_CONST
-
-#define R52 0x0B920F25  // OTW_OV_VTH
-#define R60 0xAAAAB554  // MSLUT[0]
-#define R61 0x4A9554AA  // MSLUT[1]
-#define R62 0x24492929  // MSLUT[2]
-#define R63 0x10104222  // MSLUT[3]
-#define R64 0xFBFFFFFF  // MSLUT[4]
-#define R65 0xB5BB777D  // MSLUT[5]
-#define R66 0x49295556  // MSLUT[6]
-#define R67 0x00404222  // MSLUT[7]
-#define R68 0xFFFF8056  // MSLUT[8]
-#define R69 0x00F70000  // MSLUT[9]
-
-#define R6C 0x00410153  // CHOPCONF
-#define R70 0xC44C001E  // PWMCONF
-#define R74 0x00000000  // PWMCONF
-
-/*******************************************************************************************************************************************************************/
 #endif /* TMC_IC_TMC5272_H_ */
