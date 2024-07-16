@@ -83,19 +83,7 @@ static inline void tmc5272_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 #include "tmc/helpers/API_Header.h"
 
-// Typedefs
-typedef struct
-{
-	ConfigurationTypeDef *config;
-	int32_t oldX[TMC5272_MOTORS];
-	int32_t velocity[TMC5272_MOTORS];
-	uint32_t oldTick;
-	int32_t registerResetState[TMC5272_REGISTER_COUNT];
-	uint8_t registerAccess[TMC5272_REGISTER_COUNT];
-	uint8_t slaveAddress; //Functionality replaced by callback => can be replaced
-} TMC5272TypeDef;
-
-typedef void (*tmc5272_callback)(TMC5272TypeDef*, ConfigState);
+//typedef void (*tmc5272_callback)(TMC5272TypeDef*, ConfigState);
 
 // Default Register values
 #define R00 0x00000008  // GCONF
