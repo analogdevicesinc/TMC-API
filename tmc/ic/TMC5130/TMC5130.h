@@ -63,7 +63,6 @@ extern uint8_t tmc5130_getNodeAddress(uint16_t icID);
 
 int32_t tmc5130_readRegister(uint16_t icID, uint8_t address);
 void tmc5130_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-void tmc5130_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 static inline uint32_t tmc5130_field_extract(uint32_t data, RegisterField field)
 {
@@ -101,12 +100,10 @@ static inline void tmc5130_field_write(uint16_t icID, RegisterField field, uint3
     tmc5130_writeRegister(icID, field.address, regValue);
 }
 
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino *****************************/
 
 /**************************************************************** Cache Implementation *************************************************************************/
 #if TMC5130_CACHE == 1
 #ifdef TMC5130_ENABLE_TMC_CACHE
-#include "tmc/helpers/API_Header.h"
 
 // By default, support one IC in the cache
 #ifndef TMC5130_IC_CACHE_COUNT
@@ -133,17 +130,6 @@ typedef struct{
 #define TMC5130_ACCESS_W_PRESET        0x42
 #define TMC5130_IS_READABLE(x)    ((x) & TMC5130_ACCESS_READ)
 #define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
-// Typedefs
-typedef struct
-{
-	ConfigurationTypeDef *config;
-	int32_t velocity, oldX;
-	uint32_t oldTick;
-	int32_t registerResetState[TMC5130_REGISTER_COUNT];
-	uint8_t registerAccess[TMC5130_REGISTER_COUNT];
-} TMC5130TypeDef;
-extern TMC5130TypeDef TMC5130;
-typedef void (*tmc5130_callback)(TMC5130TypeDef*, ConfigState);
 
 // Default Register values
 #define R10 0x00071703  // IHOLD_IRUN
@@ -233,23 +219,6 @@ bool tmc5130_getDirtyBit(uint16_t icID, uint8_t index);
 void tmc5130_initCache(void);
 #endif
 #endif
-// API Functions
-// All functions act on one IC identified by the TMC5130TypeDef pointer
-
-void tmc5130_init(TMC5130TypeDef *tmc5130, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-void tmc5130_fillShadowRegisters(TMC5130TypeDef *tmc5130);
-uint8_t tmc5130_reset(TMC5130TypeDef *tmc5130);
-uint8_t tmc5130_restore(TMC5130TypeDef *tmc5130);
-void tmc5130_setRegisterResetState(TMC5130TypeDef *tmc5130, const int32_t *resetState);
-void tmc5130_setCallback(TMC5130TypeDef *tmc5130, tmc5130_callback callback);
-void tmc5130_periodicJob(TMC5130TypeDef *tmc5130, uint32_t tick);
-
-void tmc5130_rotate(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t velocity);
-void tmc5130_right(TMC5130TypeDef *tmc5130, uint8_t motor, uint32_t velocity);
-void tmc5130_left(TMC5130TypeDef *tmc5130, uint8_t motor, uint32_t velocity);
-void tmc5130_stop(TMC5130TypeDef *tmc5130,uint8_t motor);
-void tmc5130_moveTo(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t position, uint32_t velocityMax);
-void tmc5130_moveBy(TMC5130TypeDef *tmc5130, uint8_t motor, int32_t *ticks, uint32_t velocityMax);
 
 /***************************************************************************************************************************************************/
 #endif /* TMC_IC_TMC5130_H_ */
