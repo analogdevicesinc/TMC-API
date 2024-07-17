@@ -238,6 +238,7 @@ extern uint8_t tmc5062_dirtyBits[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT/
 extern int32_t tmc5062_shadowRegister[TMC5062_IC_CACHE_COUNT][TMC5062_REGISTER_COUNT];
 void tmc5062_setDirtyBit(uint16_t icID, uint8_t index, bool value);
 bool tmc5062_getDirtyBit(uint16_t icID, uint8_t index);
+void tmc5062_initCache(void);
 extern bool tmc5062_cache(uint16_t icID, TMC5062CacheOp operation, uint8_t address, uint32_t *value);
 #endif
 #endif

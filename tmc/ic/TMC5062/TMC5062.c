@@ -139,7 +139,7 @@ void tmc5062_initCache()
         // If we have an entry for our current address, write the constant
         if(tmc5062_RegisterConstants[j].address == i)
         {
-            for (id = 0; id < TMC5062_IC_CACHE_COUNT; ++id)
+            for (id = 0; id < TMC5062_IC_CACHE_COUNT; id++)
             {
                 tmc5062_cache(id, TMC5062_CACHE_FILL_DEFAULT, i, &tmc5062_RegisterConstants[j].value);
             }
