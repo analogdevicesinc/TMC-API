@@ -10,10 +10,6 @@
 #ifndef TMC_IC_TMC5130_H_
 #define TMC_IC_TMC5130_H_
 
-#include "tmc/helpers/API_Header.h"
-#include "TMC5130_Register.h"
-#include "TMC5130_Constants.h"
-#include "TMC5130_Fields.h"
 // Uncomment if you want to save space.....
 // and put the table into your own .c file
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
@@ -23,7 +19,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-
+#include "TMC5130_HW_Abstraction.h"
 
 typedef enum {
 	IC_BUS_SPI,
