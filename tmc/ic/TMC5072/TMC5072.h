@@ -10,10 +10,6 @@
 #ifndef TMC_IC_TMC5072_H_
 #define TMC_IC_TMC5072_H_
 
-// Uncomment if you want to save space.....
-// and put the table into your own .c file
-//#define TMC_API_EXTERNAL_CRC_TABLE 1
-
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
@@ -61,7 +57,6 @@ extern uint8_t tmc5072_getNodeAddress(uint16_t icID);
 
 int32_t tmc5072_readRegister(uint16_t icID, uint8_t address);
 void tmc5072_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-void tmc5072_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 typedef struct
 {
@@ -106,27 +101,15 @@ static inline void tmc5072_field_write(uint16_t icID, RegisterField field, uint3
 
     tmc5072_writeRegister(icID, field.address, regValue);
 }
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-
 
 /**************************************************************** Cache Implementation *************************************************************************/
 #if TMC5072_CACHE == 1
 #ifdef TMC5072_ENABLE_TMC_CACHE
-#include "tmc/helpers/API_Header.h"
 
 // By default, support one IC in the cache
 #ifndef TMC5072_IC_CACHE_COUNT
 #define TMC5072_IC_CACHE_COUNT 1
 #endif
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-	ConfigurationTypeDef *config;
-	int32_t oldX[TMC5072_MOTORS];
-	uint32_t velocity[TMC5072_MOTORS];
-	uint32_t oldTick;
-	int32_t registerResetState[TMC5072_REGISTER_COUNT];
-	uint8_t registerAccess[TMC5072_REGISTER_COUNT];
-} TMC5072TypeDef;
 
 typedef enum {
 	TMC5072_CACHE_READ,
@@ -142,14 +125,12 @@ typedef struct{
     uint8_t address;
     uint32_t value;
 } TMCRegisterConstants;
-extern TMC5072TypeDef TMC5072;
 
 #define TMC5072_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC5072_ACCESS_READ        0x01
 #define TMC5072_ACCESS_W_PRESET	   0x42
 #define TMC5072_IS_READABLE(x)     ((x) & TMC5072_ACCESS_READ)
 #define ARRAY_SIZE(x) 			   (sizeof(x)/sizeof(x[0]))
-typedef void (*tmc5072_callback)(TMC5072TypeDef*, ConfigState);
 
 // Default Register Values
 #define R30 0x00071703  // IHOLD_IRUN (Motor 1)
@@ -176,6 +157,7 @@ typedef void (*tmc5072_callback)(TMC5072TypeDef*, ConfigState);
 // register reset values array, N_A is used as an indicator for a preset
 // value, where any value will be ignored anyways (N_A: not available).
 #define N_A 0
+
 // Register access permissions:
 //   0x00: none (reserved)
 //   0x01: read
@@ -245,24 +227,6 @@ void tmc5072_setDirtyBit(uint16_t icID, uint8_t index, bool value);
 bool tmc5072_getDirtyBit(uint16_t icID, uint8_t index);
 #endif
 #endif
-void tmc5072_writeDatagram(TMC5072TypeDef *tmc5072, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc5072_writeInt(TMC5072TypeDef *tmc5072, uint8_t address, int32_t value);
-int32_t tmc5072_readInt(TMC5072TypeDef *tmc5072, uint8_t address);
-
-void tmc5072_init(TMC5072TypeDef *tmc5072, uint8_t channel, ConfigurationTypeDef *tmc5072_config, const int32_t *registerResetState);
-void tmc5072_fillShadowRegisters(TMC5072TypeDef *tmc5072); // For constant registers with hardware preset we cant determine actual value
-uint8_t tmc5072_reset(TMC5072TypeDef *tmc5072);
-uint8_t tmc5072_restore(TMC5072TypeDef *tmc5072);
-void tmc5072_setRegisterResetState(TMC5072TypeDef *tmc5072, const int32_t *resetState);
-void tmc5072_setCallback(TMC5072TypeDef *tmc5072, tmc5072_callback callback);
-void tmc5072_periodicJob(TMC5072TypeDef *tmc5072, uint32_t tick);
-
-void tmc5072_rotate(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity);
-void tmc5072_right(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity);
-void tmc5072_left(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t velocity);
-void tmc5072_stop(TMC5072TypeDef *tmc5072, uint8_t motor);
-void tmc5072_moveTo(TMC5072TypeDef *tmc5072, uint8_t motor, int32_t position, uint32_t velocityMax);
-void tmc5072_moveBy(TMC5072TypeDef *tmc5072, uint8_t motor, uint32_t velocityMax, int32_t *ticks);
 
 /***************************************************************************************************************************************************/
 #endif /* TMC_IC_TMC5072_H_ */
