@@ -279,7 +279,7 @@ void tmc5272_periodicJob(TMC5272TypeDef *tmc5272, uint32_t tick)
 		for(uint8_t motor = 0; motor < TMC5272_MOTORS; motor++)
 		{
 			x = tmc5272_readRegister(motor, TMC5272_XACTUAL(motor));
-			tmc5272->velocity[motor] = (uint32_t) ((float32_t) (abs(x - tmc5272->oldX[motor]) / (float32_t) tickDiff) * (float32_t) 1048.576);
+			tmc5272->velocity[motor] = (uint32_t) ((float32_t) ((x - tmc5272->oldX[motor]) / (float32_t) tickDiff) * (float32_t) 1048.576);
 			tmc5272->oldX[motor] = x;
 		}
 		tmc5272->oldTick  = tick;
