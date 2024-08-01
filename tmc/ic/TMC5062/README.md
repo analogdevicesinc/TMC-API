@@ -32,6 +32,10 @@ Additionally, implement the following callback functions to access the chip via 
 The TMC5062 UART protocol uses an 8 bit CRC. For calculating this, a table-based algorithm is used. This table (tmcCRCTable_Poly7Reflected[256]) is 256 bytes big and identical across multiple different Trinamic chips (i.e. TMC2209).
 If multiple Trinamic chips are being used in the same project, avoiding redundant copies of this table could save memory. It is possible to substitute this CRC table with another CRC table.
 
+### Necessary hardware modification to use UART
+To use UART with the Eval-Kit: pin 39 (DIO17) and 40 (DIO18) should be connected with a 1k ohm resistor. Bend pin 39 (DIO17) on the EVAl Board side of the Eselsbrücke out.
+Optional: Bend pin 41 (DIO19) out and connect it to 3.3V / 2= 1.65V. You can reach this by making a volage-divider with two 1k ohm resistors. One to 3.3V and one to GND. This can improve the signal quality.
+
 ## Accessing the TMC5062 via SPI
 The following diagram depicts how to access the TMC5062 via SPI using the TMC-API.
 
