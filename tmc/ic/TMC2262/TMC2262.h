@@ -69,14 +69,6 @@ static inline void tmc2262_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 #include "tmc/helpers/API_Header.h"
 
-// Typedefs
-typedef struct
-{
-	ConfigurationTypeDef *config;
-	int32_t velocity, oldX;
-	uint32_t oldTick;
-	uint8_t slaveAddress;
-} TMC2262TypeDef;
 
 void tmc2262_init(TMC2262TypeDef *tmc2262, uint8_t channel, ConfigurationTypeDef *config);
 uint8_t tmc2262_reset(TMC2262TypeDef *tmc2262);
