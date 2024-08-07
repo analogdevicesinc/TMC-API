@@ -65,18 +65,5 @@ static inline void tmc2262_fieldWrite(uint16_t icID, RegisterField field, uint32
     tmc2262_writeRegister(icID, field.address, regValue);
 }
 
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-
-#include "tmc/helpers/API_Header.h"
-
-
-void tmc2262_init(TMC2262TypeDef *tmc2262, uint8_t channel, ConfigurationTypeDef *config);
-uint8_t tmc2262_reset(TMC2262TypeDef *tmc2262);
-uint8_t tmc2262_restore(TMC2262TypeDef *tmc2262);
-uint8_t tmc2262_getSlaveAddress(TMC2262TypeDef *tmc2262);
-void tmc2262_setSlaveAddress(TMC2262TypeDef *tmc2262, uint8_t slaveAddress);
-void tmc2262_periodicJob(TMC2262TypeDef *tmc2262, uint32_t tick);
-
-uint8_t tmc2262_consistencyCheck(TMC2262TypeDef *tmc2262);
 
 #endif /* TMC_IC_TMC2262_H_ */
