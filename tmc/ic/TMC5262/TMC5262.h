@@ -68,31 +68,6 @@ static inline void tmc5262_fieldWrite(uint16_t icID, RegisterField field, uint32
 
     tmc5262_writeRegister(icID, field.address, regValue);
 }
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-#include "tmc/helpers/API_Header.h"
-
-// Factor between 10ms units and internal units for 16MHz
-//#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
-// TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
-
-
-// Default Register values
-#define R0B 0x65FF  // PLLs
-
-void tmc5262_init(TMC5262TypeDef *tmc5262, uint8_t channel, ConfigurationTypeDef *config);
-//void tmc5262_fillShadowRegisters(TMC5262TypeDef *tmc5262);
-uint8_t tmc5262_reset(TMC5262TypeDef *tmc5262);
-uint8_t tmc5262_restore(TMC5262TypeDef *tmc5262);
-uint8_t tmc5262_getSlaveAddress(TMC5262TypeDef *tmc5262);
-void tmc5262_setSlaveAddress(TMC5262TypeDef *tmc5262, uint8_t slaveAddress);
-void tmc5262_periodicJob(TMC5262TypeDef *tmc5262, uint32_t tick);
-
-void tmc5262_rotate(TMC5262TypeDef *tmc5262, int32_t velocity);
-void tmc5262_right(TMC5262TypeDef *tmc5262, uint32_t velocity);
-void tmc5262_left(TMC5262TypeDef *tmc5262, uint32_t velocity);
-void tmc5262_stop(TMC5262TypeDef *tmc5262);
-void tmc5262_moveTo(TMC5262TypeDef *tmc5262, int32_t position, uint32_t velocityMax);
-void tmc5262_moveBy(TMC5262TypeDef *tmc5262, int32_t *ticks, uint32_t velocityMax);
 
 #endif /* TMC_IC_TMC5262_H_ */
