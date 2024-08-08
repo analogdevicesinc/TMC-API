@@ -63,7 +63,7 @@ void tmc5262_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
         return;
 
     tmc5262_writeRegister(icID, TMC5262_VMAX, (velocity < 0) ? -velocity : velocity);
-    field_write(icID, TMC5262_RAMPMODE_FIELD, (velocity >= 0) ? TMC5262_MODE_VELPOS : TMC5262_MODE_VELNEG);
+    tmc5262_fieldWrite(icID, TMC5262_RAMPMODE_FIELD, (velocity >= 0) ? TMC5262_MODE_VELPOS : TMC5262_MODE_VELNEG);
 }
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
