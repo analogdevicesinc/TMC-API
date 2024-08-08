@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
 * Copyright © 2024 Analog Devices Inc. All Rights Reserved.
@@ -53,6 +53,7 @@
 #define R70 0xC44C001E  // PWMCONF
 #define R74 0x00000000  // PWMCONF
 
+
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_UART,
@@ -66,6 +67,7 @@ typedef struct
     uint8_t address;
     bool isSigned;
 } RegisterField;
+
 // => TMC-API wrapper
 extern void tmc5271_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
 extern bool tmc5271_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
