@@ -76,14 +76,6 @@ static inline void tmc5262_fieldWrite(uint16_t icID, RegisterField field, uint32
 //#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
 // TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
 
-// Typedefs
-typedef struct
-{
-	ConfigurationTypeDef *config;
-	int32_t velocity, oldX;
-	uint32_t oldTick;
-	uint8_t slaveAddress;
-} TMC5262TypeDef;
 
 // Default Register values
 #define R0B 0x65FF  // PLLs
