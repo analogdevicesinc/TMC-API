@@ -159,7 +159,7 @@ void tmc5271_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
         return;
 
     tmc5271_writeRegister(icID, TMC5271_VMAX, (velocity < 0) ? -velocity : velocity);
-    field_write(icID, TMC5271_RAMPMODE_FIELD, (velocity >= 0) ? TMC5271_MODE_VELPOS : TMC5271_MODE_VELNEG);
+    tmc5271_fieldWrite(icID, TMC5271_RAMPMODE_FIELD, (velocity >= 0) ? TMC5271_MODE_VELPOS : TMC5271_MODE_VELNEG);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
