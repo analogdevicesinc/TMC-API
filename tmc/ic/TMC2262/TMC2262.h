@@ -12,7 +12,6 @@
 #include <stddef.h>
 #include "TMC2262_HW_Abstraction.h"
 
-#define DEFAULT_MOTOR  0
 
 // => TMC-API wrapper
 extern void tmc2262_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
