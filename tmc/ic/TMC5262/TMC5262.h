@@ -15,7 +15,8 @@
 #include <stddef.h>
 #include "TMC5262_HW_Abstraction.h"
 
-#define DEFAULT_MOTOR  0
+// Default Register values
+#define R0B 0x65FF  // PLLs
 
 // => TMC-API wrapper
 extern void tmc5262_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
