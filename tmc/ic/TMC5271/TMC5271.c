@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
 * Copyright © 2024 Analog Devices Inc. All Rights Reserved.
@@ -76,13 +76,13 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
     uint8_t data[5] = { 0 };
 
     // clear write bit
-    data[0] = address & TMC_ADDRESS_MASK;
+    data[0] = address & TMC5271_ADDRESS_MASK;
 
     // Send the read request
     tmc5271_readWriteSPI(icID, &data[0], sizeof(data));
 
     // Rewrite address and clear write bit
-    data[0] = address & TMC_ADDRESS_MASK;
+    data[0] = address & TMC5271_ADDRESS_MASK;
 
     // Send another request to receive the read reply
     tmc5271_readWriteSPI(icID, &data[0], sizeof(data));
@@ -94,7 +94,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 {
     uint8_t data[5] = { 0 };
 
-    data[0] = address | TMC_WRITE_BIT;
+    data[0] = address | TMC5271_WRITE_BIT;
     data[1] = 0xFF & (value>>24);
     data[2] = 0xFF & (value>>16);
     data[3] = 0xFF & (value>>8);
@@ -108,7 +108,7 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 {
     uint8_t data[8] = { 0 };
 
-    registerAddress = registerAddress & TMC_ADDRESS_MASK;
+    registerAddress = registerAddress & TMC5271_ADDRESS_MASK;
 
     data[0] = 0x05;
     data[1] = tmc5271_getNodeAddress(icID); //targetAddressUart;
@@ -134,7 +134,7 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
     if (data[7] != CRC8(data, 7))
         return 0;
 
-    return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
+    return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | ((uint32_t)data[5] << 8) | data[6];
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
@@ -143,7 +143,7 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 
     data[0] = 0x05;
     data[1] = (uint8_t)tmc5271_getNodeAddress(icID); //targetAddressUart;
-    data[2] = registerAddress | TMC_WRITE_BIT;
+    data[2] = registerAddress | TMC5271_WRITE_BIT;
     data[3] = (value >> 24) & 0xFF;
     data[4] = (value >> 16) & 0xFF;
     data[5] = (value >> 8 ) & 0xFF;
@@ -159,7 +159,7 @@ void tmc5271_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
         return;
 
     tmc5271_writeRegister(icID, TMC5271_VMAX, (velocity < 0) ? -velocity : velocity);
-    field_write(icID, TMC5271_RAMPMODE_FIELD, (velocity >= 0) ? TMC5271_MODE_VELPOS : TMC5271_MODE_VELNEG);
+    tmc5271_fieldWrite(icID, TMC5271_RAMPMODE_FIELD, (velocity >= 0) ? TMC5271_MODE_VELPOS : TMC5271_MODE_VELNEG);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
@@ -179,138 +179,4 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
     result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
 
     return result;
-}
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-// Initialize a TMC5271 IC.
-// This function requires:
-//     - tmc5271: The pointer to a TMC5271TypeDef struct, which represents one IC
-//     - channel: The channel index, which will be sent back in the SPI callback
-//     - config: A ConfigurationTypeDef struct, which will be used by the IC
-//     - registerResetState: An int32_t array with 128 elements. This holds the values to be used for a reset.
-void tmc5271_init(TMC5271TypeDef *tmc5271, uint8_t channel, ConfigurationTypeDef *config)
-{
-	for(uint8_t motor = 0; motor < TMC5271_MOTORS; motor++)
-	{
-		tmc5271->velocity[motor] = 0;
-		tmc5271->oldX[motor] = 0;
-	}
-
-	tmc5271->config               = config;
-	tmc5271->config->callback     = NULL;
-	tmc5271->config->channel      = channel;
-	tmc5271->config->configIndex  = 0;
-	tmc5271->config->state        = CONFIG_READY;
-
-}
-
-// Reset the TMC5271.
-uint8_t tmc5271_reset(TMC5271TypeDef *tmc5271)
-{
-	if(tmc5271->config->state != CONFIG_READY)
-		return false;
-
-	tmc5271->config->state        = CONFIG_RESET;
-	tmc5271->config->configIndex  = 0;
-
-	return true;
-}
-
-// Register a function to be called after completion of the configuration mechanism
-void tmc5271_setCallback(TMC5271TypeDef *tmc5271, tmc5271_callback callback)
-{
-	tmc5271->config->callback = (tmc_callback_config) callback;
-}
-uint8_t tmc5271_getSlaveAddress(TMC5271TypeDef *tmc5271)
-{
-	return tmc5271->slaveAddress;
-}
-
-void tmc5271_setSlaveAddress(TMC5271TypeDef *tmc5271, uint8_t slaveAddress)
-{
-	tmc5271->slaveAddress = slaveAddress;
-}
-// Helper function: Configure the next register.
-static void writeConfiguration(TMC5271TypeDef *tmc5271)
-{
-	UNUSED(tmc5271);
-	tmc5271->config->state = CONFIG_READY;
-}
-
-// Call this periodically
-void tmc5271_periodicJob(TMC5271TypeDef *tmc5271, uint32_t tick)
-{
-	uint32_t tickDiff;
-
-	if(tmc5271->config->state != CONFIG_READY)
-	{
-		writeConfiguration(tmc5271);
-		return;
-	}
-
-	int32_t x;
-
-	// Calculate velocity v = dx/dt
-	if((tickDiff = tick - tmc5271->oldTick) >= 5)
-	{
-		for(uint8_t motor = 0; motor < TMC5271_MOTORS; motor++)
-		{
-			x = tmc5271_readRegister(motor, TMC5271_XACTUAL);
-			tmc5271->velocity[motor] = (uint32_t) ((float32_t) ((x - tmc5271->oldX[motor]) / (float32_t) tickDiff) * (float32_t) 1048.576);
-			tmc5271->oldX[motor] = x;
-		}
-		tmc5271->oldTick  = tick;
-	}
-}
-
-
-void tmc5271_rotate(TMC5271TypeDef *tmc5271, uint8_t motor, int32_t velocity)
-{
-	if(motor >= TMC5271_MOTORS)
-		return;
-
-	tmc5271_writeRegister(motor, TMC5271_VMAX, abs(velocity));
-	field_write(motor, TMC5271_RAMPMODE_FIELD,  (velocity >= 0) ? TMC5271_MODE_VELPOS : TMC5271_MODE_VELNEG);
-
-}
-
-void tmc5271_right(TMC5271TypeDef *tmc5271, uint8_t motor, int32_t velocity)
-{
-	return tmc5271_rotate(tmc5271, motor, velocity);
-}
-
-void tmc5271_left(TMC5271TypeDef *tmc5271, uint8_t motor, int32_t velocity)
-{
-	return tmc5271_rotate(tmc5271, motor, -velocity);
-}
-
-void tmc5271_stop(TMC5271TypeDef *tmc5271, uint8_t motor)
-{
-	return tmc5271_rotate(tmc5271, motor, 0);
-}
-
-void tmc5271_moveTo(TMC5271TypeDef *tmc5271, uint8_t motor, int32_t position, uint32_t velocityMax)
-{
-	if(motor >= TMC5271_MOTORS)
-		return;
-
-	field_write(motor, TMC5271_RAMPMODE_FIELD, TMC5271_MODE_POSITION);
-
-	tmc5271_writeRegister(motor, TMC5271_VMAX, velocityMax);
-	tmc5271_writeRegister(motor, TMC5271_XTARGET, position);
-}
-
-void tmc5271_moveBy(TMC5271TypeDef *tmc5271, uint8_t motor, uint32_t velocityMax, int32_t *ticks)
-{
-	// determine actual position and add numbers of ticks to move
-	*ticks += tmc5271_readRegister(motor, TMC5271_XACTUAL);
-
-	return tmc5271_moveTo(tmc5271, motor, *ticks, velocityMax);
-}
-
-
-uint8_t tmc5271_consistencyCheck(TMC5271TypeDef *tmc5271)
-{
-	if(tmc5271->config->state != CONFIG_READY)
-		return 0;
-	return 0;
 }
