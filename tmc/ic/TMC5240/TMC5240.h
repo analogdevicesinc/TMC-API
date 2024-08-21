@@ -9,20 +9,22 @@
 #ifndef TMC_IC_TMC5240_H_
 #define TMC_IC_TMC5240_H_
 
+#include "TMC5240_HW_Abstraction.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+
+/*******************************************************************************
+* API Configuration Defines
+* These control optional features of the TMC-API implementation.
+* These can be commented in/out here or defined from the build system.
+*******************************************************************************/
+
 // Uncomment if you want to save space.....
 // and put the table into your own .c file
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
 
-#include "tmc/helpers/API_Header.h"
-#include "TMC5240_HW_Abstraction.h"
-
-// Factor between 10ms units and internal units for 16MHz
-//#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
-// TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
-
-// Amount of CRC tables available
-// Each table takes ~260 bytes (257 bytes, one bool and structure padding)
-#define CRC_TABLE_COUNT 2
+/******************************************************************************/
 
 typedef enum {
     IC_BUS_SPI,
@@ -30,6 +32,13 @@ typedef enum {
     IC_BUS_WLAN
 } TMC5240BusType;
 
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
 // => TMC-API wrapper
 extern void tmc5240_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
 extern bool tmc5240_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
@@ -40,14 +49,6 @@ extern uint8_t tmc5240_getNodeAddress(uint16_t icID);
 int32_t tmc5240_readRegister(uint16_t icID, uint8_t address);
 void tmc5240_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 void tmc5240_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
-
-typedef struct
-{
-    uint32_t mask;
-    uint8_t shift;
-    uint8_t address;
-    bool isSigned;
-} RegisterField;
 
 
 static inline uint32_t tmc5240_fieldExtract(uint32_t data, RegisterField field)
@@ -85,10 +86,7 @@ static inline void tmc5240_fieldWrite(uint16_t icID, RegisterField field, uint32
     tmc5240_writeRegister(icID, field.address, regValue);
 }
 
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-#include "tmc/helpers/API_Header.h"
-
-
+/**************************************************************** DEFAULT REGISTER VALUES *************************************************************************/
 
 // Default Register values
 #define R00 0x00000008  // GCONF
