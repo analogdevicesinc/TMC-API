@@ -1,8 +1,8 @@
 /*******************************************************************************
-* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -39,6 +39,8 @@ typedef struct
     uint8_t address;
     bool isSigned;
 } RegisterField;
+
+
 // => TMC-API wrapper
 extern void tmc5240_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
 extern bool tmc5240_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
@@ -96,9 +98,7 @@ static inline void tmc5240_fieldWrite(uint16_t icID, RegisterField field, uint32
 #define R2A 0x0000000A  // D1
 #define R2B 0x0000000A  // VSTOP
 #define R30 0x0000000A  // D2
-
 #define R3A 0x00010000  // ENC_CONST
-
 #define R52 0x0B920F25  // OTW_OV_VTH
 #define R60 0xAAAAB554  // MSLUT[0]
 #define R61 0x4A9554AA  // MSLUT[1]
@@ -110,7 +110,6 @@ static inline void tmc5240_fieldWrite(uint16_t icID, RegisterField field, uint32
 #define R67 0x00404222  // MSLUT[7]
 #define R68 0xFFFF8056  // MSLUT[8]
 #define R69 0x00F70000  // MSLUT[9]
-
 #define R6C 0x00410153  // CHOPCONF
 #define R70 0xC44C001E  // PWMCONF
 #define R74 0x00000000  // PWMCONF
@@ -159,6 +158,6 @@ static const uint8_t tmc5240_registerAccess[TMC5240_REGISTER_COUNT] =
 	0x03, 0x01, 0x01, ____, 0x03, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-
 /*******************************************************************************************************************************************************************/
+
 #endif /* TMC_IC_TMC5240_H_ */
