@@ -88,16 +88,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 #include "tmc/helpers/API_Header.h"
 
-// Typedefs
-typedef struct
-{
-	ConfigurationTypeDef *config;
-	int32_t velocity, oldX;
-	uint32_t oldTick;
-	int32_t registerResetState[TMC5240_REGISTER_COUNT];
-	uint8_t registerAccess[TMC5240_REGISTER_COUNT];
-	uint8_t slaveAddress;
-} TMC5240TypeDef;
 
 typedef void (*tmc5240_callback)(TMC5240TypeDef*, ConfigState);
 
