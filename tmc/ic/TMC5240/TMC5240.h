@@ -89,7 +89,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 #include "tmc/helpers/API_Header.h"
 
 
-typedef void (*tmc5240_callback)(TMC5240TypeDef*, ConfigState);
 
 // Default Register values
 #define R00 0x00000008  // GCONF
@@ -152,35 +151,6 @@ static const uint8_t tmc5240_defaultRegisterAccess[TMC5240_REGISTER_COUNT] =
 	0x03, 0x01, 0x01, ____, 0x03, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-// Register constants (only required for 0x42 registers, since we do not have
-// any way to find out the content but want to hold the actual value in the
-// shadow register so an application (i.e. the TMCL IDE) can still display
-// the values. This only works when the register content is constant.
-static const TMCRegisterConstant tmc5240_RegisterConstants[] =
-{		// Use ascending addresses!
-		///
-};
-
-//void tmc5240_writeDatagram(TMC5240TypeDef *tmc5240, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc5240_writeInt(TMC5240TypeDef *tmc5240, uint8_t address, int32_t value);
-int32_t tmc5240_readInt(TMC5240TypeDef *tmc5240, uint8_t address);
-
-void tmc5240_init(TMC5240TypeDef *tmc5240, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-//void tmc5240_fillShadowRegisters(TMC5240TypeDef *tmc5240);
-uint8_t tmc5240_reset(TMC5240TypeDef *tmc5240);
-uint8_t tmc5240_restore(TMC5240TypeDef *tmc5240);
-uint8_t tmc5240_getSlaveAddress(TMC5240TypeDef *tmc5240);
-void tmc5240_setSlaveAddress(TMC5240TypeDef *tmc5240, uint8_t slaveAddress);
-void tmc5240_setRegisterResetState(TMC5240TypeDef *tmc5240, const int32_t *resetState);
-void tmc5240_setCallback(TMC5240TypeDef *tmc5240, tmc5240_callback callback);
-void tmc5240_periodicJob(TMC5240TypeDef *tmc5240, uint32_t tick);
-
-void tmc5240_rotate(TMC5240TypeDef *tmc5240, int32_t velocity);
-void tmc5240_right(TMC5240TypeDef *tmc5240, uint32_t velocity);
-void tmc5240_left(TMC5240TypeDef *tmc5240, uint32_t velocity);
-void tmc5240_stop(TMC5240TypeDef *tmc5240);
-void tmc5240_moveTo(TMC5240TypeDef *tmc5240, int32_t position, uint32_t velocityMax);
-void tmc5240_moveBy(TMC5240TypeDef *tmc5240, int32_t *ticks, uint32_t velocityMax);
 
 /*******************************************************************************************************************************************************************/
 #endif /* TMC_IC_TMC5240_H_ */
