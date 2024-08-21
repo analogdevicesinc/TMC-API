@@ -17,7 +17,7 @@
 #define TMC_ADDRESS_MASK         0x7F
 #define TMC5240_MAX_VELOCITY     8388096
 #define TMC5240_MAX_ACCELERATION u16_MAX
-#define DEFAULT_MOTOR            0
+#define DEFAULT_ICID            0
 
 // ramp modes (Register TMC5240_RAMPMODE)
 #define TMC5240_MODE_POSITION  0
