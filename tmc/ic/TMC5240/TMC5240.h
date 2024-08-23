@@ -1,43 +1,94 @@
 /*******************************************************************************
-* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
-
 
 #ifndef TMC_IC_TMC5240_H_
 #define TMC_IC_TMC5240_H_
 
-#include "tmc/helpers/API_Header.h"
-#include "tmc/helpers/Constants.h"
-#include "../TMC5240/TMC5240_Register.h"
-#include "TMC5240_Constants.h"
-#include "../TMC5240/TMC5240_Fields.h"
+#include "TMC5240_HW_Abstraction.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 
-// Helper macros
-#define TMC5240_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc5240_readInt(tdef, address), mask, shift)
-#define TMC5240_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc5240_writeInt(tdef, address, FIELD_SET(tmc5240_readInt(tdef, address), mask, shift, value)))
+/*******************************************************************************
+* API Configuration Defines
+* These control optional features of the TMC-API implementation.
+* These can be commented in/out here or defined from the build system.
+*******************************************************************************/
 
-// Factor between 10ms units and internal units for 16MHz
-//#define TPOWERDOWN_FACTOR (4.17792*100.0/255.0)
-// TPOWERDOWN_FACTOR = k * 100 / 255 where k = 2^18 * 255 / fClk for fClk = 16000000)
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
 
-// Typedefs
+/******************************************************************************/
+
+typedef enum {
+    IC_BUS_SPI,
+    IC_BUS_UART,
+    IC_BUS_WLAN
+} TMC5240BusType;
+
 typedef struct
 {
-	ConfigurationTypeDef *config;
-	int32_t velocity, oldX;
-	uint32_t oldTick;
-	int32_t registerResetState[TMC5240_REGISTER_COUNT];
-	uint8_t registerAccess[TMC5240_REGISTER_COUNT];
-	uint8_t slaveAddress;
-} TMC5240TypeDef;
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
 
-typedef void (*tmc5240_callback)(TMC5240TypeDef*, ConfigState);
+
+// => TMC-API wrapper
+extern void tmc5240_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc5240_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5240BusType tmc5240_getBusType(uint16_t icID);
+extern uint8_t tmc5240_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc5240_readRegister(uint16_t icID, uint8_t address);
+void tmc5240_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5240_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+
+
+static inline uint32_t tmc5240_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply sign conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc5240_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc5240_readRegister(icID, field.address);
+    return tmc5240_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc5240_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc5240_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc5240_readRegister(icID, field.address);
+
+    regValue = tmc5240_fieldUpdate(regValue, field, value);
+
+    tmc5240_writeRegister(icID, field.address, regValue);
+}
+
+/**************************************************************** DEFAULT REGISTER VALUES *************************************************************************/
 
 // Default Register values
 #define R00 0x00000008  // GCONF
@@ -47,9 +98,7 @@ typedef void (*tmc5240_callback)(TMC5240TypeDef*, ConfigState);
 #define R2A 0x0000000A  // D1
 #define R2B 0x0000000A  // VSTOP
 #define R30 0x0000000A  // D2
-
 #define R3A 0x00010000  // ENC_CONST
-
 #define R52 0x0B920F25  // OTW_OV_VTH
 #define R60 0xAAAAB554  // MSLUT[0]
 #define R61 0x4A9554AA  // MSLUT[1]
@@ -61,12 +110,21 @@ typedef void (*tmc5240_callback)(TMC5240TypeDef*, ConfigState);
 #define R67 0x00404222  // MSLUT[7]
 #define R68 0xFFFF8056  // MSLUT[8]
 #define R69 0x00F70000  // MSLUT[9]
-
 #define R6C 0x00410153  // CHOPCONF
 #define R70 0xC44C001E  // PWMCONF
 #define R74 0x00000000  // PWMCONF
 
-static const int32_t tmc5240_defaultRegisterResetState[TMC5240_REGISTER_COUNT] =
+#define ____ 0x00
+#define N_A 0x00
+
+#define TMC5240_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
+#define TMC5240_ACCESS_READ        0x01
+#define TMC_ACCESS_W_PRESET        0x42
+#define TMC5240_IS_READABLE(x)     ((x) & TMC5240_ACCESS_READ)
+#define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
+
+
+static const int32_t tmc5240_sampleRegisterPreset[TMC5240_REGISTER_COUNT] =
 {
 //	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
 	R00, 0,   0,   0,   0,   0,   0,   0,   0,   0,   R0A,   0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -87,7 +145,7 @@ static const int32_t tmc5240_defaultRegisterResetState[TMC5240_REGISTER_COUNT] =
 //   0x13: read/write, separate functions/values for reading or writing
 //   0x23: read/write, flag register (write to clear)
 //   0x42: write, has hardware presets on reset
-static const uint8_t tmc5240_defaultRegisterAccess[TMC5240_REGISTER_COUNT] =
+static const uint8_t tmc5240_registerAccess[TMC5240_REGISTER_COUNT] =
 {
 //	0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x23, 0x01, 0x03, 0x03, 0x03, 0x03, ____, ____, ____, 0x03, 0x03, ____, ____, ____, ____, // 0x00 - 0x0F
@@ -100,34 +158,6 @@ static const uint8_t tmc5240_defaultRegisterAccess[TMC5240_REGISTER_COUNT] =
 	0x03, 0x01, 0x01, ____, 0x03, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-// Register constants (only required for 0x42 registers, since we do not have
-// any way to find out the content but want to hold the actual value in the
-// shadow register so an application (i.e. the TMCL IDE) can still display
-// the values. This only works when the register content is constant.
-static const TMCRegisterConstant tmc5240_RegisterConstants[] =
-{		// Use ascending addresses!
-		///
-};
-
-//void tmc5240_writeDatagram(TMC5240TypeDef *tmc5240, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc5240_writeInt(TMC5240TypeDef *tmc5240, uint8_t address, int32_t value);
-int32_t tmc5240_readInt(TMC5240TypeDef *tmc5240, uint8_t address);
-
-void tmc5240_init(TMC5240TypeDef *tmc5240, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-//void tmc5240_fillShadowRegisters(TMC5240TypeDef *tmc5240);
-uint8_t tmc5240_reset(TMC5240TypeDef *tmc5240);
-uint8_t tmc5240_restore(TMC5240TypeDef *tmc5240);
-uint8_t tmc5240_getSlaveAddress(TMC5240TypeDef *tmc5240);
-void tmc5240_setSlaveAddress(TMC5240TypeDef *tmc5240, uint8_t slaveAddress);
-void tmc5240_setRegisterResetState(TMC5240TypeDef *tmc5240, const int32_t *resetState);
-void tmc5240_setCallback(TMC5240TypeDef *tmc5240, tmc5240_callback callback);
-void tmc5240_periodicJob(TMC5240TypeDef *tmc5240, uint32_t tick);
-
-void tmc5240_rotate(TMC5240TypeDef *tmc5240, int32_t velocity);
-void tmc5240_right(TMC5240TypeDef *tmc5240, uint32_t velocity);
-void tmc5240_left(TMC5240TypeDef *tmc5240, uint32_t velocity);
-void tmc5240_stop(TMC5240TypeDef *tmc5240);
-void tmc5240_moveTo(TMC5240TypeDef *tmc5240, int32_t position, uint32_t velocityMax);
-void tmc5240_moveBy(TMC5240TypeDef *tmc5240, int32_t *ticks, uint32_t velocityMax);
+/*******************************************************************************************************************************************************************/
 
 #endif /* TMC_IC_TMC5240_H_ */
