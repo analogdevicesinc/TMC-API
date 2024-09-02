@@ -1,8 +1,8 @@
 /*******************************************************************************
-* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -35,7 +35,6 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 /**************************************************************** Cache Implementation *************************************************************************/
 #if TMC2225_CACHE == 0
 static inline bool tmc2225_cache(uint16_t icID, TMC2225CacheOp operation, uint8_t address, uint32_t *value)
-
 {
     UNUSED(icID);
     UNUSED(address);
