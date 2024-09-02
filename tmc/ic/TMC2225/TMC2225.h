@@ -95,19 +95,6 @@ static inline void tmc2225_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 #if TMC2225_CACHE == 1
 #if TMC2225_ENABLE_TMC_CACHE == 1
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-
-#include "tmc/helpers/API_Header.h"
-
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-	ConfigurationTypeDef *config;
-	int32_t registerResetState[TMC2225_REGISTER_COUNT];
-	uint8_t registerAccess[TMC2225_REGISTER_COUNT];
-	uint8_t slave_address;
-} TMC2225TypeDef;
-
-extern TMC2225TypeDef TMC2225;
 
 // By default, support one IC in the cache
 #ifndef TMC2225_IC_CACHE_COUNT
@@ -124,7 +111,6 @@ typedef enum {
    // operation, a restore will *not* rewrite that filled register!
    TMC2225_CACHE_FILL_DEFAULT
 } TMC2225CacheOp;
-typedef void (*tmc2225_callback)(TMC2225TypeDef*, ConfigState);
 
 // Default Register values
 #define R00 0x000000C1  // GCONF
@@ -182,15 +168,6 @@ bool tmc2225_getDirtyBit(uint16_t icID, uint8_t index);
 extern bool tmc2225_cache(uint16_t icID, TMC2225CacheOp operation, uint8_t address, uint32_t *value);
 #endif
 #endif
-void tmc2225_init(TMC2225TypeDef *tmc2225, uint8_t channel, ConfigurationTypeDef *tmc2225_config, const int32_t *registerResetState);
-uint8_t tmc2225_reset(TMC2225TypeDef *tmc2225);
-uint8_t tmc2225_restore(TMC2225TypeDef *tmc2225);
-void tmc2225_setRegisterResetState(TMC2225TypeDef *tmc2225, const int32_t *resetState);
-void tmc2225_setCallback(TMC2225TypeDef *tmc2225, tmc2225_callback callback);
-void tmc2225_periodicJob(TMC2225TypeDef *tmc2225, uint32_t tick);
-
-uint8_t tmc2225_get_slave(TMC2225TypeDef *tmc2225);
-void tmc2225_set_slave(TMC2225TypeDef *tmc2225, uint8_t slave);
 /***************************************************************************************************************************************************/
 
 #endif /* TMC_IC_TMC2225_H_ */

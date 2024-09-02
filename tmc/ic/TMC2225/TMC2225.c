@@ -9,7 +9,6 @@
 
 #include "TMC2225.h"
 
-TMC2225TypeDef TMC2225;
 
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];
@@ -160,7 +159,6 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
     // Byte 0: Sync nibble correct?
     if (data[0] != 0x05)
         return 0;
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
     // Byte 1: Master address correct?
     if (data[1] != 0xFF)
@@ -169,95 +167,17 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
     // Byte 2: Address correct?
     if (data[2] != registerAddress)
         return 0;
-void tmc2225_init(TMC2225TypeDef *tmc2225, uint8_t channel, ConfigurationTypeDef *tmc2225_config, const int32_t *registerResetState)
-{
-	tmc2225->config               = tmc2225_config;
-	tmc2225->config->callback     = NULL;
-	tmc2225->config->channel      = channel;
-	tmc2225->config->configIndex  = 0;
-	tmc2225->config->state        = CONFIG_READY;
-
-	for(size_t i = 0; i < TMC2225_REGISTER_COUNT; i++)
-	{
-		tmc2225->registerAccess[i]      = tmc2225_defaultRegisterAccess[i];
-		tmc2225->registerResetState[i]  = registerResetState[i];
-	}
-}
 
     // Byte 7: CRC correct?
     if (data[7] != CRC8(data, 7))
         return 0;
-static void writeConfiguration(TMC2225TypeDef *tmc2225)
-{
-	uint8_t *ptr = &tmc2225->config->configIndex;
-	const int32_t *settings;
-
-	if(tmc2225->config->state == CONFIG_RESTORE)
-	{
-		settings = tmc2225->config->shadowRegister;
-		// Find the next restorable register
-		while((*ptr < TMC2225_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc2225->registerAccess[*ptr]))
-		{
-			(*ptr)++;
-		}
-	}
-	else
-	{
-		settings = tmc2225->registerResetState;
-		// Find the next resettable register
-		while((*ptr < TMC2225_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc2225->registerAccess[*ptr]))
-		{
-			(*ptr)++;
-		}
-	}
-
-	if(*ptr < TMC2225_REGISTER_COUNT)
-	{
-		tmc2225_writeRegister(tmc2225, *ptr, settings[*ptr]);
-		(*ptr)++;
-	}
-	else // Finished configuration
-	{
-		if(tmc2225->config->callback)
-		{
-			((tmc2225_callback)tmc2225->config->callback)(tmc2225, tmc2225->config->state);
-		}
-
-		tmc2225->config->state = CONFIG_READY;
-	}
-}
 
     return ((uint32_t) data[3] << 24) | ((uint32_t) data[4] << 16) | ((uint32_t) data[5] << 8) | data[6];
-void tmc2225_periodicJob(TMC2225TypeDef *tmc2225, uint32_t tick)
-{
-	UNUSED(tick);
-
-	if(tmc2225->config->state != CONFIG_READY)
-	{
-		writeConfiguration(tmc2225);
-		return;
-	}
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
-void tmc2225_setRegisterResetState(TMC2225TypeDef *tmc2225, const int32_t *resetState)
-{
-	for(size_t i = 0; i < TMC2225_REGISTER_COUNT; i++)
-	{
-		tmc2225->registerResetState[i] = resetState[i];
-	}
-}
-
-void tmc2225_setCallback(TMC2225TypeDef *tmc2225, tmc2225_callback callback)
-{
-	tmc2225->config->callback = (tmc_callback_config) callback;
-}
-
-uint8_t tmc2225_reset(TMC2225TypeDef *tmc2225)
 {
     uint8_t data[8];
-	if(tmc2225->config->state != CONFIG_READY)
-		return false;
 
     data[0] = 0x05;
     data[1] = tmc2225_getNodeAddress(icID);
@@ -267,36 +187,19 @@ uint8_t tmc2225_reset(TMC2225TypeDef *tmc2225)
     data[5] = (value >> 8) & 0xFF;
     data[6] = (value) & 0xFF;
     data[7] = CRC8(data, 7);
-	// Reset the dirty bits and wipe the shadow registers
-	for(size_t i = 0; i < TMC2225_REGISTER_COUNT; i++)
-	{
-		tmc2225->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
-		tmc2225->config->shadowRegister[i] = 0;
-	}
 
     tmc2225_readWriteUART(icID, &data[0], 8, 0);
-	tmc2225->config->state        = CONFIG_RESET;
-	tmc2225->config->configIndex  = 0;
 
     //Cache the registers with write-only access
     tmc2225_cache(icID, TMC2225_CACHE_WRITE, registerAddress, &value);
-	return true;
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
-uint8_t tmc2225_restore(TMC2225TypeDef *tmc2225)
 {
     uint8_t result = 0;
     uint8_t *table;
-	if(tmc2225->config->state != CONFIG_READY)
-		return false;
-
-	tmc2225->config->state        = CONFIG_RESTORE;
-	tmc2225->config->configIndex  = 0;
 
     while (bytes--) result = tmcCRCTable_Poly7Reflected[result ^ *data++];
-	return true;
-}
 
     // Flip the result around
     // swap odd and even bits
@@ -305,13 +208,6 @@ uint8_t tmc2225_restore(TMC2225TypeDef *tmc2225)
     result = ((result >> 2) & 0x33) | ((result & 0x33) << 2);
     // swap nibbles ...
     result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
-void tmc2225_set_slave(TMC2225TypeDef *tmc2225, uint8_t slave)
-{
-	tmc2225->slave_address = slave;
-}
 
     return result;
-uint8_t tmc2225_get_slave(TMC2225TypeDef *tmc2225)
-{
-	return tmc2225->slave_address;
 }
