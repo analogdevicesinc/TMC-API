@@ -33,7 +33,93 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 			0xB4, 0x25, 0x57, 0xC6, 0xB3, 0x22, 0x50, 0xC1, 0xBA, 0x2B, 0x59, 0xC8, 0xBD, 0x2C, 0x5E, 0xCF,
 };
 #endif
+/**************************************************************** Cache Implementation *************************************************************************/
+#if TMC2225_CACHE == 0
+static inline bool tmc2225_cache(uint16_t icID, TMC2225CacheOp operation, uint8_t address, uint32_t *value)
 
+{
+    UNUSED(icID);
+    UNUSED(address);
+    UNUSED(operation);
+    return false;
+}
+#else
+#if TMC2225_ENABLE_TMC_CACHE == 1
+uint8_t tmc2225_dirtyBits[TMC2225_IC_CACHE_COUNT][TMC2225_REGISTER_COUNT/8]= {0};
+int32_t tmc2225_shadowRegister[TMC2225_IC_CACHE_COUNT][TMC2225_REGISTER_COUNT];
+
+void tmc2225_setDirtyBit(uint16_t icID, uint8_t index, bool value)
+{
+    if(index >= TMC2225_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp = &tmc2225_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
+}
+
+bool tmc2225_getDirtyBit(uint16_t icID, uint8_t index)
+{
+   if(index >= TMC2225_REGISTER_COUNT)
+       return false;
+
+   uint8_t *tmp = &tmc2225_dirtyBits[icID][index / 8];
+   uint8_t shift = (index % 8);
+   return ((*tmp) >> shift) & 1;
+ }
+
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+bool tmc2225_cache(uint16_t icID, TMC2225CacheOp operation, uint8_t address, uint32_t *value)
+{
+    if (operation == TMC2225_CACHE_READ)
+    {
+        // Check if the value should come from cache
+
+        // Only supported chips have a cache
+        if (icID >= TMC2225_IC_CACHE_COUNT)
+            return false;
+
+        // Only non-readable registers care about caching
+        // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+        if (TMC2225_IS_READABLE(tmc2225_registerAccess[address]))
+            return false;
+
+        // Grab the value from the cache
+        *value = tmc2225_shadowRegister[icID][address];
+        return true;
+    }
+    else if (operation == TMC2225_CACHE_WRITE || operation == TMC2225_CACHE_FILL_DEFAULT)
+    {
+        // Fill the cache
+
+        // only supported chips have a cache
+        if (icID >= TMC2225_IC_CACHE_COUNT)
+            return false;
+
+        // Write to the shadow register and mark the register dirty
+        tmc2225_shadowRegister[icID][address] = *value;
+
+        if (operation == TMC2225_CACHE_WRITE)
+        {
+            tmc2225_setDirtyBit(icID, address, true);
+        }
+
+        return true;
+    }
+    return false;
+}
+
+#else
+// User must implement their own cache
+extern bool tmc2225_cache(uint16_t icID, TMC2225CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
+/************************************************************** Register read / write Implementation ******************************************************************/
 static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
 static void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
@@ -41,95 +127,48 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
 int32_t tmc2225_readRegister(uint16_t icID, uint8_t address)
 {
-		return readRegisterUART(icID, address);
+    uint32_t value;
+
+    // Read from cache for registers with write-only access
+    if (tmc2225_cache(icID, TMC2225_CACHE_READ, address, &value))
+        return value;
+
+    return readRegisterUART(icID, address);
 
 	// ToDo: Error handling
 }
 
 void tmc2225_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
-		writeRegisterUART(icID, address, value);
+    writeRegisterUART(icID, address, value);
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 {
-	uint8_t data[8] = { 0 };
+    uint8_t data[8] = {0};
 
-	registerAddress = registerAddress & TMC2225_ADDRESS_MASK;
+    registerAddress = registerAddress & TMC2225_ADDRESS_MASK;
 
-		if (!TMC_IS_READABLE(TMC2225.registerAccess[registerAddress]))
-			return TMC2225.config->shadowRegister[registerAddress];
+    data[0] = 0x05;
+    data[1] = tmc2225_getNodeAddress(icID);
+    data[2] = registerAddress;
+    data[3] = CRC8(data, 3);
 
-	data[0] = 0x05;
-	data[1] = tmc2225_getNodeAddress(icID);
-	data[2] = registerAddress;
-	data[3] = CRC8(data, 3);
+    if (!tmc2225_readWriteUART(icID, &data[0], 4, 8))
+        return 0;
 
-	if (!tmc2225_readWriteUART(icID, &data[0], 4, 8))
-		return 0;
-
-	// Byte 0: Sync nibble correct?
-	if (data[0] != 0x05)
-		return 0;
-
-	// Byte 1: Master address correct?
-	if (data[1] != 0xFF)
-		return 0;
-
-	// Byte 2: Address correct?
-	if (data[2] != registerAddress)
-		return 0;
-
-	// Byte 7: CRC correct?
-	if (data[7] != CRC8(data, 7))
-		return 0;
-
-	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
-}
-
-void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
-{
-	uint8_t data[8];
-
-	data[0] = 0x05;
-	data[1] = tmc2225_getNodeAddress(icID);
-	data[2] = registerAddress | TMC2225_WRITE_BIT;
-	data[3] = (value >> 24) & 0xFF;
-	data[4] = (value >> 16) & 0xFF;
-	data[5] = (value >> 8 ) & 0xFF;
-	data[6] = (value      ) & 0xFF;
-	data[7] = CRC8(data, 7);
-
-	tmc2225_readWriteUART(icID, &data[0], 8, 0);
-
-	// Write to the shadow register and mark the register dirty
-	registerAddress = TMC_ADDRESS(registerAddress);
-	TMC2225.config->shadowRegister[registerAddress] = value;
-	TMC2225.registerAccess[registerAddress] |= TMC_ACCESS_DIRTY;
-}
-
-static uint8_t CRC8(uint8_t *data, uint32_t bytes)
-{
-	uint8_t result = 0;
-	uint8_t *table;
-
-	while(bytes--)
-		result = tmcCRCTable_Poly7Reflected[result ^ *data++];
-
-	// Flip the result around
-	// swap odd and even bits
-	result = ((result >> 1) & 0x55) | ((result & 0x55) << 1);
-	// swap consecutive pairs
-	result = ((result >> 2) & 0x33) | ((result & 0x33) << 2);
-	// swap nibbles ...
-	result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
-
-	return result;
-}
-
+    // Byte 0: Sync nibble correct?
+    if (data[0] != 0x05)
+        return 0;
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
+    // Byte 1: Master address correct?
+    if (data[1] != 0xFF)
+        return 0;
 
+    // Byte 2: Address correct?
+    if (data[2] != registerAddress)
+        return 0;
 void tmc2225_init(TMC2225TypeDef *tmc2225, uint8_t channel, ConfigurationTypeDef *tmc2225_config, const int32_t *registerResetState)
 {
 	tmc2225->config               = tmc2225_config;
@@ -145,6 +184,9 @@ void tmc2225_init(TMC2225TypeDef *tmc2225, uint8_t channel, ConfigurationTypeDef
 	}
 }
 
+    // Byte 7: CRC correct?
+    if (data[7] != CRC8(data, 7))
+        return 0;
 static void writeConfiguration(TMC2225TypeDef *tmc2225)
 {
 	uint8_t *ptr = &tmc2225->config->configIndex;
@@ -185,6 +227,7 @@ static void writeConfiguration(TMC2225TypeDef *tmc2225)
 	}
 }
 
+    return ((uint32_t) data[3] << 24) | ((uint32_t) data[4] << 16) | ((uint32_t) data[5] << 8) | data[6];
 void tmc2225_periodicJob(TMC2225TypeDef *tmc2225, uint32_t tick)
 {
 	UNUSED(tick);
@@ -196,6 +239,7 @@ void tmc2225_periodicJob(TMC2225TypeDef *tmc2225, uint32_t tick)
 	}
 }
 
+void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 void tmc2225_setRegisterResetState(TMC2225TypeDef *tmc2225, const int32_t *resetState)
 {
 	for(size_t i = 0; i < TMC2225_REGISTER_COUNT; i++)
@@ -211,9 +255,18 @@ void tmc2225_setCallback(TMC2225TypeDef *tmc2225, tmc2225_callback callback)
 
 uint8_t tmc2225_reset(TMC2225TypeDef *tmc2225)
 {
+    uint8_t data[8];
 	if(tmc2225->config->state != CONFIG_READY)
 		return false;
 
+    data[0] = 0x05;
+    data[1] = tmc2225_getNodeAddress(icID);
+    data[2] = registerAddress | TMC2225_WRITE_BIT;
+    data[3] = (value >> 24) & 0xFF;
+    data[4] = (value >> 16) & 0xFF;
+    data[5] = (value >> 8) & 0xFF;
+    data[6] = (value) & 0xFF;
+    data[7] = CRC8(data, 7);
 	// Reset the dirty bits and wipe the shadow registers
 	for(size_t i = 0; i < TMC2225_REGISTER_COUNT; i++)
 	{
@@ -221,28 +274,43 @@ uint8_t tmc2225_reset(TMC2225TypeDef *tmc2225)
 		tmc2225->config->shadowRegister[i] = 0;
 	}
 
+    tmc2225_readWriteUART(icID, &data[0], 8, 0);
 	tmc2225->config->state        = CONFIG_RESET;
 	tmc2225->config->configIndex  = 0;
 
+    //Cache the registers with write-only access
+    tmc2225_cache(icID, TMC2225_CACHE_WRITE, registerAddress, &value);
 	return true;
 }
 
+static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 uint8_t tmc2225_restore(TMC2225TypeDef *tmc2225)
 {
+    uint8_t result = 0;
+    uint8_t *table;
 	if(tmc2225->config->state != CONFIG_READY)
 		return false;
 
 	tmc2225->config->state        = CONFIG_RESTORE;
 	tmc2225->config->configIndex  = 0;
 
+    while (bytes--) result = tmcCRCTable_Poly7Reflected[result ^ *data++];
 	return true;
 }
 
+    // Flip the result around
+    // swap odd and even bits
+    result = ((result >> 1) & 0x55) | ((result & 0x55) << 1);
+    // swap consecutive pairs
+    result = ((result >> 2) & 0x33) | ((result & 0x33) << 2);
+    // swap nibbles ...
+    result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
 void tmc2225_set_slave(TMC2225TypeDef *tmc2225, uint8_t slave)
 {
 	tmc2225->slave_address = slave;
 }
 
+    return result;
 uint8_t tmc2225_get_slave(TMC2225TypeDef *tmc2225)
 {
 	return tmc2225->slave_address;
