@@ -16,8 +16,15 @@
 #include "TMC2224_HW_Abstraction.h"
 #include "tmc/helpers/API_Header.h"
 
+// => TMC-API wrapper
+extern bool tmc2224_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern uint8_t tmc2224_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
 int32_t tmc2224_readRegister(uint16_t icID, uint8_t address);
 void tmc2224_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
+
 // Default Register values
 #define R00 0x00000141  // GCONF
 #define R10 0x00001F00  // IHOLD_IRUN
