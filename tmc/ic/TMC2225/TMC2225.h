@@ -37,14 +37,8 @@
 #define TMC2225_ENABLE_TMC_CACHE   1
 //#define TMC2225_ENABLE_TMC_CACHE   0
 #endif
-// => TMC-API wrapper
-extern bool tmc2225_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
-extern uint8_t tmc2225_getNodeAddress(uint16_t icID);
-// => TMC-API wrapper
 
 /******************************************************************************/
-int32_t tmc2225_readRegister(uint16_t icID, uint8_t address);
-void tmc2225_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
 typedef struct
 {
@@ -54,7 +48,15 @@ typedef struct
     bool isSigned;
 } RegisterField;
 
-static inline uint32_t tmc2225_field_extract(uint32_t data, RegisterField field)
+// => TMC-API wrapper
+extern bool tmc2225_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern uint8_t tmc2225_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc2225_readRegister(uint16_t icID, uint8_t address);
+void tmc2225_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
+
 static inline uint32_t tmc2225_fieldExtract(uint32_t data, RegisterField field)
 {
     uint32_t value = (data & field.mask) >> field.shift;
@@ -112,6 +114,13 @@ typedef enum {
    TMC2225_CACHE_FILL_DEFAULT
 } TMC2225CacheOp;
 
+#define TMC2225_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
+#define TMC2225_ACCESS_READ        0x01
+#define TMC_ACCESS_W_PRESET        0x42
+#define TMC2225_IS_READABLE(x)    ((x) & TMC2225_ACCESS_READ)
+#define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
+#define ____ 0x00
+
 // Default Register values
 #define R00 0x000000C1  // GCONF
 #define R10 0x00071703  // IHOLD_IRUN
@@ -168,6 +177,7 @@ bool tmc2225_getDirtyBit(uint16_t icID, uint8_t index);
 extern bool tmc2225_cache(uint16_t icID, TMC2225CacheOp operation, uint8_t address, uint32_t *value);
 #endif
 #endif
+
 /***************************************************************************************************************************************************/
 
 #endif /* TMC_IC_TMC2225_H_ */
