@@ -24,6 +24,50 @@ extern uint8_t tmc2224_getNodeAddress(uint16_t icID);
 int32_t tmc2224_readRegister(uint16_t icID, uint8_t address);
 void tmc2224_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t tmc2224_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc2224_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc2224_readRegister(icID, field.address);
+
+    return tmc2224_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc2224_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc2224_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc2224_readRegister(icID, field.address);
+
+    regValue = tmc2224_fieldUpdate(regValue, field, value);
+
+    tmc2224_writeRegister(icID, field.address, regValue);
+}
+
 
 // Default Register values
 #define R00 0x00000141  // GCONF
