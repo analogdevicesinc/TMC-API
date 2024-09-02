@@ -76,18 +76,6 @@ static inline void tmc2224_fieldWrite(uint16_t icID, RegisterField field, uint32
 #define R6C 0x10000053  // CHOPCONF
 #define R70 0xC10D0024  // PWMCONF
 
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-    ConfigurationTypeDef *config;
-    int32_t velocity;
-    int32_t oldX;
-    uint32_t oldTick;
-    int32_t registerResetState[TMC2224_REGISTER_COUNT];
-    uint8_t registerAccess[TMC2224_REGISTER_COUNT];
-    bool vMaxModified;
-    uint8_t slave;
-} TMC2224TypeDef;
-extern TMC2224TypeDef TMC2224;
 
 /* Register access permissions:
  * 0: none (reserved)
