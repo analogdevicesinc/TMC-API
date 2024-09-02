@@ -117,12 +117,5 @@ static const int32_t tmc2224_defaultRegisterResetState[TMC2224_REGISTER_COUNT] =
 #undef R6C
 #undef R70
 
-void tmc2224_initConfig(TMC2224TypeDef *TMC2224);
-void tmc2224_periodicJob(uint8_t motor, uint32_t tick, TMC2224TypeDef *TMC2224, ConfigurationTypeDef *TMC2224_config);
-uint8_t tmc2224_reset(TMC2224TypeDef *tmc2224, ConfigurationTypeDef *TMC2224_config);
-uint8_t tmc2224_restore(ConfigurationTypeDef *TMC2224_config);
-
-uint8_t tmc2224_get_slave(TMC2224TypeDef *tmc2224);
-void tmc2224_set_slave(TMC2224TypeDef *tmc2224, uint8_t slave);
 
 #endif /* TMC_IC_TMC2224_H_ */
