@@ -1,8 +1,8 @@
 /*******************************************************************************
-* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -33,6 +33,91 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 };
 #endif
 
+/**************************************************************** Cache Implementation *************************************************************************/
+
+#if TMC2224_CACHE == 0
+static inline bool tmc2224_cache(uint16_t icID, TMC2224CacheOp operation, uint8_t address, uint32_t *value)
+{
+    UNUSED(icID);
+    UNUSED(address);
+    UNUSED(operation);
+    return false;
+}
+#else
+#if TMC2224_ENABLE_TMC_CACHE == 1
+uint8_t tmc2224_dirtyBits[TMC2224_IC_CACHE_COUNT][TMC2224_REGISTER_COUNT/8]= {0};
+int32_t tmc2224_shadowRegister[TMC2224_IC_CACHE_COUNT][TMC2224_REGISTER_COUNT];
+
+void tmc2224_setDirtyBit(uint16_t icID, uint8_t index, bool value)
+{
+    if(index >= TMC2224_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp = &tmc2224_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
+}
+
+bool tmc2224_getDirtyBit(uint16_t icID, uint8_t index)
+{
+    if(index >= TMC2224_REGISTER_COUNT)
+        return false;
+
+    uint8_t *tmp = &tmc2224_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    return ((*tmp) >> shift) & 1;
+}
+
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+bool tmc2224_cache(uint16_t icID, TMC2224CacheOp operation, uint8_t address, uint32_t *value)
+{
+    if (operation == TMC2224_CACHE_READ)
+    {
+        // Check if the value should come from cache
+
+        // Only supported chips have a cache
+        if (icID >= TMC2224_IC_CACHE_COUNT)
+            return false;
+
+        // Only non-readable registers care about caching
+        // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+        if (TMC2224_IS_READABLE(tmc2224_registerAccess[address]))
+            return false;
+
+        // Grab the value from the cache
+        *value = tmc2224_shadowRegister[icID][address];
+        return true;
+    }
+    else if (operation == TMC2224_CACHE_WRITE || operation == TMC2224_CACHE_FILL_DEFAULT)
+    {
+        // Fill the cache
+
+        // only supported chips have a cache
+        if (icID >= TMC2224_IC_CACHE_COUNT)
+            return false;
+
+        // Write to the shadow register and mark the register dirty
+        tmc2224_shadowRegister[icID][address] = *value;
+        if (operation == TMC2224_CACHE_WRITE)
+        {
+            tmc2224_setDirtyBit(icID, address, true);
+        }
+        return true;
+    }
+    return false;
+}
+#else
+// User must implement their own cache
+extern bool tmc2224_cache(uint16_t icID, TMC2224CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
+/************************************************************** Register read / write Implementation ******************************************************************/
+
 static int32_t readRegisterUART(uint16_t icID, uint8_t address);
 static void writeRegisterUART(uint16_t icID ,uint8_t address, int32_t value);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
@@ -45,16 +130,17 @@ void tmc2224_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 
 int32_t tmc2224_readRegister(uint16_t icID, uint8_t address)
 {
+    uint32_t value;
+
+    // Read from cache for registers with write-only access
+    if (tmc2224_cache(icID, TMC2224_CACHE_READ, address, &value))
+        return value;
+
     return readRegisterUART(icID, (uint8_t) address);
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t address)
 {
-     uint32_t value;
-
-     if (!TMC_IS_READABLE(TMC2224.registerAccess[address]))
-             return TMC2224.config->shadowRegister[address];
-
     uint8_t data[8] = { 0 };
 
     address = address & TMC2224_ADDRESS_MASK;
@@ -91,7 +177,7 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
 
     data[0] = 0x05;
     data[1] = (uint8_t)tmc2224_getNodeAddress(icID); //targetAddressUart;
-    data[2] = address | TMC_WRITE_BIT;
+    data[2] = address | TMC2224_WRITE_BIT;
     data[3] = (value >> 24) & 0xFF;
     data[4] = (value >> 16) & 0xFF;
     data[5] = (value >> 8 ) & 0xFF;
@@ -100,16 +186,13 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
 
     tmc2224_readWriteUART(icID, &data[0], 8, 0);
 
-    // Write to the shadow register and mark the register dirty
-    address = TMC_ADDRESS(address);
-    TMC2224.config->shadowRegister[address] = value;
-    TMC2224.registerAccess[address] |= TMC_ACCESS_DIRTY;
+    //Cache the registers with write-only access
+    tmc2224_cache(icID, TMC2224_CACHE_WRITE, address, &value);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
     uint8_t result = 0;
-    uint8_t *table;
 
     while(bytes--)
         result = tmcCRCTable_Poly7Reflected[result ^ *data++];
