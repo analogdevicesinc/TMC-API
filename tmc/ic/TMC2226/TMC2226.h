@@ -76,19 +76,10 @@ static inline void tmc2226_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 #include "tmc/helpers/API_Header.h"
 
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-	ConfigurationTypeDef *config;
 
-	int32_t registerResetState[TMC2226_REGISTER_COUNT];
-	uint8_t registerAccess[TMC2226_REGISTER_COUNT];
 
-	uint8_t slaveAddress;
-} TMC2226TypeDef;
 
-extern TMC2226TypeDef TMC2226;
 
-typedef void (*tmc2226_callback)(TMC2226TypeDef*, ConfigState);
 
 // Default Register values
 #define R00 0x000001C1  // GCONF
@@ -152,11 +143,5 @@ static const TMCRegisterConstant tmc2226_RegisterConstants[] =
 #undef R6C
 #undef R70
 
-void tmc2226_init(TMC2226TypeDef *tmc2226, uint8_t channel, uint8_t slaveAddress, ConfigurationTypeDef *tmc2226_config, const int32_t *registerResetState);
-uint8_t tmc2226_reset(TMC2226TypeDef *tmc2226);
-uint8_t tmc2226_restore(TMC2226TypeDef *tmc2226);
-void tmc2226_setRegisterResetState(TMC2226TypeDef *tmc2226, const int32_t *resetState);
-void tmc2226_setCallback(TMC2226TypeDef *tmc2226, tmc2226_callback callback);
-void tmc2226_periodicJob(TMC2226TypeDef *tmc2226, uint32_t tick);
 
 #endif /* TMC_IC_TMC2226_H_ */

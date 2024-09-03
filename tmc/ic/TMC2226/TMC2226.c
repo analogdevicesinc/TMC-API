@@ -9,7 +9,6 @@
 
 #include "TMC2226.h"
 
-TMC2226TypeDef TMC2226;
 
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];
@@ -128,112 +127,19 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 	return result;
 }
 
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-void tmc2226_init(TMC2226TypeDef *tmc2226, uint8_t channel, uint8_t slaveAddress, ConfigurationTypeDef *tmc2226_config, const int32_t *registerResetState)
-{
-	tmc2226->slaveAddress = slaveAddress;
 
-	tmc2226->config               = tmc2226_config;
-	tmc2226->config->callback     = NULL;
-	tmc2226->config->channel      = channel;
-	tmc2226->config->configIndex  = 0;
-	tmc2226->config->state        = CONFIG_READY;
 
-	for(size_t i = 0; i < TMC2226_REGISTER_COUNT; i++)
-	{
-		tmc2226->registerAccess[i]      = tmc2226_defaultRegisterAccess[i];
-		tmc2226->registerResetState[i]  = registerResetState[i];
-	}
+
 }
 
-static void writeConfiguration(TMC2226TypeDef *tmc2226)
 {
-	uint8_t *ptr = &tmc2226->config->configIndex;
-	const int32_t *settings;
 
-	if(tmc2226->config->state == CONFIG_RESTORE)
-	{
-		settings = tmc2226->config->shadowRegister;
-		// Find the next restorable register
-		while((*ptr < TMC2226_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc2226->registerAccess[*ptr]))
-		{
-			(*ptr)++;
-		}
-	}
-	else
-	{
-		settings = tmc2226->registerResetState;
-		// Find the next resettable register
-		while((*ptr < TMC2226_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc2226->registerAccess[*ptr]))
-		{
-			(*ptr)++;
-		}
-	}
 
-	if(*ptr < TMC2226_REGISTER_COUNT)
-	{
-		tmc2226_writeRegister(tmc2226, *ptr, settings[*ptr]);
-		(*ptr)++;
-	}
-	else // Finished configuration
-	{
-		if(tmc2226->config->callback)
-		{
-			((tmc2226_callback)tmc2226->config->callback)(tmc2226, tmc2226->config->state);
-		}
 
-		tmc2226->config->state = CONFIG_READY;
-	}
 }
 
-void tmc2226_periodicJob(TMC2226TypeDef *tmc2226, uint32_t tick)
 {
-	UNUSED(tick);
 
-	if(tmc2226->config->state != CONFIG_READY)
-	{
-		writeConfiguration(tmc2226);
-		return;
-	}
-}
 
-void tmc2226_setRegisterResetState(TMC2226TypeDef *tmc2226, const int32_t *resetState)
-{
-	for(size_t i = 0; i < TMC2226_REGISTER_COUNT; i++)
-		tmc2226->registerResetState[i] = resetState[i];
-}
-
-void tmc2226_setCallback(TMC2226TypeDef *tmc2226, tmc2226_callback callback)
-{
-	tmc2226->config->callback = (tmc_callback_config) callback;
-}
-
-uint8_t tmc2226_reset(TMC2226TypeDef *tmc2226)
-{
-	if(tmc2226->config->state != CONFIG_READY)
-		return false;
-
-	// Reset the dirty bits and wipe the shadow registers
-	for(size_t i = 0; i < TMC2226_REGISTER_COUNT; i++)
-	{
-		tmc2226->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
-		tmc2226->config->shadowRegister[i] = 0;
-	}
-
-	tmc2226->config->state        = CONFIG_RESET;
-	tmc2226->config->configIndex  = 0;
-
-	return true;
-}
-
-uint8_t tmc2226_restore(TMC2226TypeDef *tmc2226)
-{
-	if(tmc2226->config->state != CONFIG_READY)
-		return false;
-
-	tmc2226->config->state        = CONFIG_RESTORE;
-	tmc2226->config->configIndex  = 0;
-
-	return true;
 }
