@@ -39,8 +39,6 @@
 #endif
 
 /******************************************************************************/
-int32_t tmc2226_readRegister(uint16_t icID, uint8_t address);
-void tmc2226_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
 typedef struct
 {
@@ -49,6 +47,15 @@ typedef struct
     uint8_t address;
     bool isSigned;
 } RegisterField;
+
+// => TMC-API wrapper
+extern bool tmc2226_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern uint8_t tmc2226_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc2226_readRegister(uint16_t icID, uint8_t address);
+void tmc2226_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
 
 static inline uint32_t tmc2226_fieldExtract(uint32_t data, RegisterField field)
 {
@@ -86,11 +93,10 @@ static inline void tmc2226_fieldWrite(uint16_t icID, RegisterField field, uint32
     tmc2226_writeRegister(icID, field.address, regValue);
 }
 
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+/**************************************************************** Cache Implementation *************************************************************************/
 
 #if TMC2226_CACHE == 1
 #if TMC2226_ENABLE_TMC_CACHE == 1
-#include "tmc/helpers/API_Header.h"
 
 // By default, support one IC in the cache
 #ifndef TMC2226_IC_CACHE_COUNT
@@ -110,7 +116,18 @@ typedef enum
 
 } TMC2226CacheOp;
 
+typedef struct
+{
+    uint8_t address;
+    uint32_t value;
+} TMC2226RegisterConstants;
 
+#define TMC2226_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
+#define TMC2226_ACCESS_READ        0x01
+#define TMC_ACCESS_W_PRESET        0x42
+#define TMC2226_IS_READABLE(x)     ((x) & TMC2226_ACCESS_READ)
+#define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
+#define ____ 0x00
 
 // Default Register values
 #define R00 0x000001C1  // GCONF
@@ -169,9 +186,6 @@ static const TMC2226RegisterConstants tmc2226_RegisterConstants[] =
 		{ 0x11, 0x00000014 }, // TPOWERDOWN
 };
 
-#undef R10
-#undef R6C
-#undef R70
 
 extern uint8_t tmc2226_dirtyBits[TMC2226_IC_CACHE_COUNT][TMC2226_REGISTER_COUNT/8];
 extern int32_t tmc2226_shadowRegister[TMC2226_IC_CACHE_COUNT][TMC2226_REGISTER_COUNT];
@@ -180,5 +194,7 @@ bool tmc2226_getDirtyBit(uint16_t icID, uint8_t index);
 extern bool tmc2226_cache(uint16_t icID, TMC2226CacheOp operation, uint8_t address, uint32_t *value);
 #endif
 #endif
+
+/***************************************************************************************************************************************************/
 
 #endif /* TMC_IC_TMC2226_H_ */
