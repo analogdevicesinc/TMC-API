@@ -20,11 +20,33 @@
 
 #include "TMC2226_HW_Abstraction.h"
 
+/*******************************************************************************
+* API Configuration Defines
+* These control optional features of the TMC-API implementation.
+* These can be commented in/out here or defined from the build system.
+*******************************************************************************/
 // => TMC-API wrapper
 extern bool tmc2226_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
 extern uint8_t tmc2226_getNodeAddress(uint16_t icID);
 // => TMC-API wrapper
 
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+#ifndef TMC2226_CACHE
+#define TMC2226_CACHE   1
+//#define TMC2226_CACHE   0
+#endif
+
+// To use the caching mechanism already implemented by the TMC-API, set TMC2226_ENABLE_TMC_CACHE to '1'.
+// Set TMC2226_ENABLE_TMC_CACHE to '0' if one wants to have their own cache implementation.
+#ifndef TMC2226_ENABLE_TMC_CACHE
+#define TMC2226_ENABLE_TMC_CACHE   1
+//#define TMC2226_ENABLE_TMC_CACHE   0
+#endif
+
+/******************************************************************************/
 int32_t tmc2226_readRegister(uint16_t icID, uint8_t address);
 void tmc2226_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
@@ -74,10 +96,27 @@ static inline void tmc2226_fieldWrite(uint16_t icID, RegisterField field, uint32
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
+#if TMC2226_CACHE == 1
+#if TMC2226_ENABLE_TMC_CACHE == 1
 #include "tmc/helpers/API_Header.h"
 
+// By default, support one IC in the cache
+#ifndef TMC2226_IC_CACHE_COUNT
+#define TMC2226_IC_CACHE_COUNT 1
+#endif
 
+typedef enum
+{
+   TMC2226_CACHE_READ,
+   TMC2226_CACHE_WRITE,
 
+   // Special operation: Put content into the cache without marking the entry as dirty.
+   // Only used to initialize the cache with hardware defaults. This will allow reading
+   // from write-only registers that have a value inside them on reset. When using this
+   // operation, a restore will *not* rewrite that filled register!
+   TMC2226_CACHE_FILL_DEFAULT
+
+} TMC2226CacheOp;
 
 
 
@@ -96,7 +135,7 @@ static inline void tmc2226_fieldWrite(uint16_t icID, RegisterField field, uint32
 //   0x23: read/write, flag register (write to clear)
 //   0x42: write, has hardware presets on reset
 //   0x42: read/write, has hardware presets on reset
-static const uint8_t tmc2226_defaultRegisterAccess[TMC2226_REGISTER_COUNT] =
+static const uint8_t tmc2226_registerAccess[TMC2226_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x23, 0x01, 0x02, 0x02, 0x01, 0x01, 0x43, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
@@ -109,7 +148,7 @@ static const uint8_t tmc2226_defaultRegisterAccess[TMC2226_REGISTER_COUNT] =
 	0x03, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-static const int32_t tmc2226_defaultRegisterResetState[TMC2226_REGISTER_COUNT] =
+static const int32_t tmc2226_sampleRegisterPreset[TMC2226_REGISTER_COUNT] =
 {
 //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 	R00, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -133,15 +172,21 @@ static const int32_t tmc2226_defaultRegisterResetState[TMC2226_REGISTER_COUNT] =
 // any way to find out the content but want to hold the actual value in the
 // shadow register so an application (i.e. the TMCL IDE) can still display
 // the values. This only works when the register content is constant.
-static const TMCRegisterConstant tmc2226_RegisterConstants[] =
+static const TMC2226RegisterConstants tmc2226_RegisterConstants[] =
 {		// Use ascending addresses!
 		{ 0x11, 0x00000014 }, // TPOWERDOWN
 };
 
-#undef R00
 #undef R10
 #undef R6C
 #undef R70
 
+extern uint8_t tmc2226_dirtyBits[TMC2226_IC_CACHE_COUNT][TMC2226_REGISTER_COUNT/8];
+extern int32_t tmc2226_shadowRegister[TMC2226_IC_CACHE_COUNT][TMC2226_REGISTER_COUNT];
+void tmc2226_setDirtyBit(uint16_t icID, uint8_t index, bool value);
+bool tmc2226_getDirtyBit(uint16_t icID, uint8_t index);
+extern bool tmc2226_cache(uint16_t icID, TMC2226CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
 
 #endif /* TMC_IC_TMC2226_H_ */
