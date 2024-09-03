@@ -1,8 +1,8 @@
 /*******************************************************************************
-* Copyright © 2020 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -10,14 +10,10 @@
 #ifndef TMC_IC_TMC2226_H_
 #define TMC_IC_TMC2226_H_
 
-// Uncomment if you want to save space.....
-// and put the table into your own .c file
-//#define TMC_API_EXTERNAL_CRC_TABLE 1
 
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-
 #include "TMC2226_HW_Abstraction.h"
 
 /*******************************************************************************
@@ -25,10 +21,6 @@
 * These control optional features of the TMC-API implementation.
 * These can be commented in/out here or defined from the build system.
 *******************************************************************************/
-// => TMC-API wrapper
-extern bool tmc2226_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
-extern uint8_t tmc2226_getNodeAddress(uint16_t icID);
-// => TMC-API wrapper
 
 // Uncomment if you want to save space.....
 // and put the table into your own .c file
