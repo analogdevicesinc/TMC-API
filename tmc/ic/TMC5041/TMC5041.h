@@ -2,8 +2,8 @@
 * Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2024 Analog Devices Inc. All Rights Reserved. This software is
-* proprietary & confidential to Analog Devices, Inc. and its licensors.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
+* This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
 
@@ -45,7 +45,7 @@ static inline uint32_t field_extract(uint32_t data, RegisterField field)
 
 static inline uint32_t field_read(uint16_t icID, RegisterField field)
 {
-	uint32_t value = tmc5041_readRegister(icID, field.address);
+    uint32_t value = tmc5041_readRegister(icID, field.address);
 
     return field_extract(value, field);
 }
@@ -57,9 +57,9 @@ static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t
 
 static inline void field_write(uint16_t icID, RegisterField field, uint32_t value)
 {
-	uint32_t regValue = tmc5041_readRegister(icID, field.address);
+    uint32_t regValue = tmc5041_readRegister(icID, field.address);
 
-	regValue = field_update(regValue, field, value);
+    regValue = field_update(regValue, field, value);
 
     tmc5041_writeRegister(icID, field.address, regValue);
 }
@@ -70,14 +70,14 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
-	ConfigurationTypeDef *config;
+    ConfigurationTypeDef *config;
 
-	int32_t velocity[2], oldX[2];
-	uint32_t oldTick;
+    int32_t velocity[2], oldX[2];
+    uint32_t oldTick;
 
-	int32_t registerResetState[TMC5041_REGISTER_COUNT];
-	uint8_t registerAccess[TMC5041_REGISTER_COUNT];
-	bool vMaxModified[2];
+    int32_t registerResetState[TMC5041_REGISTER_COUNT];
+    uint8_t registerAccess[TMC5041_REGISTER_COUNT];
+    bool vMaxModified[2];
 } TMC5041TypeDef;
 
 extern TMC5041TypeDef TMC5041;
@@ -109,27 +109,27 @@ extern TMC5041TypeDef TMC5041;
  * 7: read^write (separate functions/values)
  */
 static const uint8_t tmc5041_defaultRegisterAccess[TMC5041_REGISTER_COUNT] = {
-//	0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
-	3, 1, 0, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 00 - 0F
-	2, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, // 10 - 1F
-	3, 3, 1, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 3, 0, 0, // 20 - 2F
-	2, 2, 2, 0, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 30 - 3F
-	3, 3, 1, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 3, 0, 0, // 40 - 4F
-	2, 2, 2, 0, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 50 - 5F
-	2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 0, 1, // 60 - 6F
-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 3, 2, 0, 1  // 70 - 7F
+//    0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
+    3, 1, 0, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 00 - 0F
+    2, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, // 10 - 1F
+    3, 3, 1, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 3, 0, 0, // 20 - 2F
+    2, 2, 2, 0, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 30 - 3F
+    3, 3, 1, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 3, 0, 0, // 40 - 4F
+    2, 2, 2, 0, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 50 - 5F
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 0, 1, // 60 - 6F
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 3, 2, 0, 1  // 70 - 7F
 };
 
 static const int32_t tmc5041_defaultRegisterResetState[TMC5041_REGISTER_COUNT] = {
-//	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 00 - 0F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 10 - 1F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 20 - 2F
-	R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 30 - 3F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 40 - 4F
-	R50, 0,   R52, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 50 - 5F
-	R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0, // 60 - 6F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R7C, 0,   0,   0  // 70 - 7F
+//    0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 00 - 0F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 10 - 1F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 20 - 2F
+    R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 30 - 3F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 40 - 4F
+    R50, 0,   R52, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 50 - 5F
+    R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0, // 60 - 6F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   R7C, 0,   0,   0  // 70 - 7F
 };
 
 // Undefine the default register values.
