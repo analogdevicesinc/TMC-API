@@ -17,64 +17,64 @@ static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
 
 int32_t tmc5031_readRegister(uint16_t icID, uint8_t address)
 {
-		return readRegisterSPI(icID, address);
+        return readRegisterSPI(icID, address);
 
-	// ToDo: Error handling
+    // ToDo: Error handling
 }
 void tmc5031_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
-		writeRegisterSPI(icID, address, value);
+        writeRegisterSPI(icID, address, value);
 }
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 {
 
-	address = TMC_ADDRESS(address);
-	uint8_t data[5] = { 0 };
+    address = TMC_ADDRESS(address);
+    uint8_t data[5] = { 0 };
 
-	if(!TMC_IS_READABLE(TMC5031.registerAccess[address]))
-		return TMC5031_config->shadowRegister[address];
+    if(!TMC_IS_READABLE(TMC5031.registerAccess[address]))
+        return TMC5031_config->shadowRegister[address];
 
-	// clear write bit
-	data[0] = address;
+    // clear write bit
+    data[0] = address;
 
-	// Send the read request
-	tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
+    // Send the read request
+    tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
 
-	// Rewrite address and clear write bit
-	data[0] = address;
+    // Rewrite address and clear write bit
+    data[0] = address;
 
-	// Send another request to receive the read reply
-	tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
+    // Send another request to receive the read reply
+    tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
 
-	return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
+    return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
 }
 
 void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 {
-	uint8_t data[5] = { 0 };
+    uint8_t data[5] = { 0 };
 
-	data[0] = address | TMC5031_WRITE_BIT;
-	data[1] = 0xFF & (value>>24);
-	data[2] = 0xFF & (value>>16);
-	data[3] = 0xFF & (value>>8);
-	data[4] = 0xFF & (value>>0);
+    data[0] = address | TMC5031_WRITE_BIT;
+    data[1] = 0xFF & (value>>24);
+    data[2] = 0xFF & (value>>16);
+    data[3] = 0xFF & (value>>8);
+    data[4] = 0xFF & (value>>0);
 
-	// Send the write request
-	tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
+    // Send the write request
+    tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
 
-	// Write to the shadow register
-	address = TMC_ADDRESS(address);
-	TMC5031_config->shadowRegister[address] = value;
+    // Write to the shadow register
+    address = TMC_ADDRESS(address);
+    TMC5031_config->shadowRegister[address] = value;
 
 }
 void tmc5031_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 {
   if(motor >= TMC5031_MOTORS)
-		return;
+        return;
 
-	tmc5031_writeRegister(icID, TMC5031_VMAX(motor), (velocity >= 0)? velocity : -velocity);
-	tmc5031_field_write(icID, TMC5031_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5031_MODE_VELPOS : TMC5031_MODE_VELNEG);
+    tmc5031_writeRegister(icID, TMC5031_VMAX(motor), (velocity >= 0)? velocity : -velocity);
+    tmc5031_field_write(icID, TMC5031_RAMPMODE_FIELD(motor), (velocity >= 0) ? TMC5031_MODE_VELPOS : TMC5031_MODE_VELNEG);
 }
 
 
@@ -105,27 +105,27 @@ void tmc5031_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
  * 7: read^write (separate functions/values)
  */
 const uint8_t tmc5031_defaultRegisterAccess[TMC5031_REGISTER_COUNT] = {
-//	0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
-	3, 1, 1, 2, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 0x00 - 0x0F
-	2, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, // 0x10 - 0x1F
-	3, 3, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 0, 0, // 0x20 - 0x2F
-	2, 2, 2, 2, 3, 1, 1, 0, 3, 3, 2, 1, 1, 0, 0, 0, // 0x30 - 0x3F
-	3, 3, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 0, 0, // 0x40 - 0x4F
-	2, 2, 2, 2, 3, 1, 1, 0, 3, 3, 2, 1, 1, 0, 0, 0, // 0x50 - 0x5F
-	2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 1, // 0x60 - 0x6F
-	2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 1  // 0x70 - 0x7F
+//    0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
+    3, 1, 1, 2, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 0x00 - 0x0F
+    2, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, // 0x10 - 0x1F
+    3, 3, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 0, 0, // 0x20 - 0x2F
+    2, 2, 2, 2, 3, 1, 1, 0, 3, 3, 2, 1, 1, 0, 0, 0, // 0x30 - 0x3F
+    3, 3, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 0, 0, // 0x40 - 0x4F
+    2, 2, 2, 2, 3, 1, 1, 0, 3, 3, 2, 1, 1, 0, 0, 0, // 0x50 - 0x5F
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 1, // 0x60 - 0x6F
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 1  // 0x70 - 0x7F
 };
 
 const int32_t tmc5031_defaultRegisterResetState[TMC5031_REGISTER_COUNT] = {
-//	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
-	R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x30 - 0x3F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
-	R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x50 - 0x5F
-	R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
-	R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0  // 0x70 - 0x7F
+//    0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
+    R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x30 - 0x3F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
+    R30, 0,   R32, 0,   0,   0,   0,   0,   0,   0,   R3A, 0,   0,   0,   0,   0, // 0x50 - 0x5F
+    R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0, // 0x60 - 0x6F
+    R60, R61, R62, R63, R64, R65, R66, R67, R68, R69, 0,   0,   R6C, 0,   0,   0  // 0x70 - 0x7F
 };
 
 // Undefine the default register values.
@@ -148,93 +148,93 @@ const int32_t tmc5031_defaultRegisterResetState[TMC5031_REGISTER_COUNT] = {
 
 void tmc5031_initConfig(TMC5031TypeDef *tmc5031)
 {
-	tmc5031->velocity[0]      = 0;
-	tmc5031->velocity[1]      = 0;
-	tmc5031->oldTick          = 0;
-	tmc5031->oldX[0]          = 0;
-	tmc5031->oldX[1]          = 0;
-	tmc5031->vMaxModified[0]  = false;
-	tmc5031->vMaxModified[1]  = false;
+    tmc5031->velocity[0]      = 0;
+    tmc5031->velocity[1]      = 0;
+    tmc5031->oldTick          = 0;
+    tmc5031->oldX[0]          = 0;
+    tmc5031->oldX[1]          = 0;
+    tmc5031->vMaxModified[0]  = false;
+    tmc5031->vMaxModified[1]  = false;
 
-	int32_t i;
-	for(i = 0; i < TMC5031_REGISTER_COUNT; i++)
-	{
-		tmc5031->registerAccess[i]      = tmc5031_defaultRegisterAccess[i];
-		tmc5031->registerResetState[i]  = tmc5031_defaultRegisterResetState[i];
-	}
+    int32_t i;
+    for(i = 0; i < TMC5031_REGISTER_COUNT; i++)
+    {
+        tmc5031->registerAccess[i]      = tmc5031_defaultRegisterAccess[i];
+        tmc5031->registerResetState[i]  = tmc5031_defaultRegisterResetState[i];
+    }
 }
 
 void tmc5031_writeConfiguration(TMC5031TypeDef *tmc5031, ConfigurationTypeDef *TMC5031_config)
 {
-	uint8_t *ptr = &TMC5031_config->configIndex;
-	const int32_t *settings = (TMC5031_config->state == CONFIG_RESTORE) ? TMC5031_config->shadowRegister : tmc5031->registerResetState;
+    uint8_t *ptr = &TMC5031_config->configIndex;
+    const int32_t *settings = (TMC5031_config->state == CONFIG_RESTORE) ? TMC5031_config->shadowRegister : tmc5031->registerResetState;
 
-	while((*ptr < TMC5031_REGISTER_COUNT) && !TMC_IS_WRITABLE(tmc5031->registerAccess[*ptr]))
-		(*ptr)++;
+    while((*ptr < TMC5031_REGISTER_COUNT) && !TMC_IS_WRITABLE(tmc5031->registerAccess[*ptr]))
+        (*ptr)++;
 
-	if(*ptr < TMC5031_REGISTER_COUNT)
-	{
-		tmc5031_writeRegister(0, *ptr, settings[*ptr]);
-		(*ptr)++;
-	}
-	else
-	{
-		TMC5031_config->state = CONFIG_READY;
-	}
+    if(*ptr < TMC5031_REGISTER_COUNT)
+    {
+        tmc5031_writeRegister(0, *ptr, settings[*ptr]);
+        (*ptr)++;
+    }
+    else
+    {
+        TMC5031_config->state = CONFIG_READY;
+    }
 }
 
 void tmc5031_periodicJob(uint8_t motor, uint32_t tick, TMC5031TypeDef *tmc5031, ConfigurationTypeDef *TMC5031_config)
 {
-	int32_t xActual;
-	uint32_t tickDiff;
+    int32_t xActual;
+    uint32_t tickDiff;
 
-	if(TMC5031_config->state != CONFIG_READY)
-	{
-		tmc5031_writeConfiguration(tmc5031, TMC5031_config);
-		return;
-	}
+    if(TMC5031_config->state != CONFIG_READY)
+    {
+        tmc5031_writeConfiguration(tmc5031, TMC5031_config);
+        return;
+    }
 
-	if((tickDiff = tick - tmc5031->oldTick) >= 5)
-	{
-		xActual = tmc5031_readRegister(0, TMC5031_XACTUAL(motor));
-		TMC5031_config->shadowRegister[TMC5031_XACTUAL(motor)] = xActual;
-		tmc5031->velocity[motor] = (int32_t) ((float) (abs(xActual-tmc5031->oldX[motor]) / (float) tickDiff) * (float) 1048.576);
-		if(tmc5031_readRegister(0, TMC5031_VACTUAL(motor))<0) tmc5031->velocity[motor] *= -1;
-		tmc5031->oldX[motor] = xActual;
+    if((tickDiff = tick - tmc5031->oldTick) >= 5)
+    {
+        xActual = tmc5031_readRegister(0, TMC5031_XACTUAL(motor));
+        TMC5031_config->shadowRegister[TMC5031_XACTUAL(motor)] = xActual;
+        tmc5031->velocity[motor] = (int32_t) ((float) (abs(xActual-tmc5031->oldX[motor]) / (float) tickDiff) * (float) 1048.576);
+        if(tmc5031_readRegister(0, TMC5031_VACTUAL(motor))<0) tmc5031->velocity[motor] *= -1;
+        tmc5031->oldX[motor] = xActual;
 
-		// Not per motor:
-		/*xActual = tmc5031_readRegister(motor, TMC5031_XACTUAL_1);
-		TMC562v3_config->shadowRegister[TMC5031_XACTUAL_1] = xActual;
-		TMC562V3.velocityMotor1 = (int32_t) ((float) (abs(xActual-oldX[0]) / (float) t) * (float) 1048.576);
-		tmc5031->oldX = xActual;
+        // Not per motor:
+        /*xActual = tmc5031_readRegister(motor, TMC5031_XACTUAL_1);
+        TMC562v3_config->shadowRegister[TMC5031_XACTUAL_1] = xActual;
+        TMC562V3.velocityMotor1 = (int32_t) ((float) (abs(xActual-oldX[0]) / (float) t) * (float) 1048.576);
+        tmc5031->oldX = xActual;
 
-		xActual = tmc5031_readRegister(motor,TMC5031_XACTUAL_2);
-		TMC562v3_config->shadowRegister[TMC5031_XACTUAL_2] = xActual;
-		TMC562V3.velocityMotor2 = (int32_t) ((float) (abs(xActual-oldX[1]) / (float) t) * (float) 1048.576);
-		tmc5031->oldX = xActual;*/
+        xActual = tmc5031_readRegister(motor,TMC5031_XACTUAL_2);
+        TMC562v3_config->shadowRegister[TMC5031_XACTUAL_2] = xActual;
+        TMC562V3.velocityMotor2 = (int32_t) ((float) (abs(xActual-oldX[1]) / (float) t) * (float) 1048.576);
+        tmc5031->oldX = xActual;*/
 
-		tmc5031->oldTick = tick;
-	}
+        tmc5031->oldTick = tick;
+    }
 }
 
 uint8_t tmc5031_reset(ConfigurationTypeDef *TMC5031_config)
 {
-	if(TMC5031_config->state != CONFIG_READY)
-		return 0;
+    if(TMC5031_config->state != CONFIG_READY)
+        return 0;
 
-	TMC5031_config->state        = CONFIG_READY;
-	TMC5031_config->configIndex  = 0;
+    TMC5031_config->state        = CONFIG_READY;
+    TMC5031_config->configIndex  = 0;
 
-	return 1;
+    return 1;
 }
 
 uint8_t tmc5031_restore(ConfigurationTypeDef *TMC5031_config)
 {
-	if(TMC5031_config->state != CONFIG_READY)
-		return 0;
+    if(TMC5031_config->state != CONFIG_READY)
+        return 0;
 
-	TMC5031_config->state        = CONFIG_RESTORE;
-	TMC5031_config->configIndex  = 0;
+    TMC5031_config->state        = CONFIG_RESTORE;
+    TMC5031_config->configIndex  = 0;
 
-	return 1;
+    return 1;
 }

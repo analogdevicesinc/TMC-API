@@ -61,9 +61,9 @@ static inline uint32_t tmc5031_field_update(uint32_t data, RegisterField field, 
 
 static inline void tmc5031_field_write(uint16_t icID, RegisterField field, uint32_t value)
 {
-	uint32_t regValue = tmc5031_readRegister(icID, field.address);
+    uint32_t regValue = tmc5031_readRegister(icID, field.address);
 
-	regValue = tmc5031_field_update(regValue, field, value);
+    regValue = tmc5031_field_update(regValue, field, value);
 
     tmc5031_writeRegister(icID, field.address, regValue);
 }
@@ -75,11 +75,11 @@ extern ConfigurationTypeDef *TMC5031_config;
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
-	int32_t velocity[2], oldX[2];
-	uint32_t oldTick;
-	int32_t registerResetState[TMC5031_REGISTER_COUNT];
-	uint8_t registerAccess[TMC5031_REGISTER_COUNT];
-	bool vMaxModified[2];
+    int32_t velocity[2], oldX[2];
+    uint32_t oldTick;
+    int32_t registerResetState[TMC5031_REGISTER_COUNT];
+    uint8_t registerAccess[TMC5031_REGISTER_COUNT];
+    bool vMaxModified[2];
 } TMC5031TypeDef;
 
 extern TMC5031TypeDef TMC5031;
