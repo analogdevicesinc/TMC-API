@@ -40,6 +40,13 @@
 #endif
 
 /******************************************************************************/
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
 
 // => TMC-API wrapper
 extern bool tmc2208_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
@@ -49,6 +56,41 @@ extern uint8_t tmc2208_getNodeAddress(uint16_t icID);
 int32_t tmc2208_readRegister(uint16_t icID, uint8_t address);
 void tmc2208_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
+static inline uint32_t tmc2208_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc2208_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc2208_readRegister(icID, field.address);
+
+    return tmc2208_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc2208_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc2208_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc2208_readRegister(icID, field.address);
+
+    regValue = tmc2208_fieldUpdate(regValue, field, value);
+
+    tmc2208_writeRegister(icID, field.address, regValue);
+}
 
 /**************************************************************** Cache Implementation *************************************************************************/
 #if TMC2208_CACHE == 1
