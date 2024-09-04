@@ -1,8 +1,8 @@
 /*******************************************************************************
-* Copyright © 2020 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -10,29 +10,124 @@
 #ifndef TMC_IC_TMC2226_H_
 #define TMC_IC_TMC2226_H_
 
-#include "tmc/helpers/Constants.h"
-#include "tmc/helpers/API_Header.h"
-#include "TMC2226_Register.h"
-#include "TMC2226_Constants.h"
-#include "TMC2226_Fields.h"
 
-// Helper macros
-#define TMC2226_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc2226_readInt(tdef, address), mask, shift)
-#define TMC2226_FIELD_UPDATE(tdef, address, mask, shift, value) \
-	(tmc2226_writeInt(tdef, address, FIELD_SET(tmc2226_readInt(tdef, address), mask, shift, value)))
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include "TMC2226_HW_Abstraction.h"
 
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-	ConfigurationTypeDef *config;
+/*******************************************************************************
+* API Configuration Defines
+* These control optional features of the TMC-API implementation.
+* These can be commented in/out here or defined from the build system.
+*******************************************************************************/
 
-	int32_t registerResetState[TMC2226_REGISTER_COUNT];
-	uint8_t registerAccess[TMC2226_REGISTER_COUNT];
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
 
-	uint8_t slaveAddress;
-} TMC2226TypeDef;
+#ifndef TMC2226_CACHE
+#define TMC2226_CACHE   1
+//#define TMC2226_CACHE   0
+#endif
 
-typedef void (*tmc2226_callback)(TMC2226TypeDef*, ConfigState);
+// To use the caching mechanism already implemented by the TMC-API, set TMC2226_ENABLE_TMC_CACHE to '1'.
+// Set TMC2226_ENABLE_TMC_CACHE to '0' if one wants to have their own cache implementation.
+#ifndef TMC2226_ENABLE_TMC_CACHE
+#define TMC2226_ENABLE_TMC_CACHE   1
+//#define TMC2226_ENABLE_TMC_CACHE   0
+#endif
+
+/******************************************************************************/
+
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+// => TMC-API wrapper
+extern bool tmc2226_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern uint8_t tmc2226_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc2226_readRegister(uint16_t icID, uint8_t address);
+void tmc2226_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
+
+static inline uint32_t tmc2226_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc2226_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc2226_readRegister(icID, field.address);
+
+    return tmc2226_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc2226_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc2226_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc2226_readRegister(icID, field.address);
+
+    regValue = tmc2226_fieldUpdate(regValue, field, value);
+
+    tmc2226_writeRegister(icID, field.address, regValue);
+}
+
+/**************************************************************** Cache Implementation *************************************************************************/
+
+#if TMC2226_CACHE == 1
+#if TMC2226_ENABLE_TMC_CACHE == 1
+
+// By default, support one IC in the cache
+#ifndef TMC2226_IC_CACHE_COUNT
+#define TMC2226_IC_CACHE_COUNT 1
+#endif
+
+typedef enum
+{
+   TMC2226_CACHE_READ,
+   TMC2226_CACHE_WRITE,
+
+   // Special operation: Put content into the cache without marking the entry as dirty.
+   // Only used to initialize the cache with hardware defaults. This will allow reading
+   // from write-only registers that have a value inside them on reset. When using this
+   // operation, a restore will *not* rewrite that filled register!
+   TMC2226_CACHE_FILL_DEFAULT
+
+} TMC2226CacheOp;
+
+typedef struct
+{
+    uint8_t address;
+    uint32_t value;
+} TMC2226RegisterConstants;
+
+#define TMC2226_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
+#define TMC2226_ACCESS_READ        0x01
+#define TMC_ACCESS_W_PRESET        0x42
+#define TMC2226_IS_READABLE(x)     ((x) & TMC2226_ACCESS_READ)
+#define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
+#define ____ 0x00
 
 // Default Register values
 #define R00 0x000001C1  // GCONF
@@ -49,7 +144,7 @@ typedef void (*tmc2226_callback)(TMC2226TypeDef*, ConfigState);
 //   0x23: read/write, flag register (write to clear)
 //   0x42: write, has hardware presets on reset
 //   0x42: read/write, has hardware presets on reset
-static const uint8_t tmc2226_defaultRegisterAccess[TMC2226_REGISTER_COUNT] =
+static const uint8_t tmc2226_registerAccess[TMC2226_REGISTER_COUNT] =
 {
 //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
 	0x03, 0x23, 0x01, 0x02, 0x02, 0x01, 0x01, 0x43, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
@@ -62,7 +157,7 @@ static const uint8_t tmc2226_defaultRegisterAccess[TMC2226_REGISTER_COUNT] =
 	0x03, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-static const int32_t tmc2226_defaultRegisterResetState[TMC2226_REGISTER_COUNT] =
+static const int32_t tmc2226_sampleRegisterPreset[TMC2226_REGISTER_COUNT] =
 {
 //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
 	R00, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -86,28 +181,20 @@ static const int32_t tmc2226_defaultRegisterResetState[TMC2226_REGISTER_COUNT] =
 // any way to find out the content but want to hold the actual value in the
 // shadow register so an application (i.e. the TMCL IDE) can still display
 // the values. This only works when the register content is constant.
-static const TMCRegisterConstant tmc2226_RegisterConstants[] =
+static const TMC2226RegisterConstants tmc2226_RegisterConstants[] =
 {		// Use ascending addresses!
 		{ 0x11, 0x00000014 }, // TPOWERDOWN
 };
 
-#undef R00
-#undef R10
-#undef R6C
-#undef R70
 
-// Communication
-void tmc2226_writeInt(TMC2226TypeDef *tmc2226, uint8_t address, int32_t value);
-int32_t tmc2226_readInt(TMC2226TypeDef *tmc2226, uint8_t address);
+extern uint8_t tmc2226_dirtyBits[TMC2226_IC_CACHE_COUNT][TMC2226_REGISTER_COUNT/8];
+extern int32_t tmc2226_shadowRegister[TMC2226_IC_CACHE_COUNT][TMC2226_REGISTER_COUNT];
+void tmc2226_setDirtyBit(uint16_t icID, uint8_t index, bool value);
+bool tmc2226_getDirtyBit(uint16_t icID, uint8_t index);
+extern bool tmc2226_cache(uint16_t icID, TMC2226CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
 
-void tmc2226_init(TMC2226TypeDef *tmc2226, uint8_t channel, uint8_t slaveAddress, ConfigurationTypeDef *tmc2226_config, const int32_t *registerResetState);
-uint8_t tmc2226_reset(TMC2226TypeDef *tmc2226);
-uint8_t tmc2226_restore(TMC2226TypeDef *tmc2226);
-void tmc2226_setRegisterResetState(TMC2226TypeDef *tmc2226, const int32_t *resetState);
-void tmc2226_setCallback(TMC2226TypeDef *tmc2226, tmc2226_callback callback);
-void tmc2226_periodicJob(TMC2226TypeDef *tmc2226, uint32_t tick);
-
-uint8_t tmc2226_getSlaveAddress(TMC2226TypeDef *tmc2226);
-void tmc2226_setSlaveAddress(TMC2226TypeDef *tmc2226, uint8_t slaveAddress);
+/***************************************************************************************************************************************************/
 
 #endif /* TMC_IC_TMC2226_H_ */
