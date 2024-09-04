@@ -66,7 +66,7 @@ typedef struct
     bool isSigned;
 } RegisterField;
 
-static inline uint32_t tmc5072_field_extract(uint32_t data, RegisterField field)
+static inline uint32_t tmc5072_fieldExtract(uint32_t data, RegisterField field)
 {
     uint32_t value = (data & field.mask) >> field.shift;
 
@@ -81,23 +81,23 @@ static inline uint32_t tmc5072_field_extract(uint32_t data, RegisterField field)
     return value;
 }
 
-static inline uint32_t tmc5072_field_read(uint16_t icID, RegisterField field)
+static inline uint32_t tmc5072_fieldRead(uint16_t icID, RegisterField field)
 {
 	uint32_t value = tmc5072_readRegister(icID, field.address);
 
-    return tmc5072_field_extract(value, field);
+    return tmc5072_fieldExtract(value, field);
 }
 
-static inline uint32_t tmc5072_field_update(uint32_t data, RegisterField field, uint32_t value)
+static inline uint32_t tmc5072_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
 {
     return (data & (~field.mask)) | ((value << field.shift) & field.mask);
 }
 
-static inline void tmc5072_field_write(uint16_t icID, RegisterField field, uint32_t value)
+static inline void tmc5072_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
 {
 	uint32_t regValue = tmc5072_readRegister(icID, field.address);
 
-	regValue = tmc5072_field_update(regValue, field, value);
+	regValue = tmc5072_fieldUpdate(regValue, field, value);
 
     tmc5072_writeRegister(icID, field.address, regValue);
 }
