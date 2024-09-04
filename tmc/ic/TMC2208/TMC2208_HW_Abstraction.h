@@ -19,6 +19,7 @@
 #define TMC2208_MAX_VELOCITY     (int32_t)  2147483647
 #define TMC2208_MAX_ACCELERATION (uint32_t)  4294967295uL
 
+
 // Registers in TMC2208
 // ===== TMC2208 & 2202 & TMC2208 & 2220 & 2225 "Donkey Kong" family register set =====
 
@@ -43,7 +44,9 @@
 #define TMC2208_PWMSCALE      0x71
 #define TMC2208_PWM_AUTO      0x72
 
+
 // Register fields in TMC2208
+
 #define TMC2208_I_SCALE_ANALOG_MASK          0x00000001
 #define TMC2208_I_SCALE_ANALOG_SHIFT         0
 #define TMC2208_I_SCALE_ANALOG_FIELD         ((RegisterField) {TMC2208_I_SCALE_ANALOG_MASK, TMC2208_I_SCALE_ANALOG_SHIFT, TMC2208_GCONF, false})

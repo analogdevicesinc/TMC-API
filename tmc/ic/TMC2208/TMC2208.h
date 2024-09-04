@@ -14,7 +14,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include "TMC2208_HW_Abstraction.h"
-#include "tmc/helpers/API_Header.h"
+
+
 /*******************************************************************************
 * API Configuration Defines
 * These control optional features of the TMC-API implementation.
@@ -40,6 +41,7 @@
 #endif
 
 /******************************************************************************/
+
 typedef struct
 {
     uint32_t mask;
@@ -55,6 +57,7 @@ extern uint8_t tmc2208_getNodeAddress(uint16_t icID);
 
 int32_t tmc2208_readRegister(uint16_t icID, uint8_t address);
 void tmc2208_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
 
 static inline uint32_t tmc2208_fieldExtract(uint32_t data, RegisterField field)
 {
@@ -93,6 +96,7 @@ static inline void tmc2208_fieldWrite(uint16_t icID, RegisterField field, uint32
 }
 
 /**************************************************************** Cache Implementation *************************************************************************/
+
 #if TMC2208_CACHE == 1
 #if TMC2208_ENABLE_TMC_CACHE == 1
 

@@ -136,77 +136,75 @@ int32_t tmc2208_readRegister(uint16_t icID, uint8_t address)
 }
 void tmc2208_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
-		writeRegisterUART(icID, address, value);
+    writeRegisterUART(icID, address, value);
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 {
-	uint8_t data[8] = { 0 };
+    uint8_t data[8] = {0};
 
-	registerAddress = registerAddress & TMC2208_ADDRESS_MASK;
+    registerAddress = registerAddress & TMC2208_ADDRESS_MASK;
 
-	data[0] = 0x05;
-	data[1] = tmc2208_getNodeAddress(icID);
-	data[2] = registerAddress;
-	data[3] = CRC8(data, 3);
+    data[0] = 0x05;
+    data[1] = tmc2208_getNodeAddress(icID);
+    data[2] = registerAddress;
+    data[3] = CRC8(data, 3);
 
-	if (!tmc2208_readWriteUART(icID, &data[0], 4, 8))
-		return 0;
+    if (!tmc2208_readWriteUART(icID, &data[0], 4, 8))
+        return 0;
 
-	// Byte 0: Sync nibble correct?
-	if (data[0] != 0x05)
-		return 0;
+    // Byte 0: Sync nibble correct?
+    if (data[0] != 0x05)
+        return 0;
 
-	// Byte 1: Master address correct?
-	if (data[1] != 0xFF)
-		return 0;
+    // Byte 1: Master address correct?
+    if (data[1] != 0xFF)
+        return 0;
 
-	// Byte 2: Address correct?
-	if (data[2] != registerAddress)
-		return 0;
+    // Byte 2: Address correct?
+    if (data[2] != registerAddress)
+        return 0;
 
-	// Byte 7: CRC correct?
-	if (data[7] != CRC8(data, 7))
-		return 0;
+    // Byte 7: CRC correct?
+    if (data[7] != CRC8(data, 7))
+        return 0;
 
-	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | ((uint32_t)data[5] << 8) | data[6];
+    return ((uint32_t) data[3] << 24) | ((uint32_t) data[4] << 16) | ((uint32_t) data[5] << 8) | data[6];
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 {
-	uint8_t data[8];
+    uint8_t data[8];
 
-	data[0] = 0x05;
-	data[1] = tmc2208_getNodeAddress(icID);
-	data[2] = registerAddress | TMC2208_WRITE_BIT;
-	data[3] = (value >> 24) & 0xFF;
-	data[4] = (value >> 16) & 0xFF;
-	data[5] = (value >> 8 ) & 0xFF;
-	data[6] = (value      ) & 0xFF;
-	data[7] = CRC8(data, 7);
+    data[0] = 0x05;
+    data[1] = tmc2208_getNodeAddress(icID);
+    data[2] = registerAddress | TMC2208_WRITE_BIT;
+    data[3] = (value >> 24) & 0xFF;
+    data[4] = (value >> 16) & 0xFF;
+    data[5] = (value >> 8) & 0xFF;
+    data[6] = (value) & 0xFF;
+    data[7] = CRC8(data, 7);
 
-	tmc2208_readWriteUART(icID, &data[0], 8, 0);
+    tmc2208_readWriteUART(icID, &data[0], 8, 0);
 
     //Cache the registers with write-only access
     tmc2208_cache(icID, TMC2208_CACHE_WRITE, registerAddress, &value);
 }
 
-
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
-	uint8_t result = 0;
-	uint8_t *table;
+    uint8_t result = 0;
+    uint8_t *table;
 
-	while(bytes--)
-		result = tmcCRCTable_Poly7Reflected[result ^ *data++];
+    while (bytes--) result = tmcCRCTable_Poly7Reflected[result ^ *data++];
 
-	// Flip the result around
-	// swap odd and even bits
-	result = ((result >> 1) & 0x55) | ((result & 0x55) << 1);
-	// swap consecutive pairs
-	result = ((result >> 2) & 0x33) | ((result & 0x33) << 2);
-	// swap nibbles ...
-	result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
+    // Flip the result around
+    // swap odd and even bits
+    result = ((result >> 1) & 0x55) | ((result & 0x55) << 1);
+    // swap consecutive pairs
+    result = ((result >> 2) & 0x33) | ((result & 0x33) << 2);
+    // swap nibbles ...
+    result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
 
-	return result;
+    return result;
 }
