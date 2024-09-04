@@ -33,16 +33,106 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 };
 #endif
 
+/**************************************************************** Cache Implementation *************************************************************************/
+#if TMC2208_CACHE == 0
+static inline bool tmc2208_cache(uint16_t icID, TMC2208CacheOp operation, uint8_t address, uint32_t *value)
+{
+    UNUSED(icID);
+    UNUSED(address);
+    UNUSED(operation);
+    return false;
+}
+#else
+#if TMC2208_ENABLE_TMC_CACHE == 1
+uint8_t tmc2208_dirtyBits[TMC2208_IC_CACHE_COUNT][TMC2208_REGISTER_COUNT/8]= {0};
+int32_t tmc2208_shadowRegister[TMC2208_IC_CACHE_COUNT][TMC2208_REGISTER_COUNT];
+
+void tmc2208_setDirtyBit(uint16_t icID, uint8_t index, bool value)
+{
+    if(index >= TMC2208_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp = &tmc2208_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
+}
+
+bool tmc2208_getDirtyBit(uint16_t icID, uint8_t index)
+{
+    if(index >= TMC2208_REGISTER_COUNT)
+        return false;
+
+    uint8_t *tmp = &tmc2208_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    return ((*tmp) >> shift) & 1;
+}
+
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+bool tmc2208_cache(uint16_t icID, TMC2208CacheOp operation, uint8_t address, uint32_t *value)
+{
+    if (operation == TMC2208_CACHE_READ)
+    {
+        // Check if the value should come from cache
+
+        // Only supported chips have a cache
+        if (icID >= TMC2208_IC_CACHE_COUNT)
+            return false;
+
+        // Only non-readable registers care about caching
+        // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+        if (TMC2208_IS_READABLE(tmc2208_registerAccess[address]))
+            return false;
+
+        // Grab the value from the cache
+        *value = tmc2208_shadowRegister[icID][address];
+        return true;
+    }
+    else if (operation == TMC2208_CACHE_WRITE || operation == TMC2208_CACHE_FILL_DEFAULT)
+    {
+        // Fill the cache
+
+        // only supported chips have a cache
+        if (icID >= TMC2208_IC_CACHE_COUNT)
+            return false;
+
+        // Write to the shadow register and mark the register dirty
+        tmc2208_shadowRegister[icID][address] = *value;
+        if (operation == TMC2208_CACHE_WRITE)
+        {
+            tmc2208_setDirtyBit(icID, address, true);
+        }
+        return true;
+    }
+    return false;
+}
+
+#else
+// User must implement their own cache
+extern bool tmc2208_cache(uint16_t icID, TMC2208CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
+/************************************************************** Register read / write Implementation ******************************************************************/
+
 static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
 static void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
-
 int32_t tmc2208_readRegister(uint16_t icID, uint8_t address)
 {
-		return readRegisterUART(icID, address);
+    uint32_t value;
 
-	// ToDo: Error handling
+    // Read from cache for registers with write-only access
+    if (tmc2208_cache(icID, TMC2208_CACHE_READ, address, &value))
+        return value;
+
+    return readRegisterUART(icID, address);
+
+    // ToDo: Error handling
 }
 void tmc2208_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
@@ -54,9 +144,6 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 	uint8_t data[8] = { 0 };
 
 	registerAddress = registerAddress & TMC2208_ADDRESS_MASK;
-
-	if (!TMC_IS_READABLE(TMC2208.registerAccess[registerAddress]))
-		return TMC2208.config->shadowRegister[registerAddress];
 
 	data[0] = 0x05;
 	data[1] = tmc2208_getNodeAddress(icID);
@@ -82,7 +169,7 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 	if (data[7] != CRC8(data, 7))
 		return 0;
 
-	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
+	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | ((uint32_t)data[5] << 8) | data[6];
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
@@ -100,10 +187,8 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 
 	tmc2208_readWriteUART(icID, &data[0], 8, 0);
 
-	// Write to the shadow register and mark the register dirty
-	registerAddress = TMC_ADDRESS(registerAddress);
-	TMC2208.config->shadowRegister[registerAddress] = value;
-	TMC2208.registerAccess[registerAddress] |= TMC_ACCESS_DIRTY;
+    //Cache the registers with write-only access
+    tmc2208_cache(icID, TMC2208_CACHE_WRITE, registerAddress, &value);
 }
 
 
@@ -125,122 +210,3 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 
 	return result;
 }
-
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-
-
-//void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState)
-//{
-//	tmc2208->config               = tmc2208_config;
-//	tmc2208->config->callback     = NULL;
-//	tmc2208->config->channel      = channel;
-//	tmc2208->config->configIndex  = 0;
-//	tmc2208->config->state        = CONFIG_READY;
-//
-//	for(size_t i = 0; i < TMC2208_REGISTER_COUNT; i++)
-//	{
-//		tmc2208->registerAccess[i]      = tmc2208_defaultRegisterAccess[i];
-//		tmc2208->registerResetState[i]  = registerResetState[i];
-//	}
-//}
-
-//static void writeConfiguration(TMC2208TypeDef *tmc2208)
-//{
-//	uint8_t *ptr = &tmc2208->config->configIndex;
-//	const int32_t *settings;
-//
-//	if(tmc2208->config->state == CONFIG_RESTORE)
-//	{
-//		settings = tmc2208->config->shadowRegister;
-//		// Find the next restorable register
-//		while((*ptr < TMC2208_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc2208->registerAccess[*ptr]))
-//		{
-//			(*ptr)++;
-//		}
-//	}
-//	else
-//	{
-//		settings = tmc2208->registerResetState;
-//		// Find the next resettable register
-//		while((*ptr < TMC2208_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc2208->registerAccess[*ptr]))
-//		{
-//			(*ptr)++;
-//		}
-//	}
-//
-//	if(*ptr < TMC2208_REGISTER_COUNT)
-//	{
-//		tmc2208_writeRegister(tmc2208, *ptr, settings[*ptr]);
-//		(*ptr)++;
-//	}
-//	else // Finished configuration
-//	{
-//		if(tmc2208->config->callback)
-//		{
-//			((tmc2208_callback)tmc2208->config->callback)(tmc2208, tmc2208->config->state);
-//		}
-//
-//		tmc2208->config->state = CONFIG_READY;
-//	}
-//}
-
-//void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32_t tick)
-//{
-//	UNUSED(tick);
-//
-//	if(tmc2208->config->state != CONFIG_READY)
-//	{
-//		writeConfiguration(tmc2208);
-//		return;
-//	}
-//}
-
-//void tmc2208_setRegisterResetState(TMC2208TypeDef *tmc2208, const int32_t *resetState)
-//{
-//	for(size_t i = 0; i < TMC2208_REGISTER_COUNT; i++)
-//	{
-//		tmc2208->registerResetState[i] = resetState[i];
-//	}
-//}
-
-//void tmc2208_setCallback(TMC2208TypeDef *tmc2208, tmc2208_callback callback)
-//{
-//	tmc2208->config->callback = (tmc_callback_config) callback;
-//}
-
-//uint8_t tmc2208_reset(TMC2208TypeDef *tmc2208)
-//{
-//	if(tmc2208->config->state != CONFIG_READY)
-//		return false;
-//
-//	// Reset the dirty bits and wipe the shadow registers
-//	for(size_t i = 0; i < TMC2208_REGISTER_COUNT; i++)
-//	{
-//		tmc2208->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
-//		tmc2208->config->shadowRegister[i] = 0;
-//	}
-//
-//	tmc2208->config->state        = CONFIG_RESET;
-//	tmc2208->config->configIndex  = 0;
-//
-//	return true;
-//}
-
-//uint8_t tmc2208_restore(TMC2208TypeDef *tmc2208)
-//{
-//	if(tmc2208->config->state != CONFIG_READY)
-//		return false;
-//
-//	tmc2208->config->state        = CONFIG_RESTORE;
-//	tmc2208->config->configIndex  = 0;
-//
-//	return true;
-//}
-
-//uint8_t tmc2208_get_slave(TMC2208TypeDef *tmc2208)
-//{
-//	UNUSED(tmc2208);
-//
-//	// The TMC2208 has a hardcoded slave address 0
-//	return 0;
-//}
