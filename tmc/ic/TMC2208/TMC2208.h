@@ -33,16 +33,16 @@ void tmc2208_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
 #include "tmc/helpers/API_Header.h"
 
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-	ConfigurationTypeDef *config;
-	int32_t registerResetState[TMC2208_REGISTER_COUNT];
-	uint8_t registerAccess[TMC2208_REGISTER_COUNT];
-} TMC2208TypeDef;
+//// Usage note: use 1 TypeDef per IC
+//typedef struct {
+//	ConfigurationTypeDef *config;
+//	int32_t registerResetState[TMC2208_REGISTER_COUNT];
+//	uint8_t registerAccess[TMC2208_REGISTER_COUNT];
+//} TMC2208TypeDef;
+//
+//extern TMC2208TypeDef TMC2208;
 
-extern TMC2208TypeDef TMC2208;
-
-typedef void (*tmc2208_callback)(TMC2208TypeDef*, ConfigState);
+//typedef void (*tmc2208_callback)(TMC2208TypeDef*, ConfigState);
 
 // Default Register values
 #define R00 0x00000041  // GCONF
@@ -93,14 +93,14 @@ static const int32_t tmc2208_defaultRegisterResetState[TMC2208_REGISTER_COUNT] =
 #undef R6C
 #undef R70
 
-void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState);
-uint8_t tmc2208_reset(TMC2208TypeDef *tmc2208);
-uint8_t tmc2208_restore(TMC2208TypeDef *tmc2208);
-void tmc2208_setRegisterResetState(TMC2208TypeDef *tmc2208, const int32_t *resetState);
-void tmc2208_setCallback(TMC2208TypeDef *tmc2208, tmc2208_callback callback);
-void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32_t tick);
-
-uint8_t tmc2208_get_slave(TMC2208TypeDef *tmc2208);
-void tmc2208_set_slave(TMC2208TypeDef *tmc2208, uint8_t slave);
+//void tmc2208_init(TMC2208TypeDef *tmc2208, uint8_t channel, ConfigurationTypeDef *tmc2208_config, const int32_t *registerResetState);
+//uint8_t tmc2208_reset(TMC2208TypeDef *tmc2208);
+//uint8_t tmc2208_restore(TMC2208TypeDef *tmc2208);
+//void tmc2208_setRegisterResetState(TMC2208TypeDef *tmc2208, const int32_t *resetState);
+//void tmc2208_setCallback(TMC2208TypeDef *tmc2208, tmc2208_callback callback);
+//void tmc2208_periodicJob(TMC2208TypeDef *tmc2208, uint32_t tick);
+//
+//uint8_t tmc2208_get_slave(TMC2208TypeDef *tmc2208);
+//void tmc2208_set_slave(TMC2208TypeDef *tmc2208, uint8_t slave);
 
 #endif /* TMC_IC_TMC2208_H_ */
