@@ -24,8 +24,7 @@ The description of the functions, in the above flowchart, are as follows:
 - This callback function further calls the hardware specific read/write function for UART and needs to be implemented externally.
 
 ### How to integrate: Callback functions
-To communicate with TMC2208 IC, the TMC-API library needs to know which bus (UART, SPI) it shall use. For that, the callback function **'tmc2208_getBusType()'** needs to be implemented.
-Additionally, implement the following callback functions to access the chip via UART:
+Implement the following callback functions to access the chip via UART:
 1. **tmc2208_readWriteUART()**, which is a HAL wrapper function that provides the necessary hardware access.
 2. **tmc2208_getNodeAddress()**, that returns the node/slave address. Node address could be set in NODECONF (0x3) register and the address could be incremented as defined by AD0, AD1 and AD2. (Node address + ADx) must be less than 255. For further details please consult the datasheet of TMC2208.
 
