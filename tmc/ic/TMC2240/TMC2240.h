@@ -21,6 +21,22 @@
 	(tmc2240_writeInt(tdef, address, FIELD_SET(tmc2240_readInt(tdef, address), mask, shift, value)))
 
 // Typedefs
+typedef enum {
+    IC_BUS_SPI,
+    IC_BUS_UART,
+    IC_BUS_WLAN,
+} TMC2240BusType;
+
+// => TMC-API wrapper
+extern void tmc2240_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc2240_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC2240BusType tmc2240_getBusType(uint16_t icID);
+extern uint8_t tmc2240_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc2240_readRegister(uint16_t icID, uint8_t address);
+void tmc2240_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
 typedef struct
 {
 	ConfigurationTypeDef *config;
