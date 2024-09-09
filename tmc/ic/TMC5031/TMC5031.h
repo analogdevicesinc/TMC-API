@@ -48,8 +48,6 @@ extern void tmc5031_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength
 
 int32_t tmc5031_readRegister(uint16_t icID, uint8_t address);
 void tmc5031_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-void tmc5031_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
-
 
 typedef struct
 {
@@ -98,30 +96,11 @@ static inline void tmc5031_field_write(uint16_t icID, RegisterField field, uint3
 /**************************************************************** Cache Implementation *************************************************************************/
 #if TMC5031_CACHE == 1
 #ifdef TMC5031_ENABLE_TMC_CACHE
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-
-#include "tmc/helpers/API_Header.h"
-extern ConfigurationTypeDef *TMC5031_config;
 
 // By default, support one IC in the cache
 #ifndef TMC5031_IC_CACHE_COUNT
 #define TMC5031_IC_CACHE_COUNT 1
 #endif
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-    int32_t velocity[2], oldX[2];
-    uint32_t oldTick;
-    int32_t registerResetState[TMC5031_REGISTER_COUNT];
-    uint8_t registerAccess[TMC5031_REGISTER_COUNT];
-    bool vMaxModified[2];
-} TMC5031TypeDef;
-
-extern TMC5031TypeDef TMC5031;
-
-void tmc5031_initConfig(TMC5031TypeDef *TMC5031);
-void tmc5031_periodicJob(uint8_t motor, uint32_t tick, TMC5031TypeDef *TMC5031, ConfigurationTypeDef *TMC5031_config);
-uint8_t tmc5031_reset(ConfigurationTypeDef *TMC5031_config);
-uint8_t tmc5031_restore(ConfigurationTypeDef *TMC5031_config);
 
 typedef enum {
     TMC5031_CACHE_READ,
