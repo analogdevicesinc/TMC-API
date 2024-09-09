@@ -15,7 +15,6 @@
 #include <stddef.h>
 #include "TMC2130_HW_Abstraction.h"
 
-#define DEFAULT_MOTOR  0
 
  /*******************************************************************************
  * API Configuration Defines
@@ -99,18 +98,10 @@ static inline void tmc2130_field_write(uint16_t icID, RegisterField field, uint3
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-#include "tmc/helpers/API_Header.h"
 
 /**************************************************************** Cache Implementation *************************************************************************/
 #if TMC2130_CACHE == 1
 #ifdef TMC2130_ENABLE_TMC_CACHE
-// Typedefs
-typedef struct
-{
-    ConfigurationTypeDef *config;
-    int32_t registerResetState[TMC2130_REGISTER_COUNT];
-    uint8_t registerAccess[TMC2130_REGISTER_COUNT];
-} TMC2130TypeDef;
 
 // By default, support one IC in the cache
 #ifndef TMC2130_IC_CACHE_COUNT
@@ -131,9 +122,7 @@ typedef struct{
     uint8_t address;
     uint32_t value;
 } TMC2130RegisterConstants;
-extern TMC2130TypeDef TMC2130;
 
-typedef void (*tmc2130_callback)(TMC2130TypeDef*, ConfigState);
 
 // Default Register values
 #define R10 0x00071703  // IHOLD_IRUN
@@ -222,15 +211,12 @@ static const TMC2130RegisterConstants   tmc2130_RegisterConstants[] =
 #undef R10
 #undef R6C
 
-// API Functions
-// All functions act on one IC identified by the TMC2130TypeDef pointer
-
-void tmc2130_init(TMC2130TypeDef *tmc2130, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-void tmc2130_fillShadowRegisters(TMC2130TypeDef *tmc2130);
-uint8_t tmc2130_reset(TMC2130TypeDef *tmc2130);
-uint8_t tmc2130_restore(TMC2130TypeDef *tmc2130);
-void tmc2130_setRegisterResetState(TMC2130TypeDef *tmc2130, const int32_t *resetState);
-void tmc2130_setCallback(TMC2130TypeDef *tmc2130, tmc2130_callback callback);
-void tmc2130_periodicJob(TMC2130TypeDef *tmc2130, uint32_t tick);
-
+extern uint8_t tmc2130_dirtyBits[TMC2130_IC_CACHE_COUNT][TMC2130_REGISTER_COUNT/8];
+extern int32_t tmc2130_shadowRegister[TMC2130_IC_CACHE_COUNT][TMC2130_REGISTER_COUNT];
+extern bool tmc2130_cache(uint16_t icID, TMC2130CacheOp operation, uint8_t address, uint32_t *value);
+extern void tmc2130_initCache(void);
+void tmc2130_setDirtyBit(uint16_t icID, uint8_t index, bool value);
+bool tmc2130_getDirtyBit(uint16_t icID, uint8_t index);
+#endif
+#endif
 #endif /* TMC_IC_TMC2130_H_ */
