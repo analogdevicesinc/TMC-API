@@ -136,11 +136,6 @@ const int32_t tmc5031_defaultRegisterResetState[TMC5031_REGISTER_COUNT] = {
 #undef R69
 #undef R6C
 
-// => SPI wrapper
-extern void tmc5031_writeDatagram(uint8_t motor, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-extern void tmc5031_writeInt(uint8_t motor, uint8_t address, int value);
-extern int32_t tmc5031_readInt(uint8_t motor, uint8_t address);
-// <= SPI wrapper
 
 void tmc5031_initConfig(TMC5031TypeDef *tmc5031)
 {
@@ -204,7 +199,7 @@ void tmc5031_periodicJob(uint8_t motor, uint32_t tick, TMC5031TypeDef *tmc5031, 
 		TMC562V3.velocityMotor1 = (int32_t) ((float) (abs(xActual-oldX[0]) / (float) t) * (float) 1048.576);
 		tmc5031->oldX = xActual;
 
-		xActual = readInt(TMC5031_XACTUAL_2);
+		xActual = tmc5031_readRegister(motor,TMC5031_XACTUAL_2);
 		TMC562v3_config->shadowRegister[TMC5031_XACTUAL_2] = xActual;
 		TMC562V3.velocityMotor2 = (int32_t) ((float) (abs(xActual-oldX[1]) / (float) t) * (float) 1048.576);
 		tmc5031->oldX = xActual;*/

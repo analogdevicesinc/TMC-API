@@ -14,7 +14,6 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include "TMC5031_HW_Abstraction.h"
-#include "TMC5031_Fields.h"
 
 // => TMC-API wrapper
 extern void tmc5031_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
@@ -71,13 +70,6 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 
 #include "tmc/helpers/API_Header.h"
 extern ConfigurationTypeDef *TMC5031_config;
-
-#define TMC5031_FIELD_READ(motor, address, mask, shift) \
-	FIELD_READ(tmc5031_readInt, motor, address, mask, shift)
-#define TMC5031_FIELD_WRITE(motor, address, mask, shift, value) \
-	FIELD_WRITE(tmc5031_writeInt, motor, address, mask, shift, value)
-#define TMC5031_FIELD_UPDATE(motor, address, mask, shift, value) \
-	FIELD_UPDATE(tmc5031_readInt, tmc5031_writeInt, motor, address, mask, shift, value)
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
