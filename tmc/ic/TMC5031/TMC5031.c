@@ -2,12 +2,75 @@
 * Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
 
 #include "TMC5031.h"
+
+TMC5031TypeDef TMC5031;
+ConfigurationTypeDef *TMC5031_config;
+
+static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
+static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
+
+int32_t tmc5031_readRegister(uint16_t icID, uint8_t address)
+{
+		return readRegisterSPI(icID, address);
+
+	// ToDo: Error handling
+}
+void tmc5031_writeRegister(uint16_t icID, uint8_t address, int32_t value)
+{
+		writeRegisterSPI(icID, address, value);
+}
+
+int32_t readRegisterSPI(uint16_t icID, uint8_t address)
+{
+
+	address = TMC_ADDRESS(address);
+	uint8_t data[5] = { 0 };
+
+	if(!TMC_IS_READABLE(TMC5031.registerAccess[address]))
+		return TMC5031_config->shadowRegister[address];
+
+	// clear write bit
+	data[0] = address;
+
+	// Send the read request
+	tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
+
+	// Rewrite address and clear write bit
+	data[0] = address;
+
+	// Send another request to receive the read reply
+	tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
+
+	return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
+}
+
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
+{
+	uint8_t data[5] = { 0 };
+
+	data[0] = address | TMC5031_WRITE_BIT;
+	data[1] = 0xFF & (value>>24);
+	data[2] = 0xFF & (value>>16);
+	data[3] = 0xFF & (value>>8);
+	data[4] = 0xFF & (value>>0);
+
+	// Send the write request
+	tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
+
+	// Write to the shadow register
+	address = TMC_ADDRESS(address);
+	TMC5031_config->shadowRegister[address] = value;
+
+}
+
+/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
+
 
 // Default Register Values
 #define R30 0x00071703  // IHOLD_IRUN
