@@ -12,7 +12,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-
 #include "TMC5041_HW_Abstraction.h"
 
 /*******************************************************************************
@@ -45,7 +44,6 @@
 /************************************************************* read / write Implementation *********************************************************************/
 int32_t tmc5041_readRegister(uint16_t icID, uint8_t address);
 void tmc5041_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-void tmc5041_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 typedef struct
 {
@@ -98,17 +96,8 @@ static inline void field_write(uint16_t icID, RegisterField field, uint32_t valu
 #ifndef TMC5041_IC_CACHE_COUNT
 #define TMC5041_IC_CACHE_COUNT 1
 #endif
-/***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-
-#include "tmc/helpers/API_Header.h"
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-    ConfigurationTypeDef *config;
-
-    int32_t velocity[2], oldX[2];
-    uint32_t oldTick;
 
 typedef enum {
    TMC5041_CACHE_READ,
@@ -124,17 +113,12 @@ typedef struct{
     uint8_t address;
     uint32_t value;
 } TMC5041RegisterConstants;
-    int32_t registerResetState[TMC5041_REGISTER_COUNT];
-    uint8_t registerAccess[TMC5041_REGISTER_COUNT];
-    bool vMaxModified[2];
-} TMC5041TypeDef;
 
 #define TMC5041_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC5041_ACCESS_READ        0x01
 #define TMC5041_ACCESS_W_PRESET    0x42
 #define TMC5041_IS_READABLE(x)     ((x) & TMC5041_ACCESS_READ)
 #define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
-extern TMC5041TypeDef TMC5041;
 
 #define R30 0x00071703  // IHOLD_IRUN (Motor 1)
 #define R32 0x00FFFFFF  // VHIGH      (Motor 1)
@@ -230,9 +214,5 @@ bool tmc5041_getDirtyBit(uint16_t icID, uint8_t index);
 #endif
 #endif
 /***************************************************************************************************************************************************/
-void tmc5041_init(TMC5041TypeDef *tmc5041, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-void tmc5041_periodicJob(TMC5041TypeDef *tmc5041, uint32_t tick);
-uint8_t tmc5041_reset(TMC5041TypeDef *tmc5041);
-uint8_t tmc5041_restore(TMC5041TypeDef *tmc5041);
 
 #endif /* TMC_IC_TMC5041_H_ */
