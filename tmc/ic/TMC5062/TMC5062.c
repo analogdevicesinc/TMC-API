@@ -123,7 +123,7 @@ void tmc5062_initCache()
     {
         // We only need to worry about hardware preset, write-only registers
         // that have not yet been written (no dirty bit) here.
-        if(tmc5062_registerAccess[i] != TMC_ACCESS_W_PRESET)
+        if(tmc5062_registerAccess[i] != TMC5062_ACCESS_W_PRESET)
             continue;
 
         // Search the constant list for the current address. With the constant

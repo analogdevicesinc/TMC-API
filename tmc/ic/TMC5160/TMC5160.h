@@ -125,11 +125,11 @@ typedef struct
 {
     uint8_t address;
     uint32_t value;
-} TMC5062RegisterConstants;
+} TMC5160RegisterConstants;
 
 #define TMC5160_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC5160_ACCESS_READ        0x01
-#define TMC_ACCESS_W_PRESET        0x42
+#define TMC5160_ACCESS_W_PRESET    0x42
 #define TMC5160_IS_READABLE(x)     ((x) & TMC5160_ACCESS_READ)
 #define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
 
@@ -198,7 +198,7 @@ static const uint8_t tmc5160_registerAccess[TMC5160_REGISTER_COUNT] =
 // any way to find out the content but want to hold the actual value in the
 // shadow register so an application (i.e. the TMCL IDE) can still display
 // the values. This only works when the register content is constant.
-static const TMC5062RegisterConstants tmc5160_RegisterConstants[] =
+static const TMC5160RegisterConstants tmc5160_RegisterConstants[] =
 {   // Use ascending addresses!
     { 0x60, 0xAAAAB554 }, // MSLUT[0]
     { 0x61, 0x4A9554AA }, // MSLUT[1]

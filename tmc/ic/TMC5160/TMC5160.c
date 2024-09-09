@@ -120,7 +120,7 @@ void tmc5160_initCache()
     {
         // We only need to worry about hardware preset, write-only registers
         // that have not yet been written (no dirty bit) here.
-        if(tmc5160_registerAccess[i] != TMC_ACCESS_W_PRESET)
+        if(tmc5160_registerAccess[i] != TMC5160_ACCESS_W_PRESET)
             continue;
 
         // Search the constant list for the current address. With the constant
@@ -294,8 +294,6 @@ void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
     uint8_t result = 0;
-    uint8_t *table;
-
     while(bytes--)
         result = tmcCRCTable_Poly7Reflected[result ^ *data++];
 

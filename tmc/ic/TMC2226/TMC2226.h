@@ -124,7 +124,6 @@ typedef struct
 
 #define TMC2226_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC2226_ACCESS_READ        0x01
-#define TMC_ACCESS_W_PRESET        0x42
 #define TMC2226_IS_READABLE(x)     ((x) & TMC2226_ACCESS_READ)
 #define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
 #define ____ 0x00

@@ -124,7 +124,7 @@ typedef enum {
 typedef struct{
     uint8_t address;
     uint32_t value;
-} TMCRegisterConstants;
+} TMC5072RegisterConstants;
 
 #define TMC5072_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC5072_ACCESS_READ        0x01
@@ -205,7 +205,7 @@ static const int32_t tmc5072_sampleRegisterPreset[TMC5072_REGISTER_COUNT] = {
 // any way to find out the content but want to hold the actual value in the
 // shadow register so an application (i.e. the TMCL IDE) can still display
 // the values. This only works when the register content is constant.
-static const TMCRegisterConstants tmc5072_RegisterConstants[] =
+static const TMC5072RegisterConstants tmc5072_RegisterConstants[] =
 {		// Use ascending addresses!
 		{ 0x60, 0xAAAAB554 }, // MSLUT[0]
 		{ 0x61, 0x4A9554AA }, // MSLUT[1]
