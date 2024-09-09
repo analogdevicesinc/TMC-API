@@ -2,7 +2,7 @@
 * Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -12,10 +12,10 @@
 
 #include "tmc/helpers/Constants.h"
 
-#define TMC2240_REGISTER_COUNT   TMC_REGISTER_COUNT
+#define TMC2240_REGISTER_COUNT   128
 #define TMC2240_MOTORS           1
-#define TMC2240_WRITE_BIT        TMC_WRITE_BIT
-#define TMC2240_ADDRESS_MASK     TMC_ADDRESS_MASK
+#define TMC2240_WRITE_BIT        0x80
+#define TMC2240_ADDRESS_MASK     0x7F
 #define TMC2240_MAX_VELOCITY     8388096
 #define TMC2240_MAX_ACCELERATION u16_MAX
 
