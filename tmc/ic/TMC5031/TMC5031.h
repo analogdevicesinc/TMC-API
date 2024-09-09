@@ -13,9 +13,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-//#include "TMC5031_HW_Abstraction.h"
-#include "TMC5031_Register.h"
-#include "TMC5031_Constants.h"
+#include "TMC5031_HW_Abstraction.h"
 #include "TMC5031_Fields.h"
 
 // => TMC-API wrapper
@@ -28,6 +26,7 @@ void tmc5031_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
 #include "tmc/helpers/API_Header.h"
+extern ConfigurationTypeDef *TMC5031_config;
 
 #define TMC5031_FIELD_READ(motor, address, mask, shift) \
 	FIELD_READ(tmc5031_readInt, motor, address, mask, shift)
