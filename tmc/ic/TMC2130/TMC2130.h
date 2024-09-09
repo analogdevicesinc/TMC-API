@@ -60,7 +60,7 @@ typedef struct
     bool isSigned;
 } RegisterField;
 
-static inline uint32_t tmc2130_field_extract(uint32_t data, RegisterField field)
+static inline uint32_t tmc2130_fieldExtract(uint32_t data, RegisterField field)
 {
     uint32_t value = (data & field.mask) >> field.shift;
 
@@ -75,23 +75,23 @@ static inline uint32_t tmc2130_field_extract(uint32_t data, RegisterField field)
     return value;
 }
 
-static inline uint32_t tmc2130_field_read(uint16_t icID, RegisterField field)
+static inline uint32_t tmc2130_fieldRead(uint16_t icID, RegisterField field)
 {
     uint32_t value = tmc2130_readRegister(icID, field.address);
 
-    return tmc2130_field_extract(value, field);
+    return tmc2130_fieldExtract(value, field);
 }
 
-static inline uint32_t tmc2130_field_update(uint32_t data, RegisterField field, uint32_t value)
+static inline uint32_t tmc2130_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
 {
     return (data & (~field.mask)) | ((value << field.shift) & field.mask);
 }
 
-static inline void tmc2130_field_write(uint16_t icID, RegisterField field, uint32_t value)
+static inline void tmc2130_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
 {
     uint32_t regValue = tmc2130_readRegister(icID, field.address);
 
-    regValue = tmc2130_field_update(regValue, field, value);
+    regValue = tmc2130_fieldUpdate(regValue, field, value);
 
     tmc2130_writeRegister(icID, field.address, regValue);
 }
