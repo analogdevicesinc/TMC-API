@@ -51,7 +51,6 @@ extern void tmc2160_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength
 int32_t tmc2160_readRegister(uint16_t icID, uint8_t address);
 void tmc2160_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
-
 typedef struct
 {
     uint32_t mask;
@@ -99,7 +98,6 @@ static inline void tmc2160_field_write(uint16_t icID, RegisterField field, uint3
 
 /***************** The following code is TMC-EvalSystem specific and needs to be commented out when working with other MCUs e.g Arduino*****************************/
 
-#include "tmc/helpers/API_Header.h"
 
 /**************************************************************** Cache Implementation *************************************************************************/
 #if TMC2160_CACHE == 1
@@ -124,21 +122,13 @@ typedef struct{
     uint8_t address;
     uint32_t value;
 } TMC2160RegisterConstants;
-typedef struct
-{
-    ConfigurationTypeDef *config;
-    int32_t registerResetState[TMC2160_REGISTER_COUNT];
-    uint8_t registerAccess[TMC2160_REGISTER_COUNT];
-} TMC2160TypeDef;
 
-extern TMC2160TypeDef TMC2160;
 
 #define TMC2160_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC2160_ACCESS_READ        0x01
 #define TMC2160_ACCESS_W_PRESET    0x42
 #define TMC2160_IS_READABLE(x)     ((x) & TMC2160_ACCESS_READ)
 #define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
-typedef void (*tmc2160_callback)(TMC2160TypeDef*, ConfigState);
 
 // Default Register values
 #define R10 0x00070A03  // IHOLD_IRUN
@@ -222,12 +212,13 @@ static const TMC2160RegisterConstants tmc2160_RegisterConstants[] =
         { 0x69, 0x00F70000 }  // MSLUTSTART
 };
 
-void tmc2160_init(TMC2160TypeDef *tmc2160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-void tmc2160_fillShadowRegisters(TMC2160TypeDef *tmc2160);
-uint8_t tmc2160_reset(TMC2160TypeDef *tmc2160);
-uint8_t tmc2160_restore(TMC2160TypeDef *tmc2160);
-void tmc2160_setRegisterResetState(TMC2160TypeDef *tmc2160, const int32_t *resetState);
-void tmc2160_setCallback(TMC2160TypeDef *tmc2160, tmc2160_callback callback);
-void tmc2160_periodicJob(TMC2160TypeDef *tmc2160, uint32_t tick);
-
+extern uint8_t tmc2160_dirtyBits[TMC2160_IC_CACHE_COUNT][TMC2160_REGISTER_COUNT/8];
+extern int32_t tmc2160_shadowRegister[TMC2160_IC_CACHE_COUNT][TMC2160_REGISTER_COUNT];
+extern bool tmc2160_cache(uint16_t icID, TMC2160CacheOp operation, uint8_t address, uint32_t *value);
+extern void tmc2160_initCache(void);
+void tmc2160_setDirtyBit(uint16_t icID, uint8_t index, bool value);
+bool tmc2160_getDirtyBit(uint16_t icID, uint8_t index);
+#endif
+#endif
+/***************************************************************************************************************************************************/
 #endif /* TMC_IC_TMC2160_H_ */
