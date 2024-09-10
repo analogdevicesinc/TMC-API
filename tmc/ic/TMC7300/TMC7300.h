@@ -2,7 +2,7 @@
 * Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -10,7 +10,7 @@
 #ifndef TMC_IC_TMC7300_H_
 #define TMC_IC_TMC7300_H_
 
-#include "tmc/helpers/Constants.h"
+
 #include "tmc/helpers/API_Header.h"
 #include "TMC7300_Constants.h"
 #include "TMC7300_Fields.h"
@@ -18,19 +18,19 @@
 
 // Helper macros
 #define TMC7300_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc7300_readInt(tdef, address), mask, shift)
+        FIELD_GET(tmc7300_readInt(tdef, address), mask, shift)
 #define TMC7300_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc7300_writeInt(tdef, address, FIELD_SET(tmc7300_readInt(tdef, address), mask, shift, value)))
+        (tmc7300_writeInt(tdef, address, FIELD_SET(tmc7300_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
-	ConfigurationTypeDef *config;
+    ConfigurationTypeDef *config;
 
-	int32_t registerResetState[TMC7300_REGISTER_COUNT];
-	uint8_t registerAccess[TMC7300_REGISTER_COUNT];
+    int32_t registerResetState[TMC7300_REGISTER_COUNT];
+    uint8_t registerAccess[TMC7300_REGISTER_COUNT];
 
-	uint8_t slaveAddress;
-	uint8_t standbyEnabled;
+    uint8_t slaveAddress;
+    uint8_t standbyEnabled;
 } TMC7300TypeDef;
 
 typedef void (*tmc7300_callback)(TMC7300TypeDef*, ConfigState);
@@ -45,28 +45,28 @@ typedef void (*tmc7300_callback)(TMC7300TypeDef*, ConfigState);
 //   0x43: read/write, has hardware presets on reset
 static const uint8_t tmc7300_defaultRegisterAccess[TMC7300_REGISTER_COUNT] =
 {
-//  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
-	0x03, 0x23, 0x01, 0x02, ____, ____, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
-	0x42, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
-	____, ____, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x20 - 0x2F
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x30 - 0x3F
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x40 - 0x4F
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x50 - 0x5F
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x43, ____, ____, 0x01, // 0x60 - 0x6F
-	0x43, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
+        //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
+        0x03, 0x23, 0x01, 0x02, ____, ____, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
+        0x42, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
+        ____, ____, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x20 - 0x2F
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x30 - 0x3F
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x40 - 0x4F
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x50 - 0x5F
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x43, ____, ____, 0x01, // 0x60 - 0x6F
+        0x43, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
 static const int32_t tmc7300_defaultRegisterResetState[TMC7300_REGISTER_COUNT] =
 {
-//	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
-	R00, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
-	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x30 - 0x3F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   N_A, 0,   0,   0, // 0x60 - 0x6F
-	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  // 0x70 - 0x7F
+        //    0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
+        R00, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
+        N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x30 - 0x3F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   N_A, 0,   0,   0, // 0x60 - 0x6F
+        N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  // 0x70 - 0x7F
 };
 
 // Undefine the default register values.
@@ -77,10 +77,10 @@ static const int32_t tmc7300_defaultRegisterResetState[TMC7300_REGISTER_COUNT] =
 // This allows us to fill the shadow registers with the register content in
 // order to provide the TMCL-IDE with correct values to display.
 static const TMCRegisterConstant tmc7300_registerConstants[] =
-{		// Use ascending addresses!
-		{ 0x10, 0x00001F01 }, // CURRENT_LIMIT
-		{ 0x6C, 0x13008001 }, // CHOPCONF
-		{ 0x70, 0xC40D1024 }, // PWMCONF
+{        // Use ascending addresses!
+        { 0x10, 0x00001F01 }, // CURRENT_LIMIT
+        { 0x6C, 0x13008001 }, // CHOPCONF
+        { 0x70, 0xC40D1024 }, // PWMCONF
 };
 
 
