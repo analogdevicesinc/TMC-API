@@ -2,181 +2,188 @@
 * Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
 
 #include "TMC2160.h"
 
-// => SPI wrapper
-extern void tmc2160_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-// <= SPI wrapper
-
-// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc2160_writeDatagram(TMC2160TypeDef *tmc2160, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
+/**************************************************************** Cache Implementation *************************************************************************/
+#if TMC2160_CACHE == 0
+static inline bool tmc2160_cache(uint16_t icID, TMC2160CacheOp operation, uint8_t address, uint32_t *value)
 {
-	uint8_t data[5] = { address | TMC2160_WRITE_BIT, x1, x2, x3, x4 };
-	tmc2160_readWriteArray(tmc2160->config->channel, &data[0], 5);
+   UNUSED(icID);
+   UNUSED(address);
+   UNUSED(operation);
+   return false;
+}
+#else
+#if TMC2160_ENABLE_TMC_CACHE == 1
 
-	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
+uint8_t tmc2160_dirtyBits[TMC2160_IC_CACHE_COUNT][TMC2160_REGISTER_COUNT/8]= {0};
+int32_t tmc2160_shadowRegister[TMC2160_IC_CACHE_COUNT][TMC2160_REGISTER_COUNT];
 
-	// Write to the shadow register and mark the register dirty
-	address = TMC_ADDRESS(address);
-	tmc2160->config->shadowRegister[address] = value;
-	tmc2160->registerAccess[address] |= TMC_ACCESS_DIRTY;
+void tmc2160_setDirtyBit(uint16_t icID, uint8_t index, bool value)
+ {
+    if(index >= TMC2160_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp = &tmc2160_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
 }
 
-void tmc2160_writeInt(TMC2160TypeDef *tmc2160, uint8_t address, int32_t value)
+bool tmc2160_getDirtyBit(uint16_t icID, uint8_t index)
 {
-	tmc2160_writeDatagram(tmc2160, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
+    if(index >= TMC2160_REGISTER_COUNT)
+        return false;
+
+    uint8_t *tmp = &tmc2160_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    return ((*tmp) >> shift) & 1;
+}
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+
+bool tmc2160_cache(uint16_t icID, TMC2160CacheOp operation, uint8_t address, uint32_t *value)
+{
+   if (operation == TMC2160_CACHE_READ)
+   {
+       // Check if the value should come from cache
+
+       // Only supported chips have a cache
+       if (icID >= TMC2160_IC_CACHE_COUNT)
+           return false;
+
+       // Only non-readable registers care about caching
+       // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+       if (TMC2160_IS_READABLE(tmc2160_registerAccess[address]))
+           return false;
+
+       // Grab the value from the cache
+       *value = tmc2160_shadowRegister[icID][address];
+       return true;
+   }
+   else if (operation == TMC2160_CACHE_WRITE || operation == TMC2160_CACHE_FILL_DEFAULT)
+   {
+       // Fill the cache
+
+       // only supported chips have a cache
+       if (icID >= TMC2160_IC_CACHE_COUNT)
+           return false;
+
+       // Write to the shadow register.
+       tmc2160_shadowRegister[icID][address] = *value;
+       // For write operations, mark the register dirty
+       if (operation == TMC2160_CACHE_WRITE)
+       {
+           tmc2160_setDirtyBit(icID, address, true);
+       }
+
+       return true;
+   }
+   return false;
 }
 
-int32_t tmc2160_readInt(TMC2160TypeDef *tmc2160, uint8_t address)
+void tmc2160_initCache()
 {
-	address = TMC_ADDRESS(address);
+   // Check if we have constants defined
+   if(ARRAY_SIZE(tmc2160_RegisterConstants) == 0)
+       return;
 
-	// register not readable -> shadow register copy
-	if(!TMC_IS_READABLE(tmc2160->registerAccess[address]))
-		return tmc2160->config->shadowRegister[address];
+   size_t i, j, id, motor;
 
-	uint8_t data[5];
+   for(i = 0, j = 0; i < TMC2160_REGISTER_COUNT; i++)
+   {
+       // We only need to worry about hardware preset, write-only registers
+       // that have not yet been written (no dirty bit) here.
+       if(tmc2160_registerAccess[i] != TMC2160_ACCESS_W_PRESET)
+           continue;
 
-	data[0] = address;
-	tmc2160_readWriteArray(tmc2160->config->channel, &data[0], 5);
+       // Search the constant list for the current address. With the constant
+       // list being sorted in ascended order, we can walk through the list
+       // until the entry with an address equal or greater than i
+       while(j < ARRAY_SIZE(tmc2160_RegisterConstants) && (tmc2160_RegisterConstants[j].address < i))
+           j++;
 
-	data[0] = address;
-	tmc2160_readWriteArray(tmc2160->config->channel, &data[0], 5);
+      // Abort when we reach the end of the constant list
+       if (j == ARRAY_SIZE(tmc2160_RegisterConstants))
+           break;
 
-	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
+       // If we have an entry for our current address, write the constant
+      if(tmc2160_RegisterConstants[j].address == i)
+       {
+           for (id = 0; id < TMC2160_IC_CACHE_COUNT; id++)
+           {
+               tmc2160_cache(id, TMC2160_CACHE_FILL_DEFAULT, i, &tmc2160_RegisterConstants[j].value);
+           }
+      }
+   }
+}
+#else
+// User must implement their own cache
+extern bool tmc2160_cache(uint16_t icID, TMC2160CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
+/************************************************************* read / write Implementation *********************************************************************/
+
+
+static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
+static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
+
+
+int32_t tmc2160_readRegister(uint16_t icID, uint8_t address)
+{
+        return readRegisterSPI(icID, address);
+
+    // ToDo: Error handling
+}
+void tmc2160_writeRegister(uint16_t icID, uint8_t address, int32_t value)
+{
+        writeRegisterSPI(icID, address, value);
 }
 
-void tmc2160_init(TMC2160TypeDef *tmc2160, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
+int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 {
-	tmc2160->config = config;
+    uint8_t data[5] = { 0 };
+    uint32_t value;
 
-	tmc2160->config->callback     = NULL;
-	tmc2160->config->channel      = channel;
-	tmc2160->config->configIndex  = 0;
-	tmc2160->config->state        = CONFIG_READY;
+    // Read from cache for registers with write-only access
+    if (tmc2160_cache(icID, TMC2160_CACHE_READ, address, &value))
+        return value;
 
-	int32_t i;
-	for(i = 0; i < TMC2160_REGISTER_COUNT; i++)
-	{
-		tmc2160->registerAccess[i]      = tmc2160_defaultRegisterAccess[i];
-		tmc2160->registerResetState[i]  = registerResetState[i];
-	}
+
+    // Send the read request
+    tmc2160_readWriteSPI(icID, &data[0], sizeof(data));
+
+    // Rewrite address and clear write bit
+    data[0] = address & TMC2160_ADDRESS_MASK;
+
+    // Send another request to receive the read reply
+    tmc2160_readWriteSPI(icID, &data[0], sizeof(data));
+
+    return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
 }
 
-void tmc2160_fillShadowRegisters(TMC2160TypeDef *tmc2160)
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 {
-	// Check if we have constants defined
-	if(ARRAY_SIZE(tmc2160_RegisterConstants) == 0)
-		return;
+    uint8_t data[5] = { 0 };
 
-	size_t i, j;
-	for (i = 0, j = 0; i < TMC2160_REGISTER_COUNT; i++)
-	{
-		// We only need to worry about hardware preset, write-only registers
-		// that have not yet been written (no dirty bit) here.
-		if(tmc2160->registerAccess[i] != TMC_ACCESS_W_PRESET)
-			continue;
+    data[0] = address | TMC2160_WRITE_BIT;
+    data[1] = 0xFF & (value>>24);
+    data[2] = 0xFF & (value>>16);
+    data[3] = 0xFF & (value>>8);
+    data[4] = 0xFF & (value>>0);
 
-		// Search the constant list for the current address. With the constant
-		// list being sorted in ascended order, we can walk through the list
-		// until the entry with an address equal or greater than i
-		while(j < ARRAY_SIZE(tmc2160_RegisterConstants) && (tmc2160_RegisterConstants[j].address < i))
-			j++;
+    // Send the write request
+    tmc2160_readWriteSPI(icID, &data[0], sizeof(data));
 
-		// Abort when we reach the end of the constant list
-		if (j == ARRAY_SIZE(tmc2160_RegisterConstants))
-			break;
+    //Cache the registers with write-only access
+    tmc2160_cache(icID, TMC2160_CACHE_WRITE, address, &value);
 
-		// If we have an entry for our current address, write the constant
-		if(tmc2160_RegisterConstants[j].address == i)
-			tmc2160->config->shadowRegister[i] = tmc2160_RegisterConstants[j].value;
-	}
-}
-
-uint8_t tmc2160_reset(TMC2160TypeDef *tmc2160)
-{
-	if(tmc2160->config->state != CONFIG_READY)
-		return false;
-
-	int32_t i;
-
-	// Reset the dirty bits
-	for(i = 0; i < TMC2160_REGISTER_COUNT; i++)
-		tmc2160->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
-
-	tmc2160->config->state        = CONFIG_RESET;
-	tmc2160->config->configIndex  = 0;
-
-	return true;
-}
-
-uint8_t tmc2160_restore(TMC2160TypeDef *tmc2160)
-{
-	if(tmc2160->config->state != CONFIG_READY)
-		return false;
-
-	tmc2160->config->state        = CONFIG_RESTORE;
-	tmc2160->config->configIndex  = 0;
-
-	return true;
-}
-
-void tmc2160_setRegisterResetState(TMC2160TypeDef *tmc2160, const int32_t *resetState)
-{
-	uint32_t i;
-	for(i = 0; i < TMC2160_REGISTER_COUNT; i++)
-		tmc2160->registerResetState[i] = resetState[i];
-}
-
-void tmc2160_setCallback(TMC2160TypeDef *tmc2160, tmc2160_callback callback)
-{
-	tmc2160->config->callback = (tmc_callback_config) callback;
-}
-
-static void writeConfiguration(TMC2160TypeDef *tmc2160)
-{
-	uint8_t *ptr = &tmc2160->config->configIndex;
-	const int32_t *settings;
-
-	if(tmc2160->config->state == CONFIG_RESTORE)
-	{
-		settings = tmc2160->config->shadowRegister;
-		// Find the next restorable register
-		while((*ptr < TMC2160_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc2160->registerAccess[*ptr]))
-			(*ptr)++;
-	}
-	else
-	{
-		settings = tmc2160->registerResetState;
-		// Find the next resettable register
-		while((*ptr < TMC2160_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc2160->registerAccess[*ptr]))
-			(*ptr)++;
-	}
-
-	if(*ptr < TMC2160_REGISTER_COUNT)
-	{
-		tmc2160_writeInt(tmc2160, *ptr, settings[*ptr]);
-		(*ptr)++;
-	}
-	else // Finished configuration
-	{
-		if(tmc2160->config->callback)
-			((tmc2160_callback)tmc2160->config->callback)(tmc2160, tmc2160->config->state);
-
-		tmc2160->config->state = CONFIG_READY;
-	}
-}
-
-void tmc2160_periodicJob(TMC2160TypeDef *tmc2160, uint32_t tick)
-{
-	UNUSED(tick);
-
-	if(tmc2160->config->state != CONFIG_READY)
-		writeConfiguration(tmc2160);
-}
-
+    }
