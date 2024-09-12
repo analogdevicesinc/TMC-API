@@ -2,7 +2,7 @@
 * Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -25,6 +25,15 @@
 // Usage note: use 1 TypeDef per IC
 typedef struct {
     ConfigurationTypeDef *config;
+/************************************************************* read / write Implementation *********************************************************************/
+
+// => TMC-API wrapper
+extern bool tmc2300_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern uint8_t tmc2300_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc2300_readRegister(uint16_t icID, uint8_t address);
+void tmc2300_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
     int32_t registerResetState[TMC2300_REGISTER_COUNT];
     uint8_t registerAccess[TMC2300_REGISTER_COUNT];
