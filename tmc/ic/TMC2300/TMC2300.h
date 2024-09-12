@@ -18,19 +18,19 @@
 
 // Helper macros
 #define TMC2300_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc2300_readInt(tdef, address), mask, shift)
+        FIELD_GET(tmc2300_readInt(tdef, address), mask, shift)
 #define TMC2300_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc2300_writeInt(tdef, address, FIELD_SET(tmc2300_readInt(tdef, address), mask, shift, value)))
+        (tmc2300_writeInt(tdef, address, FIELD_SET(tmc2300_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
-	ConfigurationTypeDef *config;
+    ConfigurationTypeDef *config;
 
-	int32_t registerResetState[TMC2300_REGISTER_COUNT];
-	uint8_t registerAccess[TMC2300_REGISTER_COUNT];
+    int32_t registerResetState[TMC2300_REGISTER_COUNT];
+    uint8_t registerAccess[TMC2300_REGISTER_COUNT];
 
-	uint8_t slaveAddress;
-	uint8_t standbyEnabled;
+    uint8_t slaveAddress;
+    uint8_t standbyEnabled;
 } TMC2300TypeDef;
 
 typedef void (*tmc2300_callback)(TMC2300TypeDef*, ConfigState);
@@ -44,28 +44,28 @@ typedef void (*tmc2300_callback)(TMC2300TypeDef*, ConfigState);
 //   0x43: read/write, has hardware presets on reset
 static const uint8_t tmc2300_defaultRegisterAccess[TMC2300_REGISTER_COUNT] =
 {
-//  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
-	0x43, 0x23, 0x01, 0x02, ____, ____, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
-	0x42, 0x42, 0x01, ____, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
-	____, ____, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x20 - 0x2F
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x30 - 0x3F
-	0x02, 0x01, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x40 - 0x4F
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x50 - 0x5F
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x01, ____, 0x43, ____, ____, 0x01, // 0x60 - 0x6F
-	0x43, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
+        //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
+        0x43, 0x23, 0x01, 0x02, ____, ____, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
+        0x42, 0x42, 0x01, ____, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x10 - 0x1F
+        ____, ____, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x20 - 0x2F
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x30 - 0x3F
+        0x02, 0x01, 0x02, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x40 - 0x4F
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x50 - 0x5F
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x01, ____, 0x43, ____, ____, 0x01, // 0x60 - 0x6F
+        0x43, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
 static const int32_t tmc2300_defaultRegisterResetState[TMC2300_REGISTER_COUNT] =
 {
-//	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
-	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
-	N_A, N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x30 - 0x3F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   N_A, 0,   0,   0, // 0x60 - 0x6F
-	N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  // 0x70 - 0x7F
+        //	0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
+        N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
+        N_A, N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x10 - 0x1F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x20 - 0x2F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x30 - 0x3F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x40 - 0x4F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x50 - 0x5F
+        0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   N_A, 0,   0,   0, // 0x60 - 0x6F
+        N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0  // 0x70 - 0x7F
 };
 
 // Register constants. These are required for 0x42 registers, since we do not have
@@ -74,11 +74,11 @@ static const int32_t tmc2300_defaultRegisterResetState[TMC2300_REGISTER_COUNT] =
 // contents while still in standby.
 static const TMCRegisterConstant tmc2300_RegisterConstants[] =
 {		// Use ascending addresses!
-		{ 0x00, 0x00000040 }, // GCONF
-		{ 0x10, 0x00011F08 }, // IHOLD_IRUN
-		{ 0x11, 0x00000014 }, // TPOWERDOWN
-		{ 0x6C, 0x13008001 }, // CHOPCONF
-		{ 0x70, 0xC40D1024 }, // PWMCONF
+        { 0x00, 0x00000040 }, // GCONF
+        { 0x10, 0x00011F08 }, // IHOLD_IRUN
+        { 0x11, 0x00000014 }, // TPOWERDOWN
+        { 0x6C, 0x13008001 }, // CHOPCONF
+        { 0x70, 0xC40D1024 }, // PWMCONF
 };
 
 
