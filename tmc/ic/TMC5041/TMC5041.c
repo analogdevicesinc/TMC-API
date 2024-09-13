@@ -2,140 +2,192 @@
 * Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
 
 #include "TMC5041.h"
 
-// => SPI wrapper
-extern void tmc5041_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-// <= SPI wrapper
 
-void tmc5041_writeDatagram(TMC5041TypeDef *tmc5041, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
+/**************************************************************** Cache Implementation *************************************************************************/
+
+#if TMC5041_CACHE == 0
+static inline bool tmc5041_cache(uint16_t icID, TMC5041CacheOp operation, uint8_t address, uint32_t *value)
 {
-	uint8_t data[5] = {address | TMC5041_WRITE_BIT, x1, x2, x3, x4 };
-	tmc5041_readWriteArray(tmc5041->config->channel, &data[0], 5);
+   UNUSED(icID);
+   UNUSED(address);
+   UNUSED(operation);
+   return false;
+}
+#else
+#if TMC5041_ENABLE_TMC_CACHE == 1
 
-	int32_t value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
+uint8_t tmc5041_dirtyBits[TMC5041_IC_CACHE_COUNT][TMC5041_REGISTER_COUNT/8]= {0};
+int32_t tmc5041_shadowRegister[TMC5041_IC_CACHE_COUNT][TMC5041_REGISTER_COUNT];
 
-	// Write to the shadow register and mark the register dirty
-	address = TMC_ADDRESS(address);
-	tmc5041->config->shadowRegister[address] = value;
-	tmc5041->registerAccess[address] |= TMC_ACCESS_DIRTY;
+void tmc5041_setDirtyBit(uint16_t icID, uint8_t index, bool value)
+ {
+    if(index >= TMC5041_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp = &tmc5041_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
 }
 
-void tmc5041_writeInt(TMC5041TypeDef *tmc5041, uint8_t address, int32_t value)
+bool tmc5041_getDirtyBit(uint16_t icID, uint8_t index)
 {
-	tmc5041_writeDatagram(tmc5041, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
+    if(index >= TMC5041_REGISTER_COUNT)
+        return false;
+
+    uint8_t *tmp = &tmc5041_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    return ((*tmp) >> shift) & 1;
+}
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+
+bool tmc5041_cache(uint16_t icID, TMC5041CacheOp operation, uint8_t address, uint32_t *value)
+{
+   if (operation == TMC5041_CACHE_READ)
+   {
+       // Check if the value should come from cache
+
+       // Only supported chips have a cache
+       if (icID >= TMC5041_IC_CACHE_COUNT)
+           return false;
+
+       // Only non-readable registers care about caching
+       // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+       if (TMC5041_IS_READABLE(tmc5041_registerAccess[address]))
+           return false;
+
+       // Grab the value from the cache
+       *value = tmc5041_shadowRegister[icID][address];
+       return true;
+   }
+   else if (operation == TMC5041_CACHE_WRITE || operation == TMC5041_CACHE_FILL_DEFAULT)
+   {
+       // Fill the cache
+
+       // only supported chips have a cache
+       if (icID >= TMC5041_IC_CACHE_COUNT)
+           return false;
+
+       // Write to the shadow register.
+       tmc5041_shadowRegister[icID][address] = *value;
+       // For write operations, mark the register dirty
+       if (operation == TMC5041_CACHE_WRITE)
+       {
+           tmc5041_setDirtyBit(icID, address, true);
+       }
+
+       return true;
+   }
+   return false;
 }
 
-int32_t tmc5041_readInt(TMC5041TypeDef *tmc5041, uint8_t address)
+void tmc5041_initCache()
 {
-	address = TMC_ADDRESS(address);
+   // Check if we have constants defined
+   if(ARRAY_SIZE(tmc5041_RegisterConstants) == 0)
+       return;
 
-	// register not readable -> shadow register copy
-	if(!TMC_IS_READABLE(tmc5041->registerAccess[address]))
-		return tmc5041->config->shadowRegister[address];
+   size_t i, j, id, motor;
 
-	uint8_t data[5] = { 0, 0, 0, 0, 0 };
+   for(i = 0, j = 0; i < TMC5041_REGISTER_COUNT; i++)
+   {
+       // We only need to worry about hardware preset, write-only registers
+       // that have not yet been written (no dirty bit) here.
+       if(tmc5041_registerAccess[i] != TMC5041_ACCESS_W_PRESET)
+           continue;
 
-	data[0] = address;
-	tmc5041_readWriteArray(tmc5041->config->channel, &data[0], 5);
+       // Search the constant list for the current address. With the constant
+       // list being sorted in ascended order, we can walk through the list
+       // until the entry with an address equal or greater than i
+       while(j < ARRAY_SIZE(tmc5041_RegisterConstants) && (tmc5041_RegisterConstants[j].address < i))
+           j++;
 
-	data[0] = address;
-	tmc5041_readWriteArray(tmc5041->config->channel, &data[0], 5);
+       // Abort when we reach the end of the constant list
+       if (j == ARRAY_SIZE(tmc5041_RegisterConstants))
+           break;
 
-	return ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
+       // If we have an entry for our current address, write the constant
+       if(tmc5041_RegisterConstants[j].address == i)
+       {
+           for (id = 0; id < TMC5041_IC_CACHE_COUNT; id++)
+           {
+               tmc5041_cache(id, TMC5041_CACHE_FILL_DEFAULT, i, &tmc5041_RegisterConstants[j].value);
+           }
+       }
+   }
+}
+#else
+// User must implement their own cache
+extern bool tmc5041_cache(uint16_t icID, TMC5041CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
+/************************************************************* read / write Implementation *********************************************************************/
+
+
+
+static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
+static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
+
+int32_t tmc5041_readRegister(uint16_t icID, uint8_t address)
+{
+        return readRegisterSPI(icID, address);
+        // ToDo: Error handling
 }
 
-void tmc5041_init(TMC5041TypeDef *tmc5041, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
+void tmc5041_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 {
-	tmc5041->velocity[0]      = 0;
-	tmc5041->velocity[1]      = 0;
-	tmc5041->oldTick          = 0;
-	tmc5041->oldX[0]          = 0;
-	tmc5041->oldX[1]          = 0;
-	tmc5041->vMaxModified[0]  = false;
-	tmc5041->vMaxModified[1]  = false;
-
-	tmc5041->config               = config;
-	tmc5041->config->callback     = NULL;
-	tmc5041->config->channel      = channel;
-	tmc5041->config->configIndex  = 0;
-	tmc5041->config->state        = CONFIG_READY;
-
-	int32_t i;
-	for(i = 0; i < TMC5041_REGISTER_COUNT; i++)
-	{
-		tmc5041->registerAccess[i]      = tmc5041_defaultRegisterAccess[i];
-		tmc5041->registerResetState[i]  = registerResetState[i];
-	}
+        writeRegisterSPI(icID, address, value);
 }
 
-static void tmc5041_writeConfiguration(TMC5041TypeDef *tmc5041)
+int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 {
-	uint8_t *ptr = &tmc5041->config->configIndex;
-	const int32_t *settings = (tmc5041->config->state == CONFIG_RESTORE) ? tmc5041->config->shadowRegister : tmc5041->registerResetState;
+    uint8_t data[5] = { 0 };
 
-	while((*ptr < TMC5041_REGISTER_COUNT) && !TMC_IS_WRITABLE(tmc5041->registerAccess[*ptr]))
-		(*ptr)++;
+    uint32_t value;
 
-	if(*ptr < TMC5041_REGISTER_COUNT)
-	{
-		tmc5041_writeInt(tmc5041, *ptr, settings[*ptr]);
-		(*ptr)++;
-	}
-	else
-	{
-		tmc5041->config->state = CONFIG_READY;
-	}
+    // Read from cache for registers with write-only access
+    if (tmc5041_cache(icID, TMC5041_CACHE_READ, address, &value))
+        return value;
+
+    // clear write bit
+    data[0] = address & TMC5041_ADDRESS_MASK;
+
+    // Send the read request
+    tmc5041_readWriteSPI(icID, &data[0], sizeof(data));
+
+    // Rewrite address and clear write bit
+    data[0] = address & TMC5041_ADDRESS_MASK;
+
+    // Send another request to receive the read reply
+    tmc5041_readWriteSPI(icID, &data[0], sizeof(data));
+
+    return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
 }
 
-void tmc5041_periodicJob(TMC5041TypeDef *tmc5041, uint32_t tick)
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 {
-	int32_t xActual;
-	uint32_t tickDiff;
+    uint8_t data[5] = { 0 };
 
-	if(tmc5041->config->state != CONFIG_READY)
-	{
-		tmc5041_writeConfiguration(tmc5041);
-		return;
-	}
+    data[0] = address | TMC5041_WRITE_BIT;
+    data[1] = 0xFF & (value>>24);
+    data[2] = 0xFF & (value>>16);
+    data[3] = 0xFF & (value>>8);
+    data[4] = 0xFF & (value>>0);
 
-	if((tickDiff = tick - tmc5041->oldTick) >= 5)
-	{
-		int32_t i;
-		for (i = 0; i < TMC5041_MOTORS; i++)
-		{
-			xActual = tmc5041_readInt(tmc5041, TMC5041_XACTUAL(i));
-			tmc5041->config->shadowRegister[TMC5041_XACTUAL(i)] = xActual;
-			tmc5041->velocity[i] = (int32_t) ((float) (abs(xActual-tmc5041->oldX[i]) / (float) tickDiff) * (float) 1048.576);
-			tmc5041->oldX[i] = xActual;
-		}
-		tmc5041->oldTick = tick;
-	}
-}
+    // Send the write request
+    tmc5041_readWriteSPI(icID, &data[0], sizeof(data));
 
-uint8_t tmc5041_reset(TMC5041TypeDef *tmc5041)
-{
-	if(tmc5041->config->state != CONFIG_READY)
-		return 0;
-
-	tmc5041->config->state        = CONFIG_RESET;
-	tmc5041->config->configIndex  = 0;
-
-	return 1;
-}
-
-uint8_t tmc5041_restore(TMC5041TypeDef *tmc5041)
-{
-	if(tmc5041->config->state != CONFIG_READY)
-		return 0;
-
-	tmc5041->config->state        = CONFIG_RESTORE;
-	tmc5041->config->configIndex  = 0;
-
-	return 1;
+    //Cache the registers with write-only access
+    tmc5041_cache(icID, TMC5041_CACHE_WRITE, address, &value);
 }
