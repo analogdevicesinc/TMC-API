@@ -63,6 +63,7 @@ extern uint8_t tmc5130_getNodeAddress(uint16_t icID);
 
 int32_t tmc5130_readRegister(uint16_t icID, uint8_t address);
 void tmc5130_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5130_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 static inline uint32_t tmc5130_fieldExtract(uint32_t data, RegisterField field)
 {
