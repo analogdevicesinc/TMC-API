@@ -9,14 +9,12 @@
 
 #ifndef TMC_IC_TMC2240_H_
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 #include "tmc/helpers/API_Header.h"
 #include "TMC2240_HW_Abstraction.h"
 
-// Helper macros
-#define TMC2240_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc2240_readInt(tdef, address), mask, shift)
-#define TMC2240_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc2240_writeInt(tdef, address, FIELD_SET(tmc2240_readInt(tdef, address), mask, shift, value)))
 
 // Typedefs
 typedef enum {
@@ -37,6 +35,12 @@ void tmc2240_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
 typedef struct
 {
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
 	ConfigurationTypeDef *config;
 	int32_t velocity, oldX;
 	uint32_t oldTick;
@@ -46,6 +50,41 @@ typedef struct
 } TMC2240TypeDef;
 
 typedef void (*tmc2240_callback)(TMC2240TypeDef*, ConfigState);
+static inline uint32_t tmc2240_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc2240_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc2240_readRegister(icID, field.address);
+
+    return tmc2240_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc2240_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc2240_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc2240_readRegister(icID, field.address);
+
+    regValue = tmc2240_fieldUpdate(regValue, field, value);
+
+    tmc2240_writeRegister(icID, field.address, regValue);
+}
 
 // Default Register values
 #define R00 0x00002108  // GCONF
