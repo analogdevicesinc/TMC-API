@@ -10,14 +10,12 @@
 #ifndef TMC_IC_TMC2300_H_
 #define TMC_IC_TMC2300_H_
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 #include "tmc/helpers/API_Header.h"
 #include "TMC2300_HW_Abstraction.h"
 
-// Helper macros
-#define TMC2300_FIELD_READ(tdef, address, mask, shift) \
-        FIELD_GET(tmc2300_readInt(tdef, address), mask, shift)
-#define TMC2300_FIELD_WRITE(tdef, address, mask, shift, value) \
-        (tmc2300_writeInt(tdef, address, FIELD_SET(tmc2300_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
@@ -39,6 +37,48 @@ void tmc2300_writeRegister(uint16_t icID, uint8_t address, int32_t value);
     uint8_t standbyEnabled;
 } TMC2300TypeDef;
 
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t tmc2300_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc2300_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc2300_readRegister(icID, field.address);
+
+    return tmc2300_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc2300_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc2300_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc2300_readRegister(icID, field.address);
+
+    regValue = tmc2300_fieldUpdate(regValue, field, value);
+
+    tmc2300_writeRegister(icID, field.address, regValue);
 typedef void (*tmc2300_callback)(TMC2300TypeDef*, ConfigState);
 
 // Register access permissions:
