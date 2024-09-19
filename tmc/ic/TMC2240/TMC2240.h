@@ -10,9 +10,7 @@
 #ifndef TMC_IC_TMC2240_H_
 
 #include "tmc/helpers/API_Header.h"
-#include "../TMC2240/TMC2240_Register.h"
-#include "TMC2240_Constants.h"
-#include "../TMC2240/TMC2240_Fields.h"
+#include "TMC2240_HW_Abstraction.h"
 
 // Helper macros
 #define TMC2240_FIELD_READ(tdef, address, mask, shift) \
