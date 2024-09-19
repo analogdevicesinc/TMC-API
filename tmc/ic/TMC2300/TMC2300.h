@@ -10,11 +10,8 @@
 #ifndef TMC_IC_TMC2300_H_
 #define TMC_IC_TMC2300_H_
 
-#include "tmc/helpers/Constants.h"
 #include "tmc/helpers/API_Header.h"
-#include "TMC2300_Constants.h"
-#include "TMC2300_Register.h"
-#include "TMC2300_Fields.h"
+#include "TMC2300_HW_Abstraction.h"
 
 // Helper macros
 #define TMC2300_FIELD_READ(tdef, address, mask, shift) \
