@@ -43,92 +43,29 @@ static inline bool tmc2300_cache(uint16_t icID, TMC2300CacheOp operation, uint8_
 }
 #else
 #if TMC2300_ENABLE_TMC_CACHE == 1
-// => UART wrapper
-extern void tmc2300_readWriteArray(uint8_t channel, uint8_t *data, size_t writeLength, size_t readLength);
-// <= UART wrapper
 
 uint8_t tmc2300_dirtyBits[TMC2300_IC_CACHE_COUNT][TMC2300_REGISTER_COUNT/8]= {0};
 int32_t tmc2300_shadowRegister[TMC2300_IC_CACHE_COUNT][TMC2300_REGISTER_COUNT];
-// => CRC wrapper
-extern uint8_t tmc2300_CRC8(uint8_t *data, size_t length);
-// <= CRC wrapper
 
 void tmc2300_setDirtyBit(uint16_t icID, uint8_t index, bool value)
-void tmc2300_writeInt(TMC2300TypeDef *tmc2300, uint8_t address, int32_t value)
 {
     if(index >= TMC2300_REGISTER_COUNT)
         return;
-    // When we are in standby or in the reset procedure we do not actually write
-    // to the IC - we only update the shadow registers. After exiting standby or
-    // completing a reset we transition into a restore, which pushes the shadow
-    // register contents into the chip.
-    if (!tmc2300->standbyEnabled || tmc2300->config->state != CONFIG_RESET)
-    {
-        uint8_t data[8];
-
-        data[0] = 0x05;
-        data[1] = tmc2300->slaveAddress;
-        data[2] = address | TMC_WRITE_BIT;
-        data[3] = (value >> 24) & 0xFF;
-        data[4] = (value >> 16) & 0xFF;
-        data[5] = (value >> 8 ) & 0xFF;
-        data[6] = (value      ) & 0xFF;
-        data[7] = tmc2300_CRC8(data, 7);
-
-        tmc2300_readWriteArray(tmc2300->config->channel, &data[0], 8, 0);
-    }
 
     uint8_t *tmp = &tmc2300_dirtyBits[icID][index / 8];
     uint8_t shift = (index % 8);
     uint8_t mask = 1 << shift;
     *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
-    // Write to the shadow register and mark the register dirty
-    address = TMC_ADDRESS(address);
-    tmc2300->config->shadowRegister[address] = value;
-    tmc2300->registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
 bool tmc2300_getDirtyBit(uint16_t icID, uint8_t index)
-int32_t tmc2300_readInt(TMC2300TypeDef *tmc2300, uint8_t address)
 {
     if(index >= TMC2300_REGISTER_COUNT)
         return false;
-    uint8_t data[8] = { 0 };
-
-    address = TMC_ADDRESS(address);
-
-    // When the chip is in standby or when accessing a write-only register
-    // use the shadow register content instead.
-    if (tmc2300->standbyEnabled || !TMC_IS_READABLE(tmc2300->registerAccess[address]))
-        return tmc2300->config->shadowRegister[address];
-
-    data[0] = 0x05;
-    data[1] = tmc2300->slaveAddress;
-    data[2] = address;
-    data[3] = tmc2300_CRC8(data, 3);
-
-    tmc2300_readWriteArray(tmc2300->config->channel, data, 4, 8);
-
-    // Byte 0: Sync nibble correct?
-    if (data[0] != 0x05)
-        return 0;
-
-    // Byte 1: Master address correct?
-    if (data[1] != 0xFF)
-        return 0;
-
-    // Byte 2: Address correct?
-    if (data[2] != address)
-        return 0;
-
-    // Byte 7: CRC correct?
-    if (data[7] != tmc2300_CRC8(data, 7))
-        return 0;
 
     uint8_t *tmp = &tmc2300_dirtyBits[icID][index / 8];
     uint8_t shift = (index % 8);
     return ((*tmp) >> shift) & 1;
-    return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
 }
 /*
  * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
@@ -136,37 +73,25 @@ int32_t tmc2300_readInt(TMC2300TypeDef *tmc2300, uint8_t address)
  */
 
 bool tmc2300_cache(uint16_t icID, TMC2300CacheOp operation, uint8_t address, uint32_t *value)
-void tmc2300_init(TMC2300TypeDef *tmc2300, uint8_t channel, ConfigurationTypeDef *tmc2300_config, const int32_t *registerResetState)
 {
     if (operation == TMC2300_CACHE_READ)
     {
         // Check if the value should come from cache
-    tmc2300->config               = tmc2300_config;
-    tmc2300->config->callback     = NULL;
-    tmc2300->config->channel      = channel;
-    tmc2300->config->configIndex  = 0;
-    tmc2300->config->state        = CONFIG_READY;
 
         // Only supported chips have a cache
         if (icID >= TMC2300_IC_CACHE_COUNT)
             return false;
-    // Default slave address: 0
-    tmc2300->slaveAddress = 0;
 
         // Only non-readable registers care about caching
         // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
         if (TMC2300_IS_READABLE(tmc2300_registerAccess[address]))
             return false;
-    // Start in standby
-    tmc2300->standbyEnabled = 1;
 
         // Grab the value from the cache
         *value = tmc2300_shadowRegister[icID][address];
         return true;
     }
     else if (operation == TMC2300_CACHE_WRITE || operation == TMC2300_CACHE_FILL_DEFAULT)
-    int32_t i;
-    for(i = 0; i < TMC2300_REGISTER_COUNT; i++)
     {
         // Fill the cache
 
@@ -183,17 +108,11 @@ void tmc2300_init(TMC2300TypeDef *tmc2300, uint8_t channel, ConfigurationTypeDef
         }
 
         return true;
-        tmc2300->registerAccess[i]      = tmc2300_defaultRegisterAccess[i];
-        tmc2300->registerResetState[i]  = registerResetState[i];
     }
     return false;
 }
 
 void tmc2300_initCache()
-// Fill the shadow registers of hardware preset registers
-// Only needed if you want to read out those registers to display the value
-// (e.g. for the TMCL IDE register browser)
-static void fillShadowRegisters(TMC2300TypeDef *tmc2300)
 {
     // Check if we have constants defined
     if(ARRAY_SIZE(tmc2300_RegisterConstants) == 0)
@@ -202,24 +121,17 @@ static void fillShadowRegisters(TMC2300TypeDef *tmc2300)
     size_t i, j, id, motor;
 
     for(i = 0, j = 0; i < TMC2300_REGISTER_COUNT; i++)
-    size_t i, j = 0;
-    for(i = 0; i < TMC2300_REGISTER_COUNT; i++)
     {
         // We only need to worry about hardware preset, write-only registers
-        // We only need to worry about hardware preset registers
         // that have not yet been written (no dirty bit) here.
         if(tmc2300_registerAccess[i] != TMC2300_ACCESS_W_PRESET && tmc2300_registerAccess[i] != TMC2300_ACCESS_RW_PRESET)
-        if(!TMC_IS_PRESET(tmc2300->registerAccess[i]) || TMC_IS_DIRTY(tmc2300->registerAccess[i]))
             continue;
 
         // Search the constant list for the current address. With the constant
         // list being sorted in ascended order, we can walk through the list
         // until the entry with an address equal or greater than i
         while(j < ARRAY_SIZE(tmc2300_RegisterConstants) && (tmc2300_RegisterConstants[j].address < i))
-        while (j < ARRAY_SIZE(tmc2300_RegisterConstants) && (tmc2300_RegisterConstants[j].address < i))
-        {
             j++;
-        }
 
         // Abort when we reach the end of the constant list
         if (j == ARRAY_SIZE(tmc2300_RegisterConstants))
@@ -227,13 +139,11 @@ static void fillShadowRegisters(TMC2300TypeDef *tmc2300)
 
         // If we have an entry for our current address, write the constant
         if(tmc2300_RegisterConstants[j].address == i)
-        if (tmc2300_RegisterConstants[j].address == i)
         {
             for (id = 0; id < TMC2300_IC_CACHE_COUNT; id++)
             {
                 tmc2300_cache(id, TMC2300_CACHE_FILL_DEFAULT, i, &tmc2300_RegisterConstants[j].value);
             }
-            tmc2300->config->shadowRegister[i] = tmc2300_RegisterConstants[j].value;
         }
     }
 }
@@ -244,125 +154,38 @@ extern bool tmc2300_cache(uint16_t icID, TMC2300CacheOp operation, uint8_t addre
 #endif
 
 /************************************************************* read / write Implementation *********************************************************************/
-static void writeConfiguration(TMC2300TypeDef *tmc2300)
-{
-    uint8_t *ptr = &tmc2300->config->configIndex;
-    const int32_t *settings;
 
 static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
 static void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
-    if (tmc2300->config->state == CONFIG_RESET)
-    {
-        settings = tmc2300->registerResetState;
-        // Find the next resettable register
-        while((*ptr < TMC2300_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc2300->registerAccess[*ptr]))
-        {
-            (*ptr)++;
-        }
-    }
-    else
-    {
-        // Do not restore while in standby
-        if (tmc2300->standbyEnabled)
-            return;
 
-        settings = tmc2300->config->shadowRegister;
-        // Find the next restorable register
-        while((*ptr < TMC2300_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc2300->registerAccess[*ptr]))
-        {
-            (*ptr)++;
-        }
-    }
-
-    if(*ptr < TMC2300_REGISTER_COUNT)
-    {
-        // Reset/restore the found register
-        tmc2300_writeInt(tmc2300, *ptr, settings[*ptr]);
-        (*ptr)++;
-    }
-    else
-    {
-        fillShadowRegisters(tmc2300);
-
-        // Reset/restore complete -> call the callback if set
-        if (tmc2300->config->callback)
-        {
-            ((tmc2300_callback)tmc2300->config->callback)(tmc2300, tmc2300->config->state);
-        }
-
-        if (tmc2300->config->state == CONFIG_RESET)
-        {
-            // Reset done -> Perform a restore
-            tmc2300->config->state        = CONFIG_RESTORE;
-            tmc2300->config->configIndex  = 0;
-        }
-        else
-        {
-            // Restore done -> configuration complete
-            tmc2300->config->state = CONFIG_READY;
-        }
-    }
-}
 
 int32_t tmc2300_readRegister(uint16_t icID, uint8_t address)
-void tmc2300_setRegisterResetState(TMC2300TypeDef *tmc2300, const int32_t *resetState)
 {
     return readRegisterUART(icID, address);
-    size_t i;
-    for (i = 0; i < TMC2300_REGISTER_COUNT; i++)
-    {
-        tmc2300->registerResetState[i] = resetState[i];
-    }
 }
 void tmc2300_writeRegister(uint16_t icID, uint8_t address, int32_t value)
-
-void tmc2300_setCallback(TMC2300TypeDef *tmc2300, tmc2300_callback callback)
 {
     writeRegisterUART(icID, address, value);
-    tmc2300->config->callback = (tmc_callback_config) callback;
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
-void tmc2300_periodicJob(TMC2300TypeDef *tmc2300, uint32_t tick)
 {
     uint32_t value;
     registerAddress = registerAddress & TMC2300_ADDRESS_MASK;
-    UNUSED(tick);
 
-    if(tmc2300->config->state != CONFIG_READY)
-    {
-        writeConfiguration(tmc2300);
-        return;
-    }
-}
 
     // Read from cache for registers with write-only access
     if (tmc2300_cache(icID, TMC2300_CACHE_READ, registerAddress, &value))
         return value;
-uint8_t tmc2300_reset(TMC2300TypeDef *tmc2300)
-{
-    // A reset can always happen - even during another reset or restore
 
     uint8_t data[8] = { 0 };
-    // Reset the dirty bits and wipe the shadow registers
-    size_t i;
-    for(i = 0; i < TMC2300_REGISTER_COUNT; i++)
-    {
-        tmc2300->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
-        tmc2300->config->shadowRegister[i] = 0;
-    }
 
-    // Activate the reset config mechanism
-    tmc2300->config->state        = CONFIG_RESET;
-    tmc2300->config->configIndex  = 0;
 
     data[0] = 0x05;
     data[1] = tmc2300_getNodeAddress(icID);
     data[2] = registerAddress;
     data[3] = CRC8(data, 3);
-    return 1;
-}
 
     // When the chip is in standby or use the shadow register content instead
     if (!tmc2300_readWriteUART(icID, &data[0], 4, 8))
@@ -370,41 +193,24 @@ uint8_t tmc2300_reset(TMC2300TypeDef *tmc2300)
 
     // Byte 0: Sync nibble correct?
     if (data[0] != 0x05)
-uint8_t tmc2300_restore(TMC2300TypeDef *tmc2300)
-{
-    // Do not interrupt a reset
-    // A reset will transition into a restore anyways
-    if(tmc2300->config->state == CONFIG_RESET)
         return 0;
 
     // Byte 1: Master address correct?
     if (data[1] != 0xFF)
         return 0;
-    tmc2300->config->state        = CONFIG_RESTORE;
-    tmc2300->config->configIndex  = 0;
 
     // Byte 2: Address correct?
     if (data[2] != registerAddress)
         return 0;
-    return 1;
-}
 
     // Byte 7: CRC correct?
     if (data[7] != CRC8(data, 7))
         return 0;
-uint8_t tmc2300_getSlaveAddress(TMC2300TypeDef *tmc2300)
-{
-    return tmc2300->slaveAddress;
-}
 
     return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
-void tmc2300_setSlaveAddress(TMC2300TypeDef *tmc2300, uint8_t slaveAddress)
-{
-    tmc2300->slaveAddress = slaveAddress;
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
-uint8_t tmc2300_getStandby(TMC2300TypeDef *tmc2300)
 {
     uint8_t data[8];
 
@@ -422,11 +228,9 @@ uint8_t tmc2300_getStandby(TMC2300TypeDef *tmc2300)
     //Cache the registers with write-only access
     tmc2300_cache(icID, TMC2300_CACHE_WRITE, registerAddress, &value);
 
-    return tmc2300->standbyEnabled;
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
-void tmc2300_setStandby(TMC2300TypeDef *tmc2300, uint8_t standbyState)
 {
     uint8_t result = 0;
 
@@ -442,10 +246,4 @@ void tmc2300_setStandby(TMC2300TypeDef *tmc2300, uint8_t standbyState)
     result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
 
     return result;
-    if (tmc2300->standbyEnabled && !standbyState)
-    {
-        // Just exited standby -> call the restore
-        tmc2300_restore(tmc2300);
-    }
-    tmc2300->standbyEnabled = standbyState;
 }

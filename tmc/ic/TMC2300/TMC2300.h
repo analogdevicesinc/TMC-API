@@ -13,7 +13,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include "tmc/helpers/API_Header.h"
 #include "TMC2300_HW_Abstraction.h"
 
 
@@ -44,9 +43,6 @@
 /******************************************************************************/
 
 
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-    ConfigurationTypeDef *config;
 /************************************************************* read / write Implementation *********************************************************************/
 
 // => TMC-API wrapper
@@ -57,12 +53,7 @@ extern uint8_t tmc2300_getNodeAddress(uint16_t icID);
 int32_t tmc2300_readRegister(uint16_t icID, uint8_t address);
 void tmc2300_writeRegister(uint16_t icID, uint8_t address, int32_t value);
 
-    int32_t registerResetState[TMC2300_REGISTER_COUNT];
-    uint8_t registerAccess[TMC2300_REGISTER_COUNT];
 
-    uint8_t slaveAddress;
-    uint8_t standbyEnabled;
-} TMC2300TypeDef;
 
 typedef struct
 {
@@ -155,7 +146,6 @@ typedef struct{
 // register reset values array, N_A is used as an indicator for a preset
 // value, where any value will be ignored anyways (N_A: not available).
 #define N_A 0
-typedef void (*tmc2300_callback)(TMC2300TypeDef*, ConfigState);
 
 // Register access permissions:
 //   0x00: none (reserved)
@@ -206,27 +196,10 @@ static const TMC2300RegisterConstants tmc2300_RegisterConstants[] =
 extern uint8_t tmc2300_dirtyBits[TMC2300_IC_CACHE_COUNT][TMC2300_REGISTER_COUNT/8];
 extern int32_t tmc2300_shadowRegister[TMC2300_IC_CACHE_COUNT][TMC2300_REGISTER_COUNT];
 bool tmc2300_cache(uint16_t icID, TMC2300CacheOp operation, uint8_t address, uint32_t *value);
-extern void tmc2300_initCache(void);
+void tmc2300_initCache(void);
 void tmc2300_setDirtyBit(uint16_t icID, uint8_t index, bool value);
 bool tmc2300_getDirtyBit(uint16_t icID, uint8_t index);
 #endif
 #endif
 /***************************************************************************************************************************************************/
-
-void tmc2300_writeInt(TMC2300TypeDef *tmc2300, uint8_t address, int32_t value);
-int32_t tmc2300_readInt(TMC2300TypeDef *tmc2300, uint8_t address);
-
-void tmc2300_init(TMC2300TypeDef *tmc2300, uint8_t channel, ConfigurationTypeDef *tmc2300_config, const int32_t *registerResetState);
-uint8_t tmc2300_reset(TMC2300TypeDef *tmc2300);
-uint8_t tmc2300_restore(TMC2300TypeDef *tmc2300);
-void tmc2300_setRegisterResetState(TMC2300TypeDef *tmc2300, const int32_t *resetState);
-void tmc2300_setCallback(TMC2300TypeDef *tmc2300, tmc2300_callback callback);
-void tmc2300_periodicJob(TMC2300TypeDef *tmc2300, uint32_t tick);
-
-uint8_t tmc2300_getSlaveAddress(TMC2300TypeDef *tmc2300);
-void tmc2300_setSlaveAddress(TMC2300TypeDef *tmc2300, uint8_t slaveAddress);
-
-uint8_t tmc2300_getStandby(TMC2300TypeDef *tmc2300);
-void tmc2300_setStandby(TMC2300TypeDef *tmc2300, uint8_t standbyState);
-
 #endif /* TMC_IC_TMC2300_H_ */
