@@ -2,7 +2,7 @@
 * Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
@@ -12,11 +12,36 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include "tmc/helpers/API_Header.h"
 #include "TMC2240_HW_Abstraction.h"
 
 
-// Typedefs
+/*******************************************************************************
+* API Configuration Defines
+* These control optional features of the TMC-API implementation.
+* These can be commented in/out here or defined from the build system.
+*******************************************************************************/
+
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+// To enable the cache mechanism in order to keep the copy of all registers, set TMC2240_CACHE to '1'.
+// With this mechanism the value of write-only registers could be read from their shadow copies.
+#ifndef TMC2240_CACHE
+#define TMC2240_CACHE  1
+//#define TMC2240_CACHE   0
+#endif
+
+// To use the caching mechanism already implemented by the TMC-API, set TMC2240_ENABLE_TMC_CACHE to '1'.
+// Set TMC2240_ENABLE_TMC_CACHE to '0' if one wants to have their own cache implementation.
+#ifndef TMC2240_ENABLE_TMC_CACHE
+#define TMC2240_ENABLE_TMC_CACHE   1
+//#define TMC2240_ENABLE_TMC_CACHE   0
+#endif
+
+/******************************************************************************/
+
+
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_UART,
@@ -41,15 +66,7 @@ typedef struct
     bool isSigned;
 } RegisterField;
 
-	ConfigurationTypeDef *config;
-	int32_t velocity, oldX;
-	uint32_t oldTick;
-	int32_t registerResetState[TMC2240_REGISTER_COUNT];
-	uint8_t registerAccess[TMC2240_REGISTER_COUNT];
-	uint8_t slaveAddress;
-} TMC2240TypeDef;
 
-typedef void (*tmc2240_callback)(TMC2240TypeDef*, ConfigState);
 static inline uint32_t tmc2240_fieldExtract(uint32_t data, RegisterField field)
 {
     uint32_t value = (data & field.mask) >> field.shift;
@@ -195,22 +212,10 @@ static const TMC2240RegisterConstants tmc2240_RegisterConstants[] =
         { 0x69, 0x00F70000 }  // MSLUTSTART
 };
 
-void tmc2240_init(TMC2240TypeDef *tmc2240, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-//void tmc2240_fillShadowRegisters(TMC2240TypeDef *tmc2240);
-uint8_t tmc2240_reset(TMC2240TypeDef *tmc2240);
-uint8_t tmc2240_restore(TMC2240TypeDef *tmc2240);
-uint8_t tmc2240_getSlaveAddress(TMC2240TypeDef *tmc2240);
-void tmc2240_setSlaveAddress(TMC2240TypeDef *tmc2240, uint8_t slaveAddress);
-void tmc2240_setRegisterResetState(TMC2240TypeDef *tmc2240, const int32_t *resetState);
-void tmc2240_setCallback(TMC2240TypeDef *tmc2240, tmc2240_callback callback);
-void tmc2240_periodicJob(TMC2240TypeDef *tmc2240, uint32_t tick);
-
-uint8_t tmc2240_consistencyCheck(TMC2240TypeDef *tmc2240);
-
 extern uint8_t tmc2240_dirtyBits[TMC2240_IC_CACHE_COUNT][TMC2240_REGISTER_COUNT/8];
 extern int32_t tmc2240_shadowRegister[TMC2240_IC_CACHE_COUNT][TMC2240_REGISTER_COUNT];
 bool tmc2240_cache(uint16_t icID, TMC2240CacheOp operation, uint8_t address, uint32_t *value);
-extern void tmc2240_initCache(void);
+void tmc2240_initCache(void);
 void tmc2240_setDirtyBit(uint16_t icID, uint8_t index, bool value);
 bool tmc2240_getDirtyBit(uint16_t icID, uint8_t index);
 #endif

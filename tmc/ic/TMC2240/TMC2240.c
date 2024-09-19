@@ -31,34 +31,11 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 };
 #endif
 
-// Initialize a TMC2240 IC.
-// This function requires:
-//     - tmc2240: The pointer to a TMC2240TypeDef struct, which represents one IC
-//     - channel: The channel index, which will be sent back in the SPI callback
-//     - config: A ConfigurationTypeDef struct, which will be used by the IC
-//     - registerResetState: An int32_t array with 128 elements. This holds the values to be used for a reset.
-void tmc2240_init(TMC2240TypeDef *tmc2240, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
 /**************************************************************** Cache Implementation *************************************************************************/
 
 #if TMC2240_CACHE == 0
 static inline bool tmc2240_cache(uint16_t icID, TMC2240CacheOp operation, uint8_t address, uint32_t *value)
 {
-	tmc2240->velocity  = 0;
-	tmc2240->oldTick   = 0;
-	tmc2240->oldX      = 0;
-
-	tmc2240->config               = config;
-	tmc2240->config->callback     = NULL;
-	tmc2240->config->channel      = channel;
-	tmc2240->config->configIndex  = 0;
-	tmc2240->config->state        = CONFIG_READY;
-
-	size_t i;
-	for(i = 0; i < TMC2240_REGISTER_COUNT; i++)
-	{
-		tmc2240->registerAccess[i]      = tmc2240_defaultRegisterAccess[i];
-		tmc2240->registerResetState[i]  = registerResetState[i];
-	}
     UNUSED(icID);
     UNUSED(address);
     UNUSED(operation);
@@ -70,24 +47,17 @@ static inline bool tmc2240_cache(uint16_t icID, TMC2240CacheOp operation, uint8_
 uint8_t tmc2240_dirtyBits[TMC2240_IC_CACHE_COUNT][TMC2240_REGISTER_COUNT/8]= {0};
 int32_t tmc2240_shadowRegister[TMC2240_IC_CACHE_COUNT][TMC2240_REGISTER_COUNT];
 
-// Reset the TMC2240.
-uint8_t tmc2240_reset(TMC2240TypeDef *tmc2240)
 void tmc2240_setDirtyBit(uint16_t icID, uint8_t index, bool value)
 {
-	if(tmc2240->config->state != CONFIG_READY)
-		return false;
     if(index >= TMC2240_REGISTER_COUNT)
         return;
 
-	tmc2240->config->state        = CONFIG_RESET;
-	tmc2240->config->configIndex  = 0;
     uint8_t *tmp = &tmc2240_dirtyBits[icID][index / 8];
     uint8_t shift = (index % 8);
     uint8_t mask = 1 << shift;
     *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
 }
 
-	return true;
 bool tmc2240_getDirtyBit(uint16_t icID, uint8_t index)
 {
     if(index >= TMC2240_REGISTER_COUNT)
@@ -102,19 +72,12 @@ bool tmc2240_getDirtyBit(uint16_t icID, uint8_t index)
  * The shadow copy is then used to read these kinds of registers.
  */
 
-// Restore the TMC2240 to the state stored in the shadow registers.
-// This can be used to recover the IC configuration after a VM power loss.
-uint8_t tmc2240_restore(TMC2240TypeDef *tmc2240)
 bool tmc2240_cache(uint16_t icID, TMC2240CacheOp operation, uint8_t address, uint32_t *value)
 {
-	if(tmc2240->config->state != CONFIG_READY)
-		return false;
     if (operation == TMC2240_CACHE_READ)
     {
         // Check if the value should come from cache
 
-	tmc2240->config->state        = CONFIG_RESTORE;
-	tmc2240->config->configIndex  = 0;
         // Only supported chips have a cache
         if (icID >= TMC2240_IC_CACHE_COUNT)
             return false;
@@ -144,21 +107,13 @@ bool tmc2240_cache(uint16_t icID, TMC2240CacheOp operation, uint8_t address, uin
             tmc2240_setDirtyBit(icID, address, true);
         }
 
-	return true;
         return true;
     }
     return false;
 }
 
-// Change the values the IC will be configured with when performing a reset.
-void tmc2240_setRegisterResetState(TMC2240TypeDef *tmc2240, const int32_t *resetState)
 void tmc2240_initCache()
 {
-	size_t i;
-	for(i = 0; i < TMC2240_REGISTER_COUNT; i++)
-	{
-		tmc2240->registerResetState[i] = resetState[i];
-	}
     // Check if we have constants defined
     if(ARRAY_SIZE(tmc2240_RegisterConstants) == 0)
         return;
@@ -232,8 +187,6 @@ int32_t tmc2240_readRegister(uint16_t icID, uint8_t address)
     return -1;
 }
 void tmc2240_writeRegister(uint16_t icID, uint8_t address, int32_t value)
-// Register a function to be called after completion of the configuration mechanism
-void tmc2240_setCallback(TMC2240TypeDef *tmc2240, tmc2240_callback callback)
 {
     TMC2240BusType bus = tmc2240_getBusType(icID);
 
@@ -247,11 +200,9 @@ void tmc2240_setCallback(TMC2240TypeDef *tmc2240, tmc2240_callback callback)
     }
     //Cache the registers with write-only access
     tmc2240_cache(icID, TMC2240_CACHE_WRITE, address, &value);
-	tmc2240->config->callback = (tmc_callback_config) callback;
 }
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
-uint8_t tmc2240_getSlaveAddress(TMC2240TypeDef *tmc2240)
 {
     uint8_t data[5] = { 0 };
 
@@ -268,11 +219,9 @@ uint8_t tmc2240_getSlaveAddress(TMC2240TypeDef *tmc2240)
     tmc2240_readWriteSPI(icID, &data[0], sizeof(data));
 
     return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
-	return tmc2240->slaveAddress;
 }
 
 void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
-void tmc2240_setSlaveAddress(TMC2240TypeDef *tmc2240, uint8_t slaveAddress)
 {
     uint8_t data[5] = { 0 };
 
@@ -284,12 +233,9 @@ void tmc2240_setSlaveAddress(TMC2240TypeDef *tmc2240, uint8_t slaveAddress)
 
     // Send the write request
     tmc2240_readWriteSPI(icID, &data[0], sizeof(data));
-	tmc2240->slaveAddress = slaveAddress;
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
-// Helper function: Configure the next register.
-static void writeConfiguration(TMC2240TypeDef *tmc2240)
 {
     uint8_t data[8] = { 0 };
 
@@ -320,36 +266,9 @@ static void writeConfiguration(TMC2240TypeDef *tmc2240)
         return 0;
 
     return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
-	uint8_t *ptr = &tmc2240->config->configIndex;
-	const int32_t *settings;
-
-	settings = tmc2240->registerResetState;
-	// Find the next resettable register
-	while((*ptr < TMC2240_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc2240->registerAccess[*ptr]))
-		{
-		(*ptr)++;
-		}
-//	}
-
-	if(*ptr < TMC2240_REGISTER_COUNT)
-	{
-		tmc2240_writeInt(tmc2240, *ptr, settings[*ptr]);
-		(*ptr)++;
-	}
-	else // Finished configuration
-	{
-		if(tmc2240->config->callback)
-		{
-			((tmc2240_callback)tmc2240->config->callback)(tmc2240, tmc2240->config->state);
-		}
-
-		tmc2240->config->state = CONFIG_READY;
-	}
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
-// Call this periodically
-void tmc2240_periodicJob(TMC2240TypeDef *tmc2240, uint32_t tick)
 {
     uint8_t data[8];
 
@@ -363,12 +282,6 @@ void tmc2240_periodicJob(TMC2240TypeDef *tmc2240, uint32_t tick)
     data[7] = CRC8(data, 7);
 
     tmc2240_readWriteUART(icID, &data[0], 8, 0);
-	UNUSED(tick);
-	if(tmc2240->config->state != CONFIG_READY)
-	{
-		writeConfiguration(tmc2240);
-		return;
-	}
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
