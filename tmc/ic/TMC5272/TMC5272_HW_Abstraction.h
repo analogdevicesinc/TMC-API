@@ -9,9 +9,7 @@
 #ifndef TMC5272_HW_ABSTRACTION
 #define TMC5272_HW_ABSTRACTION
 
-
 // Constants
-
 #define TMC5272_REGISTER_COUNT   128
 #define TMC5272_MOTORS           2
 #define TMC_WRITE_BIT            0x80
@@ -19,12 +17,11 @@
 #define TMC5272_MAX_VELOCITY     8388096
 #define TMC5272_MAX_ACCELERATION UINTN_MAX
 
-// ramp modes (Register TMC5272_RAMPMODE)
+// Ramp modes (Register TMC5272_RAMPMODE)
 #define TMC5272_MODE_POSITION  0
 #define TMC5272_MODE_VELPOS    1
 #define TMC5272_MODE_VELNEG    2
 #define TMC5272_MODE_HOLD      3
-
 
 // Registers in TMC5272
 
