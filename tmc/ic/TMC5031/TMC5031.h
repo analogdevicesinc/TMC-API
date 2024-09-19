@@ -216,7 +216,7 @@ static const TMC5031RegisterConstants tmc5031_RegisterConstants[] =
 extern uint8_t tmc5031_dirtyBits[TMC5031_IC_CACHE_COUNT][TMC5031_REGISTER_COUNT/8];
 extern int32_t tmc5031_shadowRegister[TMC5031_IC_CACHE_COUNT][TMC5031_REGISTER_COUNT];
 extern bool tmc5031_cache(uint16_t icID, TMC5031CacheOp operation, uint8_t address, uint32_t *value);
-extern void tmc5031_initCache(void);
+void tmc5031_initCache(void);
 void tmc5031_setDirtyBit(uint16_t icID, uint8_t index, bool value);
 bool tmc5031_getDirtyBit(uint16_t icID, uint8_t index);
 extern void tmc5031_initCache(void);
