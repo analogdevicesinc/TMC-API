@@ -38,6 +38,10 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 //     - config: A ConfigurationTypeDef struct, which will be used by the IC
 //     - registerResetState: An int32_t array with 128 elements. This holds the values to be used for a reset.
 void tmc2240_init(TMC2240TypeDef *tmc2240, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState)
+/**************************************************************** Cache Implementation *************************************************************************/
+
+#if TMC2240_CACHE == 0
+static inline bool tmc2240_cache(uint16_t icID, TMC2240CacheOp operation, uint8_t address, uint32_t *value)
 {
 	tmc2240->velocity  = 0;
 	tmc2240->oldTick   = 0;
@@ -55,42 +59,145 @@ void tmc2240_init(TMC2240TypeDef *tmc2240, uint8_t channel, ConfigurationTypeDef
 		tmc2240->registerAccess[i]      = tmc2240_defaultRegisterAccess[i];
 		tmc2240->registerResetState[i]  = registerResetState[i];
 	}
+    UNUSED(icID);
+    UNUSED(address);
+    UNUSED(operation);
+    return false;
 }
+#else
+#if TMC2240_ENABLE_TMC_CACHE == 1
+
+uint8_t tmc2240_dirtyBits[TMC2240_IC_CACHE_COUNT][TMC2240_REGISTER_COUNT/8]= {0};
+int32_t tmc2240_shadowRegister[TMC2240_IC_CACHE_COUNT][TMC2240_REGISTER_COUNT];
 
 // Reset the TMC2240.
 uint8_t tmc2240_reset(TMC2240TypeDef *tmc2240)
+void tmc2240_setDirtyBit(uint16_t icID, uint8_t index, bool value)
 {
 	if(tmc2240->config->state != CONFIG_READY)
 		return false;
+    if(index >= TMC2240_REGISTER_COUNT)
+        return;
 
 	tmc2240->config->state        = CONFIG_RESET;
 	tmc2240->config->configIndex  = 0;
+    uint8_t *tmp = &tmc2240_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
+}
 
 	return true;
+bool tmc2240_getDirtyBit(uint16_t icID, uint8_t index)
+{
+    if(index >= TMC2240_REGISTER_COUNT)
+        return false;
+
+    uint8_t *tmp = &tmc2240_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    return ((*tmp) >> shift) & 1;
 }
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
 
 // Restore the TMC2240 to the state stored in the shadow registers.
 // This can be used to recover the IC configuration after a VM power loss.
 uint8_t tmc2240_restore(TMC2240TypeDef *tmc2240)
+bool tmc2240_cache(uint16_t icID, TMC2240CacheOp operation, uint8_t address, uint32_t *value)
 {
 	if(tmc2240->config->state != CONFIG_READY)
 		return false;
+    if (operation == TMC2240_CACHE_READ)
+    {
+        // Check if the value should come from cache
 
 	tmc2240->config->state        = CONFIG_RESTORE;
 	tmc2240->config->configIndex  = 0;
+        // Only supported chips have a cache
+        if (icID >= TMC2240_IC_CACHE_COUNT)
+            return false;
+
+        // Only non-readable registers care about caching
+        // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+        if (TMC2240_IS_READABLE(tmc2240_registerAccess[address]))
+            return false;
+
+        // Grab the value from the cache
+        *value = tmc2240_shadowRegister[icID][address];
+        return true;
+    }
+    else if (operation == TMC2240_CACHE_WRITE || operation == TMC2240_CACHE_FILL_DEFAULT)
+    {
+        // Fill the cache
+
+        // only supported chips have a cache
+        if (icID >= TMC2240_IC_CACHE_COUNT)
+            return false;
+
+        // Write to the shadow register.
+        tmc2240_shadowRegister[icID][address] = *value;
+        // For write operations, mark the register dirty
+        if (operation == TMC2240_CACHE_WRITE)
+        {
+            tmc2240_setDirtyBit(icID, address, true);
+        }
 
 	return true;
+        return true;
+    }
+    return false;
 }
 
 // Change the values the IC will be configured with when performing a reset.
 void tmc2240_setRegisterResetState(TMC2240TypeDef *tmc2240, const int32_t *resetState)
+void tmc2240_initCache()
 {
 	size_t i;
 	for(i = 0; i < TMC2240_REGISTER_COUNT; i++)
 	{
 		tmc2240->registerResetState[i] = resetState[i];
 	}
+    // Check if we have constants defined
+    if(ARRAY_SIZE(tmc2240_RegisterConstants) == 0)
+        return;
+
+    size_t i, j, id;
+
+    for(i = 0, j = 0; i < TMC2240_REGISTER_COUNT; i++)
+    {
+        // We only need to worry about hardware preset, write-only registers
+        // that have not yet been written (no dirty bit) here.
+        if(tmc2240_registerAccess[i] != TMC2240_ACCESS_W_PRESET)
+            continue;
+
+        // Search the constant list for the current address. With the constant
+        // list being sorted in ascended order, we can walk through the list
+        // until the entry with an address equal or greater than i
+        while(j < ARRAY_SIZE(tmc2240_RegisterConstants) && (tmc2240_RegisterConstants[j].address < i))
+            j++;
+
+        // Abort when we reach the end of the constant list
+        if (j == ARRAY_SIZE(tmc2240_RegisterConstants))
+            break;
+
+        // If we have an entry for our current address, write the constant
+        if(tmc2240_RegisterConstants[j].address == i)
+        {
+            for (id = 0; id < TMC2240_IC_CACHE_COUNT; id++)
+            {
+                tmc2240_cache(id, TMC2240_CACHE_FILL_DEFAULT, i, &tmc2240_RegisterConstants[j].value);
+            }
+        }
+    }
 }
+#else
+// User must implement their own cache
+extern bool tmc2240_cache(uint16_t icID, TMC2240CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
 /************************************************************* read / write Implementation *********************************************************************/
 
 
