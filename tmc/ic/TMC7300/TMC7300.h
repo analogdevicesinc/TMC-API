@@ -10,11 +10,9 @@
 #ifndef TMC_IC_TMC7300_H_
 #define TMC_IC_TMC7300_H_
 
+#include "TMC7300_HW_Abstraction.h"
 
 #include "tmc/helpers/API_Header.h"
-#include "TMC7300_Constants.h"
-#include "TMC7300_Fields.h"
-#include "TMC7300_Register.h"
 
 // Helper macros
 #define TMC7300_FIELD_READ(tdef, address, mask, shift) \
