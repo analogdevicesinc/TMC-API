@@ -9,9 +9,6 @@
 
 #include "TMC7300.h"
 
-// => UART wrapper
-extern void tmc7300_readWriteArray(uint8_t channel, uint8_t *data, size_t writeLength, size_t readLength);
-// <= UART wrapper
 
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];

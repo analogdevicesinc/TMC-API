@@ -10,27 +10,73 @@
 #ifndef TMC_IC_TMC7300_H_
 #define TMC_IC_TMC7300_H_
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 #include "TMC7300_HW_Abstraction.h"
 
 #include "tmc/helpers/API_Header.h"
 
-// Helper macros
-#define TMC7300_FIELD_READ(tdef, address, mask, shift) \
-        FIELD_GET(tmc7300_readInt(tdef, address), mask, shift)
-#define TMC7300_FIELD_WRITE(tdef, address, mask, shift, value) \
-        (tmc7300_writeInt(tdef, address, FIELD_SET(tmc7300_readInt(tdef, address), mask, shift, value)))
+/************************************************************* read / write Implementation *********************************************************************/
 
+// => TMC-API wrapper
+extern bool tmc7300_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern uint8_t tmc7300_getNodeAddress(uint16_t icID);
+// => TMC-API wrapper
+
+int32_t tmc7300_readRegister(uint16_t icID, uint8_t address);
+void tmc7300_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+static inline uint32_t tmc7300_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc7300_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc7300_readRegister(icID, field.address);
+
+    return tmc7300_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc7300_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
 // Usage note: use 1 TypeDef per IC
 typedef struct {
     ConfigurationTypeDef *config;
 
+static inline void tmc7300_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc7300_readRegister(icID, field.address);
     int32_t registerResetState[TMC7300_REGISTER_COUNT];
     uint8_t registerAccess[TMC7300_REGISTER_COUNT];
 
+    regValue = tmc7300_fieldUpdate(regValue, field, value);
     uint8_t slaveAddress;
     uint8_t standbyEnabled;
 } TMC7300TypeDef;
 
+    tmc7300_writeRegister(icID, field.address, regValue);
 typedef void (*tmc7300_callback)(TMC7300TypeDef*, ConfigState);
 
 #define R00 0x00000007 // GCONF
