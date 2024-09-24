@@ -17,15 +17,15 @@
 
 // Helper macros
 #define MAX22216_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(max22216_readInt(tdef, address), mask, shift)
+        FIELD_GET(max22216_readInt(tdef, address), mask, shift)
 #define MAX22216_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(max22216_writeInt(tdef, address, FIELD_SET(max22216_readInt(tdef, address), mask, shift, value)))
+        (max22216_writeInt(tdef, address, FIELD_SET(max22216_readInt(tdef, address), mask, shift, value)))
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
-	uint8_t channel;
-	uint8_t slaveAddress;
-	uint8_t crc_en;
+    uint8_t channel;
+    uint8_t slaveAddress;
+    uint8_t crc_en;
 } MAX22216TypeDef;
 
 uint8_t max22216_CRC(uint8_t *data, size_t length);
