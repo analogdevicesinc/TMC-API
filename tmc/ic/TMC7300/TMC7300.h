@@ -15,6 +15,33 @@
 #include <stddef.h>
 #include "TMC7300_HW_Abstraction.h"
 
+
+/*******************************************************************************
+ * API Configuration Defines
+ * These control optional features of the TMC-API implementation.
+ * These can be commented in/out here or defined from the build system.
+ *******************************************************************************/
+
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+// To enable the cache mechanism in order to keep the copy of all registers, set TMC7300_CACHE to '1'.
+// With this mechanism the value of write-only registers could be read from their shadow copies.
+#ifndef TMC7300_CACHE
+#define TMC7300_CACHE  1
+//#define TMC7300_CACHE   0
+#endif
+
+// To use the caching mechanism already implemented by the TMC-API, set TMC7300_ENABLE_TMC_CACHE to '1'.
+// Set TMC7300_ENABLE_TMC_CACHE to '0' if one wants to have their own cache implementation.
+#ifndef TMC7300_ENABLE_TMC_CACHE
+#define TMC7300_ENABLE_TMC_CACHE   1
+//#define TMC7300_ENABLE_TMC_CACHE   0
+#endif
+
+/******************************************************************************/
+
 #include "tmc/helpers/API_Header.h"
 
 /************************************************************* read / write Implementation *********************************************************************/
@@ -68,8 +95,6 @@ typedef struct {
 static inline void tmc7300_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
 {
     uint32_t regValue = tmc7300_readRegister(icID, field.address);
-    int32_t registerResetState[TMC7300_REGISTER_COUNT];
-    uint8_t registerAccess[TMC7300_REGISTER_COUNT];
 
     regValue = tmc7300_fieldUpdate(regValue, field, value);
     uint8_t slaveAddress;
@@ -77,6 +102,53 @@ static inline void tmc7300_fieldWrite(uint16_t icID, RegisterField field, uint32
 } TMC7300TypeDef;
 
     tmc7300_writeRegister(icID, field.address, regValue);
+}
+/**************************************************************** Cache Implementation *************************************************************************/
+#if TMC7300_CACHE == 1
+#ifdef TMC7300_ENABLE_TMC_CACHE
+
+// By default, support one IC in the cache
+#ifndef TMC7300_IC_CACHE_COUNT
+#define TMC7300_IC_CACHE_COUNT 1
+#endif
+
+#define TMC7300_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
+#define TMC7300_ACCESS_READ        0x01
+#define TMC7300_ACCESS_W_PRESET    0x42
+#define TMC7300_ACCESS_RW_PRESET   0x43
+#define TMC7300_IS_READABLE(x)     ((x) & TMC7300_ACCESS_READ)
+#define ARRAY_SIZE(x)             (sizeof(x)/sizeof(x[0]))
+
+typedef enum {
+    TMC7300_CACHE_READ,
+    TMC7300_CACHE_WRITE,
+    // Special operation: Put content into the cache without marking the entry as dirty.
+    // Only used to initialize the cache with hardware defaults. This will allow reading
+    // from write-only registers that have a value inside them on reset. When using this
+    // operation, a restore will *not* rewrite that filled register!
+    TMC7300_CACHE_FILL_DEFAULT,
+} TMC7300CacheOp;
+
+typedef struct{
+    uint8_t address;
+    uint32_t value;
+} TMC7300RegisterConstants;
+
+// Helper define:
+// Most register permission arrays are initialized with 128 values.
+// In those fields its quite hard to have an easy overview of available
+// registers. For that, ____ is defined to 0, since 4 underscores are
+// very easy to distinguish from the 2-digit hexadecimal values.
+// This way, the used registers (permission != ACCESS_NONE) are easily spotted
+// amongst unused (permission == ACCESS_NONE) registers.
+#define ____ 0x00
+
+// Helper define:
+// Default reset values are not used if the corresponding register has a
+// hardware preset. Since this is not directly visible in the default
+// register reset values array, N_A is used as an indicator for a preset
+// value, where any value will be ignored anyways (N_A: not available).
+#define N_A 0
 typedef void (*tmc7300_callback)(TMC7300TypeDef*, ConfigState);
 
 #define R00 0x00000007 // GCONF
@@ -87,7 +159,7 @@ typedef void (*tmc7300_callback)(TMC7300TypeDef*, ConfigState);
 //   0x02: write
 //   0x42: write, has hardware presets on reset
 //   0x43: read/write, has hardware presets on reset
-static const uint8_t tmc7300_defaultRegisterAccess[TMC7300_REGISTER_COUNT] =
+static const uint8_t tmc7300_registerAccess[TMC7300_REGISTER_COUNT] =
 {
         //  0     1     2     3     4     5     6     7     8     9     A     B     C     D     E     F
         0x03, 0x23, 0x01, 0x02, ____, ____, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____, // 0x00 - 0x0F
@@ -100,7 +172,7 @@ static const uint8_t tmc7300_defaultRegisterAccess[TMC7300_REGISTER_COUNT] =
         0x43, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
-static const int32_t tmc7300_defaultRegisterResetState[TMC7300_REGISTER_COUNT] =
+static const int32_t tmc7300_sampleRegisterPreset[TMC7300_REGISTER_COUNT] =
 {
         //    0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F
         R00, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, // 0x00 - 0x0F
@@ -120,13 +192,22 @@ static const int32_t tmc7300_defaultRegisterResetState[TMC7300_REGISTER_COUNT] =
 // Register constants (only required for 0x42 and 0x43 registers)
 // This allows us to fill the shadow registers with the register content in
 // order to provide the TMCL-IDE with correct values to display.
-static const TMCRegisterConstant tmc7300_registerConstants[] =
+static const TMC7300RegisterConstants tmc7300_RegisterConstants[] =
 {        // Use ascending addresses!
         { 0x10, 0x00001F01 }, // CURRENT_LIMIT
         { 0x6C, 0x13008001 }, // CHOPCONF
         { 0x70, 0xC40D1024 }, // PWMCONF
 };
 
+extern uint8_t tmc7300_dirtyBits[TMC7300_IC_CACHE_COUNT][TMC7300_REGISTER_COUNT/8];
+extern int32_t tmc7300_shadowRegister[TMC7300_IC_CACHE_COUNT][TMC7300_REGISTER_COUNT];
+bool tmc7300_cache(uint16_t icID, TMC7300CacheOp operation, uint8_t address, uint32_t *value);
+void tmc7300_initCache(void);
+void tmc7300_setDirtyBit(uint16_t icID, uint8_t index, bool value);
+bool tmc7300_getDirtyBit(uint16_t icID, uint8_t index);
+#endif
+#endif
+/***************************************************************************************************************************************************/
 
 void tmc7300_writeInt(TMC7300TypeDef *tmc7300, uint8_t address, int32_t value);
 int32_t tmc7300_readInt(TMC7300TypeDef *tmc7300, uint8_t address);

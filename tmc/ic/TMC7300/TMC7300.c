@@ -32,38 +32,101 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
         0xB4, 0x25, 0x57, 0xC6, 0xB3, 0x22, 0x50, 0xC1, 0xBA, 0x2B, 0x59, 0xC8, 0xBD, 0x2C, 0x5E, 0xCF,
 };
 #endif
+/*************************************************************** Cache Implementation *************************************************************************/
 
+#if TMC7300_CACHE == 0
+static inline bool tmc7300_cache(uint16_t icID, TMC7300CacheOp operation, uint8_t address, uint32_t *value)
 {
+    UNUSED(icID);
+    UNUSED(address);
+    UNUSED(operation);
+    return false;
+}
+#else
+#if TMC7300_ENABLE_TMC_CACHE == 1
+
+uint8_t tmc7300_dirtyBits[TMC7300_IC_CACHE_COUNT][TMC7300_REGISTER_COUNT/8]= {0};
+int32_t tmc7300_shadowRegister[TMC7300_IC_CACHE_COUNT][TMC7300_REGISTER_COUNT];
+
+void tmc7300_setDirtyBit(uint16_t icID, uint8_t index, bool value)
+{
+    if(index >= TMC7300_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp = &tmc7300_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask = 1 << shift;
+    *tmp = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
 }
 
+bool tmc7300_getDirtyBit(uint16_t icID, uint8_t index)
+{
+    if(index >= TMC7300_REGISTER_COUNT)
+        return false;
 
-
-
-
+    uint8_t *tmp = &tmc7300_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    return ((*tmp) >> shift) & 1;
 }
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
 
+bool tmc7300_cache(uint16_t icID, TMC7300CacheOp operation, uint8_t address, uint32_t *value)
 void tmc7300_init(TMC7300TypeDef *tmc7300, uint8_t channel, ConfigurationTypeDef *tmc7300_config, const int32_t *registerResetState)
 {
+    if (operation == TMC7300_CACHE_READ)
+    {
+        // Check if the value should come from cache
     tmc7300->config               = tmc7300_config;
     tmc7300->config->callback     = NULL;
     tmc7300->config->channel      = channel;
     tmc7300->config->configIndex  = 0;
     tmc7300->config->state        = CONFIG_RESET;
 
+        // Only supported chips have a cache
+        if (icID >= TMC7300_IC_CACHE_COUNT)
+            return false;
     // Default slave address: 0
     tmc7300->slaveAddress = 0;
 
+        // Only non-readable registers care about caching
+        // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+        if (TMC7300_IS_READABLE(tmc7300_registerAccess[address]))
+            return false;
     // Start in standby
     tmc7300->standbyEnabled = 1;
 
+        // Grab the value from the cache
+        *value = tmc7300_shadowRegister[icID][address];
+        return true;
+    }
+    else if (operation == TMC7300_CACHE_WRITE || operation == TMC7300_CACHE_FILL_DEFAULT)
     int32_t i;
     for(i = 0; i < TMC7300_REGISTER_COUNT; i++)
     {
+        // Fill the cache
+
+        // only supported chips have a cache
+        if (icID >= TMC7300_IC_CACHE_COUNT)
+            return false;
+
+        // Write to the shadow register.
+        tmc7300_shadowRegister[icID][address] = *value;
+        // For write operations, mark the register dirty
+        if (operation == TMC7300_CACHE_WRITE)
+        {
+            tmc7300_setDirtyBit(icID, address, true);
+        }
+
+        return true;
         tmc7300->registerAccess[i]      = tmc7300_defaultRegisterAccess[i];
         tmc7300->registerResetState[i]  = registerResetState[i];
     }
+    return false;
 }
 
+void tmc7300_initCache()
 // Fill the shadow registers of hardware preset registers.
 // Only needed if you want to read out those registers to display the value
 // (e.g. for the TMCL IDE register browser)
@@ -71,31 +134,52 @@ static void fillShadowRegisters(TMC7300TypeDef *tmc7300)
 {
     // Check if we have constants defined
     if(ARRAY_SIZE(tmc7300_registerConstants) == 0)
+    if(ARRAY_SIZE(tmc7300_RegisterConstants) == 0)
         return;
 
     size_t i, j = 0;
     for(i = 0; i < TMC7300_REGISTER_COUNT; i++)
+    size_t i, j, id;
+
+    for(i = 0, j = 0; i < TMC7300_REGISTER_COUNT; i++)
     {
         // We only need to worry about hardware preset registers
+        // We only need to worry about hardware preset, write-only registers
         // that have not yet been written (no dirty bit) here.
+        if(tmc7300_registerAccess[i] != TMC7300_ACCESS_W_PRESET && tmc7300_registerAccess[i] != TMC7300_ACCESS_RW_PRESET)
         if(!TMC_IS_PRESET(tmc7300->registerAccess[i]) || TMC_IS_DIRTY(tmc7300->registerAccess[i]))
             continue;
 
         // Search the constant list for the current address. With the constant
         // list being sorted in ascended order, we can walk through the list
         // until the entry with an address equal or greater than i
+        while(j < ARRAY_SIZE(tmc7300_RegisterConstants) && (tmc7300_RegisterConstants[j].address < i))
         while (j < ARRAY_SIZE(tmc7300_registerConstants) && (tmc7300_registerConstants[j].address < i))
         {
             j++;
+
+        // Abort when we reach the end of the constant list
+        if (j == ARRAY_SIZE(tmc7300_RegisterConstants))
+            break;
         }
 
         // If we have an entry for our current address, write the constant
+        if(tmc7300_RegisterConstants[j].address == i)
         if (tmc7300_registerConstants[j].address == i)
         {
+            for (id = 0; id < TMC7300_IC_CACHE_COUNT; id++)
+            {
+                tmc7300_cache(id, TMC7300_CACHE_FILL_DEFAULT, i, &tmc7300_RegisterConstants[j].value);
+            }
             tmc7300->config->shadowRegister[i] = tmc7300_registerConstants[j].value;
         }
     }
 }
+#else
+// User must implement their own cache
+extern bool tmc7300_cache(uint16_t icID, TMC7300CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
 
 /************************************************************* read / write Implementation *********************************************************************/
 static void writeConfiguration(TMC7300TypeDef *tmc7300)
