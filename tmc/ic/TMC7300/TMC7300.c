@@ -71,39 +71,28 @@ bool tmc7300_getDirtyBit(uint16_t icID, uint8_t index)
 /*
  * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
  * The shadow copy is then used to read these kinds of registers.
+ */
 
 bool tmc7300_cache(uint16_t icID, TMC7300CacheOp operation, uint8_t address, uint32_t *value)
-void tmc7300_init(TMC7300TypeDef *tmc7300, uint8_t channel, ConfigurationTypeDef *tmc7300_config, const int32_t *registerResetState)
 {
     if (operation == TMC7300_CACHE_READ)
     {
         // Check if the value should come from cache
-    tmc7300->config               = tmc7300_config;
-    tmc7300->config->callback     = NULL;
-    tmc7300->config->channel      = channel;
-    tmc7300->config->configIndex  = 0;
-    tmc7300->config->state        = CONFIG_RESET;
 
         // Only supported chips have a cache
         if (icID >= TMC7300_IC_CACHE_COUNT)
             return false;
-    // Default slave address: 0
-    tmc7300->slaveAddress = 0;
 
         // Only non-readable registers care about caching
         // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
         if (TMC7300_IS_READABLE(tmc7300_registerAccess[address]))
             return false;
-    // Start in standby
-    tmc7300->standbyEnabled = 1;
 
         // Grab the value from the cache
         *value = tmc7300_shadowRegister[icID][address];
         return true;
     }
     else if (operation == TMC7300_CACHE_WRITE || operation == TMC7300_CACHE_FILL_DEFAULT)
-    int32_t i;
-    for(i = 0; i < TMC7300_REGISTER_COUNT; i++)
     {
         // Fill the cache
 
@@ -120,58 +109,42 @@ void tmc7300_init(TMC7300TypeDef *tmc7300, uint8_t channel, ConfigurationTypeDef
         }
 
         return true;
-        tmc7300->registerAccess[i]      = tmc7300_defaultRegisterAccess[i];
-        tmc7300->registerResetState[i]  = registerResetState[i];
     }
     return false;
 }
 
 void tmc7300_initCache()
-// Fill the shadow registers of hardware preset registers.
-// Only needed if you want to read out those registers to display the value
-// (e.g. for the TMCL IDE register browser)
-static void fillShadowRegisters(TMC7300TypeDef *tmc7300)
 {
     // Check if we have constants defined
-    if(ARRAY_SIZE(tmc7300_registerConstants) == 0)
     if(ARRAY_SIZE(tmc7300_RegisterConstants) == 0)
         return;
 
-    size_t i, j = 0;
-    for(i = 0; i < TMC7300_REGISTER_COUNT; i++)
     size_t i, j, id;
 
     for(i = 0, j = 0; i < TMC7300_REGISTER_COUNT; i++)
     {
-        // We only need to worry about hardware preset registers
         // We only need to worry about hardware preset, write-only registers
         // that have not yet been written (no dirty bit) here.
         if(tmc7300_registerAccess[i] != TMC7300_ACCESS_W_PRESET && tmc7300_registerAccess[i] != TMC7300_ACCESS_RW_PRESET)
-        if(!TMC_IS_PRESET(tmc7300->registerAccess[i]) || TMC_IS_DIRTY(tmc7300->registerAccess[i]))
             continue;
 
         // Search the constant list for the current address. With the constant
         // list being sorted in ascended order, we can walk through the list
         // until the entry with an address equal or greater than i
         while(j < ARRAY_SIZE(tmc7300_RegisterConstants) && (tmc7300_RegisterConstants[j].address < i))
-        while (j < ARRAY_SIZE(tmc7300_registerConstants) && (tmc7300_registerConstants[j].address < i))
-        {
             j++;
 
         // Abort when we reach the end of the constant list
         if (j == ARRAY_SIZE(tmc7300_RegisterConstants))
             break;
-        }
 
         // If we have an entry for our current address, write the constant
         if(tmc7300_RegisterConstants[j].address == i)
-        if (tmc7300_registerConstants[j].address == i)
         {
             for (id = 0; id < TMC7300_IC_CACHE_COUNT; id++)
             {
                 tmc7300_cache(id, TMC7300_CACHE_FILL_DEFAULT, i, &tmc7300_RegisterConstants[j].value);
             }
-            tmc7300->config->shadowRegister[i] = tmc7300_registerConstants[j].value;
         }
     }
 }
@@ -182,165 +155,65 @@ extern bool tmc7300_cache(uint16_t icID, TMC7300CacheOp operation, uint8_t addre
 #endif
 
 /************************************************************* read / write Implementation *********************************************************************/
-static void writeConfiguration(TMC7300TypeDef *tmc7300)
-{
-    uint8_t *ptr = &tmc7300->config->configIndex;
-    const int32_t *settings;
 
-    // Find the next register to reset/restore
-    if (tmc7300->config->state == CONFIG_RESET)
-    {
-        settings = tmc7300->registerResetState;
-        // Find the next resettable register
-        while((*ptr < TMC7300_REGISTER_COUNT) && !TMC_IS_RESETTABLE(tmc7300->registerAccess[*ptr]))
-        {
-            (*ptr)++;
-        }
-    }
-    else
-    {
-        // Do not restore while in standby
-        if (tmc7300->standbyEnabled)
-            return;
 
 static int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress);
 static void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value );
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
-        settings = tmc7300->config->shadowRegister;
-        // Find the next restorable register
-        while((*ptr < TMC7300_REGISTER_COUNT) && !TMC_IS_RESTORABLE(tmc7300->registerAccess[*ptr]))
-        {
-            (*ptr)++;
-        }
-    }
 
 int32_t tmc7300_readRegister(uint16_t icID, uint8_t address)
-    if(*ptr < TMC7300_REGISTER_COUNT)
-    {
-        // Reset/restore the found register
-        tmc7300_writeInt(tmc7300, *ptr, settings[*ptr]);
-        (*ptr)++;
-    }
-    else
-    {
-        fillShadowRegisters(tmc7300);
-
-        // Reset/restore complete -> call the callback if set
-        if (tmc7300->config->callback)
-        {
-            ((tmc7300_callback)tmc7300->config->callback)(tmc7300, tmc7300->config->state);
-        }
-
-        if (tmc7300->config->state == CONFIG_RESET)
-        {
-            // Reset done -> Perform a restore
-            tmc7300->config->state        = CONFIG_RESTORE;
-            tmc7300->config->configIndex  = 0;
-        }
-        else
-        {
-            // Restore done -> configuration complete
-            tmc7300->config->state = CONFIG_READY;
-        }
-    }
-}
-
-void tmc7300_setRegisterResetState(TMC7300TypeDef *tmc7300, const int32_t *resetState)
 {
     return readRegisterUART(icID, address);
-    size_t i;
-    for (i = 0; i < TMC7300_REGISTER_COUNT; i++)
-    {
-        tmc7300->registerResetState[i] = resetState[i];
-    }
 }
 
-void tmc7300_setCallback(TMC7300TypeDef *tmc7300, tmc7300_callback callback)
+
 void tmc7300_writeRegister(uint16_t icID, uint8_t address, int32_t value )
 {
     writeRegisterUART(icID, address, value);
-    tmc7300->config->callback = (tmc_callback_config) callback;
 }
 
-void tmc7300_periodicJob(TMC7300TypeDef *tmc7300, uint32_t tick)
+
 int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 {
     uint32_t value;
-    UNUSED(tick);
 
     // Read from cache for registers with write-only access
     if (tmc7300_cache(icID, TMC7300_CACHE_READ, registerAddress, &value))
         return value;
-    if(tmc7300->config->state != CONFIG_READY)
-    {
-        writeConfiguration(tmc7300);
-        return;
-    }
-}
 
     uint8_t data[8] = { 0 };
     registerAddress = registerAddress & TMC7300_ADDRESS_MASK;
-uint8_t tmc7300_reset(TMC7300TypeDef *tmc7300)
-{
-    // A reset can always happen - even during another reset or restore
 
     data[0] = 0x05;
     data[1] = tmc7300_getNodeAddress(icID);
     data[2] = registerAddress;
     data[3] = CRC8(data, 3);
-    // Reset the dirty bits and wipe the shadow registers
-    size_t i;
-    for(i = 0; i < TMC7300_REGISTER_COUNT; i++)
-    {
-        tmc7300->registerAccess[i] &= ~TMC_ACCESS_DIRTY;
-        tmc7300->config->shadowRegister[i] = 0;
-    }
 
     if (!tmc7300_readWriteUART(icID, &data[0], 4, 8))
         return tmc7300_shadowRegister[0][registerAddress];
-    // Activate the reset config mechanism
-    tmc7300->config->state        = CONFIG_RESET;
-    tmc7300->config->configIndex  = 0;
 
     // Byte 0: Sync nibble correct?
     if (data[0] != 0x05)
         return 0;
-    return 1;
-}
 
     // Byte 1: Master address correct?
     if (data[1] != 0xFF)
-uint8_t tmc7300_restore(TMC7300TypeDef *tmc7300)
-{
-    // Do not interrupt a reset
-    // A reset will transition into a restore anyways
-    if(tmc7300->config->state == CONFIG_RESET)
         return 0;
 
     // Byte 2: Address correct?
     if (data[2] != registerAddress)
         return 0;
-    tmc7300->config->state        = CONFIG_RESTORE;
-    tmc7300->config->configIndex  = 0;
 
     // Byte 7: CRC correct?
     if (data[7] != CRC8(data, 7))
         return 0;
-    return 1;
-}
 
     return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
-uint8_t tmc7300_get_slave(TMC7300TypeDef *tmc7300)
-{
-    return tmc7300->slaveAddress;
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value )
-void tmc7300_set_slave(TMC7300TypeDef *tmc7300, uint8_t slaveAddress)
 {
     uint8_t data[8];
-    tmc7300->slaveAddress = slaveAddress;
-}
 
     data[0] = 0x05;
     data[1] = tmc7300_getNodeAddress(icID);
@@ -350,10 +223,6 @@ void tmc7300_set_slave(TMC7300TypeDef *tmc7300, uint8_t slaveAddress)
     data[5] = (value >> 8 ) & 0xFF;
     data[6] = (value      ) & 0xFF;
     data[7] = CRC8(data, 7);
-uint8_t tmc7300_getStandby(TMC7300TypeDef *tmc7300)
-{
-    return tmc7300->standbyEnabled;
-}
 
     tmc7300_readWriteUART(icID, &data[0], 8, 0);
 
@@ -361,29 +230,14 @@ uint8_t tmc7300_getStandby(TMC7300TypeDef *tmc7300)
     // Write to the shadow register and mark the register dirty
     //Cache the registers with write-only access
     tmc7300_cache(icID, TMC7300_CACHE_WRITE, registerAddress, &value);
-void tmc7300_setStandby(TMC7300TypeDef *tmc7300, uint8_t standbyState)
-{
-    if (tmc7300->standbyEnabled && !standbyState)
-    {
-        // Just exited standby -> call the restore
-        tmc7300_restore(tmc7300);
-    }
-    tmc7300->standbyEnabled = standbyState;
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
-uint8_t tmc7300_consistencyCheck(TMC7300TypeDef *tmc7300)
 {
     uint8_t result = 0;
-    // Config has not yet been written -> it can't be consistent
-    if(tmc7300->config->state != CONFIG_READY)
-        return 0;
 
     while(bytes--)
         result = tmcCRCTable_Poly7Reflected[result ^ *data++];
-    // Standby is enabled -> registers can't be accessed
-    if(tmc7300_getStandby(tmc7300))
-        return 0;
 
     // Flip the result around
     // swap odd and even bits
@@ -392,11 +246,6 @@ uint8_t tmc7300_consistencyCheck(TMC7300TypeDef *tmc7300)
     result = ((result >> 2) & 0x33) | ((result & 0x33) << 2);
     // swap nibbles ...
     result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
-    // If the PWM_DIRECT bit is no longer set, report an error
-    if (TMC7300_FIELD_READ(tmc7300, TMC7300_GCONF, TMC7300_PWM_DIRECT_MASK, TMC7300_PWM_DIRECT_SHIFT) == 0)
-        return 1;
 
     return result;
-    // No inconsistency detected
-    return 0;
 }

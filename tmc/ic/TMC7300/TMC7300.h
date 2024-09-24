@@ -42,7 +42,6 @@
 
 /******************************************************************************/
 
-#include "tmc/helpers/API_Header.h"
 
 /************************************************************* read / write Implementation *********************************************************************/
 
@@ -88,18 +87,12 @@ static inline uint32_t tmc7300_fieldUpdate(uint32_t data, RegisterField field, u
 {
     return (data & (~field.mask)) | ((value << field.shift) & field.mask);
 }
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-    ConfigurationTypeDef *config;
 
 static inline void tmc7300_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
 {
     uint32_t regValue = tmc7300_readRegister(icID, field.address);
 
     regValue = tmc7300_fieldUpdate(regValue, field, value);
-    uint8_t slaveAddress;
-    uint8_t standbyEnabled;
-} TMC7300TypeDef;
 
     tmc7300_writeRegister(icID, field.address, regValue);
 }
@@ -149,7 +142,6 @@ typedef struct{
 // register reset values array, N_A is used as an indicator for a preset
 // value, where any value will be ignored anyways (N_A: not available).
 #define N_A 0
-typedef void (*tmc7300_callback)(TMC7300TypeDef*, ConfigState);
 
 #define R00 0x00000007 // GCONF
 
@@ -208,23 +200,4 @@ bool tmc7300_getDirtyBit(uint16_t icID, uint8_t index);
 #endif
 #endif
 /***************************************************************************************************************************************************/
-
-void tmc7300_writeInt(TMC7300TypeDef *tmc7300, uint8_t address, int32_t value);
-int32_t tmc7300_readInt(TMC7300TypeDef *tmc7300, uint8_t address);
-
-void tmc7300_init(TMC7300TypeDef *tmc7300, uint8_t channel, ConfigurationTypeDef *tmc7300_config, const int32_t *registerResetState);
-uint8_t tmc7300_reset(TMC7300TypeDef *tmc7300);
-uint8_t tmc7300_restore(TMC7300TypeDef *tmc7300);
-void tmc7300_setRegisterResetState(TMC7300TypeDef *tmc7300, const int32_t *resetState);
-void tmc7300_setCallback(TMC7300TypeDef *tmc7300, tmc7300_callback callback);
-void tmc7300_periodicJob(TMC7300TypeDef *tmc7300, uint32_t tick);
-
-uint8_t tmc7300_get_slave(TMC7300TypeDef *tmc7300);
-void tmc7300_set_slave(TMC7300TypeDef *tmc7300, uint8_t slaveAddress);
-
-uint8_t tmc7300_getStandby(TMC7300TypeDef *tmc7300);
-void tmc7300_setStandby(TMC7300TypeDef *tmc7300, uint8_t standbyState);
-
-uint8_t tmc7300_consistencyCheck(TMC7300TypeDef *tmc7300);
-
 #endif /* TMC_IC_TMC7300_H_ */
