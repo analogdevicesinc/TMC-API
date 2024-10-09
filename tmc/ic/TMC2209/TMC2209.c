@@ -141,7 +141,7 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address)
 
     uint8_t data[8] = { 0 };
 
-    address = address & TMC_ADDRESS_MASK;
+    address = address & TMC2209_ADDRESS_MASK;
     data[0] = 0x05;
     data[1] = tmc2209_getNodeAddress(icID); //targetAddressUart;
     data[2] = address;

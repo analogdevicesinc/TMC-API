@@ -158,13 +158,13 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
          return value;
 
     // clear write bit
-    data[0] = address;
+    data[0] = address & TMC5031_ADDRESS_MASK;
 
     // Send the read request
     tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
 
     // Rewrite address and clear write bit
-    data[0] = address;
+    data[0] = address & TMC5031_ADDRESS_MASK;
 
     // Send another request to receive the read reply
     tmc5031_readWriteSPI(icID, &data[0], sizeof(data));

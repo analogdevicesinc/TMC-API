@@ -9,8 +9,6 @@
 
 #include "TMC5272.h"
 
-#define TMC5272_WRITE_BIT 0x80
-#define TMC5272_ADDRESS_MASK 0x7F
 
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];

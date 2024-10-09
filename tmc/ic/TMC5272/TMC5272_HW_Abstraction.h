@@ -14,8 +14,8 @@
 
 #define TMC5272_REGISTER_COUNT   128
 #define TMC5272_MOTORS           2
-#define TMC_WRITE_BIT            0x80
-#define TMC_ADDRESS_MASK         0x7F
+#define TMC5272_WRITE_BIT        0x80
+#define TMC5272_ADDRESS_MASK     0x7F
 #define TMC5272_MAX_VELOCITY     8388096
 #define TMC5272_MAX_ACCELERATION UINTN_MAX
 

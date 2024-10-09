@@ -13,8 +13,8 @@
 
 #define TMC5240_REGISTER_COUNT   128
 #define TMC5240_MOTORS           1
-#define TMC_WRITE_BIT            0x80
-#define TMC_ADDRESS_MASK         0x7F
+#define TMC5240_WRITE_BIT            0x80
+#define TMC5240_ADDRESS_MASK         0x7F
 #define TMC5240_MAX_VELOCITY     8388096
 #define TMC5240_MAX_ACCELERATION u16_MAX
 #define DEFAULT_ICID            0

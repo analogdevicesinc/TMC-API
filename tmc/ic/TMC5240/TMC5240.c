@@ -73,13 +73,13 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
     uint8_t data[5] = { 0 };
 
     // clear write bit
-    data[0] = address & TMC_ADDRESS_MASK;
+    data[0] = address & TMC5240_ADDRESS_MASK;
 
     // Send the read request
     tmc5240_readWriteSPI(icID, &data[0], sizeof(data));
 
     // Rewrite address and clear write bit
-    data[0] = address & TMC_ADDRESS_MASK;
+    data[0] = address & TMC5240_ADDRESS_MASK;
 
     // Send another request to receive the read reply
     tmc5240_readWriteSPI(icID, &data[0], sizeof(data));
@@ -91,7 +91,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 {
     uint8_t data[5] = { 0 };
 
-    data[0] = address | TMC_WRITE_BIT;
+    data[0] = address | TMC5240_WRITE_BIT;
     data[1] = 0xFF & (value>>24);
     data[2] = 0xFF & (value>>16);
     data[3] = 0xFF & (value>>8);
@@ -105,7 +105,7 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 {
     uint8_t data[8] = { 0 };
 
-    registerAddress = registerAddress & TMC_ADDRESS_MASK;
+    registerAddress = registerAddress & TMC5240_ADDRESS_MASK;
 
     data[0] = 0x05;
     data[1] = tmc5240_getNodeAddress(icID); //targetAddressUart;
@@ -140,7 +140,7 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 
     data[0] = 0x05;
     data[1] = (uint8_t)tmc5240_getNodeAddress(icID); //targetAddressUart;
-    data[2] = registerAddress | TMC_WRITE_BIT;
+    data[2] = registerAddress | TMC5240_WRITE_BIT;
     data[3] = (value >> 24) & 0xFF;
     data[4] = (value >> 16) & 0xFF;
     data[5] = (value >> 8 ) & 0xFF;
