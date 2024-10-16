@@ -219,7 +219,6 @@ extern bool tmc5031_cache(uint16_t icID, TMC5031CacheOp operation, uint8_t addre
 void tmc5031_initCache(void);
 void tmc5031_setDirtyBit(uint16_t icID, uint8_t index, bool value);
 bool tmc5031_getDirtyBit(uint16_t icID, uint8_t index);
-extern void tmc5031_initCache(void);
 #endif
 #endif
 

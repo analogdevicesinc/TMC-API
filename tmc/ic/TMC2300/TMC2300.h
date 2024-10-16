@@ -138,14 +138,18 @@ typedef struct{
 // very easy to distinguish from the 2-digit hexadecimal values.
 // This way, the used registers (permission != ACCESS_NONE) are easily spotted
 // amongst unused (permission == ACCESS_NONE) registers.
-#define ____ 0x00
+#ifndef ____
+    #define ____ 0x00
+#endif
 
 // Helper define:
 // Default reset values are not used if the corresponding register has a
 // hardware preset. Since this is not directly visible in the default
 // register reset values array, N_A is used as an indicator for a preset
 // value, where any value will be ignored anyways (N_A: not available).
-#define N_A 0
+#ifndef N_A
+    #define N_A 0x00
+#endif
 
 // Register access permissions:
 //   0x00: none (reserved)

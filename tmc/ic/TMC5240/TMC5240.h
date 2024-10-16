@@ -114,8 +114,12 @@ static inline void tmc5240_fieldWrite(uint16_t icID, RegisterField field, uint32
 #define R70 0xC44C001E  // PWMCONF
 #define R74 0x00000000  // PWMCONF
 
-#define ____ 0x00
-#define N_A 0x00
+#ifndef ____
+    #define ____ 0x00
+#endif
+#ifndef N_A
+    #define N_A 0x00
+#endif
 
 #define TMC5240_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC5240_ACCESS_READ        0x01
