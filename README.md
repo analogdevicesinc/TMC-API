@@ -34,6 +34,14 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
+**Version 3.10.5: (Released)**
+ - Removed TMC2590 from the API because the IC is available for last time buy only and going to be deprecated soon.
+
+**Version 3.10.4: (Released)**
+ - Finished the API rework for TMC5160, TMC5130, TMC5062, TMC5072, TMC5240, TMC2224, TMC2225, TMC2226, TMC2130, TMC2160, TMC5031, TMC2208, TMC5041, TMC2300, TMC2240, TMC7300, TMC6100, TMC6200 and TMC4671. For further information click [here](https://github.com/analogdevicesinc/TMC-API/issues/53).
+ - Various bugfixes for MAX22204 and MAX22210.
+ - Code cleanup.
+ 
 **Version 3.10.3: (Released)**
 - Completed API rework for TMC2209.
 
