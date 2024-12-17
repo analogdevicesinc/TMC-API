@@ -1,11 +1,10 @@
 /*******************************************************************************
-* Copyright © 2018 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
-
 
 #ifndef API_IC_MAX22216_H
 #define API_IC_MAX22216_H
@@ -20,6 +19,7 @@ extern uint8_t max22216_getCRCEnState(void);
 uint16_t max22216_readRegister(uint16_t icID, uint8_t address);
 void max22216_writeRegister(uint16_t icID, uint8_t address, uint16_t value);
 uint8_t max22216_CRC(uint8_t *data, size_t length);
+
 typedef struct
 {
     uint32_t mask;
