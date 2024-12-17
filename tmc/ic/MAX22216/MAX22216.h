@@ -27,12 +27,6 @@ typedef struct
     uint8_t address;
     bool isSigned;
 } RegisterField;
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-    uint8_t channel;
-    uint8_t slaveAddress;
-    uint8_t crc_en;
-} MAX22216TypeDef;
 
 static inline uint16_t max22216_fieldExtract(uint16_t data, RegisterField field)
 {
