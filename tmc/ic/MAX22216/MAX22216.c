@@ -93,19 +93,11 @@ void writeRegisterSPI_CRC_EN(uint16_t icID, uint8_t address, uint16_t value)
 
     // Send the write request
     max22216_readWriteSPI(icID, &data[0], sizeof(data));
-void max22216_init(MAX22216TypeDef *max22216, uint8_t channel)
-{
-    max22216->slaveAddress = channel;
-    max22216->channel = channel;
-    max22216->crc_en = 0;
 }
 
 void writeRegisterSPI(uint16_t icID, uint8_t address, uint16_t value)
-uint8_t max22216_getSlaveAddress(const MAX22216TypeDef *max22216)
 {
     uint8_t data[3] = {0};
-    return max22216->slaveAddress;
-}
 
     data[0] = address | MAX22216_WRITE_BIT;
     data[1] = ((value >> 8) & 0xFF);
@@ -113,14 +105,10 @@ uint8_t max22216_getSlaveAddress(const MAX22216TypeDef *max22216)
 
     // Send the write request
     max22216_readWriteSPI(icID, &data[0], sizeof(data));
-void max22216_setSlaveAddress(MAX22216TypeDef *max22216, uint8_t slaveAddress)
-{
-    max22216->slaveAddress = slaveAddress;
 }
 
 // length in bits
 uint8_t max22216_CRC(uint8_t *data, size_t length)
-int16_t max22216_getS16CircleDifference(int16_t newValue, int16_t oldValue)
 {
     uint8_t crc = 0b11111;
     uint8_t crc_old;
@@ -151,5 +139,4 @@ int16_t max22216_getS16CircleDifference(int16_t newValue, int16_t oldValue)
                                    max22216_fieldExtract(data[i / 8], MAX22216_data_FIELD));
     }
     return (crc & 0x1F);
-    return (newValue - oldValue);
 }

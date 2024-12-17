@@ -60,11 +60,8 @@ static inline void max22216_fieldWrite(uint16_t icID, RegisterField field, uint1
     uint16_t regValue = max22216_readRegister(icID, field.address);
 
     regValue = max22216_fieldUpdate(regValue, field, value);
-void max22216_init(MAX22216TypeDef *max22216, uint8_t channel);
 
     max22216_writeRegister(icID, field.address, regValue);
 }
-uint8_t max22216_getSlaveAddress(const MAX22216TypeDef *max22216);
-void max22216_setSlaveAddress(MAX22216TypeDef *max22216, uint8_t slaveAddress);
 
 #endif /* API_IC_MAX22216_H */
