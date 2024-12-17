@@ -15,6 +15,11 @@
 #include <stddef.h>
 #include "MAX22216_HW_Abstraction.h"
 
+extern void max22216_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern uint8_t max22216_getCRCEnState(void);
+uint16_t max22216_readRegister(uint16_t icID, uint8_t address);
+void max22216_writeRegister(uint16_t icID, uint8_t address, uint16_t value);
+uint8_t max22216_CRC(uint8_t *data, size_t length);
 typedef struct
 {
     uint32_t mask;
@@ -40,7 +45,6 @@ static inline uint16_t max22216_fieldExtract(uint16_t data, RegisterField field)
         uint16_t signMask = baseMask & (~baseMask >> 1);
         value             = (value ^ signMask) - signMask;
     }
-uint8_t max22216_CRC(uint8_t *data, size_t length);
 
     return value;
 }
@@ -51,16 +55,11 @@ static inline uint16_t max22216_fieldRead(uint16_t icID, RegisterField field)
 
     return max22216_fieldExtract(value, field);
 }
-void max22216_writeDatagram(MAX22216TypeDef *max22216, uint8_t address, uint8_t x1, uint8_t x2);
-void max22216_writeInt(MAX22216TypeDef *max22216, uint8_t address, int16_t value);
-int32_t max22216_readInt(MAX22216TypeDef *max22216, uint8_t address);
 
 static inline uint16_t max22216_fieldUpdate(uint16_t data, RegisterField field, uint16_t value)
 {
     return (data & (~field.mask)) | ((value << field.shift) & field.mask);
 }
-void max22216_writeIntDep(MAX22216TypeDef *max22216, uint8_t address, int32_t value, uint8_t dep_address, int32_t dep_value);
-int32_t max22216_readIntDep(MAX22216TypeDef *max22216, uint8_t address, uint8_t dep_address, int32_t dep_value);
 
 static inline void max22216_fieldWrite(uint16_t icID, RegisterField field, uint16_t value)
 {
