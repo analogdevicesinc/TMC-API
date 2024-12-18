@@ -10,20 +10,67 @@
 #ifndef TMC_IC_TMC4361A_H_
 #define TMC_IC_TMC4361A_H_
 
-#include "tmc/helpers/API_Header.h"
-#include "TMC4361A_Register.h"
-#include "TMC4361A_Constants.h"
-#include "TMC4361A_Fields.h"
+#include "TMC4361A_HW_Abstraction.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 
-// Helper macros
-#define TMC4361A_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc4361A_readInt(tdef, address), mask, shift)
-#define TMC4361A_FIELD_WRITE(tdef, address, mask, shift, value) \
-	(tmc4361A_writeInt(tdef, address, FIELD_SET(tmc4361A_readInt(tdef, address), mask, shift, value)))
 
 // Typedefs
 typedef struct
 {
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+// => TMC-API wrapper
+extern void tmc4361A_setStatus(uint16_t icID, uint8_t *data);
+extern void tmc4361A_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+// => TMC-API wrapper
+
+int32_t tmc4361A_readRegister(uint16_t icID, uint8_t address);
+void tmc4361A_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc4361A_readWriteCover(uint16_t icID, uint8_t *data, size_t length);
+
+
+static inline uint32_t tmc4361A_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc4361A_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc4361A_readRegister(icID, field.address);
+
+    return tmc4361A_fieldExtract(value, field);
+}
+
+static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc4361A_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc4361A_readRegister(icID, field.address);
+
+    regValue = field_update(regValue, field, value);
+
+    tmc4361A_writeRegister(icID, field.address, regValue);
+}
+
 	ConfigurationTypeDef *config;
 	int32_t velocity;
 	int32_t oldX;
@@ -109,11 +156,6 @@ static const TMCRegisterConstant tmc4361A_RegisterConstants[] =
 // API Functions
 // All functions act on one IC given by the TMC4361ATypeDef struct
 
-// SPI Communication
-void tmc4361A_writeDatagram(TMC4361ATypeDef *tmc4361A, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4);
-void tmc4361A_writeInt(TMC4361ATypeDef *tmc4361A, uint8_t address, int32_t value);
-int32_t tmc4361A_readInt(TMC4361ATypeDef *tmc4361A, uint8_t address);
-void tmc4361A_readWriteCover(TMC4361ATypeDef *tmc4361A, uint8_t *data, size_t length);
 
 // Configuration
 void tmc4361A_init(TMC4361ATypeDef *tmc4361A, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);

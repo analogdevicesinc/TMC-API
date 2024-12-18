@@ -9,55 +9,14 @@
 
 #include "TMC4361A.h"
 
-// => SPI wrapper
-// Send [length] bytes stored in the [data] array over SPI and overwrite [data]
-// with the replies. data[0] is the first byte sent and received.
-extern void tmc4361A_readWriteArray(uint8_t channel, uint8_t *data, size_t length);
-// <= SPI wrapper
 
-// Writes (x1 << 24) | (x2 << 16) | (x3 << 8) | x4 to the given address
-void tmc4361A_writeDatagram(TMC4361ATypeDef *tmc4361A, uint8_t address, uint8_t x1, uint8_t x2, uint8_t x3, uint8_t x4)
-{
-	int32_t value;
-	uint8_t data[5] = { address | TMC4361A_WRITE_BIT, x1, x2, x3, x4 };
-
-	tmc4361A_readWriteArray(tmc4361A->config->channel, &data[0], 5);
-
-	tmc4361A->status = data[0];
-
-	value = ((uint32_t)x1 << 24) | ((uint32_t)x2 << 16) | (x3 << 8) | x4;
-
-	// Write to the shadow register and mark the register dirty
-	address = TMC_ADDRESS(address);
-	tmc4361A->config->shadowRegister[address] = value;
-	tmc4361A->registerAccess[address] |= TMC_ACCESS_DIRTY;
 }
 
-void tmc4361A_writeInt(TMC4361ATypeDef *tmc4361A, uint8_t address, int32_t value)
 {
-	tmc4361A_writeDatagram(tmc4361A, address, BYTE(value, 3), BYTE(value, 2), BYTE(value, 1), BYTE(value, 0));
-}
 
-int32_t tmc4361A_readInt(TMC4361ATypeDef *tmc4361A, uint8_t address)
-{
-	int32_t value;
-	uint8_t data[5];
 
-	address = TMC_ADDRESS(address);
 
-	if(!TMC_IS_READABLE(tmc4361A->registerAccess[address]))
-		return tmc4361A->config->shadowRegister[address];
 
-	data[0] = address;
-	tmc4361A_readWriteArray(tmc4361A->config->channel, &data[0], 5);
-
-	data[0] = address;
-	tmc4361A_readWriteArray(tmc4361A->config->channel, &data[0], 5);
-
-	tmc4361A->status = data[0];
-	value = ((uint32_t)data[1] << 24) | ((uint32_t)data[2] << 16) | (data[3] << 8) | data[4];
-
-	return value;
 }
 
 // Send [length] bytes stored in the [data] array to a driver attached to the TMC4361A
@@ -193,15 +152,20 @@ uint8_t tmc4361A_restore(TMC4361ATypeDef *tmc4361A)
 {
 	if(tmc4361A->config->state != CONFIG_READY)
 		return 0;
+/************************************************************** Register read / write Implementation ******************************************************************/
 
+static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
+static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
 	tmc4361A->config->state        = CONFIG_RESTORE;
 	tmc4361A->config->configIndex  = 0;
 
+int32_t tmc4361A_readRegister(uint16_t icID, uint8_t address)
 	return 1;
 }
 
 void tmc4361A_setRegisterResetState(TMC4361ATypeDef *tmc4361A, const int32_t *resetState)
 {
+    uint32_t value;
 	uint32_t i;
 	for(i = 0; i < TMC4361A_REGISTER_COUNT; i++)
 		tmc4361A->registerResetState[i] = resetState[i];
@@ -212,6 +176,10 @@ void tmc4361A_setCallback(TMC4361ATypeDef *tmc4361A, tmc4361A_callback callback)
 	tmc4361A->config->callback = (tmc_callback_config) callback;
 }
 
+    return readRegisterSPI(icID, address);
+
+    //ToDo: Error handling
+    return -1;
 static void tmc4361A_writeConfiguration(TMC4361ATypeDef *tmc4361A)
 {
 	uint8_t *ptr = &tmc4361A->config->configIndex;
@@ -247,8 +215,10 @@ static void tmc4361A_writeConfiguration(TMC4361ATypeDef *tmc4361A)
 	}
 }
 
+void tmc4361A_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 void tmc4361A_periodicJob(TMC4361ATypeDef *tmc4361A, uint32_t tick)
 {
+    writeRegisterSPI(icID, address, value);
 	if(tmc4361A->config->state != CONFIG_READY)
 	{
 		tmc4361A_writeConfiguration(tmc4361A);
@@ -262,19 +232,29 @@ void tmc4361A_periodicJob(TMC4361ATypeDef *tmc4361A, uint32_t tick)
 	}
 }
 
+void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 void tmc4361A_rotate(TMC4361ATypeDef *tmc4361A, int32_t velocity)
 {
+    uint8_t data[5] = {0};
 	// Disable Position Mode
 	TMC4361A_FIELD_WRITE(tmc4361A, TMC4361A_RAMPMODE, TMC4361A_OPERATION_MODE_MASK, TMC4361A_OPERATION_MODE_SHIFT, 0);
 
+    data[0] = address | TMC4361A_WRITE_BIT;
+    data[1] = 0xFF & (value >> 24);
+    data[2] = 0xFF & (value >> 16);
+    data[3] = 0xFF & (value >> 8);
+    data[4] = 0xFF & (value >> 0);
 	tmc4361A_writeInt(tmc4361A, TMC4361A_VMAX, tmc4361A_discardVelocityDecimals(velocity));
 }
 
+    // Send the write request
+    tmc4361A_readWriteSPI(icID, &data[0], sizeof(data));
 void tmc4361A_right(TMC4361ATypeDef *tmc4361A, int32_t velocity)
 {
 	tmc4361A_rotate(tmc4361A, velocity);
 }
 
+    tmc4361A_setStatus(icID, &data[0]);
 void tmc4361A_left(TMC4361ATypeDef *tmc4361A, int32_t velocity)
 {
 	tmc4361A_rotate(tmc4361A, -velocity);
@@ -285,13 +265,20 @@ void tmc4361A_stop(TMC4361ATypeDef *tmc4361A)
 	tmc4361A_rotate(tmc4361A, 0);
 }
 
+int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 void tmc4361A_moveTo(TMC4361ATypeDef *tmc4361A, int32_t position, uint32_t velocityMax)
 {
+    uint8_t data[5] = {0};
 	// Enable Position Mode
 	TMC4361A_FIELD_WRITE(tmc4361A, TMC4361A_RAMPMODE, TMC4361A_OPERATION_MODE_MASK, TMC4361A_OPERATION_MODE_SHIFT, 1);
 
+    // clear write bit
+    address = address & TMC4361A_ADDRESS_MASK;
 	tmc4361A_writeInt(tmc4361A, TMC4361A_VMAX, tmc4361A_discardVelocityDecimals(velocityMax));
 
+    data[0] = address;
+    // Send the read request
+    tmc4361A_readWriteSPI(icID, &data[0], sizeof(data));
 	tmc4361A_writeInt(tmc4361A, TMC4361A_X_TARGET, position);
 }
 
@@ -301,9 +288,13 @@ void tmc4361A_moveBy(TMC4361ATypeDef *tmc4361A, int32_t *ticks, uint32_t velocit
 	// determine actual position and add numbers of ticks to move
 	*ticks += tmc4361A_readInt(tmc4361A, TMC4361A_XACTUAL);
 
+    data[0] = address;
+    // Send another request to receive the read reply
+    tmc4361A_readWriteSPI(icID, &data[0], sizeof(data));
 	tmc4361A_moveTo(tmc4361A, *ticks, velocityMax);
 }
 
+    tmc4361A_setStatus(icID, &data[0]);
 int32_t tmc4361A_discardVelocityDecimals(int32_t value)
 {
 	if(abs(value) > 8000000)
@@ -313,6 +304,7 @@ int32_t tmc4361A_discardVelocityDecimals(int32_t value)
 	return value << 8;
 }
 
+    return ((int32_t) data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] << 8) | ((int32_t) data[4]);
 static uint8_t tmc4361A_moveToNextFullstep(TMC4361ATypeDef *tmc4361A)
 {
 	int32_t stepCount;
