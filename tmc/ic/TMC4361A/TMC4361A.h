@@ -95,7 +95,6 @@ static inline void tmc4361A_fieldWrite(uint16_t icID, RegisterField field, uint3
 
 /**************************************************************** Cache Implementation *************************************************************************/
 
-typedef void (*tmc4361A_callback)(TMC4361ATypeDef*, ConfigState);
 #if TMC4361A_CACHE == 1
 #if TMC4361A_ENABLE_TMC_CACHE == 1
 
@@ -203,30 +202,7 @@ static const TMC4361ARegisterConstant tmc4361A_RegisterConstants[] =
 		{ 0x7E, 0x00F70000 }, // START_SIN, START_SIN_90_120, DAC_OFFSET
 };
 
-// API Functions
-// All functions act on one IC given by the TMC4361ATypeDef struct
 
-
-// Configuration
-void tmc4361A_init(TMC4361ATypeDef *tmc4361A, uint8_t channel, ConfigurationTypeDef *config, const int32_t *registerResetState);
-void tmc4361A_fillShadowRegisters(TMC4361ATypeDef *tmc4361A);
-uint8_t tmc4361A_reset(TMC4361ATypeDef *tmc4361A);
-uint8_t tmc4361A_restore(TMC4361ATypeDef *tmc4361A);
-void tmc4361A_setRegisterResetState(TMC4361ATypeDef *tmc4361A, const int32_t *resetState);
-void tmc4361A_setCallback(TMC4361ATypeDef *tmc4361A, tmc4361A_callback callback);
-void tmc4361A_periodicJob(TMC4361ATypeDef *tmc4361A, uint32_t tick);
-
-// Motion
-void tmc4361A_rotate(TMC4361ATypeDef *tmc4361A, int32_t velocity);
-void tmc4361A_right(TMC4361ATypeDef *tmc4361A, int32_t velocity);
-void tmc4361A_left(TMC4361ATypeDef *tmc4361A, int32_t velocity);
-void tmc4361A_stop(TMC4361ATypeDef *tmc4361A);
-void tmc4361A_moveTo(TMC4361ATypeDef *tmc4361A, int32_t position, uint32_t velocityMax);
-void tmc4361A_moveBy(TMC4361ATypeDef *tmc4361A, int32_t *ticks, uint32_t velocityMax);
-
-// Helper functions
-int32_t tmc4361A_discardVelocityDecimals(int32_t value);
-uint8_t tmc4361A_calibrateClosedLoop(TMC4361ATypeDef *tmc4361A, uint8_t worker0master1);
 extern uint8_t tmc4361A_dirtyBits[TMC4361A_IC_CACHE_COUNT][TMC4361A_REGISTER_COUNT/8];
 extern int32_t tmc4361A_shadowRegister[TMC4361A_IC_CACHE_COUNT][TMC4361A_REGISTER_COUNT];
 void tmc4361A_setDirtyBit(uint16_t icID, uint8_t index, bool value);
