@@ -165,7 +165,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
     tmc4361A_setStatus(icID, &data[0]);
 
     //Cache the registers with write-only access
-    tmc4361A_cache(icID, TMC4361A_CACHE_WRITE, address, (uint32_t*)&value);
+    tmc4361A_cache(icID, TMC4361A_CACHE_WRITE, address, (uint32_t *) &value);
 }
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
