@@ -9,6 +9,122 @@
 
 #include "TMC4361A.h"
 
+/**************************************************************** Cache Implementation *************************************************************************/
+#if TMC4361A_CACHE == 0
+static inline bool tmc4361A_cache(uint16_t icID, TMC4361ACacheOp operation, uint8_t address, uint32_t *value)
+{
+    UNUSED(icID);
+    UNUSED(address);
+    UNUSED(operation);
+    return false;
+}
+#else
+#if TMC4361A_ENABLE_TMC_CACHE == 1
+uint8_t tmc4361A_dirtyBits[TMC4361A_IC_CACHE_COUNT][TMC4361A_REGISTER_COUNT / 8] = {0};
+int32_t tmc4361A_shadowRegister[TMC4361A_IC_CACHE_COUNT][TMC4361A_REGISTER_COUNT];
+
+void tmc4361A_setDirtyBit(uint16_t icID, uint8_t index, bool value)
+{
+    if (index >= TMC4361A_REGISTER_COUNT)
+        return;
+
+    uint8_t *tmp  = &tmc4361A_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    uint8_t mask  = 1 << shift;
+    *tmp          = (((*tmp) & (~(mask))) | (((value) << (shift)) & (mask)));
+}
+
+bool tmc4361A_getDirtyBit(uint16_t icID, uint8_t index)
+{
+    if (index >= TMC4361A_REGISTER_COUNT)
+        return false;
+
+    uint8_t *tmp  = &tmc4361A_dirtyBits[icID][index / 8];
+    uint8_t shift = (index % 8);
+    return ((*tmp) >> shift) & 1;
+}
+
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+bool tmc4361A_cache(uint16_t icID, TMC4361ACacheOp operation, uint8_t address, uint32_t *value)
+{
+    if (operation == TMC4361A_CACHE_READ)
+    {
+        // Check if the value should come from cache
+
+        // Only supported chips have a cache
+        if (icID >= TMC4361A_IC_CACHE_COUNT)
+            return false;
+
+        // Only non-readable registers care about caching
+        // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+        if (TMC4361A_IS_READABLE(tmc4361A_registerAccess[address]))
+            return false;
+
+        // Grab the value from the cache
+        *value = tmc4361A_shadowRegister[icID][address];
+        return true;
+    }
+    else if (operation == TMC4361A_CACHE_WRITE || operation == TMC4361A_CACHE_FILL_DEFAULT)
+    {
+        // Fill the cache
+
+        // only supported chips have a cache
+        if (icID >= TMC4361A_IC_CACHE_COUNT)
+            return false;
+
+        // Write to the shadow register and mark the register dirty
+        tmc4361A_shadowRegister[icID][address] = *value;
+        if (operation == TMC4361A_CACHE_WRITE)
+        {
+            tmc4361A_setDirtyBit(icID, address, true);
+        }
+        return true;
+    }
+    return false;
+}
+void tmc4361A_initCache()
+{
+    // Check if we have constants defined
+    if (ARRAY_SIZE(tmc4361A_RegisterConstants) == 0)
+        return;
+
+    size_t i, j, id;
+
+    for (i = 0, j = 0; i < TMC4361A_REGISTER_COUNT; i++)
+    {
+        // We only need to worry about hardware preset, write-only registers
+        // that have not yet been written (no dirty bit) here.
+        if (tmc4361A_registerAccess[i] != TMC4361A_ACCESS_W_PRESET)
+            continue;
+
+        // Search the constant list for the current address. With the constant
+        // list being sorted in ascended order, we can walk through the list
+        // until the entry with an address equal or greater than i
+        while (j < ARRAY_SIZE(tmc4361A_RegisterConstants) && (tmc4361A_RegisterConstants[j].address < i)) j++;
+
+        // Abort when we reach the end of the constant list
+        if (j == ARRAY_SIZE(tmc4361A_RegisterConstants))
+            break;
+
+        // If we have an entry for our current address, write the constant
+        if (tmc4361A_RegisterConstants[j].address == i)
+        {
+            for (id = 0; id < TMC4361A_IC_CACHE_COUNT; id++)
+            {
+                uint32_t temp = tmc4361A_RegisterConstants[j].value;
+                tmc4361A_cache(id, TMC4361A_CACHE_FILL_DEFAULT, i, &temp);
+            }
+        }
+    }
+}
+#else
+// User must implement their own cache
+extern bool tmc4361A_cache(uint16_t icID, TMC4361ACacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
 
 }
 
@@ -171,6 +287,9 @@ void tmc4361A_setRegisterResetState(TMC4361ATypeDef *tmc4361A, const int32_t *re
 		tmc4361A->registerResetState[i] = resetState[i];
 }
 
+    // Read from cache for registers with write-only access
+    if (tmc4361A_cache(icID, TMC4361A_CACHE_READ, address, &value))
+        return value;
 void tmc4361A_setCallback(TMC4361ATypeDef *tmc4361A, tmc4361A_callback callback)
 {
 	tmc4361A->config->callback = (tmc_callback_config) callback;
@@ -260,6 +379,8 @@ void tmc4361A_left(TMC4361ATypeDef *tmc4361A, int32_t velocity)
 	tmc4361A_rotate(tmc4361A, -velocity);
 }
 
+    //Cache the registers with write-only access
+    tmc4361A_cache(icID, TMC4361A_CACHE_WRITE, address, (uint32_t*)&value);
 void tmc4361A_stop(TMC4361ATypeDef *tmc4361A)
 {
 	tmc4361A_rotate(tmc4361A, 0);
