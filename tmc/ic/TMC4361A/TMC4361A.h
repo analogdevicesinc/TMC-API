@@ -39,7 +39,6 @@
 
 /******************************************************************************/
 
-// Typedefs
 typedef struct
 {
     uint32_t mask;
@@ -95,17 +94,6 @@ static inline void tmc4361A_fieldWrite(uint16_t icID, RegisterField field, uint3
 }
 
 /**************************************************************** Cache Implementation *************************************************************************/
-	ConfigurationTypeDef *config;
-	int32_t velocity;
-	int32_t oldX;
-	uint32_t oldTick;
-	int32_t registerResetState[TMC4361A_REGISTER_COUNT];
-	uint8_t registerAccess[TMC4361A_REGISTER_COUNT];
-	//TMotorConfig motorConfig;
-	//TClosedLoopConfig closedLoopConfig;
-	uint8_t status;
-	ConfigurationTypeDef *cover;
-} TMC4361ATypeDef;
 
 typedef void (*tmc4361A_callback)(TMC4361ATypeDef*, ConfigState);
 #if TMC4361A_CACHE == 1
