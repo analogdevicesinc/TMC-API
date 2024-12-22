@@ -46,7 +46,7 @@
 #define TMC2209_CHOPCONF      0x6C
 #define TMC2209_DRV_STATUS    0x6F
 #define TMC2209_PWMCONF       0x70
-#define TMC2209_PWMSCALE      0x71
+#define TMC2209_PWM_SCALE     0x71
 #define TMC2209_PWM_AUTO      0x72
 
 // Register fields in TMC2209
