@@ -50,7 +50,7 @@
 #define TMC2226_DRVSTATUS     0x6F
 
 #define TMC2226_PWMCONF       0x70
-#define TMC2226_PWMSCALE      0x71
+#define TMC2226_PWM_SCALE     0x71
 #define TMC2226_PWM_AUTO      0x72
 
 // Register fields

@@ -43,7 +43,7 @@
 #define TMC2225_CHOPCONF      0x6C
 #define TMC2225_DRVSTATUS     0x6F
 #define TMC2225_PWMCONF       0x70
-#define TMC2225_PWMSCALE      0x71
+#define TMC2225_PWM_SCALE     0x71
 #define TMC2225_PWM_AUTO      0x72
 
 

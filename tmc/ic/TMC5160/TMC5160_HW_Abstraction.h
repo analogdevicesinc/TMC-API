@@ -132,7 +132,7 @@
 #define TMC5160_DCCTRL         0x6E
 #define TMC5160_DRV_STATUS     0x6F
 #define TMC5160_PWMCONF        0x70
-#define TMC5160_PWMSCALE       0x71
+#define TMC5160_PWM_SCALE      0x71
 #define TMC5160_PWM_AUTO       0x72
 #define TMC5160_LOST_STEPS     0x73
 
