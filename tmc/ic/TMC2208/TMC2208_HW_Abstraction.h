@@ -41,7 +41,7 @@
 #define TMC2208_CHOPCONF      0x6C
 #define TMC2208_DRVSTATUS     0x6F
 #define TMC2208_PWMCONF       0x70
-#define TMC2208_PWMSCALE      0x71
+#define TMC2208_PWM_SCALE     0x71
 #define TMC2208_PWM_AUTO      0x72
 
 

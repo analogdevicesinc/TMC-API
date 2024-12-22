@@ -135,7 +135,7 @@
 #define TMC5240_DCCTRL          0x6E
 #define TMC5240_DRVSTATUS       0x6F
 #define TMC5240_PWMCONF         0x70
-#define TMC5240_PWMSCALE        0x71
+#define TMC5240_PWM_SCALE       0x71
 #define TMC5240_PWM_AUTO        0x72
 #define TMC5240_SG4_THRS        0x74
 #define TMC5240_SG4_RESULT      0x75
@@ -772,10 +772,10 @@
 #define TMC5240_PWM_LIM_FIELD                   ((RegisterField) { TMC5240_PWM_LIM_MASK, TMC5240_PWM_LIM_SHIFT, TMC5240_PWMCONF, false})
 #define TMC5240_PWM_SCALE_SUM_MASK              0x3FF // PWM_SCALE // Bits: 9...0: [0...1023]PWM_SCALE_SUM: Actual PWM duty cycle. This value is used for scaling the values CUR_A and CUR_B read from the sine wave table. 1023: maximum duty cycle. This value is extended by two bits [1,0] for higher precision of duty cycle read out. Bits 9..2 correspond to the 8 bit values in other PWM duty cycle related registers.
 #define TMC5240_PWM_SCALE_SUM_SHIFT             0 // Bits: 9...0: [0...1023]PWM_SCALE_SUM: Actual PWM duty cycle. This value is used for scaling the values CUR_A and CUR_B read from the sine wave table. 1023: maximum duty cycle. This value is extended by two bits [1,0] for higher precision of duty cycle read out. Bits 9..2 correspond to the 8 bit values in other PWM duty cycle related registers.
-#define TMC5240_PWM_SCALE_SUM_FIELD             ((RegisterField) { TMC5240_PWM_SCALE_SUM_MASK, TMC5240_PWM_SCALE_SUM_SHIFT, TMC5240_PWMSCALE, false})
+#define TMC5240_PWM_SCALE_SUM_FIELD             ((RegisterField) { TMC5240_PWM_SCALE_SUM_MASK, TMC5240_PWM_SCALE_SUM_SHIFT, TMC5240_PWM_SCALE, false})
 #define TMC5240_PWM_SCALE_AUTO_MASK             0x1FF0000 // PWM_SCALE // PWM_SCALE_AUTO
 #define TMC5240_PWM_SCALE_AUTO_SHIFT            16 // PWM_SCALE_AUTO
-#define TMC5240_PWM_SCALE_AUTO_FIELD            ((RegisterField) { TMC5240_PWM_SCALE_AUTO_MASK, TMC5240_PWM_SCALE_AUTO_SHIFT, TMC5240_PWMSCALE, false})
+#define TMC5240_PWM_SCALE_AUTO_FIELD            ((RegisterField) { TMC5240_PWM_SCALE_AUTO_MASK, TMC5240_PWM_SCALE_AUTO_SHIFT, TMC5240_PWM_SCALE, false})
 #define TMC5240_PWM_OFS_AUTO_MASK               0xFF // PWM_AUTO // Automatically determined offset value
 #define TMC5240_PWM_OFS_AUTO_SHIFT              0 // Automatically determined offset value
 #define TMC5240_PWM_OFS_AUTO_FIELD              ((RegisterField) { TMC5240_PWM_OFS_AUTO_MASK, TMC5240_PWM_OFS_AUTO_SHIFT, TMC5240_PWM_AUTO, false})
