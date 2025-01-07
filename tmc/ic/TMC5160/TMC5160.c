@@ -138,7 +138,8 @@ void tmc5160_initCache()
         {
             for (id = 0; id < TMC5160_IC_CACHE_COUNT; id++)
             {
-                tmc5160_cache(id, TMC5160_CACHE_FILL_DEFAULT, i, &tmc5160_RegisterConstants[j].value);
+            	uint32_t value = tmc5160_RegisterConstants[j].value;
+                tmc5160_cache(id, TMC5160_CACHE_FILL_DEFAULT, i, &value);
             }
         }
     }

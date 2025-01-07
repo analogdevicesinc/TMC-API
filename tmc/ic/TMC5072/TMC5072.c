@@ -141,10 +141,12 @@ void tmc5072_initCache()
 		{
 			for (id = 0; id < TMC5072_IC_CACHE_COUNT; id++)
 			{
-				tmc5072_cache(id, TMC5072_CACHE_FILL_DEFAULT, i, &tmc5072_RegisterConstants[j].value);
+				uint32_t value = tmc5072_RegisterConstants[j].value;
+				tmc5072_cache(id, TMC5072_CACHE_FILL_DEFAULT, i, &value);
 			}
 		}
 	}
+	(void)motor;
 }
 #else
 // User must implement their own cache
@@ -196,7 +198,7 @@ void tmc5072_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 	}
 
     //Cache the registers with write-only access
-    tmc5072_cache(icID, TMC5072_CACHE_WRITE, address, &value);
+    tmc5072_cache(icID, TMC5072_CACHE_WRITE, address, (uint32_t*)&value);
 }
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
@@ -298,6 +300,7 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 	// swap nibbles ...
 	result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
 
+	(void)table;
 	return result;
 }
 

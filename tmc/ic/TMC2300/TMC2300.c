@@ -142,10 +142,12 @@ void tmc2300_initCache()
         {
             for (id = 0; id < TMC2300_IC_CACHE_COUNT; id++)
             {
-                tmc2300_cache(id, TMC2300_CACHE_FILL_DEFAULT, i, &tmc2300_RegisterConstants[j].value);
+            	uint32_t value = tmc2300_RegisterConstants[j].value;
+                tmc2300_cache(id, TMC2300_CACHE_FILL_DEFAULT, i, &value);
             }
         }
     }
+    (void)motor;
 }
 #else
 // User must implement their own cache
@@ -226,7 +228,7 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
     tmc2300_readWriteUART(icID, &data[0], 8, 0);
 
     //Cache the registers with write-only access
-    tmc2300_cache(icID, TMC2300_CACHE_WRITE, registerAddress, &value);
+    tmc2300_cache(icID, TMC2300_CACHE_WRITE, registerAddress, (uint32_t*)&value);
 
 }
 
