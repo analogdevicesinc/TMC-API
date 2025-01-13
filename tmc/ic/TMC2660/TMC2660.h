@@ -55,6 +55,16 @@ typedef struct
     bool isSigned;
 } RegisterField;
 
+//TMC-API wrapper
+extern uint8_t tmc2660_getcontinuousModeEnable(uint8_t icID);
+extern void tmc2660_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+//TMC-API wrapper
+
+void tmc2660_writeRegister(uint8_t icID, uint8_t address, uint32_t value);
+uint32_t tmc2660_readRegister(uint8_t icID, uint8_t address);
+uint8_t tmc2660_getStatusBits(uint8_t icID);
+void readWrite(uint8_t icID, uint32_t value);
+void readImmediately(uint8_t icID, uint8_t rdsel);
 
 static inline uint32_t tmc2660_fieldExtract(uint32_t data, RegisterField field)
 {

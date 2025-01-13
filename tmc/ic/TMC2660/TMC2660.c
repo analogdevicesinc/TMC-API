@@ -18,91 +18,89 @@ static void readImmediately(uint8_t rdsel);
 void readWrite(uint32_t datagram)
 {
     uint8_t data[3]= {0};
+void readWrite(uint8_t icID, uint32_t datagram)
+{
+    uint8_t data[3] = {0};
     uint32_t reply;
-    static uint8_t rdsel = 0;
+    uint8_t rdsel = TMC2660_GET_RDSEL(datagram);
 
-    data[0] = datagram >> 16;
-    data[1] = datagram >> 8;
-    data[2] = datagram >> 0;
+    data[0] = 0xFF & (datagram >> 16);
+    data[1] = 0xFF & (datagram >> 8);
+    data[2] = 0xFF & (datagram >> 0);
 
-    // send 24 bytes of data and receive reply
-    reply = tmc2660_readWriteSPI(DEFAULT_ICID, data[0], 0);
-    reply <<= 8;
-    reply = tmc2660_readWriteSPI(DEFAULT_ICID, data[1], 0);
-    reply <<= 8;
-    reply = tmc2660_readWriteSPI(DEFAULT_ICID, data[2], 1);
-    reply >>= 4;
+    // Send 24 bytes of data and receive reply
+    tmc2660_readWriteSPI(icID, &data[0], sizeof(data));
+
+    reply = (data[0] << 16 | data[1] << 8 | data[2]) >> 4;
 
     // write value to response shadow register
-    TMC2660.config->shadowRegister[rdsel] = reply;
+    tmc2660_shadowRegister[icID][rdsel] = reply;
 
     // Store the latest response value to extract status bits in tmc2660_getStatusBits()
-    TMC2660.config->shadowRegister[TMC2660_RESPONSE_LATEST] = reply;
-
-    // write value to shadow register
-    TMC2660.config->shadowRegister[TMC2660_GET_ADDRESS(datagram) | TMC2660_WRITE_BIT ] = datagram;
+    tmc2660_shadowRegister[icID][TMC2660_RESPONSE_LATEST] = reply;
 
     // write value to response shadow register
-    if(TMC2660_GET_ADDRESS(datagram) == TMC2660_DRVCONF)
+    if (TMC2660_GET_ADDRESS(datagram) == TMC2660_DRVCONF)
         rdsel = TMC2660_GET_RDSEL(datagram);
+
+    // write value to shadow register
+    tmc2660_shadowRegister[icID][TMC2660_GET_ADDRESS(datagram) | TMC2660_WRITE_BIT] = datagram;
 }
 
-void readImmediately(uint8_t rdsel)
+void readImmediately(uint8_t icID, uint8_t rdsel)
 {
     // sets desired reply in DRVCONF register, resets it to previous settings whilst reading desired reply
     uint32_t value, drvConf;
 
     // additional reading to keep all replies up to date
-    value = tmc2660_readInt(0, TMC2660_DRVCONF);                  // buffer (value and drvConf) to write back later
+    value   = tmc2660_readRegister(0, TMC2660_DRVCONF); // buffer (value and drvConf) to write back later
     drvConf = value;
-    value &= ~TMC2660_SET_RDSEL(-1);                              // clear RDSEL bits
-    value |= TMC2660_SET_RDSEL(rdsel%3);                          // set rdsel
-    readWrite(value);                                             // write to chip and readout reply
-    readWrite(drvConf);                                           // write to chip and return desired reply
+    value &= ~TMC2660_SET_RDSEL(-1);       // clear RDSEL bits
+    value |= TMC2660_SET_RDSEL(rdsel % 3); // set rdsel
+    readWrite(icID, value);                // write to chip and readout reply
+    readWrite(icID, value);              // write to chip and return desired reply
 }
 
-// => SPI wrapper
-void tmc2660_writeInt(uint8_t motor, uint8_t address, int value)
+void tmc2660_writeRegister(uint8_t icID, uint8_t address, uint32_t value)
 {
-    UNUSED(motor);
-
     // Don't write to read-only registers
-    if (!TMC2660_IS_WRITEONLY_REGISTER(address))
+    if (TMC2660_IS_READONLY_REGISTER(address))
         return;
 
-    // tmc2660_writeDatagram(address, 0xFF & (value>>24), 0xFF & (value>>16), 0xFF & (value>>8), 0xFF & (value>>0));
+    // Extract 20 bits of valid data
     value &= 0x0FFFFF;
 
-    // ANDing with 0x7F to avoid buffer overflow, Shadow register is 128 entries large
-    TMC2660.config->shadowRegister[0x7F & address] = value;
+    //Cache the registers with write-only access
+    tmc2660_cache(icID, TMC2660_CACHE_WRITE, address, &value);
 
-    if(!TMC2660.continuousModeEnable)
-        readWrite(TMC2660_DATAGRAM(address, value));
+    // 0XF7 to mask the write bit
+    if (!tmc2660_getcontinuousModeEnable(icID))
+        readWrite(icID, TMC2660_DATAGRAM((address & 0xF7), value));
 }
 
-uint32_t tmc2660_readInt(uint8_t motor, uint8_t address)
+uint32_t tmc2660_readRegister(uint8_t icID, uint8_t address)
 {
-    UNUSED(motor);
+    uint32_t value;
 
-    if (TMC2660_IS_WRITEONLY_REGISTER(address))
-    {
-        // Write-only registers can only be read from cache
-        return TMC2660.config->shadowRegister[0x7F & address];
-    }
+    // Read from cache for registers with write-only access
+    if (tmc2660_cache(icID, TMC2660_CACHE_READ, address, &value))
+        return value;
 
-    if(!TMC2660.continuousModeEnable)
+    if (!tmc2660_getcontinuousModeEnable(icID))
     {
         // Read the read-only register, refreshing the cache
-        readImmediately(address);
+        readImmediately(icID, address);
     }
 
     // Return the read-only register from cache
-    return TMC2660.config->shadowRegister[0x7F & address];
+    return tmc2660_shadowRegister[icID][address];
 }
 
+uint8_t tmc2660_getStatusBits(uint8_t icID)
 uint8_t tmc2660_getStatusBits()
 {
     // Grab the status bits from the last request
+    return tmc2660_shadowRegister[icID][TMC2660_RESPONSE_LATEST] & TMC2660_STATUS_MASK;
     return TMC2660.config->shadowRegister[TMC2660_RESPONSE_LATEST] & TMC2660_STATUS_MASK; // Todo update rdsel register bits in the cache
 }
 
