@@ -17,11 +17,12 @@
 
 #define TMC2660_FIELD_READ(motor, address, mask, shift)           FIELD_READ(tmc2660_readInt, motor, address, mask, shift)
 #define TMC2660_FIELD_WRITE(motor, address, mask, shift, value)   FIELD_WRITE(tmc2660_writeInt, motor, address, mask, shift, value)
-#define TMC2660_FIELD_UPDATE(motor, address, mask, shift, value)  FIELD_UPDATE(tmc2660_readInt, tmc2660_writeInt, motor, address | TMC2660_WRITE_BIT, mask, shift, value)
+#define TMC2660_FIELD_UPDATE(motor, address, mask, shift, value)  FIELD_UPDATE(tmc2660_readInt, tmc2660_writeInt, motor, address, mask, shift, value)
 
 //-----------------------------------NEW CODE-----------------------------
 // => TMC-API wrapper
 extern unsigned char tmc2660_readWriteSPI(uint16_t icID, uint8_t data, uint8_t lastTransfer);
+
 static const uint8_t tmc2660_defaultRegisterAccess[TMC2660_REGISTER_COUNT] =
 {
     TMC_ACCESS_WRITE,  // 0: DRVCTRL
@@ -111,6 +112,7 @@ typedef struct {
 	int32_t registerResetState[TMC2660_REGISTER_COUNT];
 } TMC2660TypeDef;
 extern TMC2660TypeDef TMC2660;
+
 void tmc2660_initConfig();
 void tmc2660_periodicJob(uint32_t tick);
 uint8_t tmc2660_reset();
