@@ -10,10 +10,10 @@
 #ifndef TMC_IC_TMC2660_H_
 #define TMC_IC_TMC2660_H_
 
-#include "tmc/helpers/API_Header.h"
-#include "TMC2660_Register.h"
-#include "TMC2660_Constants.h"
-#include "TMC2660_Fields.h"
+#include "TMC2660_HW_Abstraction.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 
 #define TMC2660_FIELD_READ(motor, address, mask, shift)           FIELD_READ(tmc2660_readInt, motor, address, mask, shift)
 #define TMC2660_FIELD_WRITE(motor, address, mask, shift, value)   FIELD_WRITE(tmc2660_writeInt, motor, address, mask, shift, value)
