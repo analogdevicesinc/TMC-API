@@ -11,11 +11,19 @@
 #define TMC2660_REGISTER_H
 
 // addresses out auf address bits from write datagrams
-#define TMC2660_DRVCTRL   0x00
-#define TMC2660_CHOPCONF  0x04
-#define TMC2660_SMARTEN   0x05
-#define TMC2660_SGCSCONF  0x06
-#define TMC2660_DRVCONF   0x07
+#define TMC2660_RESPONSE0       0x00
+#define TMC2660_RESPONSE1       0x01
+#define TMC2660_RESPONSE2       0x02
+#define TMC2660_RESPONSE_LATEST 0x03
+
+// Addresses of the write-only registers
+// Note: This software abstraction maps the registers to addresses 8 and up
+#define TMC2660_WRITE_ONLY_REGISTER 0x08
+#define TMC2660_DRVCTRL   (0x00 | TMC2660_WRITE_ONLY_REGISTER) // 8
+#define TMC2660_CHOPCONF  (0x04 | TMC2660_WRITE_ONLY_REGISTER) // C
+#define TMC2660_SMARTEN   (0x05 | TMC2660_WRITE_ONLY_REGISTER) // D
+#define TMC2660_SGCSCONF  (0x06 | TMC2660_WRITE_ONLY_REGISTER) // E
+#define TMC2660_DRVCONF   (0x07 | TMC2660_WRITE_ONLY_REGISTER) // F
 
 #define TMC2660_DRVCTRL_SDOFF_MASK  (0xFFFFF)
 #define TMC2660_DRVCTRL_MASK        (0xFFFFF & ~((0x0F<<4) | (0x7F <<10)))
@@ -133,7 +141,7 @@
 #define TMC2660_GET_SGU(X)    (0x1F & ((X) >> 15))
 #define TMC2660_GET_SE(X)     (0x1F & ((X) >> 10))
 
-// TMC2660_RESPONSE_LATEST
+// General status bits (contained in all TMC2660_RESPONSE0, 1 and 2)
 #define TMC2660_GET_STST(X)   (0x01 & ((X) >> 7))
 #define TMC2660_GET_OLB(X)    (0x01 & ((X) >> 6))
 #define TMC2660_GET_OLA(X)    (0x01 & ((X) >> 5))
