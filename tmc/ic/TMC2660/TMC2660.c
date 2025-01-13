@@ -148,65 +148,7 @@ uint32_t tmc2660_readRegister(uint8_t icID, uint8_t address)
 }
 
 uint8_t tmc2660_getStatusBits(uint8_t icID)
-uint8_t tmc2660_getStatusBits()
 {
     // Grab the status bits from the last request
     return tmc2660_shadowRegister[icID][TMC2660_RESPONSE_LATEST] & TMC2660_STATUS_MASK;
-    return TMC2660.config->shadowRegister[TMC2660_RESPONSE_LATEST] & TMC2660_STATUS_MASK; // Todo update rdsel register bits in the cache
-}
-
-void tmc2660_readWrite(uint8_t motor, uint32_t value)
-{
-    UNUSED(motor);
-
-    static uint8_t rdsel = 0; // number of expected read response
-
-    // if SGCONF should be written, check whether stand still, or run current should be used
-//  if(TMC2660_GET_ADDRESS(value) == TMC2660_SGCSCONF)
-//  {
-//      value &= ~TMC2660_SET_CS(-1); // clear CS field
-//      value |= (TMC2660.isStandStillCurrentLimit) ?  TMC2660_SET_CS(TMC2660.standStillCurrentScale) : TMC2660_SET_CS(TMC2660.runCurrentScale); // set current
-//  }
-
-    // write value and read reply to shadow register
-    TMC2660.config->shadowRegister[rdsel] = tmc2660_readWriteSPI(DEFAULT_ICID, value>>16, 0);
-    TMC2660.config->shadowRegister[rdsel] <<= 8;
-    TMC2660.config->shadowRegister[rdsel] |= tmc2660_readWriteSPI(DEFAULT_ICID, value>>8, 0);
-    TMC2660.config->shadowRegister[rdsel] <<= 8;
-    TMC2660.config->shadowRegister[rdsel] |= tmc2660_readWriteSPI(DEFAULT_ICID, value & 0xFF, 1);
-    TMC2660.config->shadowRegister[rdsel] >>= 4;
-
-    TMC2660.config->shadowRegister[TMC2660_RESPONSE_LATEST] = TMC2660.config->shadowRegister[rdsel]; // copy value to latest field
-    // set virtual read address for next reply given by RDSEL, can only change by setting RDSEL in DRVCONF
-    if(TMC2660_GET_ADDRESS(value) == TMC2660_DRVCONF)
-        rdsel = TMC2660_GET_RDSEL(value);
-
-    // write store written value to shadow register
-    TMC2660.config->shadowRegister[TMC2660_GET_ADDRESS(value) | TMC2660_WRITE_BIT ] = value;
-}
-//------------------------------------------------------------NEW CODE-----------------------------------//
-
-
-// Currently unused, we write the whole configuration as part of the reset/restore functions
-void tmc2660_writeConfiguration(TMC2660TypeDef *tmc2660, ConfigurationTypeDef *TMC2660_config)
-{
-	// write one writeable register at a time - backwards to hit DRVCONF before DRVCTRL
-	UNUSED(tmc2660);
-	UNUSED(TMC2660_config);
-
-	//uint8_t *ptr = &TMC2660.config->configIndex;
-	//const int32_t *settings = (TMC2660.config->state == CONFIG_RESTORE) ? TMC2660.config->shadowRegister : tmc2660->registerResetState;
-
-	//while((*ptr >= 0) && !IS_WRITEABLE(tmc2660->registerAccess[*ptr]))
-		//(*ptr)--;
-
-	//if(*ptr >= 0)
-	//{
-		//tmc2660_writeInt(0, *ptr, settings[*ptr]);
-		//(*ptr)--;
-	//}
-	//else
-	//{
-		//TMC2660.config->state = CONFIG_READY;
-	//}
 }

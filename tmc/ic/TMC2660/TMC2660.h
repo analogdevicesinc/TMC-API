@@ -85,7 +85,7 @@ static inline void tmc2660_fieldWrite(uint16_t icID, RegisterField field, uint32
 {
     uint32_t regValue = tmc2660_readRegister(icID, field.address);
 
-    regValue = field_update(regValue, field, value);
+    regValue = tmc2660_fieldUpdate(regValue, field, value);
 
     tmc2660_writeRegister(icID, field.address, regValue);
 }
@@ -164,36 +164,5 @@ extern int32_t tmc2660_shadowRegister[TMC2660_IC_CACHE_COUNT][TMC2660_REGISTER_C
 #endif
 
 /***************************************************************************************************************************************************/
-//-----------------------------------NEW CODE-----------------------------
-
-// Usage note: use 1 TypeDef per IC
-typedef struct {
-    ConfigurationTypeDef *config;
-	uint8_t standStillCurrentScale;
-	uint32_t standStillTimeout;
-	uint8_t isStandStillOverCurrent;
-	uint8_t isStandStillCurrentLimit;
-	uint8_t continuousModeEnable;
-	uint8_t runCurrentScale;
-	uint8_t coolStepInactiveValue;
-	uint8_t coolStepActiveValue;
-	uint32_t coolStepThreshold;
-	int32_t velocity;
-	int32_t oldX;
-	uint32_t oldTick;
-	uint8_t registerAccess[TMC2660_REGISTER_COUNT];
-	int32_t registerResetState[TMC2660_REGISTER_COUNT];
-} TMC2660TypeDef;
-extern TMC2660TypeDef TMC2660;
-
-void tmc2660_initConfig();
-void tmc2660_periodicJob(uint32_t tick);
-uint8_t tmc2660_reset();
-uint8_t tmc2660_restore();
-void tmc2660_writeInt(uint8_t motor, uint8_t address, int value);
-uint32_t tmc2660_readInt(uint8_t motor, uint8_t address);
-
-uint8_t tmx2660_getStatusBits();
-void tmc2660_readWrite(uint8_t motor, uint32_t value);
 
 #endif /* TMC_IC_TMC2660_H_ */
