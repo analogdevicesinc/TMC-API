@@ -101,11 +101,10 @@ void readWrite(uint8_t icID, uint32_t datagram)
 void readImmediately(uint8_t icID, uint8_t rdsel)
 {
     // sets desired reply in DRVCONF register, resets it to previous settings whilst reading desired reply
-    uint32_t value, drvConf;
+    uint32_t value;
 
     // additional reading to keep all replies up to date
     value   = tmc2660_readRegister(0, TMC2660_DRVCONF); // buffer (value and drvConf) to write back later
-    drvConf = value;
     value &= ~TMC2660_SET_RDSEL(-1);       // clear RDSEL bits
     value |= TMC2660_SET_RDSEL(rdsel % 3); // set rdsel
     readWrite(icID, value);                // write to chip and readout reply
