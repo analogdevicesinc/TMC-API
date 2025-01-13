@@ -42,6 +42,50 @@ static const int32_t tmc2660_defaultRegisterResetState[TMC2660_REGISTER_COUNT] =
     0x000EF040   // 7: DRVCONF
 };
 
+typedef struct
+{
+    uint32_t mask;
+    uint8_t shift;
+    uint8_t address;
+    bool isSigned;
+} RegisterField;
+
+
+static inline uint32_t tmc2660_fieldExtract(uint32_t data, RegisterField field)
+{
+    uint32_t value = (data & field.mask) >> field.shift;
+
+    if (field.isSigned)
+    {
+        // Apply signedness conversion
+        uint32_t baseMask = field.mask >> field.shift;
+        uint32_t signMask = baseMask & (~baseMask >> 1);
+        value = (value ^ signMask) - signMask;
+    }
+
+    return value;
+}
+
+static inline uint32_t tmc2660_fieldRead(uint16_t icID, RegisterField field)
+{
+    uint32_t value = tmc2660_readRegister(icID, field.address);
+
+    return tmc2660_fieldExtract(value, field);
+}
+
+static inline uint32_t tmc2660_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+{
+    return (data & (~field.mask)) | ((value << field.shift) & field.mask);
+}
+
+static inline void tmc2660_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+{
+    uint32_t regValue = tmc2660_readRegister(icID, field.address);
+
+    regValue = field_update(regValue, field, value);
+
+    tmc2660_writeRegister(icID, field.address, regValue);
+}
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
