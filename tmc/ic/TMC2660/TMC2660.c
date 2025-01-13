@@ -8,16 +8,67 @@
 
 
 #include "TMC2660.h"
-//-----------------------------------NEW CODE----------------------------------------------//
-TMC2660TypeDef TMC2660;
-#define DEFAULT_ICID 0
 
-static void readWrite(uint32_t value);
-static void readImmediately(uint8_t rdsel);
+/**************************************************************** Cache Implementation *************************************************************************/
 
-void readWrite(uint32_t datagram)
+#if TMC2660_CACHE == 0
+static inline bool tmc2660_cache(uint16_t icID, TMC2660CacheOp operation, uint8_t address, uint32_t *value)
 {
-    uint8_t data[3]= {0};
+    UNUSED(icID);
+    UNUSED(address);
+    UNUSED(operation);
+    return false;
+}
+#else
+#if TMC2660_ENABLE_TMC_CACHE == 1
+int32_t tmc2660_shadowRegister[TMC2660_IC_CACHE_COUNT][TMC2660_REGISTER_COUNT];
+
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+bool tmc2660_cache(uint16_t icID, TMC2660CacheOp operation, uint8_t address, uint32_t *value)
+{
+    if (operation == TMC2660_CACHE_READ)
+    {
+        // Check if the value should come from cache
+
+        // Only supported chips have a cache
+        if (icID >= TMC2660_IC_CACHE_COUNT)
+            return false;
+
+        // Only non-readable registers care about caching
+        // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+        if (TMC2660_IS_READABLE(tmc2660_registerAccess[address]))
+            return false;
+
+        // Grab the value from the cache
+        *value = tmc2660_shadowRegister[icID][address];
+        return true;
+    }
+    else if (operation == TMC2660_CACHE_WRITE || operation == TMC2660_CACHE_FILL_DEFAULT)
+    {
+        // Fill the cache
+
+        // only supported chips have a cache
+        if (icID >= TMC2660_IC_CACHE_COUNT)
+            return false;
+
+        // Write to the shadow register
+        tmc2660_shadowRegister[icID][address] = *value;
+
+        return true;
+    }
+    return false;
+}
+
+#else
+// User must implement their own cache
+extern bool tmc2660_cache(uint16_t icID, TMC2660CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
+
+/************************************************************** Register read / write Implementation ******************************************************************/
 void readWrite(uint8_t icID, uint32_t datagram)
 {
     uint8_t data[3] = {0};
