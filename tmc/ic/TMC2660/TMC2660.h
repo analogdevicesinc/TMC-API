@@ -18,6 +18,10 @@
 #define TMC2660_FIELD_READ(motor, address, mask, shift)           FIELD_READ(tmc2660_readInt, motor, address, mask, shift)
 #define TMC2660_FIELD_WRITE(motor, address, mask, shift, value)   FIELD_WRITE(tmc2660_writeInt, motor, address, mask, shift, value)
 #define TMC2660_FIELD_UPDATE(motor, address, mask, shift, value)  FIELD_UPDATE(tmc2660_readInt, tmc2660_writeInt, motor, address | TMC2660_WRITE_BIT, mask, shift, value)
+
+//-----------------------------------NEW CODE-----------------------------
+// => TMC-API wrapper
+extern unsigned char tmc2660_readWriteSPI(uint16_t icID, uint8_t data, uint8_t lastTransfer);
 static const uint8_t tmc2660_defaultRegisterAccess[TMC2660_REGISTER_COUNT] =
 {
     TMC_ACCESS_WRITE,  // 0: DRVCTRL
@@ -86,9 +90,11 @@ static inline void tmc2660_fieldWrite(uint16_t icID, RegisterField field, uint32
 
     tmc2660_writeRegister(icID, field.address, regValue);
 }
+//-----------------------------------NEW CODE-----------------------------
 
 // Usage note: use 1 TypeDef per IC
 typedef struct {
+    ConfigurationTypeDef *config;
 	uint8_t standStillCurrentScale;
 	uint32_t standStillTimeout;
 	uint8_t isStandStillOverCurrent;
@@ -104,7 +110,12 @@ typedef struct {
 	uint8_t registerAccess[TMC2660_REGISTER_COUNT];
 	int32_t registerResetState[TMC2660_REGISTER_COUNT];
 } TMC2660TypeDef;
+extern TMC2660TypeDef TMC2660;
+void tmc2660_writeInt(uint8_t motor, uint8_t address, int value);
+uint32_t tmc2660_readInt(uint8_t motor, uint8_t address);
 
+uint8_t tmx2660_getStatusBits();
+void tmc2660_readWrite(uint8_t motor, uint32_t value);
 void tmc2660_initConfig(TMC2660TypeDef *TMC2660);
 void tmc2660_periodicJob(uint8_t motor, uint32_t tick, TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config);
 uint8_t tmc2660_reset(TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config);
