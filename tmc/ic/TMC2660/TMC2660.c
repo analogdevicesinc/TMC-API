@@ -9,29 +9,8 @@
 
 #include "TMC2660.h"
 
-const uint8_t tmc2660_defaultRegisterAccess[TMC2660_REGISTER_COUNT] =
 {
-	TMC_ACCESS_WRITE,  // 0: DRVCTRL
-	TMC_ACCESS_NONE,   // 1: UNUSED
-	TMC_ACCESS_NONE,   // 2: UNUSED
-	TMC_ACCESS_NONE,   // 3: UNUSED
-	TMC_ACCESS_WRITE,  // 4: CHOPCONF
-	TMC_ACCESS_WRITE,  // 5: SMARTEN
-	TMC_ACCESS_WRITE,  // 6: SGCSCONF
-	TMC_ACCESS_WRITE   // 7: DRVCONF
-};
-
-const int32_t tmc2660_defaultRegisterResetState[TMC2660_REGISTER_COUNT] =
 {
-	0x00000000,  // 0: DRVCTRL
-	0x00000000,  // 1: UNUSED
-	0x00000000,  // 2: UNUSED
-	0x00000000,  // 3: UNUSED
-	0x00091935,  // 4: CHOPCONF
-	0x000A0000,  // 5: SMARTEN
-	0x000D0505,  // 6: SGCSCONF
-	0x000EF040   // 7: DRVCONF
-};
 
 // => SPI wrapper
 extern void tmc2660_writeInt(uint8_t motor, uint8_t address, int32_t value);
