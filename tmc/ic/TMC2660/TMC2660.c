@@ -1,11 +1,10 @@
 /*******************************************************************************
-* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
-
 
 #include "TMC2660.h"
 
@@ -69,6 +68,7 @@ extern bool tmc2660_cache(uint16_t icID, TMC2660CacheOp operation, uint8_t addre
 #endif
 
 /************************************************************** Register read / write Implementation ******************************************************************/
+
 void readWrite(uint8_t icID, uint32_t datagram)
 {
     uint8_t data[3] = {0};
