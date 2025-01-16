@@ -157,6 +157,8 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
     if (tmc2160_cache(icID, TMC2160_CACHE_READ, address, &value))
         return value;
 
+    // clear write bit
+    data[0] = address & TMC2160_ADDRESS_MASK;
 
     // Send the read request
     tmc2160_readWriteSPI(icID, &data[0], sizeof(data));
