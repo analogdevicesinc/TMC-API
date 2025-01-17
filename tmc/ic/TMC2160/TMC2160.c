@@ -119,10 +119,12 @@ void tmc2160_initCache()
        {
            for (id = 0; id < TMC2160_IC_CACHE_COUNT; id++)
            {
-               tmc2160_cache(id, TMC2160_CACHE_FILL_DEFAULT, i, &tmc2160_RegisterConstants[j].value);
+        	   uint32_t value = tmc2160_RegisterConstants[j].value;
+               tmc2160_cache(id, TMC2160_CACHE_FILL_DEFAULT, i, &value);
            }
       }
    }
+   (void)motor;
 }
 #else
 // User must implement their own cache
@@ -184,6 +186,6 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
     tmc2160_readWriteSPI(icID, &data[0], sizeof(data));
 
     //Cache the registers with write-only access
-    tmc2160_cache(icID, TMC2160_CACHE_WRITE, address, &value);
+    tmc2160_cache(icID, TMC2160_CACHE_WRITE, address, (uint32_t*)&value);
 
     }

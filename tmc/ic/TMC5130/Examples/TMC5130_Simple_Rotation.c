@@ -10,7 +10,7 @@
  * Configures the registers with the right settings that are needed for rotating the motor.
  * E.g Enabling driver, setting IRUN current etc.
  */
-void initAllMotors(uint16_t icID)
+void TMC5130initAllMotors(uint16_t icID)
 {
     tmc5130_writeRegister(icID, TMC5130_GCONF, 0x00000000);  // Digital current scaling, SpreadCycle mode
     
