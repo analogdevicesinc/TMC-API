@@ -112,7 +112,6 @@ static inline void tmc5240_fieldWrite(uint16_t icID, RegisterField field, uint32
 #define R69 0x00F70000  // MSLUT[9]
 #define R6C 0x00410153  // CHOPCONF
 #define R70 0xC44C001E  // PWMCONF
-#define R74 0x00000000  // PWMCONF
 
 #ifndef ____
     #define ____ 0x00
