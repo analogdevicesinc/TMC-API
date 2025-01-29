@@ -1,0 +1,838 @@
+/*******************************************************************************
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
+* This software is proprietary to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
+#ifndef TMC5221_HW_ABSTRACTION
+#define TMC5221_HW_ABSTRACTION
+
+
+// Constants
+
+#define TMC5221_REGISTER_COUNT   128
+#define TMC5221_MOTORS           1
+#define TMC5221_WRITE_BIT        0x80
+#define TMC5221_ADDRESS_MASK     0x7F
+#define TMC5221_MAX_VELOCITY     8388096
+#define TMC5221_MAX_ACCELERATION 65535
+
+// Ramp modes (Register TMC5221_RAMPMODE)
+
+#define TMC5221_MODE_POSITION  0
+#define TMC5221_MODE_VELPOS    1
+#define TMC5221_MODE_VELNEG    2
+#define TMC5221_MODE_HOLD      3
+
+// Registers in TMC5221
+
+#define TMC5221_GCR_GCONF                            0x00
+#define TMC5221_GCR_GSTAT                            0x01
+#define TMC5221_GCR_IOIN                             0x04
+#define TMC5221_GCR_DRV_CONF                         0x05
+#define TMC5221_GCR_GLOBAL_SCALER                    0x06
+#define TMC5221_GCR_DIAG_CONF                        0x07
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT0       0x08
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT1       0x09
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT2       0x0A
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT3       0x0B
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT4       0x0C
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT5       0x0D
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT6       0x0E
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT7       0x0F
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_START  0x10
+#define TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_SEL    0x11
+#define TMC5221_PC_X_COMPARE                         0x12
+#define TMC5221_PC_X_COMPARE_REPEAT                  0x13
+#define TMC5221_VDR_IHOLD_IRUN                       0x14
+#define TMC5221_VDR_TPOWERDOWN                       0x15
+#define TMC5221_VDR_TSTEP                            0x16
+#define TMC5221_VDR_TPWMTHRS                         0x17
+#define TMC5221_VDR_TCOOLTHRS                        0x18
+#define TMC5221_VDR_THIGH                            0x19
+#define TMC5221_RGR_RAMPMODE                         0x1A
+#define TMC5221_RGR_XACTUAL                          0x1B
+#define TMC5221_RGR_VACTUAL                          0x1C
+#define TMC5221_RGR_AACTUAL                          0x1D
+#define TMC5221_RGR_VSTART                           0x1E
+#define TMC5221_RGR_A1                               0x1F
+#define TMC5221_RGR_V1                               0x20
+#define TMC5221_RGR_A2                               0x21
+#define TMC5221_RGR_V2                               0x22
+#define TMC5221_RGR_AMAX                             0x23
+#define TMC5221_RGR_VMAX                             0x24
+#define TMC5221_RGR_DMAX                             0x25
+#define TMC5221_RGR_D2                               0x26
+#define TMC5221_RGR_D1                               0x27
+#define TMC5221_RGR_VSTOP                            0x28
+#define TMC5221_RGR_TZEROWAIT                        0x29
+#define TMC5221_RGR_TVMAX                            0x2A
+#define TMC5221_RGR_XTARGET                          0x2B
+#define TMC5221_RGDR_VDCMIN                          0x2C
+#define TMC5221_RGDR_SW_MODE                         0x2D
+#define TMC5221_RGDR_RAMP_STAT                       0x2E
+#define TMC5221_RGDR_XLATCH                          0x2F
+#define TMC5221_ER_X_BEMF                            0x30
+#define TMC5221_ER_BEMF_CONF                         0x31
+#define TMC5221_ER_BEMF_DEVIATION                    0x32
+#define TMC5221_ER_VIRTUAL_STOP_L                    0x33
+#define TMC5221_ER_VIRTUAL_STOP_R                    0x34
+#define TMC5221_ER_X_BEMF_LATCH                      0x35
+#define TMC5221_MDR_MSCNT                            0x36
+#define TMC5221_MDR_MSCURACT                         0x37
+#define TMC5221_MDR_CHOPCONF                         0x38
+#define TMC5221_MDR_COOLCONF                         0x39
+#define TMC5221_MDR_DCCTRL                           0x3A
+#define TMC5221_MDR_DRV_STATUS                       0x3B
+#define TMC5221_MDR_PWMCONF                          0x3C
+#define TMC5221_MDR_PWM_SCALE                        0x3D
+#define TMC5221_MDR_PWM_AUTO                         0x3E
+#define TMC5221_MDR_SG4_THRS                         0x3F
+#define TMC5221_MDR_SG4_RESULT                       0x40
+#define TMC5221_MDR_SG4_IND                          0x41
+#define TMC5221_MDR_SG_PREWARN_CONF                  0x42
+#define TMC5221_ADC_ADC_SUPPLY_TEMP                  0x43
+#define TMC5221_LIMITS_VMAX_LIMIT                    0x44
+#define TMC5221_LIMITS_LIMIT_VALUES                  0x45
+#define TMC5221_USER_DATA_USER_DATA_0                0x46
+#define TMC5221_USER_DATA_USER_DATA_1                0x47
+#define TMC5221_USER_DATA_USER_DATA_2                0x48
+#define TMC5221_USER_DATA_USER_DATA_3                0x49
+#define TMC5221_USER_DATA_USER_DATA_4                0x4A
+#define TMC5221_USER_DATA_USER_DATA_5                0x4B
+#define TMC5221_USER_DATA_USER_DATA_6                0x4C
+#define TMC5221_USER_DATA_USER_DATA_7                0x4D
+#define TMC5221_OTP_MODE_OTP_MODE                    0x7D
+
+// Register fields in TMC5221
+
+#define TMC5221_EN_PWM_MODE_MASK               0x00000001
+#define TMC5221_EN_PWM_MODE_SHIFT              0
+#define TMC5221_EN_PWM_MODE_FIELD              ((RegisterField) {TMC5221_EN_PWM_MODE_MASK, TMC5221_EN_PWM_MODE_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_MULTISTEP_FILT_MASK            0x00000002
+#define TMC5221_MULTISTEP_FILT_SHIFT           1
+#define TMC5221_MULTISTEP_FILT_FIELD           ((RegisterField) {TMC5221_MULTISTEP_FILT_MASK, TMC5221_MULTISTEP_FILT_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_SHAFT_MASK                     0x00000004
+#define TMC5221_SHAFT_SHIFT                    2
+#define TMC5221_SHAFT_FIELD                    ((RegisterField) {TMC5221_SHAFT_MASK, TMC5221_SHAFT_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_SMALL_HYSTERESIS_MASK          0x00000008
+#define TMC5221_SMALL_HYSTERESIS_SHIFT         3
+#define TMC5221_SMALL_HYSTERESIS_FIELD         ((RegisterField) {TMC5221_SMALL_HYSTERESIS_MASK, TMC5221_SMALL_HYSTERESIS_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_STOP_ENABLE_MASK               0x00000010
+#define TMC5221_STOP_ENABLE_SHIFT              4
+#define TMC5221_STOP_ENABLE_FIELD              ((RegisterField) {TMC5221_STOP_ENABLE_MASK, TMC5221_STOP_ENABLE_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_REFR_STOP_MASK                 0x00000020
+#define TMC5221_REFR_STOP_SHIFT                5
+#define TMC5221_REFR_STOP_FIELD                ((RegisterField) {TMC5221_REFR_STOP_MASK, TMC5221_REFR_STOP_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_DIRECT_MODE_MASK               0x00000040
+#define TMC5221_DIRECT_MODE_SHIFT              6
+#define TMC5221_DIRECT_MODE_FIELD              ((RegisterField) {TMC5221_DIRECT_MODE_MASK, TMC5221_DIRECT_MODE_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_SD_MASK                        0x00000080
+#define TMC5221_SD_SHIFT                       7
+#define TMC5221_SD_FIELD                       ((RegisterField) {TMC5221_SD_MASK, TMC5221_SD_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_QSC_STS_ENA_MASK               0x00000100
+#define TMC5221_QSC_STS_ENA_SHIFT              8
+#define TMC5221_QSC_STS_ENA_FIELD              ((RegisterField) {TMC5221_QSC_STS_ENA_MASK, TMC5221_QSC_STS_ENA_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_DRV_EN_SW_MASK                 0x00000200
+#define TMC5221_DRV_EN_SW_SHIFT                9
+#define TMC5221_DRV_EN_SW_FIELD                ((RegisterField) {TMC5221_DRV_EN_SW_MASK, TMC5221_DRV_EN_SW_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_SW_RESET_MASK                  0x00000400
+#define TMC5221_SW_RESET_SHIFT                 10
+#define TMC5221_SW_RESET_FIELD                 ((RegisterField) {TMC5221_SW_RESET_MASK, TMC5221_SW_RESET_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_S_IREF_INTCUR_EN_MASK          0x00000800
+#define TMC5221_S_IREF_INTCUR_EN_SHIFT         11
+#define TMC5221_S_IREF_INTCUR_EN_FIELD         ((RegisterField) {TMC5221_S_IREF_INTCUR_EN_MASK, TMC5221_S_IREF_INTCUR_EN_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_DISABLE_DRIVER_ON_UVLO_MASK    0x00001000
+#define TMC5221_DISABLE_DRIVER_ON_UVLO_SHIFT   12
+#define TMC5221_DISABLE_DRIVER_ON_UVLO_FIELD   ((RegisterField) {TMC5221_DISABLE_DRIVER_ON_UVLO_MASK, TMC5221_DISABLE_DRIVER_ON_UVLO_SHIFT, TMC5221_GCR_GCONF, false})
+#define TMC5221_RESET_MASK                     0x00000001
+#define TMC5221_RESET_SHIFT                    0
+#define TMC5221_RESET_FIELD                    ((RegisterField) {TMC5221_RESET_MASK, TMC5221_RESET_SHIFT, TMC5221_GCR_GSTAT, false})
+#define TMC5221_DRV_ERR_MASK                   0x00000002
+#define TMC5221_DRV_ERR_SHIFT                  1
+#define TMC5221_DRV_ERR_FIELD                  ((RegisterField) {TMC5221_DRV_ERR_MASK, TMC5221_DRV_ERR_SHIFT, TMC5221_GCR_GSTAT, false})
+#define TMC5221_UV_LDO_MASK                    0x00000004
+#define TMC5221_UV_LDO_SHIFT                   2
+#define TMC5221_UV_LDO_FIELD                   ((RegisterField) {TMC5221_UV_LDO_MASK, TMC5221_UV_LDO_SHIFT, TMC5221_GCR_GSTAT, false})
+#define TMC5221_REGISTER_RESET_MASK            0x00000008
+#define TMC5221_REGISTER_RESET_SHIFT           3
+#define TMC5221_REGISTER_RESET_FIELD           ((RegisterField) {TMC5221_REGISTER_RESET_MASK, TMC5221_REGISTER_RESET_SHIFT, TMC5221_GCR_GSTAT, false})
+#define TMC5221_VM_UVLO_MASK                   0x00000010
+#define TMC5221_VM_UVLO_SHIFT                  4
+#define TMC5221_VM_UVLO_FIELD                  ((RegisterField) {TMC5221_VM_UVLO_MASK, TMC5221_VM_UVLO_SHIFT, TMC5221_GCR_GSTAT, false})
+#define TMC5221_VCCIO_RST_MASK                 0x00000020
+#define TMC5221_VCCIO_RST_SHIFT                5
+#define TMC5221_VCCIO_RST_FIELD                ((RegisterField) {TMC5221_VCCIO_RST_MASK, TMC5221_VCCIO_RST_SHIFT, TMC5221_GCR_GSTAT, false})
+#define TMC5221_RREF_ERR_MASK                  0x00000040
+#define TMC5221_RREF_ERR_SHIFT                 6
+#define TMC5221_RREF_ERR_FIELD                 ((RegisterField) {TMC5221_RREF_ERR_MASK, TMC5221_RREF_ERR_SHIFT, TMC5221_GCR_GSTAT, false})
+#define TMC5221_VDD_UVLO_MASK                  0x00000080
+#define TMC5221_VDD_UVLO_SHIFT                 7
+#define TMC5221_VDD_UVLO_FIELD                 ((RegisterField) {TMC5221_VDD_UVLO_MASK, TMC5221_VDD_UVLO_SHIFT, TMC5221_GCR_GSTAT, false})
+#define TMC5221_SILICON_RV_MASK                0x00700000
+#define TMC5221_SILICON_RV_SHIFT               20
+#define TMC5221_SILICON_RV_FIELD               ((RegisterField) {TMC5221_SILICON_RV_MASK, TMC5221_SILICON_RV_SHIFT, TMC5221_GCR_IOIN, false})
+#define TMC5221_EXT_CLK_MASK                   0x01800000
+#define TMC5221_EXT_CLK_SHIFT                  23
+#define TMC5221_EXT_CLK_FIELD                  ((RegisterField) {TMC5221_EXT_CLK_MASK, TMC5221_EXT_CLK_SHIFT, TMC5221_GCR_IOIN, false})
+#define TMC5221_QSC_MASK                       0x02000000
+#define TMC5221_QSC_SHIFT                      25
+#define TMC5221_QSC_FIELD                      ((RegisterField) {TMC5221_QSC_MASK, TMC5221_QSC_SHIFT, TMC5221_GCR_IOIN, false})
+#define TMC5221_ONSTATE_MASK                   0x04000000
+#define TMC5221_ONSTATE_SHIFT                  26
+#define TMC5221_ONSTATE_FIELD                  ((RegisterField) {TMC5221_ONSTATE_MASK, TMC5221_ONSTATE_SHIFT, TMC5221_GCR_IOIN, false})
+#define TMC5221_VERSION_MASK                   0xF0000000
+#define TMC5221_VERSION_SHIFT                  28
+#define TMC5221_VERSION_FIELD                  ((RegisterField) {TMC5221_VERSION_MASK, TMC5221_VERSION_SHIFT, TMC5221_GCR_IOIN, false})
+#define TMC5221_FS_SENSE_MASK                  0x00000003
+#define TMC5221_FS_SENSE_SHIFT                 0
+#define TMC5221_FS_SENSE_FIELD                 ((RegisterField) {TMC5221_FS_SENSE_MASK, TMC5221_FS_SENSE_SHIFT, TMC5221_GCR_DRV_CONF, false})
+#define TMC5221_FS_GAIN_MASK                   0x0000000C
+#define TMC5221_FS_GAIN_SHIFT                  2
+#define TMC5221_FS_GAIN_FIELD                  ((RegisterField) {TMC5221_FS_GAIN_MASK, TMC5221_FS_GAIN_SHIFT, TMC5221_GCR_DRV_CONF, false})
+#define TMC5221_STANDSTILL_TIME_MASK           0x00070000
+#define TMC5221_STANDSTILL_TIME_SHIFT          16
+#define TMC5221_STANDSTILL_TIME_FIELD          ((RegisterField) {TMC5221_STANDSTILL_TIME_MASK, TMC5221_STANDSTILL_TIME_SHIFT, TMC5221_GCR_DRV_CONF, false})
+#define TMC5221_GLOBALSCALER_A_MASK            0x000000FF
+#define TMC5221_GLOBALSCALER_A_SHIFT           0
+#define TMC5221_GLOBALSCALER_A_FIELD           ((RegisterField) {TMC5221_GLOBALSCALER_A_MASK, TMC5221_GLOBALSCALER_A_SHIFT, TMC5221_GCR_GLOBAL_SCALER, false})
+#define TMC5221_GLOBALSCALER_B_MASK            0x0000FF00
+#define TMC5221_GLOBALSCALER_B_SHIFT           8
+#define TMC5221_GLOBALSCALER_B_FIELD           ((RegisterField) {TMC5221_GLOBALSCALER_B_MASK, TMC5221_GLOBALSCALER_B_SHIFT, TMC5221_GCR_GLOBAL_SCALER, false})
+#define TMC5221_DIAG0_ERROR_MASK               0x00000001
+#define TMC5221_DIAG0_ERROR_SHIFT              0
+#define TMC5221_DIAG0_ERROR_FIELD              ((RegisterField) {TMC5221_DIAG0_ERROR_MASK, TMC5221_DIAG0_ERROR_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_OTPW_MASK                0x00000002
+#define TMC5221_DIAG0_OTPW_SHIFT               1
+#define TMC5221_DIAG0_OTPW_FIELD               ((RegisterField) {TMC5221_DIAG0_OTPW_MASK, TMC5221_DIAG0_OTPW_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_STALL_PREWARN_MASK       0x00000004
+#define TMC5221_DIAG0_STALL_PREWARN_SHIFT      2
+#define TMC5221_DIAG0_STALL_PREWARN_FIELD      ((RegisterField) {TMC5221_DIAG0_STALL_PREWARN_MASK, TMC5221_DIAG0_STALL_PREWARN_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_STALL_MASK               0x00000008
+#define TMC5221_DIAG0_STALL_SHIFT              3
+#define TMC5221_DIAG0_STALL_FIELD              ((RegisterField) {TMC5221_DIAG0_STALL_MASK, TMC5221_DIAG0_STALL_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_INDEX_MASK               0x00000010
+#define TMC5221_DIAG0_INDEX_SHIFT              4
+#define TMC5221_DIAG0_INDEX_FIELD              ((RegisterField) {TMC5221_DIAG0_INDEX_MASK, TMC5221_DIAG0_INDEX_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_STEP_MASK                0x00000020
+#define TMC5221_DIAG0_STEP_SHIFT               5
+#define TMC5221_DIAG0_STEP_FIELD               ((RegisterField) {TMC5221_DIAG0_STEP_MASK, TMC5221_DIAG0_STEP_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_DIR_MASK                 0x00000040
+#define TMC5221_DIAG0_DIR_SHIFT                6
+#define TMC5221_DIAG0_DIR_FIELD                ((RegisterField) {TMC5221_DIAG0_DIR_MASK, TMC5221_DIAG0_DIR_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_XCOMP_MASK               0x00000080
+#define TMC5221_DIAG0_XCOMP_SHIFT              7
+#define TMC5221_DIAG0_XCOMP_FIELD              ((RegisterField) {TMC5221_DIAG0_XCOMP_MASK, TMC5221_DIAG0_XCOMP_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_EV_STOP_REF_MASK         0x00000100
+#define TMC5221_DIAG0_EV_STOP_REF_SHIFT        8
+#define TMC5221_DIAG0_EV_STOP_REF_FIELD        ((RegisterField) {TMC5221_DIAG0_EV_STOP_REF_MASK, TMC5221_DIAG0_EV_STOP_REF_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_EV_STOP_SG_MASK          0x00000200
+#define TMC5221_DIAG0_EV_STOP_SG_SHIFT         9
+#define TMC5221_DIAG0_EV_STOP_SG_FIELD         ((RegisterField) {TMC5221_DIAG0_EV_STOP_SG_MASK, TMC5221_DIAG0_EV_STOP_SG_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_EV_POS_REACHED_MASK      0x00000400
+#define TMC5221_DIAG0_EV_POS_REACHED_SHIFT     10
+#define TMC5221_DIAG0_EV_POS_REACHED_FIELD     ((RegisterField) {TMC5221_DIAG0_EV_POS_REACHED_MASK, TMC5221_DIAG0_EV_POS_REACHED_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_EV_DEVIATION_MASK        0x00000800
+#define TMC5221_DIAG0_EV_DEVIATION_SHIFT       11
+#define TMC5221_DIAG0_EV_DEVIATION_FIELD       ((RegisterField) {TMC5221_DIAG0_EV_DEVIATION_MASK, TMC5221_DIAG0_EV_DEVIATION_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_EV_HOMING_MASK           0x00001000
+#define TMC5221_DIAG0_EV_HOMING_SHIFT          12
+#define TMC5221_DIAG0_EV_HOMING_FIELD          ((RegisterField) {TMC5221_DIAG0_EV_HOMING_MASK, TMC5221_DIAG0_EV_HOMING_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_POSITION_REACHED_MASK    0x00002000
+#define TMC5221_DIAG0_POSITION_REACHED_SHIFT   13
+#define TMC5221_DIAG0_POSITION_REACHED_FIELD   ((RegisterField) {TMC5221_DIAG0_POSITION_REACHED_MASK, TMC5221_DIAG0_POSITION_REACHED_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_ERROR_MASK               0x00004000
+#define TMC5221_DIAG1_ERROR_SHIFT              14
+#define TMC5221_DIAG1_ERROR_FIELD              ((RegisterField) {TMC5221_DIAG1_ERROR_MASK, TMC5221_DIAG1_ERROR_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_OTPW_MASK                0x00008000
+#define TMC5221_DIAG1_OTPW_SHIFT               15
+#define TMC5221_DIAG1_OTPW_FIELD               ((RegisterField) {TMC5221_DIAG1_OTPW_MASK, TMC5221_DIAG1_OTPW_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_STALL_PREWARN_MASK       0x00010000
+#define TMC5221_DIAG1_STALL_PREWARN_SHIFT      16
+#define TMC5221_DIAG1_STALL_PREWARN_FIELD      ((RegisterField) {TMC5221_DIAG1_STALL_PREWARN_MASK, TMC5221_DIAG1_STALL_PREWARN_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_STALL_MASK               0x00020000
+#define TMC5221_DIAG1_STALL_SHIFT              17
+#define TMC5221_DIAG1_STALL_FIELD              ((RegisterField) {TMC5221_DIAG1_STALL_MASK, TMC5221_DIAG1_STALL_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_INDEX_MASK               0x00040000
+#define TMC5221_DIAG1_INDEX_SHIFT              18
+#define TMC5221_DIAG1_INDEX_FIELD              ((RegisterField) {TMC5221_DIAG1_INDEX_MASK, TMC5221_DIAG1_INDEX_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_STEP_MASK                0x00080000
+#define TMC5221_DIAG1_STEP_SHIFT               19
+#define TMC5221_DIAG1_STEP_FIELD               ((RegisterField) {TMC5221_DIAG1_STEP_MASK, TMC5221_DIAG1_STEP_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_DIR_MASK                 0x00100000
+#define TMC5221_DIAG1_DIR_SHIFT                20
+#define TMC5221_DIAG1_DIR_FIELD                ((RegisterField) {TMC5221_DIAG1_DIR_MASK, TMC5221_DIAG1_DIR_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_XCOMP_MASK               0x00200000
+#define TMC5221_DIAG1_XCOMP_SHIFT              21
+#define TMC5221_DIAG1_XCOMP_FIELD              ((RegisterField) {TMC5221_DIAG1_XCOMP_MASK, TMC5221_DIAG1_XCOMP_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_EV_STOP_REF_MASK         0x00400000
+#define TMC5221_DIAG1_EV_STOP_REF_SHIFT        22
+#define TMC5221_DIAG1_EV_STOP_REF_FIELD        ((RegisterField) {TMC5221_DIAG1_EV_STOP_REF_MASK, TMC5221_DIAG1_EV_STOP_REF_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_EV_STOP_SG_MASK          0x00800000
+#define TMC5221_DIAG1_EV_STOP_SG_SHIFT         23
+#define TMC5221_DIAG1_EV_STOP_SG_FIELD         ((RegisterField) {TMC5221_DIAG1_EV_STOP_SG_MASK, TMC5221_DIAG1_EV_STOP_SG_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_EV_POS_REACHED_MASK      0x01000000
+#define TMC5221_DIAG1_EV_POS_REACHED_SHIFT     24
+#define TMC5221_DIAG1_EV_POS_REACHED_FIELD     ((RegisterField) {TMC5221_DIAG1_EV_POS_REACHED_MASK, TMC5221_DIAG1_EV_POS_REACHED_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_EV_DEVIATION_MASK        0x02000000
+#define TMC5221_DIAG1_EV_DEVIATION_SHIFT       25
+#define TMC5221_DIAG1_EV_DEVIATION_FIELD       ((RegisterField) {TMC5221_DIAG1_EV_DEVIATION_MASK, TMC5221_DIAG1_EV_DEVIATION_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_EV_HOMING_MASK           0x04000000
+#define TMC5221_DIAG1_EV_HOMING_SHIFT          26
+#define TMC5221_DIAG1_EV_HOMING_FIELD          ((RegisterField) {TMC5221_DIAG1_EV_HOMING_MASK, TMC5221_DIAG1_EV_HOMING_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_POSITION_REACHED_MASK    0x08000000
+#define TMC5221_DIAG1_POSITION_REACHED_SHIFT   27
+#define TMC5221_DIAG1_POSITION_REACHED_FIELD   ((RegisterField) {TMC5221_DIAG1_POSITION_REACHED_MASK, TMC5221_DIAG1_POSITION_REACHED_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_NOD_PP_MASK              0x10000000
+#define TMC5221_DIAG0_NOD_PP_SHIFT             28
+#define TMC5221_DIAG0_NOD_PP_FIELD             ((RegisterField) {TMC5221_DIAG0_NOD_PP_MASK, TMC5221_DIAG0_NOD_PP_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG0_INVPP_MASK               0x20000000
+#define TMC5221_DIAG0_INVPP_SHIFT              29
+#define TMC5221_DIAG0_INVPP_FIELD              ((RegisterField) {TMC5221_DIAG0_INVPP_MASK, TMC5221_DIAG0_INVPP_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_NOD_PP_MASK              0x40000000
+#define TMC5221_DIAG1_NOD_PP_SHIFT             30
+#define TMC5221_DIAG1_NOD_PP_FIELD             ((RegisterField) {TMC5221_DIAG1_NOD_PP_MASK, TMC5221_DIAG1_NOD_PP_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_DIAG1_INVPP_MASK               0x80000000
+#define TMC5221_DIAG1_INVPP_SHIFT              31
+#define TMC5221_DIAG1_INVPP_FIELD              ((RegisterField) {TMC5221_DIAG1_INVPP_MASK, TMC5221_DIAG1_INVPP_SHIFT, TMC5221_GCR_DIAG_CONF, false})
+#define TMC5221_MSLUT_0_MASK                   0xFFFFFFFF
+#define TMC5221_MSLUT_0_SHIFT                  0
+#define TMC5221_MSLUT_0_FIELD                  ((RegisterField) {TMC5221_MSLUT_0_MASK, TMC5221_MSLUT_0_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT0, false})
+#define TMC5221_MSLUT_1_MASK                   0xFFFFFFFF
+#define TMC5221_MSLUT_1_SHIFT                  0
+#define TMC5221_MSLUT_1_FIELD                  ((RegisterField) {TMC5221_MSLUT_1_MASK, TMC5221_MSLUT_1_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT1, false})
+#define TMC5221_MSLUT_2_MASK                   0xFFFFFFFF
+#define TMC5221_MSLUT_2_SHIFT                  0
+#define TMC5221_MSLUT_2_FIELD                  ((RegisterField) {TMC5221_MSLUT_2_MASK, TMC5221_MSLUT_2_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT2, false})
+#define TMC5221_MSLUT_3_MASK                   0xFFFFFFFF
+#define TMC5221_MSLUT_3_SHIFT                  0
+#define TMC5221_MSLUT_3_FIELD                  ((RegisterField) {TMC5221_MSLUT_3_MASK, TMC5221_MSLUT_3_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT3, false})
+#define TMC5221_MSLUT_4_MASK                   0xFFFFFFFF
+#define TMC5221_MSLUT_4_SHIFT                  0
+#define TMC5221_MSLUT_4_FIELD                  ((RegisterField) {TMC5221_MSLUT_4_MASK, TMC5221_MSLUT_4_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT4, false})
+#define TMC5221_MSLUT_5_MASK                   0xFFFFFFFF
+#define TMC5221_MSLUT_5_SHIFT                  0
+#define TMC5221_MSLUT_5_FIELD                  ((RegisterField) {TMC5221_MSLUT_5_MASK, TMC5221_MSLUT_5_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT5, false})
+#define TMC5221_MSLUT_6_MASK                   0xFFFFFFFF
+#define TMC5221_MSLUT_6_SHIFT                  0
+#define TMC5221_MSLUT_6_FIELD                  ((RegisterField) {TMC5221_MSLUT_6_MASK, TMC5221_MSLUT_6_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT6, false})
+#define TMC5221_MSLUT_7_MASK                   0xFFFFFFFF
+#define TMC5221_MSLUT_7_SHIFT                  0
+#define TMC5221_MSLUT_7_FIELD                  ((RegisterField) {TMC5221_MSLUT_7_MASK, TMC5221_MSLUT_7_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT7, false})
+#define TMC5221_START_SIN_MASK                 0x000000FF
+#define TMC5221_START_SIN_SHIFT                0
+#define TMC5221_START_SIN_FIELD                ((RegisterField) {TMC5221_START_SIN_MASK, TMC5221_START_SIN_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_START, false})
+#define TMC5221_START_SIN90_MASK               0x00FF0000
+#define TMC5221_START_SIN90_SHIFT              16
+#define TMC5221_START_SIN90_FIELD              ((RegisterField) {TMC5221_START_SIN90_MASK, TMC5221_START_SIN90_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_START, false})
+#define TMC5221_OFFSET_SIN90_MASK              0xFF000000
+#define TMC5221_OFFSET_SIN90_SHIFT             24
+#define TMC5221_OFFSET_SIN90_FIELD             ((RegisterField) {TMC5221_OFFSET_SIN90_MASK, TMC5221_OFFSET_SIN90_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_START, true})
+#define TMC5221_W0_MASK                        0x00000003
+#define TMC5221_W0_SHIFT                       0
+#define TMC5221_W0_FIELD                       ((RegisterField) {TMC5221_W0_MASK, TMC5221_W0_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_SEL, false})
+#define TMC5221_W1_MASK                        0x0000000C
+#define TMC5221_W1_SHIFT                       2
+#define TMC5221_W1_FIELD                       ((RegisterField) {TMC5221_W1_MASK, TMC5221_W1_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_SEL, false})
+#define TMC5221_W2_MASK                        0x00000030
+#define TMC5221_W2_SHIFT                       4
+#define TMC5221_W2_FIELD                       ((RegisterField) {TMC5221_W2_MASK, TMC5221_W2_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_SEL, false})
+#define TMC5221_W3_MASK                        0x000000C0
+#define TMC5221_W3_SHIFT                       6
+#define TMC5221_W3_FIELD                       ((RegisterField) {TMC5221_W3_MASK, TMC5221_W3_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_SEL, false})
+#define TMC5221_X1_MASK                        0x0000FF00
+#define TMC5221_X1_SHIFT                       8
+#define TMC5221_X1_FIELD                       ((RegisterField) {TMC5221_X1_MASK, TMC5221_X1_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_SEL, false})
+#define TMC5221_X2_MASK                        0x00FF0000
+#define TMC5221_X2_SHIFT                       16
+#define TMC5221_X2_FIELD                       ((RegisterField) {TMC5221_X2_MASK, TMC5221_X2_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_SEL, false})
+#define TMC5221_X3_MASK                        0xFF000000
+#define TMC5221_X3_SHIFT                       24
+#define TMC5221_X3_FIELD                       ((RegisterField) {TMC5221_X3_MASK, TMC5221_X3_SHIFT, TMC5221_MICROSTEP_LOOK_UP_TABLE_MSLUT_SEL, false})
+#define TMC5221_X_COMPARE_MASK                 0xFFFFFFFF
+#define TMC5221_X_COMPARE_SHIFT                0
+#define TMC5221_X_COMPARE_FIELD                ((RegisterField) {TMC5221_X_COMPARE_MASK, TMC5221_X_COMPARE_SHIFT, TMC5221_PC_X_COMPARE, true})
+#define TMC5221_X_COMPARE_REPEAT_MASK          0x00FFFFFF
+#define TMC5221_X_COMPARE_REPEAT_SHIFT         0
+#define TMC5221_X_COMPARE_REPEAT_FIELD         ((RegisterField) {TMC5221_X_COMPARE_REPEAT_MASK, TMC5221_X_COMPARE_REPEAT_SHIFT, TMC5221_PC_X_COMPARE_REPEAT, false})
+#define TMC5221_IHOLD_MASK                     0x0000001F
+#define TMC5221_IHOLD_SHIFT                    0
+#define TMC5221_IHOLD_FIELD                    ((RegisterField) {TMC5221_IHOLD_MASK, TMC5221_IHOLD_SHIFT, TMC5221_VDR_IHOLD_IRUN, false})
+#define TMC5221_IRUN_MASK                      0x00001F00
+#define TMC5221_IRUN_SHIFT                     8
+#define TMC5221_IRUN_FIELD                     ((RegisterField) {TMC5221_IRUN_MASK, TMC5221_IRUN_SHIFT, TMC5221_VDR_IHOLD_IRUN, false})
+#define TMC5221_IHOLDDELAY_MASK                0x000F0000
+#define TMC5221_IHOLDDELAY_SHIFT               16
+#define TMC5221_IHOLDDELAY_FIELD               ((RegisterField) {TMC5221_IHOLDDELAY_MASK, TMC5221_IHOLDDELAY_SHIFT, TMC5221_VDR_IHOLD_IRUN, false})
+#define TMC5221_IRUNDELAY_MASK                 0x0F000000
+#define TMC5221_IRUNDELAY_SHIFT                24
+#define TMC5221_IRUNDELAY_FIELD                ((RegisterField) {TMC5221_IRUNDELAY_MASK, TMC5221_IRUNDELAY_SHIFT, TMC5221_VDR_IHOLD_IRUN, false})
+#define TMC5221_TPOWERDOWN_MASK                0x000000FF
+#define TMC5221_TPOWERDOWN_SHIFT               0
+#define TMC5221_TPOWERDOWN_FIELD               ((RegisterField) {TMC5221_TPOWERDOWN_MASK, TMC5221_TPOWERDOWN_SHIFT, TMC5221_VDR_TPOWERDOWN, false})
+#define TMC5221_TSTEP_MASK                     0x000FFFFF
+#define TMC5221_TSTEP_SHIFT                    0
+#define TMC5221_TSTEP_FIELD                    ((RegisterField) {TMC5221_TSTEP_MASK, TMC5221_TSTEP_SHIFT, TMC5221_VDR_TSTEP, false})
+#define TMC5221_TPWMTHRS_MASK                  0x000FFFFF
+#define TMC5221_TPWMTHRS_SHIFT                 0
+#define TMC5221_TPWMTHRS_FIELD                 ((RegisterField) {TMC5221_TPWMTHRS_MASK, TMC5221_TPWMTHRS_SHIFT, TMC5221_VDR_TPWMTHRS, false})
+#define TMC5221_TCOOLTHRS_MASK                 0x000FFFFF
+#define TMC5221_TCOOLTHRS_SHIFT                0
+#define TMC5221_TCOOLTHRS_FIELD                ((RegisterField) {TMC5221_TCOOLTHRS_MASK, TMC5221_TCOOLTHRS_SHIFT, TMC5221_VDR_TCOOLTHRS, false})
+#define TMC5221_THIGH_MASK                     0x000FFFFF
+#define TMC5221_THIGH_SHIFT                    0
+#define TMC5221_THIGH_FIELD                    ((RegisterField) {TMC5221_THIGH_MASK, TMC5221_THIGH_SHIFT, TMC5221_VDR_THIGH, false})
+#define TMC5221_RAMPMODE_MASK                  0x00000003
+#define TMC5221_RAMPMODE_SHIFT                 0
+#define TMC5221_RAMPMODE_FIELD                 ((RegisterField) {TMC5221_RAMPMODE_MASK, TMC5221_RAMPMODE_SHIFT, TMC5221_RGR_RAMPMODE, false})
+#define TMC5221_XACTUAL_MASK                   0xFFFFFFFF
+#define TMC5221_XACTUAL_SHIFT                  0
+#define TMC5221_XACTUAL_FIELD                  ((RegisterField) {TMC5221_XACTUAL_MASK, TMC5221_XACTUAL_SHIFT, TMC5221_RGR_XACTUAL, true})
+#define TMC5221_VACTUAL_MASK                   0x00FFFFFF
+#define TMC5221_VACTUAL_SHIFT                  0
+#define TMC5221_VACTUAL_FIELD                  ((RegisterField) {TMC5221_VACTUAL_MASK, TMC5221_VACTUAL_SHIFT, TMC5221_RGR_VACTUAL, true})
+#define TMC5221_AACTUAL_MASK                   0x00FFFFFF
+#define TMC5221_AACTUAL_SHIFT                  0
+#define TMC5221_AACTUAL_FIELD                  ((RegisterField) {TMC5221_AACTUAL_MASK, TMC5221_AACTUAL_SHIFT, TMC5221_RGR_AACTUAL, true})
+#define TMC5221_VSTART_MASK                    0x0003FFFF
+#define TMC5221_VSTART_SHIFT                   0
+#define TMC5221_VSTART_FIELD                   ((RegisterField) {TMC5221_VSTART_MASK, TMC5221_VSTART_SHIFT, TMC5221_RGR_VSTART, false})
+#define TMC5221_A1_MASK                        0x0003FFFF
+#define TMC5221_A1_SHIFT                       0
+#define TMC5221_A1_FIELD                       ((RegisterField) {TMC5221_A1_MASK, TMC5221_A1_SHIFT, TMC5221_RGR_A1, false})
+#define TMC5221_V1_MASK                        0x000FFFFF
+#define TMC5221_V1_SHIFT                       0
+#define TMC5221_V1_FIELD                       ((RegisterField) {TMC5221_V1_MASK, TMC5221_V1_SHIFT, TMC5221_RGR_V1, false})
+#define TMC5221_A2_MASK                        0x0003FFFF
+#define TMC5221_A2_SHIFT                       0
+#define TMC5221_A2_FIELD                       ((RegisterField) {TMC5221_A2_MASK, TMC5221_A2_SHIFT, TMC5221_RGR_A2, false})
+#define TMC5221_V2_MASK                        0x000FFFFF
+#define TMC5221_V2_SHIFT                       0
+#define TMC5221_V2_FIELD                       ((RegisterField) {TMC5221_V2_MASK, TMC5221_V2_SHIFT, TMC5221_RGR_V2, false})
+#define TMC5221_AMAX_MASK                      0x0003FFFF
+#define TMC5221_AMAX_SHIFT                     0
+#define TMC5221_AMAX_FIELD                     ((RegisterField) {TMC5221_AMAX_MASK, TMC5221_AMAX_SHIFT, TMC5221_RGR_AMAX, false})
+#define TMC5221_VMAX_MASK                      0x007FFFFF
+#define TMC5221_VMAX_SHIFT                     0
+#define TMC5221_VMAX_FIELD                     ((RegisterField) {TMC5221_VMAX_MASK, TMC5221_VMAX_SHIFT, TMC5221_RGR_VMAX, false})
+#define TMC5221_DMAX_MASK                      0x0003FFFF
+#define TMC5221_DMAX_SHIFT                     0
+#define TMC5221_DMAX_FIELD                     ((RegisterField) {TMC5221_DMAX_MASK, TMC5221_DMAX_SHIFT, TMC5221_RGR_DMAX, false})
+#define TMC5221_D2_MASK                        0x0003FFFF
+#define TMC5221_D2_SHIFT                       0
+#define TMC5221_D2_FIELD                       ((RegisterField) {TMC5221_D2_MASK, TMC5221_D2_SHIFT, TMC5221_RGR_D2, false})
+#define TMC5221_D1_MASK                        0x0003FFFF
+#define TMC5221_D1_SHIFT                       0
+#define TMC5221_D1_FIELD                       ((RegisterField) {TMC5221_D1_MASK, TMC5221_D1_SHIFT, TMC5221_RGR_D1, false})
+#define TMC5221_VSTOP_MASK                     0x0003FFFF
+#define TMC5221_VSTOP_SHIFT                    0
+#define TMC5221_VSTOP_FIELD                    ((RegisterField) {TMC5221_VSTOP_MASK, TMC5221_VSTOP_SHIFT, TMC5221_RGR_VSTOP, false})
+#define TMC5221_TZEROWAIT_MASK                 0x0000FFFF
+#define TMC5221_TZEROWAIT_SHIFT                0
+#define TMC5221_TZEROWAIT_FIELD                ((RegisterField) {TMC5221_TZEROWAIT_MASK, TMC5221_TZEROWAIT_SHIFT, TMC5221_RGR_TZEROWAIT, false})
+#define TMC5221_TVMAX_MASK                     0x0000FFFF
+#define TMC5221_TVMAX_SHIFT                    0
+#define TMC5221_TVMAX_FIELD                    ((RegisterField) {TMC5221_TVMAX_MASK, TMC5221_TVMAX_SHIFT, TMC5221_RGR_TVMAX, false})
+#define TMC5221_XTARGET_MASK                   0xFFFFFFFF
+#define TMC5221_XTARGET_SHIFT                  0
+#define TMC5221_XTARGET_FIELD                  ((RegisterField) {TMC5221_XTARGET_MASK, TMC5221_XTARGET_SHIFT, TMC5221_RGR_XTARGET, true})
+#define TMC5221_VDCMIN_MASK                    0x007FFFFF
+#define TMC5221_VDCMIN_SHIFT                   0
+#define TMC5221_VDCMIN_FIELD                   ((RegisterField) {TMC5221_VDCMIN_MASK, TMC5221_VDCMIN_SHIFT, TMC5221_RGDR_VDCMIN, false})
+#define TMC5221_STOP_L_ENABLE_MASK             0x00000001
+#define TMC5221_STOP_L_ENABLE_SHIFT            0
+#define TMC5221_STOP_L_ENABLE_FIELD            ((RegisterField) {TMC5221_STOP_L_ENABLE_MASK, TMC5221_STOP_L_ENABLE_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_STOP_R_ENABLE_MASK             0x00000002
+#define TMC5221_STOP_R_ENABLE_SHIFT            1
+#define TMC5221_STOP_R_ENABLE_FIELD            ((RegisterField) {TMC5221_STOP_R_ENABLE_MASK, TMC5221_STOP_R_ENABLE_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_POL_STOP_L_MASK                0x00000004
+#define TMC5221_POL_STOP_L_SHIFT               2
+#define TMC5221_POL_STOP_L_FIELD               ((RegisterField) {TMC5221_POL_STOP_L_MASK, TMC5221_POL_STOP_L_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_POL_STOP_R_MASK                0x00000008
+#define TMC5221_POL_STOP_R_SHIFT               3
+#define TMC5221_POL_STOP_R_FIELD               ((RegisterField) {TMC5221_POL_STOP_R_MASK, TMC5221_POL_STOP_R_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_SWAP_LR_MASK                   0x00000010
+#define TMC5221_SWAP_LR_SHIFT                  4
+#define TMC5221_SWAP_LR_FIELD                  ((RegisterField) {TMC5221_SWAP_LR_MASK, TMC5221_SWAP_LR_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_LATCH_L_ACTIVE_MASK            0x00000020
+#define TMC5221_LATCH_L_ACTIVE_SHIFT           5
+#define TMC5221_LATCH_L_ACTIVE_FIELD           ((RegisterField) {TMC5221_LATCH_L_ACTIVE_MASK, TMC5221_LATCH_L_ACTIVE_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_LATCH_L_INACTIVE_MASK          0x00000040
+#define TMC5221_LATCH_L_INACTIVE_SHIFT         6
+#define TMC5221_LATCH_L_INACTIVE_FIELD         ((RegisterField) {TMC5221_LATCH_L_INACTIVE_MASK, TMC5221_LATCH_L_INACTIVE_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_LATCH_R_ACTIVE_MASK            0x00000080
+#define TMC5221_LATCH_R_ACTIVE_SHIFT           7
+#define TMC5221_LATCH_R_ACTIVE_FIELD           ((RegisterField) {TMC5221_LATCH_R_ACTIVE_MASK, TMC5221_LATCH_R_ACTIVE_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_LATCH_R_INACTIVE_MASK          0x00000100
+#define TMC5221_LATCH_R_INACTIVE_SHIFT         8
+#define TMC5221_LATCH_R_INACTIVE_FIELD         ((RegisterField) {TMC5221_LATCH_R_INACTIVE_MASK, TMC5221_LATCH_R_INACTIVE_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_SG_STOP_MASK                   0x00000400
+#define TMC5221_SG_STOP_SHIFT                  10
+#define TMC5221_SG_STOP_FIELD                  ((RegisterField) {TMC5221_SG_STOP_MASK, TMC5221_SG_STOP_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_EN_SOFTSTOP_MASK               0x00000800
+#define TMC5221_EN_SOFTSTOP_SHIFT              11
+#define TMC5221_EN_SOFTSTOP_FIELD              ((RegisterField) {TMC5221_EN_SOFTSTOP_MASK, TMC5221_EN_SOFTSTOP_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_EN_VIRTUAL_STOP_L_MASK         0x00001000
+#define TMC5221_EN_VIRTUAL_STOP_L_SHIFT        12
+#define TMC5221_EN_VIRTUAL_STOP_L_FIELD        ((RegisterField) {TMC5221_EN_VIRTUAL_STOP_L_MASK, TMC5221_EN_VIRTUAL_STOP_L_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_EN_VIRTUAL_STOP_R_MASK         0x00002000
+#define TMC5221_EN_VIRTUAL_STOP_R_SHIFT        13
+#define TMC5221_EN_VIRTUAL_STOP_R_FIELD        ((RegisterField) {TMC5221_EN_VIRTUAL_STOP_R_MASK, TMC5221_EN_VIRTUAL_STOP_R_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_EN_REFL_HOMING_MASK            0x00004000
+#define TMC5221_EN_REFL_HOMING_SHIFT           14
+#define TMC5221_EN_REFL_HOMING_FIELD           ((RegisterField) {TMC5221_EN_REFL_HOMING_MASK, TMC5221_EN_REFL_HOMING_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_EN_REFR_HOMING_MASK            0x00008000
+#define TMC5221_EN_REFR_HOMING_SHIFT           15
+#define TMC5221_EN_REFR_HOMING_FIELD           ((RegisterField) {TMC5221_EN_REFR_HOMING_MASK, TMC5221_EN_REFR_HOMING_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_EN_AUTO_FEATURE_MASK           0x00010000
+#define TMC5221_EN_AUTO_FEATURE_SHIFT          16
+#define TMC5221_EN_AUTO_FEATURE_FIELD          ((RegisterField) {TMC5221_EN_AUTO_FEATURE_MASK, TMC5221_EN_AUTO_FEATURE_SHIFT, TMC5221_RGDR_SW_MODE, false})
+#define TMC5221_STATUS_STOP_L_MASK             0x00000001
+#define TMC5221_STATUS_STOP_L_SHIFT            0
+#define TMC5221_STATUS_STOP_L_FIELD            ((RegisterField) {TMC5221_STATUS_STOP_L_MASK, TMC5221_STATUS_STOP_L_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_STATUS_STOP_R_MASK             0x00000002
+#define TMC5221_STATUS_STOP_R_SHIFT            1
+#define TMC5221_STATUS_STOP_R_FIELD            ((RegisterField) {TMC5221_STATUS_STOP_R_MASK, TMC5221_STATUS_STOP_R_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_STATUS_LATCH_L_MASK            0x00000004
+#define TMC5221_STATUS_LATCH_L_SHIFT           2
+#define TMC5221_STATUS_LATCH_L_FIELD           ((RegisterField) {TMC5221_STATUS_LATCH_L_MASK, TMC5221_STATUS_LATCH_L_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_STATUS_LATCH_R_MASK            0x00000008
+#define TMC5221_STATUS_LATCH_R_SHIFT           3
+#define TMC5221_STATUS_LATCH_R_FIELD           ((RegisterField) {TMC5221_STATUS_LATCH_R_MASK, TMC5221_STATUS_LATCH_R_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_EVENT_STOP_L_MASK              0x00000010
+#define TMC5221_EVENT_STOP_L_SHIFT             4
+#define TMC5221_EVENT_STOP_L_FIELD             ((RegisterField) {TMC5221_EVENT_STOP_L_MASK, TMC5221_EVENT_STOP_L_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_EVENT_STOP_R_MASK              0x00000020
+#define TMC5221_EVENT_STOP_R_SHIFT             5
+#define TMC5221_EVENT_STOP_R_FIELD             ((RegisterField) {TMC5221_EVENT_STOP_R_MASK, TMC5221_EVENT_STOP_R_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_EVENT_STOP_SG_MASK             0x00000040
+#define TMC5221_EVENT_STOP_SG_SHIFT            6
+#define TMC5221_EVENT_STOP_SG_FIELD            ((RegisterField) {TMC5221_EVENT_STOP_SG_MASK, TMC5221_EVENT_STOP_SG_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_EVENT_POS_REACHED_MASK         0x00000080
+#define TMC5221_EVENT_POS_REACHED_SHIFT        7
+#define TMC5221_EVENT_POS_REACHED_FIELD        ((RegisterField) {TMC5221_EVENT_POS_REACHED_MASK, TMC5221_EVENT_POS_REACHED_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_VELOCITY_REACHED_MASK          0x00000100
+#define TMC5221_VELOCITY_REACHED_SHIFT         8
+#define TMC5221_VELOCITY_REACHED_FIELD         ((RegisterField) {TMC5221_VELOCITY_REACHED_MASK, TMC5221_VELOCITY_REACHED_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_POSITION_REACHED_MASK          0x00000200
+#define TMC5221_POSITION_REACHED_SHIFT         9
+#define TMC5221_POSITION_REACHED_FIELD         ((RegisterField) {TMC5221_POSITION_REACHED_MASK, TMC5221_POSITION_REACHED_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_VZERO_MASK                     0x00000400
+#define TMC5221_VZERO_SHIFT                    10
+#define TMC5221_VZERO_FIELD                    ((RegisterField) {TMC5221_VZERO_MASK, TMC5221_VZERO_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_T_ZEROWAIT_ACTIVE_MASK         0x00000800
+#define TMC5221_T_ZEROWAIT_ACTIVE_SHIFT        11
+#define TMC5221_T_ZEROWAIT_ACTIVE_FIELD        ((RegisterField) {TMC5221_T_ZEROWAIT_ACTIVE_MASK, TMC5221_T_ZEROWAIT_ACTIVE_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_SECOND_MOVE_MASK               0x00001000
+#define TMC5221_SECOND_MOVE_SHIFT              12
+#define TMC5221_SECOND_MOVE_FIELD              ((RegisterField) {TMC5221_SECOND_MOVE_MASK, TMC5221_SECOND_MOVE_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_STATUS_SG_MASK                 0x00002000
+#define TMC5221_STATUS_SG_SHIFT                13
+#define TMC5221_STATUS_SG_FIELD                ((RegisterField) {TMC5221_STATUS_SG_MASK, TMC5221_STATUS_SG_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_STATUS_VIRTUAL_STOP_L_MASK     0x00004000
+#define TMC5221_STATUS_VIRTUAL_STOP_L_SHIFT    14
+#define TMC5221_STATUS_VIRTUAL_STOP_L_FIELD    ((RegisterField) {TMC5221_STATUS_VIRTUAL_STOP_L_MASK, TMC5221_STATUS_VIRTUAL_STOP_L_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_STATUS_VIRTUAL_STOP_R_MASK     0x00008000
+#define TMC5221_STATUS_VIRTUAL_STOP_R_SHIFT    15
+#define TMC5221_STATUS_VIRTUAL_STOP_R_FIELD    ((RegisterField) {TMC5221_STATUS_VIRTUAL_STOP_R_MASK, TMC5221_STATUS_VIRTUAL_STOP_R_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_REFL_HOMING_MASK               0x00010000
+#define TMC5221_REFL_HOMING_SHIFT              16
+#define TMC5221_REFL_HOMING_FIELD              ((RegisterField) {TMC5221_REFL_HOMING_MASK, TMC5221_REFL_HOMING_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_REFR_HOMING_MASK               0x00020000
+#define TMC5221_REFR_HOMING_SHIFT              17
+#define TMC5221_REFR_HOMING_FIELD              ((RegisterField) {TMC5221_REFR_HOMING_MASK, TMC5221_REFR_HOMING_SHIFT, TMC5221_RGDR_RAMP_STAT, false})
+#define TMC5221_XLATCH_MASK                    0xFFFFFFFF
+#define TMC5221_XLATCH_SHIFT                   0
+#define TMC5221_XLATCH_FIELD                   ((RegisterField) {TMC5221_XLATCH_MASK, TMC5221_XLATCH_SHIFT, TMC5221_RGDR_XLATCH, true})
+#define TMC5221_X_BEMF_MASK                    0xFFFFFFFF
+#define TMC5221_X_BEMF_SHIFT                   0
+#define TMC5221_X_BEMF_FIELD                   ((RegisterField) {TMC5221_X_BEMF_MASK, TMC5221_X_BEMF_SHIFT, TMC5221_ER_X_BEMF, true})
+#define TMC5221_BEMF_HYST_MASK                 0x00000007
+#define TMC5221_BEMF_HYST_SHIFT                0
+#define TMC5221_BEMF_HYST_FIELD                ((RegisterField) {TMC5221_BEMF_HYST_MASK, TMC5221_BEMF_HYST_SHIFT, TMC5221_ER_BEMF_CONF, false})
+#define TMC5221_QSC_ENC_EN_MASK                0x00000008
+#define TMC5221_QSC_ENC_EN_SHIFT               3
+#define TMC5221_QSC_ENC_EN_FIELD               ((RegisterField) {TMC5221_QSC_ENC_EN_MASK, TMC5221_QSC_ENC_EN_SHIFT, TMC5221_ER_BEMF_CONF, false})
+#define TMC5221_BEMF_BLANK_TIME_MASK           0x00000FF0
+#define TMC5221_BEMF_BLANK_TIME_SHIFT          4
+#define TMC5221_BEMF_BLANK_TIME_FIELD          ((RegisterField) {TMC5221_BEMF_BLANK_TIME_MASK, TMC5221_BEMF_BLANK_TIME_SHIFT, TMC5221_ER_BEMF_CONF, false})
+#define TMC5221_BEMF_FILTER_SEL_MASK           0x00003000
+#define TMC5221_BEMF_FILTER_SEL_SHIFT          12
+#define TMC5221_BEMF_FILTER_SEL_FIELD          ((RegisterField) {TMC5221_BEMF_FILTER_SEL_MASK, TMC5221_BEMF_FILTER_SEL_SHIFT, TMC5221_ER_BEMF_CONF, false})
+#define TMC5221_BEMF_INCREMENT_MASK            0x000F0000
+#define TMC5221_BEMF_INCREMENT_SHIFT           16
+#define TMC5221_BEMF_INCREMENT_FIELD           ((RegisterField) {TMC5221_BEMF_INCREMENT_MASK, TMC5221_BEMF_INCREMENT_SHIFT, TMC5221_ER_BEMF_CONF, false})
+#define TMC5221_BEMF_DIR_MASK                  0x00100000
+#define TMC5221_BEMF_DIR_SHIFT                 20
+#define TMC5221_BEMF_DIR_FIELD                 ((RegisterField) {TMC5221_BEMF_DIR_MASK, TMC5221_BEMF_DIR_SHIFT, TMC5221_ER_BEMF_CONF, false})
+#define TMC5221_BEMF_OVERWRITE_MASK            0x00200000
+#define TMC5221_BEMF_OVERWRITE_SHIFT           21
+#define TMC5221_BEMF_OVERWRITE_FIELD           ((RegisterField) {TMC5221_BEMF_OVERWRITE_MASK, TMC5221_BEMF_OVERWRITE_SHIFT, TMC5221_ER_BEMF_CONF, false})
+#define TMC5221_ENC_DEVIATION_MASK             0x000FFFFF
+#define TMC5221_ENC_DEVIATION_SHIFT            0
+#define TMC5221_ENC_DEVIATION_FIELD            ((RegisterField) {TMC5221_ENC_DEVIATION_MASK, TMC5221_ENC_DEVIATION_SHIFT, TMC5221_ER_BEMF_DEVIATION, false})
+#define TMC5221_DEVIATION_WARN_MASK            0x01000000
+#define TMC5221_DEVIATION_WARN_SHIFT           24
+#define TMC5221_DEVIATION_WARN_FIELD           ((RegisterField) {TMC5221_DEVIATION_WARN_MASK, TMC5221_DEVIATION_WARN_SHIFT, TMC5221_ER_BEMF_DEVIATION, false})
+#define TMC5221_VIRTUAL_STOP_L_MASK            0xFFFFFFFF
+#define TMC5221_VIRTUAL_STOP_L_SHIFT           0
+#define TMC5221_VIRTUAL_STOP_L_FIELD           ((RegisterField) {TMC5221_VIRTUAL_STOP_L_MASK, TMC5221_VIRTUAL_STOP_L_SHIFT, TMC5221_ER_VIRTUAL_STOP_L, true})
+#define TMC5221_VIRTUAL_STOP_R_MASK            0xFFFFFFFF
+#define TMC5221_VIRTUAL_STOP_R_SHIFT           0
+#define TMC5221_VIRTUAL_STOP_R_FIELD           ((RegisterField) {TMC5221_VIRTUAL_STOP_R_MASK, TMC5221_VIRTUAL_STOP_R_SHIFT, TMC5221_ER_VIRTUAL_STOP_R, true})
+#define TMC5221_X_BEMF_LATCH_MASK              0xFFFFFFFF
+#define TMC5221_X_BEMF_LATCH_SHIFT             0
+#define TMC5221_X_BEMF_LATCH_FIELD             ((RegisterField) {TMC5221_X_BEMF_LATCH_MASK, TMC5221_X_BEMF_LATCH_SHIFT, TMC5221_ER_X_BEMF_LATCH, false})
+#define TMC5221_MSCNT_MASK                     0x000003FF
+#define TMC5221_MSCNT_SHIFT                    0
+#define TMC5221_MSCNT_FIELD                    ((RegisterField) {TMC5221_MSCNT_MASK, TMC5221_MSCNT_SHIFT, TMC5221_MDR_MSCNT, false})
+#define TMC5221_CUR_A_MASK                     0x000001FF
+#define TMC5221_CUR_A_SHIFT                    0
+#define TMC5221_CUR_A_FIELD                    ((RegisterField) {TMC5221_CUR_A_MASK, TMC5221_CUR_A_SHIFT, TMC5221_MDR_MSCURACT, true})
+#define TMC5221_CUR_B_MASK                     0x01FF0000
+#define TMC5221_CUR_B_SHIFT                    16
+#define TMC5221_CUR_B_FIELD                    ((RegisterField) {TMC5221_CUR_B_MASK, TMC5221_CUR_B_SHIFT, TMC5221_MDR_MSCURACT, true})
+#define TMC5221_TOFF_MASK                      0x0000000F
+#define TMC5221_TOFF_SHIFT                     0
+#define TMC5221_TOFF_FIELD                     ((RegisterField) {TMC5221_TOFF_MASK, TMC5221_TOFF_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_HSTRT_TFD210_MASK              0x00000070
+#define TMC5221_HSTRT_TFD210_SHIFT             4
+#define TMC5221_HSTRT_TFD210_FIELD             ((RegisterField) {TMC5221_HSTRT_TFD210_MASK, TMC5221_HSTRT_TFD210_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_HEND_OFFSET_MASK               0x00000780
+#define TMC5221_HEND_OFFSET_SHIFT              7
+#define TMC5221_HEND_OFFSET_FIELD              ((RegisterField) {TMC5221_HEND_OFFSET_MASK, TMC5221_HEND_OFFSET_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_FD3_MASK                       0x00000800
+#define TMC5221_FD3_SHIFT                      11
+#define TMC5221_FD3_FIELD                      ((RegisterField) {TMC5221_FD3_MASK, TMC5221_FD3_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_DISFDCC_MASK                   0x00001000
+#define TMC5221_DISFDCC_SHIFT                  12
+#define TMC5221_DISFDCC_FIELD                  ((RegisterField) {TMC5221_DISFDCC_MASK, TMC5221_DISFDCC_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_CHM_MASK                       0x00004000
+#define TMC5221_CHM_SHIFT                      14
+#define TMC5221_CHM_FIELD                      ((RegisterField) {TMC5221_CHM_MASK, TMC5221_CHM_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_TBL_MASK                       0x00018000
+#define TMC5221_TBL_SHIFT                      15
+#define TMC5221_TBL_FIELD                      ((RegisterField) {TMC5221_TBL_MASK, TMC5221_TBL_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_VHIGHFS_MASK                   0x00040000
+#define TMC5221_VHIGHFS_SHIFT                  18
+#define TMC5221_VHIGHFS_FIELD                  ((RegisterField) {TMC5221_VHIGHFS_MASK, TMC5221_VHIGHFS_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_VHIGHCHM_MASK                  0x00080000
+#define TMC5221_VHIGHCHM_SHIFT                 19
+#define TMC5221_VHIGHCHM_FIELD                 ((RegisterField) {TMC5221_VHIGHCHM_MASK, TMC5221_VHIGHCHM_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_TPFD_MASK                      0x00F00000
+#define TMC5221_TPFD_SHIFT                     20
+#define TMC5221_TPFD_FIELD                     ((RegisterField) {TMC5221_TPFD_MASK, TMC5221_TPFD_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_MRES_MASK                      0x0F000000
+#define TMC5221_MRES_SHIFT                     24
+#define TMC5221_MRES_FIELD                     ((RegisterField) {TMC5221_MRES_MASK, TMC5221_MRES_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_INTPOL_MASK                    0x10000000
+#define TMC5221_INTPOL_SHIFT                   28
+#define TMC5221_INTPOL_FIELD                   ((RegisterField) {TMC5221_INTPOL_MASK, TMC5221_INTPOL_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_DEDGE_MASK                     0x20000000
+#define TMC5221_DEDGE_SHIFT                    29
+#define TMC5221_DEDGE_FIELD                    ((RegisterField) {TMC5221_DEDGE_MASK, TMC5221_DEDGE_SHIFT, TMC5221_MDR_CHOPCONF, false})
+#define TMC5221_SEMIN_MASK                     0x0000000F
+#define TMC5221_SEMIN_SHIFT                    0
+#define TMC5221_SEMIN_FIELD                    ((RegisterField) {TMC5221_SEMIN_MASK, TMC5221_SEMIN_SHIFT, TMC5221_MDR_COOLCONF, false})
+#define TMC5221_SEUP_MASK                      0x00000060
+#define TMC5221_SEUP_SHIFT                     5
+#define TMC5221_SEUP_FIELD                     ((RegisterField) {TMC5221_SEUP_MASK, TMC5221_SEUP_SHIFT, TMC5221_MDR_COOLCONF, false})
+#define TMC5221_SEMAX_MASK                     0x00000F00
+#define TMC5221_SEMAX_SHIFT                    8
+#define TMC5221_SEMAX_FIELD                    ((RegisterField) {TMC5221_SEMAX_MASK, TMC5221_SEMAX_SHIFT, TMC5221_MDR_COOLCONF, false})
+#define TMC5221_SEDN_MASK                      0x00006000
+#define TMC5221_SEDN_SHIFT                     13
+#define TMC5221_SEDN_FIELD                     ((RegisterField) {TMC5221_SEDN_MASK, TMC5221_SEDN_SHIFT, TMC5221_MDR_COOLCONF, false})
+#define TMC5221_SEIMIN_MASK                    0x00008000
+#define TMC5221_SEIMIN_SHIFT                   15
+#define TMC5221_SEIMIN_FIELD                   ((RegisterField) {TMC5221_SEIMIN_MASK, TMC5221_SEIMIN_SHIFT, TMC5221_MDR_COOLCONF, false})
+#define TMC5221_SGT_MASK                       0x007F0000
+#define TMC5221_SGT_SHIFT                      16
+#define TMC5221_SGT_FIELD                      ((RegisterField) {TMC5221_SGT_MASK, TMC5221_SGT_SHIFT, TMC5221_MDR_COOLCONF, false})
+#define TMC5221_SFILT_MASK                     0x01000000
+#define TMC5221_SFILT_SHIFT                    24
+#define TMC5221_SFILT_FIELD                    ((RegisterField) {TMC5221_SFILT_MASK, TMC5221_SFILT_SHIFT, TMC5221_MDR_COOLCONF, false})
+#define TMC5221_DC_TIME_MASK                   0x000003FF
+#define TMC5221_DC_TIME_SHIFT                  0
+#define TMC5221_DC_TIME_FIELD                  ((RegisterField) {TMC5221_DC_TIME_MASK, TMC5221_DC_TIME_SHIFT, TMC5221_MDR_DCCTRL, false})
+#define TMC5221_DC_SG_MASK                     0x00FF0000
+#define TMC5221_DC_SG_SHIFT                    16
+#define TMC5221_DC_SG_FIELD                    ((RegisterField) {TMC5221_DC_SG_MASK, TMC5221_DC_SG_SHIFT, TMC5221_MDR_DCCTRL, false})
+#define TMC5221_SG_RESULT_MASK                 0x000003FF
+#define TMC5221_SG_RESULT_SHIFT                0
+#define TMC5221_SG_RESULT_FIELD                ((RegisterField) {TMC5221_SG_RESULT_MASK, TMC5221_SG_RESULT_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_S2VSA_MASK                     0x00001000
+#define TMC5221_S2VSA_SHIFT                    12
+#define TMC5221_S2VSA_FIELD                    ((RegisterField) {TMC5221_S2VSA_MASK, TMC5221_S2VSA_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_S2VSB_MASK                     0x00002000
+#define TMC5221_S2VSB_SHIFT                    13
+#define TMC5221_S2VSB_FIELD                    ((RegisterField) {TMC5221_S2VSB_MASK, TMC5221_S2VSB_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_STEALTH_MASK                   0x00004000
+#define TMC5221_STEALTH_SHIFT                  14
+#define TMC5221_STEALTH_FIELD                  ((RegisterField) {TMC5221_STEALTH_MASK, TMC5221_STEALTH_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_FSACTIVE_MASK                  0x00008000
+#define TMC5221_FSACTIVE_SHIFT                 15
+#define TMC5221_FSACTIVE_FIELD                 ((RegisterField) {TMC5221_FSACTIVE_MASK, TMC5221_FSACTIVE_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_CS_ACTUAL_MASK                 0x001F0000
+#define TMC5221_CS_ACTUAL_SHIFT                16
+#define TMC5221_CS_ACTUAL_FIELD                ((RegisterField) {TMC5221_CS_ACTUAL_MASK, TMC5221_CS_ACTUAL_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_RES_DET_MASK                   0x00400000
+#define TMC5221_RES_DET_SHIFT                  22
+#define TMC5221_RES_DET_FIELD                  ((RegisterField) {TMC5221_RES_DET_MASK, TMC5221_RES_DET_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_STALLGUARD_PREWARN_MASK        0x00800000
+#define TMC5221_STALLGUARD_PREWARN_SHIFT       23
+#define TMC5221_STALLGUARD_PREWARN_FIELD       ((RegisterField) {TMC5221_STALLGUARD_PREWARN_MASK, TMC5221_STALLGUARD_PREWARN_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_STALLGUARD_MASK                0x01000000
+#define TMC5221_STALLGUARD_SHIFT               24
+#define TMC5221_STALLGUARD_FIELD               ((RegisterField) {TMC5221_STALLGUARD_MASK, TMC5221_STALLGUARD_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_OT_MASK                        0x02000000
+#define TMC5221_OT_SHIFT                       25
+#define TMC5221_OT_FIELD                       ((RegisterField) {TMC5221_OT_MASK, TMC5221_OT_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_OTPW_MASK                      0x04000000
+#define TMC5221_OTPW_SHIFT                     26
+#define TMC5221_OTPW_FIELD                     ((RegisterField) {TMC5221_OTPW_MASK, TMC5221_OTPW_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_S2GA_MASK                      0x08000000
+#define TMC5221_S2GA_SHIFT                     27
+#define TMC5221_S2GA_FIELD                     ((RegisterField) {TMC5221_S2GA_MASK, TMC5221_S2GA_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_S2GB_MASK                      0x10000000
+#define TMC5221_S2GB_SHIFT                     28
+#define TMC5221_S2GB_FIELD                     ((RegisterField) {TMC5221_S2GB_MASK, TMC5221_S2GB_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_OLA_MASK                       0x20000000
+#define TMC5221_OLA_SHIFT                      29
+#define TMC5221_OLA_FIELD                      ((RegisterField) {TMC5221_OLA_MASK, TMC5221_OLA_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_OLB_MASK                       0x40000000
+#define TMC5221_OLB_SHIFT                      30
+#define TMC5221_OLB_FIELD                      ((RegisterField) {TMC5221_OLB_MASK, TMC5221_OLB_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_STST_MASK                      0x80000000
+#define TMC5221_STST_SHIFT                     31
+#define TMC5221_STST_FIELD                     ((RegisterField) {TMC5221_STST_MASK, TMC5221_STST_SHIFT, TMC5221_MDR_DRV_STATUS, false})
+#define TMC5221_PWM_OFS_MASK                   0x000000FF
+#define TMC5221_PWM_OFS_SHIFT                  0
+#define TMC5221_PWM_OFS_FIELD                  ((RegisterField) {TMC5221_PWM_OFS_MASK, TMC5221_PWM_OFS_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_PWM_GRAD_MASK                  0x0000FF00
+#define TMC5221_PWM_GRAD_SHIFT                 8
+#define TMC5221_PWM_GRAD_FIELD                 ((RegisterField) {TMC5221_PWM_GRAD_MASK, TMC5221_PWM_GRAD_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_PWM_FREQ_MASK                  0x00030000
+#define TMC5221_PWM_FREQ_SHIFT                 16
+#define TMC5221_PWM_FREQ_FIELD                 ((RegisterField) {TMC5221_PWM_FREQ_MASK, TMC5221_PWM_FREQ_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_PWM_AUTOSCALE_MASK             0x00040000
+#define TMC5221_PWM_AUTOSCALE_SHIFT            18
+#define TMC5221_PWM_AUTOSCALE_FIELD            ((RegisterField) {TMC5221_PWM_AUTOSCALE_MASK, TMC5221_PWM_AUTOSCALE_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_PWM_AUTOGRAD_MASK              0x00080000
+#define TMC5221_PWM_AUTOGRAD_SHIFT             19
+#define TMC5221_PWM_AUTOGRAD_FIELD             ((RegisterField) {TMC5221_PWM_AUTOGRAD_MASK, TMC5221_PWM_AUTOGRAD_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_FREEWHEEL_MASK                 0x00300000
+#define TMC5221_FREEWHEEL_SHIFT                20
+#define TMC5221_FREEWHEEL_FIELD                ((RegisterField) {TMC5221_FREEWHEEL_MASK, TMC5221_FREEWHEEL_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_PWM_MEAS_SD_ENABLE_MASK        0x00400000
+#define TMC5221_PWM_MEAS_SD_ENABLE_SHIFT       22
+#define TMC5221_PWM_MEAS_SD_ENABLE_FIELD       ((RegisterField) {TMC5221_PWM_MEAS_SD_ENABLE_MASK, TMC5221_PWM_MEAS_SD_ENABLE_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_PWM_DIS_REG_STST_MASK          0x00800000
+#define TMC5221_PWM_DIS_REG_STST_SHIFT         23
+#define TMC5221_PWM_DIS_REG_STST_FIELD         ((RegisterField) {TMC5221_PWM_DIS_REG_STST_MASK, TMC5221_PWM_DIS_REG_STST_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_PWM_REG_MASK                   0x0F000000
+#define TMC5221_PWM_REG_SHIFT                  24
+#define TMC5221_PWM_REG_FIELD                  ((RegisterField) {TMC5221_PWM_REG_MASK, TMC5221_PWM_REG_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_PWM_LIM_MASK                   0xF0000000
+#define TMC5221_PWM_LIM_SHIFT                  28
+#define TMC5221_PWM_LIM_FIELD                  ((RegisterField) {TMC5221_PWM_LIM_MASK, TMC5221_PWM_LIM_SHIFT, TMC5221_MDR_PWMCONF, false})
+#define TMC5221_PWM_SCALE_SUM_MASK             0x000003FF
+#define TMC5221_PWM_SCALE_SUM_SHIFT            0
+#define TMC5221_PWM_SCALE_SUM_FIELD            ((RegisterField) {TMC5221_PWM_SCALE_SUM_MASK, TMC5221_PWM_SCALE_SUM_SHIFT, TMC5221_MDR_PWM_SCALE, false})
+#define TMC5221_PWM_SCALE_AUTO_MASK            0x01FF0000
+#define TMC5221_PWM_SCALE_AUTO_SHIFT           16
+#define TMC5221_PWM_SCALE_AUTO_FIELD           ((RegisterField) {TMC5221_PWM_SCALE_AUTO_MASK, TMC5221_PWM_SCALE_AUTO_SHIFT, TMC5221_MDR_PWM_SCALE, false})
+#define TMC5221_PWM_OFS_AUTO_MASK              0x000000FF
+#define TMC5221_PWM_OFS_AUTO_SHIFT             0
+#define TMC5221_PWM_OFS_AUTO_FIELD             ((RegisterField) {TMC5221_PWM_OFS_AUTO_MASK, TMC5221_PWM_OFS_AUTO_SHIFT, TMC5221_MDR_PWM_AUTO, false})
+#define TMC5221_PWM_GRAD_AUTO_MASK             0x00FF0000
+#define TMC5221_PWM_GRAD_AUTO_SHIFT            16
+#define TMC5221_PWM_GRAD_AUTO_FIELD            ((RegisterField) {TMC5221_PWM_GRAD_AUTO_MASK, TMC5221_PWM_GRAD_AUTO_SHIFT, TMC5221_MDR_PWM_AUTO, false})
+#define TMC5221_SG4_THRS_MASK                  0x000001FF
+#define TMC5221_SG4_THRS_SHIFT                 0
+#define TMC5221_SG4_THRS_FIELD                 ((RegisterField) {TMC5221_SG4_THRS_MASK, TMC5221_SG4_THRS_SHIFT, TMC5221_MDR_SG4_THRS, false})
+#define TMC5221_SG4_FILT_EN_MASK               0x00000200
+#define TMC5221_SG4_FILT_EN_SHIFT              9
+#define TMC5221_SG4_FILT_EN_FIELD              ((RegisterField) {TMC5221_SG4_FILT_EN_MASK, TMC5221_SG4_FILT_EN_SHIFT, TMC5221_MDR_SG4_THRS, false})
+#define TMC5221_SG4_RESULT_MASK                0x000003FF
+#define TMC5221_SG4_RESULT_SHIFT               0
+#define TMC5221_SG4_RESULT_FIELD               ((RegisterField) {TMC5221_SG4_RESULT_MASK, TMC5221_SG4_RESULT_SHIFT, TMC5221_MDR_SG4_RESULT, false})
+#define TMC5221_SG4_IND_0_MASK                 0x000000FF
+#define TMC5221_SG4_IND_0_SHIFT                0
+#define TMC5221_SG4_IND_0_FIELD                ((RegisterField) {TMC5221_SG4_IND_0_MASK, TMC5221_SG4_IND_0_SHIFT, TMC5221_MDR_SG4_IND, false})
+#define TMC5221_SG4_IND_1_MASK                 0x0000FF00
+#define TMC5221_SG4_IND_1_SHIFT                8
+#define TMC5221_SG4_IND_1_FIELD                ((RegisterField) {TMC5221_SG4_IND_1_MASK, TMC5221_SG4_IND_1_SHIFT, TMC5221_MDR_SG4_IND, false})
+#define TMC5221_SG4_IND_2_MASK                 0x00FF0000
+#define TMC5221_SG4_IND_2_SHIFT                16
+#define TMC5221_SG4_IND_2_FIELD                ((RegisterField) {TMC5221_SG4_IND_2_MASK, TMC5221_SG4_IND_2_SHIFT, TMC5221_MDR_SG4_IND, false})
+#define TMC5221_SG4_IND_3_MASK                 0xFF000000
+#define TMC5221_SG4_IND_3_SHIFT                24
+#define TMC5221_SG4_IND_3_FIELD                ((RegisterField) {TMC5221_SG4_IND_3_MASK, TMC5221_SG4_IND_3_SHIFT, TMC5221_MDR_SG4_IND, false})
+#define TMC5221_SG_PREWARN_RESULT_MASK         0x000003FF
+#define TMC5221_SG_PREWARN_RESULT_SHIFT        0
+#define TMC5221_SG_PREWARN_RESULT_FIELD        ((RegisterField) {TMC5221_SG_PREWARN_RESULT_MASK, TMC5221_SG_PREWARN_RESULT_SHIFT, TMC5221_MDR_SG_PREWARN_CONF, false})
+#define TMC5221_SG_PREWARN_RESULT_VALID_MASK   0x00001000
+#define TMC5221_SG_PREWARN_RESULT_VALID_SHIFT  12
+#define TMC5221_SG_PREWARN_RESULT_VALID_FIELD  ((RegisterField) {TMC5221_SG_PREWARN_RESULT_VALID_MASK, TMC5221_SG_PREWARN_RESULT_VALID_SHIFT, TMC5221_MDR_SG_PREWARN_CONF, false})
+#define TMC5221_SG_PREWARN_THRSH_MASK          0x01FF0000
+#define TMC5221_SG_PREWARN_THRSH_SHIFT         16
+#define TMC5221_SG_PREWARN_THRSH_FIELD         ((RegisterField) {TMC5221_SG_PREWARN_THRSH_MASK, TMC5221_SG_PREWARN_THRSH_SHIFT, TMC5221_MDR_SG_PREWARN_CONF, false})
+#define TMC5221_SG_PREWARN_FILTER_MASK         0x70000000
+#define TMC5221_SG_PREWARN_FILTER_SHIFT        28
+#define TMC5221_SG_PREWARN_FILTER_FIELD        ((RegisterField) {TMC5221_SG_PREWARN_FILTER_MASK, TMC5221_SG_PREWARN_FILTER_SHIFT, TMC5221_MDR_SG_PREWARN_CONF, false})
+#define TMC5221_TEMPERATURE_MASK               0x000001FF
+#define TMC5221_TEMPERATURE_SHIFT              0
+#define TMC5221_TEMPERATURE_FIELD              ((RegisterField) {TMC5221_TEMPERATURE_MASK, TMC5221_TEMPERATURE_SHIFT, TMC5221_ADC_ADC_SUPPLY_TEMP, false})
+#define TMC5221_ADC_EN_MASK                    0x00001000
+#define TMC5221_ADC_EN_SHIFT                   12
+#define TMC5221_ADC_EN_FIELD                   ((RegisterField) {TMC5221_ADC_EN_MASK, TMC5221_ADC_EN_SHIFT, TMC5221_ADC_ADC_SUPPLY_TEMP, false})
+#define TMC5221_SUPPLY_MASK                    0x01FF0000
+#define TMC5221_SUPPLY_SHIFT                   16
+#define TMC5221_SUPPLY_FIELD                   ((RegisterField) {TMC5221_SUPPLY_MASK, TMC5221_SUPPLY_SHIFT, TMC5221_ADC_ADC_SUPPLY_TEMP, false})
+#define TMC5221_VMAX_LIMIT_MASK                0x007FFFFF
+#define TMC5221_VMAX_LIMIT_SHIFT               0
+#define TMC5221_VMAX_LIMIT_FIELD               ((RegisterField) {TMC5221_VMAX_LIMIT_MASK, TMC5221_VMAX_LIMIT_SHIFT, TMC5221_LIMITS_VMAX_LIMIT, false})
+#define TMC5221_GLOBAL_SCALER_LIMIT_MASK       0x000000FF
+#define TMC5221_GLOBAL_SCALER_LIMIT_SHIFT      0
+#define TMC5221_GLOBAL_SCALER_LIMIT_FIELD      ((RegisterField) {TMC5221_GLOBAL_SCALER_LIMIT_MASK, TMC5221_GLOBAL_SCALER_LIMIT_SHIFT, TMC5221_LIMITS_LIMIT_VALUES, false})
+#define TMC5221_RREF_LIMIT_MASK                0x00000300
+#define TMC5221_RREF_LIMIT_SHIFT               8
+#define TMC5221_RREF_LIMIT_FIELD               ((RegisterField) {TMC5221_RREF_LIMIT_MASK, TMC5221_RREF_LIMIT_SHIFT, TMC5221_LIMITS_LIMIT_VALUES, false})
+#define TMC5221_GAIN_SCALER_LIMIT_MASK         0x00000C00
+#define TMC5221_GAIN_SCALER_LIMIT_SHIFT        10
+#define TMC5221_GAIN_SCALER_LIMIT_FIELD        ((RegisterField) {TMC5221_GAIN_SCALER_LIMIT_MASK, TMC5221_GAIN_SCALER_LIMIT_SHIFT, TMC5221_LIMITS_LIMIT_VALUES, false})
+#define TMC5221_IRUN_LIMIT_MASK                0x001F0000
+#define TMC5221_IRUN_LIMIT_SHIFT               16
+#define TMC5221_IRUN_LIMIT_FIELD               ((RegisterField) {TMC5221_IRUN_LIMIT_MASK, TMC5221_IRUN_LIMIT_SHIFT, TMC5221_LIMITS_LIMIT_VALUES, false})
+#define TMC5221_IHOLD_LIMIT_MASK               0x1F000000
+#define TMC5221_IHOLD_LIMIT_SHIFT              24
+#define TMC5221_IHOLD_LIMIT_FIELD              ((RegisterField) {TMC5221_IHOLD_LIMIT_MASK, TMC5221_IHOLD_LIMIT_SHIFT, TMC5221_LIMITS_LIMIT_VALUES, false})
+#define TMC5221_USER_DATA_0_MASK               0xFFFFFFFF
+#define TMC5221_USER_DATA_0_SHIFT              0
+#define TMC5221_USER_DATA_0_FIELD              ((RegisterField) {TMC5221_USER_DATA_0_MASK, TMC5221_USER_DATA_0_SHIFT, TMC5221_USER_DATA_USER_DATA_0, false})
+#define TMC5221_USER_DATA_1_MASK               0xFFFFFFFF
+#define TMC5221_USER_DATA_1_SHIFT              0
+#define TMC5221_USER_DATA_1_FIELD              ((RegisterField) {TMC5221_USER_DATA_1_MASK, TMC5221_USER_DATA_1_SHIFT, TMC5221_USER_DATA_USER_DATA_1, false})
+#define TMC5221_USER_DATA_2_MASK               0xFFFFFFFF
+#define TMC5221_USER_DATA_2_SHIFT              0
+#define TMC5221_USER_DATA_2_FIELD              ((RegisterField) {TMC5221_USER_DATA_2_MASK, TMC5221_USER_DATA_2_SHIFT, TMC5221_USER_DATA_USER_DATA_2, false})
+#define TMC5221_USER_DATA_3_MASK               0xFFFFFFFF
+#define TMC5221_USER_DATA_3_SHIFT              0
+#define TMC5221_USER_DATA_3_FIELD              ((RegisterField) {TMC5221_USER_DATA_3_MASK, TMC5221_USER_DATA_3_SHIFT, TMC5221_USER_DATA_USER_DATA_3, false})
+#define TMC5221_USER_DATA_4_MASK               0xFFFFFFFF
+#define TMC5221_USER_DATA_4_SHIFT              0
+#define TMC5221_USER_DATA_4_FIELD              ((RegisterField) {TMC5221_USER_DATA_4_MASK, TMC5221_USER_DATA_4_SHIFT, TMC5221_USER_DATA_USER_DATA_4, false})
+#define TMC5221_USER_DATA_5_MASK               0xFFFFFFFF
+#define TMC5221_USER_DATA_5_SHIFT              0
+#define TMC5221_USER_DATA_5_FIELD              ((RegisterField) {TMC5221_USER_DATA_5_MASK, TMC5221_USER_DATA_5_SHIFT, TMC5221_USER_DATA_USER_DATA_5, false})
+#define TMC5221_USER_DATA_6_MASK               0xFFFFFFFF
+#define TMC5221_USER_DATA_6_SHIFT              0
+#define TMC5221_USER_DATA_6_FIELD              ((RegisterField) {TMC5221_USER_DATA_6_MASK, TMC5221_USER_DATA_6_SHIFT, TMC5221_USER_DATA_USER_DATA_6, false})
+#define TMC5221_USER_DATA_7_MASK               0xFFFFFFFF
+#define TMC5221_USER_DATA_7_SHIFT              0
+#define TMC5221_USER_DATA_7_FIELD              ((RegisterField) {TMC5221_USER_DATA_7_MASK, TMC5221_USER_DATA_7_SHIFT, TMC5221_USER_DATA_USER_DATA_7, false})
+#define TMC5221_OTP_MODE_PASSWORD_MASK         0x0000FFFF
+#define TMC5221_OTP_MODE_PASSWORD_SHIFT        0
+#define TMC5221_OTP_MODE_PASSWORD_FIELD        ((RegisterField) {TMC5221_OTP_MODE_PASSWORD_MASK, TMC5221_OTP_MODE_PASSWORD_SHIFT, TMC5221_OTP_MODE_OTP_MODE, false})
+
+#endif
