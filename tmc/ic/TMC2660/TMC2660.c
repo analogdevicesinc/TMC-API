@@ -1,184 +1,153 @@
 /*******************************************************************************
-* Copyright © 2017 TRINAMIC Motion Control GmbH & Co. KG
+* Copyright © 2019 TRINAMIC Motion Control GmbH & Co. KG
 * (now owned by Analog Devices Inc.),
 *
-* Copyright © 2023 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
-
 #include "TMC2660.h"
 
-const uint8_t tmc2660_defaultRegisterAccess[TMC2660_REGISTER_COUNT] =
+/**************************************************************** Cache Implementation *************************************************************************/
+
+#if TMC2660_CACHE == 0
+static inline bool tmc2660_cache(uint16_t icID, TMC2660CacheOp operation, uint8_t address, uint32_t *value)
 {
-	TMC_ACCESS_WRITE,  // 0: DRVCTRL
-	TMC_ACCESS_NONE,   // 1: UNUSED
-	TMC_ACCESS_NONE,   // 2: UNUSED
-	TMC_ACCESS_NONE,   // 3: UNUSED
-	TMC_ACCESS_WRITE,  // 4: CHOPCONF
-	TMC_ACCESS_WRITE,  // 5: SMARTEN
-	TMC_ACCESS_WRITE,  // 6: SGCSCONF
-	TMC_ACCESS_WRITE   // 7: DRVCONF
-};
+    UNUSED(icID);
+    UNUSED(address);
+    UNUSED(operation);
+    return false;
+}
+#else
+#if TMC2660_ENABLE_TMC_CACHE == 1
+int32_t tmc2660_shadowRegister[TMC2660_IC_CACHE_COUNT][TMC2660_REGISTER_COUNT];
 
-const int32_t tmc2660_defaultRegisterResetState[TMC2660_REGISTER_COUNT] =
+/*
+ * This function is used to cache the value written to the Write-Only registers in the form of shadow array.
+ * The shadow copy is then used to read these kinds of registers.
+ */
+bool tmc2660_cache(uint16_t icID, TMC2660CacheOp operation, uint8_t address, uint32_t *value)
 {
-	0x00000000,  // 0: DRVCTRL
-	0x00000000,  // 1: UNUSED
-	0x00000000,  // 2: UNUSED
-	0x00000000,  // 3: UNUSED
-	0x00091935,  // 4: CHOPCONF
-	0x000A0000,  // 5: SMARTEN
-	0x000D0505,  // 6: SGCSCONF
-	0x000EF040   // 7: DRVCONF
-};
+    if (operation == TMC2660_CACHE_READ)
+    {
+        // Check if the value should come from cache
 
-// => SPI wrapper
-extern void tmc2660_writeInt(uint8_t motor, uint8_t address, int32_t value);
-extern uint32_t tmc2660_readInt(uint8_t motor, uint8_t address);
-extern void tmc2660_readWrite(uint8_t motor, uint32_t value);
-//extern void tmc2660_setField(uint8_t motor, uint8_t address, uint32_t clearMask, uint32_t field);
-// <= SPI wrapper
+        // Only supported chips have a cache
+        if (icID >= TMC2660_IC_CACHE_COUNT)
+            return false;
 
-static void standStillCurrentLimitation(TMC2660TypeDef *TMC2660)
-{ // mark if current should be reduced in stand still if too high
-	static uint32_t errorTimer = 0;
+        // Only non-readable registers care about caching
+        // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
+        if (TMC2660_IS_READABLE(tmc2660_registerAccess[address]))
+            return false;
 
-	// check the standstill flag
-	if(TMC2660_GET_STST(tmc2660_readInt(0, TMC2660_RESPONSE_LATEST)))
-	{
-		// check if current reduction is neccessary
-		if(TMC2660->runCurrentScale > TMC2660->standStillCurrentScale)
-		{
-			TMC2660->isStandStillOverCurrent = 1;
+        // Grab the value from the cache
+        *value = tmc2660_shadowRegister[icID][address];
+        return true;
+    }
+    else if (operation == TMC2660_CACHE_WRITE || operation == TMC2660_CACHE_FILL_DEFAULT)
+    {
+        // Fill the cache
 
-			// count timeout
-			if(errorTimer++ > TMC2660->standStillTimeout/10)
-			{
-				// set current limitation flag
-				TMC2660->isStandStillCurrentLimit = 1;
-				errorTimer = 0;
-			}
-			return;
-		}
-	}
+        // only supported chips have a cache
+        if (icID >= TMC2660_IC_CACHE_COUNT)
+            return false;
 
-	// No standstill or overcurrent -> reset flags & error timer
-	TMC2660->isStandStillOverCurrent  = 0;
-	TMC2660->isStandStillCurrentLimit = 0;
-	errorTimer = 0;
+        // Write to the shadow register
+        tmc2660_shadowRegister[icID][address] = *value;
+
+        return true;
+    }
+    return false;
 }
 
-static void continousSync(ConfigurationTypeDef *TMC2660_config)
-{ // refreshes settings to prevent chip from loosing settings on brownout
-	static uint8_t write  = 0;
-	static uint8_t read   = 0;
-	static uint8_t rdsel  = 0;
+#else
+// User must implement their own cache
+extern bool tmc2660_cache(uint16_t icID, TMC2660CacheOp operation, uint8_t address, uint32_t *value);
+#endif
+#endif
 
-	// rotational reading all replys to keep values up to date
-	uint32_t value, drvConf;
+/************************************************************** Register read / write Implementation ******************************************************************/
 
-	// additional reading to keep all replies up to date
-	value = drvConf = tmc2660_readInt(0, TMC2660_WRITE_BIT | TMC2660_DRVCONF);  // buffer value amd  drvConf to write back later
-	value &= ~TMC2660_SET_RDSEL(-1);                                        // clear RDSEL bits
-	value |= TMC2660_SET_RDSEL(rdsel % 3);                                  // clear set rdsel
-	tmc2660_readWrite(0, value);
-	tmc2660_readWrite(0, drvConf);
+void readWrite(uint8_t icID, uint32_t datagram)
+{
+    uint8_t data[3] = {0};
+    uint32_t reply;
+    uint8_t rdsel = TMC2660_GET_RDSEL(datagram);
 
-	// determine next read address
-	read = (read + 1) % 3;
+    data[0] = 0xFF & (datagram >> 16);
+    data[1] = 0xFF & (datagram >> 8);
+    data[2] = 0xFF & (datagram >> 0);
 
-	// write settings from shadow register to chip.
-	//readWrite(TMC2660_config->shadowRegister[TMC2660_WRITE | write]);
-	tmc2660_readWrite(0, TMC2660_config->shadowRegister[TMC2660_WRITE_BIT | write]);
+    // Send 24 bytes of data and receive reply
+    tmc2660_readWriteSPI(icID, &data[0], sizeof(data));
 
-	// determine next write address - skip unused addresses
-	write = (write == TMC2660_DRVCTRL) ? TMC2660_CHOPCONF : ((write + 1) % TMC2660_REGISTER_COUNT);
+    reply = (data[0] << 16 | data[1] << 8 | data[2]) >> 4;
+
+    // write value to response shadow register
+    tmc2660_shadowRegister[icID][rdsel] = reply;
+
+    // Store the latest response value to extract status bits in tmc2660_getStatusBits()
+    tmc2660_shadowRegister[icID][TMC2660_RESPONSE_LATEST] = reply;
+
+    // write value to response shadow register
+    if (TMC2660_GET_ADDRESS(datagram) == TMC2660_DRVCONF)
+        rdsel = TMC2660_GET_RDSEL(datagram);
+
+    // write value to shadow register
+    tmc2660_shadowRegister[icID][TMC2660_GET_ADDRESS(datagram) | TMC2660_WRITE_BIT] = datagram;
 }
 
-void tmc2660_initConfig(TMC2660TypeDef *tmc2660)
+void readImmediately(uint8_t icID, uint8_t rdsel)
 {
-	tmc2660->velocity                  = 0;
-	tmc2660->oldTick                   = 0;
-	tmc2660->oldX                      = 0;
-	tmc2660->continuousModeEnable      = 0;
-	tmc2660->isStandStillCurrentLimit  = 0;
-	tmc2660->isStandStillOverCurrent   = 0;
-	tmc2660->runCurrentScale           = 5;
-	tmc2660->coolStepActiveValue       = 0;
-	tmc2660->coolStepInactiveValue     = 0;
-	tmc2660->coolStepThreshold         = 0;
-	tmc2660->standStillCurrentScale    = 5;
-	tmc2660->standStillTimeout         = 0;
+    // sets desired reply in DRVCONF register, resets it to previous settings whilst reading desired reply
+    uint32_t value;
 
-	int32_t i;
-	for(i = 0; i < TMC2660_REGISTER_COUNT; i++)
-	{
-		tmc2660->registerAccess[i]      = tmc2660_defaultRegisterAccess[i];
-		tmc2660->registerResetState[i]  = tmc2660_defaultRegisterResetState[i];
-	}
+    // additional reading to keep all replies up to date
+    value   = tmc2660_readRegister(0, TMC2660_DRVCONF); // buffer (value and drvConf) to write back later
+    value &= ~TMC2660_SET_RDSEL(-1);       // clear RDSEL bits
+    value |= TMC2660_SET_RDSEL(rdsel % 3); // set rdsel
+    readWrite(icID, value);                // write to chip and readout reply
+    readWrite(icID, value);              // write to chip and return desired reply
 }
 
-// Currently unused, we write the whole configuration as part of the reset/restore functions
-void tmc2660_writeConfiguration(TMC2660TypeDef *tmc2660, ConfigurationTypeDef *TMC2660_config)
+void tmc2660_writeRegister(uint8_t icID, uint8_t address, uint32_t value)
 {
-	// write one writeable register at a time - backwards to hit DRVCONF before DRVCTRL
-	UNUSED(tmc2660);
-	UNUSED(TMC2660_config);
+    // Don't write to read-only registers
+    if (TMC2660_IS_READONLY_REGISTER(address))
+        return;
 
-	//uint8_t *ptr = &TMC2660_config->configIndex;
-	//const int32_t *settings = (TMC2660_config->state == CONFIG_RESTORE) ? TMC2660_config->shadowRegister : tmc2660->registerResetState;
+    // Extract 20 bits of valid data
+    value &= 0x0FFFFF;
 
-	//while((*ptr >= 0) && !IS_WRITEABLE(tmc2660->registerAccess[*ptr]))
-		//(*ptr)--;
+    //Cache the registers with write-only access
+    tmc2660_cache(icID, TMC2660_CACHE_WRITE, address, &value);
 
-	//if(*ptr >= 0)
-	//{
-		//tmc2660_writeInt(0, *ptr, settings[*ptr]);
-		//(*ptr)--;
-	//}
-	//else
-	//{
-		//TMC2660_config->state = CONFIG_READY;
-	//}
+    // 0XF7 to mask the write bit
+    if (!tmc2660_getcontinuousModeEnable(icID))
+        readWrite(icID, TMC2660_DATAGRAM((address & 0xF7), value));
 }
 
-void tmc2660_periodicJob(uint8_t motor, uint32_t tick, TMC2660TypeDef *tmc2660, ConfigurationTypeDef *TMC2660_config)
+uint32_t tmc2660_readRegister(uint8_t icID, uint8_t address)
 {
-	UNUSED(motor);
+    uint32_t value;
 
-	if(tick - tmc2660->oldTick >= 10)
-	{
-		standStillCurrentLimitation(tmc2660);
-		tmc2660->oldTick = tick;
-	}
+    // Read from cache for registers with write-only access
+    if (tmc2660_cache(icID, TMC2660_CACHE_READ, address, &value))
+        return value;
 
-	if(tmc2660->continuousModeEnable)
-	{ // continuously write settings to chip and rotate through all reply types to keep data up to date
-		continousSync(TMC2660_config);
-	}
+    if (!tmc2660_getcontinuousModeEnable(icID))
+    {
+        // Read the read-only register, refreshing the cache
+        readImmediately(icID, address);
+    }
+
+    // Return the read-only register from cache
+    return tmc2660_shadowRegister[icID][address];
 }
 
-uint8_t tmc2660_reset(TMC2660TypeDef *TMC2660, ConfigurationTypeDef *TMC2660_config)
+uint8_t tmc2660_getStatusBits(uint8_t icID)
 {
-	UNUSED(TMC2660_config);
-
-	tmc2660_writeInt(0, TMC2660_DRVCONF,  TMC2660->registerResetState[TMC2660_DRVCONF]);
-	tmc2660_writeInt(0, TMC2660_DRVCTRL,  TMC2660->registerResetState[TMC2660_DRVCTRL]);
-	tmc2660_writeInt(0, TMC2660_CHOPCONF, TMC2660->registerResetState[TMC2660_CHOPCONF]);
-	tmc2660_writeInt(0, TMC2660_SMARTEN,  TMC2660->registerResetState[TMC2660_SMARTEN]);
-	tmc2660_writeInt(0, TMC2660_SGCSCONF, TMC2660->registerResetState[TMC2660_SGCSCONF]);
-
-	return 1;
-}
-
-uint8_t tmc2660_restore(ConfigurationTypeDef *TMC2660_config)
-{
-	tmc2660_writeInt(0, TMC2660_DRVCONF,  TMC2660_config->shadowRegister[TMC2660_DRVCONF | TMC2660_WRITE_BIT]);
-	tmc2660_writeInt(0, TMC2660_DRVCTRL,  TMC2660_config->shadowRegister[TMC2660_DRVCTRL | TMC2660_WRITE_BIT]);
-	tmc2660_writeInt(0, TMC2660_CHOPCONF, TMC2660_config->shadowRegister[TMC2660_CHOPCONF | TMC2660_WRITE_BIT]);
-	tmc2660_writeInt(0, TMC2660_SMARTEN,  TMC2660_config->shadowRegister[TMC2660_SMARTEN | TMC2660_WRITE_BIT]);
-	tmc2660_writeInt(0, TMC2660_SGCSCONF, TMC2660_config->shadowRegister[TMC2660_SGCSCONF | TMC2660_WRITE_BIT]);
-
-	return 1;
+    // Grab the status bits from the last request
+    return tmc2660_shadowRegister[icID][TMC2660_RESPONSE_LATEST] & TMC2660_STATUS_MASK;
 }
