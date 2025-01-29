@@ -34,6 +34,9 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
+**Version 3.10.9: (Released)**
+- Completed API rework for TMC2660 and MAX22216.
+
 **Version 3.10.5: (Released)**
  - Removed TMC2590 from the API because the IC is available for last time buy only and going to be deprecated soon.
 
