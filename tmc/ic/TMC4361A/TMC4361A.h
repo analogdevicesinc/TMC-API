@@ -123,9 +123,10 @@ typedef struct
 
 #define TMC4361A_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC4361A_ACCESS_READ        0x01
+#define TMC4361A_ACCESS_RW_SEPARATE 0x13  // Register has a separate function
 #define TMC4361A_ACCESS_W_PRESET    0x42
 #define TMC4361A_IS_READABLE(x)     ((x) & TMC4361A_ACCESS_READ)
-#define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
+#define ARRAY_SIZE(x)               (sizeof(x)/sizeof(x[0]))
 
 // Default Register Values
 #define R10 0x00040001  // STP_LENGTH_ADD
