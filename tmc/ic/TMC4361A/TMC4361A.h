@@ -131,30 +131,43 @@ typedef struct
 // Default Register Values
 #define R10 0x00040001  // STP_LENGTH_ADD
 #define R20 0x00000001  // RAMPMODE
+#define R28 0x00013880 // AMAX
+#define R29 0x00013880 // DMAX
+#define R2D 0x000003E8 // BOW1
+#define R2E 0x000003E8 // BOW2
+#define R2F 0x000003E8 // BOW3
+#define R30 0x000003E8 // BOW4
+#define ____ 0x00
 
 #ifndef N_A
 #define N_A 0x00
 #endif
 
-#define ____ 0x00
+
 
 static const int32_t tmc4361A_sampleRegisterPreset[TMC4361A_REGISTER_COUNT] =
 {
-//	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
-	N_A, 0,   0,   0,   0,   0,   N_A, N_A, 0,   0,   N_A, N_A, 0,   0,   0,   0,   // 0x00 - 0x0F
-	R10, 0,   N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   N_A, 0,   0,   N_A, // 0x10 - 0x1F
-	R20, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x20 - 0x2F
-	0,   N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x30 - 0x3F
-	0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x40 - 0x4F
-	0,   0,   0,   N_A, 0,   0,   N_A, N_A, N_A, 0,   0,   0,   0,   0,   0,   0,   // 0x50 - 0x5F
-	0,   0,   N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x60 - 0x6F
-	N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   N_A, N_A, 0,   N_A, 0    // 0x70 - 0x7F
+//  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
+    N_A, 0,   0,   0,   0,   0,   N_A, N_A, 0,   0,   N_A, N_A, 0,   0,   0,   0,   // 0x00 - 0x0F
+    R10, 0,   N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   N_A, 0,   0,   N_A, // 0x10 - 0x1F
+    R20, 0,   0,   0,   0,   0,   0,   0,   R28, R29, 0,   0,   0,   R2D, R2E, R2F, // 0x20 - 0x2F
+    R30, N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x30 - 0x3F
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x40 - 0x4F
+    0,   0,   0,   N_A, 0,   0,   N_A, N_A, N_A, 0,   0,   0,   0,   0,   0,   0,   // 0x50 - 0x5F
+    0,   0,   N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x60 - 0x6F
+    N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   N_A, N_A, 0,   N_A, 0    // 0x70 - 0x7F
 };
 
 // Undefine the default register values.
 // This prevents warnings in case multiple TMC-API chip headers are included at once
 #undef R10
 #undef R20
+#undef R28
+#undef R29
+#undef R2D
+#undef R2E
+#undef R2F
+#undef R30
 
 // Register access permissions:
 //     0x00: none (reserved)
