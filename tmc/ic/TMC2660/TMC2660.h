@@ -41,7 +41,7 @@ typedef struct
     uint8_t shift;
     uint8_t address;
     bool isSigned;
-} RegisterField;
+} TMC2660RegisterField;
 
 //TMC-API wrapper
 extern uint8_t tmc2660_getcontinuousModeEnable(uint8_t icID);
@@ -54,7 +54,7 @@ uint8_t tmc2660_getStatusBits(uint8_t icID);
 void readWrite(uint8_t icID, uint32_t value);
 void readImmediately(uint8_t icID, uint8_t rdsel);
 
-static inline uint32_t tmc2660_fieldExtract(uint32_t data, RegisterField field)
+static inline uint32_t tmc2660_fieldExtract(uint32_t data, TMC2660RegisterField field)
 {
     uint32_t value = (data & field.mask) >> field.shift;
 
@@ -69,19 +69,19 @@ static inline uint32_t tmc2660_fieldExtract(uint32_t data, RegisterField field)
     return value;
 }
 
-static inline uint32_t tmc2660_fieldRead(uint16_t icID, RegisterField field)
+static inline uint32_t tmc2660_fieldRead(uint16_t icID, TMC2660RegisterField field)
 {
     uint32_t value = tmc2660_readRegister(icID, field.address);
 
     return tmc2660_fieldExtract(value, field);
 }
 
-static inline uint32_t tmc2660_fieldUpdate(uint32_t data, RegisterField field, uint32_t value)
+static inline uint32_t tmc2660_fieldUpdate(uint32_t data, TMC2660RegisterField field, uint32_t value)
 {
     return (data & (~field.mask)) | ((value << field.shift) & field.mask);
 }
 
-static inline void tmc2660_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+static inline void tmc2660_fieldWrite(uint16_t icID, TMC2660RegisterField field, uint32_t value)
 {
     uint32_t regValue = tmc2660_readRegister(icID, field.address);
 
