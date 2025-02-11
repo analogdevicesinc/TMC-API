@@ -7,8 +7,8 @@
 #ifndef TMC2209_SIMPLE_ROTATION_H_
 #define TMC2209_SIMPLE_ROTATION_H_
 
-#include "TMC2209.h"
+#include "../TMC2209.h"
 
-void initAllMotors(uint16_t icID);
+void TMC2209initAllMotors(uint16_t icID);
 
 #endif

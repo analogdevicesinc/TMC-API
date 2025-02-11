@@ -7,8 +7,8 @@
 #ifndef TMC5272_SIMPLE_ROTATION_H_
 #define TMC5272_SIMPLE_ROTATION_H_
 
-#include "TMC5272.h"
+#include "../TMC5272.h"
 
-void initAllMotors(uint16_t icID);
+void TMC5272initAllMotors(uint16_t icID);
 
 #endif
