@@ -59,10 +59,8 @@ bool tmc4361A_cache(uint16_t icID, TMC4361ACacheOp operation, uint8_t address, u
 
         // Only non-readable registers care about caching
         // Note: This could also be used to cache i.e. RW config registers to reduce bus accesses
-        if (TMC4361A_IS_READABLE(tmc4361A_registerAccess[address])){
-            if(tmc4361A_registerAccess[address] != TMC4361A_ACCESS_RW_SEPARATE)
-                return false;
-        }
+        if (TMC4361A_IS_READABLE(tmc4361A_registerAccess[address]))
+            return false;
 
         // Grab the value from the cache
         *value = tmc4361A_shadowRegister[icID][address];

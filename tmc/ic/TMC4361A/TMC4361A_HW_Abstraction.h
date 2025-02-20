@@ -27,11 +27,6 @@
 
 #define TMC4361A_RAMP_POSITION  4
 
-// Memory access helpers
-// Force the compiler to access a location exactly once
-#define ACCESS_ONCE(x) *((volatile typeof(x) *) (&x))
-
-
 // Registers in TMC4361A
 
 #define TMC4361A_GENERAL_CONF                                  0x00

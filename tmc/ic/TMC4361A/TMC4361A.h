@@ -123,20 +123,30 @@ typedef struct
 
 #define TMC4361A_ACCESS_DIRTY       0x08  // Register has been written since reset -> shadow register is valid for restore
 #define TMC4361A_ACCESS_READ        0x01
-#define TMC4361A_ACCESS_RW_SEPARATE 0x13  // Register has a separate function
+#define TMC_ACCESS_WRITE            0x02
 #define TMC4361A_ACCESS_W_PRESET    0x42
+#define TMC_IS_RESETTABLE(x)        (((x) & (TMC_ACCESS_W_PRESET)) == TMC_ACCESS_WRITE) // Write bit set, Hardware preset bit not set
 #define TMC4361A_IS_READABLE(x)     ((x) & TMC4361A_ACCESS_READ)
+#define TMC_IS_WRITABLE(x)          ((x) & TMC_ACCESS_WRITE)
 #define ARRAY_SIZE(x)               (sizeof(x)/sizeof(x[0]))
+// Memory access helpers
+// Force the compiler to access a location exactly once
+#define ACCESS_ONCE(x) *((volatile typeof(x) *) (&x))
+
+#ifndef MAX
+    #define MAX(a,b) (((a)>(b)) ? (a) : (b))
+#endif
 
 // Default Register Values
-#define R10 0x00040001  // STP_LENGTH_ADD
-#define R20 0x00000001  // RAMPMODE
+#define R10 0x00040001 // STP_LENGTH_ADD
+#define R20 0x00000001 // RAMPMODE
 #define R28 0x00013880 // AMAX
 #define R29 0x00013880 // DMAX
 #define R2D 0x000003E8 // BOW1
 #define R2E 0x000003E8 // BOW2
 #define R2F 0x000003E8 // BOW3
 #define R30 0x000003E8 // BOW4
+#define R54 0x00009C40 // ENC_IN_RES
 #define ____ 0x00
 
 #ifndef N_A
@@ -148,12 +158,12 @@ typedef struct
 static const int32_t tmc4361A_sampleRegisterPreset[TMC4361A_REGISTER_COUNT] =
 {
 //  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
-    N_A, 0,   0,   0,   0,   0,   N_A, N_A, 0,   0,   N_A, N_A, 0,   0,   0,   0,   // 0x00 - 0x0F
+    0,   0,   0,   0,   0,   0,   N_A, N_A, 0,   0,   N_A, N_A, 0,   0,   0,   0,   // 0x00 - 0x0F
     R10, 0,   N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   N_A, 0,   0,   N_A, // 0x10 - 0x1F
     R20, 0,   0,   0,   0,   0,   0,   0,   R28, R29, 0,   0,   0,   R2D, R2E, R2F, // 0x20 - 0x2F
     R30, N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x30 - 0x3F
     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x40 - 0x4F
-    0,   0,   0,   N_A, 0,   0,   N_A, N_A, N_A, 0,   0,   0,   0,   0,   0,   0,   // 0x50 - 0x5F
+    0,   0,   0,   N_A, R54, 0,   N_A, N_A, N_A, 0,   0,   0,   0,   0,   0,   0,   // 0x50 - 0x5F
     0,   0,   N_A, 0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   // 0x60 - 0x6F
     N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, N_A, 0,   0,   N_A, N_A, 0,   N_A, 0    // 0x70 - 0x7F
 };
@@ -162,12 +172,14 @@ static const int32_t tmc4361A_sampleRegisterPreset[TMC4361A_REGISTER_COUNT] =
 // This prevents warnings in case multiple TMC-API chip headers are included at once
 #undef R10
 #undef R20
+#undef R24
 #undef R28
 #undef R29
 #undef R2D
 #undef R2E
 #undef R2F
 #undef R30
+#undef R54
 
 // Register access permissions:
 //     0x00: none (reserved)
