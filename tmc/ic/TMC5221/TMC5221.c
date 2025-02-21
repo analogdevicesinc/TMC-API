@@ -8,6 +8,8 @@
 
 static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value);
+static int32_t readRegisterIIC(uint16_t icID, uint8_t address);
+static void writeRegisterIIC(uint16_t icID, uint8_t address, int32_t value);
 
 int32_t tmc5221_readRegister(uint16_t icID, uint8_t address)
 {
@@ -16,6 +18,10 @@ int32_t tmc5221_readRegister(uint16_t icID, uint8_t address)
     if(bus == IC_BUS_SPI)
     {
         return readRegisterSPI(icID, address);
+    }
+    else if(bus == IC_BUS_IIC)
+    {
+        return readRegisterIIC(icID, address);
     }
     //ToDo: Error handling
     return -1;
@@ -28,6 +34,10 @@ void tmc5221_writeRegister(uint16_t icID, uint8_t address, int32_t value)
     if(bus == IC_BUS_SPI)
     {
         writeRegisterSPI(icID, address, value);
+    }
+    else if(bus == IC_BUS_IIC)
+    {
+        return writeRegisterIIC(icID, address, value);
     }
 }
 
@@ -62,6 +72,40 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 
     // Send the write request
     tmc5221_readWriteSPI(icID, &data[0], sizeof(data));
+}
+
+int32_t readRegisterIIC(uint16_t icID, uint8_t address)
+{
+    uint8_t data[6] = { 0 };
+
+    data[0] = tmc5221_getDeviceAddress(icID);
+    data[1] = address;//register address
+
+//    IICMasterWrite(data[0], &data[1], 1);
+//    IICMasterRead(data[0], &data[2], 4);
+
+
+
+    if(!tmc5221_readWriteIIC(icID, &data[0], 1,4))
+        return 0;
+
+    return ((int32_t)data[2] << 24) | ((int32_t) data[3] << 16) | ((int32_t) data[4] <<  8) | ((int32_t) data[5]);
+}
+
+void writeRegisterIIC(uint16_t icID, uint8_t address, int32_t value)
+{
+    uint8_t data[6] = { 0 };
+
+    data[0] = tmc5221_getDeviceAddress(icID);
+    data[1] = address;//register address
+    data[2] = 0xFF & (value>>24);
+    data[3] = 0xFF & (value>>16);
+    data[4] = 0xFF & (value>>8);
+    data[5] = 0xFF & (value>>0);
+
+    // Send the write request
+    //tmc5221_readWriteIIC(icID, &data[0], 5, 0);
+    IICMasterWrite(data[0], &data[1], 5);
 }
 
 void tmc5221_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)

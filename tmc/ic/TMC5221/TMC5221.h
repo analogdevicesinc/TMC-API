@@ -53,8 +53,7 @@
 
 typedef enum {
     IC_BUS_SPI,
-    IC_BUS_UART,
-    IC_BUS_WLAN,
+    IC_BUS_IIC,
 } TMC5221BusType;
 
 typedef struct
@@ -67,9 +66,9 @@ typedef struct
 
 // => TMC-API wrapper
 extern void tmc5221_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
-extern bool tmc5221_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern bool tmc5221_readWriteIIC(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
 extern TMC5221BusType tmc5221_getBusType(uint16_t icID);
-extern uint8_t tmc5221_getNodeAddress(uint16_t icID);
+extern uint8_t tmc5221_getDeviceAddress(uint16_t icID);
 // => TMC-API wrapper
 
 int32_t tmc5221_readRegister(uint16_t icID, uint8_t address);
