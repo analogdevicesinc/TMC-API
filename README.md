@@ -34,6 +34,9 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
+**Version 3.10.10: (Released)**
+- Completed API rework for TMC4361A.
+
 **Version 3.10.9: (Released)**
 - Completed API rework for TMC2660 and MAX22216.
 
