@@ -1,17 +1,17 @@
 /*******************************************************************************
-* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
+* Copyright © 2025 Analog Devices Inc. All Rights Reserved.
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
 
-#ifndef TMC_IC_TMC5221A_H_
-#define TMC_IC_TMC5221A_H_
+#ifndef TMC_IC_TMC5222_H_
+#define TMC_IC_TMC5222_H_
 
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "TMC5221A_HW_Abstraction.h"
+#include "TMC5222_HW_Abstraction.h"
 
 /*******************************************************************************
 * API Configuration Defines
@@ -55,7 +55,7 @@
 typedef enum {
     IC_BUS_SPI,
     IC_BUS_IIC,
-} TMC5221ABusType;
+} TMC5222BusType;
 
 typedef struct
 {
@@ -66,17 +66,17 @@ typedef struct
 } RegisterField;
 
 // => TMC-API wrapper
-extern bool tmc5221A_readWriteIIC(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
-extern TMC5221ABusType tmc5221A_getBusType(uint16_t icID);
-extern uint8_t tmc5221A_getDeviceAddress(uint16_t icID);
+extern bool tmc5222_readWriteIIC(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern TMC5222BusType tmc5222_getBusType(uint16_t icID);
+extern uint8_t tmc5222_getDeviceAddress(uint16_t icID);
 // => TMC-API wrapper
 
-int32_t tmc5221A_readRegister(uint16_t icID, uint8_t address);
-void tmc5221A_writeRegister(uint16_t icID, uint8_t address, int32_t value);
-void tmc5221A_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
+int32_t tmc5222_readRegister(uint16_t icID, uint8_t address);
+void tmc5222_writeRegister(uint16_t icID, uint8_t address, int32_t value);
+void tmc5222_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity);
 
 
-static inline uint32_t tmc5221A_fieldExtract(uint32_t data, RegisterField field)
+static inline uint32_t tmc5222_fieldExtract(uint32_t data, RegisterField field)
 {
     uint32_t value = (data & field.mask) >> field.shift;
 
@@ -91,11 +91,11 @@ static inline uint32_t tmc5221A_fieldExtract(uint32_t data, RegisterField field)
     return value;
 }
 
-static inline uint32_t tmc5221A_fieldRead(uint16_t icID, RegisterField field)
+static inline uint32_t tmc5222_fieldRead(uint16_t icID, RegisterField field)
 {
-    uint32_t value = tmc5221A_readRegister(icID, field.address);
+    uint32_t value = tmc5222_readRegister(icID, field.address);
 
-    return tmc5221A_fieldExtract(value, field);
+    return tmc5222_fieldExtract(value, field);
 }
 
 static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t value)
@@ -103,14 +103,14 @@ static inline uint32_t field_update(uint32_t data, RegisterField field, uint32_t
     return (data & (~field.mask)) | ((value << field.shift) & field.mask);
 }
 
-static inline void tmc5221A_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
+static inline void tmc5222_fieldWrite(uint16_t icID, RegisterField field, uint32_t value)
 {
-    uint32_t regValue = tmc5221A_readRegister(icID, field.address);
+    uint32_t regValue = tmc5222_readRegister(icID, field.address);
 
     regValue = field_update(regValue, field, value);
 
-    tmc5221A_writeRegister(icID, field.address, regValue);
+    tmc5222_writeRegister(icID, field.address, regValue);
 }
 
 
-#endif /* TMC_IC_TMC5221A_H_ */
+#endif /* TMC_IC_TMC5222_H_ */
