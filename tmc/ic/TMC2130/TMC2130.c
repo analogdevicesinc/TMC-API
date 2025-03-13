@@ -121,10 +121,13 @@ void tmc2130_initCache()
        {
            for (id = 0; id < TMC2130_IC_CACHE_COUNT; id++)
            {
-               tmc2130_cache(id, TMC2130_CACHE_FILL_DEFAULT, i, &tmc2130_RegisterConstants[j].value);
+        	   uint32_t value = tmc2130_RegisterConstants[j].value;
+               tmc2130_cache(id, TMC2130_CACHE_FILL_DEFAULT, i, &value);
            }
        }
    }
+
+   (void)motor;
 }
 #else
 // User must implement their own cache
@@ -186,6 +189,6 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
     // Send the write request
     tmc2130_readWriteSPI(icID, &data[0], sizeof(data));
     //Cache the registers with write-only access
-    tmc2130_cache(icID, TMC2130_CACHE_WRITE, address, &value);
+    tmc2130_cache(icID, TMC2130_CACHE_WRITE, address, (uint32_t*)&value);
 }
 /***************************************************************************************************************************************************************/

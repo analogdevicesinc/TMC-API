@@ -12,7 +12,7 @@
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];
 #else
-const uint8_t tmcCRCTable_Poly7Reflected[256] = {
+static const uint8_t tmcCRCTable_Poly7Reflected[256] = {
         0x00, 0x91, 0xE3, 0x72, 0x07, 0x96, 0xE4, 0x75, 0x0E, 0x9F, 0xED, 0x7C, 0x09, 0x98, 0xEA, 0x7B,
         0x1C, 0x8D, 0xFF, 0x6E, 0x1B, 0x8A, 0xF8, 0x69, 0x12, 0x83, 0xF1, 0x60, 0x15, 0x84, 0xF6, 0x67,
         0x38, 0xA9, 0xDB, 0x4A, 0x3F, 0xAE, 0xDC, 0x4D, 0x36, 0xA7, 0xD5, 0x44, 0x31, 0xA0, 0xD2, 0x43,
@@ -138,7 +138,8 @@ void tmc5160_initCache()
         {
             for (id = 0; id < TMC5160_IC_CACHE_COUNT; id++)
             {
-                tmc5160_cache(id, TMC5160_CACHE_FILL_DEFAULT, i, &tmc5160_RegisterConstants[j].value);
+            	uint32_t value = tmc5160_RegisterConstants[j].value;
+                tmc5160_cache(id, TMC5160_CACHE_FILL_DEFAULT, i, &value);
             }
         }
     }
@@ -228,7 +229,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
     tmc5160_readWriteSPI(icID, &data[0], sizeof(data));
 
     //Cache the registers with write-only access
-    tmc5160_cache(icID, TMC5160_CACHE_WRITE, address, &value);
+    tmc5160_cache(icID, TMC5160_CACHE_WRITE, address, (uint32_t*)&value);
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t address)
@@ -279,7 +280,7 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
     tmc5160_readWriteUART(icID, &data[0], 8, 0);
 
     //Cache the registers with write-only access
-    tmc5160_cache(icID, TMC5160_CACHE_WRITE, address, &value);
+    tmc5160_cache(icID, TMC5160_CACHE_WRITE, address, (uint32_t*)&value);
 }
 
 void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
