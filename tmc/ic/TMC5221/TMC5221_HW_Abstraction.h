@@ -647,7 +647,7 @@
 #define TMC5221_SEIMIN_FIELD                   ((RegisterField) {TMC5221_SEIMIN_MASK, TMC5221_SEIMIN_SHIFT, TMC5221_MDR_COOLCONF, false})
 #define TMC5221_SGT_MASK                       0x007F0000
 #define TMC5221_SGT_SHIFT                      16
-#define TMC5221_SGT_FIELD                      ((RegisterField) {TMC5221_SGT_MASK, TMC5221_SGT_SHIFT, TMC5221_MDR_COOLCONF, false})
+#define TMC5221_SGT_FIELD                      ((RegisterField) {TMC5221_SGT_MASK, TMC5221_SGT_SHIFT, TMC5221_MDR_COOLCONF, true})
 #define TMC5221_SFILT_MASK                     0x01000000
 #define TMC5221_SFILT_SHIFT                    24
 #define TMC5221_SFILT_FIELD                    ((RegisterField) {TMC5221_SFILT_MASK, TMC5221_SFILT_SHIFT, TMC5221_MDR_COOLCONF, false})
