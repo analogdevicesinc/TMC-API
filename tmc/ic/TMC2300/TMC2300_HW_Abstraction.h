@@ -49,7 +49,7 @@
 // Register fields (manually add)
 #define TMC2300_EN_SPREADCYCLE_MASK 0x04 // GCONF // par_mode (Reset default=0)
 #define TMC2300_EN_SPREADCYCLE_SHIFT 2 // par_mode (Reset default=0)
-#define TMC2300_EN_SPREADCYCLE_SHIFT_FIELD   ((RegisterField) {TMC2300_EN_SPREADCYCLE_MASK, TMC2300_EN_SPREADCYCLE_SHIFT, TMC2300_GCONF, false})
+#define TMC2300_EN_SPREADCYCLE_FIELD   ((RegisterField) {TMC2300_EN_SPREADCYCLE_MASK, TMC2300_EN_SPREADCYCLE_SHIFT, TMC2300_GCONF, false})
 
 // Register fields
 #define TMC2300__MASK                    0x00000001
