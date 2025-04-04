@@ -10,7 +10,7 @@
  * Configures the registers with the right settings that are needed for rotating both motors.
  * E.g Enabling drivers, setting IRUN current etc.
  */
-void initAllMotors(uint16_t icID)
+void TMC5272initAllMotors(uint16_t icID)
 {
   // Set IREF_R2 and IREF_R3 to High for setting the REF resistor to 10k.
   // Run Current = 0.2A rms

@@ -10,7 +10,7 @@
  * Configures the registers with the right settings that are needed for rotating the motor.
  * E.g Enabling driver, setting IRUN current etc.
  */
-void initAllMotors(uint16_t icID)
+void TMC2209initAllMotors(uint16_t icID)
 {
     tmc2209_writeRegister(icID, TMC2209_GCONF, 0x00000040);
     tmc2209_writeRegister(icID, TMC2209_IHOLD_IRUN, 0x00071703);

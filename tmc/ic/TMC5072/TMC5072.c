@@ -11,7 +11,7 @@
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];
 #else
-const uint8_t tmcCRCTable_Poly7Reflected[256] = {
+static const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 			0x00, 0x91, 0xE3, 0x72, 0x07, 0x96, 0xE4, 0x75, 0x0E, 0x9F, 0xED, 0x7C, 0x09, 0x98, 0xEA, 0x7B,
 			0x1C, 0x8D, 0xFF, 0x6E, 0x1B, 0x8A, 0xF8, 0x69, 0x12, 0x83, 0xF1, 0x60, 0x15, 0x84, 0xF6, 0x67,
 			0x38, 0xA9, 0xDB, 0x4A, 0x3F, 0xAE, 0xDC, 0x4D, 0x36, 0xA7, 0xD5, 0x44, 0x31, 0xA0, 0xD2, 0x43,
@@ -141,10 +141,12 @@ void tmc5072_initCache()
 		{
 			for (id = 0; id < TMC5072_IC_CACHE_COUNT; id++)
 			{
-				tmc5072_cache(id, TMC5072_CACHE_FILL_DEFAULT, i, &tmc5072_RegisterConstants[j].value);
+				uint32_t value = tmc5072_RegisterConstants[j].value;
+				tmc5072_cache(id, TMC5072_CACHE_FILL_DEFAULT, i, &value);
 			}
 		}
 	}
+	(void)motor;
 }
 #else
 // User must implement their own cache
@@ -196,7 +198,7 @@ void tmc5072_writeRegister(uint16_t icID, uint8_t address, int32_t value)
 	}
 
     //Cache the registers with write-only access
-    tmc5072_cache(icID, TMC5072_CACHE_WRITE, address, &value);
+    tmc5072_cache(icID, TMC5072_CACHE_WRITE, address, (uint32_t*)&value);
 }
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
@@ -298,6 +300,7 @@ static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 	// swap nibbles ...
 	result = ((result >> 4) & 0x0F) | ((result & 0x0F) << 4);
 
+	(void)table;
 	return result;
 }
 
