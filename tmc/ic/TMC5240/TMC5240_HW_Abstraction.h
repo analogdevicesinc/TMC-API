@@ -76,7 +76,7 @@
 #define TMC5240_SLAVECONF       0x03
 #define TMC5240_INP_OUT         0x04
 #define TMC5240_X_COMPARE       0x05
-#define TMC5240_OTP_PROG        0x06
+#define TMC5240_X_COMPARE_REPEAT 0x06
 #define TMC5240_DRV_CONF        0x0A
 #define TMC5240_GLOBAL_SCALER   0x0B
 #define TMC5240_IHOLD_IRUN      0x10
