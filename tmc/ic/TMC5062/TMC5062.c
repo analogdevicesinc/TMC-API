@@ -141,7 +141,8 @@ void tmc5062_initCache()
         {
             for (id = 0; id < TMC5062_IC_CACHE_COUNT; id++)
             {
-                tmc5062_cache(id, TMC5062_CACHE_FILL_DEFAULT, i, &tmc5062_RegisterConstants[j].value);
+                uint32_t temp = tmc5062_RegisterConstants[j].value;
+                tmc5062_cache(id, TMC5062_CACHE_FILL_DEFAULT, i, &temp);
             }
         }
     }
@@ -235,7 +236,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
     tmc5062_readWriteSPI(icID, &data[0], sizeof(data));
 
     //Cache the registers with write-only access
-    tmc5062_cache(icID, TMC5062_CACHE_WRITE, address, &value);
+    tmc5062_cache(icID, TMC5062_CACHE_WRITE, address, (uint32_t *)&value);
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t address)
@@ -281,7 +282,7 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
     tmc5062_readWriteUART(icID, &data[0], 7, 0);
 
     //Cache the registers with write-only access
-    tmc5062_cache(icID, TMC5062_CACHE_WRITE, address, &value);
+    tmc5062_cache(icID, TMC5062_CACHE_WRITE, address, (uint32_t *)&value);
 }
 
 void tmc5062_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
@@ -296,7 +297,6 @@ void tmc5062_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
     uint8_t result = 0;
-    uint8_t *table;
 
     while(bytes--)
         result = tmcCRCTable_Poly7Reflected[result ^ *data++];

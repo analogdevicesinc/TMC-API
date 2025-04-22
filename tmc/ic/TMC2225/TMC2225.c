@@ -190,14 +190,12 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
     tmc2225_readWriteUART(icID, &data[0], 8, 0);
 
     //Cache the registers with write-only access
-    tmc2225_cache(icID, TMC2225_CACHE_WRITE, registerAddress, &value);
+    tmc2225_cache(icID, TMC2225_CACHE_WRITE, registerAddress, (uint32_t *)&value);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
     uint8_t result = 0;
-    uint8_t *table;
-
     while (bytes--) result = tmcCRCTable_Poly7Reflected[result ^ *data++];
 
     // Flip the result around

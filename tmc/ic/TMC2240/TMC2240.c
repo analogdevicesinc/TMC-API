@@ -142,7 +142,8 @@ void tmc2240_initCache()
         {
             for (id = 0; id < TMC2240_IC_CACHE_COUNT; id++)
             {
-                tmc2240_cache(id, TMC2240_CACHE_FILL_DEFAULT, i, &tmc2240_RegisterConstants[j].value);
+                uint32_t temp = tmc2240_RegisterConstants[j].value;
+                tmc2240_cache(id, TMC2240_CACHE_FILL_DEFAULT, i, &temp);
             }
         }
     }
@@ -199,7 +200,7 @@ void tmc2240_writeRegister(uint16_t icID, uint8_t address, int32_t value)
         writeRegisterUART(icID, address, value);
     }
     //Cache the registers with write-only access
-    tmc2240_cache(icID, TMC2240_CACHE_WRITE, address, &value);
+    tmc2240_cache(icID, TMC2240_CACHE_WRITE, address, (uint32_t *)&value);
 }
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)

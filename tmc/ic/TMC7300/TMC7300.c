@@ -143,7 +143,8 @@ void tmc7300_initCache()
         {
             for (id = 0; id < TMC7300_IC_CACHE_COUNT; id++)
             {
-                tmc7300_cache(id, TMC7300_CACHE_FILL_DEFAULT, i, &tmc7300_RegisterConstants[j].value);
+                uint32_t temp = tmc7300_RegisterConstants[j].value;
+                tmc7300_cache(id, TMC7300_CACHE_FILL_DEFAULT, i, &temp);
             }
         }
     }
@@ -229,7 +230,7 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value )
 
     // Write to the shadow register and mark the register dirty
     //Cache the registers with write-only access
-    tmc7300_cache(icID, TMC7300_CACHE_WRITE, registerAddress, &value);
+    tmc7300_cache(icID, TMC7300_CACHE_WRITE, registerAddress, (uint32_t *)&value);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)

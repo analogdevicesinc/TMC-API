@@ -97,7 +97,7 @@ void tmc5041_initCache()
    if(ARRAY_SIZE(tmc5041_RegisterConstants) == 0)
        return;
 
-   size_t i, j, id, motor;
+   size_t i, j, id;
 
    for(i = 0, j = 0; i < TMC5041_REGISTER_COUNT; i++)
    {
@@ -121,7 +121,8 @@ void tmc5041_initCache()
        {
            for (id = 0; id < TMC5041_IC_CACHE_COUNT; id++)
            {
-               tmc5041_cache(id, TMC5041_CACHE_FILL_DEFAULT, i, &tmc5041_RegisterConstants[j].value);
+               uint32_t temp = tmc5041_RegisterConstants[j].value;
+               tmc5041_cache(id, TMC5041_CACHE_FILL_DEFAULT, i, &temp);
            }
        }
    }
@@ -189,5 +190,5 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
     tmc5041_readWriteSPI(icID, &data[0], sizeof(data));
 
     //Cache the registers with write-only access
-    tmc5041_cache(icID, TMC5041_CACHE_WRITE, address, &value);
+    tmc5041_cache(icID, TMC5041_CACHE_WRITE, address, (uint32_t *)&value);
 }

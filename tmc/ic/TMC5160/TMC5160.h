@@ -145,7 +145,9 @@ typedef struct
 #define R70 0xC40C001E  // PWMCONF
 
 #define ____ 0x00
-#define N_A 0x00
+#ifndef N_A
+    #define N_A 0x00
+#endif
 
 static const int32_t tmc5160_sampleRegisterPreset[TMC5160_REGISTER_COUNT] =
 {

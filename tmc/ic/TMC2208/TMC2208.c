@@ -188,7 +188,7 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
     tmc2208_readWriteUART(icID, &data[0], 8, 0);
 
     //Cache the registers with write-only access
-    tmc2208_cache(icID, TMC2208_CACHE_WRITE, registerAddress, &value);
+    tmc2208_cache(icID, TMC2208_CACHE_WRITE, registerAddress, (uint32_t *)&value);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)

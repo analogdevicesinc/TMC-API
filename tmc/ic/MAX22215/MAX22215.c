@@ -52,5 +52,5 @@ void writeRegisterIIC(uint16_t icID, uint8_t address, int32_t value)
     data[1] = address;  //register address
     data[2] = 0xFF & value;
 
-    IICMasterWrite(data[0], &data[1], 2);
+    max22215_readWriteIIC(icID, &data[0], 2,0);
 }

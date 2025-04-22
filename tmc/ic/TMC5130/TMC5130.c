@@ -142,7 +142,8 @@ void tmc5130_initCache()
         {
             for (id = 0; id < TMC5130_IC_CACHE_COUNT; id++)
             {
-            tmc5130_cache(id, TMC5130_CACHE_FILL_DEFAULT, i, &tmc5130_RegisterConstants[j].value);
+                uint32_t temp = tmc5130_RegisterConstants[j].value;
+                tmc5130_cache(id, TMC5130_CACHE_FILL_DEFAULT, i, &temp);
             }
         }
     }
@@ -235,7 +236,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
 	tmc5130_readWriteSPI(icID, &data[0], sizeof(data));
 
 	//Cache the registers with write-only access
-	tmc5130_cache(icID, TMC5130_CACHE_WRITE, address, &value);
+	tmc5130_cache(icID, TMC5130_CACHE_WRITE, address, (uint32_t *)&value);
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
@@ -287,13 +288,12 @@ void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
 	tmc5130_readWriteUART(icID, &data[0], 8, 0);
 
 	//Cache the registers with write-only access
-	tmc5130_cache(icID, TMC5130_CACHE_WRITE, registerAddress, &value);
+	tmc5130_cache(icID, TMC5130_CACHE_WRITE, registerAddress, (uint32_t *)&value);
 }
 
 static uint8_t CRC8(uint8_t *data, uint32_t bytes)
 {
 	uint8_t result = 0;
-	uint8_t *table;
 
 	while(bytes--)
 		result = tmcCRCTable_Poly7Reflected[result ^ *data++];

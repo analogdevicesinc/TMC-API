@@ -165,7 +165,9 @@ typedef struct
 #define R7C R6C
 
 #define ____ 0x00
-#define N_A 0x00
+#ifndef N_A
+    #define N_A 0x00
+#endif
 
 static const int32_t tmc5062_sampleRegisterPreset[TMC5062_REGISTER_COUNT] = {
 //  0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F

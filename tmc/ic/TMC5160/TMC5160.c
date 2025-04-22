@@ -138,7 +138,8 @@ void tmc5160_initCache()
         {
             for (id = 0; id < TMC5160_IC_CACHE_COUNT; id++)
             {
-                tmc5160_cache(id, TMC5160_CACHE_FILL_DEFAULT, i, &tmc5160_RegisterConstants[j].value);
+                uint32_t temp = tmc5160_RegisterConstants[j].value;
+                tmc5160_cache(id, TMC5160_CACHE_FILL_DEFAULT, i, &temp);
             }
         }
     }
@@ -228,7 +229,7 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
     tmc5160_readWriteSPI(icID, &data[0], sizeof(data));
 
     //Cache the registers with write-only access
-    tmc5160_cache(icID, TMC5160_CACHE_WRITE, address, &value);
+    tmc5160_cache(icID, TMC5160_CACHE_WRITE, address, (uint32_t *)&value);
 }
 
 int32_t readRegisterUART(uint16_t icID, uint8_t address)
@@ -279,7 +280,7 @@ void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)
     tmc5160_readWriteUART(icID, &data[0], 8, 0);
 
     //Cache the registers with write-only access
-    tmc5160_cache(icID, TMC5160_CACHE_WRITE, address, &value);
+    tmc5160_cache(icID, TMC5160_CACHE_WRITE, address, (uint32_t *)&value);
 }
 
 void tmc5160_rotateMotor(uint16_t icID, uint8_t motor, int32_t velocity)

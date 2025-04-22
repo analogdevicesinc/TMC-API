@@ -39,7 +39,7 @@
 #endif
 
 /******************************************************************************/
-
+extern void tmc5041_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
 
 /************************************************************* read / write Implementation *********************************************************************/
 int32_t tmc5041_readRegister(uint16_t icID, uint8_t address);
