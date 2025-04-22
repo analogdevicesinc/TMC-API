@@ -34,6 +34,10 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
+**Version 3.11.0: (Released)**
+- Added MAX22215 to the API.
+- Various bug fixes and code cleanup.
+
 **Version 3.10.10: (Released)**
 - Completed API rework for TMC4361A.
 
