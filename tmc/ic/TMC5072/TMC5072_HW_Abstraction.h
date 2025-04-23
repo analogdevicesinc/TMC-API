@@ -151,52 +151,52 @@
 #define TMC5072_TEST_SEL_FIELD(motor)           ((RegisterField) {TMC5072_TEST_SEL_MASK, TMC5072_TEST_SEL_SHIFT, TMC5072_SLAVECONF, false})
 #define TMC5072_IO0_IN_MASK              0x00000001
 #define TMC5072_IO0_IN_SHIFT             0
-#define TMC5072_IO0_IN_FIELD(motor)             ((RegisterField) {TMC5072_IO0_IN_MASK, TMC5072_IO0_IN_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IO0_IN_FIELD(motor)             ((RegisterField) {TMC5072_IO0_IN_MASK, TMC5072_IO0_IN_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_IO1_IN_MASK              0x00000002
 #define TMC5072_IO1_IN_SHIFT             1
-#define TMC5072_IO1_IN_FIELD(motor)             ((RegisterField) {TMC5072_IO1_IN_MASK, TMC5072_IO1_IN_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IO1_IN_FIELD(motor)             ((RegisterField) {TMC5072_IO1_IN_MASK, TMC5072_IO1_IN_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_IO2_IN_MASK              0x00000004
 #define TMC5072_IO2_IN_SHIFT             2
-#define TMC5072_IO2_IN_FIELD(motor)             ((RegisterField) {TMC5072_IO2_IN_MASK, TMC5072_IO2_IN_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IO2_IN_FIELD(motor)             ((RegisterField) {TMC5072_IO2_IN_MASK, TMC5072_IO2_IN_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_IO3_IN_MASK              0x00000008
 #define TMC5072_IO3_IN_SHIFT             3
-#define TMC5072_IO3_IN_FIELD(motor)             ((RegisterField) {TMC5072_IO3_IN_MASK, TMC5072_IO3_IN_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IO3_IN_FIELD(motor)             ((RegisterField) {TMC5072_IO3_IN_MASK, TMC5072_IO3_IN_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_IOP_IN_MASK              0x00000010
 #define TMC5072_IOP_IN_SHIFT             4
-#define TMC5072_IOP_IN_FIELD(motor)             ((RegisterField) {TMC5072_IOP_IN_MASK, TMC5072_IOP_IN_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IOP_IN_FIELD(motor)             ((RegisterField) {TMC5072_IOP_IN_MASK, TMC5072_IOP_IN_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_ION_IN_MASK              0x00000020
 #define TMC5072_ION_IN_SHIFT             5
-#define TMC5072_ION_IN_FIELD(motor)             ((RegisterField) {TMC5072_ION_IN_MASK, TMC5072_ION_IN_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_ION_IN_FIELD(motor)             ((RegisterField) {TMC5072_ION_IN_MASK, TMC5072_ION_IN_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_NEXTADDR_IN_MASK         0x00000040
 #define TMC5072_NEXTADDR_IN_SHIFT        6
-#define TMC5072_NEXTADDR_IN_FIELD(motor)        ((RegisterField) {TMC5072_NEXTADDR_IN_MASK, TMC5072_NEXTADDR_IN_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_NEXTADDR_IN_FIELD(motor)        ((RegisterField) {TMC5072_NEXTADDR_IN_MASK, TMC5072_NEXTADDR_IN_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_DRV_ENN_MASK             0x00000080
 #define TMC5072_DRV_ENN_SHIFT            7
-#define TMC5072_DRV_ENN_FIELD(motor)            ((RegisterField) {TMC5072_DRV_ENN_MASK, TMC5072_DRV_ENN_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_DRV_ENN_FIELD(motor)            ((RegisterField) {TMC5072_DRV_ENN_MASK, TMC5072_DRV_ENN_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_SW_COMP_IN_MASK          0x00000100
 #define TMC5072_SW_COMP_IN_SHIFT         8
-#define TMC5072_SW_COMP_IN_FIELD(motor)         ((RegisterField) {TMC5072_SW_COMP_IN_MASK, TMC5072_SW_COMP_IN_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_SW_COMP_IN_FIELD(motor)         ((RegisterField) {TMC5072_SW_COMP_IN_MASK, TMC5072_SW_COMP_IN_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_VERSION_MASK             0xFF000000
 #define TMC5072_VERSION_SHIFT            24
-#define TMC5072_VERSION_FIELD(motor)            ((RegisterField) {TMC5072_VERSION_MASK, TMC5072_VERSION_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_VERSION_FIELD(motor)            ((RegisterField) {TMC5072_VERSION_MASK, TMC5072_VERSION_SHIFT, TMC5072_INPUT, false})
 #define TMC5072_IO0_OUT_MASK             0x00000001
 #define TMC5072_IO0_OUT_SHIFT            0
-#define TMC5072_IO0_OUT_FIELD(motor)            ((RegisterField) {TMC5072_IO0_OUT_MASK, TMC5072_IO0_OUT_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IO0_OUT_FIELD(motor)            ((RegisterField) {TMC5072_IO0_OUT_MASK, TMC5072_IO0_OUT_SHIFT, TMC5072_OUTPUT, false})
 #define TMC5072_IO1_OUT_MASK             0x00000002
 #define TMC5072_IO1_OUT_SHIFT            1
-#define TMC5072_IO1_OUT_FIELD(motor)            ((RegisterField) {TMC5072_IO1_OUT_MASK, TMC5072_IO1_OUT_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IO1_OUT_FIELD(motor)            ((RegisterField) {TMC5072_IO1_OUT_MASK, TMC5072_IO1_OUT_SHIFT, TMC5072_OUTPUT, false})
 #define TMC5072_IO2_OUT_MASK             0x00000004
 #define TMC5072_IO2_OUT_SHIFT            2
-#define TMC5072_IO2_OUT_FIELD(motor)            ((RegisterField) {TMC5072_IO2_OUT_MASK, TMC5072_IO2_OUT_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IO2_OUT_FIELD(motor)            ((RegisterField) {TMC5072_IO2_OUT_MASK, TMC5072_IO2_OUT_SHIFT, TMC5072_OUTPUT, false})
 #define TMC5072_IODDR0_MASK              0x00000100
 #define TMC5072_IODDR0_SHIFT             8
-#define TMC5072_IODDR0_FIELD(motor)             ((RegisterField) {TMC5072_IODDR0_MASK, TMC5072_IODDR0_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IODDR0_FIELD(motor)             ((RegisterField) {TMC5072_IODDR0_MASK, TMC5072_IODDR0_SHIFT, TMC5072_OUTPUT, false})
 #define TMC5072_IODDR1_MASK              0x00000200
 #define TMC5072_IODDR1_SHIFT             9
-#define TMC5072_IODDR1_FIELD(motor)             ((RegisterField) {TMC5072_IODDR1_MASK, TMC5072_IODDR1_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IODDR1_FIELD(motor)             ((RegisterField) {TMC5072_IODDR1_MASK, TMC5072_IODDR1_SHIFT, TMC5072_OUTPUT, false})
 #define TMC5072_IODDR2_MASK              0x00000400
 #define TMC5072_IODDR2_SHIFT             10
-#define TMC5072_IODDR2_FIELD(motor)             ((RegisterField) {TMC5072_IODDR2_MASK, TMC5072_IODDR2_SHIFT, TMC5072_INPUT / OUTPUT, false})
+#define TMC5072_IODDR2_FIELD(motor)             ((RegisterField) {TMC5072_IODDR2_MASK, TMC5072_IODDR2_SHIFT, TMC5072_OUTPUT, false})
 #define TMC5072_X_COMPARE_MASK           0xFFFFFFFF
 #define TMC5072_X_COMPARE_SHIFT          0
 #define TMC5072_X_COMPARE_FIELD(motor)          ((RegisterField) {TMC5072_X_COMPARE_MASK, TMC5072_X_COMPARE_SHIFT, TMC5072_X_COMPARE, false})
