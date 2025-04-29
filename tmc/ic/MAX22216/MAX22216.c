@@ -32,101 +32,69 @@ const uint8_t tmcCRCTable_Poly110101[256] = {
 #endif
 
 static uint16_t readRegisterSPI(uint16_t icID, uint8_t address);
-static uint16_t readRegisterSPI_CRC_EN(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, uint16_t value);
-static void writeRegisterSPI_CRC_EN(uint16_t icID, uint8_t address, uint16_t value);
 
 uint16_t max22216_readRegister(uint16_t icID, uint8_t address)
 {
-    if (max22216_getCRCEnState())
-    {
-        return readRegisterSPI_CRC_EN(icID, address);
-    }
-    else
-    {
-        return readRegisterSPI(icID, address);
-    }
+    return readRegisterSPI(icID, address);
 }
 
 void max22216_writeRegister(uint16_t icID, uint8_t address, uint16_t value)
 {
-    if (max22216_getCRCEnState())
-    {
-        writeRegisterSPI_CRC_EN(icID, address, value);
-    }
-    else
-    {
-        writeRegisterSPI(icID, address, value);
-    }
-}
-
-uint16_t readRegisterSPI_CRC_EN(uint16_t icID, uint8_t address)
-{
-    uint8_t data[4] = {0};
-
-    // clear write bit
-    data[0] = address & MAX22216_ADDRESS_MASK;
-
-    // Generate the CRC value for comparison
-    data[3] = max22216_CRC(&data[0], 3);
-
-    // Send the read request
-    max22216_readWriteSPI(icID, &data[0], sizeof(data));
-
-    // Rewrite address and clear write bit
-    data[0] = address & MAX22216_ADDRESS_MASK;
-
-    // Generate the CRC value for comparison
-    data[3] = max22216_CRC(&data[0], 3);
-
-    // Send another request to receive the read reply
-    max22216_readWriteSPI(icID, &data[0], sizeof(data));
-
-    return ((uint16_t) data[1] << 8) | ((uint16_t) data[2]);
+    writeRegisterSPI(icID, address, value);
 }
 
 uint16_t readRegisterSPI(uint16_t icID, uint8_t address)
 {
-    uint8_t data[3] = {0};
+    uint8_t data[4] = {0};
 
     // clear write bit
     data[0] = address & MAX22216_ADDRESS_MASK;
 
+    bool useCRC = max22216_getCRCEnState();
+
+    if (useCRC)
+    {
+        // Generate the CRC value for comparison
+        data[3] = max22216_CRC(&data[0], 3);
+    }
+
     // Send the read request
-    max22216_readWriteSPI(icID, &data[0], sizeof(data));
+    max22216_readWriteSPI(icID, &data[0], useCRC? 4:3);
 
     // Rewrite address and clear write bit
     data[0] = address & MAX22216_ADDRESS_MASK;
 
+    if (useCRC)
+    {
+        // Generate the CRC value for comparison
+        data[3] = max22216_CRC(&data[0], 3);
+    }
+
     // Send another request to receive the read reply
-    max22216_readWriteSPI(icID, &data[0], sizeof(data));
+    max22216_readWriteSPI(icID, &data[0], useCRC? 4:3);
 
     return ((uint16_t) data[1] << 8) | ((uint16_t) data[2]);
 }
 
-void writeRegisterSPI_CRC_EN(uint16_t icID, uint8_t address, uint16_t value)
+void writeRegisterSPI(uint16_t icID, uint8_t address, uint16_t value)
 {
     uint8_t data[4] = {0};
 
-    data[0] = address | MAX22216_WRITE_BIT;
-    data[1] = ((value >> 8) & 0xFF);
-    data[2] = value & 0xFF;
-    data[3] = max22216_CRC(&data[0], 3);
-
-    // Send the write request
-    max22216_readWriteSPI(icID, &data[0], sizeof(data));
-}
-
-void writeRegisterSPI(uint16_t icID, uint8_t address, uint16_t value)
-{
-    uint8_t data[3] = {0};
+    bool useCRC = max22216_getCRCEnState();
 
     data[0] = address | MAX22216_WRITE_BIT;
     data[1] = ((value >> 8) & 0xFF);
     data[2] = value & 0xFF;
 
+    if (useCRC)
+    {
+        // Generate the CRC value for comparison
+        data[3] = max22216_CRC(&data[0], 3);
+    }
+
     // Send the write request
-    max22216_readWriteSPI(icID, &data[0], sizeof(data));
+    max22216_readWriteSPI(icID, &data[0], useCRC? 4:3);
 }
 
 // length in bytes
