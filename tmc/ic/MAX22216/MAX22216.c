@@ -8,6 +8,29 @@
 
 #include "MAX22216.h"
 
+#ifdef TMC_API_EXTERNAL_CRC_TABLE
+extern const uint8_t tmcCRCTable_Poly110101[256];
+#else
+const uint8_t tmcCRCTable_Poly110101[256] = {
+        0x00, 0x16, 0x19, 0x0F, 0x07, 0x11, 0x1E, 0x08, 0x0E, 0x18, 0x17, 0x01, 0x09, 0x1F, 0x10, 0x06,
+        0x1C, 0x0A, 0x05, 0x13, 0x1B, 0x0D, 0x02, 0x14, 0x12, 0x04, 0x0B, 0x1D, 0x15, 0x03, 0x0C, 0x1A,
+        0x0D, 0x1B, 0x14, 0x02, 0x0A, 0x1C, 0x13, 0x05, 0x03, 0x15, 0x1A, 0x0C, 0x04, 0x12, 0x1D, 0x0B,
+        0x11, 0x07, 0x08, 0x1E, 0x16, 0x00, 0x0F, 0x19, 0x1F, 0x09, 0x06, 0x10, 0x18, 0x0E, 0x01, 0x17,
+        0x1A, 0x0C, 0x03, 0x15, 0x1D, 0x0B, 0x04, 0x12, 0x14, 0x02, 0x0D, 0x1B, 0x13, 0x05, 0x0A, 0x1C,
+        0x06, 0x10, 0x1F, 0x09, 0x01, 0x17, 0x18, 0x0E, 0x08, 0x1E, 0x11, 0x07, 0x0F, 0x19, 0x16, 0x00,
+        0x17, 0x01, 0x0E, 0x18, 0x10, 0x06, 0x09, 0x1F, 0x19, 0x0F, 0x00, 0x16, 0x1E, 0x08, 0x07, 0x11,
+        0x0B, 0x1D, 0x12, 0x04, 0x0C, 0x1A, 0x15, 0x03, 0x05, 0x13, 0x1C, 0x0A, 0x02, 0x14, 0x1B, 0x0D,
+        0x01, 0x17, 0x18, 0x0E, 0x06, 0x10, 0x1F, 0x09, 0x0F, 0x19, 0x16, 0x00, 0x08, 0x1E, 0x11, 0x07,
+        0x1D, 0x0B, 0x04, 0x12, 0x1A, 0x0C, 0x03, 0x15, 0x13, 0x05, 0x0A, 0x1C, 0x14, 0x02, 0x0D, 0x1B,
+        0x0C, 0x1A, 0x15, 0x03, 0x0B, 0x1D, 0x12, 0x04, 0x02, 0x14, 0x1B, 0x0D, 0x05, 0x13, 0x1C, 0x0A,
+        0x10, 0x06, 0x09, 0x1F, 0x17, 0x01, 0x0E, 0x18, 0x1E, 0x08, 0x07, 0x11, 0x19, 0x0F, 0x00, 0x16,
+        0x1B, 0x0D, 0x02, 0x14, 0x1C, 0x0A, 0x05, 0x13, 0x15, 0x03, 0x0C, 0x1A, 0x12, 0x04, 0x0B, 0x1D,
+        0x07, 0x11, 0x1E, 0x08, 0x00, 0x16, 0x19, 0x0F, 0x09, 0x1F, 0x10, 0x06, 0x0E, 0x18, 0x17, 0x01,
+        0x16, 0x00, 0x0F, 0x19, 0x11, 0x07, 0x08, 0x1E, 0x18, 0x0E, 0x01, 0x17, 0x1F, 0x09, 0x06, 0x10,
+        0x0A, 0x1C, 0x13, 0x05, 0x0D, 0x1B, 0x14, 0x02, 0x04, 0x12, 0x1D, 0x0B, 0x03, 0x15, 0x1A, 0x0C,
+};
+#endif
+
 static uint16_t readRegisterSPI(uint16_t icID, uint8_t address);
 static uint16_t readRegisterSPI_CRC_EN(uint16_t icID, uint8_t address);
 static void writeRegisterSPI(uint16_t icID, uint8_t address, uint16_t value);
@@ -45,7 +68,7 @@ uint16_t readRegisterSPI_CRC_EN(uint16_t icID, uint8_t address)
     data[0] = address & MAX22216_ADDRESS_MASK;
 
     // Generate the CRC value for comparison
-    data[3] = max22216_CRC(&data[0], 27);
+    data[3] = max22216_CRC(&data[0], 3);
 
     // Send the read request
     max22216_readWriteSPI(icID, &data[0], sizeof(data));
@@ -54,7 +77,7 @@ uint16_t readRegisterSPI_CRC_EN(uint16_t icID, uint8_t address)
     data[0] = address & MAX22216_ADDRESS_MASK;
 
     // Generate the CRC value for comparison
-    data[3] = max22216_CRC(&data[0], 27);
+    data[3] = max22216_CRC(&data[0], 3);
 
     // Send another request to receive the read reply
     max22216_readWriteSPI(icID, &data[0], sizeof(data));
@@ -88,7 +111,7 @@ void writeRegisterSPI_CRC_EN(uint16_t icID, uint8_t address, uint16_t value)
     data[0] = address | MAX22216_WRITE_BIT;
     data[1] = ((value >> 8) & 0xFF);
     data[2] = value & 0xFF;
-    data[3] = max22216_CRC(&data[0], 27);
+    data[3] = max22216_CRC(&data[0], 3);
 
     // Send the write request
     max22216_readWriteSPI(icID, &data[0], sizeof(data));
@@ -106,36 +129,14 @@ void writeRegisterSPI(uint16_t icID, uint8_t address, uint16_t value)
     max22216_readWriteSPI(icID, &data[0], sizeof(data));
 }
 
-// length in bits
+// length in bytes
 uint8_t max22216_CRC(uint8_t *data, size_t length)
 {
-    uint8_t crc = 0b11111;
-    uint8_t crc_old;
+    uint8_t crc = 0b11111000;
 
     for (size_t i = 0; i < length; i++)
     {
-
-        crc_old = crc;
-
-        // define the data field dynamically
-        uint8_t data_SHIFT                = 7 - (i % 8);
-        uint8_t data_MASK                 = (1 << data_SHIFT);
-        RegisterField MAX22216_data_FIELD = (RegisterField){data_MASK, data_SHIFT, __None__, false};
-
-        crc = max22216_fieldUpdate(crc, MAX22216_CRC5_FIELD, max22216_fieldExtract(crc_old, MAX22216_CRC4_FIELD));
-        crc = max22216_fieldUpdate(crc, MAX22216_CRC4_FIELD, \
-                                   max22216_fieldExtract(crc_old, MAX22216_CRC3_FIELD) ^ \
-                                   max22216_fieldExtract(crc_old, MAX22216_CRC4_FIELD) ^ \
-                                   max22216_fieldExtract(data[i / 8], MAX22216_data_FIELD));
-        crc = max22216_fieldUpdate(crc, MAX22216_CRC3_FIELD, max22216_fieldExtract(crc_old, MAX22216_CRC2_FIELD));
-        crc = max22216_fieldUpdate(crc, MAX22216_CRC2_FIELD, \
-                                   max22216_fieldExtract(crc_old, MAX22216_CRC1_FIELD) ^ \
-                                   max22216_fieldExtract(crc_old, MAX22216_CRC4_FIELD) ^ \
-                                   max22216_fieldExtract(data[i / 8], MAX22216_data_FIELD));
-        crc = max22216_fieldUpdate(crc, MAX22216_CRC1_FIELD, max22216_fieldExtract(crc_old, MAX22216_CRC0_FIELD));
-        crc = max22216_fieldUpdate(crc, MAX22216_CRC0_FIELD, \
-                                   max22216_fieldExtract(crc_old, MAX22216_CRC4_FIELD) ^ \
-                                   max22216_fieldExtract(data[i / 8], MAX22216_data_FIELD));
+        crc = tmcCRCTable_Poly110101[crc ^ data[i]];
     }
-    return (crc & 0x1F);
+    return crc;
 }

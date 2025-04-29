@@ -34,6 +34,9 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
+**Version 3.11.1: (WIP)**
+- Reworked MAX22216 CRC calculation to be more efficient. This is a backwards-incompatible change for anyone using the CRC calculation function max22216_CRC() directly.
+
 **Version 3.11.0: (Released)**
 - Added MAX22215 to the API.
 - Various bug fixes and code cleanup.
