@@ -160,6 +160,30 @@ static const uint8_t tmc5240_registerAccess[TMC5240_REGISTER_COUNT] =
 	0x03, 0x01, 0x01, ____, 0x03, 0x01, 0x01, ____, ____, ____, ____, ____, ____, ____, ____, ____  // 0x70 - 0x7F
 };
 
+// Undefine the default register values.
+// This prevents warnings in case multiple TMC-API chip headers are included at once
+#undef R00
+#undef R0A
+#undef R10
+#undef R11
+#undef R2A
+#undef R2B
+#undef R30
+#undef R3A
+#undef R52
+#undef R60
+#undef R61
+#undef R62
+#undef R63
+#undef R64
+#undef R65
+#undef R66
+#undef R67
+#undef R68
+#undef R69
+#undef R6C
+#undef R70
+
 /*******************************************************************************************************************************************************************/
 
 #endif /* TMC_IC_TMC5240_H_ */
