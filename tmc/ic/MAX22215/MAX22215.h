@@ -14,7 +14,7 @@
 
 typedef enum {
     IC_BUS_SPI,
-    IC_BUS_IIC,
+    IC_BUS_I2C,
 } MAX22215BusType;
 
 typedef struct
@@ -26,7 +26,7 @@ typedef struct
 } RegisterField;
 
 // => TMC-API wrapper
-extern bool max22215_readWriteIIC(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern bool max22215_readWriteI2C(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
 extern MAX22215BusType max22215_getBusType(uint16_t icID);
 extern uint8_t max22215_getDeviceAddress(uint16_t icID);
 // => TMC-API wrapper
