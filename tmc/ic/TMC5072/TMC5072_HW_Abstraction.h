@@ -134,6 +134,9 @@
 #define TMC5072_DRV_ERR1_MASK            0x00000002
 #define TMC5072_DRV_ERR1_SHIFT           1
 #define TMC5072_DRV_ERR1_FIELD(motor)           ((RegisterField) {TMC5072_DRV_ERR1_MASK, TMC5072_DRV_ERR1_SHIFT, TMC5072_GSTAT, false})
+#define TMC5072_DRV_ERR2_MASK            0x00000002
+#define TMC5072_DRV_ERR2_SHIFT           2
+#define TMC5072_DRV_ERR2_FIELD(motor)           ((RegisterField) {TMC5072_DRV_ERR2_MASK, TMC5072_DRV_ERR2_SHIFT, TMC5072_GSTAT, false})
 #define TMC5072_UV_CP_MASK               0x00000008
 #define TMC5072_UV_CP_SHIFT              3
 #define TMC5072_UV_CP_FIELD(motor)              ((RegisterField) {TMC5072_UV_CP_MASK, TMC5072_UV_CP_SHIFT, TMC5072_GSTAT, false})
