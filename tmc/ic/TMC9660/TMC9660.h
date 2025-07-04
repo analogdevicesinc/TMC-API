@@ -1,0 +1,133 @@
+/*******************************************************************************
+* Copyright © 2025 Analog Devices Inc. All Rights Reserved.
+* This software is proprietary to Analog Devices, Inc. and its licensors.
+*******************************************************************************/
+
+
+#ifndef TMC_IC_TMC9660_H_
+#define TMC_IC_TMC9660_H_
+
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+
+/*******************************************************************************
+* API Configuration Defines
+* These control optional features of the TMC-API implementation.
+* These can be commented in/out here or defined from the build system.
+*******************************************************************************/
+
+// Uncomment if you want to save space.....
+// and put the table into your own .c file
+//#define TMC_API_EXTERNAL_CRC_TABLE 1
+
+
+/*** TMC9660 constants ********************************************************/
+typedef enum TMC9660BusType_ {
+    TMC9660_BUS_SPI,
+    TMC9660_BUS_UART,
+} TMC9660BusType;
+
+typedef struct TMC9660BusAddresses_ {
+    uint8_t device;
+    uint8_t host;
+} TMC9660BusAddresses;
+
+typedef enum TMC9660Command_ {
+    TMC9660_CMD_MST             = 3,
+
+    TMC9660_CMD_SAP             = 5,
+    TMC9660_CMD_GAP             = 6,
+    TMC9660_CMD_STAP            = 7,
+
+    TMC9660_CMD_SGP             = 9,
+    TMC9660_CMD_GGP             = 10,
+
+    TMC9660_CMD_RFS             = 13,
+    TMC9660_CMD_SIO             = 14,
+    TMC9660_CMD_GIO             = 15,
+
+    TMC9660_CMD_CALC            = 19,
+    TMC9660_CMD_COMP            = 20,
+    TMC9660_CMD_JC              = 21,
+    TMC9660_CMD_JA              = 22,
+    TMC9660_CMD_CSUB            = 23,
+    TMC9660_CMD_RSUB            = 24,
+    TMC9660_CMD_EI              = 25,
+    TMC9660_CMD_DI              = 26,
+    TMC9660_CMD_WAIT            = 27,
+    TMC9660_CMD_STOP            = 28,
+
+    TMC9660_CMD_CALCX           = 33,
+    TMC9660_CMD_AAP             = 34,
+    TMC9660_CMD_AGP             = 35,
+    TMC9660_CMD_CLE             = 36,
+    TMC9660_CMD_VECT            = 37,
+    TMC9660_CMD_RETI            = 38,
+
+    TMC9660_CMD_CALCVV          = 40,
+    TMC9660_CMD_CALCVA          = 41,
+    TMC9660_CMD_CALCAV          = 42,
+    TMC9660_CMD_CALCVX          = 43,
+    TMC9660_CMD_CALCXV          = 44,
+    TMC9660_CMD_CALCV           = 45,
+
+    TMC9660_CMD_RST             = 48,
+    TMC9660_CMD_DJNZ            = 49,
+
+    TMC9660_CMD_SIV             = 55,
+    TMC9660_CMD_GIV             = 56,
+    TMC9660_CMD_AIV             = 57,
+
+    TMC9660_CMD_APPL_STOP       = 128,
+    TMC9660_CMD_APPL_RUN        = 129,
+    TMC9660_CMD_APPL_STEP       = 130,
+    TMC9660_CMD_APPL_RESET      = 131,
+    TMC9660_CMD_DOWNLOAD_START  = 132,
+    TMC9660_CMD_DOWNLOAD_END    = 133,
+    TMC9660_CMD_READ_MEM        = 134,
+    TMC9660_CMD_GET_STATUS      = 135,
+    TMC9660_CMD_GET_VERSION     = 136,
+    TMC9660_CMD_FACTORY_DEFAULT = 137,
+
+    TMC9660_CMD_BREAKPOINT      = 141,
+    TMC9660_CMD_RAMDEBUG        = 142,
+
+    TMC9660_CMD_GET_INFO        = 157,
+
+    TMC9660_CMD_BOOT            = 242,
+} TMC9660Command;
+
+typedef enum TMC9660ParamStatus_ {
+    TMC9660_PARAMSTATUS_CHKERROR                  = 1,  // Checksum error during communication
+    TMC9660_PARAMSTATUS_INVALID_CMD               = 2,  // Invalid command number
+    TMC9660_PARAMSTATUS_WRONG_TYPE                = 3,  // Invalid type number
+    TMC9660_PARAMSTATUS_INVALID_VALUE             = 4,  // Invalid value
+    TMC9660_PARAMSTATUS_CMD_NOT_AVAILABLE         = 6,  // Command currently not available
+    TMC9660_PARAMSTATUS_CMD_LOAD_ERROR            = 7,  // Failed to load command into script memory
+    TMC9660_PARAMSTATUS_MAX_EXCEEDED              = 9,  // Maximum exceeded
+    TMC9660_PARAMSTATUS_CMD_DOWNLOAD_NOT_POSSIBLE = 10, // Loading into script memory not available
+
+    TMC9660_PARAMSTATUS_OK                        = 100, // Success
+    TMC9660_PARAMSTATUS_CMD_LOADED                = 101, // Command successfully loaded into script memory
+} TMC9660ParamStatus;
+
+/*** TMC-API wrapper functions ************************************************/
+//extern void tmc9660_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
+extern bool tmc9660_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+
+extern TMC9660BusType tmc9660_getBusType(uint16_t icID);
+extern TMC9660BusAddresses tmc9660_getBusAddresses(uint16_t icID);
+
+/*** TMC9660 Parameter Mode functions *****************************************/
+int32_t tmc9660_param_sendCommand(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint32_t *readValue);
+
+uint32_t tmc9660_param_getParameter(uint16_t icID, uint16_t type);
+bool tmc9660_param_setParameter(uint16_t icID, uint16_t type, uint32_t value);
+
+uint32_t tmc9660_param_getGlobalParameter(uint16_t icID, uint16_t index);
+bool tmc9660_param_setGlobalParameter(uint16_t icID, uint16_t index, uint32_t value);
+
+/******************************************************************************/
+
+#endif /* TMC_IC_TMC9660_H_ */
