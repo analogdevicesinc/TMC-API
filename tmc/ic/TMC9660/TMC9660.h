@@ -33,6 +33,35 @@ typedef struct TMC9660BusAddresses_ {
     uint8_t host;
 } TMC9660BusAddresses;
 
+typedef enum TMC9660BlCommand_ {
+    TMC9660_BLCMD_GET_INFO           = 0,
+    TMC9660_BLCMD_GET_BANK           = 8,
+    TMC9660_BLCMD_SET_BANK           = 9,
+    TMC9660_BLCMD_GET_ADDRESS        = 10,
+    TMC9660_BLCMD_SET_ADDRESS        = 11,
+    TMC9660_BLCMD_READ_32            = 12,
+    TMC9660_BLCMD_READ_32_INC        = 13,
+    TMC9660_BLCMD_READ_16            = 14,
+    TMC9660_BLCMD_READ_16_INC        = 15,
+    TMC9660_BLCMD_READ_8             = 16,
+    TMC9660_BLCMD_READ_8_INC         = 17,
+    TMC9660_BLCMD_WRITE_32           = 18,
+    TMC9660_BLCMD_WRITE_32_INC       = 19,
+    TMC9660_BLCMD_WRITE_16           = 20,
+    TMC9660_BLCMD_WRITE_16_INC       = 21,
+    TMC9660_BLCMD_WRITE_8            = 22,
+    TMC9660_BLCMD_WRITE_8_INC        = 23,
+    TMC9660_BLCMD_NO_OP              = 29,
+    TMC9660_BLCMD_OTP_LOAD           = 30,
+    TMC9660_BLCMD_OTP_BURN           = 31,
+    TMC9660_BLCMD_MEM_ISCONFIGURED   = 32,
+    TMC9660_BLCMD_MEM_ISCONNECTED    = 33,
+    TMC9660_BLCMD_FLASH_SENDCMD      = 36,
+    TMC9660_BLCMD_FLASH_ERASE_SECTOR = 37,
+    TMC9660_BLCMD_MEM_IS_BUSY        = 40,
+    TMC9660_BLCMD_BOOTSTRAP_RS485    = 0xFF,
+} TMC9660BlCommand;
+
 typedef enum TMC9660Command_ {
     TMC9660_CMD_MST             = 3,
 
@@ -118,6 +147,9 @@ extern bool tmc9660_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLeng
 
 extern TMC9660BusType tmc9660_getBusType(uint16_t icID);
 extern TMC9660BusAddresses tmc9660_getBusAddresses(uint16_t icID);
+
+/*** TMC9660 Bootloader Mode functions ****************************************/
+int32_t tmc9660_bl_sendCommand(uint16_t icID, uint8_t cmd, uint32_t writeValue, uint32_t *readValue);
 
 /*** TMC9660 Parameter Mode functions *****************************************/
 int32_t tmc9660_param_sendCommand(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint32_t *readValue);
