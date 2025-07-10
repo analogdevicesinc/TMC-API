@@ -157,7 +157,7 @@ typedef struct{
 #define R2B 0x00000001  // VSTOP
 #define R3A 0x00010000  // ENC_CONST
 #define R52 0x0B920F25  // OTW_OV_VTH
-#define R6C 0x00410153  // CHOPCONF
+#define R6C 0x14410153  // CHOPCONF
 #define R70 0xC44C001E  // PWMCONF
 
 // Register access permissions:
