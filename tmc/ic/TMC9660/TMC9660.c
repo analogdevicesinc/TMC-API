@@ -6,6 +6,14 @@
 
 #include "TMC9660.h"
 
+// ToDo: Make the timing function & callback usable with multiple TMC-API chips in use.
+void tmc_delayMicroseconds(uint32_t microseconds)
+{
+    uint32_t timestamp = tmc_getMicrosecondTimestamp();
+
+    while (tmc_getMicrosecondTimestamp() - timestamp < microseconds);
+}
+
 #ifdef TMC_API_EXTERNAL_CRC_TABLE
 extern const uint8_t tmcCRCTable_Poly7Reflected[256];
 #else

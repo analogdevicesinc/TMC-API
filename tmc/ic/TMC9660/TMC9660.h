@@ -155,6 +155,14 @@ extern bool tmc9660_isFaultPinAsserted(uint16_t icID);
 extern TMC9660BusType tmc9660_getBusType(uint16_t icID);
 extern TMC9660BusAddresses tmc9660_getBusAddresses(uint16_t icID);
 
+// ToDo: Make the timing function & callback usable with multiple TMC-API chips in use.
+extern uint32_t tmc_getMicrosecondTimestamp();
+
+/*** TMC-API shared functions *************************************************/
+
+// ToDo: Make the timing function & callback usable with multiple TMC-API chips in use.
+void tmc_delayMicroseconds(uint32_t microseconds);
+
 /*** TMC9660 general functions ************************************************/
 #if TMC_API_TMC9660_FAULT_PIN_SUPPORTED != 0
 void tmc9660_waitForFaultDeassertion(uint16_t icID);
