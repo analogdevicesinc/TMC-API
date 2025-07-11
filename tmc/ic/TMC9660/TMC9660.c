@@ -93,6 +93,9 @@ static int32_t tmc9660_bl_sendCommand_UART(uint16_t icID, uint8_t cmd, uint32_t 
         *readValue = ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | ((uint32_t)data[5] << 8) | data[6];
     }
 
+    // Workaround: Wait a short moment before proceeding
+    tmc_delayMicroseconds(10);
+
     return data[2];
 }
 
