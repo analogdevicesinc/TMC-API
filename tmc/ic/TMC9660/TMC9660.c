@@ -35,6 +35,14 @@ static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16
 static uint8_t calcParamChecksum(uint8_t *data, uint32_t bytes);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
+/*** General functions implementation ********************************************/
+#if TMC_API_TMC9660_FAULT_PIN_SUPPORTED != 0
+void tmc9660_waitForFaultDeassertion(uint16_t icID)
+{
+    // ToDo: Support timeouts
+    while (tmc9660_isFaultPinAsserted(icID));
+}
+#endif
 
 /*** Bootstrapping code implementation *******************************************/
 

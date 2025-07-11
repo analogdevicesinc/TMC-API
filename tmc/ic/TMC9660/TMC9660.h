@@ -21,6 +21,9 @@
 // and put the table into your own .c file
 //#define TMC_API_EXTERNAL_CRC_TABLE 1
 
+// Uncomment if you want to use fault pin related features
+// If enabled, this requires an additional wrapper function
+//#define TMC_API_TMC9660_FAULT_PIN_SUPPORTED 1
 
 /*** TMC9660 constants ********************************************************/
 typedef enum TMC9660BusType_ {
@@ -145,8 +148,17 @@ typedef enum TMC9660ParamStatus_ {
 //extern void tmc9660_readWriteSPI(uint16_t icID, uint8_t *data, size_t dataLength);
 extern bool tmc9660_readWriteUART(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
 
+#if TMC_API_TMC9660_FAULT_PIN_SUPPORTED != 0
+extern bool tmc9660_isFaultPinAsserted(uint16_t icID);
+#endif
+
 extern TMC9660BusType tmc9660_getBusType(uint16_t icID);
 extern TMC9660BusAddresses tmc9660_getBusAddresses(uint16_t icID);
+
+/*** TMC9660 general functions ************************************************/
+#if TMC_API_TMC9660_FAULT_PIN_SUPPORTED != 0
+void tmc9660_waitForFaultDeassertion(uint16_t icID);
+#endif
 
 /*** TMC9660 Bootloader Mode functions ****************************************/
 int32_t tmc9660_bl_sendCommand(uint16_t icID, uint8_t cmd, uint32_t writeValue, uint32_t *readValue);
