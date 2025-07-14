@@ -6,7 +6,6 @@
 * This software is proprietary to Analog Devices, Inc. and its licensors.
 *******************************************************************************/
 
-
 #include <tmc/ic/MAX22200/MAX22200.h>
 
 static int32_t readRegisterSPI(uint16_t icID, uint8_t address);
