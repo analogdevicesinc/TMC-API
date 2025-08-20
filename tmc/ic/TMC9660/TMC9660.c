@@ -40,6 +40,8 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 // Helper functions
 static int32_t tmc9660_bl_sendCommand_UART(uint16_t icID, uint8_t cmd, uint32_t writeValue, uint32_t *readValue);
 static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint32_t *readValue);
+static int32_t tmc9660_param_getVersionASCII_UART(uint16_t icID, uint8_t *versionString);
+static int32_t tmc9660_param_returnToBootloader_UART(uint16_t icID);
 static int32_t tmc9660_reg_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t registerOffset, uint8_t registerBlock, uint32_t writeValue, uint32_t *readValue);
 
 static uint8_t calcParamChecksum(uint8_t *data, uint32_t bytes);
@@ -137,14 +139,40 @@ int32_t tmc9660_param_sendCommand(uint16_t icID, uint8_t cmd, uint16_t type, uin
     return -1;
 }
 
-static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint32_t *readValue)
+int32_t tmc9660_param_getVersionASCII(uint16_t icID, uint8_t *versionString)
 {
-    // ToDo: GetVersion ASCII special case - custom reply format
-    // ToDo: ReturnToBootloader special case - no reply
+    TMC9660BusType bus = tmc9660_getBusType(icID);
 
-    uint8_t data[9] = { 0 };
-    TMC9660BusAddresses addresses = tmc9660_getBusAddresses(icID);
+    if(bus == TMC9660_BUS_SPI)
+    {
+        // ToDo: SPI support
+    }
+    else if(bus == TMC9660_BUS_UART)
+    {
+        return tmc9660_param_getVersionASCII_UART(icID, versionString);
+    }
 
+    return -1;
+}
+
+int32_t tmc9660_param_returnToBootloader(uint16_t icID)
+{
+    TMC9660BusType bus = tmc9660_getBusType(icID);
+
+    if(bus == TMC9660_BUS_SPI)
+    {
+        // ToDo: SPI support
+    }
+    else if(bus == TMC9660_BUS_UART)
+    {
+        return tmc9660_param_returnToBootloader_UART(icID);
+    }
+
+    return -1;
+}
+
+static bool sendRequestUART(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint8_t *data, TMC9660BusAddresses addresses, bool expectReply)
+{
     // Create the request datagram
     uint8_t syncByte = 0x01 | (addresses.device);
     data[0] = syncByte; // Module Address & sync bit
@@ -157,8 +185,18 @@ static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16
     data[7] = (writeValue) & 0xFF;
     data[8] = calcParamChecksum(&data[0], 8);
 
-    if (!tmc9660_readWriteUART(icID, &data[0], 9, 9))
+    return tmc9660_readWriteUART(icID, &data[0], 9, (expectReply)? 9:0);
+}
+
+static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint32_t *readValue)
+{
+    uint8_t data[9] = { 0 };
+    TMC9660BusAddresses addresses = tmc9660_getBusAddresses(icID);
+
+    if (!sendRequestUART(icID, cmd, type, index, writeValue, data, addresses, true))
         return -2;
+
+    uint8_t syncByte = 0x01 | (addresses.device);
 
     // Unpack the reply
     if (data[0] != addresses.host)
@@ -174,6 +212,37 @@ static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16
     }
 
     return data[2];
+}
+
+static int32_t tmc9660_param_getVersionASCII_UART(uint16_t icID, uint8_t *versionString)
+{
+    uint8_t data[9] = { 0 };
+    TMC9660BusAddresses addresses = tmc9660_getBusAddresses(icID);
+
+    if (!sendRequestUART(icID, TMC9660_CMD_GET_VERSION, 0, 0, 0, data, addresses, true))
+        return -2;
+
+    versionString[0] = data[1];
+    versionString[1] = data[2];
+    versionString[2] = data[3];
+    versionString[3] = data[4];
+    versionString[4] = data[5];
+    versionString[5] = data[6];
+    versionString[6] = data[7];
+    versionString[7] = data[8];
+
+    return 0;
+}
+
+static int32_t tmc9660_param_returnToBootloader_UART(uint16_t icID)
+{
+    uint8_t data[9] = { 0 };
+    TMC9660BusAddresses addresses = tmc9660_getBusAddresses(icID);
+
+    if (!sendRequestUART(icID, TMC9660_CMD_BOOT, 0x981, 0x2, 0xA3B4C5D6, data, addresses, false))
+        return -2;
+
+    return 0;
 }
 
 int32_t tmc9660_reg_sendCommand(uint16_t icID, uint8_t cmd, uint16_t registerOffset, uint8_t registerBlock, uint32_t writeValue, uint32_t *readValue)
@@ -192,11 +261,22 @@ int32_t tmc9660_reg_sendCommand(uint16_t icID, uint8_t cmd, uint16_t registerOff
     return -1;
 }
 
+int32_t tmc9660_reg_getVersionASCII(uint16_t icID, uint8_t *versionString)
+{
+    // In the underlying protocol, register and parameter mode work identically
+    // for this special command
+    return tmc9660_param_getVersionASCII(icID, versionString);
+}
+
+int32_t tmc9660_reg_returnToBootloader(uint16_t icID)
+{
+    // In the underlying protocol, register and parameter mode work identically
+    // for this special command
+    return tmc9660_param_returnToBootloader(icID);
+}
+
 static int32_t tmc9660_reg_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t registerOffset, uint8_t registerBlock, uint32_t writeValue, uint32_t *readValue)
 {
-    // ToDo: GetVersion ASCII special case - custom reply format
-    // ToDo: ReturnToBootloader special case - no reply
-
     uint8_t data[9] = { 0 };
     TMC9660BusAddresses addresses = tmc9660_getBusAddresses(icID);
 

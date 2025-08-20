@@ -174,6 +174,10 @@ int32_t tmc9660_bl_sendCommand(uint16_t icID, uint8_t cmd, uint32_t writeValue, 
 /*** TMC9660 Parameter Mode functions *****************************************/
 int32_t tmc9660_param_sendCommand(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint32_t *readValue);
 
+// Special case commands: These two functions run commands that are edge cases of the underlying protocol
+int32_t tmc9660_param_getVersionASCII(uint16_t icID, uint8_t *versionString);
+int32_t tmc9660_param_returnToBootloader(uint16_t icID);
+
 uint32_t tmc9660_param_getParameter(uint16_t icID, uint16_t type);
 bool tmc9660_param_setParameter(uint16_t icID, uint16_t type, uint32_t value);
 
@@ -182,6 +186,10 @@ bool tmc9660_param_setGlobalParameter(uint16_t icID, uint16_t index, uint32_t va
 
 /*** TMC9660 Register Mode functions *****************************************/
 int32_t tmc9660_reg_sendCommand(uint16_t icID, uint8_t cmd, uint16_t registerOffset, uint8_t registerBlock, uint32_t writeValue, uint32_t *readValue);
+
+// Special case commands: These two functions run commands that are edge cases of the underlying protocol
+int32_t tmc9660_reg_getVersionASCII(uint16_t icID, uint8_t *versionString);
+int32_t tmc9660_reg_returnToBootloader(uint16_t icID);
 
 /******************************************************************************/
 
