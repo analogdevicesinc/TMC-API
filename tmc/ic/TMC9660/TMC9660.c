@@ -40,6 +40,8 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 // Helper functions
 static int32_t tmc9660_bl_sendCommand_UART(uint16_t icID, uint8_t cmd, uint32_t writeValue, uint32_t *readValue);
 static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint32_t *readValue);
+static int32_t tmc9660_reg_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t registerOffset, uint8_t registerBlock, uint32_t writeValue, uint32_t *readValue);
+
 static uint8_t calcParamChecksum(uint8_t *data, uint32_t bytes);
 static uint8_t CRC8(uint8_t *data, uint32_t bytes);
 
@@ -149,6 +151,61 @@ static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16
     data[1] = cmd;
     data[2] = type & 0xFF;
     data[3] = (type >> 8) << 4 | (index & 0x0F); // ToDo: Do we wanna do the 4/12 split at this function's arguments?
+    data[4] = (writeValue >> 24) & 0xFF;
+    data[5] = (writeValue >> 16) & 0xFF;
+    data[6] = (writeValue >> 8) & 0xFF;
+    data[7] = (writeValue) & 0xFF;
+    data[8] = calcParamChecksum(&data[0], 8);
+
+    if (!tmc9660_readWriteUART(icID, &data[0], 9, 9))
+        return -2;
+
+    // Unpack the reply
+    if (data[0] != addresses.host)
+        return -3;
+    if (data[1] != syncByte)
+        return -4;
+    if (data[8] != calcParamChecksum(&data[0], 8))
+        return -5;
+
+    if (readValue)
+    {
+        *readValue = ((uint32_t)data[4] << 24) | ((uint32_t)data[5] << 16) | (data[6] << 8) | data[7];
+    }
+
+    return data[2];
+}
+
+int32_t tmc9660_reg_sendCommand(uint16_t icID, uint8_t cmd, uint16_t registerOffset, uint8_t registerBlock, uint32_t writeValue, uint32_t *readValue)
+{
+    TMC9660BusType bus = tmc9660_getBusType(icID);
+
+    if(bus == TMC9660_BUS_SPI)
+    {
+        // ToDo: SPI support
+    }
+    else if(bus == TMC9660_BUS_UART)
+    {
+        return tmc9660_reg_sendCommand_UART(icID, cmd, registerOffset, registerBlock, writeValue, readValue);
+    }
+
+    return -1;
+}
+
+static int32_t tmc9660_reg_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t registerOffset, uint8_t registerBlock, uint32_t writeValue, uint32_t *readValue)
+{
+    // ToDo: GetVersion ASCII special case - custom reply format
+    // ToDo: ReturnToBootloader special case - no reply
+
+    uint8_t data[9] = { 0 };
+    TMC9660BusAddresses addresses = tmc9660_getBusAddresses(icID);
+
+    // Create the request datagram
+    uint8_t syncByte = 0x01 | (addresses.device);
+    data[0] = syncByte; // Module Address & sync bit
+    data[1] = cmd;
+    data[2] = registerOffset & 0xFF;
+    data[3] = (registerOffset >> 8) << 5 | (registerBlock & 0x1F);
     data[4] = (writeValue >> 24) & 0xFF;
     data[5] = (writeValue >> 16) & 0xFF;
     data[6] = (writeValue >> 8) & 0xFF;

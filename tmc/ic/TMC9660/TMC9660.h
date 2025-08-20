@@ -180,6 +180,9 @@ bool tmc9660_param_setParameter(uint16_t icID, uint16_t type, uint32_t value);
 uint32_t tmc9660_param_getGlobalParameter(uint16_t icID, uint16_t index);
 bool tmc9660_param_setGlobalParameter(uint16_t icID, uint16_t index, uint32_t value);
 
+/*** TMC9660 Register Mode functions *****************************************/
+int32_t tmc9660_reg_sendCommand(uint16_t icID, uint8_t cmd, uint16_t registerOffset, uint8_t registerBlock, uint32_t writeValue, uint32_t *readValue);
+
 /******************************************************************************/
 
 #endif /* TMC_IC_TMC9660_H_ */
