@@ -15,10 +15,16 @@ Each of these functions takes in an **icID**, which is used to identify the IC w
 
 ## Accessing the TMC5222 via I2C
 The following diagram depicts how to access the TMC5222 via I2C using the TMC-API.
-ToDo: Add I2C flowchart! (AS)
+![screenshot](registercall_hierarchy_flowchart_I2C.png)
+The description of the functions, in the above flowchart, are as follows:
+- The functions tmc5222_readRegister and tmc5222_writeRegister are used to read and write the registers respectively. These functions check the current active bus and call the bus-specific function i.e readRegisterI2C or writeRegisterI2C.
+- These bus specific functions construct the datagram and further call the bus specific callback 'tmc5222_readWriteI2C'.
+- This callback function further calls the hardware specific read/write function for I2C and needs to be implemented externally.
 
 ### How to integrate: Callback functions
-To communicate with TMC5222 IC, the TMC-API library needs to know which bus (I2C, SPI) it shall use. For that, the callback function **'tmc5222_getBusType()'** needs to be implemented.
+Implement the following callback functions to access the chip via I2C:
+
+- tmc5222_readWriteI2C(), which is a HAL wrapper function that provides the necessary hardware access.
 
 
 ## Further info
