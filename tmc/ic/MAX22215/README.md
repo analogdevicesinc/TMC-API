@@ -19,10 +19,10 @@ The following diagram depicts how to access the MAX22200 via I2C using the TMC-A
 The description of the functions, in the above flowchart, are as follows:
 - The functions max22215_readRegister and max22215_writeRegister are used to read and write the registers respectively. These functions check the current active bus and call the bus-specific function i.e readRegisterI2C or writeRegisterI2C.
 - These bus specific functions construct the datagram and further call the bus specific callback 'max22215_readWriteI2C'.
-- This callback function further calls the hardware specific read/write function for SPI and needs to be implemented externally.
+- This callback function further calls the hardware specific read/write function for I2C and needs to be implemented externally.
 
 ### How to integrate: Callback functions
-Implement the following callback functions to access the chip via SPI:
+Implement the following callback functions to access the chip via I2C:
 1. **max22215_readWriteI2C()**, which is a HAL wrapper function that provides the necessary hardware access. 
 
 ## Further info
