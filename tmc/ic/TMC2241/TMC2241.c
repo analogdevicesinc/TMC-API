@@ -139,7 +139,8 @@ void tmc2241_initCache()
         {
             for (id = 0; id < TMC2241_IC_CACHE_COUNT; id++)
             {
-                tmc2241_cache(id, TMC2241_CACHE_FILL_DEFAULT, i, &tmc2241_RegisterConstants[j].value);
+                uint32_t temp = tmc2241_RegisterConstants[j].value;
+                tmc2241_cache(id, TMC2241_CACHE_FILL_DEFAULT, i, &temp);
             }
         }
     }
