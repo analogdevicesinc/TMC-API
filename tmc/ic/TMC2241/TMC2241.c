@@ -196,7 +196,7 @@ void tmc2241_writeRegister(uint16_t icID, uint8_t address, int32_t value)
         writeRegisterUART(icID, address, value);
     }
     //Cache the registers with write-only access
-    tmc2241_cache(icID, TMC2241_CACHE_WRITE, address, &value);
+    tmc2241_cache(icID, TMC2241_CACHE_WRITE, address, (uint32_t *)&value);
 }
 
 int32_t readRegisterSPI(uint16_t icID, uint8_t address)
