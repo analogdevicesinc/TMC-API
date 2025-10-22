@@ -34,9 +34,14 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
+**Version 3.11.4: (Released)**
+- Added TMC-API support for TMC5241 and TMC2241.
+- Bug fixes for MAX22215.
+- Code cleanup.
+
 **Version 3.11.2: (Released)**
 - Added TMC-API support for MAX22200 and TMC9660.
-- Various bug fixes and code cleanup.g s
+- Various bug fixes and code cleanup.
 
 **Version 3.11.1: (Released)**
 - Reworked MAX22216 CRC calculation to be more efficient. This is a backwards-incompatible change for anyone using the CRC calculation function max22216_CRC() directly.
