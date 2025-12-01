@@ -18,7 +18,7 @@ One important thing to make sure is that the MISO pin of SPI is connected extern
 
 The following diagram depicts how to access the MAX22200 via SPI using the TMC-API.
 
-![screenshot](registercall_hierarchy_flowchar_SPI.png)
+![screenshot](registercall_hierarchy_flowchart_SPI.svg)
 
 The description of the functions, in the above flowchart, are as follows:
 - The functions max22200_readRegister and max22200_writeRegister are used to read and write the registers respectively. These functions check the current active bus and call the bus-specific function i.e readRegisterSPI or writeRegisterSPI.
@@ -33,11 +33,11 @@ Implement the following callback functions to access the chip via SPI:
 ## Further info
 ### Dependency graph for the ICs with new register R/W mechanism
 This graph illustrates the relationships between files within the TMC-API library, highlighting dependencies and identifying the files that are essential for integrating the library into custom projects.
-![screenshot](uml-tmc-api.png)
+
+![screenshot](uml-tmc-api.svg)
 
 ### Example usage: TMC-Evalsystem
 **For a reference usage of the TMC-API**, visit the [TMC-Evalsystem](https://github.com/analogdevicesinc/TMC-EvalSystem)
 
 ## Migration status
 The MAX22200 has been reworked to the access system described above. For more infos on the status of this and other ICs, check out the [migration page](https://github.com/analogdevicesinc/TMC-API/issues/53).
-

@@ -15,7 +15,9 @@ Each of these functions takes in an **icID**, which is used to identify the IC w
 
 ## Accessing the max22215 via I2C
 The following diagram depicts how to access the MAX22200 via I2C using the TMC-API.
-![screenshot](registercall_hierarchy_flowchart_I2C.png)
+
+![screenshot](registercall_hierarchy_flowchart_I2C.svg)
+
 The description of the functions, in the above flowchart, are as follows:
 - The functions max22215_readRegister and max22215_writeRegister are used to read and write the registers respectively. These functions check the current active bus and call the bus-specific function i.e readRegisterI2C or writeRegisterI2C.
 - These bus specific functions construct the datagram and further call the bus specific callback 'max22215_readWriteI2C'.
@@ -28,7 +30,8 @@ Implement the following callback functions to access the chip via I2C:
 ## Further info
 ### Dependency graph for the ICs with new register R/W mechanism
 This graph illustrates the relationships between files within the TMC-API library, highlighting dependencies and identifying the files that are essential for integrating the library into the custom projects.
-![screenshot](uml-tmc-api.png)
+
+![screenshot](uml-tmc-api.svg)
 
 ### Example usage: TMC-Evalsystem
 **For a reference usage of the TMC-API**, visit the [TMC-Evalsystem](https://github.com/analogdevicesinc/TMC-EvalSystem)

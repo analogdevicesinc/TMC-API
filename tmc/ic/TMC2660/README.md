@@ -16,7 +16,7 @@ Each of these functions takes in an **icID**, which is used to identify the IC w
 The following diagram depicts how to access the TMC2660 via SPI using the TMC-API.
 
 ### Reading a register
-![screenshot](registercall_hierarchy_flowchart_SPI.png)
+![screenshot](registercall_hierarchy_flowchart_SPIRead_tmc2660.svg)
 
 The description of the functions, in the above flowchart, are as follows:
 - The functions tmc2660_readRegister and tmc2660_writeRegister are used to read and write the registers respectively. 
@@ -26,7 +26,7 @@ The description of the functions, in the above flowchart, are as follows:
 - readImmediately funciton sets the RDSEl bits in DRVCONF register and further calls the readwrite function to receive the response.
 
 ### Writing a register
-![screenshot](registerwrite_hierarchy_flowchart_SPI.png)
+![screenshot](registercall_hierarchy_flowchart_SPIWrite_tmc2660.svg)
 
 Similarly, a register is written as depicted in the flowchart above.
 
@@ -41,7 +41,8 @@ The chip features write-only registers that are unable to be read, necessitating
 ## Further info
 ### Dependency graph for the ICs with new register R/W mechanism
 This graph illustrates the relationships between files within the TMC-API library, highlighting dependencies and identifying the files that are essential for integrating the library into the custom projects.
-![screenshot](uml-tmc-api.png)
+
+![screenshot](uml-tmc-api.svg)
 
 ### Example usage: TMC-Evalsystem
 **For a reference usage of the TMC-API**, visit the [TMC-Evalsystem](https://github.com/analogdevicesinc/TMC-EvalSystem)

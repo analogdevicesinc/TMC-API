@@ -16,7 +16,7 @@ Each of these functions takes in an **icID**, which is used to identify the IC w
 ## Accessing the TMC7300 via UART
 The following diagram depicts how to access the TMC7300 via UART using the TMC-API.
 
-![screenshot](registercall_hierarchy_flowchar_UART.png)
+![screenshot](registercall_hierarchy_flowchart_UART.svg)
 
 The description of the functions, in the above flowchart, are as follows:
 - The functions tmc7300_readRegister and tmc7300_writeRegister are used to read and write the registers respectively. These functions check the current active bus and calls the bus-specific function i.e readRegisterUART or writeRegisterUART.
@@ -39,7 +39,8 @@ The chip features write-only registers that are unable to be read, necessitating
 ## Further info
 ### Dependency graph for the ICs with new register R/W mechanism
 This graph illustrates the relationships between files within the TMC-API library, highlighting dependencies and identifying the files that are essential for integrating the library into the ustom projects.
-![screenshot](uml-tmc-api.png)
+
+![screenshot](uml-tmc-api.svg)
 
 ### Example usage: TMC-Evalsystem
 **For a reference usage of the TMC-API**, visit the [TMC-Evalsystem](https://github.com/analogdevicesinc/TMC-EvalSystem)
