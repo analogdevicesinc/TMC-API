@@ -68,7 +68,7 @@
 #define TMC5272_SW_MODE(motor)            (0x2A + MOTOR_ADDR(motor))      //      0x2A            0x5F
 #define TMC5272_RAMP_STAT(motor)          (0x2B + MOTOR_ADDR(motor))      //      0x2B            0x60
 #define TMC5272_XLATCH(motor)             (0x2C + MOTOR_ADDR(motor))      //      0x2C            0x61
-#define TMC5272_POSITION_PI_CTRL(motor)   (0x2D + MOTOR_ADDR(motor))      //      0x2D            0x62
+#define TMC5272_POSITION_P_CTRL(motor)   (0x2D + MOTOR_ADDR(motor))      //      0x2D            0x62
 #define TMC5272_X_ENC(motor)              (0x2E + MOTOR_ADDR(motor))      //      0x2E            0x63
 #define TMC5272_ENCMODE(motor)            (0x2F + MOTOR_ADDR(motor))      //      0x2F            0x64
 #define TMC5272_ENC_CONST(motor)          (0x30 + MOTOR_ADDR(motor))      //      0x30            0x65
@@ -479,15 +479,15 @@
 #define TMC5272_XLATCH_MASK                                   0xFFFFFFFF
 #define TMC5272_XLATCH_SHIFT                                  0
 #define TMC5272_XLATCH_FIELD(motor)                           ((RegisterField) { TMC5272_XLATCH_MASK,  TMC5272_XLATCH_SHIFT,  TMC5272_XLATCH(motor), true })
-#define TMC5272_POSITION_PI_CTRL_P_MASK						  0x000003FF
-#define TMC5272_POSITION_PI_CTRL_P_SHIFT                      0
-#define TMC5272_POSITION_PI_CTRL_P_FIELD(motor)               ((RegisterField) { TMC5272_POSITION_PI_CTRL_P_MASK,  TMC5272_POSITION_PI_CTRL_P_SHIFT,  TMC5272_POSITION_PI_CTRL(motor), false })
-#define TMC5272_POSITION_PI_CTRL_TOLERANCE_MASK				  0x00FF0000
-#define TMC5272_POSITION_PI_CTRL_TOLERANCE_SHIFT              16
-#define TMC5272_POSITION_PI_CTRL_TOLERANCE_FIELD(motor)       ((RegisterField) { TMC5272_POSITION_PI_CTRL_TOLERANCE_MASK,  TMC5272_POSITION_PI_CTRL_TOLERANCE_SHIFT,  TMC5272_POSITION_PI_CTRL(motor), false })
-#define TMC5272_POSITION_PI_CTRL_EN_TOL_ON_POS_REACHED_MASK				  0x10000000
-#define TMC5272_POSITION_PI_CTRL_EN_TOL_ON_POS_REACHED_SHIFT              28
-#define TMC5272_POSITION_PI_CTRL_EN_TOL_ON_POS_REACHED_FIELD(motor)       ((RegisterField) { TMC5272_POSITION_PI_CTRL_EN_TOL_ON_POS_REACHED_MASK,  TMC5272_POSITION_PI_CTRL_EN_TOL_ON_POS_REACHED_SHIFT,  TMC5272_POSITION_PI_CTRL(motor), false })
+#define TMC5272_POSITION_P_CTRL_P_MASK						  0x000003FF
+#define TMC5272_POSITION_P_CTRL_P_SHIFT                      0
+#define TMC5272_POSITION_P_CTRL_P_FIELD(motor)               ((RegisterField) { TMC5272_POSITION_P_CTRL_P_MASK,  TMC5272_POSITION_P_CTRL_P_SHIFT,  TMC5272_POSITION_P_CTRL(motor), false })
+#define TMC5272_POSITION_P_CTRL_TOLERANCE_MASK				  0x00FF0000
+#define TMC5272_POSITION_P_CTRL_TOLERANCE_SHIFT              16
+#define TMC5272_POSITION_P_CTRL_TOLERANCE_FIELD(motor)       ((RegisterField) { TMC5272_POSITION_P_CTRL_TOLERANCE_MASK,  TMC5272_POSITION_P_CTRL_TOLERANCE_SHIFT,  TMC5272_POSITION_P_CTRL(motor), false })
+#define TMC5272_POSITION_P_CTRL_EN_TOL_ON_POS_REACHED_MASK				  0x10000000
+#define TMC5272_POSITION_P_CTRL_EN_TOL_ON_POS_REACHED_SHIFT              28
+#define TMC5272_POSITION_P_CTRL_EN_TOL_ON_POS_REACHED_FIELD(motor)       ((RegisterField) { TMC5272_POSITION_P_CTRL_EN_TOL_ON_POS_REACHED_MASK,  TMC5272_POSITION_P_CTRL_EN_TOL_ON_POS_REACHED_SHIFT,  TMC5272_POSITION_P_CTRL(motor), false })
 #define TMC5272_X_ENC_MASK                                    0xFFFFFFFF
 #define TMC5272_X_ENC_SHIFT                                   0
 #define TMC5272_X_ENC_FIELD(motor)                            ((RegisterField) { TMC5272_X_ENC_MASK,  TMC5272_X_ENC_SHIFT,  TMC5272_X_ENC(motor), true })
