@@ -34,6 +34,11 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
+**Version 3.11.5: (Released)**
+- Added TMC-API support for TMC6460.
+- Bug fixes for TMC5272.
+- Code cleanup.
+
 **Version 3.11.4: (Released)**
 - Added TMC-API support for TMC5241 and TMC2241.
 - Bug fixes for MAX22215.
