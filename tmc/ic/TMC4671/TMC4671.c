@@ -1,9 +1,8 @@
 /*******************************************************************************
 * Copyright © 2016 TRINAMIC Motion Control GmbH & Co. KG
-* (now owned by Analog Devices Inc.),
+* (now owned by Analog Devices, Inc.),
 *
-* Copyright © 2024 Analog Devices Inc. All Rights Reserved.
-* This software is proprietary to Analog Devices, Inc. and its licensors.
+* Copyright © 2024 Analog Devices, Inc.
 *******************************************************************************/
 
 #include "TMC4671.h"
