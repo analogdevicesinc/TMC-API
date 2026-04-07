@@ -40,6 +40,7 @@ const uint8_t tmcCRCTable_Poly7Reflected[256] = {
 static int32_t tmc9660_bl_sendCommand_UART(uint16_t icID, uint8_t cmd, uint32_t writeValue, uint32_t *readValue);
 static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint32_t *readValue);
 static int32_t tmc9660_param_getVersionASCII_UART(uint16_t icID, uint8_t *versionString);
+static int32_t tmc9660_param_readTMCLMemory_UART(uint16_t icID, uint32_t cmdIndex, uint8_t *command);
 static int32_t tmc9660_param_returnToBootloader_UART(uint16_t icID);
 static int32_t tmc9660_reg_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t registerOffset, uint8_t registerBlock, uint32_t writeValue, uint32_t *readValue);
 
@@ -154,6 +155,22 @@ int32_t tmc9660_param_getVersionASCII(uint16_t icID, uint8_t *versionString)
     return -1;
 }
 
+int32_t tmc9660_param_readTMCLMemory(uint16_t icID, uint32_t cmdIndex, uint8_t *command)
+{
+    TMC9660BusType bus = tmc9660_getBusType(icID);
+
+    if(bus == TMC9660_BUS_SPI)
+    {
+        // ToDo: SPI support
+    }
+    else if(bus == TMC9660_BUS_UART)
+    {
+        return tmc9660_param_readTMCLMemory_UART(icID, cmdIndex, command);
+    }
+
+    return -1;
+}
+
 int32_t tmc9660_param_returnToBootloader(uint16_t icID)
 {
     TMC9660BusType bus = tmc9660_getBusType(icID);
@@ -229,6 +246,25 @@ static int32_t tmc9660_param_getVersionASCII_UART(uint16_t icID, uint8_t *versio
     versionString[5] = data[6];
     versionString[6] = data[7];
     versionString[7] = data[8];
+
+    return 0;
+}
+
+static int32_t tmc9660_param_readTMCLMemory_UART(uint16_t icID, uint32_t cmdIndex, uint8_t *command)
+{
+    uint8_t data[9] = { 0 };
+    TMC9660BusAddresses addresses = tmc9660_getBusAddresses(icID);
+
+    if (!sendRequestUART(icID, TMC9660_CMD_READ_MEM, 0, 0, cmdIndex, data, addresses, true))
+        return -2;
+
+    command[0] = data[1];
+    command[1] = data[2];
+    command[2] = data[3];
+    command[3] = data[4];
+    command[4] = data[5];
+    command[5] = data[6];
+    command[6] = data[7];
 
     return 0;
 }

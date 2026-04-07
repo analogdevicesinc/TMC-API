@@ -173,8 +173,9 @@ int32_t tmc9660_bl_sendCommand(uint16_t icID, uint8_t cmd, uint32_t writeValue, 
 /*** TMC9660 Parameter Mode functions *****************************************/
 int32_t tmc9660_param_sendCommand(uint16_t icID, uint8_t cmd, uint16_t type, uint8_t index, uint32_t writeValue, uint32_t *readValue);
 
-// Special case commands: These two functions run commands that are edge cases of the underlying protocol
+// Special case commands: These functions run commands that are edge cases of the underlying protocol
 int32_t tmc9660_param_getVersionASCII(uint16_t icID, uint8_t *versionString);
+int32_t tmc9660_param_readTMCLMemory(uint16_t icID, uint32_t cmdIndex, uint8_t *command);
 int32_t tmc9660_param_returnToBootloader(uint16_t icID);
 
 uint32_t tmc9660_param_getParameter(uint16_t icID, uint16_t type);
