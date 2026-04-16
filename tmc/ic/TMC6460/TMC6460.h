@@ -28,7 +28,7 @@
 #define TMC_API_TMC6460_CRC_SUPPORT 0
 #endif
 
-/*** TMC9660 constants ********************************************************/
+/*** TMC6460 constants ********************************************************/
 enum TMC6460BusType {
     TMC6460_BUS_SPI,
     TMC6460_BUS_UART,
@@ -103,7 +103,7 @@ extern bool tmc6460_isRTMICRCEnabled(uint16_t icID);
 #endif
 // <= TMC-API wrapper
 
-/*** TMC9660 general functions ************************************************/
+/*** TMC6460 general functions ************************************************/
 int32_t tmc6460_readRegister(uint16_t icID, uint16_t address, uint32_t *readValue);
 int32_t tmc6460_writeRegister(uint16_t icID, uint16_t address, uint32_t writeValue);
 
