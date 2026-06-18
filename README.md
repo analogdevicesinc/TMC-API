@@ -34,6 +34,9 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
+**Version 3.11.7: (WIP)**
+- ...
+
 **Version 3.11.6: (Released)**
 - Updated copyright text of TMC-API files.
 - TMC9660: Added support for TMCL Read Memory special-case command.
