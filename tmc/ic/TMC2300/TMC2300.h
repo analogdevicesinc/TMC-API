@@ -190,7 +190,7 @@ static const int32_t tmc2300_sampleRegisterPreset[TMC2300_REGISTER_COUNT] =
 static const TMC2300RegisterConstants tmc2300_RegisterConstants[] =
 {		// Use ascending addresses!
         { 0x00, 0x00000040 }, // GCONF
-        { 0x10, 0x00010402 }, // IHOLD_IRUN
+        { 0x10, 0x00011F08 }, // IHOLD_IRUN
         { 0x11, 0x00000014 }, // TPOWERDOWN
         { 0x6C, 0x13008001 }, // CHOPCONF
         { 0x70, 0xC40D1024 }, // PWMCONF
