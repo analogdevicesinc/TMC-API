@@ -218,7 +218,7 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 	// Send another request to receive the read reply
 	tmc5130_readWriteSPI(icID, &data[0], sizeof(data));
 
-	return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
+	return ((int32_t) data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
 }
 
 void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
@@ -268,7 +268,7 @@ int32_t readRegisterUART(uint16_t icID, uint8_t registerAddress)
 	if (data[7] != CRC8(data, 7))
 		return 0;
 
-	return ((uint32_t)data[3] << 24) | ((uint32_t)data[4] << 16) | (data[5] << 8) | data[6];
+	return ((uint32_t) data[3] << 24) | ((uint32_t) data[4] << 16) | ((uint32_t) data[5] << 8) | data[6];
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t registerAddress, int32_t value)
