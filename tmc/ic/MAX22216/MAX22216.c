@@ -73,7 +73,8 @@ uint16_t readRegisterSPI(uint16_t icID, uint8_t address)
     // Send another request to receive the read reply
     max22216_readWriteSPI(icID, &data[0], useCRC? 4:3);
 
-    return ((uint16_t) data[1] << 8) | ((uint16_t) data[2]);
+    return    ((uint16_t) data[1] << 8)
+            | ((uint16_t) data[2]);
 }
 
 void writeRegisterSPI(uint16_t icID, uint8_t address, uint16_t value)

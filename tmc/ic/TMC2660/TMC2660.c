@@ -78,10 +78,16 @@ void readWrite(uint8_t icID, uint32_t datagram)
     data[1] = 0xFF & (datagram >> 8);
     data[2] = 0xFF & (datagram >> 0);
 
-    // Send 24 bytes of data and receive reply
+    // Send 24 bits of data and receive reply
     tmc2660_readWriteSPI(icID, &data[0], sizeof(data));
 
-    reply = (((uint32_t) data[0] << 16) | ((uint32_t) data[1] << 8) | data[2]) >> 4;
+    reply = ((uint32_t) data[0] << 16)
+          | ((uint32_t) data[1] << 8)
+          | ((uint32_t) data[2]);
+    // The lowest 4 bits are just SPI daisy-chained data,
+    // the IC response is in the bits above that.
+    // Discard those 4 bits and keep just the IC response.
+    reply >>= 4;
 
     // write value to response shadow register
     tmc2660_shadowRegister[icID][rdsel] = reply;

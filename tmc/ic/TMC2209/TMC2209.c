@@ -165,7 +165,10 @@ int32_t readRegisterUART(uint16_t icID, uint8_t address)
     if (data[7] != CRC8(data, 7))
         return 0;
 
-    return ((uint32_t) data[3] << 24) | ((uint32_t) data[4] << 16) | ((uint32_t) data[5] << 8) | data[6];
+    return    ((uint32_t) data[3] << 24)
+            | ((uint32_t) data[4] << 16)
+            | ((uint32_t) data[5] << 8)
+            | ((uint32_t) data[6]);
 }
 
 void writeRegisterUART(uint16_t icID, uint8_t address, int32_t value)

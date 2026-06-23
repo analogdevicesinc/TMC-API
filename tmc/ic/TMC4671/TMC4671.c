@@ -30,7 +30,10 @@ int32_t tmc4671_readRegister(uint16_t icID, uint8_t address)
 	// Send the read request
 	tmc4671_readWriteSPI(icID, &data[0], sizeof(data));
 
-	return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
+	return    ((uint32_t) data[1] << 24)
+            | ((uint32_t) data[2] << 16)
+            | ((uint32_t) data[3] <<  8)
+            | ((uint32_t) data[4]);
 }
 
 void tmc4671_writeRegister(uint16_t icID, uint8_t address, int32_t value)

@@ -184,5 +184,8 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
 
     tmc4361A_setStatus(icID, &data[0]);
 
-    return ((int32_t) data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] << 8) | ((int32_t) data[4]);
+    return    ((uint32_t) data[1] << 24)
+            | ((uint32_t) data[2] << 16)
+            | ((uint32_t) data[3] << 8)
+            | ((uint32_t) data[4]);
 }

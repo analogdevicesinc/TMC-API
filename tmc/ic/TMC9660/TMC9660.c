@@ -94,7 +94,10 @@ static int32_t tmc9660_bl_sendCommand_UART(uint16_t icID, uint8_t cmd, uint32_t 
 
     if (readValue)
     {
-        *readValue = ((uint32_t) data[3] << 24) | ((uint32_t) data[4] << 16) | ((uint32_t) data[5] << 8) | data[6];
+        *readValue = ((uint32_t) data[3] << 24)
+                   | ((uint32_t) data[4] << 16)
+                   | ((uint32_t) data[5] << 8)
+                   | ((uint32_t) data[6]);
     }
 
     // Workaround: Wait a short moment before proceeding
@@ -224,7 +227,10 @@ static int32_t tmc9660_param_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16
 
     if (readValue)
     {
-        *readValue = ((uint32_t) data[4] << 24) | ((uint32_t) data[5] << 16) | ((uint32_t) data[6] << 8) | data[7];
+        *readValue = ((uint32_t) data[4] << 24)
+                   | ((uint32_t) data[5] << 16)
+                   | ((uint32_t) data[6] << 8)
+                   | ((uint32_t) data[7]);
     }
 
     return data[2];
@@ -340,7 +346,10 @@ static int32_t tmc9660_reg_sendCommand_UART(uint16_t icID, uint8_t cmd, uint16_t
 
     if (readValue)
     {
-        *readValue = ((uint32_t) data[4] << 24) | ((uint32_t) data[5] << 16) | ((uint32_t) data[6] << 8) | data[7];
+        *readValue = ((uint32_t) data[4] << 24)
+                   | ((uint32_t) data[5] << 16)
+                   | ((uint32_t) data[6] << 8)
+                   | ((uint32_t) data[7]);
     }
 
     return data[2];

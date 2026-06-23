@@ -299,7 +299,10 @@ static bool isRTMIDatagramHeader(uint8_t byte_value)
 static bool handleRTMIDatagram(uint16_t icID, uint8_t *data)
 {
     uint8_t rtmiStatus = data[0];
-    uint32_t rtmiValue = ((uint32_t) data[1] << 24) | ((uint32_t) data[2] << 16) | ((uint32_t) data[3] << 8) | data[4];
+    uint32_t rtmiValue = ((uint32_t) data[1] << 24)
+                       | ((uint32_t) data[2] << 16)
+                       | ((uint32_t) data[3] << 8)
+                       | ((uint32_t) data[4]);
     return tmc6460_RTMIDataCallback(icID, rtmiStatus, rtmiValue);
 }
 

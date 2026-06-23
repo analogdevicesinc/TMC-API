@@ -169,7 +169,10 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
     // Send another request to receive the read reply
     tmc5031_readWriteSPI(icID, &data[0], sizeof(data));
 
-    return ((int32_t)data[1] << 24) | ((int32_t) data[2] << 16) | ((int32_t) data[3] <<  8) | ((int32_t) data[4]);
+    return    ((uint32_t) data[1] << 24)
+            | ((uint32_t) data[2] << 16)
+            | ((uint32_t) data[3] <<  8)
+            | ((uint32_t) data[4]);
 }
 
 void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)

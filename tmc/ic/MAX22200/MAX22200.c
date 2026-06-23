@@ -35,7 +35,10 @@ int32_t readRegisterSPI(uint16_t icID, uint8_t address)
     // Send request to read reply
     max22200_readWriteSPI(icID, &data[0], sizeof(data), false);
 
-    return ((int32_t)data[0] << 24) | ((int32_t) data[1] << 16) | ((int32_t) data[2] <<  8) | ((int32_t) data[3]);
+    return    ((uint32_t) data[0] << 24)
+            | ((uint32_t) data[1] << 16)
+            | ((uint32_t) data[2] <<  8)
+            | ((uint32_t) data[3]);
 }
 
 void writeRegisterSPI(uint16_t icID, uint8_t address, int32_t value)
