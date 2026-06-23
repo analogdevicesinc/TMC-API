@@ -4,6 +4,7 @@
 
 
 #ifndef TMC_IC_TMC2241_H_
+#define TMC_IC_TMC2241_H_
 
 #include <stdint.h>
 #include <stdbool.h>

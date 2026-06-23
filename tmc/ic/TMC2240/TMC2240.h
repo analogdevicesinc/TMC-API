@@ -7,6 +7,7 @@
 
 
 #ifndef TMC_IC_TMC2240_H_
+#define TMC_IC_TMC2240_H_
 
 #include <stdint.h>
 #include <stdbool.h>
