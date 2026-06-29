@@ -34,8 +34,12 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
-**Version 3.11.7: (WIP)**
-- ...
+**Version 3.11.7: (Released)**
+- Improved byte concatenation logic for assembling larger integer values.
+- Added required casts when constructing 32-bit values.
+- Added '#undef' definitions in TMC5240.h to prevent conflicts with other chip headers.
+- Fixed incorrect setup of the IHOLD_IRUN register in TMC2300.
+- Corrected IC name in TMC6460 comments.
 
 **Version 3.11.6: (Released)**
 - Updated copyright text of TMC-API files.
