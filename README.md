@@ -34,6 +34,9 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
+**Version 3.11.8: (WIP)**
+- ...
+
 **Version 3.11.7: (Released)**
 - Improved byte concatenation logic for assembling larger integer values.
 - Added required casts when constructing 32-bit values.
