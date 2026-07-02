@@ -53,7 +53,7 @@
 
 typedef enum {
     IC_BUS_SPI,
-    IC_BUS_IIC,
+    IC_BUS_I2C,
 } TMC5222BusType;
 
 typedef struct
@@ -65,7 +65,7 @@ typedef struct
 } RegisterField;
 
 // => TMC-API wrapper
-extern bool tmc5222_readWriteIIC(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
+extern bool tmc5222_readWriteI2C(uint16_t icID, uint8_t *data, size_t writeLength, size_t readLength);
 extern TMC5222BusType tmc5222_getBusType(uint16_t icID);
 extern uint8_t tmc5222_getDeviceAddress(uint16_t icID);
 // => TMC-API wrapper
