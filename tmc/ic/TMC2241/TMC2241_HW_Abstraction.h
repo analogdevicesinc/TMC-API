@@ -3,8 +3,8 @@
 *******************************************************************************/
 
 
-#ifndef TMC_IC_TMC2241_H_
-#define TMC_IC_TMC2241_H_
+#ifndef TMC2241_HW_ABSTRACTION
+#define TMC2241_HW_ABSTRACTION
 
 // Constants
 #define TMC2241_REGISTER_COUNT   128
@@ -606,4 +606,4 @@
 #define TMC2241_SG4_IND_3_MASK                0xFF000000
 #define TMC2241_SG4_IND_3_SHIFT               24
 #define TMC2241_SG4_IND_3_FIELD               ((RegisterField) {TMC2241_SG4_IND_3_MASK, TMC2241_SG4_IND_3_SHIFT, TMC2241_SG4_IND, false})
-#endif
+#endif /* TMC2241_HW_ABSTRACTION */
