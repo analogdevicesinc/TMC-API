@@ -125,7 +125,7 @@ static inline void tmc5240_fieldWrite(uint16_t icID, RegisterField field, uint32
 #define ARRAY_SIZE(x)              (sizeof(x)/sizeof(x[0]))
 
 
-static const int32_t tmc5240_sampleRegisterPreset[TMC5240_REGISTER_COUNT] =
+static const uint32_t tmc5240_sampleRegisterPreset[TMC5240_REGISTER_COUNT] =
 {
 //	0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   A,   B,   C,   D,   E,   F
 	R00, 0,   0,   0,   0,   0,   0,   0,   0,   0,   R0A,   0,   0,   0,   0,   0, // 0x00 - 0x0F
