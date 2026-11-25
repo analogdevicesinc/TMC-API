@@ -34,9 +34,12 @@ For the ICs with the new implementation, please consult their [README](https://g
 
 ## Changelog
 
-**Version 3.11.9: (WIP)**
-- Added TMC9660 SPI support (based on the TMC9660 addon)
+**Version 3.11.10: (WIP)**
 - ...
+
+**Version 3.11.9: (Released)**
+- Added TMC9660 SPI support (based on the TMC9660 addon)
+- Included TMC3241 to the project.
 
 **Version 3.11.8: (Released)**
 - Included TMC5221 and TMC5222 to the project.
